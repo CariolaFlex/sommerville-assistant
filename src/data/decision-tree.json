@@ -135,7 +135,6 @@
           ],
           "icon": "🎮",
           "nextStepId": "step-entertainment-context",
-          "finalRecommendationId": "rec-009",
           "characteristics": {
             "criticidad": "BAJA",
             "performance": "Alta",
@@ -159,7 +158,6 @@
           ],
           "icon": "📊",
           "nextStepId": "step-batch-context",
-          "finalRecommendationId": "rec-010",
           "characteristics": {
             "criticidad": "MEDIA",
             "volumen": "Alto",
@@ -182,7 +180,6 @@
           ],
           "icon": "🌡️",
           "nextStepId": "step-iot-context",
-          "finalRecommendationId": "rec-011",
           "characteristics": {
             "criticidad": "ALTA (confiabilidad)",
             "autonomia": true,
@@ -205,7 +202,6 @@
           ],
           "icon": "🏛️",
           "nextStepId": "step-sos-context",
-          "finalRecommendationId": "rec-012",
           "characteristics": {
             "criticidad": "ALTA",
             "complejidad": "Muy alta",
@@ -257,15 +253,13 @@
           "id": "opt-critical-large",
           "label": "Grande (>20 personas)",
           "description": "Equipo distribuido o grande",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-001"
+          "nextStepId": "step-regulation-check"
         },
         {
           "id": "opt-critical-small",
           "label": "Pequeño (<10 personas)",
           "description": "Equipo pequeño co-localizado",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-002"
+          "nextStepId": "step-regulation-check"
         }
       ]
     },
@@ -280,14 +274,13 @@
           "id": "opt-web-startup",
           "label": "Startup / Producto Nuevo",
           "description": "Incertidumbre alta, necesidad de pivotear rápido",
-          "nextStepId": "step-web-startup-client"
+          "nextStepId": "step-web-requirements"
         },
         {
           "id": "opt-web-scaling",
           "label": "Escalando / Crecimiento",
           "description": "Producto establecido que necesita crecer",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-007"
+          "nextStepId": "step-web-requirements"
         }
       ]
     },
@@ -325,15 +318,13 @@
           "id": "opt-web-small",
           "label": "Pequeño (<10 personas)",
           "description": "Equipo ágil y flexible",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-006"
+          "nextStepId": "step-team-distribution"
         },
         {
           "id": "opt-web-medium",
           "label": "Mediano (10-20 personas)",
           "description": "Equipo que requiere coordinación",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-007"
+          "nextStepId": "step-team-distribution"
         }
       ]
     },
@@ -369,15 +360,13 @@
           "id": "opt-trans-large",
           "label": "Grande / Corporativo",
           "description": "Sistema empresarial grande (>20 desarrolladores)",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-004"
+          "nextStepId": "step-regulation-check"
         },
         {
           "id": "opt-trans-medium",
           "label": "Mediano",
           "description": "Sistema mediano (10-20 desarrolladores)",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-005"
+          "nextStepId": "step-regulation-check"
         }
       ]
     },
@@ -392,15 +381,13 @@
           "id": "opt-trans-vol-available",
           "label": "Disponible",
           "description": "Cliente puede intervenir activamente",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-005"
+          "nextStepId": "step-team-distribution"
         },
         {
           "id": "opt-trans-vol-not-available",
           "label": "No Disponible",
           "description": "Disponibilidad limitada",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-004"
+          "nextStepId": "step-team-distribution"
         }
       ]
     },
@@ -444,7 +431,7 @@
           "id": "opt-mobile-established",
           "label": "Producto Establecido",
           "description": "Ya tienes usuarios, necesitas escalar y mantener",
-          "nextStepId": "step-mobile-team-size"
+          "nextStepId": "step-mobile-requirements"
         }
       ]
     },
@@ -468,15 +455,13 @@
           "id": "opt-mobile-client-yes",
           "label": "Sí, puedo hacer beta testing continuo",
           "description": "TestFlight, Firebase App Distribution, usuarios early adopters disponibles",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-008-mobile-agile"
+          "nextStepId": "step-mobile-requirements"
         },
         {
           "id": "opt-mobile-client-no",
           "label": "No, feedback limitado",
           "description": "Launch más planificado, research inicial extenso necesario",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-008-mobile-lean"
+          "nextStepId": "step-mobile-requirements"
         }
       ]
     },
@@ -514,15 +499,13 @@
           "id": "opt-game-indie",
           "label": "Indie/Small Studio",
           "description": "Equipo pequeño, presupuesto limitado, innovación creativa",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-009"
+          "nextStepId": "step-game-platform"
         },
         {
           "id": "opt-game-mid",
           "label": "Mid-size Studio",
           "description": "10-50 personas, publisher o funding, producción más formal",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-009"
+          "nextStepId": "step-game-platform"
         }
       ]
     },
@@ -537,15 +520,13 @@
           "id": "opt-batch-simple",
           "label": "Procesamiento Simple",
           "description": "Jobs independientes, sin dependencias complejas entre etapas",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-010"
+          "nextStepId": "step-batch-frequency"
         },
         {
           "id": "opt-batch-complex",
           "label": "Procesamiento Complejo (Pipeline)",
           "description": "Múltiples stages, dependencias, orquestación necesaria",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-010"
+          "nextStepId": "step-batch-frequency"
         }
       ]
     },
@@ -564,15 +545,13 @@
           "id": "opt-iot-edge",
           "label": "Procesamiento en Edge",
           "description": "Lógica crítica en el dispositivo, sync ocasional a cloud",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-011"
+          "nextStepId": "step-iot-device-count"
         },
         {
           "id": "opt-iot-cloud",
           "label": "Procesamiento en Cloud",
           "description": "Dispositivos envían datos raw, toda la lógica en cloud",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-011"
+          "nextStepId": "step-iot-device-count"
         }
       ]
     },
@@ -591,15 +570,13 @@
           "id": "opt-sos-orchestration",
           "label": "Orquestación Central",
           "description": "Un sistema central coordina a los demás (ESB, BPM)",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-012"
+          "nextStepId": "step-sos-systems-count"
         },
         {
           "id": "opt-sos-choreography",
           "label": "Coreografía Distribuida",
           "description": "Sistemas se comunican peer-to-peer vía eventos",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-012"
+          "nextStepId": "step-sos-systems-count"
         }
       ]
     },
@@ -772,22 +749,347 @@
           "id": "opt-highly-regulated",
           "label": "Sí, altamente regulado (FDA, FAA, ISO crítico)",
           "description": "Certificación obligatoria, auditorías externas, documentación formal",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-001"
+          "nextStepId": "step-client-availability"
         },
         {
           "id": "opt-compliance-only",
           "label": "Solo cumplimiento corporativo (SOC 2, ISO 27001)",
           "description": "Auditorías pero sin certificación de producto",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-004"
+          "nextStepId": "step-client-availability"
         },
         {
           "id": "opt-not-regulated",
           "label": "No, sin regulaciones específicas",
           "description": "Solo mejores prácticas internas, sin auditorías externas",
-          "nextStepId": null,
-          "finalRecommendationId": "rec-004"
+          "nextStepId": "step-client-availability"
+        }
+      ]
+    },
+    "step-mobile-requirements": {
+      "id": "step-mobile-requirements",
+      "type": "branch",
+      "question": "¿Qué tan estables son tus requisitos móviles?",
+      "description": "Volatilidad de features y funcionalidades de tu app",
+      "chapter": 4,
+      "context": {
+        "stable": "Features bien definidas, roadmap claro",
+        "volatile": "Experimentación continua, A/B testing frecuente"
+      },
+      "options": [
+        {
+          "id": "opt-mobile-req-stable",
+          "label": "Estables (roadmap claro, pocas sorpresas)",
+          "description": "Features definidas, cambios incrementales",
+          "nextStepId": "step-mobile-platform"
+        },
+        {
+          "id": "opt-mobile-req-volatile",
+          "label": "Volátiles (experimentación, A/B testing)",
+          "description": "Pivotes frecuentes, feedback-driven",
+          "nextStepId": "step-mobile-platform"
+        }
+      ]
+    },
+    "step-mobile-platform": {
+      "id": "step-mobile-platform",
+      "type": "branch",
+      "question": "¿Qué plataformas móviles soportarás?",
+      "description": "Alcance de plataformas para tu app móvil",
+      "chapter": 6,
+      "context": {
+        "impact": "Determina arquitectura y stack tecnológico"
+      },
+      "options": [
+        {
+          "id": "opt-mobile-ios-only",
+          "label": "Solo iOS (Swift/SwiftUI)",
+          "description": "Enfoque en App Store, usuarios Apple",
+          "nextStepId": "step-team-size-granular"
+        },
+        {
+          "id": "opt-mobile-android-only",
+          "label": "Solo Android (Kotlin/Jetpack Compose)",
+          "description": "Enfoque en Google Play, dispositivos Android",
+          "nextStepId": "step-team-size-granular"
+        },
+        {
+          "id": "opt-mobile-cross-platform",
+          "label": "Multiplataforma (React Native/Flutter)",
+          "description": "iOS + Android con una sola codebase",
+          "nextStepId": "step-team-size-granular"
+        }
+      ]
+    },
+    "step-game-platform": {
+      "id": "step-game-platform",
+      "type": "branch",
+      "question": "¿En qué plataforma(s) lanzarás el juego?",
+      "description": "Plataforma objetivo para tu juego",
+      "chapter": 1,
+      "options": [
+        {
+          "id": "opt-game-mobile",
+          "label": "Móvil (iOS/Android)",
+          "description": "Casual games, touch controls, monetización F2P",
+          "nextStepId": "step-game-monetization"
+        },
+        {
+          "id": "opt-game-pc",
+          "label": "PC (Steam/Epic)",
+          "description": "Indie games, controles complejos",
+          "nextStepId": "step-game-monetization"
+        },
+        {
+          "id": "opt-game-console",
+          "label": "Consolas (PlayStation/Xbox/Switch)",
+          "description": "Certificaciones, publisher",
+          "nextStepId": "step-game-monetization"
+        }
+      ]
+    },
+    "step-game-monetization": {
+      "id": "step-game-monetization",
+      "type": "branch",
+      "question": "¿Cuál es tu modelo de monetización?",
+      "description": "Estrategia para generar ingresos",
+      "chapter": 1,
+      "options": [
+        {
+          "id": "opt-game-premium",
+          "label": "Premium (compra única)",
+          "description": "Pago upfront, sin IAPs",
+          "nextStepId": "step-game-multiplayer"
+        },
+        {
+          "id": "opt-game-f2p",
+          "label": "Free-to-play (IAPs, ads)",
+          "description": "Gratis + monetización interna",
+          "nextStepId": "step-game-multiplayer"
+        }
+      ]
+    },
+    "step-batch-frequency": {
+      "id": "step-batch-frequency",
+      "type": "branch",
+      "question": "¿Con qué frecuencia se ejecuta el procesamiento?",
+      "description": "Periodicidad de ejecución de los jobs",
+      "chapter": 2,
+      "options": [
+        {
+          "id": "opt-batch-realtime",
+          "label": "Near real-time (cada minuto/hora)",
+          "description": "Streaming-like, latencia baja",
+          "nextStepId": "step-batch-volume"
+        },
+        {
+          "id": "opt-batch-daily",
+          "label": "Diario/Nocturno",
+          "description": "Procesamiento nocturno típico",
+          "nextStepId": "step-batch-volume"
+        },
+        {
+          "id": "opt-batch-periodic",
+          "label": "Semanal/Mensual",
+          "description": "Reportes periódicos",
+          "nextStepId": "step-batch-volume"
+        }
+      ]
+    },
+    "step-batch-volume": {
+      "id": "step-batch-volume",
+      "type": "branch",
+      "question": "¿Qué volumen de datos procesarás?",
+      "description": "Escala de procesamiento de datos",
+      "chapter": 2,
+      "options": [
+        {
+          "id": "opt-batch-small",
+          "label": "GB (gigabytes - miles de registros)",
+          "description": "Scripts simples, DB tradicional",
+          "nextStepId": "step-system-criticality"
+        },
+        {
+          "id": "opt-batch-medium",
+          "label": "TB (terabytes - millones de registros)",
+          "description": "Optimización, columnar storage",
+          "nextStepId": "step-system-criticality"
+        },
+        {
+          "id": "opt-batch-large",
+          "label": "PB (petabytes - big data)",
+          "description": "Spark/Hadoop, clusters distribuidos",
+          "nextStepId": "step-system-criticality"
+        }
+      ]
+    },
+    "step-iot-device-count": {
+      "id": "step-iot-device-count",
+      "type": "branch",
+      "question": "¿Cuántos dispositivos IoT gestionarás?",
+      "description": "Escala de dispositivos conectados",
+      "chapter": 6,
+      "options": [
+        {
+          "id": "opt-iot-few",
+          "label": "Decenas (10-100 dispositivos)",
+          "description": "Proyecto piloto",
+          "nextStepId": "step-iot-connectivity"
+        },
+        {
+          "id": "opt-iot-hundreds",
+          "label": "Cientos (100-1000 dispositivos)",
+          "description": "Producción inicial",
+          "nextStepId": "step-iot-connectivity"
+        },
+        {
+          "id": "opt-iot-thousands",
+          "label": "Miles+ (>1000 dispositivos)",
+          "description": "Escala enterprise",
+          "nextStepId": "step-iot-connectivity"
+        }
+      ]
+    },
+    "step-iot-connectivity": {
+      "id": "step-iot-connectivity",
+      "type": "branch",
+      "question": "¿Qué tipo de conectividad tienen tus dispositivos?",
+      "description": "Conectividad de red de los dispositivos IoT",
+      "chapter": 6,
+      "options": [
+        {
+          "id": "opt-iot-always-on",
+          "label": "Siempre conectado (WiFi/Ethernet)",
+          "description": "Conexión permanente, sync real-time",
+          "nextStepId": "step-system-criticality"
+        },
+        {
+          "id": "opt-iot-intermittent",
+          "label": "Conectividad intermitente (celular/LoRa)",
+          "description": "Desconexiones frecuentes, buffer local",
+          "nextStepId": "step-system-criticality"
+        },
+        {
+          "id": "opt-iot-offline-first",
+          "label": "Principalmente offline (sync ocasional)",
+          "description": "Autonomía crítica, sync batch",
+          "nextStepId": "step-system-criticality"
+        }
+      ]
+    },
+    "step-sos-systems-count": {
+      "id": "step-sos-systems-count",
+      "type": "branch",
+      "question": "¿Cuántos sistemas independientes integrarás?",
+      "description": "Número de sistemas en el ecosistema",
+      "chapter": 6,
+      "options": [
+        {
+          "id": "opt-sos-few",
+          "label": "2-3 sistemas",
+          "description": "Integración punto a punto",
+          "nextStepId": "step-sos-governance"
+        },
+        {
+          "id": "opt-sos-several",
+          "label": "4-10 sistemas",
+          "description": "Hub central o ESB",
+          "nextStepId": "step-sos-governance"
+        },
+        {
+          "id": "opt-sos-many",
+          "label": "10+ sistemas",
+          "description": "Arquitectura enterprise",
+          "nextStepId": "step-sos-governance"
+        }
+      ]
+    },
+    "step-sos-governance": {
+      "id": "step-sos-governance",
+      "type": "branch",
+      "question": "¿Cómo está distribuida la gobernanza?",
+      "description": "Modelo de ownership y toma de decisiones",
+      "chapter": 6,
+      "options": [
+        {
+          "id": "opt-sos-centralized",
+          "label": "Centralizada (un equipo/área decide)",
+          "description": "Control arquitectónico fuerte",
+          "nextStepId": "step-system-criticality"
+        },
+        {
+          "id": "opt-sos-distributed",
+          "label": "Distribuida (equipos autónomos)",
+          "description": "Autonomía alta, contratos de API",
+          "nextStepId": "step-system-criticality"
+        }
+      ]
+    },
+    "step-game-multiplayer": {
+      "id": "step-game-multiplayer",
+      "type": "branch",
+      "question": "¿Tu juego tendrá componente multijugador?",
+      "description": "Modo multijugador online o solo single-player",
+      "chapter": 6,
+      "options": [
+        {
+          "id": "opt-game-single",
+          "label": "Solo single-player",
+          "description": "Narrativa, sin servers",
+          "nextStepId": "step-team-size-granular"
+        },
+        {
+          "id": "opt-game-multi",
+          "label": "Multijugador online",
+          "description": "Matchmaking, servers, anti-cheat",
+          "nextStepId": "step-team-size-granular"
+        }
+      ]
+    },
+    "step-system-criticality": {
+      "id": "step-system-criticality",
+      "type": "branch",
+      "question": "¿Cuál es la criticidad de este sistema?",
+      "description": "Nivel de impacto si el sistema falla",
+      "chapter": 1,
+      "options": [
+        {
+          "id": "opt-crit-high",
+          "label": "Alta (impacto crítico en negocio/operación)",
+          "description": "Fallas causan pérdidas significativas",
+          "nextStepId": "step-team-size-granular"
+        },
+        {
+          "id": "opt-crit-medium",
+          "label": "Media (impacto moderado)",
+          "description": "Fallas son inconvenientes pero manejables",
+          "nextStepId": "step-team-size-granular"
+        },
+        {
+          "id": "opt-crit-low",
+          "label": "Baja (impacto mínimo)",
+          "description": "Fallas no afectan operación crítica",
+          "nextStepId": "step-team-size-granular"
+        }
+      ]
+    },
+    "step-web-requirements": {
+      "id": "step-web-requirements",
+      "type": "branch",
+      "question": "¿Qué tan estables son los requisitos de tu producto web?",
+      "description": "Volatilidad de features y evolución del producto",
+      "chapter": 4,
+      "options": [
+        {
+          "id": "opt-web-req-stable",
+          "label": "Estables (producto maduro, cambios incrementales)",
+          "description": "Features bien definidas, evolución predecible",
+          "nextStepId": "step-web-startup-client"
+        },
+        {
+          "id": "opt-web-req-volatile",
+          "label": "Volátiles (experimentación, pivotes frecuentes)",
+          "description": "Features cambian basado en feedback y métricas",
+          "nextStepId": "step-web-startup-client"
         }
       ]
     }
