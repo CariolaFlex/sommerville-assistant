@@ -1,0 +1,623 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "title": "Árbol de Decisiones - Ingeniería de Software Sommerville",
+    "description": "Sistema de navegación inteligente basado en capítulos 1-6 de Sommerville",
+    "chapters_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "last_updated": "2026-02-15"
+  },
+  "rootStepId": "step-root",
+  "totalPaths": 13,
+  "steps": {
+    "step-root": {
+      "id": "step-root",
+      "type": "root",
+      "question": "¿Qué tipo de sistema de software vas a desarrollar?",
+      "description": "Selecciona el tipo de sistema que mejor describa tu proyecto",
+      "chapter": 1,
+      "options": [
+        {
+          "id": "opt-critical",
+          "label": "Sistema Crítico de Seguridad",
+          "description": "Fallas pueden causar daño físico o económico grave",
+          "examples": [
+            "Control de frenos ABS",
+            "Marcapasos cardíaco",
+            "Sistema de vuelo de avión",
+            "Control nuclear"
+          ],
+          "icon": "🔒",
+          "nextStepId": "step-critical-requirements",
+          "characteristics": {
+            "criticidad": "ALTA",
+            "riesgo": "Muy alto",
+            "regulaciones": true,
+            "hardware": "Embebido o especializado"
+          },
+          "whenToChoose": [
+            "Vidas humanas dependen del sistema",
+            "Regulaciones estrictas (FDA, aviación)",
+            "Hardware embebido",
+            "Difícil/imposible actualizar después"
+          ]
+        },
+        {
+          "id": "opt-web-saas",
+          "label": "Sistema Web / SaaS",
+          "description": "Aplicación web con múltiples plataformas y evolución rápida",
+          "examples": [
+            "Redes sociales (Facebook, Twitter)",
+            "E-commerce (Amazon, MercadoLibre)",
+            "SaaS (Salesforce, Slack, Notion)"
+          ],
+          "icon": "🌐",
+          "nextStepId": "step-web-context",
+          "characteristics": {
+            "criticidad": "BAJA-MEDIA",
+            "escalabilidad": true,
+            "cloudNative": true,
+            "multiPlataforma": true
+          },
+          "whenToChoose": [
+            "Acceso web/móvil",
+            "Usuarios remotos",
+            "Cambios frecuentes de mercado",
+            "Componentes reutilizables"
+          ]
+        },
+        {
+          "id": "opt-transactional",
+          "label": "Sistema Transaccional",
+          "description": "Base de datos central con muchos usuarios concurrentes",
+          "examples": [
+            "Sistema bancario",
+            "Sistema de reservaciones",
+            "E-commerce grande",
+            "ERP corporativo"
+          ],
+          "icon": "💳",
+          "nextStepId": "step-transactional-requirements",
+          "characteristics": {
+            "criticidad": "MEDIA-ALTA",
+            "concurrencia": true,
+            "acid": true,
+            "integrityDatos": "Crítica"
+          },
+          "whenToChoose": [
+            "Transacciones ACID",
+            "Concurrencia alta",
+            "Datos críticos de negocio",
+            "Múltiples usuarios simultáneos"
+          ]
+        },
+        {
+          "id": "opt-personal-mobile",
+          "label": "Aplicación Personal / Móvil",
+          "description": "Un usuario, funcionalidad específica, interfaz simple",
+          "examples": [
+            "App de notas",
+            "Calculadora científica",
+            "Editor de fotos personal",
+            "App de fitness tracker"
+          ],
+          "icon": "📱",
+          "nextStepId": "step-personal-team",
+          "characteristics": {
+            "criticidad": "BAJA",
+            "usuarios": "Individual",
+            "complejidad": "Baja-Media"
+          },
+          "whenToChoose": [
+            "Uso individual",
+            "Sin backend complejo",
+            "Funcionalidad específica",
+            "Interfaz simple"
+          ]
+        },
+        {
+          "id": "opt-entertainment",
+          "label": "Entretenimiento / Juegos",
+          "description": "Gráficos intensivos, interacción tiempo real, creatividad prioritaria",
+          "examples": [
+            "Videojuegos",
+            "Simuladores VR",
+            "Apps creativas"
+          ],
+          "icon": "🎮",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-009",
+          "characteristics": {
+            "criticidad": "BAJA",
+            "performance": "Alta",
+            "creatividad": "Prioritaria"
+          },
+          "whenToChoose": [
+            "Experiencia de usuario prioritaria",
+            "Rendimiento visual crítico",
+            "Exploración creativa"
+          ]
+        },
+        {
+          "id": "opt-batch",
+          "label": "Procesamiento por Lotes",
+          "description": "Grandes volúmenes, sin interacción de usuario, eficiencia crítica",
+          "examples": [
+            "Nómina mensual",
+            "Facturación masiva",
+            "Reportes ejecutivos",
+            "Procesamiento de cheques"
+          ],
+          "icon": "📊",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-010",
+          "characteristics": {
+            "criticidad": "MEDIA",
+            "volumen": "Alto",
+            "periodicidad": "Programada"
+          },
+          "whenToChoose": [
+            "Periodicidad (diario/mensual)",
+            "Sin tiempo real",
+            "Grandes volúmenes de datos"
+          ]
+        },
+        {
+          "id": "opt-iot-data",
+          "label": "Recolección de Datos / IoT",
+          "description": "Sensores ambientales, confiabilidad 24/7, condiciones adversas",
+          "examples": [
+            "Estación meteorológica",
+            "Sensores IoT industriales",
+            "Monitoreo ambiental"
+          ],
+          "icon": "🌡️",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-011",
+          "characteristics": {
+            "criticidad": "ALTA (confiabilidad)",
+            "autonomia": true,
+            "hardware": "Sensores/Edge devices"
+          },
+          "whenToChoose": [
+            "Datos de sensores",
+            "Entorno hostil",
+            "Autonomía necesaria"
+          ]
+        },
+        {
+          "id": "opt-system-of-systems",
+          "label": "Sistema de Sistemas",
+          "description": "Múltiples sistemas, integración compleja, interfaces críticas",
+          "examples": [
+            "Control tráfico aéreo",
+            "Sistema de defensa",
+            "Smart city"
+          ],
+          "icon": "🏛️",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-012",
+          "characteristics": {
+            "criticidad": "ALTA",
+            "complejidad": "Muy alta",
+            "integracion": "Crítica"
+          },
+          "whenToChoose": [
+            "Integración de muchos sistemas independientes",
+            "Gestión de complejidad alta",
+            "Múltiples stakeholders"
+          ]
+        }
+      ]
+    },
+    "step-critical-requirements": {
+      "id": "step-critical-requirements",
+      "type": "branch",
+      "question": "¿Cuál es la volatilidad de los requisitos?",
+      "description": "¿Qué tan claros y estables son los requisitos del sistema crítico?",
+      "chapter": 4,
+      "options": [
+        {
+          "id": "opt-critical-stable",
+          "label": "Estables",
+          "description": "Cliente sabe QUÉ quiere, especificación completa es posible",
+          "nextStepId": "step-critical-stable-team"
+        },
+        {
+          "id": "opt-critical-volatile",
+          "label": "Volátiles",
+          "description": "Requisitos cambian frecuentemente o hay incertidumbre",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-003",
+          "warning": "⚠️ Combinación crítico + volátil es riesgosa. Se recomienda Modelo Espiral con gestión exhaustiva de riesgos."
+        }
+      ]
+    },
+    "step-critical-stable-team": {
+      "id": "step-critical-stable-team",
+      "type": "branch",
+      "question": "¿Cuál es el tamaño del equipo?",
+      "description": "Define el tamaño del equipo de desarrollo",
+      "chapter": 2,
+      "options": [
+        {
+          "id": "opt-critical-large",
+          "label": "Grande (>20 personas)",
+          "description": "Equipo distribuido o grande",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-001"
+        },
+        {
+          "id": "opt-critical-small",
+          "label": "Pequeño (<10 personas)",
+          "description": "Equipo pequeño co-localizado",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-002"
+        }
+      ]
+    },
+    "step-web-context": {
+      "id": "step-web-context",
+      "type": "branch",
+      "question": "¿En qué contexto se desarrolla?",
+      "description": "Define el contexto de desarrollo del sistema web",
+      "chapter": 1,
+      "options": [
+        {
+          "id": "opt-web-startup",
+          "label": "Startup / Producto Nuevo",
+          "description": "Incertidumbre alta, necesidad de pivotear rápido",
+          "nextStepId": "step-web-startup-client"
+        },
+        {
+          "id": "opt-web-scaling",
+          "label": "Escalando / Crecimiento",
+          "description": "Producto establecido que necesita crecer",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-007"
+        }
+      ]
+    },
+    "step-web-startup-client": {
+      "id": "step-web-startup-client",
+      "type": "branch",
+      "question": "¿El cliente/usuario está disponible?",
+      "description": "¿Puede intervenir activamente en el desarrollo?",
+      "chapter": 3,
+      "options": [
+        {
+          "id": "opt-web-client-available",
+          "label": "Disponible",
+          "description": "Cliente puede intervenir activamente",
+          "nextStepId": "step-web-startup-team"
+        },
+        {
+          "id": "opt-web-client-not-available",
+          "label": "No Disponible",
+          "description": "Solo disponible al inicio y validación final",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-013",
+          "warning": "⚠️ Sin cliente disponible en startup es riesgoso. Considera validación frecuente con early adopters."
+        }
+      ]
+    },
+    "step-web-startup-team": {
+      "id": "step-web-startup-team",
+      "type": "branch",
+      "question": "¿Cuál es el tamaño del equipo?",
+      "description": "Define el tamaño del equipo de desarrollo",
+      "chapter": 3,
+      "options": [
+        {
+          "id": "opt-web-small",
+          "label": "Pequeño (<10 personas)",
+          "description": "Equipo ágil y flexible",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-006"
+        },
+        {
+          "id": "opt-web-medium",
+          "label": "Mediano (10-20 personas)",
+          "description": "Equipo que requiere coordinación",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-007"
+        }
+      ]
+    },
+    "step-transactional-requirements": {
+      "id": "step-transactional-requirements",
+      "type": "branch",
+      "question": "¿Cuál es la volatilidad de los requisitos?",
+      "description": "¿Qué tan estables son los requisitos del negocio?",
+      "chapter": 4,
+      "options": [
+        {
+          "id": "opt-trans-stable",
+          "label": "Estables / Moderadamente estables",
+          "description": "Procesos de negocio bien definidos",
+          "nextStepId": "step-transactional-stable-size"
+        },
+        {
+          "id": "opt-trans-volatile",
+          "label": "Volátiles",
+          "description": "Negocio en crecimiento o cambio",
+          "nextStepId": "step-transactional-volatile-client"
+        }
+      ]
+    },
+    "step-transactional-stable-size": {
+      "id": "step-transactional-stable-size",
+      "type": "branch",
+      "question": "¿Cuál es el tamaño del sistema?",
+      "description": "Define la escala del sistema transaccional",
+      "chapter": 2,
+      "options": [
+        {
+          "id": "opt-trans-large",
+          "label": "Grande / Corporativo",
+          "description": "Sistema empresarial grande (>20 desarrolladores)",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-004"
+        },
+        {
+          "id": "opt-trans-medium",
+          "label": "Mediano",
+          "description": "Sistema mediano (10-20 desarrolladores)",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-005"
+        }
+      ]
+    },
+    "step-transactional-volatile-client": {
+      "id": "step-transactional-volatile-client",
+      "type": "branch",
+      "question": "¿El cliente está disponible?",
+      "description": "¿Puede el cliente participar activamente?",
+      "chapter": 3,
+      "options": [
+        {
+          "id": "opt-trans-vol-available",
+          "label": "Disponible",
+          "description": "Cliente puede intervenir activamente",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-005"
+        },
+        {
+          "id": "opt-trans-vol-not-available",
+          "label": "No Disponible",
+          "description": "Disponibilidad limitada",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-004"
+        }
+      ]
+    },
+    "step-personal-team": {
+      "id": "step-personal-team",
+      "type": "branch",
+      "question": "¿Cuál es el tamaño del equipo?",
+      "description": "Define el tamaño del equipo de desarrollo",
+      "chapter": 3,
+      "options": [
+        {
+          "id": "opt-personal-tiny",
+          "label": "Muy pequeño (1-3 personas)",
+          "description": "Individual o equipo diminuto",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-008"
+        },
+        {
+          "id": "opt-personal-small",
+          "label": "Pequeño (4-10 personas)",
+          "description": "Equipo pequeño con backend",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-006"
+        }
+      ]
+    }
+  },
+  "pathsIndex": [
+    {
+      "pathId": "path-001",
+      "route": [
+        "opt-critical",
+        "opt-critical-stable",
+        "opt-critical-large"
+      ],
+      "recommendationId": "rec-001",
+      "summary": "Sistema Crítico → Estables → Grande → Cascada + RUP",
+      "tags": [
+        "critico",
+        "grande",
+        "estable",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-002",
+      "route": [
+        "opt-critical",
+        "opt-critical-stable",
+        "opt-critical-small"
+      ],
+      "recommendationId": "rec-002",
+      "summary": "Sistema Crítico → Estables → Pequeño → Cascada Adaptado",
+      "tags": [
+        "critico",
+        "pequeno",
+        "estable",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-003",
+      "route": [
+        "opt-critical",
+        "opt-critical-volatile"
+      ],
+      "recommendationId": "rec-003",
+      "summary": "Sistema Crítico → Volátiles → Modelo Espiral (CONFLICTO)",
+      "tags": [
+        "critico",
+        "volatil",
+        "riesgo",
+        "especial"
+      ]
+    },
+    {
+      "pathId": "path-004",
+      "route": [
+        "opt-transactional",
+        "opt-trans-stable",
+        "opt-trans-large"
+      ],
+      "recommendationId": "rec-004",
+      "summary": "Transaccional → Estables → Grande → Incremental + RUP",
+      "tags": [
+        "transaccional",
+        "grande",
+        "estable",
+        "hibrido"
+      ]
+    },
+    {
+      "pathId": "path-005",
+      "route": [
+        "opt-transactional",
+        "opt-trans-volatile",
+        "opt-trans-vol-available"
+      ],
+      "recommendationId": "rec-005",
+      "summary": "Transaccional → Volátiles → Cliente Disponible → Scrum",
+      "tags": [
+        "transaccional",
+        "mediano",
+        "volatil",
+        "agil"
+      ]
+    },
+    {
+      "pathId": "path-006",
+      "route": [
+        "opt-web-saas",
+        "opt-web-startup",
+        "opt-web-client-available",
+        "opt-web-small"
+      ],
+      "recommendationId": "rec-006",
+      "summary": "Web/SaaS → Startup → Cliente Disponible → Pequeño → Scrum/XP",
+      "tags": [
+        "web",
+        "startup",
+        "pequeno",
+        "agil"
+      ]
+    },
+    {
+      "pathId": "path-007",
+      "route": [
+        "opt-web-saas",
+        "opt-web-scaling"
+      ],
+      "recommendationId": "rec-007",
+      "summary": "Web/SaaS → Escalando → Scrum con múltiples equipos",
+      "tags": [
+        "web",
+        "escalamiento",
+        "mediano",
+        "agil"
+      ]
+    },
+    {
+      "pathId": "path-008",
+      "route": [
+        "opt-personal-mobile",
+        "opt-personal-tiny"
+      ],
+      "recommendationId": "rec-008",
+      "summary": "Personal/Móvil → Muy pequeño → XP simplificado",
+      "tags": [
+        "movil",
+        "personal",
+        "pequeno",
+        "agil"
+      ]
+    },
+    {
+      "pathId": "path-009",
+      "route": [
+        "opt-entertainment"
+      ],
+      "recommendationId": "rec-009",
+      "summary": "Entretenimiento → Incremental + Prototipos",
+      "tags": [
+        "juegos",
+        "entretenimiento",
+        "creativo",
+        "agil"
+      ]
+    },
+    {
+      "pathId": "path-010",
+      "route": [
+        "opt-batch"
+      ],
+      "recommendationId": "rec-010",
+      "summary": "Procesamiento Lotes → Cascada/Incremental",
+      "tags": [
+        "batch",
+        "eficiencia",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-011",
+      "route": [
+        "opt-iot-data"
+      ],
+      "recommendationId": "rec-011",
+      "summary": "IoT/Recolección Datos → Cascada → Cliente-Servidor",
+      "tags": [
+        "iot",
+        "sensores",
+        "confiabilidad",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-012",
+      "route": [
+        "opt-system-of-systems"
+      ],
+      "recommendationId": "rec-012",
+      "summary": "Sistema de Sistemas → RUP + Interfaces",
+      "tags": [
+        "complejo",
+        "integracion",
+        "grande",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-013",
+      "route": [
+        "opt-web-saas",
+        "opt-web-startup",
+        "opt-web-client-not-available"
+      ],
+      "recommendationId": "rec-013",
+      "summary": "Web/SaaS → Startup → Sin Cliente → Incremental con validación",
+      "tags": [
+        "web",
+        "startup",
+        "riesgo",
+        "agil"
+      ]
+    }
+  ]
+}

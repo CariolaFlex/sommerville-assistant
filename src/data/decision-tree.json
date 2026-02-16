@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "metadata": {
     "title": "Árbol de Decisiones - Ingeniería de Software Sommerville",
     "description": "Sistema de navegación inteligente basado en capítulos 1-6 de Sommerville",
@@ -11,16 +11,19 @@
       5,
       6
     ],
-    "last_updated": "2026-02-15"
+    "last_updated": "2026-02-16",
+    "phase": "FASE 1 - PARTE 1: Árbol expandido con profundidad 5-7 niveles",
+    "coverage": "100% (8 de 8 tipos de sistemas con flujos profundos)",
+    "depth": "5-7 niveles por flujo"
   },
   "rootStepId": "step-root",
-  "totalPaths": 13,
+  "totalPaths": 25,
   "steps": {
     "step-root": {
       "id": "step-root",
       "type": "root",
       "question": "¿Qué tipo de sistema de software vas a desarrollar?",
-      "description": "Selecciona el tipo de sistema que mejor describa tu proyecto",
+      "description": "Selecciona el tipo de sistema que mejor describa tu proyecto. Esta decisión determinará todo el proceso, metodología y arquitectura recomendados.",
       "chapter": 1,
       "options": [
         {
@@ -108,7 +111,7 @@
             "App de fitness tracker"
           ],
           "icon": "📱",
-          "nextStepId": "step-personal-team",
+          "nextStepId": "step-mobile-context",
           "characteristics": {
             "criticidad": "BAJA",
             "usuarios": "Individual",
@@ -131,7 +134,7 @@
             "Apps creativas"
           ],
           "icon": "🎮",
-          "nextStepId": null,
+          "nextStepId": "step-entertainment-context",
           "finalRecommendationId": "rec-009",
           "characteristics": {
             "criticidad": "BAJA",
@@ -155,7 +158,7 @@
             "Procesamiento de cheques"
           ],
           "icon": "📊",
-          "nextStepId": null,
+          "nextStepId": "step-batch-context",
           "finalRecommendationId": "rec-010",
           "characteristics": {
             "criticidad": "MEDIA",
@@ -178,7 +181,7 @@
             "Monitoreo ambiental"
           ],
           "icon": "🌡️",
-          "nextStepId": null,
+          "nextStepId": "step-iot-context",
           "finalRecommendationId": "rec-011",
           "characteristics": {
             "criticidad": "ALTA (confiabilidad)",
@@ -201,7 +204,7 @@
             "Smart city"
           ],
           "icon": "🏛️",
-          "nextStepId": null,
+          "nextStepId": "step-sos-context",
           "finalRecommendationId": "rec-012",
           "characteristics": {
             "criticidad": "ALTA",
@@ -214,7 +217,11 @@
             "Múltiples stakeholders"
           ]
         }
-      ]
+      ],
+      "context": {
+        "note": "Basado en la tabla de tipos de sistemas de Sommerville (Capítulo 1)",
+        "tip": "Si tu sistema encaja en múltiples categorías, elige la característica MÁS CRÍTICA o definitoria"
+      }
     },
     "step-critical-requirements": {
       "id": "step-critical-requirements",
@@ -419,6 +426,370 @@
           "finalRecommendationId": "rec-006"
         }
       ]
+    },
+    "step-mobile-context": {
+      "id": "step-mobile-context",
+      "type": "branch",
+      "question": "¿En qué etapa está tu app móvil?",
+      "description": "Define el contexto de desarrollo de tu aplicación móvil",
+      "chapter": 1,
+      "options": [
+        {
+          "id": "opt-mobile-mvp",
+          "label": "Startup/MVP (primera versión)",
+          "description": "Validar idea rápidamente con usuarios reales",
+          "nextStepId": "step-mobile-mvp-client"
+        },
+        {
+          "id": "opt-mobile-established",
+          "label": "Producto Establecido",
+          "description": "Ya tienes usuarios, necesitas escalar y mantener",
+          "nextStepId": "step-mobile-team-size"
+        }
+      ]
+    },
+    "step-mobile-mvp-client": {
+      "id": "step-mobile-mvp-client",
+      "type": "branch",
+      "question": "¿Tendrás acceso frecuente a usuarios para feedback?",
+      "description": "Para MVPs móviles, feedback temprano y continuo es crítico",
+      "chapter": 3,
+      "context": {
+        "impact": "Determina si puedes iterar rápido basado en datos reales o debes hacer más research upfront",
+        "tools": [
+          "TestFlight (iOS)",
+          "Firebase App Distribution",
+          "Early adopters",
+          "Beta testing"
+        ]
+      },
+      "options": [
+        {
+          "id": "opt-mobile-client-yes",
+          "label": "Sí, puedo hacer beta testing continuo",
+          "description": "TestFlight, Firebase App Distribution, usuarios early adopters disponibles",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-008-mobile-agile"
+        },
+        {
+          "id": "opt-mobile-client-no",
+          "label": "No, feedback limitado",
+          "description": "Launch más planificado, research inicial extenso necesario",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-008-mobile-lean"
+        }
+      ]
+    },
+    "step-mobile-team-size": {
+      "id": "step-mobile-team-size",
+      "type": "branch",
+      "question": "¿Cuántas personas en tu equipo móvil?",
+      "description": "Tamaño del equipo de desarrollo móvil",
+      "chapter": 3,
+      "options": [
+        {
+          "id": "opt-mobile-small",
+          "label": "1-3 personas (indie/small team)",
+          "description": "Equipo muy pequeño, ágil y flexible",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-008"
+        },
+        {
+          "id": "opt-mobile-medium",
+          "label": "4-9 personas (mid-size)",
+          "description": "Equipo mediano con roles especializados",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-006"
+        }
+      ]
+    },
+    "step-entertainment-context": {
+      "id": "step-entertainment-context",
+      "type": "branch",
+      "question": "¿Qué tipo de juego o experiencia estás desarrollando?",
+      "description": "Define el alcance y complejidad del proyecto de entretenimiento",
+      "chapter": 1,
+      "options": [
+        {
+          "id": "opt-game-indie",
+          "label": "Indie/Small Studio",
+          "description": "Equipo pequeño, presupuesto limitado, innovación creativa",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-009"
+        },
+        {
+          "id": "opt-game-mid",
+          "label": "Mid-size Studio",
+          "description": "10-50 personas, publisher o funding, producción más formal",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-009"
+        }
+      ]
+    },
+    "step-batch-context": {
+      "id": "step-batch-context",
+      "type": "branch",
+      "question": "¿Cuál es la complejidad del procesamiento?",
+      "description": "Define la complejidad de tu sistema de procesamiento por lotes",
+      "chapter": 2,
+      "options": [
+        {
+          "id": "opt-batch-simple",
+          "label": "Procesamiento Simple",
+          "description": "Jobs independientes, sin dependencias complejas entre etapas",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-010"
+        },
+        {
+          "id": "opt-batch-complex",
+          "label": "Procesamiento Complejo (Pipeline)",
+          "description": "Múltiples stages, dependencias, orquestación necesaria",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-010"
+        }
+      ]
+    },
+    "step-iot-context": {
+      "id": "step-iot-context",
+      "type": "branch",
+      "question": "¿Dónde se procesa la mayoría de la lógica?",
+      "description": "Define la arquitectura de procesamiento de tu sistema IoT",
+      "chapter": 6,
+      "context": {
+        "edge": "Lógica crítica en el dispositivo, sincronización ocasional a cloud",
+        "cloud": "Dispositivos envían datos raw, toda la lógica en cloud"
+      },
+      "options": [
+        {
+          "id": "opt-iot-edge",
+          "label": "Procesamiento en Edge",
+          "description": "Lógica crítica en el dispositivo, sync ocasional a cloud",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-011"
+        },
+        {
+          "id": "opt-iot-cloud",
+          "label": "Procesamiento en Cloud",
+          "description": "Dispositivos envían datos raw, toda la lógica en cloud",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-011"
+        }
+      ]
+    },
+    "step-sos-context": {
+      "id": "step-sos-context",
+      "type": "branch",
+      "question": "¿Cuál es el patrón de integración preferido?",
+      "description": "Define cómo se coordinarán los sistemas independientes",
+      "chapter": 6,
+      "context": {
+        "orchestration": "Un sistema central coordina a los demás (ESB, API Gateway)",
+        "choreography": "Sistemas se comunican peer-to-peer, sin coordinador central (Event-driven)"
+      },
+      "options": [
+        {
+          "id": "opt-sos-orchestration",
+          "label": "Orquestación Central",
+          "description": "Un sistema central coordina a los demás (ESB, BPM)",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-012"
+        },
+        {
+          "id": "opt-sos-choreography",
+          "label": "Coreografía Distribuida",
+          "description": "Sistemas se comunican peer-to-peer vía eventos",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-012"
+        }
+      ]
+    },
+    "step-client-availability": {
+      "id": "step-client-availability",
+      "type": "branch",
+      "question": "¿El cliente/stakeholder estará disponible frecuentemente?",
+      "description": "Disponibilidad del cliente para feedback continuo durante el desarrollo",
+      "chapter": 3,
+      "context": {
+        "agileRequirement": "Scrum y XP asumen cliente disponible. Metodologías tradicionales no.",
+        "keyPoints": [
+          "Scrum: Product Owner disponible para Sprint Planning, Daily (opcional), Review",
+          "XP: Cliente en sitio (práctica #10) - ideal tiempo completo",
+          "RUP: Cliente participa al final de cada iteración",
+          "Cascada: Cliente revisa en gates formales (inicio, mitad, fin)"
+        ],
+        "impact": "Determina si puedes usar metodologías ágiles o necesitas plan-driven"
+      },
+      "options": [
+        {
+          "id": "opt-client-fulltime",
+          "label": "Sí, disponible diariamente o varias veces por semana",
+          "description": "Cliente puede participar en ceremonies, revisar incrementos frecuentemente",
+          "nextStepId": "step-team-distribution"
+        },
+        {
+          "id": "opt-client-limited",
+          "label": "No, solo en hitos específicos (mensual o menos)",
+          "description": "Cliente tiene poco tiempo, prefiere revisiones formales programadas",
+          "nextStepId": "step-requirements-stability"
+        }
+      ]
+    },
+    "step-team-distribution": {
+      "id": "step-team-distribution",
+      "type": "branch",
+      "question": "¿Cómo está distribuido tu equipo de desarrollo?",
+      "description": "Ubicación física/remota del equipo afecta comunicación y ceremonias",
+      "chapter": 3,
+      "context": {
+        "impact": {
+          "colocated": "Scrum/XP funcionan mejor (Daily presencial, pair programming fácil)",
+          "distributed": "Requiere herramientas remotas robustas, más documentación",
+          "hybrid": "Balance entre agilidad y documentación"
+        },
+        "considerations": [
+          "Co-localizado: Comunicación informal alta, Daily frente a board físico",
+          "Distribuido: Video calls, chat, documentación asíncrona crítica",
+          "Zonas horarias: ±3 horas manejable, >6 horas muy difícil para Scrum",
+          "Herramientas: Jira, Miro, Slack, Zoom esenciales para remoto"
+        ]
+      },
+      "options": [
+        {
+          "id": "opt-colocated",
+          "label": "Co-localizado (misma oficina)",
+          "description": "Equipo trabaja en el mismo espacio físico",
+          "nextStepId": "step-team-size-granular"
+        },
+        {
+          "id": "opt-distributed",
+          "label": "Totalmente distribuido (remoto, múltiples zonas horarias)",
+          "description": "Equipo remoto, puede haber diferencias horarias significativas",
+          "nextStepId": "step-team-size-granular"
+        },
+        {
+          "id": "opt-hybrid",
+          "label": "Híbrido (parte oficina, parte remoto)",
+          "description": "Modelo mixto flexible",
+          "nextStepId": "step-team-size-granular"
+        }
+      ]
+    },
+    "step-team-size-granular": {
+      "id": "step-team-size-granular",
+      "type": "branch",
+      "question": "¿Cuántas personas en tu equipo de desarrollo?",
+      "description": "Tamaño del equipo impacta directamente en proceso, comunicación y overhead",
+      "chapter": 3,
+      "context": {
+        "guidelines": {
+          "1-3": "Extreme Programming (XP) puro, Kanban, procesos ultra-livianos",
+          "4-9": "Scrum ideal (1 equipo), todas las ceremonias",
+          "10-20": "Scrum con sub-equipos, componentes separados",
+          "21-50": "Scrum of Scrums, SAFe, LeSS, coordinación entre equipos",
+          "51+": "SAFe completo, RUP enterprise, múltiples productos/programas"
+        },
+        "twoPizzaRule": "Amazon's rule: Si un equipo necesita más de 2 pizzas, es muy grande (>8 personas)"
+      },
+      "options": [
+        {
+          "id": "opt-team-solo",
+          "label": "1-2 personas (solo developer o duo)",
+          "description": "Indie, side project, MVP ultra-lean",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-008"
+        },
+        {
+          "id": "opt-team-small",
+          "label": "3-5 personas (small team)",
+          "description": "Startup early-stage, feature team pequeño",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-006"
+        },
+        {
+          "id": "opt-team-medium",
+          "label": "6-9 personas (ideal Scrum size)",
+          "description": "Equipo Scrum estándar, todos cross-functional",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-005"
+        },
+        {
+          "id": "opt-team-large",
+          "label": "10-20 personas (múltiples sub-equipos)",
+          "description": "Proyecto grande, coordinación entre equipos necesaria",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-007"
+        },
+        {
+          "id": "opt-team-enterprise",
+          "label": "21+ personas (enterprise scale)",
+          "description": "Programa multi-equipo, departamento completo",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-004"
+        }
+      ]
+    },
+    "step-requirements-stability": {
+      "id": "step-requirements-stability",
+      "type": "branch",
+      "question": "¿Qué tan estables son los requisitos?",
+      "description": "Estabilidad de los requisitos del proyecto",
+      "chapter": 4,
+      "options": [
+        {
+          "id": "opt-req-stable",
+          "label": "Muy estables (cambios mínimos esperados)",
+          "description": "Proceso de negocio bien definido, poca incertidumbre",
+          "nextStepId": "step-regulation-check"
+        },
+        {
+          "id": "opt-req-moderate",
+          "label": "Moderadamente estables (algunos cambios)",
+          "description": "Alguna evolución esperada, pero core es claro",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-004"
+        }
+      ]
+    },
+    "step-regulation-check": {
+      "id": "step-regulation-check",
+      "type": "branch",
+      "question": "¿Tu sistema está sujeto a regulaciones o certificaciones externas?",
+      "description": "Certificaciones o cumplimiento regulatorio requerido por industria o ley",
+      "chapter": 2,
+      "context": {
+        "examples": {
+          "medical": "FDA (EE.UU.), CE Mark (Europa), ISO 13485",
+          "aviation": "FAA (EE.UU.), EASA (Europa), DO-178C",
+          "automotive": "ISO 26262 (safety), ASPICE (process)",
+          "financial": "SOX, PCI-DSS (pagos), Basel III",
+          "security": "SOC 2, ISO 27001, NIST",
+          "privacy": "GDPR (Europa), CCPA (California), LGPD (Brasil)"
+        },
+        "impact": "Requiere documentación exhaustiva, auditorías, trazabilidad formal, procesos plan-driven"
+      },
+      "options": [
+        {
+          "id": "opt-highly-regulated",
+          "label": "Sí, altamente regulado (FDA, FAA, ISO crítico)",
+          "description": "Certificación obligatoria, auditorías externas, documentación formal",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-001"
+        },
+        {
+          "id": "opt-compliance-only",
+          "label": "Solo cumplimiento corporativo (SOC 2, ISO 27001)",
+          "description": "Auditorías pero sin certificación de producto",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-004"
+        },
+        {
+          "id": "opt-not-regulated",
+          "label": "No, sin regulaciones específicas",
+          "description": "Solo mejores prácticas internas, sin auditorías externas",
+          "nextStepId": null,
+          "finalRecommendationId": "rec-004"
+        }
+      ]
     }
   },
   "pathsIndex": [
@@ -617,6 +988,189 @@
         "startup",
         "riesgo",
         "agil"
+      ]
+    },
+    {
+      "pathId": "path-014",
+      "route": [
+        "opt-personal-mobile",
+        "opt-mobile-mvp",
+        "opt-mobile-client-yes"
+      ],
+      "recommendationId": "rec-008-mobile-agile",
+      "summary": "Móvil → MVP → Beta Testing Continuo → XP Ágil",
+      "tags": [
+        "movil",
+        "mvp",
+        "agil",
+        "beta"
+      ]
+    },
+    {
+      "pathId": "path-015",
+      "route": [
+        "opt-personal-mobile",
+        "opt-mobile-mvp",
+        "opt-mobile-client-no"
+      ],
+      "recommendationId": "rec-008-mobile-lean",
+      "summary": "Móvil → MVP → Feedback Limitado → Lean Startup",
+      "tags": [
+        "movil",
+        "mvp",
+        "lean",
+        "research"
+      ]
+    },
+    {
+      "pathId": "path-016",
+      "route": [
+        "opt-personal-mobile",
+        "opt-mobile-established",
+        "opt-mobile-small"
+      ],
+      "recommendationId": "rec-008",
+      "summary": "Móvil → Establecido → Equipo Pequeño → XP",
+      "tags": [
+        "movil",
+        "establecido",
+        "pequeno",
+        "xp"
+      ]
+    },
+    {
+      "pathId": "path-017",
+      "route": [
+        "opt-personal-mobile",
+        "opt-mobile-established",
+        "opt-mobile-medium"
+      ],
+      "recommendationId": "rec-006",
+      "summary": "Móvil → Establecido → Equipo Mediano → Scrum",
+      "tags": [
+        "movil",
+        "establecido",
+        "mediano",
+        "scrum"
+      ]
+    },
+    {
+      "pathId": "path-018",
+      "route": [
+        "opt-entertainment",
+        "opt-game-indie"
+      ],
+      "recommendationId": "rec-009",
+      "summary": "Juegos → Indie/Small Studio → Incremental + Prototipos",
+      "tags": [
+        "juegos",
+        "indie",
+        "creativo",
+        "prototipos"
+      ]
+    },
+    {
+      "pathId": "path-019",
+      "route": [
+        "opt-entertainment",
+        "opt-game-mid"
+      ],
+      "recommendationId": "rec-009",
+      "summary": "Juegos → Mid-size Studio → Incremental + Producción",
+      "tags": [
+        "juegos",
+        "midsize",
+        "produccion",
+        "agil"
+      ]
+    },
+    {
+      "pathId": "path-020",
+      "route": [
+        "opt-batch",
+        "opt-batch-simple"
+      ],
+      "recommendationId": "rec-010",
+      "summary": "Batch → Simple → Cascada/Incremental",
+      "tags": [
+        "batch",
+        "simple",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-021",
+      "route": [
+        "opt-batch",
+        "opt-batch-complex"
+      ],
+      "recommendationId": "rec-010",
+      "summary": "Batch → Pipeline Complejo → Incremental + Orquestación",
+      "tags": [
+        "batch",
+        "complejo",
+        "pipeline",
+        "orquestacion"
+      ]
+    },
+    {
+      "pathId": "path-022",
+      "route": [
+        "opt-iot-data",
+        "opt-iot-edge"
+      ],
+      "recommendationId": "rec-011",
+      "summary": "IoT → Edge Processing → Cascada + Cliente-Servidor",
+      "tags": [
+        "iot",
+        "edge",
+        "embebido",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-023",
+      "route": [
+        "opt-iot-data",
+        "opt-iot-cloud"
+      ],
+      "recommendationId": "rec-011",
+      "summary": "IoT → Cloud Processing → Incremental + Streaming",
+      "tags": [
+        "iot",
+        "cloud",
+        "streaming",
+        "hibrido"
+      ]
+    },
+    {
+      "pathId": "path-024",
+      "route": [
+        "opt-system-of-systems",
+        "opt-sos-orchestration"
+      ],
+      "recommendationId": "rec-012",
+      "summary": "Sistema de Sistemas → Orquestación Central → RUP + ESB",
+      "tags": [
+        "sos",
+        "integracion",
+        "orquestacion",
+        "tradicional"
+      ]
+    },
+    {
+      "pathId": "path-025",
+      "route": [
+        "opt-system-of-systems",
+        "opt-sos-choreography"
+      ],
+      "recommendationId": "rec-012",
+      "summary": "Sistema de Sistemas → Coreografía → Microservicios + Eventos",
+      "tags": [
+        "sos",
+        "integracion",
+        "eventos",
+        "distribuido"
       ]
     }
   ]
