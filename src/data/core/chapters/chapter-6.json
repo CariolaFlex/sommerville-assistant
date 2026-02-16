@@ -1,0 +1,17 @@
+{
+  "id": "chapter-6",
+  "number": 6,
+  "title": "Diseño y Arquitectura de Software",
+  "description": "Placeholder - A completar en FASE 1",
+  "sections": [],
+  "concepts": [],
+  "practices": [],
+  "examples": [],
+  "references": [],
+  "metadata": {
+    "lastUpdated": "2026-02-16",
+    "extractedBy": "Claude Code",
+    "completeness": 0,
+    "notes": "Estructura creada en FASE 0, contenido se agregará en FASE 1"
+  }
+}
