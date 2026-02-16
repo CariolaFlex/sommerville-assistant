@@ -1,0 +1,3362 @@
+[
+  {
+    "Nombre": "Proceso de software",
+    "Categoría": "Concepto fundamental",
+    "Descripción breve": "Serie de actividades relacionadas que conduce a la elaboración de un producto de software"
+  },
+  {
+    "Nombre": "Especificación del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Actividad donde se define la funcionalidad del software y las restricciones de su operación"
+  },
+  {
+    "Nombre": "Diseño e implementación del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Actividad donde se desarrolla el software para cumplir con las especificaciones"
+  },
+  {
+    "Nombre": "Validación del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Actividad donde se valida el software para asegurar que cumple lo que el cliente quiere"
+  },
+  {
+    "Nombre": "Evolución del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Actividad donde el software evoluciona para satisfacer las necesidades cambiantes del cliente"
+  },
+  {
+    "Nombre": "Subactividades",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Actividades complejas que forman parte de actividades mayores, como validación de requerimientos, diseño arquitectónico, prueba de unidad"
+  },
+  {
+    "Nombre": "Actividades de soporte al proceso",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Actividades como documentación y manejo de la configuración del software"
+  },
+  {
+    "Nombre": "Productos",
+    "Categoría": "Elemento de descripción de proceso",
+    "Descripción breve": "Resultados de una actividad del proceso, por ejemplo, modelo de arquitectura de software"
+  },
+  {
+    "Nombre": "Roles",
+    "Categoría": "Elemento de descripción de proceso",
+    "Descripción breve": "Responsabilidades de la gente que interviene en el proceso, como gerente de proyecto, gerente de configuración, programador"
+  },
+  {
+    "Nombre": "Precondiciones",
+    "Categoría": "Elemento de descripción de proceso",
+    "Descripción breve": "Declaraciones válidas antes de que se realice una actividad del proceso o se cree un producto"
+  },
+  {
+    "Nombre": "Postcondiciones",
+    "Categoría": "Elemento de descripción de proceso",
+    "Descripción breve": "Declaraciones válidas después de que se realice una actividad del proceso o se cree un producto"
+  },
+  {
+    "Nombre": "Procesos dirigidos por un plan",
+    "Categoría": "Paradigma de proceso",
+    "Descripción breve": "Procesos donde todas las actividades se planean por anticipado y el avance se mide contra dicho plan"
+  },
+  {
+    "Nombre": "Procesos ágiles",
+    "Categoría": "Paradigma de proceso",
+    "Descripción breve": "Procesos donde la planeación es incremental y es más fácil modificar el proceso para reflejar requerimientos cambiantes"
+  },
+  {
+    "Nombre": "Estandarización de los procesos",
+    "Categoría": "Técnica de mejora",
+    "Descripción breve": "Reducción de la diversidad en los procesos de software en una organización"
+  },
+  {
+    "Nombre": "Mejora en el proceso de software",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Conjunto de prácticas para mejorar los procesos de software en una organización"
+  },
+  {
+    "Nombre": "Modelo de proceso de software",
+    "Categoría": "Concepto fundamental",
+    "Descripción breve": "Representación simplificada de un proceso de software"
+  },
+  {
+    "Nombre": "Modelo de actividad del proceso",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que muestra las actividades y su secuencia"
+  },
+  {
+    "Nombre": "Paradigmas de proceso",
+    "Categoría": "Concepto de modelado",
+    "Descripción breve": "Modelos de proceso muy generales utilizados para explicar diferentes enfoques del desarrollo"
+  },
+  {
+    "Nombre": "Marcos del proceso (framework)",
+    "Categoría": "Concepto de modelado",
+    "Descripción breve": "Estructuras que se extienden y adaptan para crear procesos más específicos de ingeniería de software"
+  },
+  {
+    "Nombre": "Modelo en cascada (waterfall)",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Modelo que representa las actividades fundamentales como fases separadas del proceso"
+  },
+  {
+    "Nombre": "Desarrollo incremental",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Enfoque que vincula las actividades de especificación, desarrollo y validación, desarrollando el sistema en versiones"
+  },
+  {
+    "Nombre": "Ingeniería de software orientada a la reutilización",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Enfoque basado en la existencia de componentes reutilizables, enfocándose en su integración"
+  },
+  {
+    "Nombre": "Fases",
+    "Categoría": "Elemento estructural de proceso",
+    "Descripción breve": "Etapas separadas en un modelo de proceso, como especificación de requerimientos, diseño, implementación"
+  },
+  {
+    "Nombre": "Análisis y definición de requerimientos",
+    "Categoría": "Fase del modelo en cascada",
+    "Descripción breve": "Etapa donde se establecen servicios, restricciones y metas del sistema mediante consulta a usuarios"
+  },
+  {
+    "Nombre": "Diseño del sistema y del software",
+    "Categoría": "Fase del modelo en cascada",
+    "Descripción breve": "Etapa donde se asignan requerimientos estableciendo una arquitectura de sistema global"
+  },
+  {
+    "Nombre": "Implementación y prueba de unidad",
+    "Categoría": "Fase del modelo en cascada",
+    "Descripción breve": "Etapa donde el diseño se realiza como conjunto de programas y se verifica cada unidad"
+  },
+  {
+    "Nombre": "Integración y prueba de sistema",
+    "Categoría": "Fase del modelo en cascada",
+    "Descripción breve": "Etapa donde las unidades se integran y prueban como sistema completo"
+  },
+  {
+    "Nombre": "Operación y mantenimiento",
+    "Categoría": "Fase del modelo en cascada",
+    "Descripción breve": "Etapa donde el sistema se instala, pone en práctica y se corrige errores"
+  },
+  {
+    "Nombre": "Ciclo de vida del software",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Conjunto de fases por las que pasa el software desde su concepción hasta su retiro"
+  },
+  {
+    "Nombre": "Retroalimentación",
+    "Categoría": "Mecanismo de proceso",
+    "Descripción breve": "Flujo de información de una fase a otra en el proceso"
+  },
+  {
+    "Nombre": "Rehacer",
+    "Categoría": "Concepto de gestión de cambios",
+    "Descripción breve": "Trabajo ya terminado que debe volver a realizarse debido a cambios"
+  },
+  {
+    "Nombre": "Iteraciones",
+    "Categoría": "Mecanismo de proceso",
+    "Descripción breve": "Repeticiones de etapas del proceso para reflejar cambios"
+  },
+  {
+    "Nombre": "Mantenimiento de software",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Corrección de errores, mejora de implementación e incremento de servicios del sistema"
+  },
+  {
+    "Nombre": "Ingeniería de software de cuarto limpio (cleanroom)",
+    "Categoría": "Proceso formal",
+    "Descripción breve": "Proceso donde cada incremento se especifica formalmente y se transforma en implementación"
+  },
+  {
+    "Nombre": "Desarrollo de sistemas formales",
+    "Categoría": "Enfoque de proceso",
+    "Descripción breve": "Desarrollo basado en modelos matemáticos para especificación del sistema"
+  },
+  {
+    "Nombre": "Modelo matemático",
+    "Categoría": "Artefacto de proceso formal",
+    "Descripción breve": "Representación matemática de una especificación del sistema"
+  },
+  {
+    "Nombre": "Transformaciones matemáticas",
+    "Categoría": "Técnica de proceso formal",
+    "Descripción breve": "Operaciones que preservan la consistencia de un modelo matemático al convertirlo en código"
+  },
+  {
+    "Nombre": "Método B",
+    "Categoría": "Método formal",
+    "Descripción breve": "Método formal adecuado para desarrollo de sistemas con rigurosos requerimientos de seguridad"
+  },
+  {
+    "Nombre": "Caso de protección o seguridad",
+    "Categoría": "Artefacto de validación",
+    "Descripción breve": "Documento que demuestra que el sistema cumple sus requerimientos de protección o seguridad"
+  },
+  {
+    "Nombre": "Versiones (incrementos)",
+    "Categoría": "Artefacto de proceso incremental",
+    "Descripción breve": "Cada iteración del sistema que añade funcionalidad a la versión anterior"
+  },
+  {
+    "Nombre": "Retroalimentación rápida",
+    "Categoría": "Característica de proceso",
+    "Descripción breve": "Comunicación ágil entre actividades en desarrollo incremental"
+  },
+  {
+    "Nombre": "Refactorización",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Mejoramiento de la estructura y organización de un programa"
+  },
+  {
+    "Nombre": "Entrega incremental",
+    "Categoría": "Enfoque de entrega",
+    "Descripción breve": "Incrementos del sistema se entregan al cliente para uso en entorno operacional"
+  },
+  {
+    "Nombre": "Análisis de componentes",
+    "Categoría": "Actividad de reutilización",
+    "Descripción breve": "Búsqueda de componentes para implementar especificación de requerimientos"
+  },
+  {
+    "Nombre": "Modificación de requerimientos",
+    "Categoría": "Actividad de reutilización",
+    "Descripción breve": "Análisis y modificación de requerimientos usando información de componentes descubiertos"
+  },
+  {
+    "Nombre": "Diseño de sistema con reutilización",
+    "Categoría": "Actividad de reutilización",
+    "Descripción breve": "Diseño del marco conceptual del sistema considerando componentes a reutilizar"
+  },
+  {
+    "Nombre": "Desarrollo e integración",
+    "Categoría": "Actividad de reutilización",
+    "Descripción breve": "Diseño de software no disponible externamente e integración de componentes y sistemas COTS"
+  },
+  {
+    "Nombre": "Servicios Web",
+    "Categoría": "Tipo de componente reutilizable",
+    "Descripción breve": "Componentes desarrollados para atender servicios estándares disponibles para invocación remota"
+  },
+  {
+    "Nombre": "Colecciones de objetos",
+    "Categoría": "Tipo de componente reutilizable",
+    "Descripción breve": "Objetos desarrollados como paquete para integración con marco de componentes como .NET o J2EE"
+  },
+  {
+    "Nombre": "Sistemas COTS (Commercial Off-The-Shelf)",
+    "Categoría": "Tipo de componente reutilizable",
+    "Descripción breve": "Sistemas de software independientes configurables para usar en entorno particular"
+  },
+  {
+    "Nombre": "Herramientas de software",
+    "Categoría": "Concepto de soporte",
+    "Descripción breve": "Programas para apoyar actividades del proceso de ingeniería de software"
+  },
+  {
+    "Nombre": "Ingeniería de requerimientos",
+    "Categoría": "Proceso específico",
+    "Descripción breve": "Proceso de comprender y definir qué servicios se requieren del sistema e identificar restricciones"
+  },
+  {
+    "Nombre": "Documento de requerimientos",
+    "Categoría": "Artefacto de especificación",
+    "Descripción breve": "Documento que especifica los requerimientos de los interesados que cumplirá el sistema"
+  },
+  {
+    "Nombre": "Estudio de factibilidad",
+    "Categoría": "Actividad de ingeniería de requerimientos",
+    "Descripción breve": "Estimación sobre si las necesidades del usuario se cubren con tecnologías actuales"
+  },
+  {
+    "Nombre": "Obtención y análisis de requerimientos",
+    "Categoría": "Actividad de ingeniería de requerimientos",
+    "Descripción breve": "Proceso de derivar requerimientos mediante observación, discusiones, análisis de tareas"
+  },
+  {
+    "Nombre": "Especificación de requerimientos",
+    "Categoría": "Actividad de ingeniería de requerimientos",
+    "Descripción breve": "Actividad de transcribir información recopilada en documento que define conjunto de requerimientos"
+  },
+  {
+    "Nombre": "Validación de requerimientos",
+    "Categoría": "Actividad de ingeniería de requerimientos",
+    "Descripción breve": "Actividad que verifica que requerimientos sean realistas, coherentes y completos"
+  },
+  {
+    "Nombre": "Requerimientos del usuario",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Informes abstractos de requerimientos del sistema para cliente y usuario final"
+  },
+  {
+    "Nombre": "Requerimientos de sistema",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Descripción detallada de la funcionalidad a ofrecer"
+  },
+  {
+    "Nombre": "Modelos de sistemas",
+    "Categoría": "Artefacto de análisis",
+    "Descripción breve": "Representaciones que ayudan a entender el sistema a especificar"
+  },
+  {
+    "Nombre": "Prototipos",
+    "Categoría": "Artefacto de análisis",
+    "Descripción breve": "Versiones preliminares del sistema para ayudar a entender especificación"
+  },
+  {
+    "Nombre": "Casos de uso",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Modelos UML para representar requerimientos del sistema"
+  },
+  {
+    "Nombre": "Diseño de software",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Descripción de la estructura del software a implementar, modelos, estructuras de datos, interfaces"
+  },
+  {
+    "Nombre": "Backtracking (vuelta atrás)",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Proceso de retroceder a diseños anteriores para corregirlos"
+  },
+  {
+    "Nombre": "Plataforma de software",
+    "Categoría": "Concepto de entorno",
+    "Descripción breve": "Entorno donde se ejecutará el software, incluye sistema operativo, base de datos, middleware"
+  },
+  {
+    "Nombre": "Diseño arquitectónico",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Identificación de estructura global del sistema, componentes principales, relaciones y distribución"
+  },
+  {
+    "Nombre": "Diseño de interfaz",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Definición de interfaces entre componentes del sistema"
+  },
+  {
+    "Nombre": "Diseño de componentes",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Diseño de cómo funcionará cada componente del sistema"
+  },
+  {
+    "Nombre": "Diseño de base de datos",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Diseño de estructuras del sistema de datos y cómo se representarán en base de datos"
+  },
+  {
+    "Nombre": "Arquitectura del sistema",
+    "Categoría": "Salida de diseño",
+    "Descripción breve": "Estructura global identificada del sistema con sus componentes principales"
+  },
+  {
+    "Nombre": "Especificación de interfaz",
+    "Categoría": "Salida de diseño",
+    "Descripción breve": "Documento que define las interfaces entre componentes sin ambigüedades"
+  },
+  {
+    "Nombre": "Especificación de componentes",
+    "Categoría": "Salida de diseño",
+    "Descripción breve": "Descripción detallada de cómo funcionarán los componentes"
+  },
+  {
+    "Nombre": "Especificación de base de datos",
+    "Categoría": "Salida de diseño",
+    "Descripción breve": "Diseño de estructuras de datos y su representación en base de datos"
+  },
+  {
+    "Nombre": "Métodos estructurados",
+    "Categoría": "Enfoque de diseño",
+    "Descripción breve": "Enfoque donde se definen modelos gráficos que hay que desarrollar como parte del proceso de diseño"
+  },
+  {
+    "Nombre": "UML (Unified Modeling Language)",
+    "Categoría": "Notación de modelado",
+    "Descripción breve": "Lenguaje de modelado gráfico usado para elaborar representaciones de software"
+  },
+  {
+    "Nombre": "Diseño orientado a objetos",
+    "Categoría": "Paradigma de diseño",
+    "Descripción breve": "Enfoque de diseño basado en objetos y sus interacciones"
+  },
+  {
+    "Nombre": "Desarrollo dirigido por modelo (MDD)",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Enfoque donde se crean modelos de software a diferentes niveles de abstracción"
+  },
+  {
+    "Nombre": "Ingeniería dirigida por modelo",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Enfoque con énfasis en modelos arquitectónicos con separación entre modelos abstractos e implementación"
+  },
+  {
+    "Nombre": "Modelos arquitectónicos",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelos que representan la arquitectura del sistema"
+  },
+  {
+    "Nombre": "Modelos abstractos independientes de implementación",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelos que no dependen de detalles de implementación específicos"
+  },
+  {
+    "Nombre": "Modelos específicos de implementación",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelos que incluyen detalles específicos de cómo se implementará el sistema"
+  },
+  {
+    "Nombre": "Programación",
+    "Categoría": "Actividad de implementación",
+    "Descripción breve": "Actividad personal de desarrollo de código para implementar componentes"
+  },
+  {
+    "Nombre": "Código de esqueleto",
+    "Categoría": "Artefacto generado",
+    "Descripción breve": "Código generado automáticamente a partir de diseño que define e implementa interfaces"
+  },
+  {
+    "Nombre": "Depuración (debugging)",
+    "Categoría": "Actividad de desarrollo",
+    "Descripción breve": "Proceso de localizar y corregir defectos del programa"
+  },
+  {
+    "Nombre": "Prueba de defectos",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Proceso que establece la existencia de defectos en el software"
+  },
+  {
+    "Nombre": "Herramientas interactivas de depuración",
+    "Categoría": "Herramienta de soporte",
+    "Descripción breve": "Herramientas que muestran valores intermedios de variables y rastro de instrucciones ejecutadas"
+  },
+  {
+    "Nombre": "Verificación y validación (V&V)",
+    "Categoría": "Proceso de validación",
+    "Descripción breve": "Proceso para mostrar que un sistema cumple sus especificaciones y expectativas del cliente"
+  },
+  {
+    "Nombre": "Pruebas del programa",
+    "Categoría": "Técnica de validación",
+    "Descripción breve": "Principal técnica donde el sistema se ejecuta con datos de prueba simulados"
+  },
+  {
+    "Nombre": "Inspecciones",
+    "Categoría": "Técnica de validación",
+    "Descripción breve": "Proceso de comprobación que revisa productos en cada etapa del proceso"
+  },
+  {
+    "Nombre": "Revisiones",
+    "Categoría": "Técnica de validación",
+    "Descripción breve": "Proceso de comprobación que examina productos en cada etapa del proceso"
+  },
+  {
+    "Nombre": "Datos de prueba simulados",
+    "Categoría": "Artefacto de pruebas",
+    "Descripción breve": "Datos artificiales usados para ejecutar y validar el sistema"
+  },
+  {
+    "Nombre": "Prueba de componentes",
+    "Categoría": "Etapa de pruebas",
+    "Descripción breve": "Prueba donde componentes del sistema se prueban de manera independiente"
+  },
+  {
+    "Nombre": "Prueba de desarrollo",
+    "Categoría": "Etapa de pruebas",
+    "Descripción breve": "Pruebas realizadas por personas que desarrollan el sistema sobre componentes individuales"
+  },
+  {
+    "Nombre": "Pruebas del sistema",
+    "Categoría": "Etapa de pruebas",
+    "Descripción breve": "Pruebas donde componentes se integran para crear sistema completo y descubrir errores de interacción"
+  },
+  {
+    "Nombre": "Pruebas de aceptación",
+    "Categoría": "Etapa de pruebas",
+    "Descripción breve": "Etapa final de pruebas con datos del cliente antes de aceptar el sistema para uso operacional"
+  },
+  {
+    "Nombre": "Herramientas de automatización de pruebas",
+    "Categoría": "Herramienta de soporte",
+    "Descripción breve": "Herramientas como JUnit que pueden volver a correr pruebas cuando se crean nuevas versiones"
+  },
+  {
+    "Nombre": "Requerimientos funcionales",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos que describen las funciones específicas que debe realizar el sistema"
+  },
+  {
+    "Nombre": "Requerimientos no funcionales",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos sobre propiedades del sistema como rendimiento, fiabilidad, seguridad"
+  },
+  {
+    "Nombre": "Propiedades emergentes",
+    "Categoría": "Concepto de sistema",
+    "Descripción breve": "Propiedades que surgen de la interacción de componentes del sistema"
+  },
+  {
+    "Nombre": "Subsistemas",
+    "Categoría": "Elemento estructural",
+    "Descripción breve": "Agrupaciones de componentes que forman partes mayores del sistema"
+  },
+  {
+    "Nombre": "Planes de prueba",
+    "Categoría": "Artefacto de validación",
+    "Descripción breve": "Documentos que especifican cómo se probarán el sistema y sus componentes"
+  },
+  {
+    "Nombre": "Equipo independiente de examinadores",
+    "Categoría": "Rol de proceso",
+    "Descripción breve": "Equipo separado del desarrollo que realiza las pruebas según planes preformulados"
+  },
+  {
+    "Nombre": "Modelo V de desarrollo",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Modelo que vincula planes de prueba entre actividades de pruebas y desarrollo"
+  },
+  {
+    "Nombre": "Pruebas alfa",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Pruebas de aceptación donde el sistema se prueba con el cliente hasta acordar su aceptabilidad"
+  },
+  {
+    "Nombre": "Pruebas beta",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Pruebas donde el sistema se entrega a clientes potenciales que reportan problemas"
+  },
+  {
+    "Nombre": "Mantenimiento de software (como evolución)",
+    "Categoría": "Concepto de ciclo de vida",
+    "Descripción breve": "Proceso continuo donde el software cambia a lo largo de su vida según requerimientos cambiantes"
+  },
+  {
+    "Nombre": "Desarrollo de software",
+    "Categoría": "Concepto de ciclo de vida",
+    "Descripción breve": "Actividad de diseñar un sistema desde concepto inicial hasta sistema de trabajo"
+  },
+  {
+    "Nombre": "Proceso evolutivo",
+    "Categoría": "Paradigma de proceso",
+    "Descripción breve": "Proceso donde el software cambia continuamente a lo largo de su vida"
+  },
+  {
+    "Nombre": "Cambio",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Modificaciones inevitables en grandes proyectos de software debido a requerimientos y tecnologías cambiantes"
+  },
+  {
+    "Nombre": "Evitar el cambio",
+    "Categoría": "Estrategia de gestión de cambios",
+    "Descripción breve": "Enfoque donde el proceso incluye actividades que anticipan cambios posibles antes de requerir rehacer significativo"
+  },
+  {
+    "Nombre": "Tolerancia al cambio",
+    "Categoría": "Estrategia de gestión de cambios",
+    "Descripción breve": "Enfoque donde el proceso se diseña para que cambios se ajusten con costo relativamente bajo"
+  },
+  {
+    "Nombre": "Prototipos de sistema",
+    "Categoría": "Técnica de gestión de cambios",
+    "Descripción breve": "Versión del sistema desarrollada rápidamente para comprobar requerimientos y factibilidad de decisiones"
+  },
+  {
+    "Nombre": "Creación del prototipo",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Desarrollo de versión inicial de sistema para demostrar conceptos y encontrar soluciones"
+  },
+  {
+    "Nombre": "Desarrollo iterativo",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Desarrollo rápido y repetido del prototipo para controlar costos"
+  },
+  {
+    "Nombre": "Experimentación con el prototipo",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Uso del prototipo por interesados para anticipar cambios requeridos"
+  },
+  {
+    "Nombre": "Prototipos del sistema (en ingeniería de requerimientos)",
+    "Categoría": "Técnica de elicitación",
+    "Descripción breve": "Prototipos que ayudan con selección y validación de requerimientos del sistema"
+  },
+  {
+    "Nombre": "Prototipos del sistema (en diseño)",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Prototipos para buscar soluciones específicas de software y apoyar diseño de interfaces"
+  },
+  {
+    "Nombre": "Diseño de interfaces del usuario",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Proceso de diseñar interfaces gráficas con participación del usuario final"
+  },
+  {
+    "Nombre": "Prototipos desechables",
+    "Categoría": "Tipo de prototipo",
+    "Descripción breve": "Prototipos que no se usan como base del sistema final"
+  },
+  {
+    "Nombre": "Modelos en papel",
+    "Categoría": "Tipo de prototipo",
+    "Descripción breve": "Prototipos no ejecutables de interfaz de usuario efectivos para refinar diseño"
+  },
+  {
+    "Nombre": "Prototipo de Mago de Oz",
+    "Categoría": "Tipo de prototipo",
+    "Descripción breve": "Prototipo donde solo se desarrolla interfaz y persona interpreta solicitudes devolviendo respuestas"
+  },
+  {
+    "Nombre": "Versión inicial",
+    "Categoría": "Artefacto de entrega incremental",
+    "Descripción breve": "Primera entrega del sistema con funcionalidad más importante o urgente"
+  },
+  {
+    "Nombre": "Versiones intermedias",
+    "Categoría": "Artefacto de entrega incremental",
+    "Descripción breve": "Entregas sucesivas que incorporan funciones adicionales al sistema"
+  },
+  {
+    "Nombre": "Versión final",
+    "Categoría": "Artefacto de entrega incremental",
+    "Descripción breve": "Entrega completa del sistema con toda la funcionalidad requerida"
+  },
+  {
+    "Nombre": "Entrega e implementación incrementales",
+    "Categoría": "Enfoque de entrega",
+    "Descripción breve": "Software se usa en procesos operacionales reales de manera incremental"
+  },
+  {
+    "Nombre": "Procesos empresariales normales",
+    "Categoría": "Concepto de entorno",
+    "Descripción breve": "Procesos operacionales donde se implementa el software en uso real"
+  },
+  {
+    "Nombre": "Recursos comunes",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Recursos del sistema utilizados por diferentes partes del sistema"
+  },
+  {
+    "Nombre": "Sistema de reemplazo",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema nuevo que sustituye completamente a sistema antiguo"
+  },
+  {
+    "Nombre": "Modelo de adquisiciones",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Forma en que organizaciones contratan desarrollo de sistemas"
+  },
+  {
+    "Nombre": "Contrato de desarrollo",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Documento que especifica términos del desarrollo del sistema"
+  },
+  {
+    "Nombre": "Sistemas embebidos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas donde el software depende del desarrollo de hardware"
+  },
+  {
+    "Nombre": "Sistemas críticos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas donde todos los requerimientos tienen que analizarse para comprobar interacciones que comprometan seguridad"
+  },
+  {
+    "Nombre": "Modelo en espiral de Boehm",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Marco de proceso dirigido por el riesgo representado como espiral"
+  },
+  {
+    "Nombre": "Proceso de software dirigido por el riesgo",
+    "Categoría": "Enfoque de proceso",
+    "Descripción breve": "Proceso donde las decisiones se basan en identificación y gestión de riesgos"
+  },
+  {
+    "Nombre": "Ciclo en la espiral",
+    "Categoría": "Elemento del modelo en espiral",
+    "Descripción breve": "Cada vuelta de la espiral representa una fase del proceso de software"
+  },
+  {
+    "Nombre": "Establecimiento de objetivos",
+    "Categoría": "Sector del modelo en espiral",
+    "Descripción breve": "Sector donde se definen objetivos específicos para fase del proyecto"
+  },
+  {
+    "Nombre": "Valoración y reducción del riesgo",
+    "Categoría": "Sector del modelo en espiral",
+    "Descripción breve": "Sector donde se realiza análisis minucioso de riesgos y se toman acciones para reducirlos"
+  },
+  {
+    "Nombre": "Desarrollo y validación",
+    "Categoría": "Sector del modelo en espiral",
+    "Descripción breve": "Sector donde se elige modelo de desarrollo para el sistema después de evaluación del riesgo"
+  },
+  {
+    "Nombre": "Planeación",
+    "Categoría": "Sector del modelo en espiral",
+    "Descripción breve": "Sector donde el proyecto se revisa y se decide si continuar con otro ciclo"
+  },
+  {
+    "Nombre": "Riesgo",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Algo que podría salir mal en el proyecto"
+  },
+  {
+    "Nombre": "Gestión del riesgo",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Actividad de identificar, analizar y minimizar riesgos del proyecto"
+  },
+  {
+    "Nombre": "Proceso Unificado Racional (RUP)",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Modelo de proceso híbrido derivado del UML y proceso de desarrollo unificado"
+  },
+  {
+    "Nombre": "Proceso de desarrollo de software unificado",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Proceso asociado con UML para desarrollo de software"
+  },
+  {
+    "Nombre": "Perspectiva dinámica",
+    "Categoría": "Vista de proceso",
+    "Descripción breve": "Vista que muestra las fases del modelo a través del tiempo"
+  },
+  {
+    "Nombre": "Perspectiva estática",
+    "Categoría": "Vista de proceso",
+    "Descripción breve": "Vista que presenta las actividades del proceso que se establecen"
+  },
+  {
+    "Nombre": "Perspectiva práctica",
+    "Categoría": "Vista de proceso",
+    "Descripción breve": "Vista que sugiere buenas prácticas a usar durante el proceso"
+  },
+  {
+    "Nombre": "Concepción",
+    "Categoría": "Fase del RUP",
+    "Descripción breve": "Fase para establecer caso empresarial para el sistema"
+  },
+  {
+    "Nombre": "Elaboración",
+    "Categoría": "Fase del RUP",
+    "Descripción breve": "Fase para desarrollar comprensión del dominio, marco arquitectónico, plan del proyecto e identificar riesgos"
+  },
+  {
+    "Nombre": "Construcción",
+    "Categoría": "Fase del RUP",
+    "Descripción breve": "Fase que incluye diseño, programación y pruebas del sistema"
+  },
+  {
+    "Nombre": "Transición",
+    "Categoría": "Fase del RUP",
+    "Descripción breve": "Fase de cambio del sistema desde desarrollo hacia usuarios y ponerlo a funcionar en ambiente real"
+  },
+  {
+    "Nombre": "Caso empresarial",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Justificación de negocio para desarrollo del sistema"
+  },
+  {
+    "Nombre": "Entidades externas",
+    "Categoría": "Concepto de modelado",
+    "Descripción breve": "Personas y sistemas que interactuarán con el sistema"
+  },
+  {
+    "Nombre": "Marco conceptual arquitectónico",
+    "Categoría": "Artefacto arquitectónico",
+    "Descripción breve": "Estructura arquitectónica fundamental del sistema"
+  },
+  {
+    "Nombre": "Dominio del problema",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Área de conocimiento y contexto del problema a resolver"
+  },
+  {
+    "Nombre": "Riesgos clave del proyecto",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Principales riesgos identificados que podrían afectar el proyecto"
+  },
+  {
+    "Nombre": "Modelo de requerimientos",
+    "Categoría": "Artefacto de especificación",
+    "Descripción breve": "Representación de requerimientos, puede ser serie de casos de uso UML"
+  },
+  {
+    "Nombre": "Casos de uso del UML",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Representación UML de interacciones entre actores y sistema"
+  },
+  {
+    "Nombre": "Descripción arquitectónica",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Documento que describe la arquitectura del sistema"
+  },
+  {
+    "Nombre": "Plan de desarrollo",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Documento que planifica cómo se desarrollará el software"
+  },
+  {
+    "Nombre": "Sistema de software documentado",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Sistema funcionando con documentación completa"
+  },
+  {
+    "Nombre": "Entorno operacional",
+    "Categoría": "Concepto de entorno",
+    "Descripción breve": "Ambiente real donde el sistema funcionará"
+  },
+  {
+    "Nombre": "Flujos de trabajo",
+    "Categoría": "Concepto de proceso RUP",
+    "Descripción breve": "Actividades que tienen lugar durante el proceso de desarrollo"
+  },
+  {
+    "Nombre": "Flujos de trabajo de proceso centrales",
+    "Categoría": "Tipo de flujo de trabajo",
+    "Descripción breve": "Seis flujos principales de ingeniería en RUP"
+  },
+  {
+    "Nombre": "Flujos de trabajo de apoyo centrales",
+    "Categoría": "Tipo de flujo de trabajo",
+    "Descripción breve": "Tres flujos de soporte en RUP"
+  },
+  {
+    "Nombre": "Modelos de secuencia",
+    "Categoría": "Tipo de modelo UML",
+    "Descripción breve": "Modelos UML que representan secuencias de interacciones"
+  },
+  {
+    "Nombre": "Modelos de objeto",
+    "Categoría": "Type de modelo UML",
+    "Descripción breve": "Modelos UML que representan objetos y sus relaciones"
+  },
+  {
+    "Nombre": "Modelado del negocio",
+    "Categoría": "Flujo de trabajo RUP",
+    "Descripción breve": "Flujo donde se modelan procesos de negocios utilizando casos de uso de empresa"
+  },
+  {
+    "Nombre": "Casos de uso de la empresa",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Representación de procesos de negocios"
+  },
+  {
+    "Nombre": "Requerimientos (flujo de trabajo)",
+    "Categoría": "Flujo de trabajo RUP",
+    "Descripción breve": "Flujo donde se identifican actores y se desarrollan casos de uso para modelar requerimientos"
+  },
+  {
+    "Nombre": "Actores",
+    "Categoría": "Concepto de modelado",
+    "Descripción breve": "Entidades que interactúan con el sistema"
+  },
+  {
+    "Nombre": "Análisis y diseño",
+    "Categoría": "Flujo de trabajo RUP",
+    "Descripción breve": "Flujo donde se crea y documenta modelo de diseño"
+  },
+  {
+    "Nombre": "Modelos de componentes",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelos que representan componentes del sistema y sus relaciones"
+  },
+  {
+    "Nombre": "Implementación (flujo de trabajo)",
+    "Categoría": "Flujo de trabajo RUP",
+    "Descripción breve": "Flujo donde se implementan y estructuran componentes en subsistemas de implementación"
+  },
+  {
+    "Nombre": "Generación automática de código",
+    "Categoría": "Técnica de implementación",
+    "Descripción breve": "Creación de código a partir de modelos de diseño"
+  },
+  {
+    "Nombre": "Subsistemas de implementación",
+    "Categoría": "Elemento estructural",
+    "Descripción breve": "Agrupaciones de componentes para organizar la implementación"
+  },
+  {
+    "Nombre": "Pruebas (flujo de trabajo)",
+    "Categoría": "Flujo de trabajo RUP",
+    "Descripción breve": "Flujo que es proceso iterativo realizado junto con implementación"
+  },
+  {
+    "Nombre": "Liberación de un producto",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Versión del sistema lista para distribuir"
+  },
+  {
+    "Nombre": "Despliegue",
+    "Categoría": "Flujo de trabajo RUP",
+    "Descripción breve": "Flujo donde se crea liberación del producto, se distribuye e instala"
+  },
+  {
+    "Nombre": "Administración de la configuración y del cambio",
+    "Categoría": "Flujo de trabajo de apoyo RUP",
+    "Descripción breve": "Flujo que gestiona los cambios al sistema"
+  },
+  {
+    "Nombre": "Sistema de administración del cambio",
+    "Categoría": "Herramienta de gestión",
+    "Descripción breve": "Sistema para gestionar cambios al software"
+  },
+  {
+    "Nombre": "Procedimientos de administración de la configuración",
+    "Categoría": "Técnica de gestión",
+    "Descripción breve": "Procedimientos para controlar versiones y cambios del software"
+  },
+  {
+    "Nombre": "Administración del proyecto",
+    "Categoría": "Flujo de trabajo de apoyo RUP",
+    "Descripción breve": "Flujo que gestiona el desarrollo del sistema"
+  },
+  {
+    "Nombre": "Entorno (flujo de trabajo)",
+    "Categoría": "Flujo de trabajo de apoyo RUP",
+    "Descripción breve": "Flujo que pone a disposición herramientas adecuadas de software al equipo"
+  },
+  {
+    "Nombre": "Desarrollo de software de manera iterativa",
+    "Categoría": "Práctica recomendada RUP",
+    "Descripción breve": "Incrementar plan del sistema con base en prioridades del cliente"
+  },
+  {
+    "Nombre": "Gestión de requerimientos",
+    "Categoría": "Práctica recomendada RUP",
+    "Descripción breve": "Documentar explícitamente requerimientos y seguir huella de cambios"
+  },
+  {
+    "Nombre": "Arquitecturas basadas en componentes",
+    "Categoría": "Práctica recomendada RUP",
+    "Descripción breve": "Estructurar arquitectura del sistema en componentes"
+  },
+  {
+    "Nombre": "Software modelado visualmente",
+    "Categoría": "Práctica recomendada RUP",
+    "Descripción breve": "Usar modelos UML gráficos para elaborar representaciones de software"
+  },
+  {
+    "Nombre": "Verificar la calidad del software",
+    "Categoría": "Práctica recomendada RUP",
+    "Descripción breve": "Garantizar que software cumpla con estándares de calidad de la organización"
+  },
+  {
+    "Nombre": "Controlar los cambios al software",
+    "Categoría": "Práctica recomendada RUP",
+    "Descripción breve": "Gestionar cambios al software con sistema de administración y herramientas"
+  },
+  {
+    "Nombre": "Herramientas de desarrollo de software",
+    "Categoría": "Herramienta de soporte",
+    "Descripción breve": "Programas usados para apoyar actividades del proceso (también llamadas herramientas CASE)"
+  },
+  {
+    "Nombre": "Herramientas CASE",
+    "Categoría": "Herramienta de soporte",
+    "Descripción breve": "Computer-Aided Software Engineering, herramientas para automatizar actividades de ingeniería"
+  },
+  {
+    "Nombre": "Editores de diseño",
+    "Categoría": "Herramienta CASE",
+    "Descripción breve": "Herramientas para crear y editar modelos de diseño"
+  },
+  {
+    "Nombre": "Diccionarios de datos",
+    "Categoría": "Herramienta CASE",
+    "Descripción breve": "Herramientas para gestionar información sobre datos del sistema"
+  },
+  {
+    "Nombre": "Compiladores",
+    "Categoría": "Herramienta CASE",
+    "Descripción breve": "Herramientas que traducen código fuente a código ejecutable"
+  },
+  {
+    "Nombre": "Depuradores (debuggers)",
+    "Categoría": "Herramienta CASE",
+    "Descripción breve": "Herramientas para localizar y corregir errores en el código"
+  },
+  {
+    "Nombre": "Herramientas de construcción de sistema",
+    "Categoría": "Herramienta CASE",
+    "Descripción breve": "Herramientas para automatizar compilación y construcción del sistema"
+  },
+  {
+    "Nombre": "Modelos de sistemas gráficos",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Representaciones visuales del sistema como parte de especificación o diseño"
+  },
+  {
+    "Nombre": "Generación de código",
+    "Categoría": "Técnica automatizada",
+    "Descripción breve": "Creación automática de código a partir de modelos gráficos"
+  },
+  {
+    "Nombre": "Interfaces de usuario",
+    "Categoría": "Elemento de diseño",
+    "Descripción breve": "Componente del sistema que permite interacción con usuarios"
+  },
+  {
+    "Nombre": "Descripción de interfaz gráfica",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Especificación visual de interfaz creada de manera interactiva"
+  },
+  {
+    "Nombre": "Información sobre programa en ejecución",
+    "Categoría": "Artefacto de depuración",
+    "Descripción breve": "Información de valores de variables y ejecución para depurar"
+  },
+  {
+    "Nombre": "Traducción automatizada de programas",
+    "Categoría": "Técnica de migración",
+    "Descripción breve": "Conversión de programas de versión anterior a versión más reciente de lenguaje"
+  },
+  {
+    "Nombre": "Ambiente de desarrollo interactivo (IDE)",
+    "Categoría": "Herramienta de soporte",
+    "Descripción breve": "Marco que combina herramientas ofreciendo facilidades comunes para comunicación integrada"
+  },
+  {
+    "Nombre": "ECLIPSE IDE",
+    "Categoría": "Ambiente de desarrollo específico",
+    "Descripción breve": "IDE ampliamente usado diseñado para incorporar muchos tipos de herramientas"
+  },
+  {
+    "Nombre": "Documento de requerimientos convenido",
+    "Categoría": "Artefacto de especificación",
+    "Descripción breve": "Documento acordado que especifica requerimientos que cumplirá el sistema"
+  },
+  {
+    "Nombre": "Requerimientos de alto nivel",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Informe de requerimientos para usuarios finales y clientes"
+  },
+  {
+    "Nombre": "Descripción detallada del sistema",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos detallados para desarrolladores de sistemas"
+  },
+  {
+    "Nombre": "Informe de factibilidad",
+    "Categoría": "Artefacto de estudio",
+    "Descripción breve": "Resultado del estudio que informa decisión de continuar o no con análisis detallado"
+  },
+  {
+    "Nombre": "Costo-beneficio",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Análisis sobre si beneficios justifican costos desde punto de vista empresarial"
+  },
+  {
+    "Nombre": "Restricciones presupuestales",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Limitaciones de recursos financieros para desarrollo"
+  },
+  {
+    "Nombre": "Derivación de requerimientos",
+    "Categoría": "Técnica de obtención",
+    "Descripción breve": "Proceso de obtener requerimientos mediante observación, discusiones, análisis"
+  },
+  {
+    "Nombre": "Observación de sistemas existentes",
+    "Categoría": "Técnica de obtención",
+    "Descripción breve": "Técnica para derivar requerimientos observando sistemas actuales"
+  },
+  {
+    "Nombre": "Discusiones con usuarios",
+    "Categoría": "Técnica de obtención",
+    "Descripción breve": "Técnica para derivar requerimientos mediante conversaciones con usuarios y proveedores"
+  },
+  {
+    "Nombre": "Análisis de tareas",
+    "Categoría": "Técnica de obtención",
+    "Descripción breve": "Técnica para derivar requerimientos analizando tareas que realizan usuarios"
+  },
+  {
+    "Nombre": "Transcripción de información",
+    "Categoría": "Actividad de especificación",
+    "Descripción breve": "Actividad de escribir en documento la información recopilada durante análisis"
+  },
+  {
+    "Nombre": "Requerimientos realistas",
+    "Categoría": "Criterio de validación",
+    "Descripción breve": "Requerimientos que pueden implementarse con tecnologías y recursos disponibles"
+  },
+  {
+    "Nombre": "Requerimientos coherentes",
+    "Categoría": "Criterio de validación",
+    "Descripción breve": "Requerimientos que no se contradicen entre sí"
+  },
+  {
+    "Nombre": "Requerimientos completos",
+    "Categoría": "Criterio de validación",
+    "Descripción breve": "Requerimientos que cubren todas las necesidades del sistema"
+  },
+  {
+    "Nombre": "Etapa de implementación",
+    "Categoría": "Fase de desarrollo",
+    "Descripción breve": "Proceso de convertir especificación del sistema en sistema ejecutable"
+  },
+  {
+    "Nombre": "Corrección en la especificación",
+    "Categoría": "Actividad de desarrollo",
+    "Descripción breve": "Modificaciones a especificación durante implementación en enfoque incremental"
+  },
+  {
+    "Nombre": "Estructura del software",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Organización y relaciones entre componentes del software"
+  },
+  {
+    "Nombre": "Estructuras de datos",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Organización de datos utilizados por el sistema"
+  },
+  {
+    "Nombre": "Interfaces entre componentes",
+    "Categoría": "Elemento de diseño",
+    "Descripción breve": "Puntos de comunicación entre componentes del sistema"
+  },
+  {
+    "Nombre": "Algoritmos",
+    "Categoría": "Elemento de diseño",
+    "Descripción breve": "Secuencias de pasos para resolver problemas específicos"
+  },
+  {
+    "Nombre": "Sistema operativo",
+    "Categoría": "Componente de plataforma",
+    "Descripción breve": "Software base que gestiona recursos del hardware"
+  },
+  {
+    "Nombre": "Base de datos",
+    "Categoría": "Componente de plataforma",
+    "Descripción breve": "Sistema para almacenar y gestionar datos"
+  },
+  {
+    "Nombre": "Middleware",
+    "Categoría": "Componente de plataforma",
+    "Descripción breve": "Software que facilita comunicación entre componentes o sistemas"
+  },
+  {
+    "Nombre": "Sistemas de aplicación",
+    "Categoría": "Componente de plataforma",
+    "Descripción breve": "Otros programas con los que el software interactúa"
+  },
+  {
+    "Nombre": "Requerimientos de rendimiento",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Requerimientos sobre velocidad y eficiencia del sistema"
+  },
+  {
+    "Nombre": "Requerimientos de confiabilidad",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Requerimientos sobre probabilidad de fallos del sistema"
+  },
+  {
+    "Nombre": "Especificación de temporización",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Especificación de tiempos de respuesta en sistemas de tiempo real"
+  },
+  {
+    "Nombre": "Sistemas de tiempo real",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas donde la temporización de respuesta es crítica"
+  },
+  {
+    "Nombre": "Sistemas de información",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas enfocados en gestión y procesamiento de información"
+  },
+  {
+    "Nombre": "Componentes (subsistemas o módulos)",
+    "Categoría": "Elemento estructural",
+    "Descripción breve": "Partes principales del sistema con responsabilidades específicas"
+  },
+  {
+    "Nombre": "Distribución de componentes",
+    "Categoría": "Concepto arquitectónico",
+    "Descripción breve": "Asignación de componentes a ubicaciones físicas o lógicas"
+  },
+  {
+    "Nombre": "Especificación de interfaz precisa",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Definición sin ambigüedades de interfaz entre componentes"
+  },
+  {
+    "Nombre": "Desarrollo concurrente",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Desarrollo simultáneo de componentes una vez acordadas las interfaces"
+  },
+  {
+    "Nombre": "Funcionalidad a implementar",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Descripción de lo que cada componente debe hacer"
+  },
+  {
+    "Nombre": "Lista de cambios",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Especificación de modificaciones a realizar sobre componente reutilizable"
+  },
+  {
+    "Nombre": "Modelo de diseño detallado",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Modelo completo usado para generar automáticamente implementación"
+  },
+  {
+    "Nombre": "Organizaciones de datos",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Forma en que se estructuran los datos en el sistema"
+  },
+  {
+    "Nombre": "Representación en base de datos",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Cómo se almacenan las estructuras de datos en base de datos"
+  },
+  {
+    "Nombre": "Documentos de diseño detallados",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Documentos que establecen descripciones exactas del sistema"
+  },
+  {
+    "Nombre": "Sistemas críticos para la seguridad",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas donde fallos podrían causar daños o pérdidas"
+  },
+  {
+    "Nombre": "Especificaciones separadas",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Documentos independientes que especifican partes del sistema"
+  },
+  {
+    "Nombre": "Código del programa",
+    "Categoría": "Artefacto de implementación",
+    "Descripción breve": "Representación del diseño en lenguaje de programación"
+  },
+  {
+    "Nombre": "Diagramas de sistema",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Representaciones gráficas de aspectos del sistema"
+  },
+  {
+    "Nombre": "Código ejecutable",
+    "Categoría": "Artefacto de implementación",
+    "Descripción breve": "Código que puede ejecutarse directamente o después de compilación"
+  },
+  {
+    "Nombre": "Transformaciones formales",
+    "Categoría": "Técnica de proceso formal",
+    "Descripción breve": "Conversiones matemáticas de especificaciones a código"
+  },
+  {
+    "Nombre": "Programa de esqueleto",
+    "Categoría": "Artefacto generado",
+    "Descripción breve": "Código base generado automáticamente que debe completarse"
+  },
+  {
+    "Nombre": "Operación de cada componente",
+    "Categoría": "Concepto de implementación",
+    "Descripción breve": "Funcionamiento interno específico de un componente"
+  },
+  {
+    "Nombre": "Componentes familiares",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Componentes que el programador conoce bien por experiencia"
+  },
+  {
+    "Nombre": "Componentes no familiares",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Componentes nuevos o desconocidos para el programador"
+  },
+  {
+    "Nombre": "Datos en el proceso",
+    "Categoría": "Concepto de programación",
+    "Descripción breve": "Información que impulsa el desarrollo del programa"
+  },
+  {
+    "Nombre": "Defectos del programa",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Errores o fallos en el código"
+  },
+  {
+    "Nombre": "Eliminación de defectos",
+    "Categoría": "Actividad de depuración",
+    "Descripción breve": "Proceso de corregir errores encontrados"
+  },
+  {
+    "Nombre": "Hipótesis sobre comportamiento",
+    "Categoría": "Técnica de depuración",
+    "Descripción breve": "Suposiciones sobre por qué el programa se comporta de cierta manera"
+  },
+  {
+    "Nombre": "Comportamiento observable",
+    "Categoría": "Concepto de depuración",
+    "Descripción breve": "Salidas y acciones visibles del programa durante ejecución"
+  },
+  {
+    "Nombre": "Salida anómala",
+    "Categoría": "Concepto de depuración",
+    "Descripción breve": "Resultado incorrecto o inesperado del programa"
+  },
+  {
+    "Nombre": "Falla",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Causa de un comportamiento incorrecto del programa"
+  },
+  {
+    "Nombre": "Rastreo manual",
+    "Categoría": "Técnica de depuración",
+    "Descripción breve": "Seguimiento paso a paso del código manualmente"
+  },
+  {
+    "Nombre": "Casos de prueba",
+    "Categoría": "Artefacto de pruebas",
+    "Descripción breve": "Conjunto de entradas y salidas esperadas para probar el sistema"
+  },
+  {
+    "Nombre": "Valores intermedios de variables",
+    "Categoría": "Información de depuración",
+    "Descripción breve": "Valores de variables durante ejecución del programa"
+  },
+  {
+    "Nombre": "Rastro de instrucciones",
+    "Categoría": "Información de depuración",
+    "Descripción breve": "Secuencia de instrucciones ejecutadas"
+  },
+  {
+    "Nombre": "Expectativas del cliente",
+    "Categoría": "Concepto de validación",
+    "Descripción breve": "Lo que el cliente espera que haga el sistema"
+  },
+  {
+    "Nombre": "Procesos de comprobación",
+    "Categoría": "Técnica de validación",
+    "Descripción breve": "Técnicas como inspecciones y revisiones para validar software"
+  },
+  {
+    "Nombre": "Definición de requerimientos del usuario",
+    "Categoría": "Fase de proceso",
+    "Descripción breve": "Etapa donde se definen necesidades del usuario"
+  },
+  {
+    "Nombre": "Desarrollo del programa",
+    "Categoría": "Fase de proceso",
+    "Descripción breve": "Etapa donde se escribe el código del sistema"
+  },
+  {
+    "Nombre": "Predominancia de las pruebas",
+    "Categoría": "Concepto de validación",
+    "Descripción breve": "Mayor parte de costos de validación durante y después de implementación"
+  },
+  {
+    "Nombre": "Unidad monolítica",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Sistema probado como una sola pieza sin separación de componentes"
+  },
+  {
+    "Nombre": "Proceso de prueba en tres etapas",
+    "Categoría": "Enfoque de pruebas",
+    "Descripción breve": "Pruebas en niveles: componentes, sistema integrado, datos del cliente"
+  },
+  {
+    "Nombre": "Defectos de componentes",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Errores en componentes individuales"
+  },
+  {
+    "Nombre": "Problemas de interfaz",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Errores en la comunicación entre componentes"
+  },
+  {
+    "Nombre": "Proceso iterativo de pruebas",
+    "Categoría": "Enfoque de pruebas",
+    "Descripción breve": "Pruebas con retroalimentación desde etapas posteriores a etapas iniciales"
+  },
+  {
+    "Nombre": "Entidades simples",
+    "Categoría": "Concepto de componente",
+    "Descripción breve": "Funciones o clases de objeto individuales"
+  },
+  {
+    "Nombre": "Funciones",
+    "Categoría": "Elemento de programación",
+    "Descripción breve": "Bloques de código que realizan tareas específicas"
+  },
+  {
+    "Nombre": "Clases de objeto",
+    "Categoría": "Elemento de programación",
+    "Descripción breve": "Plantillas para crear objetos con datos y comportamiento"
+  },
+  {
+    "Nombre": "Agrupamientos coherentes",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Conjuntos lógicos de entidades relacionadas"
+  },
+  {
+    "Nombre": "Automatización de pruebas",
+    "Categoría": "Técnica de pruebas",
+    "Descripción breve": "Uso de herramientas para ejecutar pruebas automáticamente"
+  },
+  {
+    "Nombre": "JUnit",
+    "Categoría": "Herramienta de pruebas",
+    "Descripción breve": "Herramienta de automatización de pruebas para Java"
+  },
+  {
+    "Nombre": "Nuevas versiones de componentes",
+    "Categoría": "Artefacto de desarrollo",
+    "Descripción breve": "Actualizaciones de componentes durante desarrollo iterativo"
+  },
+  {
+    "Nombre": "Errores de interacciones no anticipadas",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Problemas resultantes de combinaciones inesperadas de componentes"
+  },
+  {
+    "Nombre": "Pruebas del sistema de múltiples etapas",
+    "Categoría": "Enfoque de pruebas",
+    "Descripción breve": "Integración gradual de componentes a subsistemas y luego a sistema final"
+  },
+  {
+    "Nombre": "Integración de componentes",
+    "Categoría": "Actividad de pruebas",
+    "Descripción breve": "Combinación de componentes individuales para formar subsistemas"
+  },
+  {
+    "Nombre": "Pruebas de subsistemas",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Pruebas de agrupaciones de componentes antes de integración final"
+  },
+  {
+    "Nombre": "Sistema final",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Sistema completo resultado de integrar todos los subsistemas"
+  },
+  {
+    "Nombre": "Uso operacional",
+    "Categoría": "Concepto de implementación",
+    "Descripción breve": "Uso del sistema en ambiente de producción real"
+  },
+  {
+    "Nombre": "Datos reales",
+    "Categoría": "Artefacto de pruebas",
+    "Descripción breve": "Datos del cliente usados en pruebas de aceptación"
+  },
+  {
+    "Nombre": "Errores en definición de requerimientos",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Omisiones o incorrecciones en especificación de requerimientos"
+  },
+  {
+    "Nombre": "Instalaciones del sistema",
+    "Categoría": "Concepto de funcionalidad",
+    "Descripción breve": "Capacidades y características que ofrece el sistema"
+  },
+  {
+    "Nombre": "Necesidades del usuario",
+    "Categoría": "Concepto de requerimientos",
+    "Descripción breve": "Lo que el usuario realmente necesita del sistema"
+  },
+  {
+    "Nombre": "Rendimiento inaceptable",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Sistema que no cumple con tiempos de respuesta o eficiencia requeridos"
+  },
+  {
+    "Nombre": "Procesos de desarrollo y pruebas entrelazados",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Desarrollo y pruebas realizadas simultáneamente"
+  },
+  {
+    "Nombre": "Datos de prueba",
+    "Categoría": "Artefacto de pruebas",
+    "Descripción breve": "Información preparada específicamente para probar el sistema"
+  },
+  {
+    "Nombre": "Código incremental",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Desarrollo del código de forma gradual"
+  },
+  {
+    "Nombre": "Enfoque económicamente sensible",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Uso eficiente de recursos para mejores resultados"
+  },
+  {
+    "Nombre": "Pruebas con requerimientos por incremento",
+    "Categoría": "Enfoque de pruebas",
+    "Descripción breve": "Pruebas basadas en requerimientos de cada incremento"
+  },
+  {
+    "Nombre": "Programación extrema",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Método ágil donde pruebas se desarrollan antes del desarrollo"
+  },
+  {
+    "Nombre": "Examinadores",
+    "Categoría": "Rol de proceso",
+    "Descripción breve": "Personas dedicadas a realizar pruebas del sistema"
+  },
+  {
+    "Nombre": "Proceso dirigido por un plan (en pruebas)",
+    "Categoría": "Enfoque de pruebas",
+    "Descripción breve": "Pruebas realizadas mediante planes preformulados"
+  },
+  {
+    "Nombre": "Equipo independiente",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Equipo separado del desarrollo para realizar pruebas"
+  },
+  {
+    "Nombre": "Planes de prueba preformulados",
+    "Categoría": "Artefacto de pruebas",
+    "Descripción breve": "Planes desarrollados antes de comenzar las pruebas"
+  },
+  {
+    "Nombre": "Especificación y diseño del sistema",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Documentos que describen qué hace el sistema y cómo está estructurado"
+  },
+  {
+    "Nombre": "Sistema a la medida",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema desarrollado específicamente para un cliente"
+  },
+  {
+    "Nombre": "Proceso de prueba alfa",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Pruebas continuas hasta que desarrollador y cliente acuerden aceptabilidad"
+  },
+  {
+    "Nombre": "Implementación aceptable",
+    "Categoría": "Criterio de aceptación",
+    "Descripción breve": "Sistema que cumple requerimientos de forma satisfactoria para el cliente"
+  },
+  {
+    "Nombre": "Producto de software",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software desarrollado para vender a múltiples clientes"
+  },
+  {
+    "Nombre": "Clientes potenciales",
+    "Categoría": "Concepto de mercado",
+    "Descripción breve": "Usuarios que podrían adquirir el producto"
+  },
+  {
+    "Nombre": "Reporte de problemas",
+    "Categoría": "Actividad de pruebas beta",
+    "Descripción breve": "Clientes informan errores encontrados a desarrolladores"
+  },
+  {
+    "Nombre": "Uso real",
+    "Categoría": "Concepto de pruebas",
+    "Descripción breve": "Utilización del sistema en condiciones normales de operación"
+  },
+  {
+    "Nombre": "Errores no anticipados",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Problemas que constructores del sistema no previeron"
+  },
+  {
+    "Nombre": "Venta general",
+    "Categoría": "Fase de comercialización",
+    "Descripción breve": "Distribución del producto al mercado completo"
+  },
+  {
+    "Nombre": "Actividad creativa",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Desarrollo de software visto como proceso de creatividad"
+  },
+  {
+    "Nombre": "Actividad de mantenimiento",
+    "Categoría": "Concepto de ciclo de vida",
+    "Descripción breve": "Modificación y corrección de software existente"
+  },
+  {
+    "Nombre": "Desarrollo de software original",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Creación de sistema completamente nuevo"
+  },
+  {
+    "Nombre": "Sistema completamente nuevo",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema sin componentes o código previo"
+  },
+  {
+    "Nombre": "Proceso evolutivo continuo",
+    "Categoría": "Paradigma de proceso",
+    "Descripción breve": "Proceso donde desarrollo y mantenimiento son un continuo"
+  },
+  {
+    "Nombre": "Requerimientos cambiantes",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Modificaciones en lo que se requiere del sistema"
+  },
+  {
+    "Nombre": "Necesidades cambiantes del cliente",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Evolución de lo que el cliente necesita del sistema"
+  },
+  {
+    "Nombre": "Presiones externas",
+    "Categoría": "Concepto de entorno",
+    "Descripción breve": "Factores externos que afectan los requerimientos del sistema"
+  },
+  {
+    "Nombre": "Prioridades administrativas",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Decisiones de gestión que afectan el proyecto"
+  },
+  {
+    "Nombre": "Nuevas tecnologías",
+    "Categoría": "Concepto de entorno",
+    "Descripción breve": "Avances tecnológicos que ofrecen nuevas posibilidades"
+  },
+  {
+    "Nombre": "Posibilidades de diseño e implementación",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Opciones técnicas disponibles para construir el sistema"
+  },
+  {
+    "Nombre": "Ajuste del proceso",
+    "Categoría": "Técnica de gestión",
+    "Descripción breve": "Adaptación del proceso para manejar cambios"
+  },
+  {
+    "Nombre": "Costos del rehacer",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Costos asociados con volver a realizar trabajo ya completado"
+  },
+  {
+    "Nombre": "Trabajo ya terminado",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Actividades completadas que deben modificarse"
+  },
+  {
+    "Nombre": "Análisis de relaciones entre requerimientos",
+    "Categoría": "Actividad de análisis",
+    "Descripción breve": "Examen de cómo los requerimientos se relacionan entre sí"
+  },
+  {
+    "Nombre": "Nuevos requerimientos",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Requerimientos adicionales identificados después de análisis inicial"
+  },
+  {
+    "Nombre": "Rediseño del sistema",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Modificación del diseño para entregar nuevos requerimientos"
+  },
+  {
+    "Nombre": "Cambio de programas",
+    "Categoría": "Actividad de implementación",
+    "Descripción breve": "Modificación del código ya desarrollado"
+  },
+  {
+    "Nombre": "Nueva prueba del sistema",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Repetición de pruebas después de cambios"
+  },
+  {
+    "Nombre": "Actividades que anticipan cambios",
+    "Categoría": "Técnica de gestión",
+    "Descripción breve": "Acciones del proceso para prever cambios posibles"
+  },
+  {
+    "Nombre": "Labor significativa de rehacer",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Cantidad importante de trabajo que debe repetirse"
+  },
+  {
+    "Nombre": "Sistema prototipo para demostración",
+    "Categoría": "Técnica de evitar cambios",
+    "Descripción breve": "Prototipo que muestra características clave a clientes"
+  },
+  {
+    "Nombre": "Características clave",
+    "Categoría": "Concepto de funcionalidad",
+    "Descripción breve": "Funciones principales y más importantes del sistema"
+  },
+  {
+    "Nombre": "Experimentación con prototipo",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Clientes prueban prototipo para refinar requerimientos"
+  },
+  {
+    "Nombre": "Refinamiento de requerimientos",
+    "Categoría": "Actividad de especificación",
+    "Descripción breve": "Mejora de especificación basada en experiencia con prototipo"
+  },
+  {
+    "Nombre": "Compromisos con costos",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Decisiones sobre gastos en producción de software"
+  },
+  {
+    "Nombre": "Costos de producción de software",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Gastos asociados con desarrollo del sistema"
+  },
+  {
+    "Nombre": "Ajuste de cambios con bajo costo",
+    "Categoría": "Característica de proceso",
+    "Descripción breve": "Capacidad de incorporar cambios económicamente"
+  },
+  {
+    "Nombre": "Incrementos no desarrollados",
+    "Categoría": "Concepto de entrega incremental",
+    "Descripción breve": "Partes del sistema aún no implementadas"
+  },
+  {
+    "Nombre": "Pequeña parte del sistema",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Porción limitada del sistema total"
+  },
+  {
+    "Nombre": "Alterar un incremento",
+    "Categoría": "Actividad de desarrollo",
+    "Descripción breve": "Modificar parte del sistema ya implementada"
+  },
+  {
+    "Nombre": "Versión del sistema",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Instancia específica del sistema en un momento dado"
+  },
+  {
+    "Nombre": "Parte del sistema",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Porción o componente del sistema completo"
+  },
+  {
+    "Nombre": "Comprobar requerimientos",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Verificar especificación con el cliente"
+  },
+  {
+    "Nombre": "Factibilidad de decisiones de diseño",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Viabilidad de opciones de diseño propuestas"
+  },
+  {
+    "Nombre": "Validación de requerimientos del sistema",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Verificación de que requerimientos son correctos y completos"
+  },
+  {
+    "Nombre": "Soluciones específicas de software",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Implementaciones concretas para problemas particulares"
+  },
+  {
+    "Nombre": "Diseño de interfaces del usuario (en prototipo)",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Apoyo al diseño de interfaces mediante prototipos"
+  },
+  {
+    "Nombre": "Trabajo de usuarios",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Tareas y actividades que realizan los usuarios"
+  },
+  {
+    "Nombre": "Ideas para requerimientos",
+    "Categoría": "Concepto de obtención",
+    "Descripción breve": "Nuevos requerimientos descubiertos durante uso de prototipo"
+  },
+  {
+    "Nombre": "Áreas de fortalezas",
+    "Categoría": "Concepto de evaluación",
+    "Descripción breve": "Aspectos del sistema que funcionan bien"
+  },
+  {
+    "Nombre": "Áreas de debilidades",
+    "Categoría": "Concepto de evaluación",
+    "Descripción breve": "Aspectos del sistema que necesitan mejora"
+  },
+  {
+    "Nombre": "Errores en requerimientos propuestos",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Incorrecciones en especificación inicial"
+  },
+  {
+    "Nombre": "Omisiones en requerimientos propuestos",
+    "Categoría": "Tipo de defecto",
+    "Descripción breve": "Requerimientos faltantes en especificación inicial"
+  },
+  {
+    "Nombre": "Función descrita en especificación",
+    "Categoría": "Concepto de requerimientos",
+    "Descripción breve": "Capacidad específica documentada en especificación"
+  },
+  {
+    "Nombre": "Visión inicial incorrecta",
+    "Categoría": "Concepto de obtención",
+    "Descripción breve": "Comprensión equivocada de requerimientos al inicio"
+  },
+  {
+    "Nombre": "Visión inicial incompleta",
+    "Categoría": "Concepto de obtención",
+    "Descripción breve": "Comprensión parcial de requerimientos al inicio"
+  },
+  {
+    "Nombre": "Nueva comprensión de requerimientos",
+    "Categoría": "Concepto de obtención",
+    "Descripción breve": "Mejor entendimiento de necesidades después de experimentar"
+  },
+  {
+    "Nombre": "Experimentos de diseño",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Pruebas para comprobar factibilidad de diseños propuestos"
+  },
+  {
+    "Nombre": "Prototipo de diseño de base de datos",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Prototipo para probar diseño de estructuras de datos"
+  },
+  {
+    "Nombre": "Acceso de datos",
+    "Categoría": "Concepto de base de datos",
+    "Descripción breve": "Operaciones para recuperar información de base de datos"
+  },
+  {
+    "Nombre": "Consultas de usuario",
+    "Categoría": "Concepto de base de datos",
+    "Descripción breve": "Solicitudes de información realizadas por usuarios"
+  },
+  {
+    "Nombre": "Dinámica de interfaces",
+    "Categoría": "Concepto de interfaz",
+    "Descripción breve": "Naturaleza interactiva y cambiante de interfaces de usuario"
+  },
+  {
+    "Nombre": "Descripciones textuales de interfaces",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Especificaciones escritas de interfaces de usuario"
+  },
+  {
+    "Nombre": "Diagramas de interfaces",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Representaciones gráficas de interfaces de usuario"
+  },
+  {
+    "Nombre": "Creación rápida de prototipos",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Desarrollo veloz de prototipos con participación de usuario"
+  },
+  {
+    "Nombre": "Interfaces de usuario gráficas",
+    "Categoría": "Tipo de interfaz",
+    "Descripción breve": "Interfaces visuales para interacción con el sistema"
+  },
+  {
+    "Nombre": "Objetivos de creación de prototipos",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Propósitos específicos del desarrollo de prototipo"
+  },
+  {
+    "Nombre": "Prototipo explícito",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Prototipo con objetivos claros y definidos"
+  },
+  {
+    "Nombre": "Prototipo de interfaz del usuario",
+    "Categoría": "Tipo de prototipo",
+    "Descripción breve": "Prototipo enfocado en diseñar y validar interfaces"
+  },
+  {
+    "Nombre": "Validación de requerimientos funcionales",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Verificación de que funciones especificadas son correctas"
+  },
+  {
+    "Nombre": "Factibilidad de aplicación",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Viabilidad de implementar la aplicación propuesta"
+  },
+  {
+    "Nombre": "Administradores",
+    "Categoría": "Rol de gestión",
+    "Descripción breve": "Personas responsables de dirigir el proyecto"
+  },
+  {
+    "Nombre": "Usuarios finales",
+    "Categoría": "Rol de sistema",
+    "Descripción breve": "Personas que usarán el sistema en operación"
+  },
+  {
+    "Nombre": "Malinterpretación de función",
+    "Categoría": "Concepto de comunicación",
+    "Descripción breve": "Comprensión incorrecta del propósito del prototipo"
+  },
+  {
+    "Nombre": "Beneficios esperados",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Ventajas anticipadas del desarrollo de prototipo"
+  },
+  {
+    "Nombre": "Funcionalidad fuera del prototipo",
+    "Categoría": "Concepto de alcance",
+    "Descripción breve": "Características que no se incluyen en prototipo"
+  },
+  {
+    "Nombre": "Requerimientos no funcionales flexibles",
+    "Categoría": "Enfoque de prototipo",
+    "Descripción breve": "Reducción de estándares de rendimiento y uso de recursos en prototipo"
+  },
+  {
+    "Nombre": "Tiempo de respuesta",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Velocidad con que el sistema responde a solicitudes"
+  },
+  {
+    "Nombre": "Utilización de memoria",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Cantidad de memoria que usa el sistema"
+  },
+  {
+    "Nombre": "Manejo de errores",
+    "Categoría": "Funcionalidad de sistema",
+    "Descripción breve": "Capacidad del sistema para detectar y responder a errores"
+  },
+  {
+    "Nombre": "Gestión de errores",
+    "Categoría": "Funcionalidad de sistema",
+    "Descripción breve": "Administración de situaciones de error en el sistema"
+  },
+  {
+    "Nombre": "Objetivo de establecer interfaz",
+    "Categoría": "Propósito de prototipo",
+    "Descripción breve": "Prototipo enfocado específicamente en diseño de interfaz"
+  },
+  {
+    "Nombre": "Estándares de fiabilidad",
+    "Categoría": "Criterio de calidad",
+    "Descripción breve": "Niveles requeridos de funcionamiento sin fallos"
+  },
+  {
+    "Nombre": "Estándares de calidad del programa",
+    "Categoría": "Criterio de calidad",
+    "Descripción breve": "Niveles requeridos de calidad del código"
+  },
+  {
+    "Nombre": "Evaluación del prototipo",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Proceso de probar y obtener retroalimentación del prototipo"
+  },
+  {
+    "Nombre": "Capacitación del usuario",
+    "Categoría": "Actividad de soporte",
+    "Descripción breve": "Enseñanza a usuarios sobre cómo usar el sistema"
+  },
+  {
+    "Nombre": "Plan de evaluación",
+    "Categoría": "Artefacto de validación",
+    "Descripción breve": "Documento que especifica cómo se evaluará el prototipo"
+  },
+  {
+    "Nombre": "Tiempo para sentirse cómodo",
+    "Categoría": "Concepto de adopción",
+    "Descripción breve": "Periodo necesario para que usuarios se adapten al sistema"
+  },
+  {
+    "Nombre": "Patrón normal de uso",
+    "Categoría": "Concepto de operación",
+    "Descripción breve": "Forma típica en que se utiliza el sistema"
+  },
+  {
+    "Nombre": "Uso normal del sistema",
+    "Categoría": "Concepto de operación",
+    "Descripción breve": "Utilización del sistema en condiciones habituales"
+  },
+  {
+    "Nombre": "Revisor del prototipo",
+    "Categoría": "Rol de evaluación",
+    "Descripción breve": "Persona que evalúa el prototipo"
+  },
+  {
+    "Nombre": "Usuario típico",
+    "Categoría": "Concepto de usuario",
+    "Descripción breve": "Usuario representativo del sistema"
+  },
+  {
+    "Nombre": "Capacitación insuficiente",
+    "Categoría": "Problema de evaluación",
+    "Descripción breve": "Tiempo inadecuado para aprender a usar el prototipo"
+  },
+  {
+    "Nombre": "Prototipo lento",
+    "Categoría": "Problema de rendimiento",
+    "Descripción breve": "Prototipo con tiempos de respuesta largos"
+  },
+  {
+    "Nombre": "Ajuste de forma de trabajar",
+    "Categoría": "Concepto de adaptación",
+    "Descripción breve": "Modificación de comportamiento para lidiar con limitaciones del prototipo"
+  },
+  {
+    "Nombre": "Características con tiempos de respuesta lentos",
+    "Categoría": "Problema de rendimiento",
+    "Descripción breve": "Funciones del sistema que responden lentamente"
+  },
+  {
+    "Nombre": "Mejor respuesta en sistema final",
+    "Categoría": "Concepto de rendimiento",
+    "Descripción breve": "Tiempos de respuesta mejorados en versión definitiva"
+  },
+  {
+    "Nombre": "Uso diferente del sistema",
+    "Categoría": "Concepto de adopción",
+    "Descripción breve": "Utilización del sistema de manera distinta a la prevista"
+  },
+  {
+    "Nombre": "Presión de administradores",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Demandas de gestión para entregar sistema"
+  },
+  {
+    "Nombre": "Demoras en entrega",
+    "Categoría": "Problema de gestión",
+    "Descripción breve": "Retrasos en fechas de entrega del sistema"
+  },
+  {
+    "Nombre": "Versión final del software",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Sistema completo y definitivo"
+  },
+  {
+    "Nombre": "Entrega de prototipos desechables",
+    "Categoría": "Problema de gestión",
+    "Descripción breve": "Uso inadecuado de prototipos como sistemas finales"
+  },
+  {
+    "Nombre": "Requerimientos de seguridad",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Especificaciones sobre protección del sistema contra amenazas"
+  },
+  {
+    "Nombre": "Requerimientos de robustez",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Especificaciones sobre capacidad del sistema para manejar situaciones anormales"
+  },
+  {
+    "Nombre": "Requerimientos de rendimiento (en prototipo)",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Especificaciones sobre velocidad ignoradas durante desarrollo de prototipo"
+  },
+  {
+    "Nombre": "Cambio rápido en desarrollo",
+    "Categoría": "Concepto de prototipo",
+    "Descripción breve": "Modificaciones frecuentes durante creación de prototipo"
+  },
+  {
+    "Nombre": "Prototipo no documentado",
+    "Categoría": "Problema de mantenimiento",
+    "Descripción breve": "Falta de documentación en prototipo"
+  },
+  {
+    "Nombre": "Especificación de diseño",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Documento que describe el diseño del sistema"
+  },
+  {
+    "Nombre": "Código del prototipo",
+    "Categoría": "Artefacto de prototipo",
+    "Descripción breve": "Único registro del diseño en prototipo"
+  },
+  {
+    "Nombre": "Mantenimiento a largo plazo",
+    "Categoría": "Concepto de ciclo de vida",
+    "Descripción breve": "Conservación y modificación del sistema durante uso prolongado"
+  },
+  {
+    "Nombre": "Degradación de estructura",
+    "Categoría": "Problema de calidad",
+    "Descripción breve": "Deterioro de organización del sistema debido a cambios"
+  },
+  {
+    "Nombre": "Sistema difícil de mantener",
+    "Categoría": "Problema de calidad",
+    "Descripción breve": "Sistema cuya modificación es complicada"
+  },
+  {
+    "Nombre": "Sistema costoso de mantener",
+    "Categoría": "Problema de gestión",
+    "Descripción breve": "Sistema cuya modificación es cara"
+  },
+  {
+    "Nombre": "Estándares de calidad flexibles",
+    "Categoría": "Concepto de prototipo",
+    "Descripción breve": "Reducción de niveles de calidad requeridos en prototipo"
+  },
+  {
+    "Nombre": "Estándares de calidad de organización",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Niveles de calidad establecidos por la organización"
+  },
+  {
+    "Nombre": "Prototipos ejecutables",
+    "Categoría": "Tipo de prototipo",
+    "Descripción breve": "Prototipos que pueden ejecutarse y usarse"
+  },
+  {
+    "Nombre": "Prototipos no ejecutables",
+    "Categoría": "Tipo de prototipo",
+    "Descripción breve": "Prototipos que no se pueden ejecutar, como modelos en papel"
+  },
+  {
+    "Nombre": "Refinamiento de diseño de interfaz",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Mejora del diseño de interfaz basada en retroalimentación"
+  },
+  {
+    "Nombre": "Escenarios de uso",
+    "Categoría": "Técnica de análisis",
+    "Descripción breve": "Secuencias de interacciones típicas con el sistema"
+  },
+  {
+    "Nombre": "Desarrollo económico",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Creación de prototipo con costos muy bajos"
+  },
+  {
+    "Nombre": "Construcción en pocos días",
+    "Categoría": "Característica de prototipo",
+    "Descripción breve": "Desarrollo muy rápido de prototipo en papel"
+  },
+  {
+    "Nombre": "Interfaz del usuario (en Mago de Oz)",
+    "Categoría": "Componente de prototipo",
+    "Descripción breve": "Solo la capa de presentación sin lógica de negocio"
+  },
+  {
+    "Nombre": "Interacción con interfaz",
+    "Categoría": "Actividad de usuario",
+    "Descripción breve": "Usuario usa interfaz del prototipo"
+  },
+  {
+    "Nombre": "Solicitudes de usuario",
+    "Categoría": "Concepto de interacción",
+    "Descripción breve": "Peticiones que usuario hace al sistema"
+  },
+  {
+    "Nombre": "Persona que interpreta",
+    "Categoría": "Rol en prototipo Mago de Oz",
+    "Descripción breve": "Persona que procesa manualmente solicitudes y devuelve respuestas"
+  },
+  {
+    "Nombre": "Respuesta adecuada",
+    "Categoría": "Concepto de interacción",
+    "Descripción breve": "Resultado correcto a solicitud del usuario"
+  },
+  {
+    "Nombre": "Bosquejo de servicios",
+    "Categoría": "Artefacto de especificación",
+    "Descripción breve": "Identificación inicial de servicios del sistema por clientes"
+  },
+  {
+    "Nombre": "Servicios más importantes",
+    "Categoría": "Concepto de priorización",
+    "Descripción breve": "Funcionalidades de mayor prioridad para clientes"
+  },
+  {
+    "Nombre": "Servicios menos significativos",
+    "Categoría": "Concepto de priorización",
+    "Descripción breve": "Funcionalidades de menor prioridad para clientes"
+  },
+  {
+    "Nombre": "Incrementos de entrega",
+    "Categoría": "Concepto de entrega incremental",
+    "Descripción breve": "Divisiones del sistema para entregas sucesivas"
+  },
+  {
+    "Nombre": "Subconjunto de funcionalidad",
+    "Categoría": "Concepto de alcance",
+    "Descripción breve": "Parte de las funciones totales del sistema"
+  },
+  {
+    "Nombre": "Asignación de servicios por incrementos",
+    "Categoría": "Actividad de planificación",
+    "Descripción breve": "Distribución de funcionalidades en cada incremento según prioridad"
+  },
+  {
+    "Nombre": "Prioridad del servicio",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Importancia relativa de cada funcionalidad"
+  },
+  {
+    "Nombre": "Servicios de más alta prioridad",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Funcionalidades más importantes que se implementan primero"
+  },
+  {
+    "Nombre": "Definición detallada de requerimientos",
+    "Categoría": "Actividad de especificación",
+    "Descripción breve": "Especificación completa de requerimientos para un incremento"
+  },
+  {
+    "Nombre": "Primer incremento",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Primera versión entregable del sistema"
+  },
+  {
+    "Nombre": "Análisis de requerimientos para incrementos posteriores",
+    "Categoría": "Actividad de especificación",
+    "Descripción breve": "Análisis de requerimientos para futuras versiones durante desarrollo actual"
+  },
+  {
+    "Nombre": "Cambios de requerimientos para incremento actual",
+    "Categoría": "Concepto de gestión de cambios",
+    "Descripción breve": "Modificaciones propuestas para incremento en desarrollo que se rechazan"
+  },
+  {
+    "Nombre": "Incremento completado",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Versión del sistema terminada y lista para entregar"
+  },
+  {
+    "Nombre": "Incremento entregado",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Versión del sistema proporcionada al cliente"
+  },
+  {
+    "Nombre": "Puesta en servicio",
+    "Categoría": "Actividad de implementación",
+    "Descripción breve": "Instalación y uso del incremento en entorno operacional"
+  },
+  {
+    "Nombre": "Entrega anticipada de funcionalidad",
+    "Categoría": "Concepto de entrega incremental",
+    "Descripción breve": "Provisión temprana de funciones al cliente"
+  },
+  {
+    "Nombre": "Funcionalidad parcial",
+    "Categoría": "Concepto de alcance",
+    "Descripción breve": "Parte de las funciones totales disponibles"
+  },
+  {
+    "Nombre": "Clarificación de requerimientos",
+    "Categoría": "Actividad de especificación",
+    "Descripción breve": "Mejora de comprensión de necesidades basada en experiencia"
+  },
+  {
+    "Nombre": "Requerimientos para incrementos posteriores",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Especificaciones para futuras versiones del sistema"
+  },
+  {
+    "Nombre": "Nuevos incrementos",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Versiones adicionales del sistema"
+  },
+  {
+    "Nombre": "Incrementos completados",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Versiones terminadas del sistema"
+  },
+  {
+    "Nombre": "Incrementos existentes",
+    "Categoría": "Artefacto de desarrollo",
+    "Descripción breve": "Versiones ya entregadas del sistema"
+  },
+  {
+    "Nombre": "Mejora de funcionalidad",
+    "Categoría": "Concepto de evolución",
+    "Descripción breve": "Aumento de capacidades con cada incremento"
+  },
+  {
+    "Nombre": "Incrementos como prototipos",
+    "Categoría": "Concepto de entrega incremental",
+    "Descripción breve": "Primeros incrementos usados para experimentar y aprender"
+  },
+  {
+    "Nombre": "Experiencia con incrementos",
+    "Categoría": "Concepto de aprendizaje",
+    "Descripción breve": "Conocimiento adquirido al usar incrementos"
+  },
+  {
+    "Nombre": "Información para requerimientos",
+    "Categoría": "Concepto de obtención",
+    "Descripción breve": "Datos obtenidos de experiencia que ayudan a definir necesidades"
+  },
+  {
+    "Nombre": "Partes del sistema real",
+    "Categoría": "Concepto de entrega incremental",
+    "Descripción breve": "Incrementos son componentes del sistema definitivo, no desechables"
+  },
+  {
+    "Nombre": "Reaprendizaje",
+    "Categoría": "Problema evitado",
+    "Descripción breve": "No hay necesidad de aprender nuevamente cuando sistema completo está disponible"
+  },
+  {
+    "Nombre": "Sistema completo disponible",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Sistema con toda la funcionalidad implementada"
+  },
+  {
+    "Nombre": "Ganar valor del sistema",
+    "Categoría": "Concepto de beneficio",
+    "Descripción breve": "Obtener utilidad y beneficios del uso del sistema"
+  },
+  {
+    "Nombre": "Requerimientos más críticos",
+    "Categoría": "Concepto de priorización",
+    "Descripción breve": "Necesidades más importantes del cliente"
+  },
+  {
+    "Nombre": "Uso inmediato del software",
+    "Categoría": "Concepto de beneficio",
+    "Descripción breve": "Posibilidad de utilizar sistema sin esperar entrega completa"
+  },
+  {
+    "Nombre": "Servicios de mayor prioridad",
+    "Categoría": "Concepto de priorización",
+    "Descripción breve": "Funcionalidades más importantes entregadas primero"
+  },
+  {
+    "Nombre": "Servicios de sistema más importantes",
+    "Categoría": "Concepto de priorización",
+    "Descripción breve": "Funcionalidades críticas del sistema"
+  },
+  {
+    "Nombre": "Mayores pruebas",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Más intensidad y cantidad de pruebas en funcionalidades importantes"
+  },
+  {
+    "Nombre": "Fallas de software",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Errores o defectos en el sistema"
+  },
+  {
+    "Nombre": "Partes más significativas del sistema",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Componentes más importantes o críticos"
+  },
+  {
+    "Nombre": "Identificación de recursos comunes",
+    "Categoría": "Actividad de arquitectura",
+    "Descripción breve": "Determinación de recursos usados por múltiples partes del sistema"
+  },
+  {
+    "Nombre": "Requerimientos no definidos con detalle",
+    "Categoría": "Problema de arquitectura",
+    "Descripción breve": "Especificaciones incompletas hasta implementar incremento"
+  },
+  {
+    "Nombre": "Toda funcionalidad del sistema antiguo",
+    "Categoría": "Concepto de sistema de reemplazo",
+    "Descripción breve": "Todas las capacidades del sistema previo"
+  },
+  {
+    "Nombre": "Sistema incompleto",
+    "Categoría": "Concepto de entrega incremental",
+    "Descripción breve": "Sistema sin toda la funcionalidad implementada"
+  },
+  {
+    "Nombre": "Retroalimentación útil del cliente",
+    "Categoría": "Concepto de validación",
+    "Descripción breve": "Comentarios valiosos del cliente sobre el sistema"
+  },
+  {
+    "Nombre": "Especificación iterativa",
+    "Categoría": "Concepto de proceso ágil",
+    "Descripción breve": "Especificación que se desarrolla junto con el software"
+  },
+  {
+    "Nombre": "Especificación completa del sistema",
+    "Categoría": "Artefacto de especificación",
+    "Descripción breve": "Documento con todos los requerimientos detallados"
+  },
+  {
+    "Nombre": "Contrato de desarrollo del sistema",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Acuerdo legal para desarrollo de sistema"
+  },
+  {
+    "Nombre": "Especificación en contrato",
+    "Categoría": "Concepto de contrato",
+    "Descripción breve": "Especificación completa como parte del acuerdo"
+  },
+  {
+    "Nombre": "Incremento final definido",
+    "Categoría": "Artefacto de planificación",
+    "Descripción breve": "Última versión especificada del sistema"
+  },
+  {
+    "Nombre": "Nueva forma de contrato",
+    "Categoría": "Concepto de contrato",
+    "Descripción breve": "Tipo de acuerdo adaptado a desarrollo incremental"
+  },
+  {
+    "Nombre": "Clientes grandes",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Organizaciones de gran tamaño como clientes"
+  },
+  {
+    "Nombre": "Agencias gubernamentales",
+    "Categoría": "Tipo de cliente",
+    "Descripción breve": "Entidades del gobierno como clientes"
+  },
+  {
+    "Nombre": "Sistemas muy grandes",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de gran tamaño y complejidad"
+  },
+  {
+    "Nombre": "Equipos en diferentes ubicaciones",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Equipos de desarrollo distribuidos geográficamente"
+  },
+  {
+    "Nombre": "Software dependiente de hardware",
+    "Categoría": "Concepto de sistema embebido",
+    "Descripción breve": "Software cuyo desarrollo depende del desarrollo de hardware"
+  },
+  {
+    "Nombre": "Interacciones que comprometan seguridad",
+    "Categoría": "Concepto de sistema crítico",
+    "Descripción breve": "Combinaciones de requerimientos que afectan seguridad o protección"
+  },
+  {
+    "Nombre": "Incertidumbre de requerimientos",
+    "Categoría": "Problema de especificación",
+    "Descripción breve": "Falta de claridad sobre necesidades del sistema"
+  },
+  {
+    "Nombre": "Prototipo elaborado iterativamente",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Prototipo desarrollado en ciclos de refinamiento"
+  },
+  {
+    "Nombre": "Plataforma para experimentar",
+    "Categoría": "Uso de prototipo",
+    "Descripción breve": "Prototipo usado para probar requerimientos y diseño"
+  },
+  {
+    "Nombre": "Requerimientos definitivos",
+    "Categoría": "Artefacto de especificación",
+    "Descripción breve": "Especificación final basada en experiencia con prototipo"
+  },
+  {
+    "Nombre": "Marco de proceso dirigido por el riesgo",
+    "Categoría": "Enfoque de proceso",
+    "Descripción breve": "Proceso donde decisiones se basan en análisis de riesgos"
+  },
+  {
+    "Nombre": "Espiral",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Representación del proceso como ciclos en espiral"
+  },
+  {
+    "Nombre": "Secuencia de actividades",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Orden en que se realizan actividades"
+  },
+  {
+    "Nombre": "Retroceso de actividades",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Volver a actividades anteriores del proceso"
+  },
+  {
+    "Nombre": "Ciclo en la espiral",
+    "Categoría": "Elemento del modelo",
+    "Descripción breve": "Cada vuelta de la espiral representando una fase"
+  },
+  {
+    "Nombre": "Fase del proceso de software",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Etapa del desarrollo del sistema"
+  },
+  {
+    "Nombre": "Ciclo más interno",
+    "Categoría": "Elemento del modelo en espiral",
+    "Descripción breve": "Primera vuelta relacionada con factibilidad"
+  },
+  {
+    "Nombre": "Factibilidad del sistema",
+    "Categoría": "Fase inicial",
+    "Descripción breve": "Análisis de viabilidad del sistema propuesto"
+  },
+  {
+    "Nombre": "Definición de requerimientos (en espiral)",
+    "Categoría": "Fase del modelo",
+    "Descripción breve": "Ciclo dedicado a especificar requerimientos"
+  },
+  {
+    "Nombre": "Diseño del sistema (en espiral)",
+    "Categoría": "Fase del modelo",
+    "Descripción breve": "Ciclo dedicado a diseñar arquitectura y componentes"
+  },
+  {
+    "Nombre": "Combinación de evitar y tolerar cambio",
+    "Categoría": "Característica del modelo en espiral",
+    "Descripción breve": "Modelo que incorpora ambas estrategias para cambios"
+  },
+  {
+    "Nombre": "Cambios como resultado de riesgos",
+    "Categoría": "Concepto de gestión de riesgos",
+    "Descripción breve": "Cambios que surgen debido a riesgos del proyecto"
+  },
+  {
+    "Nombre": "Actividades de gestión de riesgos",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Acciones para identificar y reducir riesgos"
+  },
+  {
+    "Nombre": "Reducción de riesgos",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Acciones para disminuir probabilidad o impacto de riesgos"
+  },
+  {
+    "Nombre": "Cuatro sectores",
+    "Categoría": "Elemento del modelo en espiral",
+    "Descripción breve": "División de cada ciclo en cuatro áreas"
+  },
+  {
+    "Nombre": "Objetivos específicos para fase",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Metas concretas de cada fase del proyecto"
+  },
+  {
+    "Nombre": "Restricciones en proceso y producto",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Limitaciones que afectan cómo se desarrolla y qué se produce"
+  },
+  {
+    "Nombre": "Plan de gestión detallado",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Documento completo de cómo se administrará el proyecto"
+  },
+  {
+    "Nombre": "Riesgos del proyecto identificados",
+    "Categoría": "Artefacto de gestión de riesgos",
+    "Descripción breve": "Lista de riesgos detectados en el proyecto"
+  },
+  {
+    "Nombre": "Estrategias alternativas",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Opciones diferentes según riesgos"
+  },
+  {
+    "Nombre": "Riesgos identificados del proyecto",
+    "Categoría": "Artefacto de gestión de riesgos",
+    "Descripción breve": "Lista de riesgos conocidos del proyecto"
+  },
+  {
+    "Nombre": "Análisis minucioso de riesgo",
+    "Categoría": "Actividad de gestión de riesgos",
+    "Descripción breve": "Examen detallado de cada riesgo"
+  },
+  {
+    "Nombre": "Acciones para reducir riesgo",
+    "Categoría": "Actividad de gestión de riesgos",
+    "Descripción breve": "Medidas tomadas para disminuir riesgos"
+  },
+  {
+    "Nombre": "Riesgo de requerimientos inadecuados",
+    "Categoría": "Tipo de riesgo",
+    "Descripción breve": "Posibilidad de que especificación sea incorrecta o incompleta"
+  },
+  {
+    "Nombre": "Sistema prototipo",
+    "Categoría": "Artefacto para reducir riesgo",
+    "Descripción breve": "Prototipo desarrollado para mitigar riesgos"
+  },
+  {
+    "Nombre": "Modelo de desarrollo elegido",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Enfoque de desarrollo seleccionado según evaluación de riesgos"
+  },
+  {
+    "Nombre": "Riesgos en interfaz del usuario",
+    "Categoría": "Tipo de riesgo",
+    "Descripción breve": "Riesgos relacionados con diseño de interfaces"
+  },
+  {
+    "Nombre": "Mejor enfoque de desarrollo",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Modelo de desarrollo más adecuado según riesgos"
+  },
+  {
+    "Nombre": "Riesgos de seguridad",
+    "Categoría": "Tipo de riesgo",
+    "Descripción breve": "Riesgos relacionados con protección del sistema"
+  },
+  {
+    "Nombre": "Desarrollo con transformaciones formales",
+    "Categoría": "Enfoque de proceso",
+    "Descripción breve": "Proceso basado en métodos formales"
+  },
+  {
+    "Nombre": "Proceso más adecuado",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Modelo de desarrollo que mejor se ajusta a características del proyecto"
+  },
+  {
+    "Nombre": "Riesgo de integración de subsistemas",
+    "Categoría": "Tipo de riesgo",
+    "Descripción breve": "Riesgo relacionado con combinar partes del sistema"
+  },
+  {
+    "Nombre": "Mejor modelo de desarrollo",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Modelo más apropiado para el proyecto"
+  },
+  {
+    "Nombre": "Revisión del proyecto",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Examen del estado y progreso del proyecto"
+  },
+  {
+    "Nombre": "Decisión de continuar",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Determinar si seguir con siguiente fase del proyecto"
+  },
+  {
+    "Nombre": "Planes para siguiente fase",
+    "Categoría": "Artefacto de planificación",
+    "Descripción breve": "Documentos que especifican actividades de próxima fase"
+  },
+  {
+    "Nombre": "Diferencia con otros modelos",
+    "Categoría": "Concepto de comparación",
+    "Descripción breve": "Características distintivas del modelo en espiral"
+  },
+  {
+    "Nombre": "Reconocimiento explícito del riesgo",
+    "Categoría": "Característica del modelo",
+    "Descripción breve": "Consideración formal de riesgos en el proceso"
+  },
+  {
+    "Nombre": "Elaboración de objetivos",
+    "Categoría": "Actividad de planificación",
+    "Descripción breve": "Definición de metas como rendimiento y funcionalidad"
+  },
+  {
+    "Nombre": "Objetivos de rendimiento y funcionalidad",
+    "Categoría": "Tipo de objetivo",
+    "Descripción breve": "Metas sobre velocidad y capacidades del sistema"
+  },
+  {
+    "Nombre": "Formas alternativas de alcanzar objetivos",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Diferentes opciones para lograr metas"
+  },
+  {
+    "Nombre": "Restricciones en cada alternativa",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Limitaciones de cada opción"
+  },
+  {
+    "Nombre": "Alternativa valorada contra objetivo",
+    "Categoría": "Actividad de análisis",
+    "Descripción breve": "Evaluación de opción respecto a meta"
+  },
+  {
+    "Nombre": "Fuentes de riesgo",
+    "Categoría": "Concepto de gestión de riesgos",
+    "Descripción breve": "Orígenes o causas de riesgos del proyecto"
+  },
+  {
+    "Nombre": "Resolución de riesgos",
+    "Categoría": "Actividad de gestión de riesgos",
+    "Descripción breve": "Acciones para eliminar o reducir riesgos"
+  },
+  {
+    "Nombre": "Recopilación de información",
+    "Categoría": "Actividad de gestión de riesgos",
+    "Descripción breve": "Obtención de datos para resolver riesgos"
+  },
+  {
+    "Nombre": "Análisis más detallado",
+    "Categoría": "Actividad de gestión de riesgos",
+    "Descripción breve": "Examen profundo para entender y resolver riesgos"
+  },
+  {
+    "Nombre": "Simulación",
+    "Categoría": "Técnica de gestión de riesgos",
+    "Descripción breve": "Modelado de sistema para evaluar riesgos"
+  },
+  {
+    "Nombre": "Riesgos valorados",
+    "Categoría": "Concepto de gestión de riesgos",
+    "Descripción breve": "Riesgos analizados y evaluados"
+  },
+  {
+    "Nombre": "Desarrollo después de valoración",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Implementación que sigue a evaluación de riesgos"
+  },
+  {
+    "Nombre": "Actividad de planeación",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Preparación de siguiente fase del proceso"
+  },
+  {
+    "Nombre": "Siguiente fase del proceso",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Próxima etapa del desarrollo"
+  },
+  {
+    "Nombre": "Riesgo informal",
+    "Categoría": "Concepto de gestión de riesgos",
+    "Descripción breve": "Definición simple de riesgo como algo que podría salir mal"
+  },
+  {
+    "Nombre": "Nuevo lenguaje de programación",
+    "Categoría": "Tipo de riesgo",
+    "Descripción breve": "Uso de tecnología de programación no familiar"
+  },
+  {
+    "Nombre": "Compiladores no confiables",
+    "Categoría": "Tipo de riesgo",
+    "Descripción breve": "Herramientas de compilación con posibles problemas"
+  },
+  {
+    "Nombre": "Código-objeto no eficaz",
+    "Categoría": "Tipo de riesgo",
+    "Descripción breve": "Código generado con bajo rendimiento"
+  },
+  {
+    "Nombre": "Problemas de proyecto",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Dificultades en ejecución del proyecto"
+  },
+  {
+    "Nombre": "Exceso en fechas",
+    "Categoría": "Problema de gestión",
+    "Descripción breve": "Retrasos respecto a calendario planificado"
+  },
+  {
+    "Nombre": "Exceso en costo",
+    "Categoría": "Problema de gestión",
+    "Descripción breve": "Gastos superiores a presupuesto"
+  },
+  {
+    "Nombre": "Minimización del riesgo",
+    "Categoría": "Actividad de gestión de riesgos",
+    "Descripción breve": "Reducción de riesgos a mínimo posible"
+  },
+  {
+    "Nombre": "Administración del proyecto",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Gestión general del desarrollo del sistema"
+  },
+  {
+    "Nombre": "Modelo de proceso híbrido",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Modelo que combina elementos de diferentes enfoques"
+  },
+  {
+    "Nombre": "Elementos de todos los modelos genéricos",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "RUP combina aspectos de modelos en cascada, incremental y reutilización"
+  },
+  {
+    "Nombre": "Ilustración de buena práctica",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "RUP ejemplifica mejores prácticas en especificación y diseño"
+  },
+  {
+    "Nombre": "Soporte a creación de prototipos",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "RUP incluye técnicas de prototipado"
+  },
+  {
+    "Nombre": "Soporte a entrega incremental",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "RUP permite entregas incrementales"
+  },
+  {
+    "Nombre": "Modelos de proceso convencionales",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Modelos tradicionales con una sola vista del proceso"
+  },
+  {
+    "Nombre": "Vista única del proceso",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Representación del proceso desde una sola perspectiva"
+  },
+  {
+    "Nombre": "Tres perspectivas",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "RUP describe proceso desde tres puntos de vista"
+  },
+  {
+    "Nombre": "Fases a través del tiempo",
+    "Categoría": "Concepto de perspectiva dinámica",
+    "Descripción breve": "Cómo evolucionan las fases temporalmente"
+  },
+  {
+    "Nombre": "Actividades del proceso establecidas",
+    "Categoría": "Concepto de perspectiva estática",
+    "Descripción breve": "Qué actividades se realizan en el proceso"
+  },
+  {
+    "Nombre": "Buenas prácticas",
+    "Categoría": "Concepto de perspectiva práctica",
+    "Descripción breve": "Prácticas recomendadas para usar en el proceso"
+  },
+  {
+    "Nombre": "Descripciones del RUP",
+    "Categoría": "Concepto de documentación",
+    "Descripción breve": "Formas de representar el proceso RUP"
+  },
+  {
+    "Nombre": "Combinación de perspectivas",
+    "Categoría": "Técnica de representación",
+    "Descripción breve": "Integración de vistas estática y dinámica en un diagrama"
+  },
+  {
+    "Nombre": "Diagrama único",
+    "Categoría": "Técnica de representación",
+    "Descripción breve": "Representación combinada de perspectivas"
+  },
+  {
+    "Nombre": "Proceso difícil de entender",
+    "Categoría": "Problema de representación",
+    "Descripción breve": "Dificultad causada por combinar perspectivas"
+  },
+  {
+    "Nombre": "Descripciones separadas",
+    "Categoría": "Técnica de representación",
+    "Descripción breve": "Representación independiente de cada perspectiva"
+  },
+  {
+    "Nombre": "Modelo en fases",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Modelo que identifica fases discretas del proceso"
+  },
+  {
+    "Nombre": "Fases discretas",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Fases claramente separadas en el proceso"
+  },
+  {
+    "Nombre": "Fases en cascada",
+    "Categoría": "Concepto de modelo en cascada",
+    "Descripción breve": "Fases que se igualan con actividades del proceso"
+  },
+  {
+    "Nombre": "Fases del RUP",
+    "Categoría": "Concepto de proceso RUP",
+    "Descripción breve": "Fases vinculadas con empresa más que con técnica"
+  },
+  {
+    "Nombre": "Preocupaciones técnicas",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Aspectos relacionados con tecnología e implementación"
+  },
+  {
+    "Nombre": "Preocupaciones empresariales",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Aspectos relacionados con negocio y organización"
+  },
+  {
+    "Nombre": "Meta de fase de concepción",
+    "Categoría": "Objetivo de fase",
+    "Descripción breve": "Establecer caso empresarial para el sistema"
+  },
+  {
+    "Nombre": "Todas las entidades externas",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Conjunto completo de personas y sistemas externos"
+  },
+  {
+    "Nombre": "Personas que interactúan",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Usuarios y otros actores que usan el sistema"
+  },
+  {
+    "Nombre": "Sistemas que interactúan",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Otros sistemas que se comunican con el sistema"
+  },
+  {
+    "Nombre": "Interacciones definidas",
+    "Categoría": "Artefacto de análisis",
+    "Descripción breve": "Especificación de cómo entidades externas interactúan con sistema"
+  },
+  {
+    "Nombre": "Valoración de aportación",
+    "Categoría": "Actividad de análisis",
+    "Descripción breve": "Evaluación de contribución del sistema a la empresa"
+  },
+  {
+    "Nombre": "Aportación hacia empresa",
+    "Categoría": "Concepto de valor",
+    "Descripción breve": "Beneficio que el sistema da a la organización"
+  },
+  {
+    "Nombre": "Aportación menor",
+    "Categoría": "Concepto de valor",
+    "Descripción breve": "Beneficio insuficiente del sistema"
+  },
+  {
+    "Nombre": "Cancelación del proyecto",
+    "Categoría": "Decisión de gestión",
+    "Descripción breve": "Terminación del proyecto después de fase inicial"
+  },
+  {
+    "Nombre": "Metas de fase de elaboración",
+    "Categoría": "Objetivo de fase",
+    "Descripción breve": "Desarrollar comprensión del dominio, marco arquitectónico, plan y riesgos"
+  },
+  {
+    "Nombre": "Comprensión del problema de dominio",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Entendimiento del área y contexto del problema"
+  },
+  {
+    "Nombre": "Marco conceptual arquitectónico (en elaboración)",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Estructura arquitectónica básica del sistema"
+  },
+  {
+    "Nombre": "Plan del proyecto (en elaboración)",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Planificación del desarrollo del sistema"
+  },
+  {
+    "Nombre": "Riesgos clave identificados",
+    "Categoría": "Artefacto de gestión de riesgos",
+    "Descripción breve": "Principales riesgos detectados en fase de elaboración"
+  },
+  {
+    "Nombre": "Completar fase de elaboración",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Finalización de fase de elaboración"
+  },
+  {
+    "Nombre": "Serie de casos de uso",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Conjunto de casos de uso UML"
+  },
+  {
+    "Nombre": "Plan de desarrollo del software",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Documento que planifica desarrollo del sistema"
+  },
+  {
+    "Nombre": "Meta de fase de construcción",
+    "Categoría": "Objetivo de fase",
+    "Descripción breve": "Diseñar, programar y probar el sistema"
+  },
+  {
+    "Nombre": "Diseño en construcción",
+    "Categoría": "Actividad de fase",
+    "Descripción breve": "Diseño de componentes durante fase de construcción"
+  },
+  {
+    "Nombre": "Programación en construcción",
+    "Categoría": "Actividad de fase",
+    "Descripción breve": "Codificación durante fase de construcción"
+  },
+  {
+    "Nombre": "Pruebas en construcción",
+    "Categoría": "Actividad de fase",
+    "Descripción breve": "Validación durante fase de construcción"
+  },
+  {
+    "Nombre": "Partes del sistema desarrolladas en paralelo",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Componentes desarrollados simultáneamente"
+  },
+  {
+    "Nombre": "Integración en construcción",
+    "Categoría": "Actividad de fase",
+    "Descripción breve": "Combinación de partes durante fase de construcción"
+  },
+  {
+    "Nombre": "Sistema funcionando",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Sistema ejecutable que opera correctamente"
+  },
+  {
+    "Nombre": "Documentación relacionada",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Documentos asociados al sistema"
+  },
+  {
+    "Nombre": "Lista para entregarse",
+    "Categoría": "Estado de sistema",
+    "Descripción breve": "Sistema preparado para entregar al usuario"
+  },
+  {
+    "Nombre": "Meta de fase de transición",
+    "Categoría": "Objetivo de fase",
+    "Descripción breve": "Cambiar sistema desde desarrollo hacia usuarios"
+  },
+  {
+    "Nombre": "Cambio a comunidad de usuarios",
+    "Categoría": "Actividad de transición",
+    "Descripción breve": "Movimiento del sistema a usuarios finales"
+  },
+  {
+    "Nombre": "Comunidad de desarrollo",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Equipo que desarrolla el sistema"
+  },
+  {
+    "Nombre": "Comunidad de usuarios",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Personas que usarán el sistema"
+  },
+  {
+    "Nombre": "Funcionamiento en ambiente real",
+    "Categoría": "Concepto de implementación",
+    "Descripción breve": "Sistema operando en entorno de producción"
+  },
+  {
+    "Nombre": "Actividad costosa",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Actividad con altos gastos asociados"
+  },
+  {
+    "Nombre": "Actividad problemática",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Actividad con potenciales dificultades"
+  },
+  {
+    "Nombre": "Ignorado en modelos de proceso",
+    "Categoría": "Problema de modelos",
+    "Descripción breve": "Aspecto no considerado en la mayoría de modelos"
+  },
+  {
+    "Nombre": "Complemento de fase",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Finalización de fase de transición"
+  },
+  {
+    "Nombre": "Sistema documentado funcionando",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Sistema operativo con documentación completa"
+  },
+  {
+    "Nombre": "Funcionamiento correcto",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Sistema que opera según especificación"
+  },
+  {
+    "Nombre": "Entorno operacional (en transición)",
+    "Categoría": "Concepto de entorno",
+    "Descripción breve": "Ambiente donde sistema opera en producción"
+  },
+  {
+    "Nombre": "Iteración en RUP",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "Soporte para desarrollo iterativo"
+  },
+  {
+    "Nombre": "Dos formas de iteración",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Iteración dentro de fases e iteración de conjunto de fases"
+  },
+  {
+    "Nombre": "Fase iterativa",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Fase realizada de forma iterativa"
+  },
+  {
+    "Nombre": "Resultados desarrollados incrementalmente",
+    "Categoría": "Concepto de desarrollo",
+    "Descripción breve": "Productos creados de forma gradual"
+  },
+  {
+    "Nombre": "Conjunto de fases incremental",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Todo el ciclo de fases repetido incrementalmente"
+  },
+  {
+    "Nombre": "Flecha en curva",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Representación gráfica de iteración de fases"
+  },
+  {
+    "Nombre": "Transición a concepción",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Retorno desde transición hacia concepción"
+  },
+  {
+    "Nombre": "Vista estática del RUP",
+    "Categoría": "Perspectiva de proceso",
+    "Descripción breve": "Enfoque en actividades del proceso de desarrollo"
+  },
+  {
+    "Nombre": "Descripción RUP",
+    "Categoría": "Concepto de documentación",
+    "Descripción breve": "Forma de representar el proceso RUP"
+  },
+  {
+    "Nombre": "Seis flujos centrales",
+    "Categoría": "Concepto de proceso RUP",
+    "Descripción breve": "Flujos principales de ingeniería en RUP"
+  },
+  {
+    "Nombre": "Tres flujos de apoyo",
+    "Categoría": "Concepto de proceso RUP",
+    "Descripción breve": "Flujos de soporte en RUP"
+  },
+  {
+    "Nombre": "Diseño con UML",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Uso de UML para crear modelos en RUP"
+  },
+  {
+    "Nombre": "Modelos UML asociados",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Modelos específicos de UML para cada flujo"
+  },
+  {
+    "Nombre": "Ventaja de presentación separada",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "Beneficio de mostrar perspectivas dinámicas y estáticas por separado"
+  },
+  {
+    "Nombre": "Fases no asociadas con flujos específicos",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "Fases del proceso no ligadas a flujos de trabajo particulares"
+  },
+  {
+    "Nombre": "Flujos RUP activos",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Flujos de trabajo en ejecución durante el proceso"
+  },
+  {
+    "Nombre": "Totalidad de etapas",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Todas las fases del proceso"
+  },
+  {
+    "Nombre": "Fases iniciales",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Primeras fases del desarrollo"
+  },
+  {
+    "Nombre": "Mayor esfuerzo en flujos",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Más trabajo dedicado a ciertos flujos en ciertas fases"
+  },
+  {
+    "Nombre": "Fases posteriores",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Últimas fases del desarrollo"
+  },
+  {
+    "Nombre": "Enfoque práctico del RUP",
+    "Categoría": "Perspectiva de proceso",
+    "Descripción breve": "Vista que describe buenas prácticas de ingeniería de software"
+  },
+  {
+    "Nombre": "Buenas prácticas de ingeniería de software",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Prácticas recomendadas para desarrollo de software"
+  },
+  {
+    "Nombre": "Uso en desarrollo de sistemas",
+    "Categoría": "Concepto de aplicación",
+    "Descripción breve": "Aplicación de prácticas en proyectos reales"
+  },
+  {
+    "Nombre": "Seis mejores prácticas",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Conjunto de prácticas fundamentales recomendadas"
+  },
+  {
+    "Nombre": "Incrementar plan del sistema",
+    "Categoría": "Actividad de planificación",
+    "Descripción breve": "Desarrollar plan basado en prioridades"
+  },
+  {
+    "Nombre": "Prioridades del cliente",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Importancia relativa de necesidades según cliente"
+  },
+  {
+    "Nombre": "Desarrollo oportuno",
+    "Categoría": "Concepto de gestión",
+    "Descripción breve": "Desarrollo en momento adecuado del proceso"
+  },
+  {
+    "Nombre": "Características de mayor prioridad",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Funcionalidades más importantes del sistema"
+  },
+  {
+    "Nombre": "Documentación explícita",
+    "Categoría": "Técnica de gestión de requerimientos",
+    "Descripción breve": "Registro formal y claro de requerimientos"
+  },
+  {
+    "Nombre": "Requerimientos del cliente documentados",
+    "Categoría": "Artefacto de especificación",
+    "Descripción breve": "Registro formal de necesidades del cliente"
+  },
+  {
+    "Nombre": "Huella de cambios",
+    "Categoría": "Técnica de gestión",
+    "Descripción breve": "Seguimiento de modificaciones a requerimientos"
+  },
+  {
+    "Nombre": "Análisis de efecto de cambios",
+    "Categoría": "Actividad de gestión de cambios",
+    "Descripción breve": "Evaluación de impacto de cambios propuestos"
+  },
+  {
+    "Nombre": "Efecto sobre el sistema",
+    "Categoría": "Concepto de análisis",
+    "Descripción breve": "Impacto de cambios en el sistema"
+  },
+  {
+    "Nombre": "Aceptación de cambios",
+    "Categoría": "Actividad de gestión de cambios",
+    "Descripción breve": "Decisión de incorporar o rechazar cambios"
+  },
+  {
+    "Nombre": "Estructurar arquitectura",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Organizar sistema en componentes"
+  },
+  {
+    "Nombre": "Trabajo en VS Code",
+    "Categoría": "Concepto de ambiente",
+    "Descripción breve": "Desarrollo usando Visual Studio Code como herramienta"
+  },
+  {
+    "Nombre": "Apps Flutter",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Aplicaciones móviles desarrolladas con Flutter"
+  },
+  {
+    "Nombre": "Apps Next.js",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Aplicaciones web desarrolladas con Next.js"
+  },
+  {
+    "Nombre": "SDKs",
+    "Categoría": "Tipo de artefacto",
+    "Descripción breve": "Software Development Kits para desarrollo"
+  },
+  {
+    "Nombre": "Git repos",
+    "Categoría": "Concepto de gestión de configuración",
+    "Descripción breve": "Repositorios Git para control de versiones"
+  },
+  {
+    "Nombre": "Modelos UML gráficos",
+    "Categoría": "Artefacto de modelado",
+    "Descripción breve": "Representaciones visuales UML del sistema"
+  },
+  {
+    "Nombre": "Representaciones estáticas",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelos que muestran estructura del software"
+  },
+  {
+    "Nombre": "Representaciones dinámicas",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelos que muestran comportamiento del software"
+  },
+  {
+    "Nombre": "Estándares de calidad",
+    "Categoría": "Concepto de calidad",
+    "Descripción breve": "Niveles de calidad establecidos por organización"
+  },
+  {
+    "Nombre": "Cumplimiento con estándares",
+    "Categoría": "Criterio de calidad",
+    "Descripción breve": "Sistema que satisface niveles de calidad requeridos"
+  },
+  {
+    "Nombre": "Sistema de administración del cambio (en práctica)",
+    "Categoría": "Herramienta de gestión",
+    "Descripción breve": "Sistema para controlar cambios al software"
+  },
+  {
+    "Nombre": "Herramientas de administración de configuración",
+    "Categoría": "Herramienta de gestión",
+    "Descripción breve": "Herramientas para gestionar versiones y cambios"
+  },
+  {
+    "Nombre": "Procedimientos de administración del cambio",
+    "Categoría": "Técnica de gestión",
+    "Descripción breve": "Procedimientos formales para controlar cambios"
+  },
+  {
+    "Nombre": "Proceso adecuado para desarrollo",
+    "Categoría": "Concepto de aplicación",
+    "Descripción breve": "RUP apropiado para ciertos tipos de desarrollo"
+  },
+  {
+    "Nombre": "Software embebido",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software integrado en hardware específico"
+  },
+  {
+    "Nombre": "Desarrollo de software embebido",
+    "Categoría": "Tipo de desarrollo",
+    "Descripción breve": "Desarrollo de software para sistemas embebidos"
+  },
+  {
+    "Nombre": "Tres modelos de proceso genéricos",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Cascada, incremental y reutilización"
+  },
+  {
+    "Nombre": "Innovaciones en RUP",
+    "Categoría": "Concepto de modelo",
+    "Descripción breve": "Nuevos aportes del RUP a procesos de software"
+  },
+  {
+    "Nombre": "Separación de fases y flujos",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "Distinción clara entre fases y flujos de trabajo"
+  },
+  {
+    "Nombre": "Reconocimiento de despliegue",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "Consideración del despliegue como parte del proceso"
+  },
+  {
+    "Nombre": "Despliegue del software",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Instalación y puesta en marcha del software"
+  },
+  {
+    "Nombre": "Entorno del usuario",
+    "Categoría": "Concepto de implementación",
+    "Descripción breve": "Ambiente donde usuarios trabajan con el sistema"
+  },
+  {
+    "Nombre": "Parte del proceso",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Actividad incluida en el proceso de software"
+  },
+  {
+    "Nombre": "Fases dinámicas",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Fases con metas específicas que evolucionan en el tiempo"
+  },
+  {
+    "Nombre": "Metas de fases",
+    "Categoría": "Concepto de planificación",
+    "Descripción breve": "Objetivos específicos de cada fase"
+  },
+  {
+    "Nombre": "Flujos estáticos",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Actividades técnicas que no cambian"
+  },
+  {
+    "Nombre": "Actividades técnicas",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Tareas de ingeniería en el proceso"
+  },
+  {
+    "Nombre": "Actividades no asociadas con fase única",
+    "Categoría": "Característica del RUP",
+    "Descripción breve": "Flujos que se usan a lo largo del desarrollo"
+  },
+  {
+    "Nombre": "Logro de metas de cada fase",
+    "Categoría": "Concepto de proceso",
+    "Descripción breve": "Consecución de objetivos de fase usando flujos"
+  }
+]

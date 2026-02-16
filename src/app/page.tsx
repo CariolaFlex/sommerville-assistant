@@ -1,101 +1,252 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowRight, BookOpen, Zap, FileText, Search, CheckCircle2, Lightbulb, TrendingUp, Sparkles } from 'lucide-react';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white py-16 md:py-24 overflow-hidden">
+        {/* Decorative background */}
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent" />
+        
+        <div className="container mx-auto px-4 text-center max-w-5xl relative z-10">
+          <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+            <p className="text-sm font-medium">✨ Basado en Ian Sommerville - 9na Edición</p>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            🎓 Sommerville Assistant
+          </h1>
+          
+          <p className="text-xl md:text-2xl mb-4 text-blue-100 leading-relaxed">
+            Descubre el proceso, metodología y arquitectura perfectos para tu proyecto
+            de software en minutos
+          </p>
+          
+          <p className="text-base md:text-lg mb-10 text-blue-200">
+            Guía interactiva basada en los capítulos 1-6 del libro &quot;Ingeniería de Software&quot;
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/wizard">
+              <Button size="lg" className="gap-2 bg-white text-blue-600 hover:bg-blue-50 shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto group">
+                <Zap className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+                Comenzar Análisis
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            
+            <Link href="/glossary">
+              <Button size="lg" variant="outline" className="gap-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm w-full sm:w-auto">
+                <Search className="h-5 w-5" />
+                Explorar Glosario
+              </Button>
+            </Link>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <p className="text-3xl font-bold">13</p>
+              <p className="text-sm text-blue-100">Recomendaciones</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <p className="text-3xl font-bold">2,100</p>
+              <p className="text-sm text-blue-100">Términos</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <p className="text-3xl font-bold">7</p>
+              <p className="text-sm text-blue-100">Plantillas</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <p className="text-3xl font-bold">6</p>
+              <p className="text-sm text-blue-100">Capítulos</p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              ¿Qué puedes hacer con Sommerville Assistant?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Herramientas profesionales para tomar decisiones informadas en tu proyecto
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-blue-500">
+              <CardHeader>
+                <Zap className="h-10 w-10 text-blue-600 mb-3" />
+                <CardTitle>Wizard Interactivo</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="leading-relaxed">
+                  Responde 4-5 preguntas sobre tu proyecto y obtén una recomendación personalizada con proceso, metodología y arquitectura específica
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-green-500">
+              <CardHeader>
+                <BookOpen className="h-10 w-10 text-green-600 mb-3" />
+                <CardTitle>13 Recomendaciones</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="leading-relaxed">
+                  Desde sistemas críticos hasta startups ágiles, cada recomendación incluye timeline semanal, plantillas y mejores prácticas
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-purple-500">
+              <CardHeader>
+                <FileText className="h-10 w-10 text-purple-600 mb-3" />
+                <CardTitle>Plantillas & Checklists</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="leading-relaxed">
+                  7 plantillas documentales y 4 checklists descargables con 88 items para aplicar inmediatamente en tu equipo
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-orange-500">
+              <CardHeader>
+                <Search className="h-10 w-10 text-orange-600 mb-3" />
+                <CardTitle>Glosario Completo</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="leading-relaxed">
+                  2,100 términos técnicos de los capítulos 1-6 con búsqueda avanzada, filtros por categoría y referencias cruzadas
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              ¿Cómo funciona?
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Tres pasos simples para obtener tu recomendación personalizada
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Paso 1 */}
+            <div className="relative text-center">
+              <div className="mx-auto w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4 relative z-10">
+                <Lightbulb className="h-12 w-12" />
+              </div>
+              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl z-0">
+                1
+              </div>
+              <h3 className="text-xl font-bold mb-3 mt-6">Responde el Cuestionario</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Describe tu proyecto: tipo de sistema, tamaño de equipo, volatilidad de requisitos y criticidad
+              </p>
+            </div>
+
+            {/* Paso 2 */}
+            <div className="relative text-center">
+              <div className="mx-auto w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-green-600 mb-4 relative z-10">
+                <TrendingUp className="h-12 w-12" />
+              </div>
+              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xl z-0">
+                2
+              </div>
+              <h3 className="text-xl font-bold mb-3 mt-6">Análisis Inteligente</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                El sistema analiza tus respuestas y navega por el árbol de decisiones basado en Sommerville
+              </p>
+            </div>
+
+            {/* Paso 3 */}
+            <div className="relative text-center">
+              <div className="mx-auto w-20 h-20 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-4 relative z-10">
+                <CheckCircle2 className="h-12 w-12" />
+              </div>
+              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-xl z-0">
+                3
+              </div>
+              <h3 className="text-xl font-bold mb-3 mt-6">Recibe Recomendación</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Obtén proceso, metodología, arquitectura, timeline y plantillas específicas para tu caso
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-2">
+              <p className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                13
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">Caminos de decisión</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-5xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
+                2.1K
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">Términos técnicos</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent">
+                7
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">Plantillas listas</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-800 bg-clip-text text-transparent">
+                6
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">Capítulos cubiertos</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]" />
+        
+        <div className="container mx-auto px-4 text-center max-w-4xl relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            ¿Listo para elegir tu proceso de desarrollo?
+          </h2>
+          <p className="text-xl mb-8 text-blue-100 leading-relaxed">
+            En menos de 5 minutos tendrás una recomendación completa con timeline, plantillas y mejores prácticas de la industria
+          </p>
+          <Link href="/wizard">
+            <Button size="lg" className="gap-2 bg-white text-blue-600 hover:bg-blue-50 shadow-xl hover:shadow-2xl transition-all group">
+              <Sparkles className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+              Empezar Ahora
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+          
+          <p className="mt-6 text-sm text-blue-200">
+            ✨ Gratis • Sin registro • Basado en bibliografía académica
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

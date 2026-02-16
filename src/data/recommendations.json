@@ -1,0 +1,1740 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-15",
+  "totalRecommendations": 13,
+  "recommendations": {
+    "rec-001": {
+      "id": "rec-001",
+      "title": "Sistema Crítico → Estables → Grande",
+      "path": [
+        "Crítico",
+        "Estables",
+        "Grande"
+      ],
+      "pathDescription": "Sistema Crítico de Seguridad → Requisitos Estables → Equipo Grande (>20)",
+      "process": {
+        "name": "Cascada + RUP",
+        "chapter": 2,
+        "why": [
+          "Requisitos estables permiten especificación completa",
+          "Criticidad requiere documentación exhaustiva y trazabilidad",
+          "Equipo grande necesita proceso disciplinado",
+          "Regulaciones (FDA, aviación) exigen cumplimiento formal"
+        ],
+        "how": [
+          "Fase 1: Análisis y Definición de Requerimientos → Documento de Especificación",
+          "Fase 2: Diseño del Sistema y Software → Arquitectura + Diseño Detallado",
+          "Fase 3: Implementación y Prueba de Unidad → Código + Verificación",
+          "Fase 4: Integración y Prueba de Sistema → Sistema Completo Probado",
+          "Fase 5: Operación y Mantenimiento → Instalación + Soporte"
+        ]
+      },
+      "methodology": {
+        "name": "Tradicional con Especificación Exhaustiva",
+        "chapter": 2,
+        "practices": [
+          "Especificación Formal de Requerimientos (IEEE 830)",
+          "Revisiones de Diseño Formales",
+          "Verificación y Validación Exhaustivas",
+          "Gestión de Configuración Estricta",
+          "Análisis de Seguridad y Confiabilidad (FMEA)"
+        ]
+      },
+      "modeling": {
+        "level": "COMPLETO Y FORMAL",
+        "chapter": 5,
+        "required": [
+          "Casos de Uso (todos los requisitos funcionales)",
+          "Diagramas de Secuencia (TODAS las interacciones críticas)",
+          "Diagramas de Clases (arquitectura completa OO)",
+          "Diagramas de Estado (componentes reactivos)",
+          "Diagramas de Actividad (flujos de control complejos)"
+        ],
+        "purpose": "Para generación de código y documentación formal"
+      },
+      "architecture": {
+        "pattern": "Capas",
+        "chapter": 6,
+        "why": "Seguridad multinivel, separación de responsabilidades clara, testing por capas, portabilidad",
+        "layers": [
+          "Capa 5: Interfaz Usuario/HMI (mínima en embebidos)",
+          "Capa 4: Lógica de Control (algoritmos críticos)",
+          "Capa 3: Servicios de Sistema (gestión de recursos)",
+          "Capa 2: Abstracción de Hardware (HAL)",
+          "Capa 1: Hardware/Firmware (drivers, RTOS)"
+        ],
+        "considerations": [
+          "Componentes redundantes para disponibilidad",
+          "Watchdog timers en capa de hardware",
+          "Monitoreo de salud del sistema",
+          "Mecanismos de fail-safe"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1-2",
+          "phase": "Inicio y Planificación",
+          "tasks": [
+            "Kickoff con stakeholders principales",
+            "Identificar todos los módulos del sistema",
+            "Definir criterios de aceptación",
+            "Establecer equipo y roles",
+            "Setup de infraestructura"
+          ]
+        },
+        {
+          "week": "3-6",
+          "phase": "Especificación Completa",
+          "tasks": [
+            "Documento de requerimientos IEEE 830",
+            "Revisión formal con stakeholders",
+            "Validación contra estándares regulatorios",
+            "Casos de uso detallados",
+            "Especificación de interfaces"
+          ]
+        },
+        {
+          "week": "7-10",
+          "phase": "Diseño Arquitectónico",
+          "tasks": [
+            "Arquitectura en capas completa",
+            "Diseño de componentes críticos",
+            "Análisis FMEA",
+            "Revisión formal de diseño",
+            "Prototipo técnico (si es necesario)"
+          ]
+        },
+        {
+          "week": "11-24",
+          "phase": "Implementación",
+          "tasks": [
+            "Desarrollo capa por capa",
+            "Pruebas unitarias exhaustivas",
+            "Code reviews formales",
+            "Documentación inline",
+            "Gestión de configuración estricta"
+          ]
+        },
+        {
+          "week": "25-30",
+          "phase": "Integración y Pruebas",
+          "tasks": [
+            "Integración incremental",
+            "Pruebas de sistema exhaustivas",
+            "Pruebas de seguridad",
+            "Validación con regulador",
+            "Documentación de usuario"
+          ]
+        },
+        {
+          "week": "31+",
+          "phase": "Deployment y Mantenimiento",
+          "tasks": [
+            "Instalación controlada",
+            "Capacitación",
+            "Soporte 24/7",
+            "Mantenimiento correctivo",
+            "Updates de seguridad"
+          ]
+        }
+      ],
+      "avoid": [
+        "Ágil puro (requisitos críticos deben estar completamente especificados)",
+        "Big Bang Integration (integrar todo al final es riesgoso)",
+        "Sin trazabilidad (requisito → diseño → código → prueba)",
+        "Skipping formal reviews (requerido por regulaciones)",
+        "Cambios no documentados",
+        "Testing insuficiente"
+      ],
+      "templates": [
+        "tpl-001",
+        "tpl-003",
+        "tpl-006",
+        "tpl-009",
+        "tpl-011"
+      ],
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "rec-002": {
+      "id": "rec-002",
+      "title": "Sistema Crítico → Estables → Pequeño",
+      "path": [
+        "Crítico",
+        "Estables",
+        "Pequeño"
+      ],
+      "pathDescription": "Sistema Crítico de Seguridad → Requisitos Estables → Equipo Pequeño (<10)",
+      "process": {
+        "name": "Cascada Adaptado",
+        "chapter": 2,
+        "why": [
+          "Equipo pequeño permite documentación menos pesada",
+          "Comunicación directa reduce necesidad de documentos extensos",
+          "Mantiene verificación rigurosa pero con menos overhead",
+          "Criticidad sigue requiriendo especificación completa"
+        ],
+        "how": [
+          "Fase 1: Especificación (2-3 semanas) → Documento conciso",
+          "Fase 2: Diseño (2-3 semanas) → Arquitectura + diseño componentes críticos",
+          "Fase 3: Implementación (8-12 semanas) → Código con estándares + testing continuo",
+          "Fase 4: Integración y Pruebas (3-4 semanas) → Testing exhaustivo",
+          "Fase 5: Deployment → Instalación y documentación"
+        ]
+      },
+      "methodology": {
+        "name": "Tradicional Simplificada",
+        "chapter": 2,
+        "practices": [
+          "Especificación Concisa pero Completa",
+          "Testing Automatizado (100% código crítico)",
+          "Revisiones de Código (PR obligatorios)",
+          "Diseño con Código (README + comentarios)",
+          "CI/CD Simple (GitHub Actions)"
+        ]
+      },
+      "modeling": {
+        "level": "ESENCIAL",
+        "chapter": 5,
+        "required": [
+          "Casos de Uso: Para requisitos principales",
+          "Diagramas de Secuencia: Solo interacciones complejas",
+          "Diagrama de Clases: Core del dominio",
+          "Diagramas de Estado: Componentes reactivos"
+        ],
+        "purpose": "Comunicación y comprensión, no documentación exhaustiva",
+        "tools": [
+          "PlantUML",
+          "Mermaid en Markdown",
+          "Pizarra + foto"
+        ]
+      },
+      "architecture": {
+        "pattern": "Capas (simplificada)",
+        "chapter": 6,
+        "why": "Separación clara, testing por capas, pero estructura más ligera",
+        "layers": [
+          "Capa 3: Control (Lógica crítica)",
+          "Capa 2: HAL (Hardware Abstraction Layer)",
+          "Capa 1: Hardware/Drivers"
+        ],
+        "considerations": [
+          "Arquitectura documentada en README",
+          "Código auto-documentado",
+          "Mecanismos de seguridad esenciales"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1",
+          "phase": "Especificación",
+          "tasks": [
+            "Documento de requisitos (10 páginas máximo)",
+            "Casos de uso principales (5-8 casos)",
+            "Análisis de riesgos de seguridad"
+          ]
+        },
+        {
+          "week": "2-3",
+          "phase": "Diseño",
+          "tasks": [
+            "Diseño arquitectónico (diagrama + README)",
+            "Selección de tecnología",
+            "Setup de repo con CI/CD",
+            "Primer prototipo técnico (spike)"
+          ]
+        },
+        {
+          "week": "4-12",
+          "phase": "Implementación",
+          "tasks": [
+            "Implementación con TDD",
+            "Code reviews semanales",
+            "Testing continuo",
+            "Documentación inline"
+          ]
+        },
+        {
+          "week": "13-16",
+          "phase": "Testing y Deployment",
+          "tasks": [
+            "Testing de sistema exhaustivo",
+            "Validación con regulador (si aplica)",
+            "Documentación de usuario",
+            "Deployment"
+          ]
+        }
+      ],
+      "avoid": [
+        "Documentación IEEE 830 completa (demasiado peso)",
+        "Múltiples niveles de aprobación (cuello de botella)",
+        "Metodologías ágiles (criticidad requiere especificación completa)",
+        "Modelado exhaustivo de cada detalle",
+        "Revisiones formales muy pesadas"
+      ],
+      "templates": [
+        "tpl-002",
+        "tpl-003",
+        "tpl-006",
+        "tpl-011"
+      ],
+      "chapters": [
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    "rec-003": {
+      "id": "rec-003",
+      "title": "Sistema Crítico → Volátiles (RIESGO ALTO)",
+      "path": [
+        "Crítico",
+        "Volátiles"
+      ],
+      "pathDescription": "Sistema Crítico de Seguridad → Requisitos Volátiles (⚠️ CONFLICTO)",
+      "warning": "⚠️ Combinación crítico + volátil es extremadamente riesgosa. Se recomienda Modelo Espiral con gestión exhaustiva de riesgos.",
+      "process": {
+        "name": "Modelo Espiral",
+        "chapter": 2,
+        "why": [
+          "Gestión de riesgos es prioritaria",
+          "Permite iteración controlada con criticidad",
+          "Prototipado para validar requisitos inciertos",
+          "Evaluación continua de riesgos de seguridad"
+        ],
+        "how": [
+          "Espiral 1: Determinar objetivos, identificar riesgos críticos, prototipo inicial",
+          "Espiral 2: Resolver riesgos de seguridad, refinar requisitos, prototipo funcional",
+          "Espiral 3+: Desarrollo incremental con análisis de riesgos por ciclo",
+          "Cada espiral: Planificación → Análisis de Riesgos → Desarrollo → Evaluación"
+        ]
+      },
+      "methodology": {
+        "name": "Híbrida con Gestión de Riesgos",
+        "chapter": 2,
+        "practices": [
+          "Análisis de Riesgos Formal en cada ciclo",
+          "Prototipado de Requisitos Inciertos",
+          "Especificación Iterativa (refinar en cada espiral)",
+          "Testing de Seguridad Continuo",
+          "Validación con Expertos de Dominio"
+        ]
+      },
+      "modeling": {
+        "level": "ITERATIVO Y EVOLUTIVO",
+        "chapter": 5,
+        "required": [
+          "Casos de Uso: Refinados en cada espiral",
+          "Diagramas de Riesgos: Identificar y mitigar",
+          "Diagramas de Estado: Para componentes críticos",
+          "Prototipos Desechables: Validar requisitos"
+        ],
+        "purpose": "Reducir incertidumbre progresivamente manteniendo criticidad"
+      },
+      "architecture": {
+        "pattern": "Capas con Aislamiento",
+        "chapter": 6,
+        "why": "Aislar componentes críticos de cambios, permitir evolución controlada",
+        "layers": [
+          "Capa Crítica Estable (núcleo que NO cambia)",
+          "Capa de Adaptación (absorbe volatilidad)",
+          "Capa de Interfaz (evoluciona con requisitos)"
+        ],
+        "considerations": [
+          "Core crítico debe estabilizarse pronto",
+          "Cambios solo en capas no críticas",
+          "Interfaces bien definidas entre capas"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1-4",
+          "phase": "Espiral 1: Planificación",
+          "tasks": [
+            "Identificar objetivos de alto nivel",
+            "Análisis de riesgos críticos",
+            "Identificar requisitos estables vs volátiles",
+            "Prototipo de concepto",
+            "Decisión Go/No-Go"
+          ]
+        },
+        {
+          "week": "5-12",
+          "phase": "Espiral 2: Reducción de Riesgos",
+          "tasks": [
+            "Resolver riesgos de seguridad identificados",
+            "Especificación de núcleo crítico",
+            "Prototipo funcional del core",
+            "Validación con expertos",
+            "Refinar arquitectura"
+          ]
+        },
+        {
+          "week": "13-24",
+          "phase": "Espirales 3-4: Desarrollo Iterativo",
+          "tasks": [
+            "Implementación incremental",
+            "Testing exhaustivo por iteración",
+            "Análisis de riesgos continuo",
+            "Refinar requisitos volátiles",
+            "Validación regulatoria progresiva"
+          ]
+        },
+        {
+          "week": "25-30",
+          "phase": "Finalización",
+          "tasks": [
+            "Integración completa",
+            "Certificación regulatoria",
+            "Testing de sistema final",
+            "Documentación completa"
+          ]
+        }
+      ],
+      "avoid": [
+        "Cascada puro (no maneja volatilidad)",
+        "Ágil puro (no maneja criticidad)",
+        "Ignorar análisis de riesgos",
+        "Cambios en núcleo crítico sin análisis exhaustivo",
+        "No estabilizar requisitos de seguridad pronto"
+      ],
+      "templates": [
+        "tpl-001",
+        "tpl-003",
+        "tpl-007",
+        "tpl-009"
+      ],
+      "chapters": [
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    "rec-004": {
+      "id": "rec-004",
+      "title": "Sistema Transaccional → Grande",
+      "path": [
+        "Transaccional",
+        "Estables",
+        "Grande"
+      ],
+      "pathDescription": "Sistema Transaccional → Requisitos Estables → Equipo Grande (>20)",
+      "process": {
+        "name": "Incremental + RUP",
+        "chapter": 2,
+        "why": [
+          "Permite entrega de valor incremental",
+          "Disciplina de RUP para equipos grandes",
+          "Testing continuo de transacciones",
+          "Gestión de configuración robusta"
+        ],
+        "how": [
+          "Fase Inicio: Visión, arquitectura de alto nivel",
+          "Fase Elaboración: Definir modelo de datos y APIs",
+          "Fase Construcción: Incrementos de 4-6 semanas",
+          "Fase Transición: Deployment y estabilización",
+          "Cada incremento: Análisis → Diseño → Implementación → Testing"
+        ]
+      },
+      "methodology": {
+        "name": "Híbrida (RUP + Incrementos)",
+        "chapter": 2,
+        "practices": [
+          "Arquitectura Base Temprana",
+          "Testing de Transacciones en cada incremento",
+          "Database Migrations Versionadas",
+          "Integración Continua con Testing de Carga",
+          "Gestión de Configuración Estricta"
+        ]
+      },
+      "modeling": {
+        "level": "COMPLETO PARA DATOS",
+        "chapter": 5,
+        "required": [
+          "Casos de Uso: Flujos transaccionales",
+          "Diagrama de Clases: Modelo de datos completo",
+          "Diagramas de Secuencia: Transacciones complejas",
+          "Diagrama de Despliegue: Infraestructura"
+        ],
+        "purpose": "Base de datos bien diseñada desde el inicio"
+      },
+      "architecture": {
+        "pattern": "Capas + Cliente-Servidor",
+        "chapter": 6,
+        "why": "Separación frontend/backend, escalabilidad, múltiples clientes",
+        "layers": [
+          "Capa Presentación: Múltiples clientes (Web, Móvil, Desktop)",
+          "Capa API: REST/GraphQL",
+          "Capa Lógica de Negocio: Reglas transaccionales",
+          "Capa Acceso a Datos: ORM + Procedures",
+          "Capa Persistencia: Base de datos ACID"
+        ],
+        "considerations": [
+          "Connection pooling",
+          "Transaction isolation levels",
+          "Caché de sesiones (Redis)",
+          "Load balancing",
+          "Replicación de BD"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1-4",
+          "phase": "Inicio",
+          "tasks": [
+            "Definir alcance y módulos principales",
+            "Arquitectura de alto nivel",
+            "Modelo de datos inicial",
+            "Setup de infraestructura"
+          ]
+        },
+        {
+          "week": "5-8",
+          "phase": "Elaboración",
+          "tasks": [
+            "Diseño completo de base de datos",
+            "Definición de APIs",
+            "Arquitectura detallada",
+            "Prototipo técnico"
+          ]
+        },
+        {
+          "week": "9-14",
+          "phase": "Incremento 1",
+          "tasks": [
+            "Autenticación y autorización",
+            "Módulo core (primera entidad transaccional)",
+            "Testing de concurrencia básico"
+          ]
+        },
+        {
+          "week": "15-20",
+          "phase": "Incremento 2",
+          "tasks": [
+            "Módulos transaccionales principales",
+            "Reportes básicos",
+            "Optimización de queries"
+          ]
+        },
+        {
+          "week": "21-30",
+          "phase": "Incrementos 3-4",
+          "tasks": [
+            "Funcionalidades restantes",
+            "Integración con sistemas externos",
+            "Testing de carga",
+            "Performance tuning"
+          ]
+        },
+        {
+          "week": "31-36",
+          "phase": "Transición",
+          "tasks": [
+            "UAT (User Acceptance Testing)",
+            "Migración de datos",
+            "Capacitación",
+            "Go-live controlado"
+          ]
+        }
+      ],
+      "avoid": [
+        "No diseñar base de datos anticipadamente",
+        "Operaciones sin transacciones",
+        "Ignorar índices de BD",
+        "No testear concurrencia",
+        "N+1 queries",
+        "No considerar escalabilidad"
+      ],
+      "templates": [
+        "tpl-001",
+        "tpl-004",
+        "tpl-006",
+        "tpl-010"
+      ],
+      "chapters": [
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    "rec-005": {
+      "id": "rec-005",
+      "title": "Sistema Transaccional → Mediano → Scrum",
+      "path": [
+        "Transaccional",
+        "Volátiles",
+        "Cliente"
+      ],
+      "pathDescription": "Sistema Transaccional → Requisitos Volátiles → Cliente Disponible → Equipo Mediano",
+      "process": {
+        "name": "Incremental con Scrum",
+        "chapter": 2,
+        "why": [
+          "Cliente disponible permite feedback continuo",
+          "Requisitos volátiles necesitan adaptación",
+          "Entregas incrementales de valor",
+          "Integridad de datos debe mantenerse"
+        ],
+        "how": [
+          "Sprints de 2 semanas",
+          "Sprint 0: Setup técnico y arquitectura base",
+          "Cada sprint: Planning → Development → Review → Retrospective",
+          "Definition of Done incluye testing de performance y concurrencia"
+        ]
+      },
+      "methodology": {
+        "name": "Scrum con Consideraciones Transaccionales",
+        "chapter": 3,
+        "practices": [
+          "Gestión de Transacciones ACID",
+          "Testing de Concurrencia Obligatorio",
+          "Database Migrations Versionadas (Flyway/Liquibase)",
+          "Integración Continua con Performance Tests",
+          "Sprint Review con Datos Reales (anonimizados)"
+        ]
+      },
+      "modeling": {
+        "level": "ÁGIL ENFOCADO EN DATOS",
+        "chapter": 5,
+        "required": [
+          "Casos de Uso: Enfocados en transacciones",
+          "Diagrama de Clases: Modelo de datos",
+          "Diagramas de Secuencia: Flujos transaccionales complejos",
+          "Historias de Usuario: Con criterios de aceptación técnicos"
+        ],
+        "purpose": "Balance entre agilidad y diseño de datos robusto"
+      },
+      "architecture": {
+        "pattern": "Capas + MVC",
+        "chapter": 6,
+        "why": "Separación clara, testing por capas, escalabilidad",
+        "layers": [
+          "Frontend: React/Angular/Vue (MVC: Vista)",
+          "API Layer: REST (MVC: Controlador)",
+          "Business Logic: Lógica transaccional (MVC: Modelo lógica)",
+          "Data Access: ORM (MVC: Modelo datos)",
+          "Database: PostgreSQL/MySQL"
+        ],
+        "considerations": [
+          "Redis para caché y sesiones",
+          "Message Queue (RabbitMQ) para procesos async",
+          "Elasticsearch para búsquedas rápidas",
+          "Monitoreo de performance (New Relic, DataDog)"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1-2",
+          "phase": "Sprint 0",
+          "tasks": [
+            "Setup técnico completo",
+            "Definir arquitectura base",
+            "Configurar BD con migrations",
+            "CI/CD pipeline",
+            "Herramientas de testing de carga"
+          ]
+        },
+        {
+          "week": "3-6",
+          "phase": "Sprints 1-2",
+          "tasks": [
+            "Módulo de autenticación",
+            "CRUD básico de entidad principal",
+            "Testing de concurrencia",
+            "Performance baseline"
+          ]
+        },
+        {
+          "week": "7-14",
+          "phase": "Sprints 3-6",
+          "tasks": [
+            "Funcionalidades transaccionales core",
+            "Reportes básicos",
+            "Performance optimization",
+            "Integración con sistemas externos"
+          ]
+        },
+        {
+          "week": "15+",
+          "phase": "Sprints continuos",
+          "tasks": [
+            "Features adicionales según backlog",
+            "Monitoreo de performance",
+            "Optimización de queries",
+            "Refactorización continua"
+          ]
+        }
+      ],
+      "avoid": [
+        "Operaciones sin transacciones",
+        "No testear concurrencia",
+        "Ignorar índices de BD",
+        "N+1 queries",
+        "No considerar escalabilidad",
+        "Sprint sin demo funcional"
+      ],
+      "templates": [
+        "tpl-004",
+        "tpl-005",
+        "tpl-006",
+        "tpl-010"
+      ],
+      "chapters": [
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "rec-006": {
+      "id": "rec-006",
+      "title": "Web/SaaS → Startup → Pequeño",
+      "path": [
+        "Web/SaaS",
+        "Startup",
+        "Cliente",
+        "Pequeño"
+      ],
+      "pathDescription": "Sistema Web/SaaS → Startup → Cliente Disponible → Equipo Pequeño (<10)",
+      "process": {
+        "name": "Incremental Rápido",
+        "chapter": 2,
+        "why": [
+          "Velocidad de time-to-market crítica",
+          "Necesidad de pivotar rápido según feedback",
+          "Recursos limitados (startup)",
+          "Validación de product-market fit"
+        ],
+        "how": [
+          "Sprints de 1-2 semanas",
+          "MVP primero (Minimum Viable Product)",
+          "Liberaciones continuas (CI/CD)",
+          "Feedback loop rápido con usuarios"
+        ]
+      },
+      "methodology": {
+        "name": "Scrum/XP Híbrido",
+        "chapter": 3,
+        "practices": [
+          "Historias de Usuario Simples",
+          "TDD (Test-Driven Development)",
+          "Pair Programming en features complejas",
+          "Continuous Deployment",
+          "Code Reviews (Pull Requests)",
+          "Retrospectivas semanales"
+        ]
+      },
+      "modeling": {
+        "level": "MÍNIMO VIABLE",
+        "chapter": 5,
+        "required": [
+          "User Stories con criterios de aceptación",
+          "Wireframes de UI",
+          "Diagrama de Clases básico (core del dominio)",
+          "Casos de Uso principales (3-5)"
+        ],
+        "purpose": "Comunicación y planificación, no documentación exhaustiva"
+      },
+      "architecture": {
+        "pattern": "MVC con Stack Moderno",
+        "chapter": 6,
+        "why": "Desarrollo rápido, ecosistema rico, escalable",
+        "layers": [
+          "Frontend: React/Next.js o Vue/Nuxt",
+          "Backend: Node.js/Express, Python/FastAPI, o Ruby/Rails",
+          "Database: PostgreSQL + Redis",
+          "Storage: S3 para archivos",
+          "Hosting: Vercel/Netlify (frontend) + Railway/Fly.io (backend)"
+        ],
+        "considerations": [
+          "Serverless cuando sea posible",
+          "Servicios managed (Firebase, Supabase)",
+          "Monitoring: Sentry para errores",
+          "Analytics: Mixpanel o Amplitude"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1",
+          "phase": "Definición de MVP",
+          "tasks": [
+            "Identificar problema core",
+            "Definir 3-5 features esenciales",
+            "Wireframes básicos",
+            "Setup técnico"
+          ]
+        },
+        {
+          "week": "2-4",
+          "phase": "Desarrollo MVP",
+          "tasks": [
+            "Autenticación básica",
+            "Feature core implementada",
+            "UI funcional (no perfecta)",
+            "Deploy a staging"
+          ]
+        },
+        {
+          "week": "5-6",
+          "phase": "Beta Testing",
+          "tasks": [
+            "Onboarding de beta users",
+            "Recolección de feedback",
+            "Bug fixes críticos",
+            "Iteración rápida"
+          ]
+        },
+        {
+          "week": "7-8",
+          "phase": "Launch v1.0",
+          "tasks": [
+            "Polish de UI",
+            "Documentación de usuario",
+            "Launch público",
+            "Marketing inicial"
+          ]
+        },
+        {
+          "week": "9+",
+          "phase": "Iteración Continua",
+          "tasks": [
+            "Features según feedback de usuarios",
+            "Optimización de conversión",
+            "Escalabilidad según crecimiento"
+          ]
+        }
+      ],
+      "avoid": [
+        "Sobre-ingeniería (YAGNI!)",
+        "Perfeccionismo en v1.0",
+        "No validar con usuarios reales",
+        "Features que no resuelven el problema core",
+        "Escalar prematuramente",
+        "No medir métricas clave"
+      ],
+      "templates": [
+        "tpl-004",
+        "tpl-005",
+        "tpl-008"
+      ],
+      "chapters": [
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "rec-007": {
+      "id": "rec-007",
+      "title": "Web/SaaS → Escalando",
+      "path": [
+        "Web/SaaS",
+        "Escalando"
+      ],
+      "pathDescription": "Sistema Web/SaaS → Producto Establecido en Crecimiento",
+      "process": {
+        "name": "Scrum con Múltiples Equipos",
+        "chapter": 2,
+        "why": [
+          "Producto validado necesita escalar",
+          "Múltiples equipos trabajando en paralelo",
+          "Balance entre velocidad y calidad",
+          "Gestión de deuda técnica"
+        ],
+        "how": [
+          "Scrum of Scrums para coordinación",
+          "Sprints sincronizados de 2 semanas",
+          "Equipos feature-oriented o por componente",
+          "Integration sprints periódicos"
+        ]
+      },
+      "methodology": {
+        "name": "Scrum Escalado (LeSS o SAFe adaptado)",
+        "chapter": 3,
+        "practices": [
+          "Múltiples equipos Scrum coordinados",
+          "Arquitectura de Microservicios (gradual)",
+          "Feature Flags para releases controladas",
+          "A/B Testing continuo",
+          "Monitoreo y Observabilidad robusta",
+          "Refactorización continua (combatir deuda técnica)"
+        ]
+      },
+      "modeling": {
+        "level": "EVOLUTIVO Y PRAGMÁTICO",
+        "chapter": 5,
+        "required": [
+          "User Stories con métricas de éxito",
+          "Diagramas de Arquitectura actualizados",
+          "API Documentation (OpenAPI/Swagger)",
+          "Service Dependency Maps"
+        ],
+        "purpose": "Documentación viva que evoluciona con el producto"
+      },
+      "architecture": {
+        "pattern": "MVC → Microservicios (Transición)",
+        "chapter": 6,
+        "why": "Escalar equipos y sistema independientemente",
+        "layers": [
+          "Frontend: Micro-frontends o monolito modular",
+          "API Gateway: Enrutamiento y autenticación",
+          "Servicios: Dominio-driven (Users, Orders, Payments, etc.)",
+          "Data Layer: Base de datos por servicio",
+          "Infrastructure: Kubernetes, servicios cloud"
+        ],
+        "considerations": [
+          "No migrar todo de golpe (strangler pattern)",
+          "Service mesh (Istio) para comunicación",
+          "Event-driven architecture (Kafka/RabbitMQ)",
+          "Observabilidad (Prometheus, Grafana, Jaeger)",
+          "CDN para assets estáticos",
+          "Caché distribuido (Redis Cluster)"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "Continuo",
+          "phase": "Sprints de 2 semanas",
+          "tasks": [
+            "Planning: Coordinación entre equipos",
+            "Development: Features en paralelo",
+            "Integration: Testing entre servicios",
+            "Review: Demo consolidada",
+            "Retrospective: Mejora continua"
+          ]
+        },
+        {
+          "week": "Mensual",
+          "phase": "Arquitectura y Deuda Técnica",
+          "tasks": [
+            "Revisión de arquitectura",
+            "Planificación de refactorización",
+            "Migración a microservicios (incremental)",
+            "Performance optimization"
+          ]
+        },
+        {
+          "week": "Trimestral",
+          "phase": "Roadmap y Estrategia",
+          "tasks": [
+            "Definir features mayores",
+            "Inversión en plataforma",
+            "Evaluación de tecnologías",
+            "Capacitación de equipos"
+          ]
+        }
+      ],
+      "avoid": [
+        "Big bang migration a microservicios",
+        "Equipos no coordinados (silos)",
+        "Ignorar deuda técnica",
+        "No invertir en observabilidad",
+        "Over-engineering de features nuevas",
+        "No medir impacto de features"
+      ],
+      "templates": [
+        "tpl-004",
+        "tpl-005",
+        "tpl-006",
+        "tpl-010"
+      ],
+      "chapters": [
+        2,
+        3,
+        6
+      ]
+    },
+    "rec-008": {
+      "id": "rec-008",
+      "title": "Personal/Móvil → App Individual",
+      "path": [
+        "Personal/Móvil",
+        "Muy pequeño"
+      ],
+      "pathDescription": "Aplicación Personal/Móvil → Equipo Muy Pequeño (1-3 personas)",
+      "process": {
+        "name": "Incremental Rápido",
+        "chapter": 2,
+        "why": [
+          "Ciclos cortos para validación rápida",
+          "Deploy continuo a beta testers",
+          "Feedback temprano de usuarios",
+          "Flexibilidad para pivotar"
+        ],
+        "how": [
+          "Ciclos de 1 semana",
+          "Deploy a TestFlight/Play Store Beta",
+          "Feedback de usuarios semanalmente",
+          "MVP primero, polish después"
+        ]
+      },
+      "methodology": {
+        "name": "XP Simplificado",
+        "chapter": 3,
+        "practices": [
+          "Historias de Usuario simples y directas",
+          "Liberaciones Pequeñas (weekly/bi-weekly)",
+          "Diseño Simple (YAGNI estricto)",
+          "TDD para lógica compleja",
+          "Refactorización continua",
+          "CI/CD automatizado"
+        ]
+      },
+      "modeling": {
+        "level": "MÍNIMO ABSOLUTO",
+        "chapter": 5,
+        "required": [
+          "Casos de Uso: 3-5 principales",
+          "Wireframes: UI principal (Figma o papel)",
+          "Diagrama de Clases: Core del modelo (3-5 entidades)"
+        ],
+        "purpose": "Clarificar ideas, no documentación formal"
+      },
+      "architecture": {
+        "pattern": "MVC/MVVM Nativo de Plataforma",
+        "chapter": 6,
+        "why": "Aprovechar frameworks nativos, performance, acceso a APIs",
+        "layers": [
+          "iOS (SwiftUI): Views → ViewModels → Models → CoreData/Realm",
+          "Android (Compose): Composables → ViewModels → Repository → Room DB",
+          "Cross-platform: React Native/Flutter con arquitectura limpia"
+        ],
+        "considerations": [
+          "Backend ligero: Firebase, Supabase, o API simple",
+          "Analytics: Firebase Analytics (gratis)",
+          "Crash reporting: Crashlytics",
+          "Push notifications",
+          "Permisos de usuario bien manejados"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "Día 1",
+          "phase": "Concepto",
+          "tasks": [
+            "Definir MVP (una funcionalidad core)",
+            "Wireframes principales",
+            "Setup de proyecto"
+          ]
+        },
+        {
+          "week": "1",
+          "phase": "Primera Versión",
+          "tasks": [
+            "Implementar pantalla principal",
+            "Modelo de datos básico",
+            "Testing manual"
+          ]
+        },
+        {
+          "week": "2",
+          "phase": "Funcionalidad Core",
+          "tasks": [
+            "Funcionalidad core completa",
+            "UI polish básico",
+            "TestFlight/Play Store Internal Testing"
+          ]
+        },
+        {
+          "week": "3",
+          "phase": "Beta",
+          "tasks": [
+            "Feedback de beta testers",
+            "Iteración basada en feedback",
+            "Bug fixes"
+          ]
+        },
+        {
+          "week": "4+",
+          "phase": "Lanzamiento e Iteración",
+          "tasks": [
+            "Primera release pública",
+            "Marketing inicial",
+            "Iteración basada en reviews y analytics"
+          ]
+        }
+      ],
+      "avoid": [
+        "Sobre-ingeniería (YAGNI!)",
+        "Muchas features en v1.0",
+        "No testear con usuarios reales",
+        "Ignorar lineamientos de Apple/Google",
+        "No considerar permisos de usuario",
+        "UI/UX descuidada"
+      ],
+      "templates": [
+        "tpl-005",
+        "tpl-008"
+      ],
+      "chapters": [
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "rec-009": {
+      "id": "rec-009",
+      "title": "Entretenimiento → Juegos",
+      "path": [
+        "Entretenimiento"
+      ],
+      "pathDescription": "Entretenimiento / Juegos → Creatividad y Experiencia Prioritarias",
+      "process": {
+        "name": "Incremental + Prototipos Desechables",
+        "chapter": 2,
+        "why": [
+          "Validar que el juego es divertido ANTES de pulir",
+          "Prototipos jugables cada semana",
+          "Creatividad sobre proceso",
+          "Mecánicas > código perfecto"
+        ],
+        "how": [
+          "Sprints cortos (1 semana)",
+          "Prototipos gray-box (sin arte final)",
+          "Playtest continuo",
+          "Vertical slices en lugar de features completas",
+          "Game Design Document (GDD) evoluciona"
+        ]
+      },
+      "methodology": {
+        "name": "Ágil Adaptado a Game Development",
+        "chapter": 3,
+        "practices": [
+          "Prototipos Jugables semanales",
+          "Iteración basada en Playtest",
+          "Game Design Document (vivo)",
+          "Versionado de Assets (Git LFS)",
+          "Performance desde el Día 1",
+          "Descartar prototipos sin miedo"
+        ]
+      },
+      "modeling": {
+        "level": "DISEÑO DE JUEGO",
+        "chapter": 5,
+        "required": [
+          "Game Design Document (GDD): Concepto, mecánicas, progresión",
+          "Diagramas de Estado: Estados de juego, personaje (FSM)",
+          "Diagramas de Secuencia: Flujos de gameplay complejos",
+          "Wireframes de UI/UX"
+        ],
+        "purpose": "Comunicar visión y mecánicas, no requisitos tradicionales"
+      },
+      "architecture": {
+        "pattern": "Según Game Engine",
+        "chapter": 6,
+        "why": "Aprovechar arquitectura del engine elegido",
+        "layers": [
+          "Unity (C#): MonoBehaviours → Game Systems → Data → Event System",
+          "Unreal (C++): Actors → Components → Blueprints",
+          "Godot (GDScript): Nodes → Scenes → Scripts",
+          "Custom: Game Loop → Systems (Render, Physics, Input) → Entities"
+        ],
+        "considerations": [
+          "Patrones: State, Observer, Object Pool, Command",
+          "FPS target definido (30 o 60)",
+          "Profile early and often",
+          "Separar lógica de juego de rendering"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1",
+          "phase": "Concepto",
+          "tasks": [
+            "Game concept (¿qué lo hace único?)",
+            "Mecánica core (1-2 principales)",
+            "Referentes (juegos similares)",
+            "Target audience"
+          ]
+        },
+        {
+          "week": "2",
+          "phase": "Prototipo",
+          "tasks": [
+            "Prototipo jugable de mecánica core",
+            "Gray-box (sin arte final)",
+            "Playtest interno",
+            "Decisión Go/No-Go: ¿Es divertido?"
+          ]
+        },
+        {
+          "week": "3-8",
+          "phase": "Desarrollo Vertical",
+          "tasks": [
+            "Implementar 1 nivel completo",
+            "Arte placeholder → arte final",
+            "Audio básico",
+            "Polish de la experiencia core"
+          ]
+        },
+        {
+          "week": "9-12",
+          "phase": "Expansión",
+          "tasks": [
+            "Más niveles",
+            "Features secundarias",
+            "Testing con jugadores externos",
+            "Balanceo (game balance)"
+          ]
+        },
+        {
+          "week": "13+",
+          "phase": "Polish y Lanzamiento",
+          "tasks": [
+            "Bug fixing",
+            "Optimización de performance",
+            "Trailer y marketing",
+            "Launch en plataforma target"
+          ]
+        }
+      ],
+      "avoid": [
+        "Pulir antes de validar (arte final sin playtest)",
+        "Feature creep (agregar todo lo que se te ocurre)",
+        "No testear en hardware target",
+        "Ignorar performance",
+        "Código perfecto > gameplay divertido",
+        "No balancear dificultad"
+      ],
+      "templates": [
+        "tpl-005",
+        "tpl-008"
+      ],
+      "chapters": [
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "rec-010": {
+      "id": "rec-010",
+      "title": "Procesamiento por Lotes",
+      "path": [
+        "Lotes"
+      ],
+      "pathDescription": "Procesamiento por Lotes → Grandes Volúmenes → Eficiencia Crítica",
+      "process": {
+        "name": "Cascada o Incremental",
+        "chapter": 2,
+        "why": [
+          "Requisitos estables (procesos de negocio establecidos)",
+          "Planificación anticipada crítica",
+          "Performance es requisito no funcional clave",
+          "Sistema nuevo y definido → Cascada; complejo → Incremental"
+        ],
+        "how": [
+          "Fase 1: Análisis → Entender proceso actual",
+          "Fase 2: Diseño → Optimizar para eficiencia",
+          "Fase 3: Implementación → Código performante",
+          "Fase 4: Testing → Validar con volúmenes reales",
+          "Fase 5: Deployment → Scheduling y monitoring"
+        ]
+      },
+      "methodology": {
+        "name": "Tradicional con Planificación",
+        "chapter": 2,
+        "practices": [
+          "Optimización de Performance (batch, no row-by-row)",
+          "Manejo de Grandes Volúmenes (streaming, checkpointing)",
+          "Scheduling (Cron, Task Scheduler, Airflow)",
+          "Monitoreo (tiempo, throughput, errores)",
+          "Logging de Progreso y Auditoría"
+        ]
+      },
+      "modeling": {
+        "level": "ENFOCADO EN FLUJO",
+        "chapter": 5,
+        "required": [
+          "Diagramas de Actividad: Flujo completo del proceso (ESENCIAL)",
+          "Diagrama de Clases: Modelo de datos entrada/salida",
+          "Casos de Uso: Escenarios de procesamiento"
+        ],
+        "purpose": "Modelar flujo de procesamiento y transformaciones"
+      },
+      "architecture": {
+        "pattern": "Repositorio (BD Central)",
+        "chapter": 6,
+        "why": "Datos centralizados, múltiples procesos accediendo",
+        "layers": [
+          "Input DB/Files: Fuentes de datos",
+          "Processing Engine: ETL (Extract, Transform, Load)",
+          "Output DB/Files: Resultados",
+          "Audit Log DB: Trazabilidad"
+        ],
+        "considerations": [
+          "Python + Pandas para procesamiento",
+          "Apache Airflow para orchestration",
+          "PostgreSQL/SQL Server para datos",
+          "Redis para estado de jobs",
+          "Índices de BD correctos",
+          "Particionamiento de datos"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1-2",
+          "phase": "Análisis",
+          "tasks": [
+            "Entender proceso de negocio actual",
+            "Identificar fuentes de datos",
+            "Definir outputs esperados",
+            "Estimar volúmenes"
+          ]
+        },
+        {
+          "week": "3-4",
+          "phase": "Diseño",
+          "tasks": [
+            "Diseño de flujo de procesamiento",
+            "Modelo de datos",
+            "Arquitectura de deployment",
+            "Plan de performance"
+          ]
+        },
+        {
+          "week": "5-8",
+          "phase": "Implementación",
+          "tasks": [
+            "Desarrollar ETL",
+            "Testing con datos de prueba",
+            "Optimización de queries"
+          ]
+        },
+        {
+          "week": "9-10",
+          "phase": "Testing",
+          "tasks": [
+            "Testing con volúmenes reales",
+            "Performance tuning",
+            "Validación de outputs"
+          ]
+        },
+        {
+          "week": "11-12",
+          "phase": "Deployment",
+          "tasks": [
+            "Configurar scheduling",
+            "Setup de monitoreo",
+            "Documentación operacional",
+            "Capacitación a operadores"
+          ]
+        }
+      ],
+      "avoid": [
+        "Procesar row-by-row (usar batch)",
+        "Cargar todo en memoria (usar streaming)",
+        "No considerar failover",
+        "Sin logging/auditoría",
+        "No testear con volúmenes reales",
+        "Queries sin optimizar"
+      ],
+      "templates": [
+        "tpl-001",
+        "tpl-006",
+        "tpl-010"
+      ],
+      "chapters": [
+        2,
+        5,
+        6
+      ]
+    },
+    "rec-011": {
+      "id": "rec-011",
+      "title": "Recolección de Datos → IoT",
+      "path": [
+        "IoT/Datos"
+      ],
+      "pathDescription": "Recolección de Datos → IoT/Sensores → Confiabilidad 24/7 → Condiciones Adversas",
+      "process": {
+        "name": "Cascada",
+        "chapter": 2,
+        "why": [
+          "Dependencia de hardware define requisitos estables",
+          "Difícil cambiar después de deployment en campo",
+          "Entornos hostiles dificultan mantenimiento",
+          "Necesidad de diseño robusto desde inicio"
+        ],
+        "how": [
+          "Fase 1: Especificación → Hardware + software + condiciones ambientales",
+          "Fase 2: Diseño → Tolerancia a fallos y low power",
+          "Fase 3: Prototipo → Testing en lab",
+          "Fase 4: Implementación → Firmware robusto",
+          "Fase 5: Field Testing → Condiciones reales extensivo"
+        ]
+      },
+      "methodology": {
+        "name": "Tradicional con Énfasis en Confiabilidad",
+        "chapter": 2,
+        "practices": [
+          "Diseño para Confiabilidad (watchdog timers, auto-recovery)",
+          "Testing en Condiciones Adversas (temperatura, conectividad)",
+          "Over-the-Air (OTA) Updates",
+          "Edge Computing (procesamiento local)",
+          "Data Buffering (enviar cuando conexión disponible)"
+        ]
+      },
+      "modeling": {
+        "level": "ESTADOS Y PROTOCOLOS",
+        "chapter": 5,
+        "required": [
+          "Diagramas de Estado: Estados del dispositivo (CRÍTICOS)",
+          "Diagramas de Secuencia: Protocolo de comunicación con servidor",
+          "Casos de Uso: Leer Sensor, Transmitir, Recuperar de Error"
+        ],
+        "purpose": "Máquina de estados completa con recuperación de errores"
+      },
+      "architecture": {
+        "pattern": "Cliente-Servidor (Edge + Cloud)",
+        "chapter": 6,
+        "why": "Edge procesa localmente, Cloud almacena y analiza",
+        "layers": [
+          "Sensores/Actuadores: Hardware físico",
+          "Edge Device (Cliente): Data collection, local processing, buffering",
+          "Gateway: Agregación (opcional)",
+          "Cloud Server: Data storage, analytics, dashboard, alerts"
+        ],
+        "considerations": [
+          "Protocolos: MQTT (ligero), HTTP/REST, WebSocket",
+          "Edge: C/C++ para microcontrollers, Python/Node.js para RPi",
+          "Cloud: AWS IoT Core, TimeSeries DB (InfluxDB), Grafana",
+          "Power management crítico",
+          "Firmware updates remotos"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1-2",
+          "phase": "Especificación",
+          "tasks": [
+            "Definir sensores y actuadores",
+            "Requisitos de comunicación y power",
+            "Condiciones ambientales",
+            "Especificación de protocolos"
+          ]
+        },
+        {
+          "week": "3-4",
+          "phase": "Diseño",
+          "tasks": [
+            "Arquitectura edge + cloud",
+            "Protocolo de comunicación",
+            "FSM del dispositivo",
+            "Modelo de datos"
+          ]
+        },
+        {
+          "week": "5-8",
+          "phase": "Prototipo",
+          "tasks": [
+            "Prototipo de hardware",
+            "Firmware básico",
+            "Backend básico",
+            "Testing en lab"
+          ]
+        },
+        {
+          "week": "9-12",
+          "phase": "Desarrollo",
+          "tasks": [
+            "Firmware completo",
+            "Backend completo",
+            "Dashboard",
+            "OTA updates"
+          ]
+        },
+        {
+          "week": "13-16",
+          "phase": "Field Testing",
+          "tasks": [
+            "Deployment en condiciones reales",
+            "Monitoring 24/7",
+            "Ajustes basados en telemetría",
+            "Documentación"
+          ]
+        }
+      ],
+      "avoid": [
+        "No considerar power management",
+        "Dependencia total de conectividad",
+        "No planear actualizaciones remotas",
+        "Testing solo en condiciones ideales",
+        "Sin plan de recuperación de errores"
+      ],
+      "templates": [
+        "tpl-001",
+        "tpl-003",
+        "tpl-006"
+      ],
+      "chapters": [
+        2,
+        5,
+        6
+      ]
+    },
+    "rec-012": {
+      "id": "rec-012",
+      "title": "Sistema de Sistemas",
+      "path": [
+        "Sistema de Sistemas"
+      ],
+      "pathDescription": "Sistema de Sistemas → Múltiples Subsistemas → Integración Crítica",
+      "process": {
+        "name": "RUP + Interfaces",
+        "chapter": 2,
+        "why": [
+          "Múltiples equipos trabajando en paralelo",
+          "Integración es el desafío principal",
+          "Gestión de complejidad crítica",
+          "Coordinación de stakeholders múltiples"
+        ],
+        "how": [
+          "Fase Inicio: Alcance y arquitectura de alto nivel",
+          "Fase Elaboración: DEFINIR TODAS LAS INTERFACES (crítico)",
+          "Fase Construcción: Desarrollo paralelo de subsistemas",
+          "Fase Transición: Integración y deployment escalonado"
+        ]
+      },
+      "methodology": {
+        "name": "RUP con Definición Anticipada de Interfaces",
+        "chapter": 2,
+        "practices": [
+          "Contract-First Development (APIs antes de implementar)",
+          "Integration Testing Continuo",
+          "Gestión de Versiones estricta (Semantic Versioning)",
+          "Service Mesh (Istio/Linkerd)",
+          "Mock servers para desarrollo paralelo"
+        ]
+      },
+      "modeling": {
+        "level": "UML COMPLETO",
+        "chapter": 5,
+        "required": [
+          "Diagrama de Componentes: Todos los subsistemas e interfaces (ESENCIAL)",
+          "Diagramas de Secuencia: Interacciones entre subsistemas",
+          "Diagrama de Despliegue: Distribución física",
+          "Casos de Uso del Sistema: Escenarios end-to-end"
+        ],
+        "purpose": "Documentar interfaces formales y dependencias"
+      },
+      "architecture": {
+        "pattern": "Capas + Interfaces Bien Definidas",
+        "chapter": 6,
+        "why": "Equipos independientes necesitan contratos claros",
+        "layers": [
+          "Integration Layer: ESB/API Gateway",
+          "Subsistemas: A, B, C... (equipos independientes)",
+          "Shared Services: Autenticación, Logging, Monitoring"
+        ],
+        "considerations": [
+          "Enterprise Service Bus (ESB) para integración",
+          "API Gateway para acceso externo",
+          "Event-Driven Architecture",
+          "OpenAPI/Swagger specs obligatorias",
+          "Backward compatibility crítica"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "Mes 1",
+          "phase": "Inicio",
+          "tasks": [
+            "Identificar todos los subsistemas",
+            "Stakeholder mapping",
+            "Arquitectura de alto nivel",
+            "Definir equipos y responsabilidades"
+          ]
+        },
+        {
+          "week": "Mes 2-3",
+          "phase": "Elaboración",
+          "tasks": [
+            "DEFINIR TODAS LAS INTERFACES",
+            "Especificaciones de API (OpenAPI)",
+            "Protocolos de comunicación",
+            "Modelo de datos compartido",
+            "Plan de integración"
+          ]
+        },
+        {
+          "week": "Mes 4-12",
+          "phase": "Construcción",
+          "tasks": [
+            "Desarrollo paralelo de subsistemas",
+            "Mock servers para desarrollo",
+            "Integration testing continuo",
+            "Weekly integration meetings"
+          ]
+        },
+        {
+          "week": "Mes 13-15",
+          "phase": "Transición",
+          "tasks": [
+            "Integración completa",
+            "End-to-end testing",
+            "Performance testing del sistema completo",
+            "Deployment escalonado"
+          ]
+        }
+      ],
+      "avoid": [
+        "Big Bang Integration (integrar todo al final)",
+        "Interfaces no documentadas",
+        "No versionar APIs",
+        "Cambios de interface sin coordinación",
+        "No testear integración temprano"
+      ],
+      "templates": [
+        "tpl-001",
+        "tpl-003",
+        "tpl-006",
+        "tpl-009"
+      ],
+      "chapters": [
+        2,
+        5,
+        6
+      ]
+    },
+    "rec-013": {
+      "id": "rec-013",
+      "title": "Web/SaaS → Startup → Sin Cliente (RIESGO)",
+      "path": [
+        "Web/SaaS",
+        "Startup",
+        "Sin Cliente"
+      ],
+      "pathDescription": "Sistema Web/SaaS → Startup → Cliente NO Disponible (⚠️ RIESGO)",
+      "warning": "⚠️ Desarrollar startup sin cliente disponible es muy riesgoso. Considera validación frecuente con early adopters.",
+      "process": {
+        "name": "Incremental con Validación",
+        "chapter": 2,
+        "why": [
+          "Necesitas validar asunciones sin cliente directo",
+          "Entregas incrementales permiten pivotear rápido",
+          "Early adopters como proxy del cliente",
+          "MVP crítico para validación temprana"
+        ],
+        "how": [
+          "Sprint 0: MVP mínimo basado en investigación",
+          "Sprints cortos (1-2 semanas)",
+          "Validación con early adopters al final de cada sprint",
+          "Landing page + waitlist desde día 1",
+          "A/B testing de features"
+        ]
+      },
+      "methodology": {
+        "name": "Lean Startup + Scrum",
+        "chapter": 3,
+        "practices": [
+          "Build-Measure-Learn Loop",
+          "MVP primero (Minimum Viable Product)",
+          "Analytics exhaustivo (Mixpanel, Amplitude)",
+          "Landing page con waitlist",
+          "User interviews async (correo, encuestas)",
+          "Validación continua de asunciones"
+        ]
+      },
+      "modeling": {
+        "level": "HIPÓTESIS Y EXPERIMENTOS",
+        "chapter": 5,
+        "required": [
+          "Lean Canvas: Problema, solución, propuesta de valor",
+          "User Personas (basadas en investigación)",
+          "User Stories con hipótesis a validar",
+          "Métricas clave (KPIs, North Star Metric)"
+        ],
+        "purpose": "Documentar asunciones y cómo validarlas"
+      },
+      "architecture": {
+        "pattern": "MVC con Analytics",
+        "chapter": 6,
+        "why": "Desarrollo rápido + medición exhaustiva",
+        "layers": [
+          "Frontend: React/Next.js con tracking",
+          "Backend: Node.js/Python con eventos",
+          "Database: PostgreSQL",
+          "Analytics: Mixpanel/Amplitude integrado"
+        ],
+        "considerations": [
+          "Feature flags para A/B testing",
+          "Analytics en CADA interacción",
+          "Onboarding tracking detallado",
+          "Funnel analysis",
+          "Heatmaps (Hotjar)"
+        ]
+      },
+      "timeline": [
+        {
+          "week": "1-2",
+          "phase": "Research + MVP",
+          "tasks": [
+            "Investigación de mercado",
+            "Landing page + waitlist",
+            "MVP mínimo",
+            "Setup analytics"
+          ]
+        },
+        {
+          "week": "3-4",
+          "phase": "Early Adopters",
+          "tasks": [
+            "Lanzar a waitlist",
+            "Onboarding de usuarios",
+            "Recolectar feedback",
+            "Medir engagement"
+          ]
+        },
+        {
+          "week": "5-8",
+          "phase": "Iteración",
+          "tasks": [
+            "Features basadas en datos",
+            "A/B testing",
+            "Optimización de conversión",
+            "User interviews"
+          ]
+        },
+        {
+          "week": "9+",
+          "phase": "Product-Market Fit",
+          "tasks": [
+            "Escalar lo que funciona",
+            "Acquisition channels",
+            "Retención",
+            "Monetización"
+          ]
+        }
+      ],
+      "avoid": [
+        "Construir sin validar asunciones",
+        "No medir TODO",
+        "Ignorar feedback de early adopters",
+        "No tener landing page desde día 1",
+        "Perfeccionismo sin usuarios",
+        "No definir métricas de éxito"
+      ],
+      "templates": [
+        "tpl-004",
+        "tpl-005",
+        "tpl-008"
+      ],
+      "chapters": [
+        2,
+        3,
+        6
+      ]
+    }
+  }
+}

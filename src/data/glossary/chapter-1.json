@@ -1,0 +1,1982 @@
+[
+  {
+    "Nombre": "Ingeniería de software",
+    "Categoría": "Disciplina",
+    "Descripción breve": "Disciplina de ingeniería que se interesa por todos los aspectos de la producción de software, desde las primeras etapas de especificación hasta el mantenimiento"
+  },
+  {
+    "Nombre": "Procesos de software",
+    "Categoría": "Concepto",
+    "Descripción breve": "Conceptos importantes que describen las actividades y secuencias necesarias para desarrollar software"
+  },
+  {
+    "Nombre": "Métodos ágiles",
+    "Categoría": "Metodología de desarrollo",
+    "Descripción breve": "Métodos de desarrollo de software que enfatizan entregas iterativas y adaptación rápida a cambios"
+  },
+  {
+    "Nombre": "Actividades esenciales",
+    "Categoría": "Concepto",
+    "Descripción breve": "Actividades fundamentales presentes en todo desarrollo de software"
+  },
+  {
+    "Nombre": "Especificación inicial del software",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Primera etapa donde se definen los requisitos y características del software a desarrollar"
+  },
+  {
+    "Nombre": "Evolución del sistema",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Proceso continuo de modificación y mejora del software después de su implementación"
+  },
+  {
+    "Nombre": "Programación extrema",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Método ágil específico usado como ejemplo de desarrollo iterativo"
+  },
+  {
+    "Nombre": "Scrum",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Método ágil de gestión de proyectos de desarrollo de software"
+  },
+  {
+    "Nombre": "Ingeniería de requerimientos",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Actividad donde se definen las necesidades de lo que debe hacer un sistema"
+  },
+  {
+    "Nombre": "UML",
+    "Categoría": "Lenguaje de modelado",
+    "Descripción breve": "Lenguaje de modelado unificado usado para representar sistemas de software"
+  },
+  {
+    "Nombre": "Diagramas de caso",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagramas que representan casos de uso del sistema"
+  },
+  {
+    "Nombre": "Diagramas de clase",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagramas que muestran la estructura de clases y sus relaciones"
+  },
+  {
+    "Nombre": "Diagramas de secuencia",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagramas que representan interacciones entre objetos en orden temporal"
+  },
+  {
+    "Nombre": "Diagramas de estado",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagramas que muestran los diferentes estados de un objeto y sus transiciones"
+  },
+  {
+    "Nombre": "Diseño arquitectónico",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Actividad de definir la estructura global y organización de un sistema de software"
+  },
+  {
+    "Nombre": "Patrones arquitectónicos",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Soluciones reutilizables a problemas comunes de arquitectura de software"
+  },
+  {
+    "Nombre": "Diseño orientado a objetos",
+    "Categoría": "Paradigma de diseño",
+    "Descripción breve": "Enfoque de diseño basado en la organización del software en objetos"
+  },
+  {
+    "Nombre": "Patrones de diseño",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Soluciones reutilizables a problemas recurrentes de diseño de software"
+  },
+  {
+    "Nombre": "Reutilización",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Uso de componentes o código existente en lugar de desarrollar desde cero"
+  },
+  {
+    "Nombre": "Manejo de configuración",
+    "Categoría": "Práctica de gestión",
+    "Descripción breve": "Control sistemático de cambios en el software para mantener integridad"
+  },
+  {
+    "Nombre": "Desarrollo de host-target (anfitrión destino)",
+    "Categoría": "Modelo de desarrollo",
+    "Descripción breve": "Desarrollo donde el software se crea en un sistema (host) para ejecutarse en otro (target)"
+  },
+  {
+    "Nombre": "Código abierto",
+    "Categoría": "Modelo de desarrollo",
+    "Descripción breve": "Desarrollo de software con código fuente accesible públicamente"
+  },
+  {
+    "Nombre": "Pruebas del software",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Actividad de verificación y validación del funcionamiento del software"
+  },
+  {
+    "Nombre": "Prueba de unidad",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Pruebas realizadas sobre componentes individuales del software"
+  },
+  {
+    "Nombre": "Prueba de la puesta en venta",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Pruebas finales antes de liberar el software al mercado"
+  },
+  {
+    "Nombre": "Desarrollo impulsado por prueba",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Enfoque donde las pruebas se escriben antes del código a probar"
+  },
+  {
+    "Nombre": "Procesos evolutivos",
+    "Categoría": "Tipo de proceso",
+    "Descripción breve": "Procesos que permiten el cambio y mejora continua del software"
+  },
+  {
+    "Nombre": "Mantenimiento del software",
+    "Categoría": "Actividad",
+    "Descripción breve": "Actividad de modificación del software después de su entrega para corregir fallas o mejorar desempeño"
+  },
+  {
+    "Nombre": "Gestión de sistemas legados",
+    "Categoría": "Actividad",
+    "Descripción breve": "Administración de sistemas de software antiguos que aún están en operación"
+  },
+  {
+    "Nombre": "Modelo en cascada (waterfall)",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Modelo secuencial de desarrollo donde cada fase debe completarse antes de la siguiente"
+  },
+  {
+    "Nombre": "Ciclo de vida en cascada",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Representación del desarrollo de software como una secuencia lineal de fases"
+  },
+  {
+    "Nombre": "Sistemas basados en computadoras",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que utilizan computadoras como componente principal"
+  },
+  {
+    "Nombre": "Software de control",
+    "Categoría": "Tipo de software",
+    "Descripción breve": "Software diseñado para controlar dispositivos o procesos"
+  },
+  {
+    "Nombre": "Sistemas embebidos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de software integrados en dispositivos de hardware"
+  },
+  {
+    "Nombre": "Sistemas de información mundial",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de gran escala que operan a nivel global"
+  },
+  {
+    "Nombre": "Notaciones",
+    "Categoría": "Elemento de documentación",
+    "Descripción breve": "Símbolos y convenciones para representar conceptos de software"
+  },
+  {
+    "Nombre": "Métodos",
+    "Categoría": "Técnica",
+    "Descripción breve": "Procedimientos sistemáticos para realizar actividades de ingeniería de software"
+  },
+  {
+    "Nombre": "Técnicas de ingeniería de software",
+    "Categoría": "Técnica",
+    "Descripción breve": "Procedimientos específicos aplicados en diferentes contextos de desarrollo"
+  },
+  {
+    "Nombre": "Sistemas organizacionales de información",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas diseñados para gestionar información dentro de organizaciones"
+  },
+  {
+    "Nombre": "Controlador",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Componente de software que controla el comportamiento de un dispositivo o sistema"
+  },
+  {
+    "Nombre": "Juegos por computadora",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software de entretenimiento interactivo"
+  },
+  {
+    "Nombre": "Fallas de software",
+    "Categoría": "Problema",
+    "Descripción breve": "Defectos o errores que impiden el funcionamiento correcto del software"
+  },
+  {
+    "Nombre": "Crisis del software",
+    "Categoría": "Evento histórico",
+    "Descripción breve": "Período donde se reconoció que los métodos de programación individuales no escalaban"
+  },
+  {
+    "Nombre": "Programación estructurada",
+    "Categoría": "Técnica de programación",
+    "Descripción breve": "Método de programación que organiza el código en estructuras de control claras"
+  },
+  {
+    "Nombre": "Encubrimiento de información",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Principio de ocultar detalles internos de implementación"
+  },
+  {
+    "Nombre": "Desarrollo orientado a objetos",
+    "Categoría": "Paradigma de desarrollo",
+    "Descripción breve": "Enfoque de desarrollo basado en conceptos de objetos y clases"
+  },
+  {
+    "Nombre": "Herramientas",
+    "Categoría": "Recurso de desarrollo",
+    "Descripción breve": "Software utilizado para apoyar el desarrollo de otros programas"
+  },
+  {
+    "Nombre": "Notaciones estándar",
+    "Categoría": "Elemento de documentación",
+    "Descripción breve": "Convenciones formalizadas para representar aspectos del software"
+  },
+  {
+    "Nombre": "Productos de software",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Software desarrollado para ser vendido o distribuido"
+  },
+  {
+    "Nombre": "Productos genéricos",
+    "Categoría": "Tipo de producto",
+    "Descripción breve": "Sistemas independientes vendidos en el mercado abierto"
+  },
+  {
+    "Nombre": "Productos personalizados (a la medida)",
+    "Categoría": "Tipo de producto",
+    "Descripción breve": "Sistemas desarrollados específicamente para un cliente particular"
+  },
+  {
+    "Nombre": "Sistemas de contabilidad",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para gestionar operaciones contables"
+  },
+  {
+    "Nombre": "Aplicaciones verticales",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software diseñado para propósitos específicos de un sector"
+  },
+  {
+    "Nombre": "Sistemas de información de librería",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software especializado para gestionar bibliotecas"
+  },
+  {
+    "Nombre": "Enterprise Resource Planning (ERP)",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas integrados de gestión empresarial"
+  },
+  {
+    "Nombre": "Sistema SAP",
+    "Categoría": "Producto de software",
+    "Descripción breve": "Ejemplo específico de sistema ERP"
+  },
+  {
+    "Nombre": "Calidad del software",
+    "Categoría": "Atributo",
+    "Descripción breve": "Conjunto de características que determinan la aptitud del software"
+  },
+  {
+    "Nombre": "Atributos no funcionales",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Características del software relacionadas con su comportamiento y operación"
+  },
+  {
+    "Nombre": "Tiempo de respuesta",
+    "Categoría": "Métrica",
+    "Descripción breve": "Medida del tiempo que tarda el software en responder a una acción"
+  },
+  {
+    "Nombre": "Comprensibilidad del código",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Facilidad con que el código puede ser entendido por desarrolladores"
+  },
+  {
+    "Nombre": "Mantenimiento",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Capacidad del software para ser modificado y mejorar según necesidades cambiantes"
+  },
+  {
+    "Nombre": "Confiabilidad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Grado en que el software funciona sin fallos"
+  },
+  {
+    "Nombre": "Seguridad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Protección contra accesos no autorizados y daños"
+  },
+  {
+    "Nombre": "Fiabilidad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Capacidad del software de funcionar correctamente bajo condiciones especificadas"
+  },
+  {
+    "Nombre": "Protección",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Medidas para prevenir daño físico o económico por fallas del sistema"
+  },
+  {
+    "Nombre": "Eficiencia",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Uso óptimo de recursos del sistema como memoria y procesador"
+  },
+  {
+    "Nombre": "Capacidad de respuesta",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Velocidad con que el software reacciona a entradas del usuario"
+  },
+  {
+    "Nombre": "Tiempo de procesamiento",
+    "Categoría": "Métrica",
+    "Descripción breve": "Duración que toma procesar una operación"
+  },
+  {
+    "Nombre": "Utilización de memoria",
+    "Categoría": "Métrica",
+    "Descripción breve": "Cantidad de memoria usada por el software"
+  },
+  {
+    "Nombre": "Aceptabilidad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Grado en que el software es aceptable para los usuarios"
+  },
+  {
+    "Nombre": "Disciplina de ingeniería",
+    "Categoría": "Concepto",
+    "Descripción breve": "Enfoque sistemático basado en teorías, métodos y herramientas"
+  },
+  {
+    "Nombre": "Administración del proyecto de software",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Planificación y control del proceso de desarrollo de software"
+  },
+  {
+    "Nombre": "Enfoque sistemático y organizado",
+    "Categoría": "Práctica",
+    "Descripción breve": "Metodología estructurada para abordar el desarrollo de software"
+  },
+  {
+    "Nombre": "Proceso de software",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Secuencia de actividades que conducen a la elaboración de un producto de software"
+  },
+  {
+    "Nombre": "Especificación del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Definición del software a producir y restricciones de operación"
+  },
+  {
+    "Nombre": "Desarrollo del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Diseño y programación del software"
+  },
+  {
+    "Nombre": "Validación del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Verificación de que el software cumple los requisitos del cliente"
+  },
+  {
+    "Nombre": "Evolución del software",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Modificación del software para reflejar cambios en requisitos"
+  },
+  {
+    "Nombre": "Software en tiempo real",
+    "Categoría": "Tipo de software",
+    "Descripción breve": "Software que debe responder dentro de restricciones temporales estrictas"
+  },
+  {
+    "Nombre": "Sistemas de comercio electrónico",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Aplicaciones para realizar transacciones comerciales por Internet"
+  },
+  {
+    "Nombre": "Ciencias de la computación",
+    "Categoría": "Disciplina",
+    "Descripción breve": "Campo que estudia teorías y métodos de computadoras y sistemas de software"
+  },
+  {
+    "Nombre": "Ingeniería de sistemas",
+    "Categoría": "Disciplina",
+    "Descripción breve": "Disciplina que aborda el desarrollo completo de sistemas complejos"
+  },
+  {
+    "Nombre": "Especificación del sistema",
+    "Categoría": "Actividad",
+    "Descripción breve": "Definición de requisitos y características de un sistema completo"
+  },
+  {
+    "Nombre": "Arquitectura global",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Estructura de alto nivel de un sistema"
+  },
+  {
+    "Nombre": "Integración",
+    "Categoría": "Actividad",
+    "Descripción breve": "Combinación de diferentes partes para crear un sistema completo"
+  },
+  {
+    "Nombre": "Heterogeneidad",
+    "Categoría": "Desafío",
+    "Descripción breve": "Diversidad de plataformas y tecnologías en sistemas distribuidos"
+  },
+  {
+    "Nombre": "Sistemas distribuidos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que operan en múltiples computadoras conectadas en red"
+  },
+  {
+    "Nombre": "Dispositivos móviles",
+    "Categoría": "Plataforma",
+    "Descripción breve": "Dispositivos portátiles con capacidad de cómputo"
+  },
+  {
+    "Nombre": "Sistemas legados",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas antiguos escritos con tecnologías obsoletas"
+  },
+  {
+    "Nombre": "Lenguajes de programación",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Lenguajes formales para escribir instrucciones de software"
+  },
+  {
+    "Nombre": "Cambio empresarial y social",
+    "Categoría": "Desafío",
+    "Descripción breve": "Necesidad de adaptación rápida del software a cambios en negocios y sociedad"
+  },
+  {
+    "Nombre": "Economías emergentes",
+    "Categoría": "Contexto",
+    "Descripción breve": "Mercados en desarrollo que requieren adaptación de software"
+  },
+  {
+    "Nombre": "Seguridad y confianza",
+    "Categoría": "Desafío",
+    "Descripción breve": "Necesidad de proteger sistemas contra ataques y garantizar operación segura"
+  },
+  {
+    "Nombre": "Software remoto",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software al que se accede a través de redes"
+  },
+  {
+    "Nombre": "Interfaz de servicio Web",
+    "Categoría": "Componente técnico",
+    "Descripción breve": "Punto de acceso para comunicación entre sistemas vía Web"
+  },
+  {
+    "Nombre": "Aplicaciones independientes",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Sistemas que corren en una computadora local sin necesidad de red"
+  },
+  {
+    "Nombre": "Software de oficina",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Programas para tareas de oficina como procesamiento de texto"
+  },
+  {
+    "Nombre": "Programas CAD",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software de diseño asistido por computadora"
+  },
+  {
+    "Nombre": "Software de manipulación de fotografías",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Programas para editar y procesar imágenes"
+  },
+  {
+    "Nombre": "Aplicaciones interactivas basadas en transacción",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Aplicaciones que procesan transacciones con usuarios remotos"
+  },
+  {
+    "Nombre": "Aplicaciones Web",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software al que se accede mediante navegadores Web"
+  },
+  {
+    "Nombre": "Sistemas empresariales",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que soportan operaciones de una organización completa"
+  },
+  {
+    "Nombre": "Servicios basados en nube",
+    "Categoría": "Tipo de servicio",
+    "Descripción breve": "Servicios de software accesibles vía Internet"
+  },
+  {
+    "Nombre": "Almacén de datos",
+    "Categoría": "Componente técnico",
+    "Descripción breve": "Repositorio donde se almacena información"
+  },
+  {
+    "Nombre": "Sistemas de control embebido",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que controla dispositivos de hardware"
+  },
+  {
+    "Nombre": "Software en un teléfono móvil",
+    "Categoría": "Tipo de software",
+    "Descripción breve": "Programas que operan en dispositivos celulares"
+  },
+  {
+    "Nombre": "Frenos antibloqueo",
+    "Categoría": "Aplicación embebida",
+    "Descripción breve": "Sistema de control de seguridad en automóviles"
+  },
+  {
+    "Nombre": "Sistemas de procesamiento en lotes (batch)",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que procesan grandes volúmenes de datos en grupos"
+  },
+  {
+    "Nombre": "Sistemas de facturación periódica",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para generar facturas en períodos regulares"
+  },
+  {
+    "Nombre": "Sistemas de pago de salario",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para procesar nómina de empleados"
+  },
+  {
+    "Nombre": "Sistemas de entretenimiento",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software diseñado principalmente para entretenimiento"
+  },
+  {
+    "Nombre": "Calidad de interacción",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Nivel de experiencia del usuario con el sistema"
+  },
+  {
+    "Nombre": "Sistemas para modelado y simulación",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software para representar y simular procesos físicos"
+  },
+  {
+    "Nombre": "Sistemas paralelos de alto desempeño",
+    "Categoría": "Plataforma",
+    "Descripción breve": "Infraestructura computacional para procesamiento intensivo"
+  },
+  {
+    "Nombre": "Sistemas de adquisición de datos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que recopilan información de sensores del entorno"
+  },
+  {
+    "Nombre": "Sensores",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivos que capturan información del ambiente"
+  },
+  {
+    "Nombre": "Sistemas de sistemas",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas compuestos de múltiples sistemas de software"
+  },
+  {
+    "Nombre": "Programa de hoja de cálculo",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para organizar y calcular datos tabulares"
+  },
+  {
+    "Nombre": "Sistema de control embebido en un automóvil",
+    "Categoría": "Aplicación embebida",
+    "Descripción breve": "Software crítico integrado en vehículos"
+  },
+  {
+    "Nombre": "ROM",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Memoria de solo lectura donde se graba software permanente"
+  },
+  {
+    "Nombre": "Verificación y validación",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Proceso de confirmar que el software cumple requisitos y funciona correctamente"
+  },
+  {
+    "Nombre": "Prototipo de interfaz de usuario",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Versión preliminar de la interfaz para evaluación"
+  },
+  {
+    "Nombre": "Desarrollo y entrega iterativos",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Enfoque de desarrollo en ciclos repetitivos con entregas incrementales"
+  },
+  {
+    "Nombre": "Componentes reutilizables",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Partes de software diseñadas para uso en múltiples sistemas"
+  },
+  {
+    "Nombre": "Proceso de desarrollo administrado",
+    "Categoría": "Práctica de gestión",
+    "Descripción breve": "Proceso planificado y controlado de creación de software"
+  },
+  {
+    "Nombre": "Desempeño",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Eficiencia y velocidad del software en operación"
+  },
+  {
+    "Nombre": "Especificación",
+    "Categoría": "Actividad fundamental",
+    "Descripción breve": "Definición de lo que el software debe hacer"
+  },
+  {
+    "Nombre": "Requerimientos del software",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Descripción de las necesidades que el software debe satisfacer"
+  },
+  {
+    "Nombre": "Gestión de expectativas",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Control de lo que clientes y usuarios esperan del sistema"
+  },
+  {
+    "Nombre": "Fundamentos de ingeniería de software",
+    "Categoría": "Concepto",
+    "Descripción breve": "Principios básicos aplicables a todos los tipos de software"
+  },
+  {
+    "Nombre": "Implementación",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Codificación y construcción del software"
+  },
+  {
+    "Nombre": "Programación",
+    "Categoría": "Actividad",
+    "Descripción breve": "Escritura de código de software"
+  },
+  {
+    "Nombre": "Lenguaje de guiones (scripts)",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguajes de programación interpretados para tareas específicas"
+  },
+  {
+    "Nombre": "Ruby",
+    "Categoría": "Lenguaje de programación",
+    "Descripción breve": "Ejemplo de lenguaje de scripting"
+  },
+  {
+    "Nombre": "Ingeniería de sistemas embebidos",
+    "Categoría": "Especialización",
+    "Descripción breve": "Desarrollo de software para dispositivos embebidos"
+  },
+  {
+    "Nombre": "World Wide Web",
+    "Categoría": "Plataforma",
+    "Descripción breve": "Sistema de información global accesible vía Internet"
+  },
+  {
+    "Nombre": "Navegadores Web",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software para acceder y visualizar contenido Web"
+  },
+  {
+    "Nombre": "Interfaz de usuario de propósito específico",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Interfaz diseñada para una aplicación particular"
+  },
+  {
+    "Nombre": "Servicios Web",
+    "Categoría": "Arquitectura",
+    "Descripción breve": "Componentes de software que entregan funcionalidad vía Web"
+  },
+  {
+    "Nombre": "Aplicaciones",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Programas construidos integrando servicios"
+  },
+  {
+    "Nombre": "Vinculación dinámica",
+    "Categoría": "Técnica",
+    "Descripción breve": "Conexión de componentes en tiempo de ejecución"
+  },
+  {
+    "Nombre": "Software como servicio",
+    "Categoría": "Modelo de negocio",
+    "Descripción breve": "Software operado en servidores y accedido vía Internet"
+  },
+  {
+    "Nombre": "Nubes de cómputo (cloud computing)",
+    "Categoría": "Plataforma",
+    "Descripción breve": "Infraestructura distribuida de recursos computacionales"
+  },
+  {
+    "Nombre": "Correo basado en la Web",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Servicio de correo electrónico accesible vía navegador"
+  },
+  {
+    "Nombre": "Nube de computación",
+    "Categoría": "Infraestructura",
+    "Descripción breve": "Conjunto de sistemas de cómputo vinculados compartidos por usuarios"
+  },
+  {
+    "Nombre": "Aplicaciones empresariales",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para operaciones de negocios"
+  },
+  {
+    "Nombre": "Aplicaciones monolíticas",
+    "Categoría": "Arquitectura",
+    "Descripción breve": "Programas construidos como una sola unidad"
+  },
+  {
+    "Nombre": "Software distribuido",
+    "Categoría": "Arquitectura",
+    "Descripción breve": "Software cuyos componentes operan en diferentes ubicaciones"
+  },
+  {
+    "Nombre": "AJAX",
+    "Categoría": "Tecnología Web",
+    "Descripción breve": "Técnica para crear interfaces Web interactivas"
+  },
+  {
+    "Nombre": "Formatos Web",
+    "Categoría": "Estándar",
+    "Descripción breve": "Estructuras de datos y presentación en la Web"
+  },
+  {
+    "Nombre": "Escritura de guiones local",
+    "Categoría": "Técnica",
+    "Descripción breve": "Ejecución de scripts en el navegador del usuario"
+  },
+  {
+    "Nombre": "Ética en la ingeniería de software",
+    "Categoría": "Tema profesional",
+    "Descripción breve": "Principios morales que guían el comportamiento de ingenieros de software"
+  },
+  {
+    "Nombre": "Marco social y legal",
+    "Categoría": "Contexto",
+    "Descripción breve": "Conjunto de normas sociales y leyes que regulan la profesión"
+  },
+  {
+    "Nombre": "Responsabilidad profesional",
+    "Categoría": "Concepto ético",
+    "Descripción breve": "Obligaciones más allá de habilidades técnicas"
+  },
+  {
+    "Nombre": "Estándares de honestidad e integridad",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Normas básicas de comportamiento honesto"
+  },
+  {
+    "Nombre": "Confidencialidad",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Deber de mantener privada información de clientes y empleadores"
+  },
+  {
+    "Nombre": "Competencia",
+    "Categoría": "Principio ético",
+    "Descripción breve": "No aceptar trabajo fuera de las capacidades propias"
+  },
+  {
+    "Nombre": "Derechos de propiedad intelectual",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Respeto por patentes y copyright"
+  },
+  {
+    "Nombre": "Patentes",
+    "Categoría": "Concepto legal",
+    "Descripción breve": "Protección legal de invenciones"
+  },
+  {
+    "Nombre": "Copyright",
+    "Categoría": "Concepto legal",
+    "Descripción breve": "Protección legal de obras creativas"
+  },
+  {
+    "Nombre": "Mal uso de computadoras",
+    "Categoría": "Problema ético",
+    "Descripción breve": "Uso inapropiado de recursos computacionales"
+  },
+  {
+    "Nombre": "Virus",
+    "Categoría": "Amenaza de seguridad",
+    "Descripción breve": "Software malicioso que se replica y daña sistemas"
+  },
+  {
+    "Nombre": "Malware",
+    "Categoría": "Amenaza de seguridad",
+    "Descripción breve": "Software diseñado para dañar o explotar sistemas"
+  },
+  {
+    "Nombre": "Sociedades profesionales",
+    "Categoría": "Organización",
+    "Descripción breve": "Asociaciones de profesionales que establecen estándares"
+  },
+  {
+    "Nombre": "ACM",
+    "Categoría": "Organización profesional",
+    "Descripción breve": "Association for Computing Machinery"
+  },
+  {
+    "Nombre": "IEEE",
+    "Categoría": "Organización profesional",
+    "Descripción breve": "Instituto de ingenieros eléctricos y electrónicos"
+  },
+  {
+    "Nombre": "British Computer Society",
+    "Categoría": "Organización profesional",
+    "Descripción breve": "Sociedad británica de computación"
+  },
+  {
+    "Nombre": "Código de conducta profesional",
+    "Categoría": "Documento normativo",
+    "Descripción breve": "Conjunto de reglas éticas para miembros de una profesión"
+  },
+  {
+    "Nombre": "Código de ética",
+    "Categoría": "Documento normativo",
+    "Descripción breve": "Principios morales formalizados de una profesión"
+  },
+  {
+    "Nombre": "Código de ética y práctica profesionales",
+    "Categoría": "Documento normativo",
+    "Descripción breve": "Código conjunto ACM/IEEE para ingenieros de software"
+  },
+  {
+    "Nombre": "PÚBLICO",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Actuar en interés del bien público"
+  },
+  {
+    "Nombre": "CLIENTE Y EMPLEADOR",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Servir los mejores intereses de cliente y empleador"
+  },
+  {
+    "Nombre": "PRODUCTO",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Garantizar productos de los más altos estándares"
+  },
+  {
+    "Nombre": "JUICIO",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Mantener integridad e independencia profesional"
+  },
+  {
+    "Nombre": "GESTIÓN",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Promover enfoque ético en administración"
+  },
+  {
+    "Nombre": "PROFESIÓN",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Fomentar integridad y reputación de la profesión"
+  },
+  {
+    "Nombre": "COLEGAS",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Ser justo y apoyar a colegas"
+  },
+  {
+    "Nombre": "UNO MISMO",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Aprendizaje continuo y práctica ética"
+  },
+  {
+    "Nombre": "Dilemas éticos",
+    "Categoría": "Problema",
+    "Descripción breve": "Situaciones donde existen conflictos entre diferentes valores"
+  },
+  {
+    "Nombre": "Sistema crítico de seguridad",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema cuya falla puede causar daño significativo"
+  },
+  {
+    "Nombre": "Registros de validación de seguridad",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Documentación de pruebas de seguridad"
+  },
+  {
+    "Nombre": "Sistemas militares",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software para aplicaciones de defensa"
+  },
+  {
+    "Nombre": "Sistemas nucleares",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software para instalaciones nucleares"
+  },
+  {
+    "Nombre": "Sistemas de armamento",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software para armas y equipos militares"
+  },
+  {
+    "Nombre": "Seguridad nacional",
+    "Categoría": "Concepto",
+    "Descripción breve": "Protección de los intereses de un país"
+  },
+  {
+    "Nombre": "Estudios de caso",
+    "Categoría": "Método pedagógico",
+    "Descripción breve": "Ejemplos específicos usados para ilustrar conceptos"
+  },
+  {
+    "Nombre": "Sistema embebido",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que controla hardware y está integrado en dispositivo"
+  },
+  {
+    "Nombre": "Tamaño físico",
+    "Categoría": "Restricción",
+    "Descripción breve": "Limitación del espacio disponible para sistema"
+  },
+  {
+    "Nombre": "Capacidad de reacción",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Velocidad de respuesta del sistema"
+  },
+  {
+    "Nombre": "Administración de la energía",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Gestión del consumo y provisión de energía"
+  },
+  {
+    "Nombre": "Sistema de información",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema cuyo propósito principal es gestionar información"
+  },
+  {
+    "Nombre": "Base de datos",
+    "Categoría": "Componente técnico",
+    "Descripción breve": "Repositorio estructurado de información"
+  },
+  {
+    "Nombre": "Usabilidad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Facilidad de uso del sistema"
+  },
+  {
+    "Nombre": "Privacidad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Protección de información personal"
+  },
+  {
+    "Nombre": "Integridad de los datos",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Garantía de que los datos son precisos y consistentes"
+  },
+  {
+    "Nombre": "Sistema de adquisición de datos basado en sensores",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que recolecta y procesa información de sensores"
+  },
+  {
+    "Nombre": "Fiabilidad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Capacidad de operar correctamente incluso en ambientes hostiles"
+  },
+  {
+    "Nombre": "Capacidad de mantenimiento",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Facilidad con que un sistema puede ser reparado o modificado"
+  },
+  {
+    "Nombre": "Bomba de insulina",
+    "Categoría": "Dispositivo médico",
+    "Descripción breve": "Sistema médico que administra insulina automáticamente"
+  },
+  {
+    "Nombre": "Sistema médico",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software relacionado con atención de salud"
+  },
+  {
+    "Nombre": "Páncreas",
+    "Categoría": "Órgano",
+    "Descripción breve": "Órgano que produce insulina naturalmente"
+  },
+  {
+    "Nombre": "Diabetes",
+    "Categoría": "Condición médica",
+    "Descripción breve": "Enfermedad donde el páncreas no produce suficiente insulina"
+  },
+  {
+    "Nombre": "Insulina",
+    "Categoría": "Sustancia",
+    "Descripción breve": "Hormona que metaboliza glucosa en la sangre"
+  },
+  {
+    "Nombre": "Glucosa",
+    "Categoría": "Sustancia",
+    "Descripción breve": "Azúcar presente en la sangre"
+  },
+  {
+    "Nombre": "Medidor externo",
+    "Categoría": "Dispositivo",
+    "Descripción breve": "Instrumento para medir niveles de azúcar en sangre"
+  },
+  {
+    "Nombre": "Niveles de azúcar en la sangre",
+    "Categoría": "Parámetro médico",
+    "Descripción breve": "Cantidad de glucosa presente en sangre"
+  },
+  {
+    "Nombre": "Niveles de glucosa sanguínea",
+    "Categoría": "Parámetro médico",
+    "Descripción breve": "Concentración de azúcar en sangre"
+  },
+  {
+    "Nombre": "Microsensor",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Sensor miniaturizado embebido en paciente"
+  },
+  {
+    "Nombre": "Parámetros sanguíneos",
+    "Categoría": "Medición",
+    "Descripción breve": "Características medibles de la sangre"
+  },
+  {
+    "Nombre": "Controlador de la bomba",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Software que gestiona operación de bomba de insulina"
+  },
+  {
+    "Nombre": "Aguja permanentemente unida",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo de administración de medicamento"
+  },
+  {
+    "Nombre": "Sensor de sangre",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo que mide propiedades de la sangre"
+  },
+  {
+    "Nombre": "Conductividad eléctrica de la sangre",
+    "Categoría": "Parámetro médico",
+    "Descripción breve": "Propiedad física relacionada con nivel de azúcar"
+  },
+  {
+    "Nombre": "Modelo de actividad UML",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagrama que muestra flujo de actividades"
+  },
+  {
+    "Nombre": "Sistema crítico de seguridad",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema donde la falla puede poner en riesgo vidas"
+  },
+  {
+    "Nombre": "Requerimientos de alto nivel",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Necesidades generales que el sistema debe satisfacer"
+  },
+  {
+    "Nombre": "Disponibilidad",
+    "Categoría": "Atributo de calidad",
+    "Descripción breve": "Capacidad del sistema de estar operativo cuando se necesita"
+  },
+  {
+    "Nombre": "Sistema de registros médicos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema para administrar información de pacientes"
+  },
+  {
+    "Nombre": "MHC-PMS (sistema de administración de pacientes-atención a la salud mental)",
+    "Categoría": "Sistema específico",
+    "Descripción breve": "Sistema de información para clínicas de salud mental"
+  },
+  {
+    "Nombre": "Clínicas",
+    "Categoría": "Entorno",
+    "Descripción breve": "Lugares donde se proporciona atención médica"
+  },
+  {
+    "Nombre": "Base de datos centralizada",
+    "Categoría": "Arquitectura",
+    "Descripción breve": "Almacenamiento de datos en un servidor único"
+  },
+  {
+    "Nombre": "Conectividad de red",
+    "Categoría": "Infraestructura",
+    "Descripción breve": "Capacidad de conexión entre sistemas"
+  },
+  {
+    "Nombre": "Copias locales",
+    "Categoría": "Técnica",
+    "Descripción breve": "Duplicados de datos almacenados localmente"
+  },
+  {
+    "Nombre": "Sistemas desconectados",
+    "Categoría": "Contexto",
+    "Descripción breve": "Sistemas que operan sin conexión a red"
+  },
+  {
+    "Nombre": "Sistema de registros médicos completo",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que mantiene toda información médica de pacientes"
+  },
+  {
+    "Nombre": "Sistemas de información clínica",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas para gestionar información en entornos médicos"
+  },
+  {
+    "Nombre": "Información de gestión",
+    "Categoría": "Tipo de información",
+    "Descripción breve": "Datos para toma de decisiones administrativas"
+  },
+  {
+    "Nombre": "Administradores de servicios de salud",
+    "Categoría": "Rol",
+    "Descripción breve": "Personas que gestionan servicios médicos"
+  },
+  {
+    "Nombre": "Personal médico",
+    "Categoría": "Rol",
+    "Descripción breve": "Profesionales que proporcionan atención de salud"
+  },
+  {
+    "Nombre": "Pacientes",
+    "Categoría": "Rol",
+    "Descripción breve": "Personas que reciben atención médica"
+  },
+  {
+    "Nombre": "Problemas de salud mental",
+    "Categoría": "Condición médica",
+    "Descripción breve": "Enfermedades relacionadas con funcionamiento mental"
+  },
+  {
+    "Nombre": "Médicos",
+    "Categoría": "Rol",
+    "Descripción breve": "Profesionales que diagnostican y tratan pacientes"
+  },
+  {
+    "Nombre": "Enfermeros",
+    "Categoría": "Rol",
+    "Descripción breve": "Profesionales que asisten en atención de pacientes"
+  },
+  {
+    "Nombre": "Visitadores de salud",
+    "Categoría": "Rol",
+    "Descripción breve": "Enfermeros que visitan pacientes a domicilio"
+  },
+  {
+    "Nombre": "Recepcionistas",
+    "Categoría": "Rol",
+    "Descripción breve": "Personal que gestiona citas y recepción"
+  },
+  {
+    "Nombre": "Personal de archivo médico",
+    "Categoría": "Rol",
+    "Descripción breve": "Personal que organiza registros"
+  },
+  {
+    "Nombre": "Personal administrativo",
+    "Categoría": "Rol",
+    "Descripción breve": "Personal que elabora informes y gestiona administración"
+  },
+  {
+    "Nombre": "Registros de pacientes",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Documentación de información del paciente"
+  },
+  {
+    "Nombre": "Consultas",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Registros de visitas médicas"
+  },
+  {
+    "Nombre": "Condiciones",
+    "Categoría": "Información médica",
+    "Descripción breve": "Diagnósticos de problemas de salud"
+  },
+  {
+    "Nombre": "Tratamientos",
+    "Categoría": "Información médica",
+    "Descripción breve": "Intervenciones para atender problemas de salud"
+  },
+  {
+    "Nombre": "Informes",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Documentos generados con información del sistema"
+  },
+  {
+    "Nombre": "Administración de atención individual",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Gestión personalizada de cada paciente"
+  },
+  {
+    "Nombre": "Médicos de atención primaria",
+    "Categoría": "Rol",
+    "Descripción breve": "Médicos principales responsables del paciente"
+  },
+  {
+    "Nombre": "Historial del paciente",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Registro completo de atención médica del paciente"
+  },
+  {
+    "Nombre": "Resúmenes de datos",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Versiones condensadas de información del paciente"
+  },
+  {
+    "Nombre": "Monitorización del paciente",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Seguimiento continuo de estado y tratamiento del paciente"
+  },
+  {
+    "Nombre": "Advertencias",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Alertas generadas por el sistema"
+  },
+  {
+    "Nombre": "Informes administrativos",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Documentos con información agregada para gestión"
+  },
+  {
+    "Nombre": "Leyes de protección de datos",
+    "Categoría": "Marco legal",
+    "Descripción breve": "Legislación que regula confidencialidad de información personal"
+  },
+  {
+    "Nombre": "Leyes de salud mental",
+    "Categoría": "Marco legal",
+    "Descripción breve": "Legislación específica para tratamiento psiquiátrico"
+  },
+  {
+    "Nombre": "Detención obligatoria",
+    "Categoría": "Concepto legal",
+    "Descripción breve": "Internación forzada de pacientes peligrosos"
+  },
+  {
+    "Nombre": "Protecciones legislativas",
+    "Categoría": "Marco legal",
+    "Descripción breve": "Salvaguardas legales para derechos de pacientes"
+  },
+  {
+    "Nombre": "Revisión judicial",
+    "Categoría": "Proceso legal",
+    "Descripción breve": "Evaluación legal de decisiones médicas"
+  },
+  {
+    "Nombre": "Sistemas médicos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software usado en contextos de salud"
+  },
+  {
+    "Nombre": "Privacidad",
+    "Categoría": "Requerimiento",
+    "Descripción breve": "Protección de información confidencial"
+  },
+  {
+    "Nombre": "Personal médico autorizado",
+    "Categoría": "Rol",
+    "Descripción breve": "Profesionales con permiso de acceder información médica"
+  },
+  {
+    "Nombre": "Patologías mentales",
+    "Categoría": "Condición médica",
+    "Descripción breve": "Enfermedades de salud mental"
+  },
+  {
+    "Nombre": "Pacientes suicidas",
+    "Categoría": "Condición",
+    "Descripción breve": "Pacientes con riesgo de dañarse a sí mismos"
+  },
+  {
+    "Nombre": "Pacientes peligrosos",
+    "Categoría": "Condición",
+    "Descripción breve": "Pacientes con riesgo de dañar a otros"
+  },
+  {
+    "Nombre": "Requerimientos de privacidad",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Necesidades relacionadas con confidencialidad"
+  },
+  {
+    "Nombre": "Requerimientos de seguridad",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Necesidades relacionadas con protección y corrección"
+  },
+  {
+    "Nombre": "Fallas del servidor",
+    "Categoría": "Problema técnico",
+    "Descripción breve": "Mal funcionamiento de servidor"
+  },
+  {
+    "Nombre": "Desconexión de una red",
+    "Categoría": "Problema técnico",
+    "Descripción breve": "Pérdida de conectividad"
+  },
+  {
+    "Nombre": "Preferencias temporales",
+    "Categoría": "Concepto de diseño",
+    "Descripción breve": "Compromisos entre requisitos conflictivos"
+  },
+  {
+    "Nombre": "Estación meteorológica",
+    "Categoría": "Sistema específico",
+    "Descripción breve": "Sistema que recopila datos climáticos"
+  },
+  {
+    "Nombre": "Cambio climático",
+    "Categoría": "Contexto",
+    "Descripción breve": "Variaciones en patrones climáticos globales"
+  },
+  {
+    "Nombre": "Predicciones meteorológicas",
+    "Categoría": "Aplicación",
+    "Descripción breve": "Estimación de condiciones climáticas futuras"
+  },
+  {
+    "Nombre": "Áreas remotas",
+    "Categoría": "Contexto",
+    "Descripción breve": "Ubicaciones alejadas de centros urbanos"
+  },
+  {
+    "Nombre": "Instrumentos",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivos que miden parámetros"
+  },
+  {
+    "Nombre": "Temperatura",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Medida de calor o frío"
+  },
+  {
+    "Nombre": "Presión",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Medida de fuerza atmosférica"
+  },
+  {
+    "Nombre": "Luz solar",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Medida de radiación solar"
+  },
+  {
+    "Nombre": "Lluvia",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Medida de precipitación"
+  },
+  {
+    "Nombre": "Rapidez del viento",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Velocidad del viento"
+  },
+  {
+    "Nombre": "Dirección del viento",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Orientación del flujo de aire"
+  },
+  {
+    "Nombre": "Sistema de información meteorológica",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que gestiona datos climáticos"
+  },
+  {
+    "Nombre": "Sistema de estación meteorológica",
+    "Categoría": "Subsistema",
+    "Descripción breve": "Componente que recopila datos meteorológicos"
+  },
+  {
+    "Nombre": "Procesamiento de datos inicial",
+    "Categoría": "Actividad",
+    "Descripción breve": "Primera transformación de datos recopilados"
+  },
+  {
+    "Nombre": "Sistema de gestión y archivado de datos",
+    "Categoría": "Subsistema",
+    "Descripción breve": "Componente que almacena y procesa datos"
+  },
+  {
+    "Nombre": "Análisis de datos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Examen e interpretación de datos"
+  },
+  {
+    "Nombre": "Archivado",
+    "Categoría": "Actividad",
+    "Descripción breve": "Almacenamiento a largo plazo de datos"
+  },
+  {
+    "Nombre": "Sistemas de predicción meteorológica",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que genera pronósticos del clima"
+  },
+  {
+    "Nombre": "Sistema de mantenimiento de estación",
+    "Categoría": "Subsistema",
+    "Descripción breve": "Componente que monitorea y controla estaciones"
+  },
+  {
+    "Nombre": "Comunicación por satélite",
+    "Categoría": "Infraestructura",
+    "Descripción breve": "Transmisión de datos vía satélite"
+  },
+  {
+    "Nombre": "Monitorización del estado",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Seguimiento de condición operacional"
+  },
+  {
+    "Nombre": "Software embebido",
+    "Categoría": "Tipo de software",
+    "Descripción breve": "Software integrado en dispositivo"
+  },
+  {
+    "Nombre": "Control remoto",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Gestión a distancia de un sistema"
+  },
+  {
+    "Nombre": "Símbolo de paquete UML",
+    "Categoría": "Notación",
+    "Descripción breve": "Representación gráfica de un conjunto de componentes"
+  },
+  {
+    "Nombre": "Estereotipo UML",
+    "Categoría": "Notación",
+    "Descripción breve": "Extensión del lenguaje UML para indicar tipos específicos"
+  },
+  {
+    "Nombre": "Asociaciones",
+    "Categoría": "Notación",
+    "Descripción breve": "Relaciones entre elementos en un modelo"
+  },
+  {
+    "Nombre": "Intercambio de información",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Transferencia de datos entre sistemas"
+  },
+  {
+    "Nombre": "Parámetros climatológicos",
+    "Categoría": "Medición",
+    "Descripción breve": "Variables que describen condiciones del clima"
+  },
+  {
+    "Nombre": "Temperatura del terreno",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Medida de calor en el suelo"
+  },
+  {
+    "Nombre": "Temperatura del aire",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Medida de calor en la atmósfera"
+  },
+  {
+    "Nombre": "Presión barométrica",
+    "Categoría": "Parámetro meteorológico",
+    "Descripción breve": "Medida de presión atmosférica"
+  },
+  {
+    "Nombre": "Período de 24 horas",
+    "Categoría": "Intervalo temporal",
+    "Descripción breve": "Duración de un día completo"
+  },
+  {
+    "Nombre": "Lecturas de parámetros",
+    "Categoría": "Medición",
+    "Descripción breve": "Valores capturados de sensores"
+  },
+  {
+    "Nombre": "Observaciones meteorológicas",
+    "Categoría": "Medición",
+    "Descripción breve": "Datos recopilados sobre condiciones climáticas"
+  },
+  {
+    "Nombre": "Intervalos frecuentes",
+    "Categoría": "Patrón temporal",
+    "Descripción breve": "Períodos regulares de recolección"
+  },
+  {
+    "Nombre": "Ancho de banda del satélite",
+    "Categoría": "Restricción técnica",
+    "Descripción breve": "Capacidad de transmisión de datos vía satélite"
+  },
+  {
+    "Nombre": "Procesamiento local",
+    "Categoría": "Actividad",
+    "Descripción breve": "Transformación de datos en la estación"
+  },
+  {
+    "Nombre": "Concentración de los datos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Agregación y resumen de información"
+  },
+  {
+    "Nombre": "Sistema de adquisición de datos",
+    "Categoría": "Subsistema",
+    "Descripción breve": "Componente que solicita y recibe datos"
+  },
+  {
+    "Nombre": "Conexión",
+    "Categoría": "Infraestructura",
+    "Descripción breve": "Enlace de comunicación entre sistemas"
+  },
+  {
+    "Nombre": "Vínculo satelital",
+    "Categoría": "Infraestructura",
+    "Descripción breve": "Canal de comunicación vía satélite"
+  },
+  {
+    "Nombre": "Baterías",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Fuente de energía recargable"
+  },
+  {
+    "Nombre": "Fuentes de energía externas",
+    "Categoría": "Infraestructura",
+    "Descripción breve": "Suministros de electricidad no locales"
+  },
+  {
+    "Nombre": "Cables de red",
+    "Categoría": "Infraestructura",
+    "Descripción breve": "Conexiones físicas para comunicación"
+  },
+  {
+    "Nombre": "Mecanismo solar",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo para capturar energía del sol"
+  },
+  {
+    "Nombre": "Mecanismo eólico",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo para capturar energía del viento"
+  },
+  {
+    "Nombre": "Condiciones ambientales",
+    "Categoría": "Contexto",
+    "Descripción breve": "Características del entorno físico"
+  },
+  {
+    "Nombre": "Animales",
+    "Categoría": "Amenaza",
+    "Descripción breve": "Seres vivos que pueden dañar equipos"
+  },
+  {
+    "Nombre": "Hardware de comunicación",
+    "Categoría": "Componente técnico",
+    "Descripción breve": "Equipos para transmisión de datos"
+  },
+  {
+    "Nombre": "Reportes de fallas",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Notificaciones de problemas del sistema"
+  },
+  {
+    "Nombre": "Sistema de administración",
+    "Categoría": "Subsistema",
+    "Descripción breve": "Componente que gestiona operaciones"
+  },
+  {
+    "Nombre": "Administración de la energía del sistema",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Gestión del consumo y generación de energía"
+  },
+  {
+    "Nombre": "Generadores",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivos que producen electricidad"
+  },
+  {
+    "Nombre": "Instrumentos de respaldo",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivos de reserva en caso de falla"
+  },
+  {
+    "Nombre": "Reconfiguración dinámica",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Cambio de configuración durante operación"
+  },
+  {
+    "Nombre": "Versiones",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Diferentes iteraciones del software"
+  },
+  {
+    "Nombre": "Falla del sistema",
+    "Categoría": "Problema",
+    "Descripción breve": "Mal funcionamiento que impide operación"
+  },
+  {
+    "Nombre": "Funcionalidad de adquisición de datos",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Capacidad de recopilar información"
+  },
+  {
+    "Nombre": "Documentación",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Información escrita asociada al software"
+  },
+  {
+    "Nombre": "Datos de configuración",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Información para instalar y configurar programas"
+  },
+  {
+    "Nombre": "Programas separados",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Múltiples ejecutables independientes"
+  },
+  {
+    "Nombre": "Archivos de configuración",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Archivos con parámetros del sistema"
+  },
+  {
+    "Nombre": "Documentación del sistema",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Descripción de estructura del sistema"
+  },
+  {
+    "Nombre": "Documentación del usuario",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Guías de cómo usar el sistema"
+  },
+  {
+    "Nombre": "Sitios web",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Páginas para descargar información del producto"
+  },
+  {
+    "Nombre": "Guías del programa",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Manuales de uso del software"
+  },
+  {
+    "Nombre": "Diseño del programa",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Descripción de la estructura interna del software"
+  },
+  {
+    "Nombre": "Código del programa",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Instrucciones escritas en lenguaje de programación"
+  },
+  {
+    "Nombre": "Bases de datos",
+    "Categoría": "Componente técnico",
+    "Descripción breve": "Sistemas para almacenar información estructurada"
+  },
+  {
+    "Nombre": "Procesadores de texto",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para crear y editar documentos"
+  },
+  {
+    "Nombre": "Paquetes de dibujo",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para crear gráficos"
+  },
+  {
+    "Nombre": "Herramientas de administración de proyectos",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para gestionar proyectos"
+  },
+  {
+    "Nombre": "Sistemas de contabilidad",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para operaciones contables"
+  },
+  {
+    "Nombre": "Sistemas para mantener registros dentales",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software especializado en odontología"
+  },
+  {
+    "Nombre": "Contratista de software",
+    "Categoría": "Rol",
+    "Descripción breve": "Organización que desarrolla software por encargo"
+  },
+  {
+    "Nombre": "Sistemas de control para dispositivos electrónicos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que gestiona dispositivos"
+  },
+  {
+    "Nombre": "Proceso empresarial",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Conjunto de actividades de negocio"
+  },
+  {
+    "Nombre": "Sistemas de control de tráfico aéreo",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software para gestionar vuelos"
+  },
+  {
+    "Nombre": "Especificación",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Descripción detallada de requisitos del software"
+  },
+  {
+    "Nombre": "Organización que desarrolla el software",
+    "Categoría": "Rol",
+    "Descripción breve": "Entidad responsable de crear el software"
+  },
+  {
+    "Nombre": "Organización que compra el software",
+    "Categoría": "Rol",
+    "Descripción breve": "Cliente que adquiere el software"
+  },
+  {
+    "Nombre": "Desarrolladores de software",
+    "Categoría": "Rol",
+    "Descripción breve": "Personas que crean el software"
+  },
+  {
+    "Nombre": "Producto genérico",
+    "Categoría": "Tipo de producto",
+    "Descripción breve": "Software base sin personalizar"
+  },
+  {
+    "Nombre": "Requerimientos de un cliente",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Necesidades específicas del cliente"
+  },
+  {
+    "Nombre": "Reglas empresariales",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Políticas de operación de una organización"
+  },
+  {
+    "Nombre": "Procesos empresariales",
+    "Categoría": "Concepto organizacional",
+    "Descripción breve": "Actividades de negocio estructuradas"
+  },
+  {
+    "Nombre": "Reportes requeridos",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Informes que el sistema debe generar"
+  },
+  {
+    "Nombre": "Comportamiento del software",
+    "Categoría": "Característica",
+    "Descripción breve": "Cómo actúa el software durante ejecución"
+  },
+  {
+    "Nombre": "Estructura de los programas",
+    "Categoría": "Concepto técnico",
+    "Descripción breve": "Organización interna del código"
+  },
+  {
+    "Nombre": "Organización de los programas",
+    "Categoría": "Concepto técnico",
+    "Descripción breve": "Disposición de componentes del programa"
+  },
+  {
+    "Nombre": "Tiempo de respuesta del software",
+    "Categoría": "Métrica",
+    "Descripción breve": "Duración desde acción de usuario hasta respuesta"
+  },
+  {
+    "Nombre": "Duda de un usuario",
+    "Categoría": "Contexto",
+    "Descripción breve": "Pregunta o solicitud del usuario"
+  },
+  {
+    "Nombre": "Código del programa",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Texto fuente del software"
+  },
+  {
+    "Nombre": "Sistema bancario",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para operaciones financieras"
+  },
+  {
+    "Nombre": "Juego interactivo",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software de entretenimiento con interacción"
+  },
+  {
+    "Nombre": "Sistema de conmutación telefónica",
+    "Categoría": "Tipo de aplicación",
+    "Descripción breve": "Software para enrutar llamadas"
+  },
+  {
+    "Nombre": "Teorías",
+    "Categoría": "Fundamento conceptual",
+    "Descripción breve": "Principios teóricos que sustentan métodos"
+  },
+  {
+    "Nombre": "Restricciones organizacionales",
+    "Categoría": "Limitación",
+    "Descripción breve": "Límites impuestos por la organización"
+  },
+  {
+    "Nombre": "Restricciones financieras",
+    "Categoría": "Limitación",
+    "Descripción breve": "Límites de presupuesto"
+  },
+  {
+    "Nombre": "Limitaciones",
+    "Categoría": "Restricción",
+    "Descripción breve": "Condiciones que limitan soluciones"
+  },
+  {
+    "Nombre": "Procesos técnicos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Aspectos tecnológicos del desarrollo"
+  },
+  {
+    "Nombre": "Administración del proyecto de software",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Planificación y control de proyectos de desarrollo"
+  },
+  {
+    "Nombre": "Calidad requerida",
+    "Categoría": "Objetivo",
+    "Descripción breve": "Nivel de calidad que se debe alcanzar"
+  },
+  {
+    "Nombre": "Fecha",
+    "Categoría": "Restricción temporal",
+    "Descripción breve": "Plazo de entrega"
+  },
+  {
+    "Nombre": "Presupuesto",
+    "Categoría": "Restricción financiera",
+    "Descripción breve": "Recursos económicos disponibles"
+  },
+  {
+    "Nombre": "Compromisos",
+    "Categoría": "Práctica",
+    "Descripción breve": "Equilibrio entre diferentes objetivos"
+  },
+  {
+    "Nombre": "Perfeccionistas",
+    "Categoría": "Tipo de persona",
+    "Descripción breve": "Individuos que buscan perfección absoluta"
+  },
+  {
+    "Nombre": "Desarrollo del programa",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de crear software"
+  },
+  {
+    "Nombre": "Software de alta calidad",
+    "Categoría": "Objetivo",
+    "Descripción breve": "Software que cumple altos estándares"
+  },
+  {
+    "Nombre": "Método más adecuado",
+    "Categoría": "Práctica",
+    "Descripción breve": "Selección de técnica apropiada al contexto"
+  },
+  {
+    "Nombre": "Conjunto de circunstancias",
+    "Categoría": "Contexto",
+    "Descripción breve": "Condiciones específicas de un proyecto"
+  },
+  {
+    "Nombre": "Desarrollo más creativo",
+    "Categoría": "Enfoque",
+    "Descripción breve": "Aproximación innovadora menos formal"
+  },
+  {
+    "Nombre": "Desarrollo menos formal",
+    "Categoría": "Enfoque",
+    "Descripción breve": "Aproximación con menos rigor estructural"
+  },
+  {
+    "Nombre": "Sistemas basados en la Web",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que opera vía Internet"
+  },
+  {
+    "Nombre": "Habilidades de software",
+    "Categoría": "Competencia",
+    "Descripción breve": "Capacidades técnicas de programación"
+  },
+  {
+    "Nombre": "Habilidades de diseño gráfico",
+    "Categoría": "Competencia",
+    "Descripción breve": "Capacidades de diseño visual"
+  },
+  {
+    "Nombre": "Individuos y la sociedad",
+    "Categoría": "Contexto",
+    "Descripción breve": "Personas y su entorno social"
+  },
+  {
+    "Nombre": "Sistemas de software avanzados",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software con capacidades complejas"
+  },
+  {
+    "Nombre": "Sistemas confiables",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que opera sin fallos"
+  },
+  {
+    "Nombre": "Cambio del software",
+    "Categoría": "Actividad",
+    "Descripción breve": "Modificación del software existente"
+  },
+  {
+    "Nombre": "Entorno empresarial variable",
+    "Categoría": "Contexto",
+    "Descripción breve": "Ambiente de negocios que cambia constantemente"
+  },
+  {
+    "Nombre": "Falla del sistema",
+    "Categoría": "Problema",
+    "Descripción breve": "Mal funcionamiento del software"
+  },
+  {
+    "Nombre": "Usuarios malintencionados",
+    "Categoría": "Amenaza",
+    "Descripción breve": "Personas que intentan dañar o explotar sistemas"
+  },
+  {
+    "Nombre": "Acceso al sistema",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Capacidad de usar el sistema"
+  },
+  {
+    "Nombre": "Procesos de desarrollo",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Formas de organizar el desarrollo de software"
+  },
+  {
+    "Nombre": "Sistemas legados",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software antiguo aún en operación"
+  },
+  {
+    "Nombre": "Actualización del sistema",
+    "Categoría": "Actividad",
+    "Descripción breve": "Mejora o modificación del software existente"
+  },
+  {
+    "Nombre": "Desarrollo de software personal",
+    "Categoría": "Contexto",
+    "Descripción breve": "Creación de software para uso propio"
+  },
+  {
+    "Nombre": "Responsabilidades con la profesión",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Obligaciones hacia la comunidad profesional"
+  },
+  {
+    "Nombre": "Responsabilidades con la sociedad",
+    "Categoría": "Principio ético",
+    "Descripción breve": "Obligaciones hacia el bien común"
+  },
+  {
+    "Nombre": "Temas técnicos",
+    "Categoría": "Concepto",
+    "Descripción breve": "Aspectos tecnológicos de la ingeniería"
+  }
+]

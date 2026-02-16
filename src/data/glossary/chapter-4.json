@@ -1,0 +1,1037 @@
+[
+  {
+    "Nombre": "Ingeniería de requerimientos",
+    "Categoría": "Proceso",
+    "Descripción breve": "Proceso de descubrir, analizar, documentar y verificar los servicios y restricciones de un sistema"
+  },
+  {
+    "Nombre": "Requerimientos del usuario",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Enunciados en lenguaje natural y diagramas sobre servicios esperados y restricciones operacionales"
+  },
+  {
+    "Nombre": "Requerimientos del sistema",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Descripciones detalladas de funciones, servicios y restricciones operacionales del sistema de software"
+  },
+  {
+    "Nombre": "Especificación funcional",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Documento que define con exactitud lo que se implementará; sinónimo del documento de requerimientos del sistema"
+  },
+  {
+    "Nombre": "Requerimientos funcionales",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Enunciados sobre servicios que el sistema debe proveer y cómo debe reaccionar a entradas específicas"
+  },
+  {
+    "Nombre": "Requerimientos no funcionales",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Limitaciones sobre servicios o funciones; incluyen restricciones de temporización, proceso de desarrollo y estándares"
+  },
+  {
+    "Nombre": "MHC-PMS",
+    "Categoría": "Sistema ejemplo",
+    "Descripción breve": "Sistema de administración de pacientes para apoyar la atención a la salud mental"
+  },
+  {
+    "Nombre": "Participante",
+    "Categoría": "Rol",
+    "Descripción breve": "Individuo o función que se ve afectado de alguna forma por el sistema"
+  },
+  {
+    "Nombre": "Requerimientos de dominio",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos derivados del dominio de aplicación del sistema más que de necesidades específicas de usuarios"
+  },
+  {
+    "Nombre": "Propiedades emergentes",
+    "Categoría": "Concepto",
+    "Descripción breve": "Propiedades del sistema como un todo (fiabilidad, tiempo de respuesta, uso de almacenamiento)"
+  },
+  {
+    "Nombre": "Requerimientos del producto",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Especifican o restringen el comportamiento del software (rendimiento, fiabilidad, seguridad, usabilidad)"
+  },
+  {
+    "Nombre": "Requerimientos de la organización",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Derivados de políticas y procedimientos de la organización del cliente y del desarrollador"
+  },
+  {
+    "Nombre": "Requerimientos externos",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Derivados de factores externos al sistema (regulatorios, legislativos, éticos)"
+  },
+  {
+    "Nombre": "Requerimientos de rendimiento",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Especifican qué tan rápido debe ejecutarse el sistema y cuánta memoria requiere"
+  },
+  {
+    "Nombre": "Requerimientos de fiabilidad",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Establecen la tasa aceptable de fallas del sistema"
+  },
+  {
+    "Nombre": "Requerimientos de seguridad",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Especifican medidas de protección y control de acceso del sistema"
+  },
+  {
+    "Nombre": "Requerimientos de usabilidad",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Establecen la facilidad de uso y aprendizaje del sistema por parte de los usuarios"
+  },
+  {
+    "Nombre": "Requerimientos de eficiencia",
+    "Categoría": "Tipo de requerimiento no funcional",
+    "Descripción breve": "Relacionados con el uso óptimo de recursos del sistema"
+  },
+  {
+    "Nombre": "Requerimientos regulatorios",
+    "Categoría": "Tipo de requerimiento externo",
+    "Descripción breve": "Establecen lo que debe hacer el sistema para ser aprobado por un regulador"
+  },
+  {
+    "Nombre": "Requerimientos legislativos",
+    "Categoría": "Tipo de requerimiento externo",
+    "Descripción breve": "Deben seguirse para garantizar que el sistema opere conforme a la ley"
+  },
+  {
+    "Nombre": "Requerimientos éticos",
+    "Categoría": "Tipo de requerimiento externo",
+    "Descripción breve": "Garantizan que el sistema será aceptable para usuarios y público en general"
+  },
+  {
+    "Nombre": "Requerimientos operacionales",
+    "Categoría": "Tipo de requerimiento organizacional",
+    "Descripción breve": "Definen cómo se usará el sistema en la organización"
+  },
+  {
+    "Nombre": "Requerimientos de desarrollo",
+    "Categoría": "Tipo de requerimiento organizacional",
+    "Descripción breve": "Especifican lenguaje de programación, estándares del entorno o proceso de desarrollo a utilizar"
+  },
+  {
+    "Nombre": "Requerimientos ambientales",
+    "Categoría": "Tipo de requerimiento organizacional",
+    "Descripción breve": "Definen el entorno de operación del sistema"
+  },
+  {
+    "Nombre": "Meta del sistema",
+    "Categoría": "Concepto",
+    "Descripción breve": "Intención general expresada de forma abstracta (facilidad de uso, rapidez de respuesta)"
+  },
+  {
+    "Nombre": "Requerimiento comprobable",
+    "Categoría": "Práctica",
+    "Descripción breve": "Requerimiento escrito de manera que pueda verificarse objetivamente mediante pruebas"
+  },
+  {
+    "Nombre": "Métricas de requerimientos",
+    "Categoría": "Técnica de medición",
+    "Descripción breve": "Medidas cuantitativas para especificar propiedades no funcionales (transacciones/segundo, tiempo de respuesta)"
+  },
+  {
+    "Nombre": "Tiempo medio para falla",
+    "Categoría": "Métrica",
+    "Descripción breve": "Medida de fiabilidad que indica el tiempo promedio entre fallas del sistema"
+  },
+  {
+    "Nombre": "Tasa de ocurrencia de falla",
+    "Categoría": "Métrica",
+    "Descripción breve": "Frecuencia con la que ocurren fallas en el sistema"
+  },
+  {
+    "Nombre": "Probabilidad de indisponibilidad",
+    "Categoría": "Métrica",
+    "Descripción breve": "Medida de disponibilidad que indica la probabilidad de que el sistema no esté operativo"
+  },
+  {
+    "Nombre": "Tiempo de reinicio",
+    "Categoría": "Métrica",
+    "Descripción breve": "Tiempo requerido para que el sistema se recupere después de una falla"
+  },
+  {
+    "Nombre": "Documento de requerimientos de software",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Comunicado oficial de lo que deben implementar los desarrolladores; incluye requerimientos de usuario y sistema"
+  },
+  {
+    "Nombre": "SRS",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Especificación de Requerimientos de Software; sinónimo del documento de requerimientos de software"
+  },
+  {
+    "Nombre": "Enfoque ágil",
+    "Categoría": "Método de desarrollo",
+    "Descripción breve": "Enfoque donde los requerimientos se elaboran incrementalmente a medida que se desarrolla el sistema"
+  },
+  {
+    "Nombre": "Programación extrema",
+    "Categoría": "Método de desarrollo",
+    "Descripción breve": "Metodología ágil que recopila requerimientos del usuario como historias en tarjetas"
+  },
+  {
+    "Nombre": "Historias de usuario",
+    "Categoría": "Artefacto de requerimientos",
+    "Descripción breve": "Formato ágil para expresar requerimientos del usuario de manera incremental"
+  },
+  {
+    "Nombre": "Estándar IEEE",
+    "Categoría": "Estándar",
+    "Descripción breve": "Estándar del IEEE para documentos de requerimientos (IEEE 1998)"
+  },
+  {
+    "Nombre": "Prefacio",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Define lectores esperados, historia de versiones y resumen de cambios del documento"
+  },
+  {
+    "Nombre": "Introducción",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Describe la necesidad del sistema, funciones y relación con objetivos empresariales"
+  },
+  {
+    "Nombre": "Glosario",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Define términos técnicos usados en el documento de requerimientos"
+  },
+  {
+    "Nombre": "Definición de requerimientos del usuario",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Sección que representa los servicios ofrecidos al usuario y requerimientos no funcionales"
+  },
+  {
+    "Nombre": "Arquitectura del sistema",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Presenta panorama de alto nivel de la arquitectura anticipada mostrando distribución de funciones"
+  },
+  {
+    "Nombre": "Especificación de requerimientos del sistema",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Representa requerimientos funcionales y no funcionales con mayor detalle"
+  },
+  {
+    "Nombre": "Modelos del sistema",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Incluye modelos gráficos que muestran relaciones entre componentes del sistema y su entorno"
+  },
+  {
+    "Nombre": "Evolución del sistema",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Describe supuestos fundamentales y cambios anticipados del sistema"
+  },
+  {
+    "Nombre": "Apéndices",
+    "Categoría": "Sección del documento",
+    "Descripción breve": "Brindan información específica y detallada sobre hardware, bases de datos y configuraciones"
+  },
+  {
+    "Nombre": "Especificación de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de escribir los requerimientos del usuario y del sistema en un documento"
+  },
+  {
+    "Nombre": "Lenguaje natural",
+    "Categoría": "Notación",
+    "Descripción breve": "Forma de expresar requerimientos usando enunciados numerados en lenguaje natural"
+  },
+  {
+    "Nombre": "Lenguaje natural estructurado",
+    "Categoría": "Notación",
+    "Descripción breve": "Requerimientos escritos en lenguaje natural usando una forma o plantilla estándar"
+  },
+  {
+    "Nombre": "Lenguajes de descripción de diseño",
+    "Categoría": "Notación",
+    "Descripción breve": "Lenguaje similar a programación pero más abstracto para especificar requerimientos"
+  },
+  {
+    "Nombre": "Anotaciones gráficas",
+    "Categoría": "Notación",
+    "Descripción breve": "Modelos gráficos complementados con anotaciones de texto para definir requerimientos funcionales"
+  },
+  {
+    "Nombre": "Especificaciones matemáticas",
+    "Categoría": "Notación",
+    "Descripción breve": "Anotaciones basadas en conceptos matemáticos como máquinas de estado finito"
+  },
+  {
+    "Nombre": "UML",
+    "Categoría": "Lenguaje de modelado",
+    "Descripción breve": "Lenguaje Unificado de Modelado; estándar para modelado orientado a objetos"
+  },
+  {
+    "Nombre": "Diagramas de secuencia UML",
+    "Categoría": "Modelo gráfico",
+    "Descripción breve": "Muestran secuencia de acciones que ocurren en respuesta a mensaje o evento"
+  },
+  {
+    "Nombre": "Gráficos de estado",
+    "Categoría": "Modelo gráfico",
+    "Descripción breve": "Representan cómo cambia el estado del sistema"
+  },
+  {
+    "Nombre": "Modelos de objeto",
+    "Categoría": "Modelo del sistema",
+    "Descripción breve": "Modelos gráficos que representan objetos y sus relaciones en el sistema"
+  },
+  {
+    "Nombre": "Modelos de flujo de datos",
+    "Categoría": "Modelo del sistema",
+    "Descripción breve": "Representan el flujo de datos a través de los procesos del sistema"
+  },
+  {
+    "Nombre": "Modelos de datos semánticos",
+    "Categoría": "Modelo del sistema",
+    "Descripción breve": "Modelos que representan la estructura lógica y relaciones de datos"
+  },
+  {
+    "Nombre": "Plantilla de requerimientos",
+    "Categoría": "Técnica de especificación",
+    "Descripción breve": "Formato estándar estructurado para documentar requerimientos del sistema"
+  },
+  {
+    "Nombre": "Formato estándar",
+    "Categoría": "Práctica",
+    "Descripción breve": "Uso de estructura consistente para todas las definiciones de requerimientos"
+  },
+  {
+    "Nombre": "Requerimientos obligatorios",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos que el sistema debe soportar; se escriben en futuro (\"debe ser\")"
+  },
+  {
+    "Nombre": "Requerimientos deseables",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos no necesarios; se escriben en tiempo pospretérito o condicional (\"debería ser\")"
+  },
+  {
+    "Nombre": "Fuente del requerimiento",
+    "Categoría": "Atributo de requerimiento",
+    "Descripción breve": "Información sobre quién planteó el requerimiento"
+  },
+  {
+    "Nombre": "Razón del requerimiento",
+    "Categoría": "Atributo de requerimiento",
+    "Descripción breve": "Explicación de por qué se incluyó el requerimiento"
+  },
+  {
+    "Nombre": "Bomba de insulina",
+    "Categoría": "Sistema ejemplo",
+    "Descripción breve": "Sistema embebido automatizado para administración de insulina usado como ejemplo"
+  },
+  {
+    "Nombre": "Especificación estructurada",
+    "Categoría": "Técnica de especificación",
+    "Descripción breve": "Forma de escribir requerimientos con plantillas que limitan la libertad del escritor"
+  },
+  {
+    "Nombre": "Método VOLERE",
+    "Categoría": "Método de ingeniería de requerimientos",
+    "Descripción breve": "Método que recomienda escribir requerimientos en tarjetas con campos específicos"
+  },
+  {
+    "Nombre": "Función",
+    "Categoría": "Elemento de especificación",
+    "Descripción breve": "Descripción de la operación o servicio a especificar en el sistema"
+  },
+  {
+    "Nombre": "Entradas",
+    "Categoría": "Elemento de especificación",
+    "Descripción breve": "Descripción de datos de entrada y sus procedencias"
+  },
+  {
+    "Nombre": "Salidas",
+    "Categoría": "Elemento de especificación",
+    "Descripción breve": "Descripción de datos de salida y sus destinos"
+  },
+  {
+    "Nombre": "Acción",
+    "Categoría": "Elemento de especificación",
+    "Descripción breve": "Descripción de la operación que se va a realizar"
+  },
+  {
+    "Nombre": "Precondición",
+    "Categoría": "Elemento de especificación",
+    "Descripción breve": "Establece lo que debe ser verdadero antes de llamar a una función"
+  },
+  {
+    "Nombre": "Postcondición",
+    "Categoría": "Elemento de especificación",
+    "Descripción breve": "Especifica lo que es verdadero después de llamar a una función"
+  },
+  {
+    "Nombre": "Efectos colaterales",
+    "Categoría": "Elemento de especificación",
+    "Descripción breve": "Describe efectos adicionales no directos de una operación"
+  },
+  {
+    "Nombre": "Especificación tabular",
+    "Categoría": "Técnica de especificación",
+    "Descripción breve": "Uso de tablas para describir acciones a tomar en situaciones alternativas"
+  },
+  {
+    "Nombre": "Proceso de ingeniería de requerimientos",
+    "Categoría": "Proceso",
+    "Descripción breve": "Incluye estudio de factibilidad, adquisición, análisis, especificación, validación y administración"
+  },
+  {
+    "Nombre": "Modelo en espiral",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Representación iterativa del proceso de IR con actividades organizadas alrededor de una espiral"
+  },
+  {
+    "Nombre": "Estudio de factibilidad",
+    "Categoría": "Actividad",
+    "Descripción breve": "Estudio breve que valora si el sistema contribuye con objetivos organizacionales"
+  },
+  {
+    "Nombre": "Adquisición de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de trabajar con clientes y usuarios para descubrir servicios y restricciones del sistema"
+  },
+  {
+    "Nombre": "Análisis de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de comprender y clasificar los requerimientos descubiertos"
+  },
+  {
+    "Nombre": "Validación de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de verificar que los requerimientos definen el sistema que quiere el cliente"
+  },
+  {
+    "Nombre": "Administración de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de comprender y controlar los cambios en los requerimientos del sistema"
+  },
+  {
+    "Nombre": "Descubrimiento de requerimientos",
+    "Categoría": "Actividad de adquisición",
+    "Descripción breve": "Proceso de interactuar con participantes para descubrir sus requerimientos"
+  },
+  {
+    "Nombre": "Clasificación de requerimientos",
+    "Categoría": "Actividad de análisis",
+    "Descripción breve": "Agrupa requerimientos relacionados en grupos coherentes"
+  },
+  {
+    "Nombre": "Organización de requerimientos",
+    "Categoría": "Actividad de análisis",
+    "Descripción breve": "Organiza requerimientos usando modelo de arquitectura del sistema"
+  },
+  {
+    "Nombre": "Priorización de requerimientos",
+    "Categoría": "Actividad de negociación",
+    "Descripción breve": "Establece orden de importancia de los requerimientos"
+  },
+  {
+    "Nombre": "Negociación de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de encontrar y resolver conflictos de requerimientos entre participantes"
+  },
+  {
+    "Nombre": "Documentación de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Registro de requerimientos en documentos formales o informales"
+  },
+  {
+    "Nombre": "Análisis orientado a objetos",
+    "Categoría": "Método de análisis",
+    "Descripción breve": "Método estructurado para analizar el sistema y desarrollar modelos gráficos"
+  },
+  {
+    "Nombre": "Método Objectory",
+    "Categoría": "Método de desarrollo",
+    "Descripción breve": "Método que introdujo los casos de uso (Jacobson et al., 1993)"
+  },
+  {
+    "Nombre": "Entrevistas",
+    "Categoría": "Técnica de adquisición",
+    "Descripción breve": "Preguntas formales o informales a participantes sobre el sistema"
+  },
+  {
+    "Nombre": "Entrevistas cerradas",
+    "Categoría": "Tipo de entrevista",
+    "Descripción breve": "Participantes responden a conjunto de preguntas preestablecidas"
+  },
+  {
+    "Nombre": "Entrevistas abiertas",
+    "Categoría": "Tipo de entrevista",
+    "Descripción breve": "No hay agenda predefinida; exploración abierta con participantes"
+  },
+  {
+    "Nombre": "Conocimiento de dominio",
+    "Categoría": "Concepto",
+    "Descripción breve": "Conocimiento especializado del área de aplicación del sistema"
+  },
+  {
+    "Nombre": "Terminología de dominio",
+    "Categoría": "Concepto",
+    "Descripción breve": "Jerga y términos específicos usados en el dominio de aplicación"
+  },
+  {
+    "Nombre": "Escenarios",
+    "Categoría": "Técnica de adquisición",
+    "Descripción breve": "Ejemplos de descripciones de sesiones de interacción con el sistema"
+  },
+  {
+    "Nombre": "Flujo normal de eventos",
+    "Categoría": "Elemento de escenario",
+    "Descripción breve": "Descripción de la secuencia típica de acciones en el escenario"
+  },
+  {
+    "Nombre": "Estado inicial",
+    "Categoría": "Elemento de escenario",
+    "Descripción breve": "Descripción de qué esperan el sistema y usuarios cuando inicia el escenario"
+  },
+  {
+    "Nombre": "Estado final",
+    "Categoría": "Elemento de escenario",
+    "Descripción breve": "Descripción del estado del sistema cuando termina el escenario"
+  },
+  {
+    "Nombre": "Qué puede salir mal",
+    "Categoría": "Elemento de escenario",
+    "Descripción breve": "Descripción de excepciones y cómo se manejan"
+  },
+  {
+    "Nombre": "Casos de uso",
+    "Categoría": "Técnica de adquisición",
+    "Descripción breve": "Identifican actores implicados en una interacción y nombran el tipo de interacción"
+  },
+  {
+    "Nombre": "Diagrama de caso de uso",
+    "Categoría": "Modelo gráfico",
+    "Descripción breve": "Diagrama de alto nivel que representa todas las interacciones posibles del sistema"
+  },
+  {
+    "Nombre": "Actor",
+    "Categoría": "Elemento de caso de uso",
+    "Descripción breve": "Individuo u otro sistema que interactúa con el sistema"
+  },
+  {
+    "Nombre": "Descripción textual",
+    "Categoría": "Elemento de caso de uso",
+    "Descripción breve": "Texto que documenta cada caso de uso con detalle"
+  },
+  {
+    "Nombre": "Etnografía",
+    "Categoría": "Técnica de adquisición",
+    "Descripción breve": "Técnica de observación para entender procesos operacionales en el ambiente laboral"
+  },
+  {
+    "Nombre": "Etnógrafo",
+    "Categoría": "Rol",
+    "Descripción breve": "Analista que observa el trabajo diario y toma notas sobre tareas y participantes"
+  },
+  {
+    "Nombre": "Contexto social",
+    "Categoría": "Concepto",
+    "Descripción breve": "Ambiente social y organizacional donde se usa el sistema"
+  },
+  {
+    "Nombre": "Contexto organizacional",
+    "Categoría": "Concepto",
+    "Descripción breve": "Estructura y procesos de la organización que afectan el sistema"
+  },
+  {
+    "Nombre": "Creación de prototipos",
+    "Categoría": "Técnica",
+    "Descripción breve": "Desarrollo de modelo ejecutable del sistema para experimentación y validación"
+  },
+  {
+    "Nombre": "Prototipo del sistema",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Modelo ejecutable o no ejecutable que representa funcionalidades del sistema"
+  },
+  {
+    "Nombre": "Etnografía enfocada",
+    "Categoría": "Técnica",
+    "Descripción breve": "Etnografía dirigida por preguntas específicas identificadas en el proceso de desarrollo"
+  },
+  {
+    "Nombre": "Puntos de vista",
+    "Categoría": "Técnica de organización",
+    "Descripción breve": "Forma de recopilar y organizar requerimientos de grupos de participantes con algo en común"
+  },
+  {
+    "Nombre": "Comprobaciones de validez",
+    "Categoría": "Tipo de comprobación",
+    "Descripción breve": "Verifican que el sistema especificado es lo que realmente necesita el usuario"
+  },
+  {
+    "Nombre": "Comprobaciones de consistencia",
+    "Categoría": "Tipo de comprobación",
+    "Descripción breve": "Verifican que no hay conflictos entre requerimientos en el documento"
+  },
+  {
+    "Nombre": "Comprobaciones de totalidad",
+    "Categoría": "Tipo de comprobación",
+    "Descripción breve": "Verifican que el documento incluye todas las funciones y restricciones pretendidas"
+  },
+  {
+    "Nombre": "Comprobaciones de realismo",
+    "Categoría": "Tipo de comprobación",
+    "Descripción breve": "Verifican que los requerimientos pueden implementarse con tecnología existente"
+  },
+  {
+    "Nombre": "Verificabilidad",
+    "Categoría": "Atributo de requerimiento",
+    "Descripción breve": "Capacidad de escribir un conjunto de pruebas que demuestren cumplimiento del requerimiento"
+  },
+  {
+    "Nombre": "Revisiones de requerimientos",
+    "Categoría": "Técnica de validación",
+    "Descripción breve": "Análisis sistemático de requerimientos por un equipo que verifica errores e inconsistencias"
+  },
+  {
+    "Nombre": "Generación de casos de prueba",
+    "Categoría": "Técnica de validación",
+    "Descripción breve": "Diseño de pruebas para requerimientos como parte del proceso de validación"
+  },
+  {
+    "Nombre": "Planeación de la administración de requerimientos",
+    "Categoría": "Actividad",
+    "Descripción breve": "Establece el nivel de detalle requerido en la administración de requerimientos"
+  },
+  {
+    "Nombre": "Identificación de requerimientos",
+    "Categoría": "Práctica de administración",
+    "Descripción breve": "Cada requerimiento se identifica de manera exclusiva para referencia cruzada"
+  },
+  {
+    "Nombre": "Proceso de administración del cambio",
+    "Categoría": "Proceso",
+    "Descripción breve": "Conjunto de actividades que valoran efecto y costo de cambios en requerimientos"
+  },
+  {
+    "Nombre": "Políticas de seguimiento",
+    "Categoría": "Práctica de administración",
+    "Descripción breve": "Definen relaciones entre requerimientos y entre requerimientos y diseño del sistema"
+  },
+  {
+    "Nombre": "Herramientas de apoyo",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software para almacenamiento, administración del cambio y seguimiento de requerimientos"
+  },
+  {
+    "Nombre": "Almacén de datos",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Repositorio administrado y seguro donde se mantienen los requerimientos"
+  },
+  {
+    "Nombre": "Trazabilidad de requerimientos",
+    "Categoría": "Práctica",
+    "Descripción breve": "Seguimiento de relaciones entre requerimientos, fuentes y diseño del sistema"
+  },
+  {
+    "Nombre": "Requerimientos duraderos",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos asociados con actividades centrales de lento cambio de una organización"
+  },
+  {
+    "Nombre": "Requerimientos volátiles",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requerimientos con mayor probabilidad de cambio; reflejan cómo se hace el trabajo"
+  },
+  {
+    "Nombre": "Análisis del problema",
+    "Categoría": "Etapa del cambio",
+    "Descripción breve": "Identificación y análisis de problema en requerimientos o propuesta de cambio"
+  },
+  {
+    "Nombre": "Análisis del cambio",
+    "Categoría": "Etapa del cambio",
+    "Descripción breve": "Valoración del efecto del cambio propuesto usando información de seguimiento"
+  },
+  {
+    "Nombre": "Estimación del costo",
+    "Categoría": "Etapa del cambio",
+    "Descripción breve": "Cálculo de costo por realizar cambio en términos de modificaciones a documento y sistema"
+  },
+  {
+    "Nombre": "Implementación del cambio",
+    "Categoría": "Etapa del cambio",
+    "Descripción breve": "Modificación del documento de requerimientos y del diseño e implementación del sistema"
+  },
+  {
+    "Nombre": "Problemas horrorosos",
+    "Categoría": "Concepto",
+    "Descripción breve": "Problemas que no se pueden definir por completo"
+  },
+  {
+    "Nombre": "Totalidad",
+    "Categoría": "Atributo de especificación",
+    "Descripción breve": "Característica donde deben definirse todos los servicios requeridos por el usuario"
+  },
+  {
+    "Nombre": "Consistencia",
+    "Categoría": "Atributo de especificación",
+    "Descripción breve": "Característica donde los requerimientos evitan definiciones contradictorias"
+  },
+  {
+    "Nombre": "Interoperabilidad",
+    "Categoría": "Concepto",
+    "Descripción breve": "Capacidad del sistema para interactuar con otros sistemas"
+  },
+  {
+    "Nombre": "Restricciones presupuestales",
+    "Categoría": "Factor organizacional",
+    "Descripción breve": "Limitaciones económicas que afectan los requerimientos del sistema"
+  },
+  {
+    "Nombre": "Políticas de la organización",
+    "Categoría": "Factor organizacional",
+    "Descripción breve": "Normas y procedimientos que influyen en los requerimientos"
+  },
+  {
+    "Nombre": "Regulaciones de seguridad",
+    "Categoría": "Factor externo",
+    "Descripción breve": "Normas legales de seguridad que deben cumplirse"
+  },
+  {
+    "Nombre": "Legislación sobre privacidad",
+    "Categoría": "Factor externo",
+    "Descripción breve": "Leyes que regulan el manejo de información personal"
+  },
+  {
+    "Nombre": "Disponibilidad",
+    "Categoría": "Propiedad no funcional",
+    "Descripción breve": "Tiempo en que el sistema está operativo y accesible"
+  },
+  {
+    "Nombre": "Tiempo muerto",
+    "Categoría": "Métrica",
+    "Descripción breve": "Período en que el sistema no está disponible para uso"
+  },
+  {
+    "Nombre": "Autenticación",
+    "Categoría": "Requerimiento de seguridad",
+    "Descripción breve": "Proceso de verificar la identidad de usuarios del sistema"
+  },
+  {
+    "Nombre": "Tarjeta de identidad",
+    "Categoría": "Mecanismo de autenticación",
+    "Descripción breve": "Dispositivo físico usado para identificar usuarios"
+  },
+  {
+    "Nombre": "Lector de tarjetas",
+    "Categoría": "Dispositivo de hardware",
+    "Descripción breve": "Hardware para leer tarjetas de identidad de usuarios"
+  },
+  {
+    "Nombre": "Lista de control de acceso",
+    "Categoría": "Mecanismo de seguridad",
+    "Descripción breve": "Lista que define usuarios autorizados para acceder a funcionalidades del sistema"
+  },
+  {
+    "Nombre": "Informes administrativos",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Reportes generados por el sistema para administradores"
+  },
+  {
+    "Nombre": "Informes de costos",
+    "Categoría": "Tipo de informe",
+    "Descripción breve": "Reportes que muestran costos de medicamentos prescritos"
+  },
+  {
+    "Nombre": "Resumen de medicamentos",
+    "Categoría": "Tipo de informe",
+    "Descripción breve": "Reporte con información consolidada sobre medicamentos prescritos"
+  },
+  {
+    "Nombre": "Recepcionista",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Personal que administra citas médicas de pacientes"
+  },
+  {
+    "Nombre": "Personal de TI",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Responsable de instalar y mantener el sistema"
+  },
+  {
+    "Nombre": "Director de ética médica",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Garantiza cumplimiento de lineamientos éticos en el sistema"
+  },
+  {
+    "Nombre": "Encargados de atención a la salud",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Obtienen información administrativa del sistema"
+  },
+  {
+    "Nombre": "Personal de archivo médico",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Responsable de conservar información y procedimientos de mantenimiento"
+  },
+  {
+    "Nombre": "Paciente",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Individuo cuya información se registra en el sistema de salud"
+  },
+  {
+    "Nombre": "Médico",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Responsable de valorar y tratar a los pacientes"
+  },
+  {
+    "Nombre": "Enfermera",
+    "Categoría": "Rol de participante",
+    "Descripción breve": "Coordina consultas y suministra tratamientos"
+  },
+  {
+    "Nombre": "Historia médica",
+    "Categoría": "Información de dominio",
+    "Descripción breve": "Registro de consultas previas, problemas de salud y tratamientos del paciente"
+  },
+  {
+    "Nombre": "Condiciones médicas existentes",
+    "Categoría": "Información de dominio",
+    "Descripción breve": "Enfermedades o problemas de salud actuales del paciente"
+  },
+  {
+    "Nombre": "Medicamentos administrados",
+    "Categoría": "Información de dominio",
+    "Descripción breve": "Fármacos que el paciente está tomando actualmente"
+  },
+  {
+    "Nombre": "Alergias",
+    "Categoría": "Información de dominio",
+    "Descripción breve": "Reacciones adversas del paciente a medicamentos o sustancias"
+  },
+  {
+    "Nombre": "Consulta",
+    "Categoría": "Actividad de dominio",
+    "Descripción breve": "Sesión donde dos o más médicos revisan el mismo registro de paciente"
+  },
+  {
+    "Nombre": "Cita",
+    "Categoría": "Actividad de dominio",
+    "Descripción breve": "Encuentro programado entre paciente y personal médico"
+  },
+  {
+    "Nombre": "Lista de citas",
+    "Categoría": "Artefacto de dominio",
+    "Descripción breve": "Registro de encuentros programados para una clínica o fecha"
+  },
+  {
+    "Nombre": "Registro del paciente",
+    "Categoría": "Artefacto de dominio",
+    "Descripción breve": "Información completa sobre un paciente en el sistema"
+  },
+  {
+    "Nombre": "Bitácora del sistema",
+    "Categoría": "Artefacto técnico",
+    "Descripción breve": "Registro de eventos y actividades realizadas en el sistema"
+  },
+  {
+    "Nombre": "Entrada libre de texto",
+    "Categoría": "Técnica de interfaz",
+    "Descripción breve": "Campo donde usuarios pueden ingresar texto sin restricciones de formato"
+  },
+  {
+    "Nombre": "Menú desplegable",
+    "Categoría": "Técnica de interfaz",
+    "Descripción breve": "Lista de opciones que se despliega para selección del usuario"
+  },
+  {
+    "Nombre": "Ventana de chat de texto",
+    "Categoría": "Técnica de interfaz",
+    "Descripción breve": "Interfaz para comunicación textual entre usuarios"
+  },
+  {
+    "Nombre": "Nivel de azúcar en la sangre",
+    "Categoría": "Variable de dominio",
+    "Descripción breve": "Medida de glucosa en sangre del paciente"
+  },
+  {
+    "Nombre": "Dosis de insulina",
+    "Categoría": "Variable de dominio",
+    "Descripción breve": "Cantidad de insulina a administrar al paciente"
+  },
+  {
+    "Nombre": "Tasa de cambio",
+    "Categoría": "Cálculo",
+    "Descripción breve": "Variación del nivel de azúcar entre mediciones sucesivas"
+  },
+  {
+    "Nombre": "Rutina de autoevaluación",
+    "Categoría": "Funcionalidad",
+    "Descripción breve": "Procedimiento que verifica el correcto funcionamiento del sistema"
+  },
+  {
+    "Nombre": "Depósito de insulina",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Contenedor de insulina en la bomba"
+  },
+  {
+    "Nombre": "Sensor",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo que mide el nivel de azúcar en la sangre"
+  },
+  {
+    "Nombre": "Ciclo de control",
+    "Categoría": "Proceso",
+    "Descripción breve": "Secuencia repetitiva de medición, cálculo y administración"
+  },
+  {
+    "Nombre": "Banda segura",
+    "Categoría": "Concepto de dominio",
+    "Descripción breve": "Rango de valores de azúcar en sangre considerados aceptables"
+  },
+  {
+    "Nombre": "Dosis mínima",
+    "Categoría": "Parámetro",
+    "Descripción breve": "Cantidad mínima de insulina que puede administrar la bomba"
+  },
+  {
+    "Nombre": "Redondeo",
+    "Categoría": "Operación matemática",
+    "Descripción breve": "Aproximación de un valor calculado al entero más cercano"
+  },
+  {
+    "Nombre": "Software embebido",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que opera dentro de un dispositivo de hardware específico"
+  },
+  {
+    "Nombre": "Contrato de desarrollo",
+    "Categoría": "Artefacto legal",
+    "Descripción breve": "Acuerdo formal entre cliente y desarrollador sobre lo que se implementará"
+  },
+  {
+    "Nombre": "Subcontratación",
+    "Categoría": "Práctica organizacional",
+    "Descripción breve": "Desarrollo del sistema por una compañía externa independiente"
+  },
+  {
+    "Nombre": "Proceso iterativo",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Desarrollo mediante ciclos repetitivos de refinamiento"
+  },
+  {
+    "Nombre": "Proceso ágil",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Enfoque de desarrollo flexible que abraza el cambio continuo"
+  },
+  {
+    "Nombre": "Desarrollo incremental",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Construcción del sistema en incrementos sucesivos"
+  },
+  {
+    "Nombre": "Liberación del sistema",
+    "Categoría": "Actividad",
+    "Descripción breve": "Entrega de una versión operativa del sistema"
+  },
+  {
+    "Nombre": "Desarrollo evolutivo",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Desarrollo donde el sistema evoluciona a través de versiones sucesivas"
+  },
+  {
+    "Nombre": "Instrumentación de software",
+    "Categoría": "Técnica",
+    "Descripción breve": "Incorporación de código para medir y monitorear el comportamiento del sistema"
+  },
+  {
+    "Nombre": "Errores del usuario",
+    "Categoría": "Concepto",
+    "Descripción breve": "Acciones incorrectas realizadas por usuarios al operar el sistema"
+  },
+  {
+    "Nombre": "Capacitación",
+    "Categoría": "Actividad",
+    "Descripción breve": "Proceso de enseñar a usuarios cómo utilizar el sistema"
+  },
+  {
+    "Nombre": "Tiempo de capacitación",
+    "Categoría": "Métrica",
+    "Descripción breve": "Duración necesaria para que usuarios aprendan a usar el sistema"
+  },
+  {
+    "Nombre": "Usuarios experimentados",
+    "Categoría": "Tipo de usuario",
+    "Descripción breve": "Usuarios con experiencia significativa usando el sistema"
+  },
+  {
+    "Nombre": "Promedio de errores",
+    "Categoría": "Métrica",
+    "Descripción breve": "Cantidad típica de errores cometidos por usuarios en período de tiempo"
+  },
+  {
+    "Nombre": "Procesador de texto",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software usado para crear y editar documentos de texto"
+  },
+  {
+    "Nombre": "Hoja de cálculo",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software para organizar y analizar datos en formato tabular"
+  },
+  {
+    "Nombre": "Base de datos",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Sistema para almacenar y gestionar información estructurada"
+  },
+  {
+    "Nombre": "Sistema de administración de requerimientos",
+    "Categoría": "Herramienta especializada",
+    "Descripción breve": "Software diseñado específicamente para gestionar requerimientos"
+  },
+  {
+    "Nombre": "Técnicas de procesamiento en lenguaje natural",
+    "Categoría": "Técnica",
+    "Descripción breve": "Métodos computacionales para analizar y entender texto escrito"
+  },
+  {
+    "Nombre": "Módulo del sistema",
+    "Categoría": "Componente arquitectónico",
+    "Descripción breve": "Unidad funcional independiente dentro de la arquitectura del sistema"
+  },
+  {
+    "Nombre": "Subsistema",
+    "Categoría": "Componente arquitectónico",
+    "Descripción breve": "Sistema más pequeño que forma parte de un sistema mayor"
+  },
+  {
+    "Nombre": "Componente de reutilización",
+    "Categoría": "Elemento arquitectónico",
+    "Descripción breve": "Componente que puede usarse en múltiples sistemas"
+  },
+  {
+    "Nombre": "Configuración mínima",
+    "Categoría": "Requerimiento de hardware",
+    "Descripción breve": "Especificación de hardware básico necesario para operar el sistema"
+  },
+  {
+    "Nombre": "Configuración óptima",
+    "Categoría": "Requerimiento de hardware",
+    "Descripción breve": "Especificación de hardware recomendado para mejor desempeño"
+  },
+  {
+    "Nombre": "Organización lógica de datos",
+    "Categoría": "Estructura de datos",
+    "Descripción breve": "Forma en que se estructuran y relacionan los datos en el sistema"
+  },
+  {
+    "Nombre": "Tabla de contenido",
+    "Categoría": "Elemento de documento",
+    "Descripción breve": "Lista organizada de secciones y temas en el documento"
+  },
+  {
+    "Nombre": "Índice del documento",
+    "Categoría": "Elemento de documento",
+    "Descripción breve": "Lista alfabética de términos y su ubicación en el documento"
+  },
+  {
+    "Nombre": "Historia de versiones",
+    "Categoría": "Elemento de documento",
+    "Descripción breve": "Registro de cambios realizados en diferentes versiones del documento"
+  }
+]

@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Sommerville Assistant
 
-## Getting Started
+Aplicación web interactiva para navegación de conceptos de Ingeniería de Software basada en Sommerville (Cap. 1-6).
 
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **TailwindCSS** + shadcn/ui
+- **Mermaid.js** - Diagramas dinámicos
+- **React-PDF** - Exportación PDF
+- **Framer Motion** - Animaciones
 
-## Learn More
+## 📁 Estructura
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/              # Pages y routing (Next.js App Router)
+├── components/       # Componentes React reutilizables
+├── data/            # JSON estáticos (árbol de decisiones, glosario)
+├── utils/           # Utilidades y generadores
+├── types/           # TypeScript types
+├── hooks/           # Custom React hooks
+└── lib/             # Configuración y constantes
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Desarrollo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev      # Servidor de desarrollo
+npm run build    # Build de producción
+npm run lint     # Linter
+npm run start    # Servidor de producción
+```
 
-## Deploy on Vercel
+## 📚 Características
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Wizard interactivo de decisiones
+- ✅ Recomendaciones personalizadas de proceso/metodología/arquitectura
+- ✅ Timeline de 12 semanas con acciones concretas
+- ✅ Diagramas generados dinámicamente (Mermaid.js)
+- ✅ Glosario técnico contextual (150+ términos)
+- ✅ Exportación a PDF profesional
+- ✅ Plantillas y checklists descargables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📖 Capítulos Cubiertos
+
+1. Introducción a la Ingeniería de Software
+2. Procesos de Software
+3. Desarrollo Ágil de Software
+4. Ingeniería de Requisitos
+5. Modelado de Sistemas
+6. Diseño Arquitectónico
+
+## 🎯 Próximos Pasos
+
+1. Completar árbol de decisiones en `src/data/decision-tree.json`
+2. Agregar 12+ nodos de recomendaciones finales
+3. Poblar glosario con términos de capítulos 1-6
+4. Implementar componentes del wizard
+5. Crear generadores de diagramas Mermaid
+6. Implementar exportación PDF
+
+## 📝 License
+
+MIT

@@ -1,0 +1,1252 @@
+[
+  {
+    "Nombre": "Desarrollo ágil de software",
+    "Categoría": "Paradigma de desarrollo",
+    "Descripción breve": "Enfoque de desarrollo de software basado en entregas incrementales rápidas, adaptación al cambio y colaboración estrecha con el cliente"
+  },
+  {
+    "Nombre": "Métodos de desarrollo ágil",
+    "Categoría": "Conjunto de métodos",
+    "Descripción breve": "Familia de métodos de desarrollo que priorizan la entrega incremental, la adaptación al cambio y la colaboración sobre procesos formales"
+  },
+  {
+    "Nombre": "Manifiesto ágil",
+    "Categoría": "Documento fundacional",
+    "Descripción breve": "Declaración de valores y principios que guían los métodos ágiles, establecida por desarrolladores líderes"
+  },
+  {
+    "Nombre": "Desarrollo dirigido por un plan",
+    "Categoría": "Paradigma de desarrollo",
+    "Descripción breve": "Enfoque de desarrollo que enfatiza la planeación detallada, especificación completa y procesos formales antes de la implementación"
+  },
+  {
+    "Nombre": "Programación extrema",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Método ágil (XP) que lleva prácticas reconocidas a niveles \"extremos\", incluyendo desarrollo iterativo muy frecuente"
+  },
+  {
+    "Nombre": "Scrum",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Método ágil enfocado en la administración iterativa del desarrollo mediante ciclos de trabajo llamados sprints"
+  },
+  {
+    "Nombre": "Administración de proyecto ágil",
+    "Categoría": "Enfoque de gestión",
+    "Descripción breve": "Forma de administrar proyectos de software adaptada al desarrollo incremental y los principios ágiles"
+  },
+  {
+    "Nombre": "Escalamiento de métodos ágiles",
+    "Categoría": "Práctica de adaptación",
+    "Descripción breve": "Proceso de adaptar métodos ágiles para su uso en sistemas grandes y organizaciones extensas"
+  },
+  {
+    "Nombre": "Entrega incremental",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Desarrollo del software en incrementos sucesivos, cada uno añadiendo nueva funcionalidad al sistema"
+  },
+  {
+    "Nombre": "Desarrollo incremental",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Estrategia donde el software se desarrolla como serie de versiones incrementales en lugar de una sola unidad completa"
+  },
+  {
+    "Nombre": "Proceso en cascada",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Proceso de desarrollo secuencial donde se especifican completamente los requerimientos antes de diseñar y construir"
+  },
+  {
+    "Nombre": "Proceso basado en especificación",
+    "Categoría": "Modelo de proceso",
+    "Descripción breve": "Proceso de desarrollo que requiere especificación completa del sistema antes de la implementación"
+  },
+  {
+    "Nombre": "Sistemas de control críticos para la seguridad",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas donde fallos pueden causar daños graves, requieren análisis completo y procesos formales"
+  },
+  {
+    "Nombre": "Desarrollo rápido de software",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Procesos diseñados para producir rápidamente software útil mediante entregas frecuentes"
+  },
+  {
+    "Nombre": "Requerimientos cambiantes",
+    "Categoría": "Fenómeno de desarrollo",
+    "Descripción breve": "Situación donde los requisitos del sistema evolucionan durante el proceso de desarrollo"
+  },
+  {
+    "Nombre": "Desarrollo de software rápido",
+    "Categoría": "Proceso de desarrollo",
+    "Descripción breve": "Enfoque que prioriza la velocidad de entrega sobre la especificación completa inicial"
+  },
+  {
+    "Nombre": "DSDM",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Dynamic Systems Development Method, uno de los primeros métodos ágiles formalizados"
+  },
+  {
+    "Nombre": "Crystal",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Familia de métodos ágiles desarrollados por Alistair Cockburn"
+  },
+  {
+    "Nombre": "Desarrollo de software adaptativo",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Método ágil que enfatiza la adaptación a cambios y colaboración"
+  },
+  {
+    "Nombre": "Desarrollo dirigido por características",
+    "Categoría": "Método ágil",
+    "Descripción breve": "Método ágil (Feature-Driven Development) centrado en características del sistema"
+  },
+  {
+    "Nombre": "Modelado ágil",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Integración de modelado de sistemas con métodos ágiles"
+  },
+  {
+    "Nombre": "Proceso Racional Unificado",
+    "Categoría": "Marco de proceso",
+    "Descripción breve": "Proceso de desarrollo que puede implementarse con enfoque ágil"
+  },
+  {
+    "Nombre": "Participación del cliente",
+    "Categoría": "Principio ágil",
+    "Descripción breve": "Involucramiento estrecho y continuo del cliente durante todo el proceso de desarrollo"
+  },
+  {
+    "Nombre": "Personas, no procesos",
+    "Categoría": "Principio ágil",
+    "Descripción breve": "Reconocimiento y aprovechamiento de las habilidades del equipo sobre procesos establecidos"
+  },
+  {
+    "Nombre": "Adoptar el cambio",
+    "Categoría": "Principio ágil",
+    "Descripción breve": "Expectativa y diseño del sistema para adaptarse a cambios en los requerimientos"
+  },
+  {
+    "Nombre": "Mantener simplicidad",
+    "Categoría": "Principio ágil",
+    "Descripción breve": "Enfoque en simplificar tanto el software como el proceso de desarrollo"
+  },
+  {
+    "Nombre": "Desarrollo del producto",
+    "Categoría": "Tipo de proyecto",
+    "Descripción breve": "Desarrollo de productos pequeños o medianos por compañías de software para venta"
+  },
+  {
+    "Nombre": "Diseño de sistemas a la medida",
+    "Categoría": "Tipo de proyecto",
+    "Descripción breve": "Desarrollo personalizado dentro de una organización con compromiso del cliente"
+  },
+  {
+    "Nombre": "Sistemas empresariales",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de software para operaciones de negocios que requieren desarrollo y entrega rápidos"
+  },
+  {
+    "Nombre": "Involucramiento del cliente",
+    "Categoría": "Práctica ágil",
+    "Descripción breve": "Intervención activa del cliente como miembro del equipo de desarrollo"
+  },
+  {
+    "Nombre": "Representante del cliente",
+    "Categoría": "Rol",
+    "Descripción breve": "Persona que representa los intereses de todos los participantes del sistema en el equipo"
+  },
+  {
+    "Nombre": "Priorizar cambios",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Proceso de asignar prioridades a diferentes cambios solicitados por participantes"
+  },
+  {
+    "Nombre": "Contratos ágiles",
+    "Categoría": "Tipo de contrato",
+    "Descripción breve": "Contratos basados en tiempo de desarrollo en lugar de conjunto específico de requerimientos"
+  },
+  {
+    "Nombre": "Mantenimiento de software",
+    "Categoría": "Fase de ciclo de vida",
+    "Descripción breve": "Esfuerzo dedicado al mantenimiento y evolución de sistemas existentes"
+  },
+  {
+    "Nombre": "Evolución del software",
+    "Categoría": "Proceso de cambio",
+    "Descripción breve": "Modificación y mejora de sistemas existentes en respuesta a nuevos requerimientos"
+  },
+  {
+    "Nombre": "Documento de requerimientos",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Documento formal que describe los requisitos y funcionalidad esperada del sistema"
+  },
+  {
+    "Nombre": "Código legible",
+    "Categoría": "Característica de calidad",
+    "Descripción breve": "Código de alta calidad que puede ser fácilmente comprendido por otros desarrolladores"
+  },
+  {
+    "Nombre": "Refactorización",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Mejora continua de la estructura del código sin cambiar su funcionalidad externa"
+  },
+  {
+    "Nombre": "Propiedad colectiva del código",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Responsabilidad compartida de todo el equipo sobre todo el código del sistema"
+  },
+  {
+    "Nombre": "Desarrollo basado en un plan",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Desarrollo con etapas separadas, salidas formales y planeación detallada de actividades"
+  },
+  {
+    "Nombre": "Proceso de software",
+    "Categoría": "Marco de trabajo",
+    "Descripción breve": "Conjunto de actividades, métodos y prácticas usados para desarrollar software"
+  },
+  {
+    "Nombre": "Especificación de sistemas",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Proceso de definir detalladamente los requerimientos y características del sistema"
+  },
+  {
+    "Nombre": "Iteración",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Repetición de actividades de desarrollo para refinar y mejorar el software"
+  },
+  {
+    "Nombre": "Especificación detallada",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Descripción completa y formal de los requerimientos del sistema"
+  },
+  {
+    "Nombre": "Documentación del diseño",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Documentos que describen la arquitectura y diseño del sistema de software"
+  },
+  {
+    "Nombre": "Estrategia de entrega incremental",
+    "Categoría": "Enfoque de entrega",
+    "Descripción breve": "Estrategia donde el software se entrega a clientes en incrementos para obtener retroalimentación"
+  },
+  {
+    "Nombre": "Sistemas en tiempo real",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas con requerimientos de temporización estrictos que requieren diseño detallado"
+  },
+  {
+    "Nombre": "Tiempo de vida del sistema",
+    "Categoría": "Métrica temporal",
+    "Descripción breve": "Periodo esperado durante el cual un sistema estará en operación"
+  },
+  {
+    "Nombre": "IDE",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Entorno de Desarrollo Integrado que apoya la programación y análisis de código"
+  },
+  {
+    "Nombre": "Herramientas de visualización",
+    "Categoría": "Tipo de herramienta",
+    "Descripción breve": "Software para visualizar y analizar el diseño en evolución"
+  },
+  {
+    "Nombre": "Equipo de desarrollo distribuido",
+    "Categoría": "Estructura organizacional",
+    "Descripción breve": "Equipo cuyos miembros trabajan desde diferentes ubicaciones geográficas"
+  },
+  {
+    "Nombre": "Cultura de desarrollo",
+    "Categoría": "Aspecto organizacional",
+    "Descripción breve": "Normas, valores y prácticas establecidas en una organización de desarrollo"
+  },
+  {
+    "Nombre": "Regulación externa",
+    "Categoría": "Restricción de proceso",
+    "Descripción breve": "Requerimientos impuestos por entidades reguladoras sobre el proceso de desarrollo"
+  },
+  {
+    "Nombre": "Historia de usuario",
+    "Categoría": "Artefacto de requerimientos",
+    "Descripción breve": "Escenario que describe cómo un usuario interactúa con el sistema para lograr un objetivo"
+  },
+  {
+    "Nombre": "Tarjeta de historia",
+    "Categoría": "Artefacto de requerimientos",
+    "Descripción breve": "Representación física o digital de una historia de usuario en formato de tarjeta"
+  },
+  {
+    "Nombre": "Liberación de software",
+    "Categoría": "Actividad de entrega",
+    "Descripción breve": "Entrega de una versión funcional del sistema a los clientes"
+  },
+  {
+    "Nombre": "Ciclo de liberación",
+    "Categoría": "Proceso iterativo",
+    "Descripción breve": "Proceso completo desde la selección de historias hasta la entrega de software"
+  },
+  {
+    "Nombre": "Tarea de desarrollo",
+    "Categoría": "Unidad de trabajo",
+    "Descripción breve": "Unidad específica de implementación derivada de una historia de usuario"
+  },
+  {
+    "Nombre": "Tarjeta de tarea",
+    "Categoría": "Artefacto de planificación",
+    "Descripción breve": "Descripción detallada de una tarea específica a implementar"
+  },
+  {
+    "Nombre": "Planeación incremental",
+    "Categoría": "Práctica de gestión",
+    "Descripción breve": "Registro de requerimientos en tarjetas y determinación de contenido por tiempo y prioridad"
+  },
+  {
+    "Nombre": "Liberaciones pequeñas",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Entregas frecuentes de funcionalidad mínima útil que aporta valor al negocio"
+  },
+  {
+    "Nombre": "Diseño simple",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Realizar sólo el diseño suficiente para cubrir requerimientos actuales"
+  },
+  {
+    "Nombre": "Desarrollo de la primera prueba",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Escribir pruebas automatizadas antes de implementar la funcionalidad"
+  },
+  {
+    "Nombre": "Marco de referencia de prueba de unidad",
+    "Categoría": "Herramienta de prueba",
+    "Descripción breve": "Framework automatizado para ejecutar pruebas de unidades de código"
+  },
+  {
+    "Nombre": "Programación en pares",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Dos desarrolladores trabajando juntos en la misma estación para escribir código"
+  },
+  {
+    "Nombre": "Integración continua",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Integración frecuente del código nuevo con el sistema completo seguida de pruebas"
+  },
+  {
+    "Nombre": "Ritmo sustentable",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Mantener jornadas de trabajo razonables evitando tiempo extra excesivo"
+  },
+  {
+    "Nombre": "Cliente en sitio",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Representante del usuario final disponible tiempo completo como miembro del equipo"
+  },
+  {
+    "Nombre": "Juego de planeación",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Proceso XP donde se descomponen historias en tareas y se estiman recursos"
+  },
+  {
+    "Nombre": "Construcción del sistema",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Compilación e integración de todos los componentes del software"
+  },
+  {
+    "Nombre": "Pico",
+    "Categoría": "Tipo de incremento",
+    "Descripción breve": "Incremento sin programación usado para explorar soluciones o desarrollar documentación"
+  },
+  {
+    "Nombre": "Spike",
+    "Categoría": "Tipo de incremento",
+    "Descripción breve": "Término XP para incremento exploratorio sin producción de código funcional"
+  },
+  {
+    "Nombre": "Diseñar para el cambio",
+    "Categoría": "Principio de ingeniería",
+    "Descripción breve": "Anticipar cambios futuros y diseñar el sistema para facilitar su implementación"
+  },
+  {
+    "Nombre": "Pruebas automatizadas",
+    "Categoría": "Práctica de prueba",
+    "Descripción breve": "Uso de frameworks para ejecutar automáticamente conjuntos de pruebas"
+  },
+  {
+    "Nombre": "Fecha límite de liberación",
+    "Categoría": "Restricción temporal",
+    "Descripción breve": "Fecha fija para la entrega de una liberación que no puede posponerse"
+  },
+  {
+    "Nombre": "Prueba de aceptación",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Validación del sistema usando datos del cliente para verificar cumplimiento de necesidades"
+  },
+  {
+    "Nombre": "Caso de prueba",
+    "Categoría": "Artefacto de prueba",
+    "Descripción breve": "Descripción específica de entradas, acciones y salidas esperadas para validar funcionalidad"
+  },
+  {
+    "Nombre": "Prueba de unidad",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Verificación del correcto funcionamiento de componentes individuales del sistema"
+  },
+  {
+    "Nombre": "JUnit",
+    "Categoría": "Marco de pruebas",
+    "Descripción breve": "Framework ampliamente usado para automatización de pruebas en Java"
+  },
+  {
+    "Nombre": "Cobertura de pruebas",
+    "Categoría": "Métrica de calidad",
+    "Descripción breve": "Medida del grado en que las pruebas ejercitan el código del sistema"
+  },
+  {
+    "Nombre": "Bug",
+    "Categoría": "Defecto de software",
+    "Descripción breve": "Error o problema en el código del programa"
+  },
+  {
+    "Nombre": "Programación sin ego",
+    "Categoría": "Filosofía de desarrollo",
+    "Descripción breve": "Concepto donde el software es propiedad del equipo y no de individuos"
+  },
+  {
+    "Nombre": "Inspección de código",
+    "Categoría": "Técnica de revisión",
+    "Descripción breve": "Revisión formal y sistemática del código para detectar errores"
+  },
+  {
+    "Nombre": "Revisión de código",
+    "Categoría": "Técnica de revisión",
+    "Descripción breve": "Examen del código por otros desarrolladores para identificar problemas"
+  },
+  {
+    "Nombre": "Inspección informal",
+    "Categoría": "Técnica de revisión",
+    "Descripción breve": "Revisión no formal del código, como la que ocurre en programación en pares"
+  },
+  {
+    "Nombre": "Productividad del programador",
+    "Categoría": "Métrica de desempeño",
+    "Descripción breve": "Medida de la cantidad y calidad de código producido por desarrolladores"
+  },
+  {
+    "Nombre": "Intercambio de conocimiento",
+    "Categoría": "Práctica de equipo",
+    "Descripción breve": "Compartir comprensión y experiencia sobre el sistema entre miembros del equipo"
+  },
+  {
+    "Nombre": "Administrador del proyecto de software",
+    "Categoría": "Rol",
+    "Descripción breve": "Persona responsable de dirigir el proyecto para entregar software a tiempo y dentro del presupuesto"
+  },
+  {
+    "Nombre": "Ingeniero de software",
+    "Categoría": "Rol",
+    "Descripción breve": "Profesional que diseña, desarrolla y mantiene sistemas de software"
+  },
+  {
+    "Nombre": "Plan del proyecto",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Documento que especifica entregables, cronograma y asignación de recursos"
+  },
+  {
+    "Nombre": "Entregable del proyecto",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Producto o resultado específico que debe producirse durante el proyecto"
+  },
+  {
+    "Nombre": "Administración iterativa",
+    "Categoría": "Enfoque de gestión",
+    "Descripción breve": "Gestión de desarrollo mediante ciclos iterativos en lugar de fases lineales"
+  },
+  {
+    "Nombre": "Planeación del bosquejo",
+    "Categoría": "Fase de Scrum",
+    "Descripción breve": "Fase inicial donde se establecen objetivos generales y arquitectura del software"
+  },
+  {
+    "Nombre": "Arquitectura de software",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Estructura fundamental del sistema que define componentes principales y sus relaciones"
+  },
+  {
+    "Nombre": "Ciclo sprint",
+    "Categoría": "Proceso iterativo",
+    "Descripción breve": "Unidad de planeación en Scrum de duración fija (2-4 semanas) para desarrollar incremento"
+  },
+  {
+    "Nombre": "Sprint",
+    "Categoría": "Unidad de trabajo",
+    "Descripción breve": "Periodo de tiempo fijo en Scrum para desarrollar funcionalidad específica"
+  },
+  {
+    "Nombre": "Fase de cierre del proyecto",
+    "Categoría": "Fase de proyecto",
+    "Descripción breve": "Fase final donde se completa documentación y se evalúan lecciones aprendidas"
+  },
+  {
+    "Nombre": "Cartera del producto",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Lista priorizada de todo el trabajo pendiente por realizar en el proyecto (product backlog)"
+  },
+  {
+    "Nombre": "Product backlog",
+    "Categoría": "Artefacto de gestión",
+    "Descripción breve": "Lista priorizada de requerimientos y tareas pendientes en Scrum"
+  },
+  {
+    "Nombre": "Fase de valoración del sprint",
+    "Categoría": "Actividad de Scrum",
+    "Descripción breve": "Revisión y asignación de prioridades y riesgos al inicio de cada sprint"
+  },
+  {
+    "Nombre": "Fase de selección",
+    "Categoría": "Actividad de Scrum",
+    "Descripción breve": "Selección por el equipo y cliente de características a desarrollar durante el sprint"
+  },
+  {
+    "Nombre": "Maestro de Scrum",
+    "Categoría": "Rol",
+    "Descripción breve": "Facilitador en Scrum que protege al equipo, rastrea progreso y coordina comunicaciones"
+  },
+  {
+    "Nombre": "Scrum Master",
+    "Categoría": "Rol",
+    "Descripción breve": "Líder servicial en Scrum responsable de eliminar impedimentos y facilitar el proceso"
+  },
+  {
+    "Nombre": "Reunión diaria",
+    "Categoría": "Práctica de Scrum",
+    "Descripción breve": "Reunión breve diaria donde el equipo comparte progreso, problemas y planes"
+  },
+  {
+    "Nombre": "Reunión en las que los participantes no se sientan",
+    "Categoría": "Práctica de reunión",
+    "Descripción breve": "Reuniones de pie para mantenerlas breves y enfocadas (stand-up meetings)"
+  },
+  {
+    "Nombre": "Stand-up meeting",
+    "Categoría": "Práctica de reunión",
+    "Descripción breve": "Reunión corta diaria de sincronización del equipo realizada de pie"
+  },
+  {
+    "Nombre": "Atraso del trabajo",
+    "Categoría": "Métrica de gestión",
+    "Descripción breve": "Cantidad de trabajo pendiente que queda por completar"
+  },
+  {
+    "Nombre": "Dirección descendente",
+    "Categoría": "Estilo de gestión",
+    "Descripción breve": "Modelo de gestión donde las decisiones fluyen de arriba hacia abajo en la jerarquía"
+  },
+  {
+    "Nombre": "Equipos coasignados",
+    "Categoría": "Estructura de equipo",
+    "Descripción breve": "Equipos cuyos miembros trabajan en la misma ubicación física"
+  },
+  {
+    "Nombre": "Equipos distribuidos",
+    "Categoría": "Estructura de equipo",
+    "Descripción breve": "Equipos con miembros ubicados en diferentes lugares geográficos"
+  },
+  {
+    "Nombre": "Scaling up",
+    "Categoría": "Estrategia de escalamiento",
+    "Descripción breve": "Uso de métodos ágiles para desarrollar sistemas grandes con equipos múltiples"
+  },
+  {
+    "Nombre": "Scaling out",
+    "Categoría": "Estrategia de escalamiento",
+    "Descripción breve": "Introducción de métodos ágiles en organizaciones grandes con procesos establecidos"
+  },
+  {
+    "Nombre": "Expansión",
+    "Categoría": "Estrategia de escalamiento",
+    "Descripción breve": "Adaptación de métodos ágiles para sistemas grandes (traducción de scaling up)"
+  },
+  {
+    "Nombre": "Ampliación",
+    "Categoría": "Estrategia de escalamiento",
+    "Descripción breve": "Adopción de métodos ágiles en toda una organización (traducción de scaling out)"
+  },
+  {
+    "Nombre": "Diseño frontal",
+    "Categoría": "Actividad de desarrollo",
+    "Descripción breve": "Diseño y documentación realizados antes de la implementación masiva"
+  },
+  {
+    "Nombre": "Esquema de base de datos",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Estructura y organización de las bases de datos del sistema"
+  },
+  {
+    "Nombre": "División del trabajo",
+    "Categoría": "Práctica de gestión",
+    "Descripción breve": "Asignación de responsabilidades entre diferentes equipos de desarrollo"
+  },
+  {
+    "Nombre": "Mecanismos de comunicación",
+    "Categoría": "Infraestructura de colaboración",
+    "Descripción breve": "Canales y herramientas para facilitar comunicación entre equipos"
+  },
+  {
+    "Nombre": "Videoconferencia",
+    "Categoría": "Herramienta de comunicación",
+    "Descripción breve": "Tecnología para reuniones virtuales con audio y video"
+  },
+  {
+    "Nombre": "Reunión electrónica",
+    "Categoría": "Práctica de comunicación",
+    "Descripción breve": "Reunión realizada mediante herramientas digitales en lugar de presencial"
+  },
+  {
+    "Nombre": "Correo electrónico",
+    "Categoría": "Herramienta de comunicación",
+    "Descripción breve": "Sistema de mensajería asíncrona para comunicación del equipo"
+  },
+  {
+    "Nombre": "Mensajería instantánea",
+    "Categoría": "Herramienta de comunicación",
+    "Descripción breve": "Sistema de comunicación en tiempo real mediante mensajes de texto"
+  },
+  {
+    "Nombre": "Wiki",
+    "Categoría": "Herramienta de colaboración",
+    "Descripción breve": "Sistema colaborativo para crear y mantener documentación compartida"
+  },
+  {
+    "Nombre": "Sistemas de redes sociales",
+    "Categoría": "Herramienta de colaboración",
+    "Descripción breve": "Plataformas para facilitar comunicación y colaboración social en el equipo"
+  },
+  {
+    "Nombre": "Herramientas de gestión de configuración",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Software para controlar versiones y gestionar cambios en el código"
+  },
+  {
+    "Nombre": "Construcción del sistema",
+    "Categoría": "Actividad de integración",
+    "Descripción breve": "Proceso de compilar e integrar todos los componentes en un sistema ejecutable"
+  },
+  {
+    "Nombre": "Compañía de software pequeña",
+    "Categoría": "Tipo de organización",
+    "Descripción breve": "Empresa de tamaño reducido que desarrolla productos de software"
+  },
+  {
+    "Nombre": "Burocracia organizacional",
+    "Categoría": "Aspecto organizacional",
+    "Descripción breve": "Procedimientos formales y estructuras administrativas en organizaciones"
+  },
+  {
+    "Nombre": "Estándares de procesos",
+    "Categoría": "Normativa organizacional",
+    "Descripción breve": "Procedimientos y prácticas establecidas que deben seguir los proyectos"
+  },
+  {
+    "Nombre": "Procedimientos de calidad",
+    "Categoría": "Normativa de proceso",
+    "Descripción breve": "Estándares y prácticas para asegurar la calidad del software"
+  },
+  {
+    "Nombre": "Herramientas de gestión de requerimientos",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Software para documentar, rastrear y gestionar requerimientos del sistema"
+  },
+  {
+    "Nombre": "Nivel de habilidad",
+    "Categoría": "Característica del personal",
+    "Descripción breve": "Grado de competencia y experiencia de los desarrolladores"
+  },
+  {
+    "Nombre": "Resistencia cultural",
+    "Categoría": "Fenómeno organizacional",
+    "Descripción breve": "Oposición al cambio basada en valores y prácticas establecidas"
+  },
+  {
+    "Nombre": "Administración del cambio",
+    "Categoría": "Proceso de gestión",
+    "Descripción breve": "Control de cambios al sistema para predecir efectos y controlar costos"
+  },
+  {
+    "Nombre": "Gestión de cambio",
+    "Categoría": "Proceso de gestión",
+    "Descripción breve": "Proceso que controla y aprueba modificaciones al sistema"
+  },
+  {
+    "Nombre": "Estándares de pruebas",
+    "Categoría": "Normativa de calidad",
+    "Descripción breve": "Procedimientos establecidos para realizar pruebas del software"
+  },
+  {
+    "Nombre": "Equipo de pruebas externo",
+    "Categoría": "Estructura organizacional",
+    "Descripción breve": "Grupo independiente responsable de validar el sistema"
+  },
+  {
+    "Nombre": "Cambio cultural",
+    "Categoría": "Proceso organizacional",
+    "Descripción breve": "Transformación de valores, prácticas y mentalidad en una organización"
+  },
+  {
+    "Nombre": "Promotores del cambio",
+    "Categoría": "Rol organizacional",
+    "Descripción breve": "Personas que impulsan y apoyan la adopción de nuevas prácticas"
+  },
+  {
+    "Nombre": "Sistemas separados",
+    "Categoría": "Arquitectura de sistema",
+    "Descripción breve": "Sistemas independientes que se comunican para formar un sistema mayor"
+  },
+  {
+    "Nombre": "Zonas horarias",
+    "Categoría": "Aspecto de distribución",
+    "Descripción breve": "Diferencias de tiempo entre ubicaciones de equipos distribuidos"
+  },
+  {
+    "Nombre": "Sistemas abandonados",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas existentes (brownfield) con los que debe interactuar el nuevo software"
+  },
+  {
+    "Nombre": "Brownfield systems",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas heredados que condicionan el desarrollo de nuevos sistemas"
+  },
+  {
+    "Nombre": "Conflictos políticos",
+    "Categoría": "Aspecto organizacional",
+    "Descripción breve": "Desacuerdos y tensiones entre diferentes grupos o participantes"
+  },
+  {
+    "Nombre": "Configuración del sistema",
+    "Categoría": "Actividad de desarrollo",
+    "Descripción breve": "Ajuste e integración de componentes existentes en lugar de desarrollo original"
+  },
+  {
+    "Nombre": "Reglas externas",
+    "Categoría": "Restricción de proceso",
+    "Descripción breve": "Regulaciones impuestas desde fuera que limitan cómo se desarrolla el software"
+  },
+  {
+    "Nombre": "Tiempo de adquisición",
+    "Categoría": "Métrica temporal",
+    "Descripción breve": "Periodo requerido para obtener y comenzar a usar el sistema"
+  },
+  {
+    "Nombre": "Tiempo de desarrollo",
+    "Categoría": "Métrica temporal",
+    "Descripción breve": "Duración del proceso completo de desarrollo del sistema"
+  },
+  {
+    "Nombre": "Participantes del sistema",
+    "Categoría": "Rol",
+    "Descripción breve": "Personas u organizaciones con interés en el sistema (stakeholders)"
+  },
+  {
+    "Nombre": "Stakeholders",
+    "Categoría": "Rol",
+    "Descripción breve": "Individuos o grupos afectados por o que influyen en el proyecto"
+  },
+  {
+    "Nombre": "Personal médico ejecutivo",
+    "Categoría": "Tipo de participante",
+    "Descripción breve": "Líderes del área de salud que son participantes en sistemas médicos"
+  },
+  {
+    "Nombre": "Administradores del hospital",
+    "Categoría": "Tipo de participante",
+    "Descripción breve": "Gestores administrativos que son participantes en sistemas hospitalarios"
+  },
+  {
+    "Nombre": "Conocimiento implícito",
+    "Categoría": "Activo de conocimiento",
+    "Descripción breve": "Comprensión no documentada del sistema que poseen los miembros del equipo"
+  },
+  {
+    "Nombre": "Desarrollo de sistemas grandes",
+    "Categoría": "Tipo de proyecto",
+    "Descripción breve": "Proyectos de software de gran escala con múltiples equipos y complejidad alta"
+  },
+  {
+    "Nombre": "Ingeniería de sistemas críticos",
+    "Categoría": "Disciplina",
+    "Descripción breve": "Desarrollo de sistemas donde fallos pueden tener consecuencias graves"
+  },
+  {
+    "Nombre": "Análisis de seguridad",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Evaluación de aspectos de seguridad y protección del sistema"
+  },
+  {
+    "Nombre": "Análisis de confiabilidad",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Evaluación de la capacidad del sistema de operar sin fallos"
+  },
+  {
+    "Nombre": "Análisis de protección",
+    "Categoría": "Actividad de validación",
+    "Descripción breve": "Evaluación de mecanismos de seguridad contra amenazas"
+  },
+  {
+    "Nombre": "Documento de ayuda del sistema",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Documentación de soporte para usuarios del sistema"
+  },
+  {
+    "Nombre": "Manual del usuario",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Guía detallada sobre cómo usar el sistema"
+  },
+  {
+    "Nombre": "Lecciones aprendidas",
+    "Categoría": "Artefacto de conocimiento",
+    "Descripción breve": "Conocimientos y experiencias capturadas al finalizar el proyecto"
+  },
+  {
+    "Nombre": "Prescripción de medicamentos",
+    "Categoría": "Escenario de ejemplo",
+    "Descripción breve": "Historia de usuario ejemplo del sistema de atención a la salud mental"
+  },
+  {
+    "Nombre": "Sistema de administración de pacientes",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software para gestionar información y procesos de atención médica"
+  },
+  {
+    "Nombre": "Atención a la salud mental",
+    "Categoría": "Dominio de aplicación",
+    "Descripción breve": "Área de aplicación relacionada con servicios de salud psiquiátrica"
+  },
+  {
+    "Nombre": "Formulario",
+    "Categoría": "Artefacto de dominio",
+    "Descripción breve": "Lista oficial de medicamentos aprobados disponibles para prescripción"
+  },
+  {
+    "Nombre": "Verificación de dosis",
+    "Categoría": "Funcionalidad de sistema",
+    "Descripción breve": "Validación de que la dosis prescrita está dentro de rangos seguros"
+  },
+  {
+    "Nombre": "Base de datos de auditoría",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Repositorio para registrar acciones del sistema con fines de trazabilidad"
+  },
+  {
+    "Nombre": "Prueba de funcionalidad",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Validación de que el sistema realiza las funciones especificadas"
+  },
+  {
+    "Nombre": "Rango de seguridad",
+    "Categoría": "Parámetro de dominio",
+    "Descripción breve": "Límites seguros de dosis mínima y máxima de medicamentos"
+  },
+  {
+    "Nombre": "Interfaz de usuario",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Parte del sistema con la que interactúan directamente los usuarios"
+  },
+  {
+    "Nombre": "Lógica de despliegue",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Código que controla cómo se presenta información en la interfaz de usuario"
+  },
+  {
+    "Nombre": "Flujo de trabajo entre pantallas",
+    "Categoría": "Diseño de interfaz",
+    "Descripción breve": "Secuencia y navegación entre diferentes pantallas de la aplicación"
+  },
+  {
+    "Nombre": "Jerarquía de clases",
+    "Categoría": "Estructura de diseño",
+    "Descripción breve": "Organización de clases en relaciones de herencia y composición"
+  },
+  {
+    "Nombre": "Código duplicado",
+    "Categoría": "Problema de calidad",
+    "Descripción breve": "Repetición innecesaria de lógica similar en diferentes partes del código"
+  },
+  {
+    "Nombre": "Atributos",
+    "Categoría": "Elemento de diseño",
+    "Descripción breve": "Propiedades o datos asociados a una clase u objeto"
+  },
+  {
+    "Nombre": "Métodos",
+    "Categoría": "Elemento de diseño",
+    "Descripción breve": "Funciones o comportamientos definidos en una clase"
+  },
+  {
+    "Nombre": "Librería de programa",
+    "Categoría": "Componente reutilizable",
+    "Descripción breve": "Colección de código predefinido que puede ser utilizado por el sistema"
+  },
+  {
+    "Nombre": "Eclipse",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "IDE popular que incluye herramientas para refactorización de código"
+  },
+  {
+    "Nombre": "Herramientas para refactorizar",
+    "Categoría": "Tipo de herramienta",
+    "Descripción breve": "Funcionalidades del IDE que facilitan la reorganización del código"
+  },
+  {
+    "Nombre": "Dependencias entre código",
+    "Categoría": "Relación de diseño",
+    "Descripción breve": "Vínculos y relaciones entre diferentes secciones del código"
+  },
+  {
+    "Nombre": "Cambios globales al código",
+    "Categoría": "Tipo de modificación",
+    "Descripción breve": "Modificaciones que afectan múltiples partes del sistema"
+  },
+  {
+    "Nombre": "Arquitectura del sistema",
+    "Categoría": "Artefacto de diseño",
+    "Descripción breve": "Estructura de alto nivel que define organización fundamental del sistema"
+  },
+  {
+    "Nombre": "Pico de arquitectura",
+    "Categoría": "Tipo de spike",
+    "Descripción breve": "Incremento exploratorio para diseñar la arquitectura del sistema"
+  },
+  {
+    "Nombre": "Pico de documentación",
+    "Categoría": "Tipo de spike",
+    "Descripción breve": "Incremento dedicado a desarrollar documentación del sistema"
+  },
+  {
+    "Nombre": "Versión del sistema",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Instancia específica del software en un momento dado"
+  },
+  {
+    "Nombre": "Nueva versión",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Actualización del sistema que incluye nueva funcionalidad o correcciones"
+  },
+  {
+    "Nombre": "Prueba de sistema",
+    "Categoría": "Tipo de prueba",
+    "Descripción breve": "Validación del sistema completo integrado"
+  },
+  {
+    "Nombre": "Desarrollo de pruebas incrementales",
+    "Categoría": "Práctica de prueba",
+    "Descripción breve": "Creación gradual de pruebas conforme avanza el desarrollo"
+  },
+  {
+    "Nombre": "Escenarios de prueba",
+    "Categoría": "Artefacto de prueba",
+    "Descripción breve": "Situaciones específicas usadas para validar el comportamiento del sistema"
+  },
+  {
+    "Nombre": "Marcos de pruebas automatizadas",
+    "Categoría": "Herramienta de prueba",
+    "Descripción breve": "Sistemas que facilitan escritura y ejecución de pruebas automatizadas"
+  },
+  {
+    "Nombre": "Componentes ejecutables",
+    "Categoría": "Artefacto de prueba",
+    "Descripción breve": "Pruebas implementadas como código que puede ejecutarse automáticamente"
+  },
+  {
+    "Nombre": "Componentes de prueba",
+    "Categoría": "Artefacto de prueba",
+    "Descripción breve": "Módulos de código diseñados específicamente para validar funcionalidad"
+  },
+  {
+    "Nombre": "Especificación de salida",
+    "Categoría": "Artefacto de prueba",
+    "Descripción breve": "Definición de los resultados esperados de una prueba"
+  },
+  {
+    "Nombre": "Serie de pruebas",
+    "Categoría": "Conjunto de pruebas",
+    "Descripción breve": "Colección de múltiples pruebas que se ejecutan juntas"
+  },
+  {
+    "Nombre": "Conjunto de pruebas",
+    "Categoría": "Artefacto de prueba",
+    "Descripción breve": "Agrupación organizada de casos de prueba"
+  },
+  {
+    "Nombre": "Pruebas minuciosas",
+    "Categoría": "Característica de calidad",
+    "Descripción breve": "Validación exhaustiva que cubre todos los aspectos críticos del sistema"
+  },
+  {
+    "Nombre": "Pruebas incompletas",
+    "Categoría": "Problema de calidad",
+    "Descripción breve": "Pruebas que no validan todos los casos posibles o excepciones"
+  },
+  {
+    "Nombre": "Excepciones",
+    "Categoría": "Elemento de programación",
+    "Descripción breve": "Situaciones anormales o errores que pueden ocurrir durante la ejecución"
+  },
+  {
+    "Nombre": "Interfaz de usuario compleja",
+    "Categoría": "Tipo de componente",
+    "Descripción breve": "Interfaz con múltiples elementos e interacciones sofisticadas"
+  },
+  {
+    "Nombre": "Totalidad del conjunto de pruebas",
+    "Categoría": "Métrica de calidad",
+    "Descripción breve": "Medida del grado de cobertura de las pruebas sobre el sistema"
+  },
+  {
+    "Nombre": "Sistemas de negocios pequeños y medianos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Aplicaciones de tamaño limitado para empresas"
+  },
+  {
+    "Nombre": "Costos operativos",
+    "Categoría": "Métrica financiera",
+    "Descripción breve": "Gastos asociados con la ejecución del proceso de desarrollo"
+  },
+  {
+    "Nombre": "Sistema de control de aeronave",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software crítico para operación de aviones que requiere alta confiabilidad"
+  },
+  {
+    "Nombre": "Aseguramiento de calidad formalizada",
+    "Categoría": "Práctica de calidad",
+    "Descripción breve": "Procesos rigurosos y documentados para garantizar calidad del software"
+  },
+  {
+    "Nombre": "Métodos de análisis",
+    "Categoría": "Técnica de desarrollo",
+    "Descripción breve": "Técnicas formales para analizar requerimientos y diseño"
+  },
+  {
+    "Nombre": "Herramientas CASE",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Computer-Aided Software Engineering, herramientas para apoyar desarrollo"
+  },
+  {
+    "Nombre": "Procesos rigurosos y controlados",
+    "Categoría": "Tipo de proceso",
+    "Descripción breve": "Procesos formales con estricto control y seguimiento"
+  },
+  {
+    "Nombre": "Sistemas aeroespaciales",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software para aplicaciones de aviación y espacio"
+  },
+  {
+    "Nombre": "Sistemas gubernamentales",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Aplicaciones desarrolladas para entidades del gobierno"
+  },
+  {
+    "Nombre": "Especificación inicial",
+    "Categoría": "Artefacto de requerimientos",
+    "Descripción breve": "Primera versión de los requerimientos del sistema"
+  },
+  {
+    "Nombre": "Implementación",
+    "Categoría": "Fase de desarrollo",
+    "Descripción breve": "Conversión del diseño en código ejecutable"
+  },
+  {
+    "Nombre": "Rediseño",
+    "Categoría": "Actividad de desarrollo",
+    "Descripción breve": "Modificación del diseño existente para corregir problemas o añadir capacidades"
+  },
+  {
+    "Nombre": "Reelaboración",
+    "Categoría": "Actividad de desarrollo",
+    "Descripción breve": "Modificación y corrección de trabajo previamente realizado"
+  },
+  {
+    "Nombre": "Métodos ágiles",
+    "Categoría": "Conjunto de métodos",
+    "Descripción breve": "Métodos de desarrollo que enfatizan flexibilidad, iteración rápida y colaboración"
+  },
+  {
+    "Nombre": "Desarrollo de software incremental",
+    "Categoría": "Paradigma de desarrollo",
+    "Descripción breve": "Construcción del software mediante adiciones sucesivas de funcionalidad"
+  },
+  {
+    "Nombre": "Entrega del software",
+    "Categoría": "Actividad de proceso",
+    "Descripción breve": "Provisión del sistema completado al cliente"
+  },
+  {
+    "Nombre": "Software operativo",
+    "Categoría": "Artefacto de entrega",
+    "Descripción breve": "Sistema funcional que puede ser usado por los clientes"
+  },
+  {
+    "Nombre": "Documentación exhaustiva",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Documentación completa y detallada de todos los aspectos del sistema"
+  },
+  {
+    "Nombre": "Colaboración con el cliente",
+    "Categoría": "Práctica ágil",
+    "Descripción breve": "Trabajo conjunto continuo entre desarrolladores y clientes"
+  },
+  {
+    "Nombre": "Negociación del contrato",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Proceso de acordar términos y condiciones con el cliente"
+  },
+  {
+    "Nombre": "Respuesta al cambio",
+    "Categoría": "Principio ágil",
+    "Descripción breve": "Capacidad y disposición para adaptarse a requerimientos cambiantes"
+  },
+  {
+    "Nombre": "Seguimiento de un plan",
+    "Categoría": "Práctica de gestión",
+    "Descripción breve": "Adherencia estricta a un plan establecido previamente"
+  },
+  {
+    "Nombre": "Programador extremo",
+    "Categoría": "Rol",
+    "Descripción breve": "Desarrollador que practica los principios y técnicas de XP"
+  },
+  {
+    "Nombre": "Modelado de sistemas",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Creación de representaciones abstractas del sistema"
+  },
+  {
+    "Nombre": "Proceso Racional Unificado",
+    "Categoría": "Marco de proceso",
+    "Descripción breve": "Framework de desarrollo que puede adaptarse con enfoque ágil (RUP)"
+  },
+  {
+    "Nombre": "RUP",
+    "Categoría": "Marco de proceso",
+    "Descripción breve": "Rational Unified Process, proceso iterativo de desarrollo de software"
+  },
+  {
+    "Nombre": "Ejemplificaciones ágiles",
+    "Categoría": "Variante de método",
+    "Descripción breve": "Versiones adaptadas de métodos tradicionales con principios ágiles"
+  },
+  {
+    "Nombre": "Fase de valoración",
+    "Categoría": "Actividad de Scrum",
+    "Descripción breve": "Evaluación y priorización del trabajo al inicio de cada sprint"
+  },
+  {
+    "Nombre": "Fase de revisión",
+    "Categoría": "Actividad de Scrum",
+    "Descripción breve": "Revisión del trabajo completado y presentación a participantes al final del sprint"
+  },
+  {
+    "Nombre": "Fase de desarrollo",
+    "Categoría": "Actividad de Scrum",
+    "Descripción breve": "Periodo donde el equipo implementa la funcionalidad seleccionada"
+  },
+  {
+    "Nombre": "Retrospectiva",
+    "Categoría": "Actividad de Scrum",
+    "Descripción breve": "Reflexión del equipo sobre el proceso para identificar mejoras (implícito en cierre)"
+  },
+  {
+    "Nombre": "Entorno de programación",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Software y configuración usados para escribir y probar código"
+  },
+  {
+    "Nombre": "Sistema de elaboración interactivo",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Herramienta que permite crear interfaces rápidamente mediante interacción directa"
+  },
+  {
+    "Nombre": "Interfaz basada en la Web",
+    "Categoría": "Tipo de interfaz",
+    "Descripción breve": "Interfaz de usuario accesible mediante navegador web"
+  },
+  {
+    "Nombre": "Navegador",
+    "Categoría": "Herramienta de usuario",
+    "Descripción breve": "Software para acceder a aplicaciones web"
+  },
+  {
+    "Nombre": "Microsoft Windows",
+    "Categoría": "Plataforma",
+    "Descripción breve": "Sistema operativo para el cual se pueden desarrollar interfaces específicas"
+  },
+  {
+    "Nombre": "Plataforma específica",
+    "Categoría": "Entorno de ejecución",
+    "Descripción breve": "Sistema operativo o entorno particular donde se ejecuta el software"
+  },
+  {
+    "Nombre": "Retroalimentación rápida",
+    "Categoría": "Práctica ágil",
+    "Descripción breve": "Obtención ágil de respuesta del cliente sobre el software desarrollado"
+  },
+  {
+    "Nombre": "Comunicaciones informales",
+    "Categoría": "Práctica de comunicación",
+    "Descripción breve": "Intercambio de información sin procesos o documentos formales"
+  },
+  {
+    "Nombre": "Reuniones formales",
+    "Categoría": "Práctica de comunicación",
+    "Descripción breve": "Encuentros estructurados con agenda y documentación"
+  },
+  {
+    "Nombre": "Documentos escritos",
+    "Categoría": "Artefacto de comunicación",
+    "Descripción breve": "Información formal registrada por escrito"
+  },
+  {
+    "Nombre": "Lenguajes de cuarta generación",
+    "Categoría": "Tecnología de desarrollo",
+    "Descripción breve": "Lenguajes de programación de alto nivel para desarrollo rápido (década 1980)"
+  },
+  {
+    "Nombre": "Sistemas de negocios",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Aplicaciones para soportar operaciones comerciales"
+  },
+  {
+    "Nombre": "Ambiente empresarial",
+    "Categoría": "Contexto de desarrollo",
+    "Descripción breve": "Entorno de negocios donde opera la organización"
+  },
+  {
+    "Nombre": "Sistemas de control",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Software que regula y monitorea procesos físicos o técnicos"
+  },
+  {
+    "Nombre": "FAA",
+    "Categoría": "Entidad reguladora",
+    "Descripción breve": "Federal Aviation Administration, agencia que regula aviación en EE.UU."
+  },
+  {
+    "Nombre": "Agencia de Aviación Federal",
+    "Categoría": "Entidad reguladora",
+    "Descripción breve": "Organismo que aprueba software crítico para operación de aeronaves"
+  },
+  {
+    "Nombre": "Islas de experiencia",
+    "Categoría": "Problema de equipo",
+    "Descripción breve": "Situación donde conocimiento crítico está concentrado en pocos individuos"
+  },
+  {
+    "Nombre": "Propiedad colectiva",
+    "Categoría": "Práctica de desarrollo",
+    "Descripción breve": "Todo el equipo es responsable de todo el código"
+  },
+  {
+    "Nombre": "Especialización del código",
+    "Categoría": "Problema de organización",
+    "Descripción breve": "Cuando ciertos desarrolladores son los únicos que conocen partes del sistema"
+  }
+]

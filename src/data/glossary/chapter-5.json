@@ -1,0 +1,1407 @@
+[
+  {
+    "Nombre": "Modelado de sistemas",
+    "Categoría": "Proceso",
+    "Descripción breve": "Proceso para desarrollar modelos abstractos de un sistema donde cada modelo presenta una visión o perspectiva diferente"
+  },
+  {
+    "Nombre": "Modelo abstracto",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Representación simplificada de un sistema que omite ciertos detalles para destacar las características más relevantes"
+  },
+  {
+    "Nombre": "Notación gráfica",
+    "Categoría": "Técnica de representación",
+    "Descripción breve": "Medio visual para representar sistemas de software mediante símbolos y diagramas"
+  },
+  {
+    "Nombre": "UML (Lenguaje de Modelado Unificado)",
+    "Categoría": "Lenguaje de modelado",
+    "Descripción breve": "Conjunto de 13 tipos de diagramas estándar para modelar sistemas de software orientado a objetos"
+  },
+  {
+    "Nombre": "Modelos formales",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Modelos matemáticos de un sistema usados como especificación detallada"
+  },
+  {
+    "Nombre": "Ingeniería de requerimientos",
+    "Categoría": "Proceso",
+    "Descripción breve": "Proceso para derivar y documentar los requerimientos de un sistema"
+  },
+  {
+    "Nombre": "Proceso de diseño",
+    "Categoría": "Proceso",
+    "Descripción breve": "Actividad para describir la estructura y operación del sistema a implementar"
+  },
+  {
+    "Nombre": "Implementación",
+    "Categoría": "Fase",
+    "Descripción breve": "Etapa de desarrollo donde se construye el sistema de software"
+  },
+  {
+    "Nombre": "Modelo del sistema existente",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Modelo que representa un sistema actual para aclarar su funcionamiento y analizar fortalezas y debilidades"
+  },
+  {
+    "Nombre": "Modelo del sistema nuevo",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Modelo que representa el sistema a desarrollar para explicar requerimientos propuestos"
+  },
+  {
+    "Nombre": "Ingeniería dirigida por modelo",
+    "Categoría": "Paradigma",
+    "Descripción breve": "Enfoque donde se genera implementación completa o parcial del sistema a partir de modelos"
+  },
+  {
+    "Nombre": "Abstracción",
+    "Categoría": "Concepto",
+    "Descripción breve": "Simplificación deliberada que destaca las características más importantes de un sistema"
+  },
+  {
+    "Nombre": "Representación alternativa",
+    "Categoría": "Concepto",
+    "Descripción breve": "Versión que mantiene toda la información del original en formato diferente"
+  },
+  {
+    "Nombre": "Perspectiva externa",
+    "Categoría": "Perspectiva de modelado",
+    "Descripción breve": "Vista que modela el contexto o entorno del sistema"
+  },
+  {
+    "Nombre": "Perspectiva de interacción",
+    "Categoría": "Perspectiva de modelado",
+    "Descripción breve": "Vista que modela la interacción entre sistema y entorno o entre componentes"
+  },
+  {
+    "Nombre": "Perspectiva estructural",
+    "Categoría": "Perspectiva de modelado",
+    "Descripción breve": "Vista que modela la organización del sistema o estructura de datos"
+  },
+  {
+    "Nombre": "Perspectiva de comportamiento",
+    "Categoría": "Perspectiva de modelado",
+    "Descripción breve": "Vista que modela el comportamiento dinámico del sistema y respuesta a eventos"
+  },
+  {
+    "Nombre": "Visión 4+1 de arquitectura",
+    "Categoría": "Enfoque arquitectónico",
+    "Descripción breve": "Método de Kruchten que propone documentar arquitectura desde diferentes perspectivas"
+  },
+  {
+    "Nombre": "Diagrama de actividad",
+    "Categoría": "Tipo de diagrama UML",
+    "Descripción breve": "Diagrama que muestra actividades incluidas en un proceso o procesamiento de datos"
+  },
+  {
+    "Nombre": "Diagrama de caso de uso",
+    "Categoría": "Tipo de diagrama UML",
+    "Descripción breve": "Diagrama que expone las interacciones entre un sistema y su entorno"
+  },
+  {
+    "Nombre": "Diagrama de secuencia",
+    "Categoría": "Tipo de diagrama UML",
+    "Descripción breve": "Diagrama que muestra interacciones entre actores, sistema y componentes del sistema"
+  },
+  {
+    "Nombre": "Diagrama de clase",
+    "Categoría": "Tipo de diagrama UML",
+    "Descripción breve": "Diagrama que revela clases de objeto en el sistema y asociaciones entre ellas"
+  },
+  {
+    "Nombre": "Diagrama de estado",
+    "Categoría": "Tipo de diagrama UML",
+    "Descripción breve": "Diagrama que explica cómo reacciona el sistema frente a eventos internos y externos"
+  },
+  {
+    "Nombre": "Modelado orientado a objetos",
+    "Categoría": "Paradigma",
+    "Descripción breve": "Enfoque de modelado basado en objetos y sus interacciones"
+  },
+  {
+    "Nombre": "Modelado ágil",
+    "Categoría": "Enfoque",
+    "Descripción breve": "Uso informal e incompleto de modelos para estimular discusión en desarrollo ágil"
+  },
+  {
+    "Nombre": "Documentación del sistema",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Modelos que describen de forma precisa un sistema existente"
+  },
+  {
+    "Nombre": "Generación de código",
+    "Categoría": "Proceso",
+    "Descripción breve": "Producción automática de código fuente a partir de modelos detallados del sistema"
+  },
+  {
+    "Nombre": "Símbolos UML",
+    "Categoría": "Notación",
+    "Descripción breve": "Elementos gráficos con significados específicos en diagramas UML"
+  },
+  {
+    "Nombre": "Flechas de palo",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Tipo de flecha con significado específico en UML"
+  },
+  {
+    "Nombre": "Flechas de bloque",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Tipo de flecha con significado específico en UML"
+  },
+  {
+    "Nombre": "Modelo de contexto",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo arquitectónico simple que muestra el sistema y otros sistemas en su entorno"
+  },
+  {
+    "Nombre": "Frontera del sistema",
+    "Categoría": "Concepto",
+    "Descripción breve": "Límite que define qué funcionalidad está dentro del sistema y cuál en su entorno"
+  },
+  {
+    "Nombre": "Participantes del sistema",
+    "Categoría": "Rol",
+    "Descripción breve": "Personas u organizaciones involucradas en la definición y uso del sistema"
+  },
+  {
+    "Nombre": "Funcionalidad",
+    "Categoría": "Concepto",
+    "Descripción breve": "Conjunto de capacidades y servicios que ofrece un sistema"
+  },
+  {
+    "Nombre": "Sistema manual",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema donde los procesos son realizados por personas sin automatización"
+  },
+  {
+    "Nombre": "Sistema computarizado",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema donde los procesos son realizados mediante software"
+  },
+  {
+    "Nombre": "MHC-PMS",
+    "Categoría": "Sistema de ejemplo",
+    "Descripción breve": "Sistema de información de pacientes para atención a la salud mental"
+  },
+  {
+    "Nombre": "Sistema de información de pacientes",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema para manejar información sobre pacientes y tratamientos"
+  },
+  {
+    "Nombre": "Sistema de citas",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema para gestionar citas médicas"
+  },
+  {
+    "Nombre": "Sistema de registro de pacientes",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema general para mantener información personal de pacientes"
+  },
+  {
+    "Nombre": "Sistema de reportes",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema para generar reportes administrativos"
+  },
+  {
+    "Nombre": "Sistema de admisiones",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema para asignar camas de hospital y gestionar ingresos"
+  },
+  {
+    "Nombre": "Sistema de prescripción",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que elabora recetas para medicación de pacientes"
+  },
+  {
+    "Nombre": "Sistema de estadísticas",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que recopila información para investigación"
+  },
+  {
+    "Nombre": "Modelo de proceso empresarial",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que describe procesos humanos y automatizados en sistemas de software"
+  },
+  {
+    "Nombre": "Diagrama de actividad UML",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagrama que muestra actividades de un proceso y flujo de control entre ellas"
+  },
+  {
+    "Nombre": "Actividad",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Subproceso específico a realizar, representado como rectángulo con esquinas redondeadas"
+  },
+  {
+    "Nombre": "Flujo de control",
+    "Categoría": "Concepto",
+    "Descripción breve": "Secuencia de ejecución de actividades en un proceso"
+  },
+  {
+    "Nombre": "Círculo lleno",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Símbolo que indica el inicio de un proceso en diagrama de actividad"
+  },
+  {
+    "Nombre": "Círculo lleno dentro de otro",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Símbolo que indica el fin de un proceso en diagrama de actividad"
+  },
+  {
+    "Nombre": "Rectángulo con esquinas redondeadas",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Forma que representa actividades o estados en diagramas UML"
+  },
+  {
+    "Nombre": "Objeto en diagrama de actividad",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Sistemas o entidades incluidas en gráficos de actividad"
+  },
+  {
+    "Nombre": "Estereotipo UML",
+    "Categoría": "Característica UML",
+    "Descripción breve": "Mecanismo para indicar sistemas separados u otros elementos especiales"
+  },
+  {
+    "Nombre": "Flecha de flujo",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Representación del flujo de trabajo de una actividad a otra"
+  },
+  {
+    "Nombre": "Barra sólida",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Elemento para indicar coordinación de actividades en diagrama de actividad"
+  },
+  {
+    "Nombre": "Ejecución paralela",
+    "Categoría": "Concepto",
+    "Descripción breve": "Actividades que pueden ejecutarse concurrentemente"
+  },
+  {
+    "Nombre": "Guarda",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Anotación en flecha que indica condición para tomar un flujo específico"
+  },
+  {
+    "Nombre": "Modelo de interacción",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que muestra interacciones en un sistema"
+  },
+  {
+    "Nombre": "Interacción del usuario",
+    "Categoría": "Tipo de interacción",
+    "Descripción breve": "Entradas y salidas entre usuario y sistema"
+  },
+  {
+    "Nombre": "Interacción sistema a sistema",
+    "Categoría": "Tipo de interacción",
+    "Descripción breve": "Comunicación entre el sistema a desarrollar y otros sistemas"
+  },
+  {
+    "Nombre": "Interacción entre componentes",
+    "Categoría": "Tipo de interacción",
+    "Descripción breve": "Comunicación entre partes internas del sistema"
+  },
+  {
+    "Nombre": "Modelado de caso de uso",
+    "Categoría": "Técnica",
+    "Descripción breve": "Método para modelar interacciones entre sistema y actores externos"
+  },
+  {
+    "Nombre": "Actor",
+    "Categoría": "Rol",
+    "Descripción breve": "Usuario u otro sistema externo que interactúa con el sistema"
+  },
+  {
+    "Nombre": "Agente externo",
+    "Categoría": "Rol",
+    "Descripción breve": "Entidad fuera del sistema que participa en interacciones"
+  },
+  {
+    "Nombre": "Caso de uso",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Escenario simple que describe tarea discreta con interacción externa"
+  },
+  {
+    "Nombre": "Elipse",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Forma que representa un caso de uso en su forma más simple"
+  },
+  {
+    "Nombre": "Figura humana",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Notación para representar actores en diagramas de caso de uso"
+  },
+  {
+    "Nombre": "Líneas sin flechas",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Representación formal de asociación en diagramas de caso de uso"
+  },
+  {
+    "Nombre": "Flujo de mensajes",
+    "Categoría": "Concepto",
+    "Descripción breve": "Dirección de comunicación entre elementos del sistema"
+  },
+  {
+    "Nombre": "Descripción textual de caso de uso",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Detalle narrativo de un caso de uso"
+  },
+  {
+    "Nombre": "Descripción tabular de caso de uso",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Formato estructurado con campos definidos para describir caso de uso"
+  },
+  {
+    "Nombre": "Caso de uso \"transferencia de datos\"",
+    "Categoría": "Caso de uso específico",
+    "Descripción breve": "Tarea de subir datos desde MHC-PMS a sistema de registro de pacientes"
+  },
+  {
+    "Nombre": "Recepcionista médico",
+    "Categoría": "Rol",
+    "Descripción breve": "Actor que opera el sistema de información de pacientes"
+  },
+  {
+    "Nombre": "Diagrama de caso de uso compuesto",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagrama que indica múltiples casos de uso relacionados"
+  },
+  {
+    "Nombre": "Línea de vida del objeto",
+    "Categoría": "Concepto",
+    "Descripción breve": "Tiempo que una instancia de objeto está involucrada en la computación"
+  },
+  {
+    "Nombre": "Rectángulo sobre línea punteada",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Representación de línea de vida en diagrama de secuencia"
+  },
+  {
+    "Nombre": "Flecha dirigida",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Indicación de interacción entre objetos en diagrama de secuencia"
+  },
+  {
+    "Nombre": "Llamada a objeto",
+    "Categoría": "Concepto",
+    "Descripción breve": "Invocación de método u operación sobre un objeto"
+  },
+  {
+    "Nombre": "Parámetro",
+    "Categoría": "Elemento de programación",
+    "Descripción breve": "Valor que se pasa a una operación o método"
+  },
+  {
+    "Nombre": "Valor de retorno",
+    "Categoría": "Concepto",
+    "Descripción breve": "Dato que regresa una operación después de ejecutarse"
+  },
+  {
+    "Nombre": "Recuadro \"alt\"",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Notación para exponer alternativas en diagrama de secuencia"
+  },
+  {
+    "Nombre": "Condición entre corchetes",
+    "Categoría": "Notación",
+    "Descripción breve": "Forma de indicar condiciones en elementos alternativos"
+  },
+  {
+    "Nombre": "Instancia de caso de uso",
+    "Categoría": "Concepto",
+    "Descripción breve": "Ejecución específica de un caso de uso particular"
+  },
+  {
+    "Nombre": "Caso de uso \"ver información de paciente\"",
+    "Categoría": "Caso de uso específico",
+    "Descripción breve": "Tarea donde recepcionista consulta información de un paciente"
+  },
+  {
+    "Nombre": "Método ViewInfo",
+    "Categoría": "Operación",
+    "Descripción breve": "Método para ver información de paciente"
+  },
+  {
+    "Nombre": "Clase PatientInfo",
+    "Categoría": "Clase de objeto",
+    "Descripción breve": "Clase que representa información del paciente"
+  },
+  {
+    "Nombre": "Identificador del paciente (PID)",
+    "Categoría": "Atributo",
+    "Descripción breve": "Código único que identifica a un paciente"
+  },
+  {
+    "Nombre": "Objeto de interfaz de usuario",
+    "Categoría": "Tipo de objeto",
+    "Descripción breve": "Objeto que se despliega como formato en pantalla"
+  },
+  {
+    "Nombre": "Base de datos",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Sistema para almacenar y recuperar información"
+  },
+  {
+    "Nombre": "Identificador del recepcionista (UID)",
+    "Categoría": "Atributo",
+    "Descripción breve": "Código único que identifica a un usuario del sistema"
+  },
+  {
+    "Nombre": "Verificación de seguridad",
+    "Categoría": "Proceso",
+    "Descripción breve": "Comprobación de permisos para acceder a información"
+  },
+  {
+    "Nombre": "Sistema de autorización",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Sistema que verifica permisos de usuarios"
+  },
+  {
+    "Nombre": "Mensaje de error",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Comunicación que indica falla en una operación"
+  },
+  {
+    "Nombre": "Creación de objetos",
+    "Categoría": "Concepto",
+    "Descripción breve": "Generación de nueva instancia de objeto durante secuencia de operaciones"
+  },
+  {
+    "Nombre": "Objeto Summary",
+    "Categoría": "Clase de objeto",
+    "Descripción breve": "Objeto que contiene datos del resumen a subir al sistema"
+  },
+  {
+    "Nombre": "PRS (Patient Record System)",
+    "Categoría": "Sistema",
+    "Descripción breve": "Sistema de registro de paciente"
+  },
+  {
+    "Nombre": "Login",
+    "Categoría": "Operación",
+    "Descripción breve": "Inicio de sesión en un sistema"
+  },
+  {
+    "Nombre": "Log off",
+    "Categoría": "Operación",
+    "Descripción breve": "Cierre de sesión en un sistema"
+  },
+  {
+    "Nombre": "Mensaje de estatus",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Comunicación que indica el estado de una operación"
+  },
+  {
+    "Nombre": "Diagrama de comunicación",
+    "Categoría": "Tipo de diagrama UML",
+    "Descripción breve": "Representación alternativa de interacciones, equivalente a diagrama de secuencia"
+  },
+  {
+    "Nombre": "Modelo estructural",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que muestra organización del sistema en componentes y relaciones"
+  },
+  {
+    "Nombre": "Modelo estático",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que muestra estructura del diseño del sistema"
+  },
+  {
+    "Nombre": "Modelo dinámico",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que revela organización del sistema cuando se ejecuta"
+  },
+  {
+    "Nombre": "Hilos en interacción",
+    "Categoría": "Concepto",
+    "Descripción breve": "Procesos concurrentes que se comunican en sistema en ejecución"
+  },
+  {
+    "Nombre": "Arquitectura del sistema",
+    "Categoría": "Concepto",
+    "Descripción breve": "Organización de alto nivel de un sistema de software"
+  },
+  {
+    "Nombre": "Diseño arquitectónico",
+    "Categoría": "Proceso",
+    "Descripción breve": "Definición de la estructura y organización del sistema"
+  },
+  {
+    "Nombre": "Diagrama de componente UML",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagrama que presenta componentes del sistema y sus relaciones"
+  },
+  {
+    "Nombre": "Diagrama de paquete UML",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagrama que muestra agrupación de elementos en paquetes"
+  },
+  {
+    "Nombre": "Diagrama de implementación UML",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagrama que presenta distribución física del sistema"
+  },
+  {
+    "Nombre": "Modelo arquitectónico",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Representación de la arquitectura de un sistema"
+  },
+  {
+    "Nombre": "Clase de objeto",
+    "Categoría": "Concepto",
+    "Descripción breve": "Definición general de un tipo de objeto del sistema"
+  },
+  {
+    "Nombre": "Asociación",
+    "Categoría": "Concepto",
+    "Descripción breve": "Vínculo entre clases que indica relación entre ellas"
+  },
+  {
+    "Nombre": "Objetos del mundo real",
+    "Categoría": "Concepto",
+    "Descripción breve": "Entidades físicas o conceptuales que se modelan como objetos"
+  },
+  {
+    "Nombre": "Objetos de implementación",
+    "Categoría": "Concepto",
+    "Descripción breve": "Objetos técnicos adicionales necesarios para dar funcionalidad al sistema"
+  },
+  {
+    "Nombre": "Modelo de sistema orientado a objetos",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo basado en clases de objetos y sus relaciones"
+  },
+  {
+    "Nombre": "Recuadro de clase",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Rectángulo que representa una clase con nombre en su interior"
+  },
+  {
+    "Nombre": "Línea entre clases",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Representación simple de asociación entre clases"
+  },
+  {
+    "Nombre": "Multiplicidad",
+    "Categoría": "Concepto",
+    "Descripción breve": "Cantidad de objetos que intervienen en una asociación"
+  },
+  {
+    "Nombre": "Relación 1:1",
+    "Categoría": "Tipo de asociación",
+    "Descripción breve": "Asociación donde cada objeto de una clase se relaciona con exactamente uno de otra"
+  },
+  {
+    "Nombre": "Asterisco en multiplicidad",
+    "Categoría": "Notación",
+    "Descripción breve": "Símbolo (*) que indica número indefinido de objetos en asociación"
+  },
+  {
+    "Nombre": "Nombre de asociación",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Etiqueta que indica tipo de relación entre clases"
+  },
+  {
+    "Nombre": "Papel en asociación",
+    "Categoría": "Concepto",
+    "Descripción breve": "Función que cumple un objeto en una asociación"
+  },
+  {
+    "Nombre": "Modelo semántico de datos",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que muestra entidades de datos, atributos y relaciones para diseño de bases de datos"
+  },
+  {
+    "Nombre": "Entidad de datos",
+    "Categoría": "Concepto",
+    "Descripción breve": "Elemento que representa información persistente en base de datos"
+  },
+  {
+    "Nombre": "Análisis de requerimientos orientado a objetos",
+    "Categoría": "Técnica",
+    "Descripción breve": "Modelado de entidades del mundo real usando clases de objetos"
+  },
+  {
+    "Nombre": "Atributo de clase",
+    "Categoría": "Elemento de clase",
+    "Descripción breve": "Característica o propiedad de un objeto"
+  },
+  {
+    "Nombre": "Operación de clase",
+    "Categoría": "Elemento de clase",
+    "Descripción breve": "Acción que se puede solicitar de un objeto"
+  },
+  {
+    "Nombre": "Método",
+    "Categoría": "Elemento de programación",
+    "Descripción breve": "Operación implementada en lenguaje de programación orientado a objetos"
+  },
+  {
+    "Nombre": "Sección superior del rectángulo",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Área donde se muestra nombre de clase en diagrama de clase"
+  },
+  {
+    "Nombre": "Sección media del rectángulo",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Área donde se muestran atributos de clase en diagrama de clase"
+  },
+  {
+    "Nombre": "Sección inferior del rectángulo",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Área donde se muestran operaciones de clase en diagrama de clase"
+  },
+  {
+    "Nombre": "Tipo de atributo",
+    "Categoría": "Concepto",
+    "Descripción breve": "Clasificación del dato que puede contener un atributo"
+  },
+  {
+    "Nombre": "Clase Consultation",
+    "Categoría": "Clase específica",
+    "Descripción breve": "Clase que representa una consulta médica en el sistema"
+  },
+  {
+    "Nombre": "Notas de voz",
+    "Categoría": "Atributo",
+    "Descripción breve": "Registros de audio de una consulta médica"
+  },
+  {
+    "Nombre": "Transcripción",
+    "Categoría": "Atributo",
+    "Descripción breve": "Texto resultante de convertir notas de voz a texto"
+  },
+  {
+    "Nombre": "Método Prescribe",
+    "Categoría": "Operación",
+    "Descripción breve": "Método para generar receta electrónica de medicamento"
+  },
+  {
+    "Nombre": "Generalización",
+    "Categoría": "Técnica",
+    "Descripción breve": "Técnica para gestionar complejidad colocando entidades en clases más generales"
+  },
+  {
+    "Nombre": "Información común",
+    "Categoría": "Concepto",
+    "Descripción breve": "Datos compartidos por múltiples clases que se mantienen en un solo lugar"
+  },
+  {
+    "Nombre": "Herencia de clase",
+    "Categoría": "Mecanismo",
+    "Descripción breve": "Mecanismo de lenguajes orientados a objetos para implementar generalización"
+  },
+  {
+    "Nombre": "Flecha de generalización",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Flecha que apunta hacia clase más general en jerarquía"
+  },
+  {
+    "Nombre": "Médico de cabecera",
+    "Categoría": "Clase específica",
+    "Descripción breve": "Tipo de médico que trabaja de manera independiente"
+  },
+  {
+    "Nombre": "Médico de hospital",
+    "Categoría": "Clase específica",
+    "Descripción breve": "Tipo de médico que trabaja en hospital"
+  },
+  {
+    "Nombre": "Médico practicante",
+    "Categoría": "Clase específica",
+    "Descripción breve": "Médico recién graduado que requiere supervisión"
+  },
+  {
+    "Nombre": "Médico registrado",
+    "Categoría": "Clase específica",
+    "Descripción breve": "Médico que trabaja sin supervisión en equipo de consultores"
+  },
+  {
+    "Nombre": "Consultor médico",
+    "Categoría": "Clase específica",
+    "Descripción breve": "Médico experimentado con plenas responsabilidades en toma de decisiones"
+  },
+  {
+    "Nombre": "Superclase",
+    "Categoría": "Concepto",
+    "Descripción breve": "Clase de nivel superior en jerarquía de generalización"
+  },
+  {
+    "Nombre": "Subclase",
+    "Categoría": "Concepto",
+    "Descripción breve": "Clase de nivel inferior que hereda atributos y operaciones de superclase"
+  },
+  {
+    "Nombre": "Jerarquía de generalización",
+    "Categoría": "Estructura",
+    "Descripción breve": "Organización de clases en niveles de abstracción"
+  },
+  {
+    "Nombre": "Agregación",
+    "Categoría": "Tipo de asociación",
+    "Descripción breve": "Asociación que indica que un objeto está compuesto por otros objetos"
+  },
+  {
+    "Nombre": "El todo",
+    "Categoría": "Concepto",
+    "Descripción breve": "Objeto compuesto en relación de agregación"
+  },
+  {
+    "Nombre": "Las partes",
+    "Categoría": "Concepto",
+    "Descripción breve": "Objetos que componen el todo en relación de agregación"
+  },
+  {
+    "Nombre": "Trazo en forma de diamante",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Símbolo para representar agregación junto a clase que representa el todo"
+  },
+  {
+    "Nombre": "Paciente registrado",
+    "Categoría": "Clase específica",
+    "Descripción breve": "Composición de Paciente y Consultas en el sistema"
+  },
+  {
+    "Nombre": "Modelo de comportamiento",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo dinámico que muestra qué sucede cuando sistema se ejecuta y responde a estímulos"
+  },
+  {
+    "Nombre": "Estímulo del entorno",
+    "Categoría": "Concepto",
+    "Descripción breve": "Entrada externa que provoca respuesta del sistema"
+  },
+  {
+    "Nombre": "Estímulo de datos",
+    "Categoría": "Tipo de estímulo",
+    "Descripción breve": "Datos que llegan y son procesados por el sistema"
+  },
+  {
+    "Nombre": "Estímulo de eventos",
+    "Categoría": "Tipo de estímulo",
+    "Descripción breve": "Eventos que activan procesamiento del sistema"
+  },
+  {
+    "Nombre": "Sistema de procesamiento de datos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema activado principalmente por entrada de datos"
+  },
+  {
+    "Nombre": "Sistema de tiempo real",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema dirigido por eventos con procesamiento de datos mínimo"
+  },
+  {
+    "Nombre": "Modelo dirigido por datos",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que muestra secuencia de acciones en procesamiento de datos de entrada"
+  },
+  {
+    "Nombre": "Procesamiento extremo a extremo",
+    "Categoría": "Concepto",
+    "Descripción breve": "Secuencia completa desde entrada hasta salida correspondiente del sistema"
+  },
+  {
+    "Nombre": "Diagrama de flujo de datos (DFD)",
+    "Categoría": "Tipo de diagrama",
+    "Descripción breve": "Diagrama que ilustra pasos de procesamiento en un sistema"
+  },
+  {
+    "Nombre": "Análisis estructurado",
+    "Categoría": "Método",
+    "Descripción breve": "Método de análisis que usa diagramas de flujo de datos"
+  },
+  {
+    "Nombre": "Paso de procesamiento",
+    "Categoría": "Elemento de diagrama",
+    "Descripción breve": "Actividad que transforma datos en diagrama de flujo"
+  },
+  {
+    "Nombre": "Validación del modelo",
+    "Categoría": "Proceso",
+    "Descripción breve": "Verificación de que el modelo representa correctamente el sistema"
+  },
+  {
+    "Nombre": "Modelo de flujo de datos",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que rastrea y documenta movimiento de datos a través del sistema"
+  },
+  {
+    "Nombre": "Modelo de secuencia",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Diagrama de secuencia que muestra procesamiento secuencial de datos"
+  },
+  {
+    "Nombre": "Objeto en sistema",
+    "Categoría": "Concepto",
+    "Descripción breve": "Instancia de clase que participa en modelo de secuencia"
+  },
+  {
+    "Nombre": "Función del sistema",
+    "Categoría": "Concepto",
+    "Descripción breve": "Capacidad específica que ofrece el sistema"
+  },
+  {
+    "Nombre": "Software de bomba de insulina",
+    "Categoría": "Sistema de ejemplo",
+    "Descripción breve": "Sistema que controla liberación de insulina basado en nivel de azúcar"
+  },
+  {
+    "Nombre": "Cadena de procesamiento",
+    "Categoría": "Concepto",
+    "Descripción breve": "Secuencia de pasos que transforman datos de entrada en salida"
+  },
+  {
+    "Nombre": "Orden de procesamiento",
+    "Categoría": "Concepto",
+    "Descripción breve": "Secuencia específica para procesar un pedido y envío"
+  },
+  {
+    "Nombre": "Modelo dirigido por eventos",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que muestra cómo sistema responde a eventos externos e internos"
+  },
+  {
+    "Nombre": "Estado del sistema",
+    "Categoría": "Concepto",
+    "Descripción breve": "Condición en que se encuentra el sistema en un momento dado"
+  },
+  {
+    "Nombre": "Número finito de estados",
+    "Categoría": "Concepto",
+    "Descripción breve": "Conjunto limitado de condiciones posibles del sistema"
+  },
+  {
+    "Nombre": "Transición de estado",
+    "Categoría": "Concepto",
+    "Descripción breve": "Cambio de un estado a otro causado por evento"
+  },
+  {
+    "Nombre": "Gráfico de estado",
+    "Categoría": "Notación",
+    "Descripción breve": "Formalismo visual para representar estados y transiciones"
+  },
+  {
+    "Nombre": "Evento interno",
+    "Categoría": "Tipo de evento",
+    "Descripción breve": "Estímulo generado dentro del sistema"
+  },
+  {
+    "Nombre": "Evento externo",
+    "Categoría": "Tipo de evento",
+    "Descripción breve": "Estímulo que proviene del entorno del sistema"
+  },
+  {
+    "Nombre": "Software de control",
+    "Categoría": "Tipo de software",
+    "Descripción breve": "Programa que gestiona operación de dispositivos físicos"
+  },
+  {
+    "Nombre": "Horno de microondas",
+    "Categoría": "Sistema de ejemplo",
+    "Descripción breve": "Sistema simplificado para ilustrar modelado dirigido por eventos"
+  },
+  {
+    "Nombre": "Interruptor de potencia",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Control para seleccionar nivel de potencia en horno"
+  },
+  {
+    "Nombre": "Teclado numérico",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo para ingresar números en el sistema"
+  },
+  {
+    "Nombre": "Botón de iniciar/detener",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Control para comenzar o cancelar operación"
+  },
+  {
+    "Nombre": "Pantalla alfanumérica",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Display que muestra mensajes y avisos"
+  },
+  {
+    "Nombre": "Tiempo de cocción",
+    "Categoría": "Atributo",
+    "Descripción breve": "Duración especificada para operación del horno"
+  },
+  {
+    "Nombre": "Potencia completa",
+    "Categoría": "Estado",
+    "Descripción breve": "Estado del horno operando a máxima potencia (600 watts)"
+  },
+  {
+    "Nombre": "Potencia media",
+    "Categoría": "Estado",
+    "Descripción breve": "Estado del horno operando a potencia reducida (300 watts)"
+  },
+  {
+    "Nombre": "Estado de espera",
+    "Categoría": "Estado",
+    "Descripción breve": "Estado inicial donde sistema espera entrada del usuario"
+  },
+  {
+    "Nombre": "Timbre",
+    "Categoría": "Componente",
+    "Descripción breve": "Señal sonora que indica completación de operación"
+  },
+  {
+    "Nombre": "Estado inicial",
+    "Categoría": "Concepto",
+    "Descripción breve": "Condición del sistema al comenzar operación"
+  },
+  {
+    "Nombre": "Estado final",
+    "Categoría": "Concepto",
+    "Descripción breve": "Condición del sistema al terminar operación"
+  },
+  {
+    "Nombre": "Círculo relleno",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Representación de estado inicial o final en diagrama de estado"
+  },
+  {
+    "Nombre": "Descripción de acción \"do\"",
+    "Categoría": "Notación",
+    "Descripción breve": "Texto que indica acciones a tomar en un estado"
+  },
+  {
+    "Nombre": "Flecha etiquetada",
+    "Categoría": "Símbolo UML",
+    "Descripción breve": "Representación de estímulo que causa transición en diagrama de estado"
+  },
+  {
+    "Nombre": "Descripción tabular de estados",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Tabla que detalla cada estado y estímulos del sistema"
+  },
+  {
+    "Nombre": "Botón de potencia completa",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Control para seleccionar máxima potencia"
+  },
+  {
+    "Nombre": "Botón de potencia media",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Control para seleccionar potencia reducida"
+  },
+  {
+    "Nombre": "Botón temporizador",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Control para establecer tiempo de cocción"
+  },
+  {
+    "Nombre": "Tecla numérica",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Botón para ingresar dígitos"
+  },
+  {
+    "Nombre": "Interruptor de puerta",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Sensor que detecta si puerta está abierta o cerrada"
+  },
+  {
+    "Nombre": "Botón Iniciar",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Control para comenzar operación"
+  },
+  {
+    "Nombre": "Botón Cancelar",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Control para detener operación"
+  },
+  {
+    "Nombre": "Estado Deshabilitado",
+    "Categoría": "Estado",
+    "Descripción breve": "Condición donde operación está bloqueada por seguridad"
+  },
+  {
+    "Nombre": "Estado Habilitado",
+    "Categoría": "Estado",
+    "Descripción breve": "Condición donde sistema está listo para operar"
+  },
+  {
+    "Nombre": "Estado Operación",
+    "Categoría": "Estado",
+    "Descripción breve": "Condición donde horno está cocinando"
+  },
+  {
+    "Nombre": "Luz interior",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Iluminación dentro del horno"
+  },
+  {
+    "Nombre": "Display de mensajes",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Pantalla que muestra avisos al usuario"
+  },
+  {
+    "Nombre": "Superestado",
+    "Categoría": "Concepto",
+    "Descripción breve": "Estado que encapsula varios estados separados"
+  },
+  {
+    "Nombre": "Expansión de superestado",
+    "Categoría": "Técnica",
+    "Descripción breve": "Mostrar detalles internos de superestado en diagrama separado"
+  },
+  {
+    "Nombre": "Subestado",
+    "Categoría": "Concepto",
+    "Descripción breve": "Estado contenido dentro de un superestado"
+  },
+  {
+    "Nombre": "Comprobación de estatus",
+    "Categoría": "Actividad",
+    "Descripción breve": "Verificación de condiciones antes de operación"
+  },
+  {
+    "Nombre": "Alarma",
+    "Categoría": "Estado",
+    "Descripción breve": "Condición que indica problema detectado en sistema"
+  },
+  {
+    "Nombre": "Estado Cocinar",
+    "Categoría": "Subestado",
+    "Descripción breve": "Operación del generador de microondas"
+  },
+  {
+    "Nombre": "Generador de microondas",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo que produce energía para cocción"
+  },
+  {
+    "Nombre": "MDE (Model-Driven Engineering)",
+    "Categoría": "Paradigma",
+    "Descripción breve": "Enfoque donde modelos son salidas principales y programas se generan automáticamente"
+  },
+  {
+    "Nombre": "Programa ejecutable",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Código que se ejecuta en plataforma hardware/software"
+  },
+  {
+    "Nombre": "Nivel de abstracción",
+    "Categoría": "Concepto",
+    "Descripción breve": "Grado de detalle o generalización en representación del sistema"
+  },
+  {
+    "Nombre": "Detalles del lenguaje de programación",
+    "Categoría": "Concepto",
+    "Descripción breve": "Especificidades sintácticas y semánticas de un lenguaje"
+  },
+  {
+    "Nombre": "Especificidades de plataforma",
+    "Categoría": "Concepto",
+    "Descripción breve": "Características particulares de entorno de ejecución"
+  },
+  {
+    "Nombre": "MDA (Model-Driven Architecture)",
+    "Categoría": "Paradigma",
+    "Descripción breve": "Enfoque dirigido por modelos propuesto por OMG en 2001"
+  },
+  {
+    "Nombre": "Object Management Group (OMG)",
+    "Categoría": "Organización",
+    "Descripción breve": "Consorcio que propuso la arquitectura dirigida por modelo"
+  },
+  {
+    "Nombre": "Independencia de plataforma",
+    "Categoría": "Característica",
+    "Descripción breve": "Capacidad de modelo de no depender de tecnología de ejecución específica"
+  },
+  {
+    "Nombre": "Traductor de plataforma",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software que genera código para plataforma específica desde modelo"
+  },
+  {
+    "Nombre": "Reubicación de modelos",
+    "Categoría": "Proceso",
+    "Descripción breve": "Migración de sistema a nueva plataforma mediante traducción"
+  },
+  {
+    "Nombre": "Paquete configurable comercial",
+    "Categoría": "Tipo de software",
+    "Descripción breve": "Sistema off-the-shelf que se configura en lugar de desarrollar desde cero"
+  },
+  {
+    "Nombre": "Off-the-shelf",
+    "Categoría": "Concepto",
+    "Descripción breve": "Software comercial listo para usar con configuración"
+  },
+  {
+    "Nombre": "Sistema de larga duración",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema cuyo tiempo de vida abarca múltiples generaciones de tecnología"
+  },
+  {
+    "Nombre": "Sistema heredado",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema existente que debe integrarse con nuevo desarrollo"
+  },
+  {
+    "Nombre": "Transformación de modelo",
+    "Categoría": "Proceso",
+    "Descripción breve": "Conversión automática entre modelos de diferentes niveles"
+  },
+  {
+    "Nombre": "CIM (Computation Independent Model)",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo independiente de computación que muestra abstracciones de dominio"
+  },
+  {
+    "Nombre": "Modelo de dominio",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que captura conceptos importantes del área de aplicación"
+  },
+  {
+    "Nombre": "CIM de seguridad",
+    "Categoría": "Modelo específico",
+    "Descripción breve": "Modelo de dominio que identifica abstracciones de seguridad"
+  },
+  {
+    "Nombre": "CIM de activo",
+    "Categoría": "Modelo específico",
+    "Descripción breve": "Modelo de dominio para activos del sistema"
+  },
+  {
+    "Nombre": "CIM de rol",
+    "Categoría": "Modelo específico",
+    "Descripción breve": "Modelo de dominio que define roles en el sistema"
+  },
+  {
+    "Nombre": "CIM de hospital",
+    "Categoría": "Modelo específico",
+    "Descripción breve": "Modelo de dominio con conceptos de contexto hospitalario"
+  },
+  {
+    "Nombre": "PIM (Platform Independent Model)",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que describe operación del sistema sin referencia a implementación"
+  },
+  {
+    "Nombre": "PSM (Platform Specific Model)",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Transformación del PIM con detalles específicos de plataforma de aplicación"
+  },
+  {
+    "Nombre": "Middleware",
+    "Categoría": "Tipo de plataforma",
+    "Descripción breve": "Software intermedio entre aplicación y sistema operativo"
+  },
+  {
+    "Nombre": "PSM específico de middleware",
+    "Categoría": "Tipo de PSM",
+    "Descripción breve": "Modelo con detalles de middleware pero independiente de base de datos"
+  },
+  {
+    "Nombre": "PSM específico de base de datos",
+    "Categoría": "Tipo de PSM",
+    "Descripción breve": "Modelo que incluye detalles de base de datos particular"
+  },
+  {
+    "Nombre": "Capas de PSM",
+    "Categoría": "Concepto",
+    "Descripción breve": "Niveles de modelos específicos de plataforma con diferente grado de detalle"
+  },
+  {
+    "Nombre": "Herramienta de software MDA",
+    "Categoría": "Tipo de herramienta",
+    "Descripción breve": "Software que aplica transformaciones automáticas entre modelos"
+  },
+  {
+    "Nombre": "Código ejecutable",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Programa generado que opera en plataforma designada"
+  },
+  {
+    "Nombre": "Traductor CIM a PIM",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software para convertir modelo independiente de computación a modelo independiente de plataforma"
+  },
+  {
+    "Nombre": "Traductor PIM a PSM",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software para convertir modelo independiente de plataforma a modelo específico de plataforma"
+  },
+  {
+    "Nombre": "Lineamientos específicos de dominio",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Guías para traducción de modelos de dominio"
+  },
+  {
+    "Nombre": "Patrones específicos de plataforma",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Plantillas de diseño para plataforma particular"
+  },
+  {
+    "Nombre": "Reglas de transformación",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Especificaciones de cómo convertir elementos entre modelos"
+  },
+  {
+    "Nombre": "Patrones específicos de lenguaje",
+    "Categoría": "Artefacto",
+    "Descripción breve": "Plantillas de código para lenguaje de programación particular"
+  },
+  {
+    "Nombre": "Puente entre CIM",
+    "Categoría": "Concepto",
+    "Descripción breve": "Información que soporta mapeo de conceptos entre modelos de dominio"
+  },
+  {
+    "Nombre": "Vinculación de conceptos",
+    "Categoría": "Proceso",
+    "Descripción breve": "Relacionar conceptos equivalentes en diferentes modelos de dominio"
+  },
+  {
+    "Nombre": "Plataforma Java",
+    "Categoría": "Plataforma de ejecución",
+    "Descripción breve": "Entorno de ejecución basado en máquina virtual Java"
+  },
+  {
+    "Nombre": "Plataforma J2EE",
+    "Categoría": "Plataforma de ejecución",
+    "Descripción breve": "Plataforma empresarial Java para aplicaciones distribuidas"
+  },
+  {
+    "Nombre": "Plataforma .NET",
+    "Categoría": "Plataforma de ejecución",
+    "Descripción breve": "Entorno de ejecución de Microsoft para aplicaciones"
+  },
+  {
+    "Nombre": "Librerías de aplicación",
+    "Categoría": "Componente de software",
+    "Descripción breve": "Colecciones de código reutilizable específico de compañía"
+  },
+  {
+    "Nombre": "Librerías de interfaz de usuario",
+    "Categoría": "Componente de software",
+    "Descripción breve": "Código para construir interfaces gráficas de usuario"
+  },
+  {
+    "Nombre": "Entorno de ejecución",
+    "Categoría": "Concepto",
+    "Descripción breve": "Conjunto completo de plataforma, sistemas y librerías donde opera el software"
+  },
+  {
+    "Nombre": "Traductor de propósito especial",
+    "Categoría": "Herramienta",
+    "Descripción breve": "Software de conversión creado para necesidades específicas de una organización"
+  },
+  {
+    "Nombre": "Generación de interfaz de usuario",
+    "Categoría": "Proceso",
+    "Descripción breve": "Creación automática de componentes de interfaz gráfica"
+  },
+  {
+    "Nombre": "Métodos ágiles",
+    "Categoría": "Paradigma",
+    "Descripción breve": "Enfoques de desarrollo que priorizan iteración rápida y adaptación"
+  },
+  {
+    "Nombre": "Manifiesto ágil",
+    "Categoría": "Documento",
+    "Descripción breve": "Declaración de valores y principios del desarrollo ágil"
+  },
+  {
+    "Nombre": "Modelado frontal extenso",
+    "Categoría": "Práctica",
+    "Descripción breve": "Crear modelos detallados antes de implementación"
+  },
+  {
+    "Nombre": "Enfoque iterativo",
+    "Categoría": "Práctica",
+    "Descripción breve": "Desarrollo en ciclos repetidos de diseño, implementación y evaluación"
+  },
+  {
+    "Nombre": "Pruebas de regresión",
+    "Categoría": "Técnica de prueba",
+    "Descripción breve": "Verificación de que cambios no afectan funcionalidad existente"
+  },
+  {
+    "Nombre": "Desarrollo dirigido por pruebas",
+    "Categoría": "Práctica",
+    "Descripción breve": "Escribir pruebas antes de implementar funcionalidad"
+  },
+  {
+    "Nombre": "UML ejecutable (xUML)",
+    "Categoría": "Subconjunto de UML",
+    "Descripción breve": "Versión de UML con semántica bien definida para generar código automáticamente"
+  },
+  {
+    "Nombre": "Semántica bien definida",
+    "Categoría": "Característica",
+    "Descripción breve": "Significado preciso e inequívoco de elementos del lenguaje"
+  },
+  {
+    "Nombre": "Expresividad del lenguaje",
+    "Categoría": "Característica",
+    "Descripción breve": "Capacidad de un lenguaje para representar conceptos diversos"
+  },
+  {
+    "Nombre": "Modelo de dominio xUML",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que identifica principales preocupaciones usando diagramas de clase"
+  },
+  {
+    "Nombre": "Modelo de clase xUML",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Modelo que define clases con atributos y operaciones"
+  },
+  {
+    "Nombre": "Modelo de estado xUML",
+    "Categoría": "Tipo de modelo",
+    "Descripción breve": "Diagrama de estado asociado con clase para describir su ciclo de vida"
+  },
+  {
+    "Nombre": "Ciclo de vida de clase",
+    "Categoría": "Concepto",
+    "Descripción breve": "Secuencia de estados por los que pasa un objeto desde creación hasta destrucción"
+  },
+  {
+    "Nombre": "Comportamiento dinámico",
+    "Categoría": "Concepto",
+    "Descripción breve": "Forma en que sistema cambia y responde durante ejecución"
+  },
+  {
+    "Nombre": "Especificación declarativa",
+    "Categoría": "Técnica",
+    "Descripción breve": "Descripción de qué debe hacer el sistema sin especificar cómo"
+  },
+  {
+    "Nombre": "OCL (Object Constraint Language)",
+    "Categoría": "Lenguaje",
+    "Descripción breve": "Lenguaje de restricción de objeto para especificar comportamiento declarativamente"
+  },
+  {
+    "Nombre": "Lenguaje de acción de UML",
+    "Categoría": "Lenguaje",
+    "Descripción breve": "Lenguaje de muy alto nivel para expresar acciones sobre objetos"
+  },
+  {
+    "Nombre": "Lenguaje de programación de muy alto nivel",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguaje con abstracciones cercanas al dominio del problema"
+  },
+  {
+    "Nombre": "Referencia a objetos",
+    "Categoría": "Concepto",
+    "Descripción breve": "Mención de instancias de objetos en especificación de comportamiento"
+  },
+  {
+    "Nombre": "Atributos de objetos",
+    "Categoría": "Concepto",
+    "Descripción breve": "Propiedades específicas de instancias de objetos"
+  },
+  {
+    "Nombre": "Especificación de acciones",
+    "Categoría": "Concepto",
+    "Descripción breve": "Descripción de operaciones a realizar sobre objetos"
+  }
+]

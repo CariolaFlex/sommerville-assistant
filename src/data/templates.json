@@ -1,0 +1,262 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-15",
+  "totalTemplates": 7,
+  "templates": {
+    "tpl-001": {
+      "id": "tpl-001",
+      "name": "Documento de Especificación de Requisitos",
+      "category": "Documentación",
+      "description": "Plantilla simplificada de especificación de requisitos basada en IEEE 830",
+      "chapter": 4,
+      "format": "markdown",
+      "applicableFor": [
+        "tradicional",
+        "hibrido"
+      ],
+      "difficulty": "media",
+      "estimatedTime": "4-8 horas",
+      "content": "# Especificación de Requisitos - [Nombre del Proyecto]\n\n## 1. INTRODUCCIÓN\n\n### 1.1 Propósito\n[Para qué sirve este software]\n\n### 1.2 Alcance\n[Qué hace y qué NO hace]\n\n### 1.3 Definiciones y Acrónimos\n| Término | Definición |\n|---------|------------|\n| ...     | ...        |\n\n## 2. DESCRIPCIÓN GENERAL\n\n### 2.1 Perspectiva del Producto\n[¿Es independiente o parte de un sistema mayor?]\n\n### 2.2 Funciones del Producto\n- Función principal 1\n- Función principal 2\n- Función principal 3\n\n### 2.3 Usuarios del Sistema\n| Tipo de Usuario | Descripción | Frecuencia de Uso |\n|-----------------|-------------|-------------------|\n| Usuario final   | ...         | Diaria           |\n| Administrador   | ...         | Semanal          |\n\n## 3. REQUISITOS FUNCIONALES\n\n### RF-001: [Nombre del Requisito]\n- **Descripción**: [Qué debe hacer el sistema]\n- **Entrada**: [Qué datos recibe]\n- **Proceso**: [Qué hace con los datos]\n- **Salida**: [Qué produce]\n- **Prioridad**: Alta / Media / Baja\n- **Criterios de Aceptación**:\n  1. [Criterio medible]\n  2. [Criterio medible]\n\n### RF-002: [Siguiente Requisito]\n...\n\n## 4. REQUISITOS NO FUNCIONALES\n\n### 4.1 Rendimiento\n- **RNF-001**: El sistema debe responder a consultas en < 2 segundos en el 95% de los casos\n- **RNF-002**: Debe soportar 1000 usuarios concurrentes\n\n### 4.2 Seguridad\n- **RNF-003**: Autenticación de dos factores obligatoria\n- **RNF-004**: Encriptación AES-256 para datos sensibles\n\n### 4.3 Usabilidad\n- **RNF-005**: Usuario nuevo completa tarea principal en < 5 minutos sin ayuda\n\n### 4.4 Confiabilidad\n- **RNF-006**: Disponibilidad del 99.9% (< 8.76 horas downtime/año)\n\n### 4.5 Mantenibilidad\n- **RNF-007**: Cobertura de tests > 80%\n\n## 5. RESTRICCIONES\n\n### 5.1 Tecnológicas\n- Debe funcionar en navegadores Chrome, Firefox, Safari (últimas 2 versiones)\n- Backend en [tecnología]\n\n### 5.2 Regulatorias\n- Cumplimiento GDPR para datos de usuarios europeos\n\n### 5.3 Presupuestarias\n- Costo de infraestructura < $X/mes\n\n## 6. CASOS DE USO PRINCIPALES\n\n### CU-001: Inicio de Sesión\n- **Actor**: Usuario\n- **Precondición**: Usuario tiene cuenta\n- **Flujo Principal**:\n  1. Usuario ingresa email y contraseña\n  2. Sistema valida credenciales\n  3. Sistema genera sesión\n  4. Sistema redirige a dashboard\n- **Flujo Alternativo**:\n  - 2a. Credenciales inválidas → Mostrar error\n- **Postcondición**: Usuario autenticado\n\n## 7. CRITERIOS DE ACEPTACIÓN GLOBAL\n\n- [ ] Todos los RF implementados y probados\n- [ ] Todos los RNF validados con métricas\n- [ ] Documentación de usuario completa\n- [ ] Capacitación a usuarios completada",
+      "sections": [
+        "Introducción",
+        "Descripción General",
+        "Requisitos Funcionales",
+        "Requisitos No Funcionales",
+        "Restricciones",
+        "Casos de Uso",
+        "Criterios de Aceptación"
+      ],
+      "relatedRecommendations": [
+        "rec-001",
+        "rec-002",
+        "rec-004"
+      ],
+      "tags": [
+        "requisitos",
+        "especificacion",
+        "ieee830",
+        "tradicional",
+        "documentacion"
+      ]
+    },
+    "tpl-002": {
+      "id": "tpl-002",
+      "name": "Historia de Usuario",
+      "category": "Ágil",
+      "description": "Plantilla de Historia de Usuario con criterios de aceptación estilo Scrum",
+      "chapter": 3,
+      "format": "markdown",
+      "applicableFor": [
+        "agil",
+        "scrum",
+        "xp"
+      ],
+      "difficulty": "baja",
+      "estimatedTime": "15-30 minutos",
+      "content": "┌─────────────────────────────────────────────────┐\n│ ID: US-XXX                                      │\n├─────────────────────────────────────────────────┤\n│ TÍTULO: [Nombre descriptivo]                    │\n├─────────────────────────────────────────────────┤\n│ Como: [Tipo de usuario]                         │\n│ Quiero: [Acción/Funcionalidad]                  │\n│ Para: [Beneficio/Valor]                         │\n├─────────────────────────────────────────────────┤\n│ CRITERIOS DE ACEPTACIÓN:                        │\n│ ✓ [Criterio específico y medible 1]            │\n│ ✓ [Criterio específico y medible 2]            │\n│ ✓ [Criterio específico y medible 3]            │\n├─────────────────────────────────────────────────┤\n│ PRIORIDAD: [ ] Alta  [ ] Media  [ ] Baja        │\n│ ESTIMACIÓN: [ ] Story Points                    │\n│ SPRINT: [ ]                                     │\n├─────────────────────────────────────────────────┤\n│ NOTAS TÉCNICAS:                                 │\n│ [Detalles de implementación si son necesarios]  │\n├─────────────────────────────────────────────────┤\n│ DEPENDENCIAS:                                   │\n│ - Depende de: [US-XXX]                         │\n│ - Bloquea a: [US-XXX]                          │\n└─────────────────────────────────────────────────┘\n\n**Ejemplo Completado:**\n┌─────────────────────────────────────────────────┐\n│ ID: US-042                                      │\n├─────────────────────────────────────────────────┤\n│ TÍTULO: Resetear contraseña                     │\n├─────────────────────────────────────────────────┤\n│ Como: Usuario que olvidó su contraseña          │\n│ Quiero: Poder resetearla desde login            │\n│ Para: Recuperar acceso a mi cuenta              │\n├─────────────────────────────────────────────────┤\n│ CRITERIOS DE ACEPTACIÓN:                        │\n│ ✓ Link \"Olvidé contraseña\" visible en login    │\n│ ✓ Email con token llega en < 5 minutos         │\n│ ✓ Token expira en 1 hora                       │\n│ ✓ Contraseña nueva cumple policy de seguridad  │\n├─────────────────────────────────────────────────┤\n│ PRIORIDAD: [X] Alta  [ ] Media  [ ] Baja        │\n│ ESTIMACIÓN: [5] Story Points                    │\n│ SPRINT: [3]                                     │\n├─────────────────────────────────────────────────┤\n│ NOTAS TÉCNICAS:                                 │\n│ - Usar JWT con expiración de 1 hora            │\n│ - Email service: SendGrid                       │\n├─────────────────────────────────────────────────┤\n│ DEPENDENCIAS:                                   │\n│ - Depende de: US-001 (Sistema de autenticación)│\n└─────────────────────────────────────────────────┘",
+      "sections": [
+        "Identificación",
+        "Descripción (Como/Quiero/Para)",
+        "Criterios de Aceptación",
+        "Prioridad y Estimación",
+        "Notas Técnicas",
+        "Dependencias"
+      ],
+      "relatedRecommendations": [
+        "rec-005",
+        "rec-006",
+        "rec-007"
+      ],
+      "tags": [
+        "agil",
+        "user-story",
+        "scrum",
+        "criterios-aceptacion",
+        "sprint"
+      ]
+    },
+    "tpl-003": {
+      "id": "tpl-003",
+      "name": "Caso de Uso Detallado",
+      "category": "Documentación",
+      "description": "Plantilla de Caso de Uso con flujos principal, alternativos y excepciones",
+      "chapter": 4,
+      "format": "markdown",
+      "applicableFor": [
+        "tradicional",
+        "hibrido"
+      ],
+      "difficulty": "media",
+      "estimatedTime": "1-2 horas",
+      "content": "# CASO DE USO: [ID] - [Nombre]\n\n## INFORMACIÓN GENERAL\n- **ID**: CU-XXX\n- **Nombre**: [Nombre descriptivo del caso de uso]\n- **Actores**: [Usuario, Sistema Externo, etc.]\n- **Tipo**: Primario / Secundario\n- **Complejidad**: Alta / Media / Baja\n- **Prioridad**: Alta / Media / Baja\n\n## DESCRIPCIÓN\n[Descripción breve de qué hace este caso de uso]\n\n## PRECONDICIONES\n1. [Condición que debe ser verdadera ANTES de ejecutar]\n2. [Otra precondición]\n\n## POSTCONDICIONES\n1. [Condición que será verdadera DESPUÉS de ejecutar exitosamente]\n2. [Otra postcondición]\n\n## FLUJO PRINCIPAL\n1. [Actor] hace [acción]\n2. Sistema [responde/procesa/valida]\n3. [Actor] [siguiente acción]\n4. Sistema [resultado]\n\n## FLUJOS ALTERNATIVOS\n\n### A1: [Nombre de flujo alternativo]\n**Condición**: [Cuándo ocurre este flujo]\n**Pasos**:\n1. [Paso alternativo]\n2. [Paso alternativo]\n**Retorna a**: Paso X del flujo principal\n\n### A2: [Otro flujo alternativo]\n...\n\n## FLUJOS DE EXCEPCIÓN\n\n### E1: [Error de validación]\n**Condición**: [Cuándo ocurre]\n**Pasos**:\n1. Sistema muestra mensaje de error: \"[mensaje]\"\n2. Sistema retorna a paso X\n**Fin del caso de uso**: No\n\n### E2: [Error crítico]\n**Condición**: [Cuándo ocurre]\n**Pasos**:\n1. Sistema registra error en log\n2. Sistema muestra mensaje genérico al usuario\n3. Sistema notifica a administradores\n**Fin del caso de uso**: Sí (abortado)\n\n## REQUISITOS ESPECIALES\n- [Requisito no funcional relacionado: performance, seguridad, etc.]\n\n## INFORMACIÓN ADICIONAL\n- **Frecuencia de uso**: [Diaria/Semanal/Mensual]\n- **Reglas de negocio**: [BRX]\n- **Notas**: [Información adicional relevante]",
+      "sections": [
+        "Información General",
+        "Descripción",
+        "Precondiciones y Postcondiciones",
+        "Flujo Principal",
+        "Flujos Alternativos",
+        "Flujos de Excepción",
+        "Requisitos Especiales"
+      ],
+      "relatedRecommendations": [
+        "rec-001",
+        "rec-002",
+        "rec-004"
+      ],
+      "tags": [
+        "casos-de-uso",
+        "uml",
+        "analisis",
+        "tradicional"
+      ]
+    },
+    "tpl-004": {
+      "id": "tpl-004",
+      "name": "Plan de Sprint",
+      "category": "Ágil",
+      "description": "Plantilla de planificación de Sprint para Scrum con backlog y métricas",
+      "chapter": 3,
+      "format": "markdown",
+      "applicableFor": [
+        "agil",
+        "scrum"
+      ],
+      "difficulty": "media",
+      "estimatedTime": "2-3 horas",
+      "content": "# SPRINT [#XX] - [Nombre del Sprint]\n**Duración**: [Fecha inicio] - [Fecha fin] (X semanas)\n**Goal**: [Objetivo principal del sprint - qué valor entregamos]\n\n## EQUIPO\n- **Product Owner**: [Nombre]\n- **Scrum Master**: [Nombre]\n- **Development Team**:\n  - [Desarrollador 1]\n  - [Desarrollador 2]\n  - [QA]\n\n## CAPACIDAD DEL SPRINT\n- **Story Points totales**: [X] points\n- **Horas estimadas**: [Y] horas\n- **Días disponibles**: [Z] días (considerando vacaciones, feriados)\n\n## BACKLOG DEL SPRINT\n\n### Comprometido (MUST)\n| ID     | Historia de Usuario        | SP | Asignado a | Estado     |\n|--------|----------------------------|----|-----------  |-----------|\n| US-042 | Resetear contraseña        | 5  | Juan       | To Do      |\n| US-043 | Dashboard de usuario       | 8  | María      | To Do      |\n| ...    | ...                        | .. | ...        | ...        |\n| **TOTAL** |                         | **XX** |        |            |\n\n### Stretch Goals (SHOULD - si hay tiempo)\n| ID     | Historia de Usuario        | SP |\n|--------|----------------------------|-----|\n| US-050 | Filtros avanzados          | 3  |\n\n## DEFINICIÓN DE DONE\nUna historia está \"Done\" cuando:\n- [ ] Código completado y revisado (PR aprobado)\n- [ ] Tests escritos y pasando (coverage > 70%)\n- [ ] Funcionalidad probada manualmente\n- [ ] Documentación actualizada\n- [ ] Deployado a staging\n- [ ] Product Owner acepta\n\n## RIESGOS IDENTIFICADOS\n| Riesgo | Probabilidad | Impacto | Mitigación |\n|--------|--------------|---------|------------|\n| Dependencia de API externa no lista | Media | Alto | Mockear API, feature flag |\n| ... | ... | ... | ... |\n\n## MÉTRICAS\n- **Velocity anterior**: [X] points\n- **Velocity objetivo**: [Y] points\n- **Burndown chart**: [Link a herramienta]\n\n## NOTAS\n[Cualquier información adicional del sprint planning]",
+      "sections": [
+        "Información General",
+        "Equipo",
+        "Capacidad",
+        "Backlog del Sprint",
+        "Definition of Done",
+        "Riesgos",
+        "Métricas"
+      ],
+      "relatedRecommendations": [
+        "rec-005",
+        "rec-006",
+        "rec-007"
+      ],
+      "tags": [
+        "scrum",
+        "sprint",
+        "planning",
+        "agil",
+        "backlog"
+      ]
+    },
+    "tpl-005": {
+      "id": "tpl-005",
+      "name": "Retrospectiva de Sprint",
+      "category": "Ágil",
+      "description": "Plantilla de retrospectiva para identificar mejoras y acciones concretas",
+      "chapter": 3,
+      "format": "markdown",
+      "applicableFor": [
+        "agil",
+        "scrum"
+      ],
+      "difficulty": "baja",
+      "estimatedTime": "1 hora",
+      "content": "# RETROSPECTIVA SPRINT [#XX]\n**Fecha**: [DD/MM/YYYY]\n**Participantes**: [Nombres]\n**Facilitador**: [Scrum Master]\n\n## DATOS DEL SPRINT\n- **Comprometido**: [X] story points\n- **Completado**: [Y] story points\n- **Velocity**: [Y] points\n- **Bugs encontrados**: [Z]\n\n## ¿QUÉ SALIÓ BIEN? 😊\n1. [Práctica o situación positiva]\n2. [Otra cosa positiva]\n3. ...\n\n## ¿QUÉ PODEMOS MEJORAR? 🤔\n1. [Problema o fricción identificada]\n2. [Otra área de mejora]\n3. ...\n\n## ACCIONES DE MEJORA\n| Acción | Responsable | Fecha Límite | Estado |\n|--------|-------------|--------------|--------|\n| [Acción concreta y medible] | [Nombre] | [Fecha] | [ ] |\n| [Otra acción] | [Nombre] | [Fecha] | [ ] |\n\n## EXPERIMENTOS A PROBAR\n1. [Algo nuevo que queremos intentar este sprint]\n2. ...\n\n## MÉTRICAS DE RETROSPECTIVA\n- **Nivel de felicidad del equipo**: [1-10]\n- **Nivel de colaboración**: [1-10]\n- **¿Recomendarían trabajar en este equipo?**: [Sí/No]\n\n## SEGUIMIENTO DE ACCIONES PASADAS\n| Acción (de sprint anterior) | Estado | Observaciones |\n|------------------------------|--------|---------------|\n| [Acción del sprint pasado]   | ✅ Done | Funcionó bien |\n| [Otra acción]                | ⚠️ Parcial | Seguir trabajando |",
+      "sections": [
+        "Datos del Sprint",
+        "Qué Salió Bien",
+        "Qué Podemos Mejorar",
+        "Acciones de Mejora",
+        "Experimentos",
+        "Métricas de Retrospectiva",
+        "Seguimiento"
+      ],
+      "relatedRecommendations": [
+        "rec-005",
+        "rec-006",
+        "rec-007"
+      ],
+      "tags": [
+        "scrum",
+        "retrospectiva",
+        "mejora-continua",
+        "agil"
+      ]
+    },
+    "tpl-006": {
+      "id": "tpl-006",
+      "name": "Documento de Arquitectura",
+      "category": "Arquitectura",
+      "description": "Documento simplificado de arquitectura con vistas, decisiones y stack tecnológico",
+      "chapter": 6,
+      "format": "markdown",
+      "applicableFor": [
+        "todos"
+      ],
+      "difficulty": "alta",
+      "estimatedTime": "8-16 horas",
+      "content": "# DOCUMENTO DE ARQUITECTURA DE SOFTWARE\n**Proyecto**: [Nombre]\n**Versión**: 1.0\n**Fecha**: [DD/MM/YYYY]\n**Autor**: [Nombre del Arquitecto]\n\n## 1. INTRODUCCIÓN\n\n### 1.1 Propósito\n[Por qué existe este documento]\n\n### 1.2 Alcance\n[Qué sistema cubre este documento]\n\n### 1.3 Audiencia\n- Desarrolladores\n- DevOps\n- Product Managers\n\n## 2. REPRESENTACIÓN ARQUITECTÓNICA\n\n### 2.1 Patrón Arquitectónico Principal\n[MVC, Capas, Cliente-Servidor, Microservicios, etc.]\n\n**Por qué se eligió**:\n- [Razón 1]\n- [Razón 2]\n\n### 2.2 Diagrama de Alto Nivel\n```\n[Aquí va un diagrama ASCII o link a diagrama]\nFrontend (React) ← API REST → Backend (Node.js) → PostgreSQL\n                                      ↓\n                                    Redis\n```\n\n## 3. VISTAS ARQUITECTÓNICAS\n\n### 3.1 Vista Lógica\n[Componentes principales del sistema]\n\n**Componentes**:\n- **Frontend**: Aplicación React con Redux\n- **API Gateway**: Express.js\n- **Servicios de Negocio**:\n  - UserService\n  - OrderService\n  - PaymentService\n- **Data Layer**: PostgreSQL + Redis\n\n### 3.2 Vista de Proceso\n[Flujos principales]\n\n**Flujo: Realizar Compra**\n```\n1. Usuario → Frontend → API → OrderService\n2. OrderService → PaymentService\n3. PaymentService → Stripe API\n4. Si exitoso → OrderService actualiza BD\n5. OrderService → NotificationService (async)\n```\n\n### 3.3 Vista de Desarrollo\n[Organización del código]\n\n```\n/frontend\n  /src\n    /components\n    /pages\n    /services\n    /store (Redux)\n\n/backend\n  /src\n    /controllers\n    /services\n    /models\n    /middleware\n```\n\n### 3.4 Vista Física (Deployment)\n[Infraestructura]\n\n```\n┌──────────────┐\n│ Cloudflare   │ CDN\n└──────┬───────┘\n       │\n┌──────▼───────┐\n│ Vercel       │ Frontend (estático)\n└──────────────┘\n\n┌──────────────┐\n│ Render.com   │ Backend API\n└──────┬───────┘\n       │\n┌──────▼───────┐\n│ PostgreSQL   │ Database (Render)\n└──────────────┘\n\n┌──────────────┐\n│ Redis Cloud  │ Cache/Sessions\n└──────────────┘\n```\n\n## 4. DECISIONES ARQUITECTÓNICAS CLAVE\n\n### DA-001: Base de Datos Relacional vs NoSQL\n**Decisión**: PostgreSQL (relacional)\n**Razón**:\n- Datos altamente estructurados\n- Necesidad de transacciones ACID\n- Relaciones complejas entre entidades\n\n**Alternativas consideradas**:\n- MongoDB (descartado: no soporta ACID bien)\n\n### DA-002: Monolito vs Microservicios\n**Decisión**: Monolito modular\n**Razón**:\n- Equipo pequeño (<10 personas)\n- Complejidad de microservicios innecesaria\n- Más rápido de desarrollar y deployar\n\n**Plan de evolución**: Extraer microservicios cuando:\n- Equipo crezca a >20 personas\n- Necesidad de escalar componentes independientemente\n\n## 5. REQUISITOS NO FUNCIONALES\n\n### 5.1 Rendimiento\n- **Tiempo de respuesta**: < 2 segundos (95% de requests)\n- **Throughput**: 1000 requests/segundo\n\n**Estrategias**:\n- Caché en Redis para consultas frecuentes\n- Índices de BD optimizados\n- CDN para assets estáticos\n\n### 5.2 Escalabilidad\n- **Horizontal**: Backend puede escalar a múltiples instancias (stateless)\n- **Vertical**: BD puede escalar con read replicas\n\n### 5.3 Seguridad\n- **Autenticación**: JWT con refresh tokens\n- **Autorización**: RBAC (Role-Based Access Control)\n- **Encriptación**: HTTPS, passwords con bcrypt\n- **Rate limiting**: 100 requests/minuto por IP\n\n### 5.4 Disponibilidad\n- **Target**: 99.9% uptime (< 8.76 horas downtime/año)\n- **Estrategias**:\n  - Health checks\n  - Auto-scaling\n  - Database backups diarios\n\n## 6. STACK TECNOLÓGICO\n\n### Frontend\n- React 18\n- Redux Toolkit\n- TailwindCSS\n- Vite\n\n### Backend\n- Node.js 20\n- Express.js\n- Prisma ORM\n- Jest (testing)\n\n### Database\n- PostgreSQL 15\n- Redis 7\n\n### DevOps\n- Git + GitHub\n- GitHub Actions (CI/CD)\n- Vercel (frontend)\n- Render.com (backend)\n\n## 7. GESTIÓN DE DATOS\n\n### 7.1 Modelo de Datos\n[Link a diagrama de clases o ER]\n\n### 7.2 Migrations\n- **Herramienta**: Prisma Migrate\n- **Estrategia**: Versionadas, nunca editar migrations existentes\n\n### 7.3 Backups\n- **Frecuencia**: Diario (full) + continuo (point-in-time recovery)\n- **Retención**: 30 días\n\n## 8. SEGURIDAD\n\n### 8.1 Autenticación\n[JWT con access tokens (15 min) + refresh tokens (7 días)]\n\n### 8.2 Autorización\nRoles:\n- USER (lectura)\n- ADMIN (lectura + escritura)\n- SUPERADMIN (todo)\n\n### 8.3 Validación\n- Input validation en frontend y backend\n- Sanitización de datos\n\n## 9. MONITOREO Y LOGGING\n\n### 9.1 Logging\n- **Herramienta**: Winston (backend)\n- **Niveles**: error, warn, info, debug\n- **Centralización**: LogTail o similar\n\n### 9.2 Monitoreo\n- **APM**: Sentry para errors\n- **Uptime**: Uptime Robot\n- **Performance**: Web Vitals en frontend\n\n### 9.3 Alertas\n- Error rate > 5% → Alert a Slack\n- Downtime > 5 min → Alert a Email + SMS\n\n## 10. RIESGOS ARQUITECTÓNICOS\n\n| Riesgo | Probabilidad | Impacto | Mitigación |\n|--------|--------------|---------|------------|\n| Single point of failure (BD) | Media | Alto | Read replicas + backups |\n| Rate limiting de API externa | Baja | Medio | Implementar retry con backoff |\n| ... | ... | ... | ... |\n\n## 11. EVOLUCIÓN FUTURA\n\n### Roadmap Arquitectónico\n- **Q1 2026**: Implementar caché distribuido\n- **Q2 2026**: Migrar a microservicios (si equipo crece)\n- **Q3 2026**: Implementar event-driven architecture\n\n---\n**Aprobado por**: [Nombre Tech Lead]\n**Fecha**: [DD/MM/YYYY]",
+      "sections": [
+        "Introducción",
+        "Representación Arquitectónica",
+        "Vistas Arquitectónicas",
+        "Decisiones Arquitectónicas",
+        "Requisitos No Funcionales",
+        "Stack Tecnológico",
+        "Gestión de Datos",
+        "Seguridad",
+        "Monitoreo y Logging",
+        "Riesgos",
+        "Evolución Futura"
+      ],
+      "relatedRecommendations": [
+        "rec-008",
+        "rec-009",
+        "rec-010"
+      ],
+      "tags": [
+        "arquitectura",
+        "diseño",
+        "decisiones",
+        "vistas",
+        "stack"
+      ]
+    },
+    "tpl-007": {
+      "id": "tpl-007",
+      "name": "Definition of Done",
+      "category": "QA",
+      "description": "Checklist de criterios para considerar una historia de usuario completa",
+      "chapter": 3,
+      "format": "markdown",
+      "applicableFor": [
+        "agil",
+        "scrum",
+        "xp"
+      ],
+      "difficulty": "baja",
+      "estimatedTime": "30 minutos",
+      "content": "# DEFINITION OF DONE\n\nUna historia de usuario está DONE cuando cumple TODOS estos criterios:\n\n## ✅ CÓDIGO\n- [ ] Código escrito y completado\n- [ ] Sin TODOs o FIXMEs en código de producción\n- [ ] Sin console.log() o código de debugging\n- [ ] Sin código comentado (dead code)\n- [ ] Sigue estándares de código del proyecto (linter pasa)\n\n## ✅ TESTING\n- [ ] Unit tests escritos y pasando\n- [ ] Integration tests (si aplica) pasando\n- [ ] Coverage > [X]% (definir según proyecto)\n- [ ] Probado manualmente en ambiente de desarrollo\n- [ ] Probado en múltiples navegadores/dispositivos (si aplica)\n\n## ✅ REVISIÓN\n- [ ] Pull Request creado\n- [ ] Descripción clara en PR (qué, por qué, cómo probar)\n- [ ] Code review completado\n- [ ] PR aprobado por al menos [X] desarrolladores\n- [ ] Comentarios de review resueltos\n\n## ✅ CALIDAD\n- [ ] No rompe funcionalidades existentes (no regresiones)\n- [ ] Sin warnings en build\n- [ ] Performance aceptable (medido, no asumido)\n- [ ] Accesibilidad considerada (si es UI)\n\n## ✅ DOCUMENTACIÓN\n- [ ] README actualizado (si hay cambios en setup)\n- [ ] Comentarios en código complejo (solo lo NO obvio)\n- [ ] API documentada (si hay nuevos endpoints)\n- [ ] CHANGELOG actualizado\n\n## ✅ DEPLOYMENT\n- [ ] Deployado a ambiente de staging\n- [ ] Probado en staging por QA\n- [ ] Probado en staging por Product Owner\n- [ ] Product Owner acepta la funcionalidad\n- [ ] Ready para merge a main/producción\n\n## ✅ SEGURIDAD (si aplica)\n- [ ] Input validation implementada\n- [ ] Sin secretos en código\n- [ ] Autorización implementada (si modifica datos)\n- [ ] Sin vulnerabilidades conocidas (npm audit / safety)\n\n---\n\n**Nota**: Si una historia no cumple TODOS los criterios, NO está Done.",
+      "sections": [
+        "Código",
+        "Testing",
+        "Revisión",
+        "Calidad",
+        "Documentación",
+        "Deployment",
+        "Seguridad"
+      ],
+      "relatedRecommendations": [
+        "rec-005",
+        "rec-006",
+        "rec-007"
+      ],
+      "tags": [
+        "dod",
+        "qa",
+        "calidad",
+        "agil",
+        "scrum",
+        "acceptance"
+      ]
+    }
+  }
+}

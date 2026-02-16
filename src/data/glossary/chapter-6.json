@@ -1,0 +1,1472 @@
+[
+  {
+    "Nombre": "Arquitectura de software",
+    "Categoría": "Concepto fundamental",
+    "Descripción breve": "Descripción de cómo se organiza un sistema de software, incluyendo componentes y relaciones entre ellos"
+  },
+  {
+    "Nombre": "Diseño arquitectónico",
+    "Categoría": "Proceso de diseño",
+    "Descripción breve": "Primera etapa del proceso de diseño de software que identifica componentes estructurales principales y sus relaciones"
+  },
+  {
+    "Nombre": "Componente",
+    "Categoría": "Elemento estructural",
+    "Descripción breve": "Unidad estructural del sistema que implementa funcionalidad específica"
+  },
+  {
+    "Nombre": "Modelo arquitectónico",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Representación que describe la forma en que se organiza un sistema como conjunto de componentes en comunicación"
+  },
+  {
+    "Nombre": "Procesos ágiles",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Metodologías de desarrollo que enfatizan iteraciones cortas y adaptabilidad"
+  },
+  {
+    "Nombre": "Refactorización",
+    "Categoría": "Técnica de mejora",
+    "Descripción breve": "Proceso de reestructurar código o arquitectura sin cambiar su comportamiento externo"
+  },
+  {
+    "Nombre": "Refactorización de arquitectura",
+    "Categoría": "Técnica de mejora",
+    "Descripción breve": "Reestructuración de la arquitectura del sistema, generalmente costosa a nivel sistema"
+  },
+  {
+    "Nombre": "Sistema de robot de empaquetado",
+    "Categoría": "Ejemplo de sistema",
+    "Descripción breve": "Sistema robótico que empaca objetos usando componentes de visión e identificación"
+  },
+  {
+    "Nombre": "Componente de visión",
+    "Categoría": "Componente funcional",
+    "Descripción breve": "Componente que captura y procesa información visual de objetos"
+  },
+  {
+    "Nombre": "Banda transportadora",
+    "Categoría": "Componente de hardware",
+    "Descripción breve": "Dispositivo físico que transporta objetos en un sistema automatizado"
+  },
+  {
+    "Nombre": "Vínculos entre componentes",
+    "Categoría": "Elemento de conexión",
+    "Descripción breve": "Conexiones que permiten comunicación y flujo de datos entre componentes"
+  },
+  {
+    "Nombre": "Ingeniería de requerimientos",
+    "Categoría": "Proceso de ingeniería",
+    "Descripción breve": "Proceso de definición, documentación y mantenimiento de requisitos del sistema"
+  },
+  {
+    "Nombre": "Especificación de sistema",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Documento que describe los requerimientos y características del sistema"
+  },
+  {
+    "Nombre": "Descomposición arquitectónica",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "División del sistema en componentes o subsistemas más pequeños"
+  },
+  {
+    "Nombre": "Arquitectura de sistema abstracta",
+    "Categoría": "Modelo arquitectónico",
+    "Descripción breve": "Representación de alto nivel de la arquitectura sin detalles de implementación"
+  },
+  {
+    "Nombre": "Subsistema",
+    "Categoría": "Elemento estructural",
+    "Descripción breve": "Componente grande que agrupa funcionalidad relacionada dentro del sistema"
+  },
+  {
+    "Nombre": "Arquitectura en pequeño",
+    "Categoría": "Nivel de abstracción",
+    "Descripción breve": "Arquitectura de programas individuales enfocada en componentes internos"
+  },
+  {
+    "Nombre": "Arquitectura en grande",
+    "Categoría": "Nivel de abstracción",
+    "Descripción breve": "Arquitectura de sistemas empresariales complejos distribuidos en múltiples computadoras"
+  },
+  {
+    "Nombre": "Sistemas empresariales",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas complejos que incluyen múltiples programas y componentes distribuidos"
+  },
+  {
+    "Nombre": "Sistemas distribuidos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas cuyo software se ejecuta en múltiples computadoras conectadas en red"
+  },
+  {
+    "Nombre": "Requerimientos funcionales",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requisitos que definen qué debe hacer el sistema"
+  },
+  {
+    "Nombre": "Requerimientos no funcionales",
+    "Categoría": "Tipo de requerimiento",
+    "Descripción breve": "Requisitos sobre características como rendimiento, seguridad y mantenibilidad"
+  },
+  {
+    "Nombre": "Desempeño",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Capacidad del sistema para procesar operaciones en tiempo aceptable"
+  },
+  {
+    "Nombre": "Rendimiento",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Medida de velocidad y eficiencia del sistema"
+  },
+  {
+    "Nombre": "Fiabilidad",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Capacidad del sistema para funcionar correctamente bajo condiciones especificadas"
+  },
+  {
+    "Nombre": "Mantenibilidad",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Facilidad con que el sistema puede ser modificado para corregir defectos o mejorar características"
+  },
+  {
+    "Nombre": "Comunicación con los participantes",
+    "Categoría": "Ventaja arquitectónica",
+    "Descripción breve": "Uso de la arquitectura como medio para discusión entre stakeholders"
+  },
+  {
+    "Nombre": "Análisis del sistema",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Evaluación temprana para determinar si la arquitectura cumple requerimientos"
+  },
+  {
+    "Nombre": "Reutilización a gran escala",
+    "Categoría": "Ventaja arquitectónica",
+    "Descripción breve": "Capacidad de reutilizar arquitecturas en sistemas con requerimientos similares"
+  },
+  {
+    "Nombre": "Arquitecturas de línea de productos",
+    "Categoría": "Modelo de reutilización",
+    "Descripción breve": "Arquitectura compartida que se reutiliza en una familia de sistemas relacionados"
+  },
+  {
+    "Nombre": "Diagrama de bloques",
+    "Categoría": "Notación de modelado",
+    "Descripción breve": "Representación visual con cajas y flechas que muestra componentes y sus conexiones"
+  },
+  {
+    "Nombre": "Modelo de vista 4+1",
+    "Categoría": "Modelo arquitectónico",
+    "Descripción breve": "Modelo de Krutchen que propone cuatro vistas arquitectónicas fundamentales más casos de uso"
+  },
+  {
+    "Nombre": "Vista lógica",
+    "Categoría": "Vista arquitectónica",
+    "Descripción breve": "Perspectiva que muestra abstracciones clave como objetos o clases"
+  },
+  {
+    "Nombre": "Vista de proceso",
+    "Categoría": "Vista arquitectónica",
+    "Descripción breve": "Perspectiva que muestra procesos en interacción durante tiempo de operación"
+  },
+  {
+    "Nombre": "Vista de desarrollo",
+    "Categoría": "Vista arquitectónica",
+    "Descripción breve": "Perspectiva que muestra descomposición del software para desarrollo"
+  },
+  {
+    "Nombre": "Vista física",
+    "Categoría": "Vista arquitectónica",
+    "Descripción breve": "Perspectiva que muestra hardware y distribución de componentes en procesadores"
+  },
+  {
+    "Nombre": "Vista conceptual",
+    "Categoría": "Vista arquitectónica",
+    "Descripción breve": "Vista abstracta del sistema para descomposición de requerimientos y reutilización"
+  },
+  {
+    "Nombre": "UML",
+    "Categoría": "Lenguaje de modelado",
+    "Descripción breve": "Lenguaje Unificado de Modelado para describir sistemas orientados a objetos"
+  },
+  {
+    "Nombre": "Lenguaje de descripción arquitectónica (ADL)",
+    "Categoría": "Lenguaje especializado",
+    "Descripción breve": "Lenguajes especializados para describir arquitecturas con componentes y conectores"
+  },
+  {
+    "Nombre": "Desarrollo dirigido por modelo",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Aproximación que usa modelos como artefactos principales del desarrollo"
+  },
+  {
+    "Nombre": "Decisiones de diseño arquitectónico",
+    "Categoría": "Actividad de diseño",
+    "Descripción breve": "Conjunto de decisiones estructurales que afectan profundamente el sistema"
+  },
+  {
+    "Nombre": "Arquitectura de aplicación genérica",
+    "Categoría": "Patrón de arquitectura",
+    "Descripción breve": "Plantilla arquitectónica común para un tipo de aplicación"
+  },
+  {
+    "Nombre": "Sistemas embebidos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de software integrados en dispositivos de hardware específicos"
+  },
+  {
+    "Nombre": "Arquitectura distribuida",
+    "Categoría": "Tipo de arquitectura",
+    "Descripción breve": "Arquitectura donde componentes se distribuyen en múltiples computadoras"
+  },
+  {
+    "Nombre": "Patrón arquitectónico",
+    "Categoría": "Patrón de diseño",
+    "Descripción breve": "Descripción estilizada de organización de sistema probada en diferentes entornos"
+  },
+  {
+    "Nombre": "Estilo arquitectónico",
+    "Categoría": "Patrón de diseño",
+    "Descripción breve": "Término alternativo para patrón arquitectónico que describe forma de organización"
+  },
+  {
+    "Nombre": "Organización cliente-servidor",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Estructura donde clientes solicitan servicios a servidores"
+  },
+  {
+    "Nombre": "Arquitectura por capas",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Organización en capas donde cada capa usa servicios de la capa inferior"
+  },
+  {
+    "Nombre": "Estructura en capas",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Sinónimo de arquitectura por capas"
+  },
+  {
+    "Nombre": "Componentes de grano fino",
+    "Categoría": "Tipo de componente",
+    "Descripción breve": "Componentes pequeños y especializados con responsabilidad limitada"
+  },
+  {
+    "Nombre": "Componentes grandes",
+    "Categoría": "Tipo de componente",
+    "Descripción breve": "Componentes que agrupan múltiples responsabilidades"
+  },
+  {
+    "Nombre": "Seguridad",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Protección del sistema contra accesos no autorizados"
+  },
+  {
+    "Nombre": "Protección",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Capacidad del sistema para operar de forma segura ante fallos"
+  },
+  {
+    "Nombre": "Disponibilidad",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Capacidad del sistema para estar operativo cuando se necesita"
+  },
+  {
+    "Nombre": "Componentes redundantes",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Componentes duplicados para aumentar disponibilidad y tolerancia a fallos"
+  },
+  {
+    "Nombre": "Sistemas tolerantes a fallas",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas diseñados para continuar operando ante fallos de componentes"
+  },
+  {
+    "Nombre": "Sistemas de alta disponibilidad",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que deben estar operativos la mayor parte del tiempo"
+  },
+  {
+    "Nombre": "Componentes autocontenidos",
+    "Categoría": "Tipo de componente",
+    "Descripción breve": "Componentes independientes con mínimas dependencias externas"
+  },
+  {
+    "Nombre": "Productores de datos",
+    "Categoría": "Rol de componente",
+    "Descripción breve": "Componentes que generan información para otros componentes"
+  },
+  {
+    "Nombre": "Consumidores de datos",
+    "Categoría": "Rol de componente",
+    "Descripción breve": "Componentes que utilizan información generada por otros"
+  },
+  {
+    "Nombre": "Estructuras de datos compartidas",
+    "Categoría": "Técnica de diseño",
+    "Descripción breve": "Estructuras de datos accesibles por múltiples componentes"
+  },
+  {
+    "Nombre": "Arquitecturas de referencia",
+    "Categoría": "Modelo arquitectónico",
+    "Descripción breve": "Arquitecturas genéricas que sirven para evaluación y comparación de diseños"
+  },
+  {
+    "Nombre": "Patrones arquitectónicos genéricos",
+    "Categoría": "Patrón de diseño",
+    "Descripción breve": "Patrones aplicables en múltiples dominios de aplicación"
+  },
+  {
+    "Nombre": "Patrón MVC",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Modelo-Vista-Controlador que separa presentación, interacción y datos"
+  },
+  {
+    "Nombre": "Modelo (MVC)",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Componente que maneja datos del sistema y operaciones asociadas"
+  },
+  {
+    "Nombre": "Vista (MVC)",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Componente que define cómo se presentan datos al usuario"
+  },
+  {
+    "Nombre": "Controlador (MVC)",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Componente que dirige la interacción del usuario hacia Vista y Modelo"
+  },
+  {
+    "Nombre": "Sistema basado en la Web",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema cuya interfaz se accede mediante navegador Web"
+  },
+  {
+    "Nombre": "Arquitectura en capas",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Organización del sistema en capas que se apoyan en facilidades de capas inferiores"
+  },
+  {
+    "Nombre": "Separación e independencia",
+    "Categoría": "Principio de diseño",
+    "Descripción breve": "Principio que permite localizar cambios mediante aislamiento de componentes"
+  },
+  {
+    "Nombre": "Desarrollo incremental",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Desarrollo por etapas donde funcionalidad se agrega progresivamente"
+  },
+  {
+    "Nombre": "Cambio de arquitectura",
+    "Categoría": "Actividad de mantenimiento",
+    "Descripción breve": "Modificación de arquitectura para agregar funcionalidad o cambiar estructura"
+  },
+  {
+    "Nombre": "Portabilidad",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Facilidad para ejecutar sistema en diferentes plataformas"
+  },
+  {
+    "Nombre": "Implementación multiplataforma",
+    "Categoría": "Técnica de implementación",
+    "Descripción breve": "Desarrollo que permite ejecución en diferentes sistemas operativos o hardware"
+  },
+  {
+    "Nombre": "Software de soporte al sistema",
+    "Categoría": "Tipo de componente",
+    "Descripción breve": "Software que proporciona servicios básicos como base de datos y sistema operativo"
+  },
+  {
+    "Nombre": "Capa de aplicación",
+    "Categoría": "Capa arquitectónica",
+    "Descripción breve": "Capa que contiene componentes relacionados con funcionalidad de aplicación"
+  },
+  {
+    "Nombre": "Gestión de interfaz de usuario",
+    "Categoría": "Capa arquitectónica",
+    "Descripción breve": "Capa responsable de interacción con el usuario"
+  },
+  {
+    "Nombre": "Autenticación",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Verificación de identidad de usuarios"
+  },
+  {
+    "Nombre": "Autorización",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Verificación de permisos de usuarios para realizar operaciones"
+  },
+  {
+    "Nombre": "Facilidades de interfaz de usuario",
+    "Categoría": "Componente funcional",
+    "Descripción breve": "Componentes que proporcionan elementos de interacción con usuario"
+  },
+  {
+    "Nombre": "Sistema LIBSYS",
+    "Categoría": "Ejemplo de sistema",
+    "Descripción breve": "Sistema de biblioteca que permite acceso controlado a material con derechos de autor"
+  },
+  {
+    "Nombre": "Arquitectura de cinco capas",
+    "Categoría": "Tipo de arquitectura",
+    "Descripción breve": "Arquitectura estructurada en cinco niveles de abstracción"
+  },
+  {
+    "Nombre": "Bases de datos individuales",
+    "Categoría": "Componente de infraestructura",
+    "Descripción breve": "Bases de datos separadas en cada ubicación o biblioteca"
+  },
+  {
+    "Nombre": "Patrón de repositorio",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Patrón donde datos se gestionan en repositorio central accesible por todos los componentes"
+  },
+  {
+    "Nombre": "Repositorio central",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Almacén centralizado de datos compartidos por componentes del sistema"
+  },
+  {
+    "Nombre": "Sistemas dirigidos por datos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas donde inclusión de datos activa acciones o herramientas"
+  },
+  {
+    "Nombre": "Punto de falla único",
+    "Categoría": "Riesgo arquitectónico",
+    "Descripción breve": "Componente cuya falla provoca falla de todo el sistema"
+  },
+  {
+    "Nombre": "Sistemas de comando y control",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas para gestionar operaciones y toma de decisiones en tiempo real"
+  },
+  {
+    "Nombre": "Sistemas de información administrativa",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas para gestión de información empresarial"
+  },
+  {
+    "Nombre": "Sistemas CAD",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de diseño asistido por computadora"
+  },
+  {
+    "Nombre": "Entornos de desarrollo interactivo (IDE)",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Entornos integrados para desarrollo de software"
+  },
+  {
+    "Nombre": "Desarrollo dirigido por modelo",
+    "Categoría": "Enfoque de desarrollo",
+    "Descripción breve": "Desarrollo que usa modelos como artefactos principales"
+  },
+  {
+    "Nombre": "Entorno controlado por versión",
+    "Categoría": "Sistema de gestión",
+    "Descripción breve": "Sistema que rastrea cambios y permite regresar a versiones anteriores"
+  },
+  {
+    "Nombre": "Rollback",
+    "Categoría": "Operación de gestión",
+    "Descripción breve": "Retorno a una versión anterior del software"
+  },
+  {
+    "Nombre": "Repositorio pasivo",
+    "Categoría": "Tipo de repositorio",
+    "Descripción breve": "Repositorio controlado por componentes que lo usan"
+  },
+  {
+    "Nombre": "Modelo blackboard",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Modelo que activa componentes cuando datos particulares están disponibles"
+  },
+  {
+    "Nombre": "Sistemas IA",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de inteligencia artificial"
+  },
+  {
+    "Nombre": "Organización en tiempo de operación",
+    "Categoría": "Perspectiva arquitectónica",
+    "Descripción breve": "Estructura del sistema durante su ejecución"
+  },
+  {
+    "Nombre": "Patrón cliente-servidor",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Organización con servicios ofrecidos por servidores y usados por clientes"
+  },
+  {
+    "Nombre": "Servidor",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Componente que ofrece servicios a otros componentes"
+  },
+  {
+    "Nombre": "Cliente",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Componente que solicita y usa servicios de servidores"
+  },
+  {
+    "Nombre": "Red",
+    "Categoría": "Infraestructura de comunicación",
+    "Descripción breve": "Medio que permite a clientes acceder a servicios de servidores"
+  },
+  {
+    "Nombre": "Servidor de impresión",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que proporciona servicios de impresión"
+  },
+  {
+    "Nombre": "Servidor de archivo",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que proporciona servicios de administración de archivos"
+  },
+  {
+    "Nombre": "Servidor compilador",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que proporciona servicios de compilación de lenguajes"
+  },
+  {
+    "Nombre": "Protocolos de Internet",
+    "Categoría": "Protocolo de comunicación",
+    "Descripción breve": "Protocolos estándar para comunicación en redes"
+  },
+  {
+    "Nombre": "Llamadas a procedimiento remoto",
+    "Categoría": "Mecanismo de comunicación",
+    "Descripción breve": "Invocación de procedimientos en computadoras remotas"
+  },
+  {
+    "Nombre": "Protocolo solicitud-respuesta",
+    "Categoría": "Protocolo de comunicación",
+    "Descripción breve": "Patrón de comunicación donde cliente solicita y servidor responde"
+  },
+  {
+    "Nombre": "Protocolo http",
+    "Categoría": "Protocolo de comunicación",
+    "Descripción breve": "Protocolo de transferencia de hipertexto usado en la Web"
+  },
+  {
+    "Nombre": "Filmoteca y videoteca",
+    "Categoría": "Ejemplo de sistema",
+    "Descripción breve": "Sistema para gestión de catálogo de películas y videos"
+  },
+  {
+    "Nombre": "Servidor de catálogo",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que maneja consultas de catálogo"
+  },
+  {
+    "Nombre": "Servidor de video",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que maneja transmisión y procesamiento de video"
+  },
+  {
+    "Nombre": "Servidor de imagen",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que almacena y entrega imágenes de alta resolución"
+  },
+  {
+    "Nombre": "Servidor Web",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que maneja comunicaciones y contenido Web"
+  },
+  {
+    "Nombre": "Almacén de películas",
+    "Categoría": "Componente de almacenamiento",
+    "Descripción breve": "Repositorio de archivos de video"
+  },
+  {
+    "Nombre": "Almacén de fotos",
+    "Categoría": "Componente de almacenamiento",
+    "Descripción breve": "Repositorio de archivos de imágenes"
+  },
+  {
+    "Nombre": "Compresión de video",
+    "Categoría": "Técnica de procesamiento",
+    "Descripción breve": "Reducción de tamaño de archivos de video"
+  },
+  {
+    "Nombre": "Descompresión de video",
+    "Categoría": "Técnica de procesamiento",
+    "Descripción breve": "Restauración de video comprimido a formato utilizable"
+  },
+  {
+    "Nombre": "Sistema de comercio electrónico",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema para realizar transacciones comerciales por Internet"
+  },
+  {
+    "Nombre": "Patrón tubería y filtro",
+    "Categoría": "Patrón arquitectónico",
+    "Descripción breve": "Modelo donde transformaciones funcionales procesan datos en secuencia"
+  },
+  {
+    "Nombre": "Transformación funcional",
+    "Categoría": "Componente de procesamiento",
+    "Descripción breve": "Componente que transforma datos de entrada en salida"
+  },
+  {
+    "Nombre": "Flujo de datos",
+    "Categoría": "Mecanismo de comunicación",
+    "Descripción breve": "Movimiento de datos entre componentes de procesamiento"
+  },
+  {
+    "Nombre": "Transformador",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Componente que realiza transformación de datos"
+  },
+  {
+    "Nombre": "Procesamiento secuencial",
+    "Categoría": "Modo de procesamiento",
+    "Descripción breve": "Ejecución de transformaciones una después de otra"
+  },
+  {
+    "Nombre": "Procesamiento paralelo",
+    "Categoría": "Modo de procesamiento",
+    "Descripción breve": "Ejecución simultánea de múltiples transformaciones"
+  },
+  {
+    "Nombre": "Procesamiento ítem por ítem",
+    "Categoría": "Modo de procesamiento",
+    "Descripción breve": "Procesamiento de datos elemento por elemento"
+  },
+  {
+    "Nombre": "Procesamiento en lote",
+    "Categoría": "Modo de procesamiento",
+    "Descripción breve": "Procesamiento de conjunto completo de datos como unidad"
+  },
+  {
+    "Nombre": "Sistema Unix",
+    "Categoría": "Sistema operativo",
+    "Descripción breve": "Sistema operativo donde se originó el concepto de tuberías"
+  },
+  {
+    "Nombre": "Tuberías (Unix)",
+    "Categoría": "Mecanismo de comunicación",
+    "Descripción breve": "Mecanismo para conectar procesos y pasar datos entre ellos"
+  },
+  {
+    "Nombre": "Filtro",
+    "Categoría": "Componente de patrón",
+    "Descripción breve": "Componente que filtra o procesa secuencia de datos"
+  },
+  {
+    "Nombre": "Intérprete de comandos Unix",
+    "Categoría": "Componente del sistema",
+    "Descripción breve": "Shell que permite combinar comandos con tuberías"
+  },
+  {
+    "Nombre": "Modelo secuencial en lote",
+    "Categoría": "Tipo de arquitectura",
+    "Descripción breve": "Arquitectura donde transformaciones son secuenciales con datos procesados en lotes"
+  },
+  {
+    "Nombre": "Sistemas de procesamiento de datos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas enfocados en procesamiento automatizado de información"
+  },
+  {
+    "Nombre": "Sistema de facturación",
+    "Categoría": "Ejemplo de sistema",
+    "Descripción breve": "Sistema para generar y gestionar facturas"
+  },
+  {
+    "Nombre": "Sistema embebido",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema de software integrado en dispositivo de hardware específico"
+  },
+  {
+    "Nombre": "Proceso concurrente",
+    "Categoría": "Modo de ejecución",
+    "Descripción breve": "Procesos que se ejecutan simultáneamente"
+  },
+  {
+    "Nombre": "Sistema de procesamiento en lote",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que procesa grupos de datos sin interacción del usuario"
+  },
+  {
+    "Nombre": "Sistema interactivo",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que requiere interacción continua con usuarios"
+  },
+  {
+    "Nombre": "Interfaz gráfica de usuario",
+    "Categoría": "Tipo de interfaz",
+    "Descripción breve": "Interfaz con elementos visuales como ventanas, botones y menús"
+  },
+  {
+    "Nombre": "Formato I/O",
+    "Categoría": "Especificación técnica",
+    "Descripción breve": "Formato de entradas y salidas del sistema"
+  },
+  {
+    "Nombre": "Estrategia de control basada en eventos",
+    "Categoría": "Técnica de control",
+    "Descripción breve": "Control que responde a eventos como clics o selecciones"
+  },
+  {
+    "Nombre": "Clics del mouse",
+    "Categoría": "Evento de interacción",
+    "Descripción breve": "Acción del usuario al presionar botón del mouse"
+  },
+  {
+    "Nombre": "Selecciones del menú",
+    "Categoría": "Evento de interacción",
+    "Descripción breve": "Acción del usuario al elegir opción de menú"
+  },
+  {
+    "Nombre": "Aplicaciones de aplicación",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas diseñados para cubrir necesidades empresariales u organizacionales"
+  },
+  {
+    "Nombre": "Sistemas de aplicación",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Aplicaciones para funciones empresariales específicas"
+  },
+  {
+    "Nombre": "Funciones empresariales generales",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Funcionalidad común a todas las empresas como facturación y contabilidad"
+  },
+  {
+    "Nombre": "Aplicaciones específicas del sector",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Aplicaciones especializadas para industrias particulares"
+  },
+  {
+    "Nombre": "Arquitectura de software genérica",
+    "Categoría": "Patrón de arquitectura",
+    "Descripción breve": "Arquitectura que describe estructura común de tipos particulares de sistemas"
+  },
+  {
+    "Nombre": "Arquitectura de aplicación",
+    "Categoría": "Patrón de arquitectura",
+    "Descripción breve": "Arquitectura que encapsula características principales de clase de sistemas"
+  },
+  {
+    "Nombre": "Sistemas de tiempo real",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que deben responder dentro de límites de tiempo estrictos"
+  },
+  {
+    "Nombre": "Sistemas de recolección de datos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que capturan datos de múltiples fuentes"
+  },
+  {
+    "Nombre": "Sistemas de monitorización",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que supervisan estado y comportamiento de otros sistemas"
+  },
+  {
+    "Nombre": "Sistemas de planeación de recursos empresariales (ERP)",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas integrados para gestión de recursos empresariales"
+  },
+  {
+    "Nombre": "Paquetes de software vertical (COTS)",
+    "Categoría": "Tipo de producto",
+    "Descripción breve": "Software comercial especializado para áreas de negocios específicas"
+  },
+  {
+    "Nombre": "Configuración de sistema genérico",
+    "Categoría": "Técnica de adaptación",
+    "Descripción breve": "Ajuste de sistema genérico para crear aplicación específica"
+  },
+  {
+    "Nombre": "Administración en cadena",
+    "Categoría": "Dominio de aplicación",
+    "Descripción breve": "Gestión de cadena de suministro de proveedores a clientes"
+  },
+  {
+    "Nombre": "Proceso de diseño arquitectónico",
+    "Categoría": "Proceso de ingeniería",
+    "Descripción breve": "Proceso creativo de diseñar organización de sistema"
+  },
+  {
+    "Nombre": "Lista de verificación del diseño",
+    "Categoría": "Artefacto de validación",
+    "Descripción breve": "Lista para verificar consistencia del diseño con arquitectura genérica"
+  },
+  {
+    "Nombre": "Organización del trabajo del equipo",
+    "Categoría": "Actividad de gestión",
+    "Descripción breve": "Asignación de tareas a miembros del equipo basada en arquitectura"
+  },
+  {
+    "Nombre": "Componentes a reutilizar",
+    "Categoría": "Artefacto de reutilización",
+    "Descripción breve": "Componentes existentes que pueden usarse en nuevo sistema"
+  },
+  {
+    "Nombre": "Vocabulario arquitectónico",
+    "Categoría": "Terminología técnica",
+    "Descripción breve": "Conceptos identificados en arquitectura para comunicación"
+  },
+  {
+    "Nombre": "Aplicaciones de procesamiento de transacción",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas centrados en bases de datos que procesan requerimientos de usuarios"
+  },
+  {
+    "Nombre": "Sistemas de procesamiento de lenguaje",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que convierten lenguaje de entrada a otra representación"
+  },
+  {
+    "Nombre": "Lenguaje natural",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguaje humano como español, inglés, francés"
+  },
+  {
+    "Nombre": "Lenguaje artificial",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguaje formal diseñado para propósito específico como programación"
+  },
+  {
+    "Nombre": "Compilador",
+    "Categoría": "Sistema de procesamiento",
+    "Descripción breve": "Sistema que traduce lenguaje de alto nivel a código de máquina"
+  },
+  {
+    "Nombre": "Lenguaje de programación",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguaje formal para escribir programas de computadora"
+  },
+  {
+    "Nombre": "Código de máquina",
+    "Categoría": "Formato de código",
+    "Descripción breve": "Instrucciones ejecutables directamente por procesador"
+  },
+  {
+    "Nombre": "Descripción de datos XML",
+    "Categoría": "Formato de datos",
+    "Descripción breve": "Descripción estructurada de datos usando lenguaje XML"
+  },
+  {
+    "Nombre": "Comandos de consulta de base de datos",
+    "Categoría": "Tipo de comando",
+    "Descripción breve": "Instrucciones para recuperar o modificar datos en base de datos"
+  },
+  {
+    "Nombre": "Representación XML alternativa",
+    "Categoría": "Formato de datos",
+    "Descripción breve": "Otra forma de representar datos usando XML"
+  },
+  {
+    "Nombre": "Sistemas de procesamiento de lenguaje natural",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que procesan y transforman lenguajes humanos"
+  },
+  {
+    "Nombre": "Traducción de lenguaje",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Conversión de texto de un lenguaje a otro"
+  },
+  {
+    "Nombre": "Lenguaje fuente",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguaje de entrada para proceso de traducción"
+  },
+  {
+    "Nombre": "Traductor",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Componente que convierte lenguaje fuente a representación interna"
+  },
+  {
+    "Nombre": "Máquina abstracta",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Representación conceptual de máquina para ejecutar instrucciones"
+  },
+  {
+    "Nombre": "Instrucciones de máquina abstracta",
+    "Categoría": "Formato de código",
+    "Descripción breve": "Representación intermedia entre lenguaje fuente y código máquina"
+  },
+  {
+    "Nombre": "Intérprete",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Componente que ejecuta instrucciones en representación interna"
+  },
+  {
+    "Nombre": "Fetch de instrucciones",
+    "Categoría": "Operación de procesamiento",
+    "Descripción breve": "Lectura de instrucciones para su ejecución"
+  },
+  {
+    "Nombre": "Ejecución de instrucciones",
+    "Categoría": "Operación de procesamiento",
+    "Descripción breve": "Realización de operaciones especificadas por instrucciones"
+  },
+  {
+    "Nombre": "Datos del entorno",
+    "Categoría": "Datos de entrada",
+    "Descripción breve": "Información externa necesaria para ejecución de programa"
+  },
+  {
+    "Nombre": "Lenguajes escritos dinámicamente",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguajes donde tipos se determinan en tiempo de ejecución como Python"
+  },
+  {
+    "Nombre": "Python",
+    "Categoría": "Lenguaje de programación",
+    "Descripción breve": "Lenguaje de programación interpretado de alto nivel"
+  },
+  {
+    "Nombre": "Entorno de programación",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Conjunto integrado de herramientas para desarrollo de software"
+  },
+  {
+    "Nombre": "Analizador léxico",
+    "Categoría": "Componente de compilador",
+    "Descripción breve": "Componente que convierte tokens en forma interna"
+  },
+  {
+    "Nombre": "Valores simbólicos (tokens)",
+    "Categoría": "Elemento de lenguaje",
+    "Descripción breve": "Unidades léxicas básicas del lenguaje como palabras clave y operadores"
+  },
+  {
+    "Nombre": "Forma interna",
+    "Categoría": "Representación de datos",
+    "Descripción breve": "Representación intermedia usada internamente por compilador"
+  },
+  {
+    "Nombre": "Tabla de símbolos",
+    "Categoría": "Componente de compilador",
+    "Descripción breve": "Estructura que contiene información sobre nombres de entidades"
+  },
+  {
+    "Nombre": "Analizador de sintaxis",
+    "Categoría": "Componente de compilador",
+    "Descripción breve": "Componente que verifica sintaxis y construye árbol de sintaxis"
+  },
+  {
+    "Nombre": "Gramática del lenguaje",
+    "Categoría": "Especificación formal",
+    "Descripción breve": "Reglas que definen estructura sintáctica válida del lenguaje"
+  },
+  {
+    "Nombre": "Árbol de sintaxis",
+    "Categoría": "Estructura de datos",
+    "Descripción breve": "Representación en árbol de la estructura del programa"
+  },
+  {
+    "Nombre": "Analizador semántico",
+    "Categoría": "Componente de compilador",
+    "Descripción breve": "Componente que verifica exactitud semántica del programa"
+  },
+  {
+    "Nombre": "Generador de código",
+    "Categoría": "Componente de compilador",
+    "Descripción breve": "Componente que genera código de máquina abstracto desde árbol de sintaxis"
+  },
+  {
+    "Nombre": "Recorrido del árbol de sintaxis",
+    "Categoría": "Operación de compilador",
+    "Descripción breve": "Proceso de visitar nodos del árbol para generar código"
+  },
+  {
+    "Nombre": "Código de máquina abstracto",
+    "Categoría": "Formato de código",
+    "Descripción breve": "Representación intermedia entre sintaxis y código ejecutable"
+  },
+  {
+    "Nombre": "Optimización de código",
+    "Categoría": "Técnica de compilación",
+    "Descripción breve": "Transformación para mejorar eficiencia del código generado"
+  },
+  {
+    "Nombre": "Remoción de redundancia",
+    "Categoría": "Técnica de optimización",
+    "Descripción breve": "Eliminación de código innecesario o duplicado"
+  },
+  {
+    "Nombre": "Traductor de lenguaje natural",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que traduce entre lenguajes humanos"
+  },
+  {
+    "Nombre": "Diccionario",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Base de datos de palabras y sus significados o traducciones"
+  },
+  {
+    "Nombre": "Arquitectura de compilador alternativa",
+    "Categoría": "Tipo de arquitectura",
+    "Descripción breve": "Organización diferente de componentes de compilador"
+  },
+  {
+    "Nombre": "Composición de repositorio",
+    "Categoría": "Técnica arquitectónica",
+    "Descripción breve": "Combinación de patrón repositorio con otros patrones"
+  },
+  {
+    "Nombre": "Fases de análisis",
+    "Categoría": "Etapa de procesamiento",
+    "Descripción breve": "Etapas de análisis léxico, sintáctico y semántico"
+  },
+  {
+    "Nombre": "Comunicación a través de tabla de símbolos",
+    "Categoría": "Mecanismo de comunicación",
+    "Descripción breve": "Uso de tabla de símbolos para compartir información entre fases"
+  },
+  {
+    "Nombre": "Compilación en entornos batch",
+    "Categoría": "Modo de compilación",
+    "Descripción breve": "Compilación sin interacción de usuario en modo por lotes"
+  },
+  {
+    "Nombre": "Sistema de edición estructurado",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Editor que entiende estructura sintáctica del código"
+  },
+  {
+    "Nombre": "Depurador interactivo",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Herramienta para encontrar y corregir errores durante ejecución"
+  },
+  {
+    "Nombre": "Programa de impresión estética (prettyprinter)",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Herramienta que formatea código para mejorar legibilidad"
+  },
+  {
+    "Nombre": "Herramientas de soporte de programación",
+    "Categoría": "Tipo de herramienta",
+    "Descripción breve": "Herramientas que asisten en desarrollo de software"
+  },
+  {
+    "Nombre": "Almacén de información central",
+    "Categoría": "Componente de arquitectura",
+    "Descripción breve": "Repositorio compartido por múltiples herramientas"
+  },
+  {
+    "Nombre": "Herramientas y fragmentos de herramienta",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Componentes funcionales y utilitarios del entorno de desarrollo"
+  },
+  {
+    "Nombre": "Definición gramática",
+    "Categoría": "Especificación técnica",
+    "Descripción breve": "Especificación formal de sintaxis del lenguaje"
+  },
+  {
+    "Nombre": "Definición de formato de salida",
+    "Categoría": "Especificación técnica",
+    "Descripción breve": "Especificación de cómo formatear salida del programa"
+  },
+  {
+    "Nombre": "Editor enfocado en sintaxis",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Editor que valida sintaxis mientras se escribe código"
+  },
+  {
+    "Nombre": "Verificación de sintaxis durante escritura",
+    "Categoría": "Funcionalidad de herramienta",
+    "Descripción breve": "Validación en tiempo real de sintaxis del código"
+  },
+  {
+    "Nombre": "Listados de programa",
+    "Categoría": "Artefacto de documentación",
+    "Descripción breve": "Versión impresa o formateada del código fuente"
+  },
+  {
+    "Nombre": "Sistemas de información",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas que permiten acceso controlado a grandes bases de información"
+  },
+  {
+    "Nombre": "Interacción con base de datos compartida",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Acceso concurrente de múltiples usuarios a base de datos"
+  },
+  {
+    "Nombre": "Catálogo de biblioteca",
+    "Categoría": "Ejemplo de base de datos",
+    "Descripción breve": "Base de datos de recursos bibliográficos"
+  },
+  {
+    "Nombre": "Horario de vuelos",
+    "Categoría": "Ejemplo de base de datos",
+    "Descripción breve": "Base de datos de información de vuelos"
+  },
+  {
+    "Nombre": "Registros de pacientes",
+    "Categoría": "Ejemplo de base de datos",
+    "Descripción breve": "Base de datos con información médica de pacientes"
+  },
+  {
+    "Nombre": "Navegador Web",
+    "Categoría": "Tipo de interfaz",
+    "Descripción breve": "Aplicación cliente para acceder a contenido Web"
+  },
+  {
+    "Nombre": "Enfoque por capas",
+    "Categoría": "Técnica arquitectónica",
+    "Descripción breve": "Organización del sistema en capas funcionales"
+  },
+  {
+    "Nombre": "Capa de comunicaciones con el usuario",
+    "Categoría": "Capa arquitectónica",
+    "Descripción breve": "Capa que maneja entradas y salidas de interfaz de usuario"
+  },
+  {
+    "Nombre": "Capa de recuperación de información",
+    "Categoría": "Capa arquitectónica",
+    "Descripción breve": "Capa con lógica para acceder y actualizar base de datos"
+  },
+  {
+    "Nombre": "Sistema basado en Internet",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema accesible a través de Internet"
+  },
+  {
+    "Nombre": "MHC-PMS",
+    "Categoría": "Ejemplo de sistema",
+    "Descripción breve": "Sistema de atención a la salud mental para gestión de pacientes"
+  },
+  {
+    "Nombre": "Médicos especialistas",
+    "Categoría": "Usuario del sistema",
+    "Descripción breve": "Profesionales médicos especializados en problemas de salud mental"
+  },
+  {
+    "Nombre": "Problemas de salud mental",
+    "Categoría": "Dominio de aplicación",
+    "Descripción breve": "Área de salud que trata trastornos mentales"
+  },
+  {
+    "Nombre": "Componentes de verificación",
+    "Categoría": "Componente funcional",
+    "Descripción breve": "Componentes que garantizan operaciones permitidas según rol de usuario"
+  },
+  {
+    "Nombre": "Componentes de gestión de formato",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Componentes que presentan información con formato adecuado"
+  },
+  {
+    "Nombre": "Componentes de menú",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Componentes que proporcionan navegación mediante menús"
+  },
+  {
+    "Nombre": "Componentes de validación de datos",
+    "Categoría": "Componente funcional",
+    "Descripción breve": "Componentes que verifican consistencia de información"
+  },
+  {
+    "Nombre": "Gestión de seguridad",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Control de acceso y protección de información del sistema"
+  },
+  {
+    "Nombre": "Creación y actualización de información del paciente",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Operaciones para mantener datos de pacientes"
+  },
+  {
+    "Nombre": "Importación de datos del paciente",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Incorporación de datos desde bases de datos externas"
+  },
+  {
+    "Nombre": "Exportación de datos del paciente",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Envío de datos hacia bases de datos externas"
+  },
+  {
+    "Nombre": "Generadores de reporte",
+    "Categoría": "Componente funcional",
+    "Descripción breve": "Componentes que elaboran informes administrativos"
+  },
+  {
+    "Nombre": "Informes administrativos",
+    "Categoría": "Artefacto de información",
+    "Descripción breve": "Reportes para gestión y administración del sistema"
+  },
+  {
+    "Nombre": "Sistema comercial de gestión de base de datos",
+    "Categoría": "Producto de software",
+    "Descripción breve": "Sistema de terceros para manejo de bases de datos"
+  },
+  {
+    "Nombre": "Administración de transacciones",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Gestión de operaciones atómicas sobre base de datos"
+  },
+  {
+    "Nombre": "Almacenamiento constante",
+    "Categoría": "Característica de base de datos",
+    "Descripción breve": "Persistencia de datos entre sesiones"
+  },
+  {
+    "Nombre": "Sistemas de gestión de recursos",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas para administrar recursos empresariales"
+  },
+  {
+    "Nombre": "Pedidos electrónicos",
+    "Categoría": "Funcionalidad de comercio",
+    "Descripción breve": "Solicitudes de compra realizadas por medios electrónicos"
+  },
+  {
+    "Nombre": "Entrega de bienes o servicios",
+    "Categoría": "Funcionalidad empresarial",
+    "Descripción breve": "Proceso de proveer productos o servicios a clientes"
+  },
+  {
+    "Nombre": "Carrito de compras",
+    "Categoría": "Componente de interfaz",
+    "Descripción breve": "Funcionalidad para acumular ítems antes de compra"
+  },
+  {
+    "Nombre": "Arquitectura cliente-servidor de multinivel",
+    "Categoría": "Tipo de arquitectura",
+    "Descripción breve": "Arquitectura distribuida con múltiples niveles de servidores"
+  },
+  {
+    "Nombre": "Servidor de aplicación",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que implementa lógica específica de aplicación"
+  },
+  {
+    "Nombre": "Servidor de base de datos",
+    "Categoría": "Tipo de servidor",
+    "Descripción breve": "Servidor que gestiona base de datos y transacciones"
+  },
+  {
+    "Nombre": "Gestión de transacciones de base de datos",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Control de operaciones atómicas sobre base de datos"
+  },
+  {
+    "Nombre": "Peticiones de almacenamiento de información",
+    "Categoría": "Operación de base de datos",
+    "Descripción breve": "Solicitudes para guardar datos en base de datos"
+  },
+  {
+    "Nombre": "Peticiones de recuperación",
+    "Categoría": "Operación de base de datos",
+    "Descripción breve": "Solicitudes para obtener datos de base de datos"
+  },
+  {
+    "Nombre": "Alto rendimiento",
+    "Categoría": "Requerimiento no funcional",
+    "Descripción breve": "Capacidad de procesar gran volumen de transacciones"
+  },
+  {
+    "Nombre": "Cientos de transacciones por minuto",
+    "Categoría": "Métrica de rendimiento",
+    "Descripción breve": "Medida de capacidad de procesamiento del sistema"
+  },
+  {
+    "Nombre": "Demanda variable",
+    "Categoría": "Característica de carga",
+    "Descripción breve": "Fluctuación en cantidad de solicitudes al sistema"
+  },
+  {
+    "Nombre": "Agregación de servidores",
+    "Categoría": "Técnica de escalamiento",
+    "Descripción breve": "Incorporación de más servidores para manejar carga adicional"
+  },
+  {
+    "Nombre": "Lenguaje de programación artificial",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguaje formal diseñado para programación"
+  },
+  {
+    "Nombre": "Representación de lenguaje",
+    "Categoría": "Formato de representación",
+    "Descripción breve": "Forma alternativa de expresar contenido del lenguaje"
+  },
+  {
+    "Nombre": "Lenguaje de alto nivel",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguaje de programación cercano a lenguaje humano"
+  },
+  {
+    "Nombre": "Traductor de código",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Componente que convierte código de un formato a otro"
+  },
+  {
+    "Nombre": "Comandos para consultar base de datos",
+    "Categoría": "Tipo de comando",
+    "Descripción breve": "Instrucciones SQL u otros lenguajes de consulta"
+  },
+  {
+    "Nombre": "SQL",
+    "Categoría": "Lenguaje de consulta",
+    "Descripción breve": "Lenguaje estructurado de consultas para bases de datos"
+  },
+  {
+    "Nombre": "Lenguajes de comandos para bases de datos",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguajes para interactuar con sistemas de bases de datos"
+  },
+  {
+    "Nombre": "Sistemas de información Web",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistemas de información accesibles mediante Web"
+  },
+  {
+    "Nombre": "Lenguajes de marcado",
+    "Categoría": "Tipo de lenguaje",
+    "Descripción breve": "Lenguajes que usan etiquetas para estructurar documentos"
+  },
+  {
+    "Nombre": "XML",
+    "Categoría": "Lenguaje de marcado",
+    "Descripción breve": "Lenguaje extensible de marcado para representar datos estructurados"
+  },
+  {
+    "Nombre": "Documento XML",
+    "Categoría": "Formato de documento",
+    "Descripción breve": "Documento estructurado usando lenguaje XML"
+  },
+  {
+    "Nombre": "Instrucciones en lenguaje fuente",
+    "Categoría": "Formato de código",
+    "Descripción breve": "Código escrito en lenguaje de programación original"
+  },
+  {
+    "Nombre": "Programa a ejecutar",
+    "Categoría": "Artefacto de software",
+    "Descripción breve": "Código que define comportamiento del sistema"
+  },
+  {
+    "Nombre": "Máquina abstracta de procesador",
+    "Categoría": "Concepto de arquitectura",
+    "Descripción breve": "Abstracción del procesador físico"
+  },
+  {
+    "Nombre": "Unidad de hardware",
+    "Categoría": "Componente físico",
+    "Descripción breve": "Componente de hardware que ejecuta instrucciones"
+  },
+  {
+    "Nombre": "Intérprete como componente de software",
+    "Categoría": "Componente de sistema",
+    "Descripción breve": "Implementación de intérprete como software en vez de hardware"
+  },
+  {
+    "Nombre": "Analizador de sintaxis léxico",
+    "Categoría": "Sinónimo de analizador",
+    "Descripción breve": "Término alternativo para analizador léxico"
+  },
+  {
+    "Nombre": "Nombres de entidades",
+    "Categoría": "Elemento de lenguaje",
+    "Descripción breve": "Identificadores de variables, clases, objetos, etc."
+  },
+  {
+    "Nombre": "Variables",
+    "Categoría": "Elemento de lenguaje",
+    "Descripción breve": "Nombres que almacenan valores en programa"
+  },
+  {
+    "Nombre": "Clase",
+    "Categoría": "Elemento de lenguaje",
+    "Descripción breve": "Plantilla para crear objetos en programación orientada a objetos"
+  },
+  {
+    "Nombre": "Objeto",
+    "Categoría": "Elemento de lenguaje",
+    "Descripción breve": "Instancia de clase con estado y comportamiento"
+  },
+  {
+    "Nombre": "Texto del lenguaje",
+    "Categoría": "Formato de entrada",
+    "Descripción breve": "Código fuente escrito en lenguaje de programación"
+  },
+  {
+    "Nombre": "Estructura interna del programa",
+    "Categoría": "Representación de datos",
+    "Descripción breve": "Organización interna de representación del programa"
+  },
+  {
+    "Nombre": "Exactitud semántica",
+    "Categoría": "Característica de código",
+    "Descripción breve": "Corrección del significado del programa"
+  },
+  {
+    "Nombre": "Mejora de eficiencia",
+    "Categoría": "Técnica de optimización",
+    "Descripción breve": "Transformaciones para hacer código más rápido"
+  },
+  {
+    "Nombre": "Traductor de lenguaje natural",
+    "Categoría": "Tipo de sistema",
+    "Descripción breve": "Sistema que traduce entre idiomas humanos"
+  },
+  {
+    "Nombre": "Texto de entrada",
+    "Categoría": "Datos de entrada",
+    "Descripción breve": "Código o texto original a procesar"
+  },
+  {
+    "Nombre": "Arquitectura de compilador alternativa",
+    "Categoría": "Tipo de arquitectura",
+    "Descripción breve": "Organización diferente de componentes de compilador"
+  },
+  {
+    "Nombre": "Compilación de lenguaje",
+    "Categoría": "Proceso de traducción",
+    "Descripción breve": "Conversión de lenguaje de alto nivel a código ejecutable"
+  },
+  {
+    "Nombre": "Modelo de tubería y filtro de compilación",
+    "Categoría": "Tipo de arquitectura",
+    "Descripción breve": "Arquitectura de compilador organizada como secuencia de transformaciones"
+  },
+  {
+    "Nombre": "Entorno batch",
+    "Categoría": "Modo de ejecución",
+    "Descripción breve": "Modo de procesamiento sin interacción de usuario"
+  },
+  {
+    "Nombre": "Compilación y ejecución",
+    "Categoría": "Proceso de desarrollo",
+    "Descripción breve": "Traducción de código y posterior ejecución"
+  },
+  {
+    "Nombre": "Traducción de documento XML",
+    "Categoría": "Funcionalidad del sistema",
+    "Descripción breve": "Conversión de documento XML a otro formato"
+  },
+  {
+    "Nombre": "Herramientas de procesamiento de lenguaje",
+    "Categoría": "Tipo de herramienta",
+    "Descripción breve": "Herramientas que manipulan y transforman lenguajes"
+  },
+  {
+    "Nombre": "Depurador",
+    "Categoría": "Herramienta de desarrollo",
+    "Descripción breve": "Herramienta para identificar y corregir errores"
+  },
+  {
+    "Nombre": "Cambios en componente",
+    "Categoría": "Evento de sistema",
+    "Descripción breve": "Modificaciones que deben reflejarse en otros componentes"
+  },
+  {
+    "Nombre": "Conjunto integrado de herramientas",
+    "Categoría": "Sistema de herramientas",
+    "Descripción breve": "Colección de herramientas que trabajan juntas"
+  },
+  {
+    "Nombre": "Información de diseño de sistema",
+    "Categoría": "Datos de proyecto",
+    "Descripción breve": "Información sobre estructura y diseño del sistema"
+  },
+  {
+    "Nombre": "Definición de formato",
+    "Categoría": "Especificación técnica",
+    "Descripción breve": "Descripción de cómo debe estructurarse salida"
+  }
+]

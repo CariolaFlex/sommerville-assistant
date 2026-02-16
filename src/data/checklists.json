@@ -1,0 +1,761 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-15",
+  "totalChecklists": 4,
+  "checklists": {
+    "chk-001": {
+      "id": "chk-001",
+      "name": "Antes de Escribir Código",
+      "category": "Pre-Desarrollo",
+      "description": "Verificación completa antes de iniciar la codificación para asegurar requisitos claros y arquitectura definida",
+      "chapter": 2,
+      "applicableFor": [
+        "todos"
+      ],
+      "estimatedTime": "1-2 horas",
+      "sections": [
+        {
+          "title": "Comprensión del Problema",
+          "items": [
+            {
+              "id": "chk-001-001",
+              "text": "¿Entiendo QUÉ problema estoy resolviendo?",
+              "critical": true,
+              "help": "Debe poder explicarlo en 2 frases claras sin ambigüedad"
+            },
+            {
+              "id": "chk-001-002",
+              "text": "¿Puedo explicarlo en 2 frases?",
+              "critical": true
+            },
+            {
+              "id": "chk-001-003",
+              "text": "¿He hablado con al menos 1 usuario/stakeholder?",
+              "critical": true,
+              "help": "Validación directa del problema es esencial para evitar asumir requisitos"
+            },
+            {
+              "id": "chk-001-004",
+              "text": "¿Tengo ejemplos concretos de uso?",
+              "critical": false
+            }
+          ]
+        },
+        {
+          "title": "Requisitos Claros",
+          "items": [
+            {
+              "id": "chk-001-005",
+              "text": "¿Tengo los requisitos funcionales documentados?",
+              "critical": true
+            },
+            {
+              "id": "chk-001-006",
+              "text": "¿Los requisitos no funcionales están CUANTIFICADOS?",
+              "critical": true,
+              "examples": [
+                "❌ 'El sistema debe ser rápido'",
+                "✅ 'Respuesta < 2 segundos en 95% de casos'"
+              ]
+            },
+            {
+              "id": "chk-001-007",
+              "text": "¿He identificado todos los usuarios del sistema?",
+              "critical": true
+            },
+            {
+              "id": "chk-001-008",
+              "text": "¿Sé qué NO hace el sistema (alcance claro)?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Proceso Definido",
+          "items": [
+            {
+              "id": "chk-001-009",
+              "text": "¿Elegí el proceso adecuado para este tipo de sistema?",
+              "critical": true,
+              "help": "Usar árbol de decisiones de Sommerville"
+            },
+            {
+              "id": "chk-001-010",
+              "text": "¿El equipo conoce y acepta el proceso?",
+              "critical": true
+            },
+            {
+              "id": "chk-001-011",
+              "text": "¿Tenemos ceremonias/reuniones definidas?",
+              "critical": false
+            },
+            {
+              "id": "chk-001-012",
+              "text": "¿Sabemos cómo medir progreso?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Arquitectura Pensada",
+          "items": [
+            {
+              "id": "chk-001-013",
+              "text": "¿Tengo un bosquejo de arquitectura?",
+              "critical": true,
+              "help": "Puede ser en servilleta, no necesita ser formal"
+            },
+            {
+              "id": "chk-001-014",
+              "text": "¿Identifiqué componentes principales?",
+              "critical": true
+            },
+            {
+              "id": "chk-001-015",
+              "text": "¿Sé cómo se comunican entre sí?",
+              "critical": true
+            },
+            {
+              "id": "chk-001-016",
+              "text": "¿Consideré los requisitos no funcionales en arquitectura?",
+              "critical": true,
+              "subItems": [
+                "Rendimiento → ¿Caché? ¿Async?",
+                "Seguridad → ¿Capas? ¿Encriptación?",
+                "Escalabilidad → ¿Puede crecer?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Herramientas Setup",
+          "items": [
+            {
+              "id": "chk-001-017",
+              "text": "Repositorio de código configurado",
+              "critical": true
+            },
+            {
+              "id": "chk-001-018",
+              "text": "CI/CD básico funcionando",
+              "critical": false
+            },
+            {
+              "id": "chk-001-019",
+              "text": "Linter y formatter configurados",
+              "critical": false
+            },
+            {
+              "id": "chk-001-020",
+              "text": "Framework de testing elegido",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Riesgos Identificados",
+          "items": [
+            {
+              "id": "chk-001-021",
+              "text": "¿Qué puede salir mal? (listar top 3 riesgos)",
+              "critical": true
+            },
+            {
+              "id": "chk-001-022",
+              "text": "¿Cómo mitigaré cada riesgo?",
+              "critical": true
+            },
+            {
+              "id": "chk-001-023",
+              "text": "¿Hay tecnología desconocida? → Spike técnico necesario",
+              "critical": false
+            }
+          ]
+        }
+      ],
+      "totalItems": 23,
+      "criticalItems": 16,
+      "relatedRecommendations": [
+        "rec-001",
+        "rec-002",
+        "rec-004",
+        "rec-005"
+      ],
+      "tags": [
+        "preparacion",
+        "requisitos",
+        "arquitectura",
+        "setup",
+        "pre-desarrollo"
+      ]
+    },
+    "chk-002": {
+      "id": "chk-002",
+      "name": "Durante el Desarrollo",
+      "category": "Desarrollo",
+      "description": "Checklist de buenas prácticas durante la implementación para mantener calidad y colaboración",
+      "chapter": 3,
+      "applicableFor": [
+        "todos"
+      ],
+      "estimatedTime": "30 minutos/día",
+      "sections": [
+        {
+          "title": "Testing",
+          "items": [
+            {
+              "id": "chk-002-001",
+              "text": "¿Escribí tests para esta funcionalidad?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-002",
+              "text": "¿Los tests cubren casos edge?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-003",
+              "text": "¿Los tests pasan en CI?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-004",
+              "text": "¿Probé manualmente la funcionalidad?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Código Limpio",
+          "items": [
+            {
+              "id": "chk-002-005",
+              "text": "¿El código es auto-explicativo?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-006",
+              "text": "¿Nombres de variables/funciones son claros?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-007",
+              "text": "¿Comenté solo lo NO obvio?",
+              "critical": false
+            },
+            {
+              "id": "chk-002-008",
+              "text": "¿Funciones tienen < 20 líneas?",
+              "critical": false,
+              "help": "Regla general, no absoluta"
+            },
+            {
+              "id": "chk-002-009",
+              "text": "¿Sin código duplicado?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Integración Continua",
+          "items": [
+            {
+              "id": "chk-002-010",
+              "text": "¿Hago commit/push al menos una vez al día?",
+              "critical": false
+            },
+            {
+              "id": "chk-002-011",
+              "text": "¿El build pasa antes de push?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-012",
+              "text": "¿Integro con el trabajo de otros desarrolladores?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Documentación",
+          "items": [
+            {
+              "id": "chk-002-013",
+              "text": "¿README está actualizado?",
+              "critical": false
+            },
+            {
+              "id": "chk-002-014",
+              "text": "¿APIs documentadas? (JSDoc, Docstrings, Swagger)",
+              "critical": true
+            },
+            {
+              "id": "chk-002-015",
+              "text": "¿Decisiones de diseño importantes documentadas?",
+              "critical": false
+            }
+          ]
+        },
+        {
+          "title": "Seguridad",
+          "items": [
+            {
+              "id": "chk-002-016",
+              "text": "¿Validé inputs del usuario?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-017",
+              "text": "¿Estoy usando autenticación/autorización?",
+              "critical": true
+            },
+            {
+              "id": "chk-002-018",
+              "text": "¿Secrets NO están en código?",
+              "critical": true,
+              "help": "Usar variables de entorno"
+            },
+            {
+              "id": "chk-002-019",
+              "text": "¿Dependencias actualizadas? (sin vulnerabilidades conocidas)",
+              "critical": true
+            }
+          ]
+        }
+      ],
+      "totalItems": 19,
+      "criticalItems": 13,
+      "relatedRecommendations": [
+        "rec-005",
+        "rec-006",
+        "rec-007"
+      ],
+      "tags": [
+        "desarrollo",
+        "testing",
+        "codigo-limpio",
+        "seguridad",
+        "ci"
+      ]
+    },
+    "chk-003": {
+      "id": "chk-003",
+      "name": "Antes de Entregar",
+      "category": "Pre-Despliegue",
+      "description": "Verificación final antes de entregar a producción para asegurar calidad y preparación",
+      "chapter": 3,
+      "applicableFor": [
+        "todos"
+      ],
+      "estimatedTime": "2-4 horas",
+      "sections": [
+        {
+          "title": "Funcionalidad",
+          "items": [
+            {
+              "id": "chk-003-001",
+              "text": "¿Hace lo que el requisito especificaba?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-002",
+              "text": "¿Validé con usuario/stakeholder?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-003",
+              "text": "¿Todos los criterios de aceptación se cumplen?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Calidad",
+          "items": [
+            {
+              "id": "chk-003-004",
+              "text": "¿Cobertura de tests > 70% (o la meta definida)?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-005",
+              "text": "¿Sin bugs conocidos críticos?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-006",
+              "text": "¿Rendimiento aceptable? (medido, no asumido)",
+              "critical": true
+            },
+            {
+              "id": "chk-003-007",
+              "text": "¿Funciona en todos los navegadores/dispositivos target?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Seguridad",
+          "items": [
+            {
+              "id": "chk-003-008",
+              "text": "¿Pasó security scan? (Snyk, SonarQube)",
+              "critical": true
+            },
+            {
+              "id": "chk-003-009",
+              "text": "¿Sin secretos en código?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-010",
+              "text": "¿HTTPS configurado?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-011",
+              "text": "¿Datos sensibles encriptados?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Documentación",
+          "items": [
+            {
+              "id": "chk-003-012",
+              "text": "Documentación de usuario actualizada",
+              "critical": true
+            },
+            {
+              "id": "chk-003-013",
+              "text": "Documentación técnica actualizada",
+              "critical": true
+            },
+            {
+              "id": "chk-003-014",
+              "text": "README tiene instrucciones de deployment",
+              "critical": true
+            },
+            {
+              "id": "chk-003-015",
+              "text": "CHANGELOG actualizado",
+              "critical": false
+            }
+          ]
+        },
+        {
+          "title": "Deployment",
+          "items": [
+            {
+              "id": "chk-003-016",
+              "text": "¿Probado en ambiente de staging?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-017",
+              "text": "¿Plan de rollback definido?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-018",
+              "text": "¿Monitoring configurado?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-019",
+              "text": "¿Alertas configuradas para errores?",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "title": "Post-Deployment",
+          "items": [
+            {
+              "id": "chk-003-020",
+              "text": "¿Monitoreo activo en las primeras 24 horas?",
+              "critical": true
+            },
+            {
+              "id": "chk-003-021",
+              "text": "¿Recolectando feedback de usuarios?",
+              "critical": false
+            },
+            {
+              "id": "chk-003-022",
+              "text": "¿Sin errores en logs de producción?",
+              "critical": true
+            }
+          ]
+        }
+      ],
+      "totalItems": 22,
+      "criticalItems": 19,
+      "relatedRecommendations": [
+        "rec-007",
+        "rec-008",
+        "rec-009"
+      ],
+      "tags": [
+        "deployment",
+        "qa",
+        "calidad",
+        "produccion",
+        "entrega"
+      ]
+    },
+    "chk-004": {
+      "id": "chk-004",
+      "name": "Selección de Tecnología",
+      "category": "Arquitectura",
+      "description": "Guía para seleccionar el stack tecnológico apropiado según necesidades del proyecto",
+      "chapter": 6,
+      "applicableFor": [
+        "todos"
+      ],
+      "estimatedTime": "4-8 horas",
+      "sections": [
+        {
+          "title": "Frontend",
+          "items": [
+            {
+              "id": "chk-004-001",
+              "text": "¿Equipo tiene experiencia con el framework?",
+              "critical": true,
+              "options": [
+                "React",
+                "Vue",
+                "Angular",
+                "Svelte"
+              ]
+            },
+            {
+              "id": "chk-004-002",
+              "text": "¿Comunidad activa y documentación buena?",
+              "critical": true
+            },
+            {
+              "id": "chk-004-003",
+              "text": "¿Librerías/componentes disponibles?",
+              "critical": false
+            },
+            {
+              "id": "chk-004-004",
+              "text": "¿Performance adecuada para el tipo de app?",
+              "critical": true
+            },
+            {
+              "id": "chk-004-005",
+              "text": "¿Necesito estado global?",
+              "critical": false,
+              "help": "Sí → Redux/Zustand/Pinia | No → useState/Context"
+            }
+          ]
+        },
+        {
+          "title": "Backend",
+          "items": [
+            {
+              "id": "chk-004-006",
+              "text": "¿Equipo tiene experiencia con el lenguaje?",
+              "critical": true,
+              "options": [
+                "Node.js",
+                "Python",
+                "Ruby",
+                "Go",
+                "Java"
+              ]
+            },
+            {
+              "id": "chk-004-007",
+              "text": "Framework elegido según complejidad",
+              "critical": true,
+              "examples": [
+                "Node.js: Express (simple) vs Nest.js (estructura)",
+                "Python: FastAPI (moderno) vs Django (completo)",
+                "Ruby: Rails (convención sobre configuración)"
+              ]
+            },
+            {
+              "id": "chk-004-008",
+              "text": "ORM seleccionado",
+              "critical": false,
+              "options": [
+                "Prisma",
+                "TypeORM",
+                "SQLAlchemy",
+                "ActiveRecord"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Database",
+          "items": [
+            {
+              "id": "chk-004-009",
+              "text": "¿Necesito transacciones ACID?",
+              "critical": true,
+              "help": "Sí → SQL | No → NoSQL puede servir"
+            },
+            {
+              "id": "chk-004-010",
+              "text": "¿Datos estructurados o no estructurados?",
+              "critical": true
+            },
+            {
+              "id": "chk-004-011",
+              "text": "Base de datos elegida",
+              "critical": true,
+              "options": [
+                "PostgreSQL (recomendado SQL)",
+                "MySQL (popular SQL)",
+                "MongoDB (NoSQL documentos)",
+                "Redis (key-value caché)"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Deployment",
+          "items": [
+            {
+              "id": "chk-004-012",
+              "text": "¿Cuál es el budget?",
+              "critical": true
+            },
+            {
+              "id": "chk-004-013",
+              "text": "Servicio de hosting elegido",
+              "critical": true,
+              "options": [
+                "Gratis: Vercel, Netlify, Render, Railway",
+                "Paid: AWS, GCP, DigitalOcean, Heroku"
+              ]
+            },
+            {
+              "id": "chk-004-014",
+              "text": "CI/CD configurado",
+              "critical": true,
+              "options": [
+                "GitHub Actions",
+                "GitLab CI",
+                "CircleCI",
+                "Jenkins"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Testing",
+          "items": [
+            {
+              "id": "chk-004-015",
+              "text": "Framework de testing frontend",
+              "critical": true,
+              "options": [
+                "Jest + React Testing Library",
+                "Vitest"
+              ]
+            },
+            {
+              "id": "chk-004-016",
+              "text": "Framework de testing backend",
+              "critical": true,
+              "options": [
+                "Jest",
+                "pytest",
+                "RSpec"
+              ]
+            },
+            {
+              "id": "chk-004-017",
+              "text": "E2E testing",
+              "critical": false,
+              "options": [
+                "Cypress",
+                "Playwright"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Monitoreo",
+          "items": [
+            {
+              "id": "chk-004-018",
+              "text": "Error tracking configurado",
+              "critical": true,
+              "options": [
+                "Sentry (recomendado)",
+                "Bugsnag",
+                "Rollbar"
+              ]
+            },
+            {
+              "id": "chk-004-019",
+              "text": "Analytics configurado",
+              "critical": false,
+              "options": [
+                "Google Analytics",
+                "Mixpanel",
+                "Plausible"
+              ]
+            },
+            {
+              "id": "chk-004-020",
+              "text": "Uptime monitoring",
+              "critical": true,
+              "options": [
+                "Uptime Robot",
+                "Pingdom",
+                "BetterUptime"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Decisión Final",
+          "items": [
+            {
+              "id": "chk-004-021",
+              "text": "Stack elegido documentado",
+              "critical": true
+            },
+            {
+              "id": "chk-004-022",
+              "text": "Razones de elección documentadas (mínimo 3)",
+              "critical": true
+            },
+            {
+              "id": "chk-004-023",
+              "text": "Riesgos identificados",
+              "critical": true
+            },
+            {
+              "id": "chk-004-024",
+              "text": "Plan de mitigación definido",
+              "critical": true
+            }
+          ]
+        }
+      ],
+      "totalItems": 24,
+      "criticalItems": 18,
+      "relatedRecommendations": [
+        "rec-008",
+        "rec-009",
+        "rec-010"
+      ],
+      "tags": [
+        "stack",
+        "tecnologia",
+        "arquitectura",
+        "seleccion",
+        "herramientas"
+      ]
+    }
+  }
+}
