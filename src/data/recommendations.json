@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "lastUpdated": "2026-02-15",
+  "version": "2.0",
+  "lastUpdated": "2026-02-16",
   "totalRecommendations": 13,
   "recommendations": {
     "rec-001": {
@@ -27,7 +27,389 @@
           "Fase 3: Implementación y Prueba de Unidad → Código + Verificación",
           "Fase 4: Integración y Prueba de Sistema → Sistema Completo Probado",
           "Fase 5: Operación y Mantenimiento → Instalación + Soporte"
-        ]
+        ],
+        "phases": [
+          {
+            "name": "Análisis y Definición de Requerimientos",
+            "duration": "3-6 semanas",
+            "activities": [
+              "Estudio de factibilidad técnica y económica",
+              "Identificación de stakeholders y usuarios finales",
+              "Obtención de requerimientos (entrevistas, observación, análisis de sistemas existentes)",
+              "Análisis de requerimientos funcionales y no funcionales",
+              "Especificación formal según IEEE 830 o estándar regulatorio aplicable",
+              "Modelado de casos de uso completos",
+              "Análisis de riesgos preliminar",
+              "Definición de criterios de aceptación medibles"
+            ],
+            "inputs": [
+              "Solicitud del proyecto con justificación de negocio",
+              "Documentación de sistemas legados (si aplica)",
+              "Estándares regulatorios aplicables (FDA 21 CFR Part 11, DO-178C aviación, ISO 26262 automotriz)",
+              "Restricciones de hardware conocidas"
+            ],
+            "outputs": [
+              "Documento de Especificación de Requerimientos de Software (SRS) según IEEE 830",
+              "Matriz de trazabilidad de requerimientos",
+              "Casos de uso formales documentados",
+              "Informe de factibilidad aprobado",
+              "Plan de gestión de requerimientos",
+              "Registro de riesgos inicial"
+            ],
+            "gate": {
+              "name": "Requirements Review Gate",
+              "criteria": [
+                "SRS completo y aprobado por stakeholders",
+                "Todos los requerimientos tienen criterios de aceptación medibles",
+                "Trazabilidad completa establecida",
+                "Cumplimiento regulatorio verificado",
+                "Presupuesto y cronograma aprobados"
+              ],
+              "approvers": [
+                "Cliente/Sponsor",
+                "Arquitecto Principal",
+                "Gerente de Proyecto",
+                "Equipo de Calidad",
+                "Compliance Officer (si aplica)"
+              ]
+            }
+          },
+          {
+            "name": "Diseño del Sistema y Software",
+            "duration": "4-8 semanas",
+            "activities": [
+              "Diseño arquitectónico de alto nivel (estructura en capas)",
+              "Diseño de interfaces entre componentes",
+              "Diseño de componentes individuales (clases, módulos)",
+              "Diseño de base de datos (si aplica)",
+              "Diseño de seguridad y mecanismos de protección",
+              "Análisis de modos de fallo (FMEA - Failure Mode and Effects Analysis)",
+              "Diseño de algoritmos críticos",
+              "Especificación de protocolos de comunicación",
+              "Definición de estándares de codificación",
+              "Planificación de pruebas (estrategia de verificación y validación)"
+            ],
+            "inputs": [
+              "SRS aprobado",
+              "Matriz de trazabilidad de requerimientos",
+              "Restricciones de arquitectura (hardware, rendimiento, seguridad)",
+              "Estándares de diseño organizacionales"
+            ],
+            "outputs": [
+              "Documento de Diseño Arquitectónico (ADD - Architecture Design Document)",
+              "Diagramas UML: Clases, Componentes, Despliegue, Secuencia",
+              "Especificación de interfaces (APIs, protocolos)",
+              "Documento de Diseño Detallado (DDD)",
+              "Análisis FMEA completo",
+              "Plan de Verificación y Validación (V&V Plan)",
+              "Matriz de trazabilidad actualizada (requerimiento → diseño)"
+            ],
+            "gate": {
+              "name": "Design Review Gate (Critical Design Review - CDR)",
+              "criteria": [
+                "Arquitectura satisface todos los requerimientos no funcionales",
+                "Diseño pasa peer review formal",
+                "FMEA identifica y mitiga riesgos críticos",
+                "Interfaces bien definidas y documentadas",
+                "Compliance con estándares de diseño verificado",
+                "Trazabilidad completa de requerimiento a diseño"
+              ],
+              "approvers": [
+                "Arquitecto Principal",
+                "Equipo de Diseño",
+                "Equipo de Calidad",
+                "Gerente de Proyecto",
+                "Cliente (si contrato lo requiere)"
+              ]
+            }
+          },
+          {
+            "name": "Implementación y Prueba de Unidad",
+            "duration": "14-20 semanas",
+            "activities": [
+              "Codificación siguiendo estándares definidos (MISRA C para embebidos, etc.)",
+              "Desarrollo capa por capa (bottom-up o por criticidad)",
+              "Pruebas unitarias exhaustivas (cobertura >95% en código crítico)",
+              "Code reviews formales (inspecciones)",
+              "Análisis estático de código (herramientas SAST)",
+              "Gestión de configuración estricta (control de versiones)",
+              "Documentación inline (comentarios, doxygen)",
+              "Depuración (debugging) continua",
+              "Integración continua en ambiente de desarrollo"
+            ],
+            "inputs": [
+              "Documento de Diseño Detallado aprobado",
+              "Estándares de codificación",
+              "Ambiente de desarrollo configurado",
+              "Plan de pruebas unitarias",
+              "Herramientas de análisis estático"
+            ],
+            "outputs": [
+              "Código fuente versionado y documentado",
+              "Pruebas unitarias automatizadas",
+              "Reportes de code reviews",
+              "Reportes de análisis estático",
+              "Métricas de cobertura de código",
+              "Matriz de trazabilidad actualizada (diseño → código → prueba unitaria)"
+            ],
+            "gate": {
+              "name": "Code Complete Gate",
+              "criteria": [
+                "100% del código implementado según diseño",
+                "Cobertura de pruebas unitarias >95% en código crítico, >80% en no crítico",
+                "Cero defectos críticos abiertos",
+                "Code reviews completados para 100% del código",
+                "Análisis estático sin violaciones críticas",
+                "Documentación inline completa"
+              ],
+              "approvers": [
+                "Líder Técnico",
+                "Equipo de Calidad",
+                "Gerente de Proyecto"
+              ]
+            }
+          },
+          {
+            "name": "Integración y Prueba de Sistema",
+            "duration": "6-10 semanas",
+            "activities": [
+              "Integración incremental de componentes (no Big Bang)",
+              "Pruebas de integración entre componentes",
+              "Pruebas de sistema completo (funcionales y no funcionales)",
+              "Pruebas de regresión automatizadas",
+              "Pruebas de rendimiento y stress",
+              "Pruebas de seguridad y penetración",
+              "Pruebas de confiabilidad (MTBF - Mean Time Between Failures)",
+              "Pruebas de aceptación con cliente/usuarios",
+              "Corrección de defectos encontrados",
+              "Preparación de documentación de usuario"
+            ],
+            "inputs": [
+              "Código completo e integrado",
+              "Plan de V&V",
+              "Casos de prueba derivados de requerimientos",
+              "Ambiente de pruebas (que simula producción)"
+            ],
+            "outputs": [
+              "Sistema completamente integrado y probado",
+              "Reportes de pruebas (integración, sistema, aceptación)",
+              "Defectos corregidos y cerrados",
+              "Manual de usuario",
+              "Manual de instalación y deployment",
+              "Manual de mantenimiento",
+              "Matriz de trazabilidad final (requerimiento → diseño → código → prueba)",
+              "Certificación regulatoria (si aplica)"
+            ],
+            "gate": {
+              "name": "System Acceptance Gate",
+              "criteria": [
+                "Todas las pruebas de sistema pasan",
+                "Criterios de aceptación de requerimientos satisfechos",
+                "Cero defectos críticos, <5 defectos menores",
+                "Rendimiento y confiabilidad dentro de especificación",
+                "Compliance regulatorio verificado",
+                "Cliente/Sponsor aprueba sistema",
+                "Documentación completa y revisada"
+              ],
+              "approvers": [
+                "Cliente/Sponsor",
+                "Equipo de Calidad",
+                "Gerente de Proyecto",
+                "Regulador (si aplica)"
+              ]
+            }
+          },
+          {
+            "name": "Operación y Mantenimiento",
+            "duration": "Continuo (vida útil del sistema)",
+            "activities": [
+              "Instalación en ambiente de producción",
+              "Capacitación de usuarios y operadores",
+              "Monitoreo de sistema en producción",
+              "Soporte técnico 24/7 (si criticidad lo requiere)",
+              "Mantenimiento correctivo (bug fixes)",
+              "Mantenimiento adaptativo (cambios de entorno)",
+              "Mantenimiento perfectivo (mejoras)",
+              "Mantenimiento preventivo",
+              "Actualizaciones de seguridad",
+              "Auditorías periódicas de cumplimiento"
+            ],
+            "inputs": [
+              "Sistema aprobado y documentado",
+              "Manuales de usuario y mantenimiento",
+              "Plan de soporte y mantenimiento",
+              "Equipo de soporte capacitado"
+            ],
+            "outputs": [
+              "Sistema operando en producción",
+              "Logs de operación y monitoreo",
+              "Reportes de incidentes y resoluciones",
+              "Actualizaciones y parches",
+              "Reportes de auditoría",
+              "Lecciones aprendidas documentadas"
+            ],
+            "gate": {
+              "name": "Go-Live Gate",
+              "criteria": [
+                "Sistema instalado y configurado correctamente",
+                "Usuarios capacitados",
+                "Soporte disponible",
+                "Plan de rollback preparado",
+                "Monitoreo en tiempo real funcionando",
+                "Compliance verificado en producción"
+              ],
+              "approvers": [
+                "Cliente/Sponsor",
+                "Gerente de Operaciones",
+                "Equipo de Soporte"
+              ]
+            }
+          }
+        ],
+        "whenToUse": {
+          "systemType": [
+            "Sistemas críticos de seguridad (vidas humanas en riesgo)",
+            "Sistemas médicos (dispositivos implantables, equipos de diagnóstico)",
+            "Sistemas aviónicos (control de vuelo, navegación)",
+            "Sistemas automotrices de seguridad (frenos ABS, airbags, ADAS)",
+            "Sistemas de control industrial (plantas nucleares, químicas)",
+            "Sistemas ferroviarios (señalización, control de trenes)"
+          ],
+          "requirements": [
+            "Requerimientos estables y bien entendidos desde el inicio",
+            "Requerimientos sujetos a regulación externa estricta",
+            "Necesidad de especificación completa anticipada (contratos formales)",
+            "Alta trazabilidad requerida (regulaciones)",
+            "Requerimientos con poca probabilidad de cambio durante desarrollo"
+          ],
+          "team": [
+            "Equipo grande (>20 personas) que requiere coordinación formal",
+            "Equipos distribuidos geográficamente",
+            "Múltiples stakeholders que requieren documentación formal",
+            "Organización madura con procesos establecidos"
+          ],
+          "constraints": [
+            "Desarrollo conjunto de hardware y software (co-design)",
+            "Dependencias de hardware fijas",
+            "Contratos de precio fijo que requieren especificación completa",
+            "Necesidad de cumplimiento regulatorio estricto (FDA, FAA, ISO)"
+          ]
+        },
+        "whenNotToUse": {
+          "avoid": [
+            "Requerimientos volátiles o mal entendidos",
+            "Startups o innovación rápida (time-to-market crítico)",
+            "Interfaces de usuario que necesitan experimentación",
+            "Proyectos exploratorios o de investigación",
+            "Sistemas donde la interfaz de usuario es el diferenciador clave",
+            "Equipos pequeños ágiles (overhead excesivo)",
+            "Proyectos de corta duración (<6 meses)",
+            "Sistemas web/móviles con feedback de usuario continuo"
+          ],
+          "alternatives": [
+            "Si requerimientos volátiles → Modelo Espiral o Incremental",
+            "Si startup/MVP → Scrum o XP",
+            "Si UI crítica → Desarrollo Incremental con prototipos",
+            "Si equipo pequeño → Cascada Adaptado (menos overhead)"
+          ]
+        },
+        "advantages": [
+          "Documentación exhaustiva facilita mantenimiento a largo plazo (sistemas con vida útil de 10-20 años)",
+          "Progreso medible y visible a través de documentos aprobados (ideal para contratos)",
+          "Apropiado para equipos distribuidos (documentación compensa falta de comunicación directa)",
+          "Cumplimiento regulatorio incorporado en cada fase",
+          "Trazabilidad completa desde requerimiento hasta código y prueba",
+          "Revisiones formales detectan errores temprano",
+          "Adecuado para certificación (DO-178C, IEC 62304, ISO 26262)",
+          "Reducción de riesgos en sistemas críticos (análisis exhaustivo antes de implementar)"
+        ],
+        "disadvantages": [
+          "Difícil acomodar cambios una vez iniciada una fase (cambios son costosos)",
+          "Iteraciones entre fases requieren rehacer documentos (overhead significativo)",
+          "Cliente ve sistema funcionando solo al final (feedback tardío)",
+          "Riesgo de 'congelamiento prematuro' de especificación → sistema puede no satisfacer necesidades reales",
+          "Problemas de diseño pueden descubrirse tarde (en implementación o integración)",
+          "No apto para sistemas donde la experimentación es necesaria",
+          "Proceso pesado para equipos pequeños o proyectos cortos",
+          "Dificultad para innovar o pivotar durante el desarrollo"
+        ],
+        "changeManagement": {
+          "process": "Change Control Board (CCB) Formal",
+          "description": "Todos los cambios a requerimientos, diseño o código después de baseline deben pasar por CCB",
+          "steps": [
+            "1. Solicitud de Cambio (CR - Change Request) formal con justificación",
+            "2. Análisis de impacto (costo, tiempo, riesgo, trazabilidad)",
+            "3. Evaluación por CCB (comité multidisciplinario)",
+            "4. Aprobación/rechazo formal con justificación escrita",
+            "5. Si aprobado: actualizar documentos (SRS, diseño, plan de pruebas)",
+            "6. Implementar cambio siguiendo proceso estándar",
+            "7. Verificar que el cambio satisface la solicitud",
+            "8. Actualizar matriz de trazabilidad",
+            "9. Comunicar a todos los afectados"
+          ],
+          "ccbComposition": [
+            "Gerente de Proyecto (chair)",
+            "Arquitecto Principal",
+            "Líder de Calidad",
+            "Representante del Cliente",
+            "Compliance Officer (en proyectos regulados)"
+          ],
+          "frequency": "Reuniones semanales o según demanda (cambios críticos)",
+          "tools": [
+            "Jira con workflow de aprobación",
+            "Azure DevOps Work Items",
+            "IBM DOORS (trazabilidad)",
+            "Sistema de gestión de configuración (Git con ramas protegidas)"
+          ]
+        },
+        "tooling": {
+          "requirements": [
+            "IBM DOORS",
+            "Jama Connect",
+            "Polarion Requirements",
+            "Azure DevOps"
+          ],
+          "design": [
+            "Enterprise Architect",
+            "Visual Paradigm",
+            "IBM Rational Software Architect",
+            "Sparx Systems"
+          ],
+          "development": [
+            "Git (control de versiones)",
+            "Jenkins/GitLab CI (integración continua)",
+            "SonarQube (análisis estático)",
+            "MISRA Checker (si C/C++)"
+          ],
+          "testing": [
+            "VectorCAST (pruebas embebidas)",
+            "LDRA (cobertura de código)",
+            "Cantata (pruebas unitarias)",
+            "Selenium (si tiene UI web)"
+          ],
+          "projectManagement": [
+            "Microsoft Project",
+            "Jira",
+            "Azure DevOps",
+            "Primavera P6"
+          ],
+          "documentation": [
+            "Confluence",
+            "SharePoint",
+            "Doxygen (código)",
+            "LaTeX/Word (documentos formales)"
+          ]
+        },
+        "references": {
+          "book": "Sommerville, Capítulo 2: Procesos de Software (Modelo en Cascada, sección 2.1.1)",
+          "standards": [
+            "IEEE 830-1998: Especificación de Requerimientos de Software",
+            "DO-178C: Software Considerations in Airborne Systems (aviación)",
+            "IEC 62304: Medical Device Software Lifecycle (dispositivos médicos)",
+            "ISO 26262: Road Vehicles Functional Safety (automotriz)",
+            "FDA 21 CFR Part 11: Electronic Records (farmacéutica)"
+          ]
+        }
       },
       "methodology": {
         "name": "Tradicional con Especificación Exhaustiva",
@@ -173,6 +555,8 @@
       "pathDescription": "Sistema Crítico de Seguridad → Requisitos Estables → Equipo Pequeño (<10)",
       "process": {
         "name": "Cascada Adaptado",
+        "type": "sequential-phases",
+        "description": "Modelo en Cascada adaptado para equipos pequeños: mantiene la especificación completa y verificación rigurosa necesarias para sistemas críticos, pero con documentación más concisa y procesos menos burocráticos aprovechando la comunicación directa de equipos pequeños.",
         "chapter": 2,
         "why": [
           "Equipo pequeño permite documentación menos pesada",
@@ -186,7 +570,424 @@
           "Fase 3: Implementación (8-12 semanas) → Código con estándares + testing continuo",
           "Fase 4: Integración y Pruebas (3-4 semanas) → Testing exhaustivo",
           "Fase 5: Deployment → Instalación y documentación"
-        ]
+        ],
+        "phases": [
+          {
+            "id": "phase-spec",
+            "name": "Especificación de Requerimientos",
+            "order": 1,
+            "description": "Definir requerimientos completos de manera concisa, enfocándose en lo esencial sin sacrificar claridad ni rigor",
+            "duration": "10-15% del proyecto (2-3 semanas)",
+            "activities": [
+              "Entrevistas con stakeholders clave (equipo pequeño permite acceso directo)",
+              "Especificación de requerimientos funcionales y no funcionales",
+              "Identificación de casos de uso críticos (5-8 principales)",
+              "Análisis de riesgos de seguridad inicial",
+              "Definición de criterios de aceptación medibles",
+              "Revisión colaborativa del equipo (sesión conjunta)"
+            ],
+            "inputs": [
+              "Necesidad del negocio y alcance inicial",
+              "Estándares de seguridad aplicables (ISO, IEC, etc.)",
+              "Restricciones de hardware (si aplica)",
+              "Lecciones aprendidas de proyectos similares"
+            ],
+            "outputs": [
+              "Documento de Requerimientos (10-15 páginas, formato conciso)",
+              "Casos de uso principales documentados",
+              "Análisis de riesgos de seguridad",
+              "Criterios de aceptación por requerimiento"
+            ],
+            "deliverables": [
+              {
+                "name": "Especificación de Requerimientos Concisa",
+                "template": "tpl-002",
+                "required": true,
+                "reviewedBy": ["Líder Técnico", "Stakeholder Principal"]
+              }
+            ],
+            "gate": {
+              "name": "Requirements Approval",
+              "criteria": [
+                "Todos los requerimientos críticos de seguridad identificados",
+                "Criterios de aceptación definidos y medibles",
+                "Riesgos de seguridad documentados",
+                "Consenso del equipo completo sobre el alcance"
+              ],
+              "decision": "GO / NO-GO / CLARIFICAR"
+            },
+            "keyStakeholders": ["Líder Técnico", "Cliente/Usuario Final", "Equipo Completo"]
+          },
+          {
+            "id": "phase-design",
+            "name": "Diseño del Sistema",
+            "order": 2,
+            "description": "Diseñar arquitectura y componentes críticos con énfasis en claridad y seguridad",
+            "duration": "15-20% del proyecto (2-3 semanas)",
+            "activities": [
+              "Diseño arquitectónico de alto nivel (3 capas típicamente)",
+              "Diseño de componentes críticos de seguridad",
+              "Especificación de interfaces entre componentes",
+              "Selección de tecnología y herramientas",
+              "Diseño de estrategia de testing",
+              "Prototipo técnico (spike) para validar arquitectura",
+              "Sesión de revisión de diseño con todo el equipo"
+            ],
+            "inputs": [
+              "Documento de Requerimientos aprobado",
+              "Análisis de riesgos de seguridad",
+              "Estándares de codificación organizacionales",
+              "Tecnologías disponibles/aprobadas"
+            ],
+            "outputs": [
+              "Documento de Diseño Arquitectónico (diagrama + README detallado)",
+              "Especificación de interfaces",
+              "Prototipo técnico validado",
+              "Plan de testing",
+              "Decisiones de tecnología documentadas"
+            ],
+            "deliverables": [
+              {
+                "name": "Arquitectura Documentada",
+                "template": "tpl-003",
+                "required": true,
+                "reviewedBy": ["Equipo Completo"]
+              },
+              {
+                "name": "Prototipo Técnico",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Líder Técnico"]
+              }
+            ],
+            "gate": {
+              "name": "Design Review",
+              "criteria": [
+                "Arquitectura satisface requerimientos de seguridad",
+                "Interfaces bien definidas",
+                "Prototipo técnico valida decisiones arquitectónicas",
+                "Equipo completo aprueba el diseño",
+                "Plan de testing aprobado"
+              ],
+              "decision": "GO / ITERAR DISEÑO"
+            },
+            "keyStakeholders": ["Líder Técnico", "Equipo de Desarrollo Completo"]
+          },
+          {
+            "id": "phase-implementation",
+            "name": "Implementación y Pruebas Unitarias",
+            "order": 3,
+            "description": "Desarrollo con estándares estrictos, testing continuo y code reviews obligatorios",
+            "duration": "50-60% del proyecto (8-12 semanas)",
+            "activities": [
+              "Codificación siguiendo estándares (MISRA C, CERT C, etc.)",
+              "Desarrollo con TDD (Test-Driven Development)",
+              "Code reviews mediante Pull Requests (mínimo 1 reviewer)",
+              "Pruebas unitarias automatizadas (cobertura >95% código crítico)",
+              "Integración continua (CI) con testing automático",
+              "Análisis estático de código automático",
+              "Documentación inline y README por módulo",
+              "Reuniones semanales de progreso (1 hora máximo)"
+            ],
+            "inputs": [
+              "Diseño arquitectónico aprobado",
+              "Estándares de codificación",
+              "Repositorio configurado con CI/CD",
+              "Plan de testing"
+            ],
+            "outputs": [
+              "Código fuente completo y versionado",
+              "Pruebas unitarias automatizadas (cobertura >95% crítico)",
+              "Reportes de code reviews (todos los PRs aprobados)",
+              "Reportes de análisis estático (sin defectos críticos)",
+              "Documentación técnica inline"
+            ],
+            "deliverables": [
+              {
+                "name": "Código Completo con Pruebas",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Líder Técnico", "Pares"]
+              },
+              {
+                "name": "Reporte de Cobertura de Pruebas",
+                "template": "tpl-011",
+                "required": true,
+                "reviewedBy": ["Líder Técnico"]
+              }
+            ],
+            "gate": {
+              "name": "Code Complete",
+              "criteria": [
+                "100% del código implementado",
+                "Cobertura de pruebas >95% en código crítico, >80% en no crítico",
+                "Todos los PRs revisados y aprobados",
+                "Análisis estático sin defectos críticos",
+                "CI/CD pasando consistentemente"
+              ],
+              "decision": "GO / CORREGIR DEFECTOS"
+            },
+            "keyStakeholders": ["Líder Técnico", "Equipo de Desarrollo"]
+          },
+          {
+            "id": "phase-integration-testing",
+            "name": "Integración y Pruebas de Sistema",
+            "order": 4,
+            "description": "Integración completa del sistema y testing exhaustivo incluyendo escenarios críticos de seguridad",
+            "duration": "15-20% del proyecto (3-4 semanas)",
+            "activities": [
+              "Integración incremental de componentes",
+              "Pruebas de integración entre componentes",
+              "Pruebas de sistema completo (casos de uso end-to-end)",
+              "Pruebas de seguridad (boundary testing, fault injection)",
+              "Pruebas de rendimiento (si aplica)",
+              "Pruebas de confiabilidad (stress testing limitado)",
+              "Validación contra criterios de aceptación",
+              "Corrección de defectos encontrados",
+              "Documentación de usuario (manual conciso)"
+            ],
+            "inputs": [
+              "Código completo y probado unitariamente",
+              "Plan de testing",
+              "Casos de prueba derivados de requerimientos",
+              "Ambiente de testing configurado"
+            ],
+            "outputs": [
+              "Sistema completamente integrado",
+              "Reportes de pruebas (integración, sistema, seguridad)",
+              "Defectos corregidos y verificados",
+              "Manual de usuario conciso",
+              "Documentación de deployment"
+            ],
+            "deliverables": [
+              {
+                "name": "Reporte de Pruebas del Sistema",
+                "template": "tpl-011",
+                "required": true,
+                "reviewedBy": ["Líder Técnico", "Cliente"]
+              },
+              {
+                "name": "Manual de Usuario",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": ["Cliente/Usuario Final"]
+              }
+            ],
+            "gate": {
+              "name": "System Acceptance",
+              "criteria": [
+                "Todas las pruebas de sistema pasan",
+                "Criterios de aceptación satisfechos",
+                "Cero defectos críticos abiertos",
+                "Defectos menores aceptados por cliente",
+                "Documentación completa y revisada",
+                "Cliente aprueba el sistema"
+              ],
+              "decision": "GO TO PRODUCTION / FIX & RE-TEST"
+            },
+            "keyStakeholders": ["Líder Técnico", "Cliente/Usuario Final", "Equipo Completo"]
+          },
+          {
+            "id": "phase-deployment",
+            "name": "Deployment y Soporte Inicial",
+            "order": 5,
+            "description": "Instalación en producción, capacitación y soporte post-lanzamiento",
+            "duration": "10% del proyecto + soporte continuo",
+            "activities": [
+              "Instalación en ambiente de producción",
+              "Capacitación a usuarios finales y operadores",
+              "Período de supervisión post-deployment (2-4 semanas)",
+              "Soporte para resolución de issues iniciales",
+              "Monitoreo de sistema en producción",
+              "Documentación de lecciones aprendidas",
+              "Planificación de mantenimiento futuro"
+            ],
+            "inputs": [
+              "Sistema aprobado y documentado",
+              "Manual de usuario",
+              "Plan de deployment",
+              "Ambiente de producción preparado"
+            ],
+            "outputs": [
+              "Sistema operando en producción",
+              "Usuarios capacitados",
+              "Logs de operación inicial",
+              "Issues post-lanzamiento resueltos",
+              "Documentación de lecciones aprendidas",
+              "Plan de mantenimiento"
+            ],
+            "deliverables": [
+              {
+                "name": "Sistema en Producción",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Cliente", "Operadores"]
+              },
+              {
+                "name": "Reporte de Lecciones Aprendidas",
+                "template": null,
+                "required": false,
+                "reviewedBy": ["Equipo Completo"]
+              }
+            ],
+            "gate": {
+              "name": "Go-Live",
+              "criteria": [
+                "Sistema instalado correctamente",
+                "Usuarios capacitados",
+                "Plan de rollback disponible",
+                "Soporte disponible durante período inicial",
+                "Cliente acepta go-live"
+              ],
+              "decision": "GO-LIVE / POSTPONE"
+            },
+            "keyStakeholders": ["Cliente", "Usuarios Finales", "Equipo de Soporte"]
+          }
+        ],
+        "whenToUse": [
+          "✅ Sistema crítico de seguridad con vidas o activos en riesgo",
+          "✅ Equipo pequeño (5-10 personas) co-localizado",
+          "✅ Requerimientos estables y bien entendidos",
+          "✅ Necesidad de cumplimiento regulatorio (FDA, aviación, automotriz)",
+          "✅ Comunicación directa posible entre todos los miembros",
+          "✅ Proyecto de duración media (3-6 meses)",
+          "✅ Criticidad requiere especificación completa pero equipo pequeño permite agilidad",
+          "✅ Cultura de equipo que valora rigor pero rechaza burocracia excesiva",
+          "✅ Tecnología conocida y estable",
+          "✅ Restricciones de hardware conocidas desde el inicio"
+        ],
+        "whenNotToUse": [
+          "❌ Equipo grande (>10 personas) que requiere coordinación formal",
+          "❌ Equipo distribuido geográficamente (documentación ligera es insuficiente)",
+          "❌ Requerimientos volátiles o mal entendidos",
+          "❌ Startups o proyectos exploratorios (demasiado overhead)",
+          "❌ Sistemas donde experimentación de UI es clave",
+          "❌ Proyectos de muy corta duración (<3 meses) donde especificación completa consume mucho tiempo",
+          "❌ Sistemas no críticos donde metodologías ágiles puras son más eficientes",
+          "❌ Necesidad de demos frecuentes a stakeholders (cascada entrega al final)",
+          "❌ Alta incertidumbre tecnológica que requiere prototipado exploratorio",
+          "❌ Múltiples stakeholders con intereses conflictivos (requiere documentación más formal)"
+        ],
+        "advantages": [
+          "✅ Especificación completa reduce ambigüedad y errores de interpretación",
+          "✅ Documentación concisa pero suficiente para cumplimiento regulatorio",
+          "✅ Code reviews obligatorios mejoran calidad y compartir conocimiento",
+          "✅ Testing exhaustivo apropiado para criticidad del sistema",
+          "✅ Menor overhead burocrático que Cascada tradicional",
+          "✅ Comunicación directa del equipo pequeño compensa documentación ligera",
+          "✅ CI/CD automatiza verificación continua sin sobrecarga manual",
+          "✅ Proceso disciplinado pero pragmático",
+          "✅ Trazabilidad de requerimiento a código y pruebas",
+          "✅ Apropiado para certificación con menos costo que procesos más pesados"
+        ],
+        "disadvantages": [
+          "❌ Cambios de requerimientos son costosos (requieren actualizar documentación)",
+          "❌ Cliente ve sistema funcionando solo al final (riesgo de desalineación)",
+          "❌ Requiere disciplina del equipo para mantener rigor sin burocracia",
+          "❌ Documentación ligera puede ser insuficiente para proyectos muy complejos",
+          "❌ No apto para innovación rápida o experimentación",
+          "❌ Riesgo de sub-documentación si equipo interpreta 'ligero' como 'opcional'",
+          "❌ Escalabilidad limitada: proceso no funciona bien si equipo crece >10 personas",
+          "❌ Difícil onboarding de nuevos miembros con documentación concisa"
+        ],
+        "changeManagement": {
+          "approach": "Change Control Simplificado para Equipos Pequeños",
+          "description": "Gestión de cambios formal pero ágil: todos los cambios significativos se documentan y aprueban, pero el proceso es rápido aprovechando el tamaño pequeño del equipo",
+          "process": [
+            {
+              "step": 1,
+              "name": "Solicitud de Cambio",
+              "action": "Cualquier miembro documenta el cambio propuesto en issue tracker (Jira, GitHub Issues)",
+              "responsible": "Cualquier miembro del equipo",
+              "artifacts": ["Issue con descripción del cambio", "Justificación técnica o de negocio"],
+              "timeframe": "5-10 minutos"
+            },
+            {
+              "step": 2,
+              "name": "Análisis de Impacto Rápido",
+              "action": "Líder técnico analiza impacto en requerimientos, diseño, código, testing",
+              "responsible": "Líder Técnico",
+              "artifacts": ["Comentario en issue con análisis de impacto", "Estimación de esfuerzo"],
+              "timeframe": "30 minutos - 2 horas"
+            },
+            {
+              "step": 3,
+              "name": "Decisión del Equipo",
+              "action": "Reunión rápida del equipo completo (15-30 min) o decisión asíncrona si es menor",
+              "responsible": "Equipo Completo (decisión por consenso)",
+              "artifacts": ["Decisión documentada en issue (Aprobado/Rechazado/Diferido)"],
+              "timeframe": "Mismo día o máximo 24 horas"
+            },
+            {
+              "step": 4,
+              "name": "Actualización de Documentación",
+              "action": "Si aprobado, actualizar documentación afectada (Requerimientos, Diseño, README)",
+              "responsible": "Persona que propone el cambio",
+              "artifacts": ["Documentos actualizados", "Commit en control de versiones"],
+              "timeframe": "Antes de implementar el cambio"
+            },
+            {
+              "step": 5,
+              "name": "Implementación",
+              "action": "Implementar cambio siguiendo proceso estándar (TDD, PR, code review)",
+              "responsible": "Desarrollador asignado",
+              "artifacts": ["Código", "Pruebas", "Pull Request"],
+              "timeframe": "Según estimación"
+            },
+            {
+              "step": 6,
+              "name": "Verificación",
+              "action": "Verificar que el cambio satisface la solicitud y no introduce regresiones",
+              "responsible": "Reviewer + Líder Técnico",
+              "artifacts": ["Pruebas pasando", "Aprobación del PR"],
+              "timeframe": "1-2 días"
+            }
+          ],
+          "tools": [
+            "Jira / GitHub Issues (tracking de cambios)",
+            "Git (control de versiones)",
+            "Slack / MS Teams (comunicación rápida)",
+            "Google Docs / Confluence (documentación)"
+          ],
+          "ccbComposition": [
+            "Líder Técnico (facilitador)",
+            "Equipo Completo (decisión por consenso)",
+            "Cliente/Stakeholder (para cambios mayores de alcance)"
+          ],
+          "frequency": "On-demand (decisiones rápidas, típicamente <24 horas)",
+          "timeExpectation": "Cambios menores: mismo día. Cambios mayores: 2-3 días desde solicitud hasta aprobación"
+        },
+        "iterationStrategy": {
+          "type": "none",
+          "description": "Modelo secuencial sin iteraciones formales, pero con retroalimentación rápida dentro de cada fase gracias al tamaño pequeño del equipo"
+        },
+        "tooling": {
+          "required": [
+            "Git (control de versiones)",
+            "GitHub/GitLab (code hosting + CI/CD)",
+            "Análisis estático (SonarQube, Coverity, o MISRA checker)",
+            "Testing framework (JUnit, pytest, Google Test, etc.)"
+          ],
+          "recommended": [
+            "Jira / GitHub Projects (tracking)",
+            "Slack / MS Teams (comunicación)",
+            "PlantUML / Mermaid (diagramas versionables)",
+            "Doxygen / Sphinx (documentación de código)",
+            "Confluence / Notion (documentación colaborativa)"
+          ]
+        },
+        "references": {
+          "chapter": "Capítulo 2",
+          "sections": [
+            "Sección 2.1.1: Modelo en Cascada",
+            "Sección 2.2.1: Especificación, Desarrollo y Validación"
+          ],
+          "relatedConcepts": [
+            "concept-waterfall",
+            "concept-requirements-engineering",
+            "concept-verification-validation"
+          ]
+        }
       },
       "methodology": {
         "name": "Tradicional Simplificada",
@@ -1225,21 +2026,466 @@
       ],
       "pathDescription": "Procesamiento por Lotes → Grandes Volúmenes → Eficiencia Crítica",
       "process": {
-        "name": "Cascada o Incremental",
+        "name": "Cascada o Incremental (Pipel Pipeline-Oriented)",
+        "type": "sequential-phases",
+        "description": "Modelo en Cascada para sistemas de procesamiento por lotes (batch processing): enfocado en diseño anticipado del pipeline de procesamiento, optimización de performance y manejo de grandes volúmenes de datos. Apropiado cuando los procesos de negocio están bien definidos y la eficiencia es crítica.",
         "chapter": 2,
         "why": [
           "Requisitos estables (procesos de negocio establecidos)",
-          "Planificación anticipada crítica",
+          "Planificación anticipada crítica para optimización",
           "Performance es requisito no funcional clave",
-          "Sistema nuevo y definido → Cascada; complejo → Incremental"
+          "Sistema nuevo y definido → Cascada; complejo → Incremental",
+          "Testing con volúmenes reales requiere sistema completo"
         ],
         "how": [
-          "Fase 1: Análisis → Entender proceso actual",
-          "Fase 2: Diseño → Optimizar para eficiencia",
-          "Fase 3: Implementación → Código performante",
-          "Fase 4: Testing → Validar con volúmenes reales",
-          "Fase 5: Deployment → Scheduling y monitoring"
-        ]
+          "Fase 1: Análisis → Entender proceso actual y volúmenes",
+          "Fase 2: Diseño del Pipeline → Optimizar para eficiencia y escalabilidad",
+          "Fase 3: Implementación → Código performante con streaming",
+          "Fase 4: Testing de Volumen → Validar con datos reales (GB, TB, PB)",
+          "Fase 5: Deployment → Scheduling, monitoring y alertas"
+        ],
+        "phases": [
+          {
+            "id": "phase-analysis",
+            "name": "Análisis del Proceso y Volumetría",
+            "order": 1,
+            "description": "Entender en profundidad el proceso de negocio actual, fuentes de datos, transformaciones requeridas y volúmenes esperados",
+            "duration": "10-15% del proyecto (1-2 semanas)",
+            "activities": [
+              "Documentar proceso de negocio actual (AS-IS)",
+              "Identificar todas las fuentes de datos (archivos, bases de datos, APIs)",
+              "Definir transformaciones requeridas (lógica de negocio)",
+              "Determinar outputs esperados (formatos, destinos)",
+              "Estimar volúmenes actuales y proyectados (registros, GB, crecimiento anual)",
+              "Identificar requisitos de frecuencia (diario, semanal, on-demand)",
+              "Analizar restricciones de ventanas de tiempo (batch window)",
+              "Identificar dependencias con otros procesos",
+              "Definir SLAs (Service Level Agreements) de processing time"
+            ],
+            "inputs": [
+              "Descripción del proceso de negocio",
+              "Acceso a sistemas fuente (lectura)",
+              "Estadísticas de volúmenes históricos",
+              "Restricciones de infraestructura"
+            ],
+            "outputs": [
+              "Documento de Análisis de Proceso (5-10 páginas)",
+              "Modelo de datos entrada/salida",
+              "Estimaciones de volúmenes (actuales y proyectados)",
+              "Definición de SLAs (tiempo máximo de procesamiento)",
+              "Identificación de casos edge (datos corruptos, volúmenes pico)"
+            ],
+            "deliverables": [
+              {
+                "name": "Documento de Análisis del Proceso",
+                "template": "tpl-001",
+                "required": true,
+                "reviewedBy": ["Experto de Negocio", "Arquitecto de Datos"]
+              }
+            ],
+            "gate": {
+              "name": "Analysis Approval",
+              "criteria": [
+                "Proceso de negocio entendido completamente",
+                "Todas las fuentes de datos identificadas y accesibles",
+                "Transformaciones definidas con lógica de negocio clara",
+                "Volúmenes estimados con evidencia histórica",
+                "SLAs acordados con stakeholders"
+              ],
+              "decision": "GO / CLARIFICAR REQUISITOS"
+            },
+            "keyStakeholders": ["Experto de Negocio", "Arquitecto de Datos", "Operaciones IT"]
+          },
+          {
+            "id": "phase-pipeline-design",
+            "name": "Diseño del Pipeline de Procesamiento",
+            "order": 2,
+            "description": "Diseñar flujo de procesamiento optimizado para eficiencia, manejo de errores y escalabilidad",
+            "duration": "15-20% del proyecto (2-3 semanas)",
+            "activities": [
+              "Diseñar pipeline ETL (Extract, Transform, Load) completo",
+              "Definir stages del pipeline (extracción → transformación → carga → validación)",
+              "Diseñar estrategia de procesamiento (batch vs streaming, tamaño de chunk)",
+              "Diseñar manejo de errores y reintentos (retry logic, dead letter queue)",
+              "Diseñar checkpointing para reinicio desde fallo",
+              "Diseñar particionamiento de datos para paralelización",
+              "Optimizar queries de base de datos (índices, particionamiento)",
+              "Diseñar logging y auditoría (qué se registra, dónde, por cuánto tiempo)",
+              "Definir métricas de performance (registros/segundo, GB/hora)",
+              "Diseñar monitoreo y alertas"
+            ],
+            "inputs": [
+              "Documento de Análisis aprobado",
+              "Arquitectura de infraestructura disponible",
+              "Estándares de desarrollo de la organización",
+              "Herramientas disponibles (Apache Airflow, Apache Spark, etc.)"
+            ],
+            "outputs": [
+              "Diagrama de flujo del pipeline (Diagrama de Actividad UML)",
+              "Diseño de modelo de datos (tablas staging, transformación, output)",
+              "Especificación de manejo de errores",
+              "Diseño de checkpoints y estrategia de reinicio",
+              "Plan de optimización de performance",
+              "Especificación de logging y auditoría"
+            ],
+            "deliverables": [
+              {
+                "name": "Diseño del Pipeline ETL",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": ["Arquitecto de Datos", "Equipo de Desarrollo"]
+              },
+              {
+                "name": "Diagrama de Flujo del Proceso",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Experto de Negocio", "Arquitecto"]
+              }
+            ],
+            "gate": {
+              "name": "Design Review",
+              "criteria": [
+                "Pipeline satisface requisitos funcionales",
+                "Diseño optimizado para volúmenes esperados",
+                "Manejo de errores robusto",
+                "Estrategia de reinicio desde fallo definida",
+                "Logging y auditoría cumplen requisitos de compliance"
+              ],
+              "decision": "GO / ITERAR DISEÑO"
+            },
+            "keyStakeholders": ["Arquitecto de Datos", "Equipo de Desarrollo", "Operaciones"]
+          },
+          {
+            "id": "phase-implementation",
+            "name": "Implementación del Pipeline",
+            "order": 3,
+            "description": "Desarrollo del código de procesamiento con énfasis en eficiencia y robustez",
+            "duration": "40-50% del proyecto (5-8 semanas)",
+            "activities": [
+              "Implementar extracción de datos (conectores a fuentes)",
+              "Implementar transformaciones (lógica de negocio)",
+              "Implementar carga de datos (escritura a destinos)",
+              "Implementar checkpointing y reinicio",
+              "Implementar manejo de errores (try-catch, retry, alertas)",
+              "Implementar logging y auditoría",
+              "Optimizar queries de base de datos",
+              "Implementar procesamiento en batch (no row-by-row)",
+              "Implementar paralelización (si volumen lo requiere)",
+              "Testing unitario de cada stage del pipeline",
+              "Testing de integración entre stages"
+            ],
+            "inputs": [
+              "Diseño del pipeline aprobado",
+              "Acceso a ambientes de desarrollo y staging",
+              "Datos de prueba (subset de producción)",
+              "Herramientas de desarrollo (Python, SQL, Airflow, etc.)"
+            ],
+            "outputs": [
+              "Código fuente del pipeline versionado",
+              "Scripts de deployment (DAGs de Airflow, cron jobs, etc.)",
+              "Pruebas unitarias e integración",
+              "Documentación técnica (README, diagramas)",
+              "Scripts de configuración (variables de entorno, conexiones)"
+            ],
+            "deliverables": [
+              {
+                "name": "Código del Pipeline ETL",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Líder Técnico", "Code Reviewer"]
+              },
+              {
+                "name": "Documentación Técnica",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": ["Equipo de Operaciones"]
+              }
+            ],
+            "gate": {
+              "name": "Code Complete",
+              "criteria": [
+                "Todos los stages del pipeline implementados",
+                "Pruebas unitarias pasando (cobertura >80%)",
+                "Código revisado y aprobado",
+                "Manejo de errores implementado y probado",
+                "Logging y auditoría funcionando"
+              ],
+              "decision": "GO TO TESTING / FIX DEFECTS"
+            },
+            "keyStakeholders": ["Líder Técnico", "Equipo de Desarrollo"]
+          },
+          {
+            "id": "phase-volume-testing",
+            "name": "Pruebas de Volumen y Performance",
+            "order": 4,
+            "description": "Testing exhaustivo con volúmenes reales y validación de performance",
+            "duration": "20-25% del proyecto (3-4 semanas)",
+            "activities": [
+              "Preparar datasets de prueba (subsets de producción, anonimizados)",
+              "Ejecutar pruebas con volúmenes reales (100%, 150%, 200% de volumen esperado)",
+              "Medir performance (tiempo total, throughput en registros/segundo)",
+              "Validar correctitud de outputs (comparar contra resultados esperados)",
+              "Probar manejo de errores (inyectar datos corruptos, simular fallos de BD)",
+              "Probar reinicio desde checkpoints (matar proceso a mitad y reiniciar)",
+              "Probar procesamiento de volúmenes pico (black friday, fin de mes)",
+              "Optimización de performance (índices, batch size, paralelización)",
+              "Pruebas de regresión (asegurar que optimizaciones no rompan funcionalidad)",
+              "Validación de logging y auditoría (revisar logs generados)"
+            ],
+            "inputs": [
+              "Código del pipeline completo",
+              "Datos de prueba (subset de producción, anonimizado)",
+              "Ambiente de testing (similar a producción)",
+              "Casos de prueba derivados de requisitos"
+            ],
+            "outputs": [
+              "Reportes de pruebas de volumen (tiempo, throughput, errores)",
+              "Resultados validados (comparación con outputs esperados)",
+              "Reportes de pruebas de errores y reinicio",
+              "Métricas de performance documentadas",
+              "Optimizaciones implementadas y validadas"
+            ],
+            "deliverables": [
+              {
+                "name": "Reporte de Pruebas de Volumen",
+                "template": "tpl-011",
+                "required": true,
+                "reviewedBy": ["Líder Técnico", "Experto de Negocio"]
+              },
+              {
+                "name": "Validación de Outputs",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Experto de Negocio"]
+              }
+            ],
+            "gate": {
+              "name": "Performance Acceptance",
+              "criteria": [
+                "Performance satisface SLAs (tiempo de procesamiento dentro de ventana)",
+                "Throughput adecuado para volúmenes proyectados",
+                "Outputs correctos validados por experto de negocio",
+                "Manejo de errores funciona correctamente",
+                "Reinicio desde checkpoint funciona correctamente",
+                "Logging y auditoría completos"
+              ],
+              "decision": "GO TO PRODUCTION / OPTIMIZE & RE-TEST"
+            },
+            "keyStakeholders": ["Líder Técnico", "Experto de Negocio", "Operaciones"]
+          },
+          {
+            "id": "phase-deployment",
+            "name": "Deployment y Operacionalización",
+            "order": 5,
+            "description": "Despliegue a producción, configuración de scheduling y monitoreo",
+            "duration": "10-15% del proyecto (1-2 semanas) + operación continua",
+            "activities": [
+              "Deployment de código a ambiente de producción",
+              "Configurar scheduling (cron, Airflow scheduler, Task Scheduler)",
+              "Configurar monitoreo (métricas de performance, alertas)",
+              "Configurar alertas (fallo de job, tiempo excedido, errores críticos)",
+              "Configurar dashboards (Grafana, Kibana, herramienta corporativa)",
+              "Documentar procedimientos operacionales (runbook)",
+              "Capacitar a equipo de operaciones (cómo monitorear, troubleshoot)",
+              "Ejecutar primer run en producción (con supervisión)",
+              "Validar outputs del primer run",
+              "Handoff a operaciones (transferencia de responsabilidad)"
+            ],
+            "inputs": [
+              "Pipeline probado y aprobado",
+              "Ambiente de producción preparado",
+              "Credenciales y permisos configurados",
+              "Plan de deployment"
+            ],
+            "outputs": [
+              "Pipeline operando en producción según schedule",
+              "Monitoreo y alertas funcionando",
+              "Dashboards operacionales",
+              "Documentación operacional (runbook)",
+              "Equipo de operaciones capacitado",
+              "Primeros runs exitosos en producción"
+            ],
+            "deliverables": [
+              {
+                "name": "Runbook Operacional",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": ["Equipo de Operaciones"]
+              },
+              {
+                "name": "Dashboard de Monitoreo",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Operaciones", "Management"]
+              }
+            ],
+            "gate": {
+              "name": "Go-Live",
+              "criteria": [
+                "Pipeline deployado correctamente en producción",
+                "Scheduling configurado y validado",
+                "Monitoreo y alertas funcionando",
+                "Primer run exitoso en producción",
+                "Equipo de operaciones capacitado",
+                "Runbook completo y revisado"
+              ],
+              "decision": "GO-LIVE / FIX & RE-DEPLOY"
+            },
+            "keyStakeholders": ["Operaciones", "Líder Técnico", "Management"]
+          }
+        ],
+        "whenToUse": [
+          "✅ Procesamiento por lotes (batch) de grandes volúmenes de datos",
+          "✅ Procesos de negocio bien definidos y estables",
+          "✅ ETL (Extract, Transform, Load) entre sistemas",
+          "✅ Procesamiento nocturno o periódico (diario, semanal)",
+          "✅ Transformaciones de datos que no requieren interacción en tiempo real",
+          "✅ Performance y eficiencia son requisitos críticos",
+          "✅ Volúmenes grandes (GB, TB, PB) que requieren optimización",
+          "✅ Necesidad de auditoría completa (qué se procesó, cuándo, resultado)",
+          "✅ Procesamiento que puede fallar y reiniciarse desde checkpoint",
+          "✅ Sistemas legacy que generan archivos planos o dumps de BD"
+        ],
+        "whenNotToUse": [
+          "❌ Procesamiento en tiempo real o streaming (usar Kafka, Spark Streaming)",
+          "❌ Procesos de negocio volátiles o mal entendidos",
+          "❌ Necesidad de respuesta inmediata (usar sistemas transaccionales)",
+          "❌ Volúmenes pequeños que no requieren optimización (procesamiento simple)",
+          "❌ Interacción de usuario en tiempo real (usar APIs síncronas)",
+          "❌ Procesamiento ad-hoc o exploratorio (usar notebooks: Jupyter, Databricks)",
+          "❌ Eventos que deben procesarse inmediatamente (usar event-driven architecture)",
+          "❌ Sistemas donde la latencia es crítica (<1 segundo)",
+          "❌ Procesamiento que requiere feedback inmediato al usuario"
+        ],
+        "advantages": [
+          "✅ Optimización anticipada de performance (diseño antes de implementar)",
+          "✅ Manejo eficiente de grandes volúmenes (batch, streaming, paralelización)",
+          "✅ Robustez mediante checkpointing y reinicio (tolera fallos)",
+          "✅ Auditoría completa (trazabilidad de qué se procesó)",
+          "✅ Scheduling automatizado (desatendido, ejecuta en horarios óptimos)",
+          "✅ Monitoreo proactivo (alertas antes de que usuarios reporten problemas)",
+          "✅ Costo-eficiencia (procesa offline, no requiere recursos 24/7)",
+          "✅ Testing exhaustivo con volúmenes reales antes de producción",
+          "✅ Separación de preocupaciones (extracción, transformación, carga separados)"
+        ],
+        "disadvantages": [
+          "❌ Latencia alta (resultados disponibles horas/días después de generados los datos)",
+          "❌ No apto para procesamiento en tiempo real",
+          "❌ Ventanas de procesamiento limitadas (batch window: 2-4 horas típicamente)",
+          "❌ Debugging complejo (logs de miles/millones de registros)",
+          "❌ Testing completo requiere datos de producción (difícil replicar volumetría)",
+          "❌ Cambios en proceso requieren rehacer todo el pipeline (no iterativo)",
+          "❌ Requiere expertise en optimización de BD y procesamiento de datos",
+          "❌ Monitoreo y alerting críticos (fallos pueden no detectarse hasta siguiente día)"
+        ],
+        "changeManagement": {
+          "approach": "Change Control con Testing de Volumen Obligatorio",
+          "description": "Cambios en pipeline de batch requieren aprobación y re-testing con volúmenes reales antes de deployment a producción",
+          "process": [
+            {
+              "step": 1,
+              "name": "Solicitud de Cambio",
+              "action": "Documentar cambio propuesto con justificación de negocio o técnica",
+              "responsible": "Desarrollador o Experto de Negocio",
+              "artifacts": ["Change Request con descripción detallada"],
+              "timeframe": "1 día"
+            },
+            {
+              "step": 2,
+              "name": "Análisis de Impacto",
+              "action": "Analizar impacto en performance, correctitud de outputs, dependencias",
+              "responsible": "Líder Técnico",
+              "artifacts": ["Análisis de impacto (performance, funcionalidad, riesgo)"],
+              "timeframe": "2-3 días"
+            },
+            {
+              "step": 3,
+              "name": "Aprobación",
+              "action": "Comité de cambios revisa y aprueba/rechaza",
+              "responsible": "Change Control Board (Líder Técnico, Experto de Negocio, Operaciones)",
+              "artifacts": ["Decisión documentada con justificación"],
+              "timeframe": "1 semana (reunión semanal)"
+            },
+            {
+              "step": 4,
+              "name": "Implementación",
+              "action": "Desarrollar cambio en ambiente de desarrollo",
+              "responsible": "Desarrollador",
+              "artifacts": ["Código modificado", "Pruebas unitarias actualizadas"],
+              "timeframe": "Según estimación"
+            },
+            {
+              "step": 5,
+              "name": "Testing de Volumen",
+              "action": "OBLIGATORIO: Re-ejecutar pruebas de volumen completas en staging",
+              "responsible": "QA/Desarrollador",
+              "artifacts": ["Reporte de pruebas de volumen", "Validación de outputs"],
+              "timeframe": "3-5 días"
+            },
+            {
+              "step": 6,
+              "name": "Deployment a Producción",
+              "action": "Deployment controlado con rollback plan",
+              "responsible": "Operaciones",
+              "artifacts": ["Pipeline actualizado en producción", "Runbook actualizado"],
+              "timeframe": "1 día (ventana de deployment)"
+            },
+            {
+              "step": 7,
+              "name": "Monitoreo Post-Deployment",
+              "action": "Supervisión de primeros runs post-cambio",
+              "responsible": "Operaciones + Líder Técnico",
+              "artifacts": ["Logs de ejecución", "Validación de outputs"],
+              "timeframe": "1 semana (primeros 3-5 runs)"
+            }
+          ],
+          "tools": [
+            "Jira (tracking de cambios)",
+            "Git (control de versiones)",
+            "Apache Airflow (DAG versionado)",
+            "Ambiente de Staging (réplica de producción)"
+          ],
+          "ccbComposition": [
+            "Líder Técnico",
+            "Experto de Negocio (valida correctitud de outputs)",
+            "Operaciones (valida runbook y monitoreo)"
+          ],
+          "frequency": "Semanal o bi-semanal",
+          "timeExpectation": "Cambios menores: 2 semanas. Cambios mayores: 4-6 semanas (incluye re-testing completo)"
+        },
+        "iterationStrategy": {
+          "type": "none",
+          "description": "Modelo secuencial sin iteraciones: diseño completo del pipeline antes de implementar, testing exhaustivo antes de producción"
+        },
+        "tooling": {
+          "required": [
+            "Lenguaje de scripting (Python, SQL)",
+            "Base de datos (PostgreSQL, SQL Server, Oracle)",
+            "Control de versiones (Git)",
+            "Scheduler (Cron, Apache Airflow, Azure Data Factory)"
+          ],
+          "recommended": [
+            "Apache Airflow (orchestration de pipelines)",
+            "Apache Spark (procesamiento distribuido para volúmenes muy grandes)",
+            "Pandas (procesamiento de datos en Python)",
+            "Great Expectations (validación de calidad de datos)",
+            "dbt (transformaciones SQL versionadas)",
+            "Grafana / Kibana (dashboards de monitoreo)",
+            "Sentry / Datadog (alertas)"
+          ]
+        },
+        "references": {
+          "chapter": "Capítulo 2",
+          "sections": [
+            "Sección 2.1.1: Modelo en Cascada",
+            "Capítulo 6: Arquitectura de Software (Patrón Tubería y Filtro)"
+          ],
+          "relatedConcepts": [
+            "concept-waterfall",
+            "concept-pipeline-architecture",
+            "concept-batch-processing"
+          ]
+        }
       },
       "methodology": {
         "name": "Tradicional con Planificación",
@@ -1358,21 +2604,454 @@
       ],
       "pathDescription": "Recolección de Datos → IoT/Sensores → Confiabilidad 24/7 → Condiciones Adversas",
       "process": {
-        "name": "Cascada",
+        "name": "Incremental con Prototipado (Edge + Cloud)",
+        "type": "sequential-phases",
+        "description": "Modelo incremental para sistemas IoT: desarrollo del Edge Device (firmware embebido) y Cloud Backend en paralelo, con énfasis en confiabilidad 24/7, power management y conectividad intermitente. Prototipado temprano seguido de field testing extensivo en condiciones reales.",
         "chapter": 2,
         "why": [
           "Dependencia de hardware define requisitos estables",
-          "Difícil cambiar después de deployment en campo",
-          "Entornos hostiles dificultan mantenimiento",
-          "Necesidad de diseño robusto desde inicio"
+          "Difícil y costoso cambiar después de deployment en campo",
+          "Entornos hostiles dificultan mantenimiento y acceso físico",
+          "Necesidad de diseño robusto desde inicio (confiabilidad crítica)",
+          "Over-The-Air (OTA) updates necesarios para correcciones post-deployment"
         ],
         "how": [
           "Fase 1: Especificación → Hardware + software + condiciones ambientales",
-          "Fase 2: Diseño → Tolerancia a fallos y low power",
-          "Fase 3: Prototipo → Testing en lab",
-          "Fase 4: Implementación → Firmware robusto",
-          "Fase 5: Field Testing → Condiciones reales extensivo"
-        ]
+          "Fase 2: Diseño Edge/Cloud → Arquitectura distribuida + protocolo de comunicación",
+          "Fase 3: Prototipo → Testing en lab con hardware real",
+          "Fase 4: Implementación → Firmware robusto + backend completo",
+          "Fase 5: Field Testing → Condiciones reales extensivo (temperatura, conectividad, power)"
+        ],
+        "phases": [
+          {
+            "id": "phase-requirements",
+            "name": "Especificación de Requerimientos Edge + Cloud",
+            "order": 1,
+            "description": "Definir requerimientos de hardware, software, conectividad, power y condiciones ambientales",
+            "duration": "10-15% del proyecto (1-2 semanas)",
+            "activities": [
+              "Definir sensores y actuadores necesarios (tipo, precisión, rango)",
+              "Especificar requisitos de conectividad (WiFi, BLE, LoRaWAN, cellular)",
+              "Definir power management (batería, solar, AC power)",
+              "Especificar condiciones ambientales (temperatura, humedad, IP rating)",
+              "Definir frecuencia de telemetría (cada X segundos/minutos/horas)",
+              "Diseñar protocolo de comunicación Edge → Cloud (MQTT, HTTP, CoAP)",
+              "Especificar datos a almacenar y analizar en Cloud",
+              "Definir dashboard y alertas para usuarios finales",
+              "Identificar requisitos de OTA (Over-The-Air) updates",
+              "Definir SLAs de uptime y latencia"
+            ],
+            "inputs": [
+              "Necesidad del negocio (qué se quiere monitorear/controlar)",
+              "Restricciones de infraestructura (red disponible, power)",
+              "Condiciones ambientales del deployment",
+              "Presupuesto de hardware"
+            ],
+            "outputs": [
+              "Especificación de Hardware (BOM: Bill of Materials)",
+              "Especificación de Software Edge (firmware)",
+              "Especificación de Software Cloud (backend + dashboard)",
+              "Especificación de Protocolo de Comunicación",
+              "Requisitos de Power Management",
+              "Condiciones Ambientales de Operación"
+            ],
+            "deliverables": [
+              {
+                "name": "Documento de Requerimientos IoT",
+                "template": "tpl-001",
+                "required": true,
+                "reviewedBy": ["Arquitecto de IoT", "Stakeholder"]
+              }
+            ],
+            "gate": {
+              "name": "Requirements Approval",
+              "criteria": [
+                "Hardware seleccionado satisface requisitos de sensores y power",
+                "Conectividad viable en condiciones de deployment",
+                "Protocolo de comunicación definido",
+                "Cloud backend factible dentro de presupuesto",
+                "Condiciones ambientales entendidas y hardware apropiado"
+              ],
+              "decision": "GO / CLARIFICAR / CAMBIAR HARDWARE"
+            },
+            "keyStakeholders": ["Arquitecto de IoT", "Ingeniero de Hardware", "Stakeholder"]
+          },
+          {
+            "id": "phase-edge-cloud-design",
+            "name": "Diseño de Arquitectura Edge + Cloud",
+            "order": 2,
+            "description": "Diseñar arquitectura distribuida: qué se procesa en Edge vs Cloud, protocolo de comunicación, manejo de conectividad intermitente",
+            "duration": "15-20% del proyecto (2-3 semanas)",
+            "activities": [
+              "Decidir qué procesar en Edge vs Cloud (filtrado, agregación, alertas locales)",
+              "Diseñar Finite State Machine (FSM) del dispositivo Edge",
+              "Diseñar protocolo de comunicación (formato de mensajes, QoS)",
+              "Diseñar estrategia de buffering para conectividad intermitente",
+              "Diseñar power management (sleep modes, wake-up triggers)",
+              "Diseñar backend Cloud (API, base de datos, analytics)",
+              "Diseñar dashboard de visualización y alertas",
+              "Diseñar mecanismo de OTA updates (seguro, rollback, phased rollout)",
+              "Diseñar seguridad (autenticación de dispositivos, encriptación)",
+              "Diseñar watchdog timers y auto-recovery del dispositivo"
+            ],
+            "inputs": [
+              "Especificación de requerimientos aprobada",
+              "Hardware seleccionado (datasheet, limitaciones)",
+              "Infraestructura Cloud disponible (AWS IoT, Azure IoT, GCP IoT)"
+            ],
+            "outputs": [
+              "Diagrama de Arquitectura Edge + Cloud",
+              "Finite State Machine (FSM) del dispositivo",
+              "Especificación de Protocolo de Comunicación (MQTT topics, mensaje JSON)",
+              "Diseño de Base de Datos (TimeSeries DB: InfluxDB, TimescaleDB)",
+              "Diseño de Power Management (estados de sleep, consumo estimado)",
+              "Diseño de OTA Updates (workflow, seguridad)",
+              "Diseño de Seguridad (TLS, device certificates)"
+            ],
+            "deliverables": [
+              {
+                "name": "Arquitectura Edge + Cloud",
+                "template": "tpl-003",
+                "required": true,
+                "reviewedBy": ["Arquitecto de IoT", "Equipo de Desarrollo"]
+              },
+              {
+                "name": "FSM del Dispositivo Edge",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Ingeniero de Firmware"]
+              }
+            ],
+            "gate": {
+              "name": "Design Review",
+              "criteria": [
+                "Arquitectura satisface requisitos de power y conectividad",
+                "FSM completa con todos los estados y transiciones (incluye recovery)",
+                "Protocolo de comunicación eficiente (tamaño de mensaje optimizado)",
+                "Buffering maneja desconexiones de hasta X horas",
+                "OTA updates seguro y con rollback",
+                "Seguridad apropiada (TLS, autenticación)"
+              ],
+              "decision": "GO / ITERAR DISEÑO"
+            },
+            "keyStakeholders": ["Arquitecto de IoT", "Ingeniero de Firmware", "Backend Developer"]
+          },
+          {
+            "id": "phase-prototype",
+            "name": "Prototipo Hardware + Firmware Básico",
+            "order": 3,
+            "description": "Construir prototipo funcional con hardware real y firmware básico para validar arquitectura en lab",
+            "duration": "20-25% del proyecto (3-4 semanas)",
+            "activities": [
+              "Armar prototipo de hardware (breadboard, dev board + sensores)",
+              "Implementar firmware básico (leer sensor, enviar dato a Cloud)",
+              "Implementar backend básico (recibir dato, almacenar, dashboard simple)",
+              "Probar comunicación Edge → Cloud en lab",
+              "Validar power management (medir consumo real)",
+              "Probar desconexión y reconexión (buffering funciona?)",
+              "Validar que sensores dan lecturas correctas",
+              "Probar OTA update básico (actualizar firmware remotamente)",
+              "Testing de integración Edge ↔ Cloud"
+            ],
+            "inputs": [
+              "Diseño de arquitectura aprobado",
+              "Hardware adquirido (dev boards, sensores)",
+              "Cloud backend configurado (AWS IoT, Azure IoT)"
+            ],
+            "outputs": [
+              "Prototipo funcional de hardware",
+              "Firmware básico (lee sensor, envía dato, buffering simple)",
+              "Backend básico (recibe, almacena, dashboard mínimo)",
+              "Validación de arquitectura (funciona en lab)",
+              "Mediciones de power consumption reales"
+            ],
+            "deliverables": [
+              {
+                "name": "Prototipo Funcional",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Arquitecto de IoT", "Stakeholder"]
+              },
+              {
+                "name": "Reporte de Validación de Prototipo",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Arquitecto de IoT"]
+              }
+            ],
+            "gate": {
+              "name": "Prototype Validation",
+              "criteria": [
+                "Prototipo funciona en condiciones de lab",
+                "Comunicación Edge → Cloud estable",
+                "Sensores dan lecturas correctas",
+                "Power consumption dentro de lo esperado",
+                "Buffering funciona ante desconexión simulada",
+                "OTA update básico funciona"
+              ],
+              "decision": "GO TO FULL DEVELOPMENT / ITERAR PROTOTIPO"
+            },
+            "keyStakeholders": ["Arquitecto de IoT", "Ingeniero de Firmware", "Stakeholder"]
+          },
+          {
+            "id": "phase-full-implementation",
+            "name": "Implementación Completa Edge + Cloud",
+            "order": 4,
+            "description": "Desarrollo completo de firmware robusto y backend Cloud con todas las features",
+            "duration": "35-40% del proyecto (5-7 semanas)",
+            "activities": [
+              "Implementar firmware completo con FSM completa",
+              "Implementar watchdog timers y auto-recovery",
+              "Implementar power management avanzado (deep sleep, wake on interrupt)",
+              "Implementar buffering robusto (ring buffer, persistencia en flash)",
+              "Implementar OTA updates completo (firma digital, rollback, phased rollout)",
+              "Implementar backend Cloud completo (APIs, analytics, alertas)",
+              "Implementar dashboard de visualización (Grafana, custom webapp)",
+              "Implementar sistema de alertas (email, SMS, push notifications)",
+              "Testing de integración completo",
+              "Testing de estrés (miles de dispositivos simulados)",
+              "Documentación técnica (firmware + backend)"
+            ],
+            "inputs": [
+              "Prototipo validado",
+              "Diseño de arquitectura",
+              "FSM completa"
+            ],
+            "outputs": [
+              "Firmware completo y probado",
+              "Backend Cloud completo",
+              "Dashboard operacional",
+              "Sistema de alertas funcionando",
+              "Documentación técnica completa"
+            ],
+            "deliverables": [
+              {
+                "name": "Firmware Completo",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Arquitecto de IoT"]
+              },
+              {
+                "name": "Backend Cloud + Dashboard",
+                "template": null,
+                "required": true,
+                "reviewedBy": ["Stakeholder"]
+              }
+            ],
+            "gate": {
+              "name": "Code Complete",
+              "criteria": [
+                "Firmware completo con FSM completa",
+                "Watchdog y auto-recovery funcionando",
+                "Power management optimizado",
+                "OTA updates completo y seguro",
+                "Backend y dashboard completos",
+                "Testing de integración pasando"
+              ],
+              "decision": "GO TO FIELD TESTING / FIX DEFECTS"
+            },
+            "keyStakeholders": ["Arquitecto de IoT", "Equipo Completo"]
+          },
+          {
+            "id": "phase-field-testing",
+            "name": "Field Testing en Condiciones Reales",
+            "order": 5,
+            "description": "Deployment de pilotos en condiciones reales para validar confiabilidad, power management y conectividad",
+            "duration": "20-25% del proyecto (3-5 semanas)",
+            "activities": [
+              "Deployment de pilotos en campo (10-50 dispositivos)",
+              "Monitoreo 24/7 de telemetría y errores",
+              "Validar power management (batería dura X días/meses como esperado?)",
+              "Validar conectividad en condiciones reales (edificios, campo abierto)",
+              "Probar desconexiones prolongadas (buffering + reconexión)",
+              "Probar condiciones ambientales extremas (calor, frío, humedad)",
+              "Probar OTA updates en campo (actualizar dispositivos remotamente)",
+              "Ajustes basados en telemetría (optimizar power, reducir datos transmitidos)",
+              "Validar uptime y confiabilidad (99.X% uptime?)",
+              "Documentar lecciones aprendidas"
+            ],
+            "inputs": [
+              "Sistema completo (firmware + backend)",
+              "Pilotos deployados en campo",
+              "Monitoreo configurado"
+            ],
+            "outputs": [
+              "Telemetría de campo (uptime, battery life, connectivity)",
+              "Lecciones aprendidas y ajustes implementados",
+              "Validación de SLAs (uptime, latencia)",
+              "Documentación de deployment",
+              "Runbook operacional"
+            ],
+            "deliverables": [
+              {
+                "name": "Reporte de Field Testing",
+                "template": "tpl-011",
+                "required": true,
+                "reviewedBy": ["Stakeholder", "Operaciones"]
+              },
+              {
+                "name": "Runbook Operacional",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": ["Operaciones"]
+              }
+            ],
+            "gate": {
+              "name": "Production Ready",
+              "criteria": [
+                "Uptime >99% en condiciones de campo",
+                "Power consumption dentro de lo esperado (batería dura X tiempo)",
+                "Conectividad estable en condiciones reales",
+                "OTA updates funciona confiablemente",
+                "Cero defectos críticos abiertos",
+                "Stakeholder aprueba deployment masivo"
+              ],
+              "decision": "GO TO PRODUCTION / FIX & RE-TEST"
+            },
+            "keyStakeholders": ["Stakeholder", "Operaciones", "Arquitecto de IoT"]
+          }
+        ],
+        "whenToUse": [
+          "✅ Sistemas IoT con sensores y actuadores distribuidos",
+          "✅ Deployment en condiciones adversas (temperatura extrema, humedad, polvo)",
+          "✅ Conectividad intermitente (WiFi/cellular no garantizada 100%)",
+          "✅ Power management crítico (batería, solar, power limitado)",
+          "✅ Necesidad de operación 24/7 sin mantenimiento frecuente",
+          "✅ Acceso físico difícil post-deployment (campo abierto, alturas, zonas remotas)",
+          "✅ Procesamiento Edge necesario (latencia, ancho de banda, privacidad)",
+          "✅ Necesidad de OTA updates (firmware updates remotos)",
+          "✅ Monitoreo y analytics en Cloud (dashboard, alertas, big data)",
+          "✅ Escalabilidad requerida (decenas a miles de dispositivos)"
+        ],
+        "whenNotToUse": [
+          "❌ Conectividad permanente y confiable disponible (usar sistemas Cloud tradicionales)",
+          "❌ Power ilimitado (AC power siempre disponible) → optimización de power innecesaria",
+          "❌ Acceso físico fácil y frecuente → OTA updates menos críticos",
+          "❌ Procesamiento en tiempo real crítico (<100ms) → Edge computing puede no ser suficiente",
+          "❌ Volúmenes muy pequeños (<10 dispositivos) → overhead de IoT platform puede no justificarse",
+          "❌ Condiciones ambientales controladas (indoor, temperatura estable) → hardware consumer-grade suficiente",
+          "❌ Prototipado rápido sin plan de producción → usar soluciones quick & dirty",
+          "❌ Requisitos volátiles (hardware cambia frecuentemente) → hardware define arquitectura, difícil cambiar"
+        ],
+        "advantages": [
+          "✅ Operación 24/7 sin mantenimiento frecuente",
+          "✅ Power management optimizado (batería dura meses/años)",
+          "✅ Resiliente a conectividad intermitente (buffering local)",
+          "✅ Escalable (de 10 a 10,000 dispositivos con misma arquitectura)",
+          "✅ OTA updates permite correcciones post-deployment",
+          "✅ Edge computing reduce latencia y ancho de banda Cloud",
+          "✅ Cloud backend centralizado para analytics y dashboard",
+          "✅ Monitoreo proactivo (alertas antes de fallo total)",
+          "✅ Diseño robusto valida uptime >99% en condiciones adversas"
+        ],
+        "disadvantages": [
+          "❌ Debugging difícil post-deployment (logs limitados, acceso físico difícil)",
+          "❌ Hardware fijo limita cambios arquitectónicos post-deployment",
+          "❌ Field testing extensivo necesario (costoso y time-consuming)",
+          "❌ Power management complejo (estados de sleep, wake-up, mediciones precisas)",
+          "❌ Conectividad intermitente complica testing (simular desconexiones)",
+          "❌ OTA updates riesgoso (brick device si falla, rollback crítico)",
+          "❌ Seguridad compleja (dispositivos expuestos físicamente, TLS en hardware limitado)",
+          "❌ Costo de hardware puede escalar con volumen (vs software puro)"
+        ],
+        "changeManagement": {
+          "approach": "OTA Updates Controlados con Rollback Automático",
+          "description": "Cambios de firmware se despliegan mediante OTA (Over-The-Air) updates con estrategia de phased rollout y rollback automático si falla",
+          "process": [
+            {
+              "step": 1,
+              "name": "Desarrollo y Testing en Lab",
+              "action": "Desarrollar cambio de firmware y probar exhaustivamente en lab",
+              "responsible": "Ingeniero de Firmware",
+              "artifacts": ["Firmware actualizado", "Tests pasando"],
+              "timeframe": "Según complejidad del cambio"
+            },
+            {
+              "step": 2,
+              "name": "Field Testing con Pilotos",
+              "action": "Deployment a subset de dispositivos (1-5% del total) en campo",
+              "responsible": "Ingeniero de Firmware + Operaciones",
+              "artifacts": ["Firmware deployado a pilotos", "Monitoreo activo"],
+              "timeframe": "1-2 semanas"
+            },
+            {
+              "step": 3,
+              "name": "Validación de Pilotos",
+              "action": "Monitorear telemetría de pilotos (errores, crashes, power consumption)",
+              "responsible": "Operaciones",
+              "artifacts": ["Reporte de telemetría de pilotos"],
+              "timeframe": "3-7 días de monitoreo"
+            },
+            {
+              "step": 4,
+              "name": "Phased Rollout",
+              "action": "Si pilotos OK, deployment incremental (10% → 50% → 100%)",
+              "responsible": "Operaciones",
+              "artifacts": ["Firmware deployado gradualmente"],
+              "timeframe": "1-2 semanas por fase"
+            },
+            {
+              "step": 5,
+              "name": "Monitoreo Post-Rollout",
+              "action": "Monitoreo intensivo de todos los dispositivos actualizados",
+              "responsible": "Operaciones",
+              "artifacts": ["Dashboard de monitoreo", "Alertas configuradas"],
+              "timeframe": "1 semana post-100%"
+            },
+            {
+              "step": 6,
+              "name": "Rollback Automático (si falla)",
+              "action": "Si >X% de dispositivos fallan, rollback automático a versión anterior",
+              "responsible": "Sistema automático + Operaciones",
+              "artifacts": ["Rollback ejecutado", "Post-mortem"],
+              "timeframe": "Automático (minutos a horas)"
+            }
+          ],
+          "tools": [
+            "AWS IoT Device Management / Azure IoT Hub (OTA updates)",
+            "Grafana (monitoreo de telemetría)",
+            "PagerDuty / Datadog (alertas)",
+            "Git (versionado de firmware)"
+          ],
+          "ccbComposition": [
+            "Arquitecto de IoT",
+            "Ingeniero de Firmware",
+            "Operaciones"
+          ],
+          "frequency": "On-demand, típicamente mensual o trimestral para updates no-críticos",
+          "timeExpectation": "Cambios menores: 3-4 semanas desde dev hasta 100% rollout. Cambios críticos: más rápido con mayor riesgo"
+        },
+        "iterationStrategy": {
+          "type": "incremental",
+          "description": "Desarrollo incremental: Prototipo → Implementación Completa → Field Testing. Cada fase valida la anterior antes de continuar"
+        },
+        "tooling": {
+          "required": [
+            "Firmware development (C/C++ para microcontrollers, Python para Raspberry Pi)",
+            "Cloud IoT platform (AWS IoT Core, Azure IoT Hub, GCP IoT Core)",
+            "Time-Series Database (InfluxDB, TimescaleDB, AWS Timestream)",
+            "Dashboard (Grafana, custom webapp)"
+          ],
+          "recommended": [
+            "MQTT Broker (AWS IoT, Mosquitto, HiveMQ)",
+            "OTA Update framework (AWS IoT Jobs, Mender, balena)",
+            "Monitoring (Grafana, Datadog, Prometheus)",
+            "Edge ML (TensorFlow Lite, Edge Impulse) para processing avanzado",
+            "Security (TLS, device certificates, hardware security module)"
+          ]
+        },
+        "references": {
+          "chapter": "Capítulo 2",
+          "sections": [
+            "Sección 2.1.1: Modelo en Cascada (adaptado para IoT)",
+            "Capítulo 6: Arquitectura de Software (Cliente-Servidor, Edge + Cloud)"
+          ],
+          "relatedConcepts": [
+            "concept-edge-computing",
+            "concept-iot-architecture",
+            "concept-embedded-systems"
+          ]
+        }
       },
       "methodology": {
         "name": "Tradicional con Énfasis en Confiabilidad",
