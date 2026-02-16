@@ -1,10 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { FileText, ExternalLink, Clock } from 'lucide-react';
+import { FileText, ExternalLink, Clock, Eye } from 'lucide-react';
+import { TemplateModal } from './TemplateModal';
 import type { Template } from '@/types/templates';
 
 interface TemplatesSectionProps {
@@ -12,6 +14,13 @@ interface TemplatesSectionProps {
 }
 
 export function TemplatesSection({ templates }: TemplatesSectionProps) {
+  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleViewTemplate = (template: Template) => {
+    setSelectedTemplate(template);
+    setIsModalOpen(true);
+  };
   if (templates.length === 0) {
     return (
       <Card>
@@ -24,21 +33,22 @@ export function TemplatesSection({ templates }: TemplatesSectionProps) {
   }
 
   return (
-    <div>
-      <div className="flex items-center gap-3 mb-6">
-        <FileText className="h-6 w-6 text-blue-600" />
-        <div>
-          <h3 className="text-2xl font-bold">Plantillas Disponibles</h3>
-          <p className="text-sm text-muted-foreground mt-1">
-            Recursos listos para usar en tu proyecto
-          </p>
+    <>
+      <div>
+        <div className="flex items-center gap-3 mb-6">
+          <FileText className="h-6 w-6 text-blue-600" />
+          <div>
+            <h3 className="text-2xl font-bold">Plantillas Disponibles</h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              Recursos listos para usar en tu proyecto
+            </p>
+          </div>
+          <Badge variant="outline" className="ml-auto">
+            {templates.length} plantilla{templates.length !== 1 ? 's' : ''}
+          </Badge>
         </div>
-        <Badge variant="outline" className="ml-auto">
-          {templates.length} plantilla{templates.length !== 1 ? 's' : ''}
-        </Badge>
-      </div>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {templates.map((template) => (
           <Card
             key={template.id}
@@ -84,18 +94,34 @@ export function TemplatesSection({ templates }: TemplatesSectionProps) {
                   ))}
                 </div>
 
-                <Link href="/templates">
-                  <Button variant="outline" size="sm" className="w-full gap-2">
-                    <FileText className="h-4 w-4" />
+                <div className="flex gap-2">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="flex-1 gap-2"
+                    onClick={() => handleViewTemplate(template)}
+                  >
+                    <Eye className="h-4 w-4" />
                     Ver plantilla
-                    <ExternalLink className="h-3 w-3 ml-auto" />
                   </Button>
-                </Link>
+                  <Link href="/templates">
+                    <Button variant="outline" size="sm" className="gap-1">
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </CardContent>
           </Card>
         ))}
+        </div>
       </div>
-    </div>
+
+      <TemplateModal
+        template={selectedTemplate}
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
+      />
+    </>
   );
 }

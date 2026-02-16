@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import mermaid from 'mermaid';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Copy, Download, ZoomIn, ZoomOut, AlertCircle, Loader2 } from 'lucide-react';
@@ -13,9 +12,6 @@ interface DiagramViewerProps {
   className?: string;
 }
 
-// Configurar Mermaid globalmente
-let mermaidInitialized = false;
-
 export function DiagramViewer({
   mermaidCode,
   title,
@@ -26,70 +22,118 @@ export function DiagramViewer({
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [zoom, setZoom] = useState(100);
-  const [diagramId] = useState(`diagram-${Date.now()}-${Math.random()}`);
+  const [diagramId] = useState(`diagram-${Date.now()}-${Math.random().toString(36).substring(7)}`);
 
   useEffect(() => {
-    // Inicializar Mermaid solo una vez
-    if (!mermaidInitialized) {
-      mermaid.initialize({
-        startOnLoad: false,
-        theme: 'neutral',
-        themeVariables: {
-          primaryColor: '#3b82f6',
-          primaryTextColor: '#1f2937',
-          primaryBorderColor: '#60a5fa',
-          lineColor: '#94a3b8',
-          secondaryColor: '#86efac',
-          tertiaryColor: '#fbbf24',
-        },
-        securityLevel: 'loose',
-        flowchart: {
-          curve: 'basis',
-          padding: 20,
-        },
-        gantt: {
-          titleTopMargin: 25,
-          barHeight: 20,
-          barGap: 4,
-          topPadding: 50,
-          leftPadding: 75,
-        },
-      });
-      mermaidInitialized = true;
-    }
+    // Solo ejecutar en el cliente
+    if (typeof window === 'undefined') return;
 
-    // Renderizar diagrama
+    let isMounted = true;
+
+    // Renderizar diagrama con import dinámico
     const renderDiagram = async () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !isMounted) return;
 
       setIsLoading(true);
       setError(null);
 
       try {
+        // Validar código Mermaid básico
+        if (!mermaidCode || mermaidCode.trim().length === 0) {
+          throw new Error('Código Mermaid vacío');
+        }
+
+        console.log('🔄 Importing Mermaid dynamically...');
+
+        // ✅ Import dinámico de Mermaid (solo en cliente)
+        const { default: mermaid } = await import('mermaid');
+
+        console.log('✅ Mermaid imported successfully');
+
+        // Inicializar Mermaid
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'neutral',
+          themeVariables: {
+            primaryColor: '#3b82f6',
+            primaryTextColor: '#1f2937',
+            primaryBorderColor: '#60a5fa',
+            lineColor: '#94a3b8',
+            secondaryColor: '#86efac',
+            tertiaryColor: '#fbbf24',
+          },
+          securityLevel: 'loose',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          logLevel: 'error',
+          flowchart: {
+            curve: 'basis',
+            padding: 20,
+          },
+          gantt: {
+            titleTopMargin: 25,
+            barHeight: 20,
+            barGap: 4,
+            topPadding: 50,
+            leftPadding: 75,
+          },
+        });
+
+        console.log('🎨 Mermaid initialized');
+        console.log('📝 Rendering diagram:', diagramId);
+        console.log('📄 Code preview:', mermaidCode.substring(0, 150) + '...');
+
         // Limpiar contenedor
-        containerRef.current.innerHTML = '';
+        if (containerRef.current) {
+          containerRef.current.innerHTML = '';
+        }
 
         // Renderizar con Mermaid
         const { svg } = await mermaid.render(diagramId, mermaidCode);
 
-        if (containerRef.current) {
+        console.log('✅ Diagram rendered successfully, SVG length:', svg.length);
+
+        if (containerRef.current && isMounted) {
           containerRef.current.innerHTML = svg;
           setIsLoading(false);
+          setError(null);
+          console.log('✅ Diagram inserted into DOM');
         }
       } catch (err) {
-        console.error('Error rendering Mermaid diagram:', err);
-        setError(err instanceof Error ? err.message : 'Error al renderizar diagrama');
-        setIsLoading(false);
+        console.error('❌ Error rendering Mermaid diagram:', err);
+        if (isMounted) {
+          const errorMessage = err instanceof Error ? err.message : 'Error desconocido';
+          setError(`Error: ${errorMessage}`);
+          setIsLoading(false);
+        }
       }
     };
 
-    renderDiagram();
+    // Timeout de seguridad (15 segundos)
+    const safetyTimeoutId = setTimeout(() => {
+      if (isMounted) {
+        console.error('⏱️ Timeout: El diagrama tardó más de 15 segundos');
+        setError('Timeout: El diagrama tardó demasiado en renderizarse');
+        setIsLoading(false);
+      }
+    }, 15000);
+
+    // Pequeño delay para asegurar que el DOM esté listo
+    const timeoutId = setTimeout(() => {
+      renderDiagram();
+    }, 100);
+
+    // Cleanup
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+      clearTimeout(safetyTimeoutId);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mermaidCode, diagramId]);
 
   const handleCopyCode = async () => {
     try {
       await navigator.clipboard.writeText(mermaidCode);
-      // Could add toast notification here
     } catch (err) {
       console.error('Failed to copy:', err);
     }
@@ -187,11 +231,19 @@ export function DiagramViewer({
           {error && (
             <div className="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-lg">
               <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
-              <div>
+              <div className="flex-1">
                 <p className="font-semibold text-red-700 dark:text-red-300">
                   Error al renderizar
                 </p>
                 <p className="text-sm text-red-600 dark:text-red-400 mt-1">{error}</p>
+                <details className="mt-2">
+                  <summary className="text-xs text-red-500 cursor-pointer">
+                    Ver código Mermaid
+                  </summary>
+                  <pre className="text-xs mt-2 p-2 bg-red-100 dark:bg-red-900/20 rounded overflow-x-auto">
+                    {mermaidCode}
+                  </pre>
+                </details>
               </div>
             </div>
           )}

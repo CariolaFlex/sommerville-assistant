@@ -6,40 +6,47 @@ import { ArchitectureSection } from './components/ArchitectureSection';
 import { TimelineSection } from './components/TimelineSection';
 import { TemplatesSection } from './components/TemplatesSection';
 import { AvoidSection } from './components/AvoidSection';
+import { DiagramsSection } from './components/DiagramsSection';
 import { styles } from './styles';
 import type { Recommendation } from '@/types/recommendation';
 import type { Template } from '@/types/templates';
 import type { Checklist } from '@/types/checklists';
+import type { DiagramsData } from './utils/generate-diagrams';
+import type { PDFCustomization } from '@/types/pdf-customization';
 
 interface PDFDocumentProps {
   recommendation: Recommendation;
   templates: Template[];
   checklists: Checklist[];
+  diagrams?: DiagramsData | null;
+  customization?: PDFCustomization;
 }
 
 export function PDFDocument({
   recommendation,
   templates,
   checklists: _checklists,
+  diagrams,
+  customization,
 }: PDFDocumentProps) {
   return (
     <Document
-      title={`Sommerville - ${recommendation.title}`}
-      author="Sommerville Assistant"
+      title={`Sommerville - ${customization?.projectName || recommendation.title}`}
+      author={customization?.authorName || 'Sommerville Assistant'}
       subject="Recomendación de Ingeniería de Software"
       keywords="software engineering, ingeniería de software, sommerville"
     >
       {/* Portada */}
-      <Cover recommendation={recommendation} />
+      <Cover recommendation={recommendation} customization={customization} />
 
-      {/* Página de contenido principal */}
+      {/* Página 2: Proceso + Metodología (COMBINADAS) */}
       <Page size="A4" style={styles.page}>
         {/* Header fijo */}
         <Text style={styles.header} fixed>
-          Sommerville Assistant - {recommendation.title}
+          {recommendation.title}
         </Text>
 
-        {/* Secciones principales */}
+        {/* Secciones principales combinadas */}
         <ProcessSection process={recommendation.process} />
         <MethodologySection methodology={recommendation.methodology} />
 
@@ -53,10 +60,10 @@ export function PDFDocument({
         />
       </Page>
 
-      {/* Página de Arquitectura */}
+      {/* Página 3: Arquitectura + Errores (COMBINADAS) */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.header} fixed>
-          Sommerville Assistant - Arquitectura
+          Arquitectura y Consideraciones
         </Text>
 
         <ArchitectureSection architecture={recommendation.architecture} />
@@ -75,10 +82,10 @@ export function PDFDocument({
         />
       </Page>
 
-      {/* Página de Timeline */}
-      <Page size="A4" style={styles.page}>
+      {/* Página 4: Timeline */}
+      <Page size="A4" style={styles.page} break>
         <Text style={styles.header} fixed>
-          Sommerville Assistant - Timeline
+          Timeline del Proyecto
         </Text>
 
         <TimelineSection timeline={recommendation.timeline} />
@@ -92,11 +99,14 @@ export function PDFDocument({
         />
       </Page>
 
-      {/* Página de Plantillas (si hay) */}
+      {/* Páginas 5-8: Diagramas (si se generaron) */}
+      {diagrams && <DiagramsSection diagrams={diagrams} />}
+
+      {/* Plantillas (si hay) */}
       {templates.length > 0 && (
-        <Page size="A4" style={styles.page}>
+        <Page size="A4" style={styles.page} break>
           <Text style={styles.header} fixed>
-            Sommerville Assistant - Plantillas
+            Plantillas Recomendadas
           </Text>
 
           <TemplatesSection templates={templates} />
@@ -112,9 +122,9 @@ export function PDFDocument({
       )}
 
       {/* Página final con información adicional */}
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" style={styles.page} break>
         <Text style={styles.header} fixed>
-          Sommerville Assistant - Información
+          Acerca de este Documento
         </Text>
 
         <View style={styles.section}>

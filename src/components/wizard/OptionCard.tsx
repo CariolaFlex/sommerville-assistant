@@ -11,10 +11,16 @@ interface OptionCardProps {
 }
 
 export function OptionCard({ option, onSelect }: OptionCardProps) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onSelect();
+  };
+
   return (
     <Card
       className="cursor-pointer transition-all hover:shadow-lg hover:scale-[1.02] hover:border-blue-500 group relative overflow-hidden"
-      onClick={onSelect}
+      onClick={handleClick}
     >
       {/* Subtle gradient overlay on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-100/0 group-hover:from-blue-50/30 group-hover:to-blue-100/20 transition-all duration-300 pointer-events-none" />

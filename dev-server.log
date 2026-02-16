@@ -1,0 +1,21 @@
+
+> sommerville-assistant@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1870ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.4s (576 modules)
+ GET / 200 in 3630ms
+ ✓ Compiled in 314ms (259 modules)
+ ✓ Compiled in 190ms (259 modules)
+ ✓ Compiled in 153ms (259 modules)
+ ✓ Compiled in 182ms (259 modules)
+ ✓ Compiled in 198ms (259 modules)
+ ✓ Compiled in 95ms (259 modules)
+ ✓ Compiled in 118ms (259 modules)
+ ✓ Compiled in 101ms (259 modules)
+ ✓ Compiled in 96ms (259 modules)

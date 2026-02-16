@@ -3,10 +3,10 @@ import { StyleSheet } from '@react-pdf/renderer';
 export const styles = StyleSheet.create({
   // Layout base
   page: {
-    padding: 40,
-    fontSize: 11,
+    padding: 30,
+    fontSize: 10,
     fontFamily: 'Helvetica',
-    lineHeight: 1.5,
+    lineHeight: 1.4,
     color: '#1f2937',
   },
 
@@ -54,17 +54,20 @@ export const styles = StyleSheet.create({
 
   // Títulos
   h1: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 12,
     color: '#1e40af',
+    borderBottomWidth: 2,
+    borderBottomColor: '#3b82f6',
+    paddingBottom: 4,
   },
 
   h2: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginTop: 24,
-    marginBottom: 12,
+    marginTop: 16,
+    marginBottom: 8,
     color: '#2563eb',
   },
 
@@ -86,9 +89,9 @@ export const styles = StyleSheet.create({
 
   // Texto
   paragraph: {
-    marginBottom: 8,
+    marginBottom: 6,
     textAlign: 'justify',
-    lineHeight: 1.6,
+    lineHeight: 1.4,
   },
 
   text: {
@@ -108,7 +111,8 @@ export const styles = StyleSheet.create({
 
   listItem: {
     flexDirection: 'row',
-    marginBottom: 6,
+    marginBottom: 3,
+    fontSize: 10,
   },
 
   listBullet: {
@@ -225,7 +229,7 @@ export const styles = StyleSheet.create({
 
   // Secciones
   section: {
-    marginBottom: 24,
+    marginBottom: 16,
   },
 
   sectionCard: {

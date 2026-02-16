@@ -1,4 +1,5 @@
 import type { Recommendation } from '@/types/recommendation';
+import type { PDFCustomization } from '@/types/pdf-customization';
 
 /**
  * Convierte SVG element a base64 data URL
@@ -23,9 +24,14 @@ export function formatPDFDate(date: Date = new Date()): string {
 /**
  * Genera nombre de archivo para el PDF
  */
-export function generatePDFFilename(recommendation: Recommendation): string {
-  const sanitized = recommendation.title
-    .toLowerCase()
+export function generatePDFFilename(
+  recommendation: Recommendation,
+  customization?: PDFCustomization
+): string {
+  const baseName =
+    customization?.projectName?.toLowerCase() || recommendation.title.toLowerCase();
+
+  const sanitized = baseName
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '') // Remover acentos
     .replace(/[^a-z0-9]+/g, '-')

@@ -1,5 +1,6 @@
 'use client';
 
+import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { useWizard } from '@/hooks/useWizard';
 import { OptionCard } from '@/components/wizard/OptionCard';
@@ -21,14 +22,14 @@ export default function WizardPage() {
     stepNumber,
   } = useWizard();
 
-  const handleOptionSelect = (optionId: string) => {
+  const handleOptionSelect = useCallback((optionId: string) => {
     const result = selectOption(optionId);
 
     if (result?.finished && result.recommendationId) {
       // Navegar a la página de resultados
       router.push(`/results/${result.recommendationId}`);
     }
-  };
+  }, [selectOption, router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 py-8">
@@ -109,13 +110,16 @@ export default function WizardPage() {
 
           {/* Options Grid */}
           <div className="grid gap-4 md:grid-cols-2">
-            {currentStep.options.map((option) => (
-              <OptionCard
-                key={option.id}
-                option={option}
-                onSelect={() => handleOptionSelect(option.id)}
-              />
-            ))}
+            {currentStep.options.map((option) => {
+              const handleSelect = () => handleOptionSelect(option.id);
+              return (
+                <OptionCard
+                  key={option.id}
+                  option={option}
+                  onSelect={handleSelect}
+                />
+              );
+            })}
           </div>
         </div>
 
