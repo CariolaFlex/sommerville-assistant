@@ -603,7 +603,10 @@
                 "name": "Especificación de Requerimientos Concisa",
                 "template": "tpl-002",
                 "required": true,
-                "reviewedBy": ["Líder Técnico", "Stakeholder Principal"]
+                "reviewedBy": [
+                  "Líder Técnico",
+                  "Stakeholder Principal"
+                ]
               }
             ],
             "gate": {
@@ -616,7 +619,11 @@
               ],
               "decision": "GO / NO-GO / CLARIFICAR"
             },
-            "keyStakeholders": ["Líder Técnico", "Cliente/Usuario Final", "Equipo Completo"]
+            "keyStakeholders": [
+              "Líder Técnico",
+              "Cliente/Usuario Final",
+              "Equipo Completo"
+            ]
           },
           {
             "id": "phase-design",
@@ -651,13 +658,17 @@
                 "name": "Arquitectura Documentada",
                 "template": "tpl-003",
                 "required": true,
-                "reviewedBy": ["Equipo Completo"]
+                "reviewedBy": [
+                  "Equipo Completo"
+                ]
               },
               {
                 "name": "Prototipo Técnico",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Líder Técnico"]
+                "reviewedBy": [
+                  "Líder Técnico"
+                ]
               }
             ],
             "gate": {
@@ -671,7 +682,10 @@
               ],
               "decision": "GO / ITERAR DISEÑO"
             },
-            "keyStakeholders": ["Líder Técnico", "Equipo de Desarrollo Completo"]
+            "keyStakeholders": [
+              "Líder Técnico",
+              "Equipo de Desarrollo Completo"
+            ]
           },
           {
             "id": "phase-implementation",
@@ -707,13 +721,18 @@
                 "name": "Código Completo con Pruebas",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Líder Técnico", "Pares"]
+                "reviewedBy": [
+                  "Líder Técnico",
+                  "Pares"
+                ]
               },
               {
                 "name": "Reporte de Cobertura de Pruebas",
                 "template": "tpl-011",
                 "required": true,
-                "reviewedBy": ["Líder Técnico"]
+                "reviewedBy": [
+                  "Líder Técnico"
+                ]
               }
             ],
             "gate": {
@@ -727,7 +746,10 @@
               ],
               "decision": "GO / CORREGIR DEFECTOS"
             },
-            "keyStakeholders": ["Líder Técnico", "Equipo de Desarrollo"]
+            "keyStakeholders": [
+              "Líder Técnico",
+              "Equipo de Desarrollo"
+            ]
           },
           {
             "id": "phase-integration-testing",
@@ -764,13 +786,18 @@
                 "name": "Reporte de Pruebas del Sistema",
                 "template": "tpl-011",
                 "required": true,
-                "reviewedBy": ["Líder Técnico", "Cliente"]
+                "reviewedBy": [
+                  "Líder Técnico",
+                  "Cliente"
+                ]
               },
               {
                 "name": "Manual de Usuario",
                 "template": "tpl-006",
                 "required": true,
-                "reviewedBy": ["Cliente/Usuario Final"]
+                "reviewedBy": [
+                  "Cliente/Usuario Final"
+                ]
               }
             ],
             "gate": {
@@ -785,7 +812,11 @@
               ],
               "decision": "GO TO PRODUCTION / FIX & RE-TEST"
             },
-            "keyStakeholders": ["Líder Técnico", "Cliente/Usuario Final", "Equipo Completo"]
+            "keyStakeholders": [
+              "Líder Técnico",
+              "Cliente/Usuario Final",
+              "Equipo Completo"
+            ]
           },
           {
             "id": "phase-deployment",
@@ -821,13 +852,18 @@
                 "name": "Sistema en Producción",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Cliente", "Operadores"]
+                "reviewedBy": [
+                  "Cliente",
+                  "Operadores"
+                ]
               },
               {
                 "name": "Reporte de Lecciones Aprendidas",
                 "template": null,
                 "required": false,
-                "reviewedBy": ["Equipo Completo"]
+                "reviewedBy": [
+                  "Equipo Completo"
+                ]
               }
             ],
             "gate": {
@@ -841,7 +877,11 @@
               ],
               "decision": "GO-LIVE / POSTPONE"
             },
-            "keyStakeholders": ["Cliente", "Usuarios Finales", "Equipo de Soporte"]
+            "keyStakeholders": [
+              "Cliente",
+              "Usuarios Finales",
+              "Equipo de Soporte"
+            ]
           }
         ],
         "whenToUse": [
@@ -899,7 +939,10 @@
               "name": "Solicitud de Cambio",
               "action": "Cualquier miembro documenta el cambio propuesto en issue tracker (Jira, GitHub Issues)",
               "responsible": "Cualquier miembro del equipo",
-              "artifacts": ["Issue con descripción del cambio", "Justificación técnica o de negocio"],
+              "artifacts": [
+                "Issue con descripción del cambio",
+                "Justificación técnica o de negocio"
+              ],
               "timeframe": "5-10 minutos"
             },
             {
@@ -907,7 +950,10 @@
               "name": "Análisis de Impacto Rápido",
               "action": "Líder técnico analiza impacto en requerimientos, diseño, código, testing",
               "responsible": "Líder Técnico",
-              "artifacts": ["Comentario en issue con análisis de impacto", "Estimación de esfuerzo"],
+              "artifacts": [
+                "Comentario en issue con análisis de impacto",
+                "Estimación de esfuerzo"
+              ],
               "timeframe": "30 minutos - 2 horas"
             },
             {
@@ -915,7 +961,9 @@
               "name": "Decisión del Equipo",
               "action": "Reunión rápida del equipo completo (15-30 min) o decisión asíncrona si es menor",
               "responsible": "Equipo Completo (decisión por consenso)",
-              "artifacts": ["Decisión documentada en issue (Aprobado/Rechazado/Diferido)"],
+              "artifacts": [
+                "Decisión documentada en issue (Aprobado/Rechazado/Diferido)"
+              ],
               "timeframe": "Mismo día o máximo 24 horas"
             },
             {
@@ -923,7 +971,10 @@
               "name": "Actualización de Documentación",
               "action": "Si aprobado, actualizar documentación afectada (Requerimientos, Diseño, README)",
               "responsible": "Persona que propone el cambio",
-              "artifacts": ["Documentos actualizados", "Commit en control de versiones"],
+              "artifacts": [
+                "Documentos actualizados",
+                "Commit en control de versiones"
+              ],
               "timeframe": "Antes de implementar el cambio"
             },
             {
@@ -931,7 +982,11 @@
               "name": "Implementación",
               "action": "Implementar cambio siguiendo proceso estándar (TDD, PR, code review)",
               "responsible": "Desarrollador asignado",
-              "artifacts": ["Código", "Pruebas", "Pull Request"],
+              "artifacts": [
+                "Código",
+                "Pruebas",
+                "Pull Request"
+              ],
               "timeframe": "Según estimación"
             },
             {
@@ -939,7 +994,10 @@
               "name": "Verificación",
               "action": "Verificar que el cambio satisface la solicitud y no introduce regresiones",
               "responsible": "Reviewer + Líder Técnico",
-              "artifacts": ["Pruebas pasando", "Aprobación del PR"],
+              "artifacts": [
+                "Pruebas pasando",
+                "Aprobación del PR"
+              ],
               "timeframe": "1-2 días"
             }
           ],
@@ -2080,7 +2138,10 @@
                 "name": "Documento de Análisis del Proceso",
                 "template": "tpl-001",
                 "required": true,
-                "reviewedBy": ["Experto de Negocio", "Arquitecto de Datos"]
+                "reviewedBy": [
+                  "Experto de Negocio",
+                  "Arquitecto de Datos"
+                ]
               }
             ],
             "gate": {
@@ -2094,7 +2155,11 @@
               ],
               "decision": "GO / CLARIFICAR REQUISITOS"
             },
-            "keyStakeholders": ["Experto de Negocio", "Arquitecto de Datos", "Operaciones IT"]
+            "keyStakeholders": [
+              "Experto de Negocio",
+              "Arquitecto de Datos",
+              "Operaciones IT"
+            ]
           },
           {
             "id": "phase-pipeline-design",
@@ -2133,13 +2198,19 @@
                 "name": "Diseño del Pipeline ETL",
                 "template": "tpl-006",
                 "required": true,
-                "reviewedBy": ["Arquitecto de Datos", "Equipo de Desarrollo"]
+                "reviewedBy": [
+                  "Arquitecto de Datos",
+                  "Equipo de Desarrollo"
+                ]
               },
               {
                 "name": "Diagrama de Flujo del Proceso",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Experto de Negocio", "Arquitecto"]
+                "reviewedBy": [
+                  "Experto de Negocio",
+                  "Arquitecto"
+                ]
               }
             ],
             "gate": {
@@ -2153,7 +2224,11 @@
               ],
               "decision": "GO / ITERAR DISEÑO"
             },
-            "keyStakeholders": ["Arquitecto de Datos", "Equipo de Desarrollo", "Operaciones"]
+            "keyStakeholders": [
+              "Arquitecto de Datos",
+              "Equipo de Desarrollo",
+              "Operaciones"
+            ]
           },
           {
             "id": "phase-implementation",
@@ -2192,13 +2267,18 @@
                 "name": "Código del Pipeline ETL",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Líder Técnico", "Code Reviewer"]
+                "reviewedBy": [
+                  "Líder Técnico",
+                  "Code Reviewer"
+                ]
               },
               {
                 "name": "Documentación Técnica",
                 "template": "tpl-006",
                 "required": true,
-                "reviewedBy": ["Equipo de Operaciones"]
+                "reviewedBy": [
+                  "Equipo de Operaciones"
+                ]
               }
             ],
             "gate": {
@@ -2212,7 +2292,10 @@
               ],
               "decision": "GO TO TESTING / FIX DEFECTS"
             },
-            "keyStakeholders": ["Líder Técnico", "Equipo de Desarrollo"]
+            "keyStakeholders": [
+              "Líder Técnico",
+              "Equipo de Desarrollo"
+            ]
           },
           {
             "id": "phase-volume-testing",
@@ -2250,13 +2333,18 @@
                 "name": "Reporte de Pruebas de Volumen",
                 "template": "tpl-011",
                 "required": true,
-                "reviewedBy": ["Líder Técnico", "Experto de Negocio"]
+                "reviewedBy": [
+                  "Líder Técnico",
+                  "Experto de Negocio"
+                ]
               },
               {
                 "name": "Validación de Outputs",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Experto de Negocio"]
+                "reviewedBy": [
+                  "Experto de Negocio"
+                ]
               }
             ],
             "gate": {
@@ -2271,7 +2359,11 @@
               ],
               "decision": "GO TO PRODUCTION / OPTIMIZE & RE-TEST"
             },
-            "keyStakeholders": ["Líder Técnico", "Experto de Negocio", "Operaciones"]
+            "keyStakeholders": [
+              "Líder Técnico",
+              "Experto de Negocio",
+              "Operaciones"
+            ]
           },
           {
             "id": "phase-deployment",
@@ -2310,13 +2402,18 @@
                 "name": "Runbook Operacional",
                 "template": "tpl-006",
                 "required": true,
-                "reviewedBy": ["Equipo de Operaciones"]
+                "reviewedBy": [
+                  "Equipo de Operaciones"
+                ]
               },
               {
                 "name": "Dashboard de Monitoreo",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Operaciones", "Management"]
+                "reviewedBy": [
+                  "Operaciones",
+                  "Management"
+                ]
               }
             ],
             "gate": {
@@ -2331,7 +2428,11 @@
               ],
               "decision": "GO-LIVE / FIX & RE-DEPLOY"
             },
-            "keyStakeholders": ["Operaciones", "Líder Técnico", "Management"]
+            "keyStakeholders": [
+              "Operaciones",
+              "Líder Técnico",
+              "Management"
+            ]
           }
         ],
         "whenToUse": [
@@ -2387,7 +2488,9 @@
               "name": "Solicitud de Cambio",
               "action": "Documentar cambio propuesto con justificación de negocio o técnica",
               "responsible": "Desarrollador o Experto de Negocio",
-              "artifacts": ["Change Request con descripción detallada"],
+              "artifacts": [
+                "Change Request con descripción detallada"
+              ],
               "timeframe": "1 día"
             },
             {
@@ -2395,7 +2498,9 @@
               "name": "Análisis de Impacto",
               "action": "Analizar impacto en performance, correctitud de outputs, dependencias",
               "responsible": "Líder Técnico",
-              "artifacts": ["Análisis de impacto (performance, funcionalidad, riesgo)"],
+              "artifacts": [
+                "Análisis de impacto (performance, funcionalidad, riesgo)"
+              ],
               "timeframe": "2-3 días"
             },
             {
@@ -2403,7 +2508,9 @@
               "name": "Aprobación",
               "action": "Comité de cambios revisa y aprueba/rechaza",
               "responsible": "Change Control Board (Líder Técnico, Experto de Negocio, Operaciones)",
-              "artifacts": ["Decisión documentada con justificación"],
+              "artifacts": [
+                "Decisión documentada con justificación"
+              ],
               "timeframe": "1 semana (reunión semanal)"
             },
             {
@@ -2411,7 +2518,10 @@
               "name": "Implementación",
               "action": "Desarrollar cambio en ambiente de desarrollo",
               "responsible": "Desarrollador",
-              "artifacts": ["Código modificado", "Pruebas unitarias actualizadas"],
+              "artifacts": [
+                "Código modificado",
+                "Pruebas unitarias actualizadas"
+              ],
               "timeframe": "Según estimación"
             },
             {
@@ -2419,7 +2529,10 @@
               "name": "Testing de Volumen",
               "action": "OBLIGATORIO: Re-ejecutar pruebas de volumen completas en staging",
               "responsible": "QA/Desarrollador",
-              "artifacts": ["Reporte de pruebas de volumen", "Validación de outputs"],
+              "artifacts": [
+                "Reporte de pruebas de volumen",
+                "Validación de outputs"
+              ],
               "timeframe": "3-5 días"
             },
             {
@@ -2427,7 +2540,10 @@
               "name": "Deployment a Producción",
               "action": "Deployment controlado con rollback plan",
               "responsible": "Operaciones",
-              "artifacts": ["Pipeline actualizado en producción", "Runbook actualizado"],
+              "artifacts": [
+                "Pipeline actualizado en producción",
+                "Runbook actualizado"
+              ],
               "timeframe": "1 día (ventana de deployment)"
             },
             {
@@ -2435,7 +2551,10 @@
               "name": "Monitoreo Post-Deployment",
               "action": "Supervisión de primeros runs post-cambio",
               "responsible": "Operaciones + Líder Técnico",
-              "artifacts": ["Logs de ejecución", "Validación de outputs"],
+              "artifacts": [
+                "Logs de ejecución",
+                "Validación de outputs"
+              ],
               "timeframe": "1 semana (primeros 3-5 runs)"
             }
           ],
@@ -2604,311 +2723,290 @@
       ],
       "pathDescription": "Recolección de Datos → IoT/Sensores → Confiabilidad 24/7 → Condiciones Adversas",
       "process": {
-        "name": "Incremental con Prototipado (Edge + Cloud)",
-        "type": "sequential-phases",
-        "description": "Modelo incremental para sistemas IoT: desarrollo del Edge Device (firmware embebido) y Cloud Backend en paralelo, con énfasis en confiabilidad 24/7, power management y conectividad intermitente. Prototipado temprano seguido de field testing extensivo en condiciones reales.",
+        "name": "Incremental Development",
+        "type": "incremental",
+        "description": "Desarrollo iterativo con entregas incrementales de funcionalidad IoT, comenzando con MVP edge-only y escalando hacia integración cloud completa. Cada iteración entrega un sistema desplegable y funcional en producción real.",
         "chapter": 2,
-        "why": [
-          "Dependencia de hardware define requisitos estables",
-          "Difícil y costoso cambiar después de deployment en campo",
-          "Entornos hostiles dificultan mantenimiento y acceso físico",
-          "Necesidad de diseño robusto desde inicio (confiabilidad crítica)",
-          "Over-The-Air (OTA) updates necesarios para correcciones post-deployment"
-        ],
-        "how": [
-          "Fase 1: Especificación → Hardware + software + condiciones ambientales",
-          "Fase 2: Diseño Edge/Cloud → Arquitectura distribuida + protocolo de comunicación",
-          "Fase 3: Prototipo → Testing en lab con hardware real",
-          "Fase 4: Implementación → Firmware robusto + backend completo",
-          "Fase 5: Field Testing → Condiciones reales extensivo (temperatura, conectividad, power)"
-        ],
         "phases": [
           {
-            "id": "phase-requirements",
-            "name": "Especificación de Requerimientos Edge + Cloud",
+            "id": "phase-iot-iter1",
+            "name": "Iteración 1: MVP Edge-Only",
             "order": 1,
-            "description": "Definir requerimientos de hardware, software, conectividad, power y condiciones ambientales",
-            "duration": "10-15% del proyecto (1-2 semanas)",
+            "description": "Sistema básico embebido local sin dependencia de cloud. Valida hardware, firmware básico y control local.",
+            "duration": "3-4 semanas",
             "activities": [
-              "Definir sensores y actuadores necesarios (tipo, precisión, rango)",
-              "Especificar requisitos de conectividad (WiFi, BLE, LoRaWAN, cellular)",
-              "Definir power management (batería, solar, AC power)",
-              "Especificar condiciones ambientales (temperatura, humedad, IP rating)",
-              "Definir frecuencia de telemetría (cada X segundos/minutos/horas)",
-              "Diseñar protocolo de comunicación Edge → Cloud (MQTT, HTTP, CoAP)",
-              "Especificar datos a almacenar y analizar en Cloud",
-              "Definir dashboard y alertas para usuarios finales",
-              "Identificar requisitos de OTA (Over-The-Air) updates",
-              "Definir SLAs de uptime y latencia"
+              "Implementar lectura de sensor básico (temperatura/humedad)",
+              "Desarrollar lógica de control local (if-then rules sin cloud)",
+              "Implementar actuador simple (LED, relay, motor)",
+              "Crear interfaz serial/USB para debug y configuración",
+              "Testing en condiciones controladas (laboratorio)",
+              "Desplegar en 1-2 dispositivos piloto en campo"
             ],
             "inputs": [
-              "Necesidad del negocio (qué se quiere monitorear/controlar)",
-              "Restricciones de infraestructura (red disponible, power)",
-              "Condiciones ambientales del deployment",
-              "Presupuesto de hardware"
+              "Especificación de hardware (sensores, actuadores, MCU)",
+              "Requisitos funcionales básicos (qué medir, qué controlar)",
+              "Constraints de power y conectividad"
             ],
             "outputs": [
-              "Especificación de Hardware (BOM: Bill of Materials)",
-              "Especificación de Software Edge (firmware)",
-              "Especificación de Software Cloud (backend + dashboard)",
-              "Especificación de Protocolo de Comunicación",
-              "Requisitos de Power Management",
-              "Condiciones Ambientales de Operación"
+              "Firmware embebido funcional (FreeRTOS/Zephyr)",
+              "Esquemático de PCB validado",
+              "Documentación de troubleshooting básico"
             ],
             "deliverables": [
               {
-                "name": "Documento de Requerimientos IoT",
-                "template": "tpl-001",
+                "name": "Dispositivo IoT funcional con sensor + actuador + lógica local",
+                "template": null,
                 "required": true,
-                "reviewedBy": ["Arquitecto de IoT", "Stakeholder"]
-              }
-            ],
-            "gate": {
-              "name": "Requirements Approval",
-              "criteria": [
-                "Hardware seleccionado satisface requisitos de sensores y power",
-                "Conectividad viable en condiciones de deployment",
-                "Protocolo de comunicación definido",
-                "Cloud backend factible dentro de presupuesto",
-                "Condiciones ambientales entendidas y hardware apropiado"
-              ],
-              "decision": "GO / CLARIFICAR / CAMBIAR HARDWARE"
-            },
-            "keyStakeholders": ["Arquitecto de IoT", "Ingeniero de Hardware", "Stakeholder"]
-          },
-          {
-            "id": "phase-edge-cloud-design",
-            "name": "Diseño de Arquitectura Edge + Cloud",
-            "order": 2,
-            "description": "Diseñar arquitectura distribuida: qué se procesa en Edge vs Cloud, protocolo de comunicación, manejo de conectividad intermitente",
-            "duration": "15-20% del proyecto (2-3 semanas)",
-            "activities": [
-              "Decidir qué procesar en Edge vs Cloud (filtrado, agregación, alertas locales)",
-              "Diseñar Finite State Machine (FSM) del dispositivo Edge",
-              "Diseñar protocolo de comunicación (formato de mensajes, QoS)",
-              "Diseñar estrategia de buffering para conectividad intermitente",
-              "Diseñar power management (sleep modes, wake-up triggers)",
-              "Diseñar backend Cloud (API, base de datos, analytics)",
-              "Diseñar dashboard de visualización y alertas",
-              "Diseñar mecanismo de OTA updates (seguro, rollback, phased rollout)",
-              "Diseñar seguridad (autenticación de dispositivos, encriptación)",
-              "Diseñar watchdog timers y auto-recovery del dispositivo"
-            ],
-            "inputs": [
-              "Especificación de requerimientos aprobada",
-              "Hardware seleccionado (datasheet, limitaciones)",
-              "Infraestructura Cloud disponible (AWS IoT, Azure IoT, GCP IoT)"
-            ],
-            "outputs": [
-              "Diagrama de Arquitectura Edge + Cloud",
-              "Finite State Machine (FSM) del dispositivo",
-              "Especificación de Protocolo de Comunicación (MQTT topics, mensaje JSON)",
-              "Diseño de Base de Datos (TimeSeries DB: InfluxDB, TimescaleDB)",
-              "Diseño de Power Management (estados de sleep, consumo estimado)",
-              "Diseño de OTA Updates (workflow, seguridad)",
-              "Diseño de Seguridad (TLS, device certificates)"
-            ],
-            "deliverables": [
-              {
-                "name": "Arquitectura Edge + Cloud",
-                "template": "tpl-003",
-                "required": true,
-                "reviewedBy": ["Arquitecto de IoT", "Equipo de Desarrollo"]
+                "reviewedBy": [
+                  "Technical Lead",
+                  "Product Owner"
+                ]
               },
               {
-                "name": "FSM del Dispositivo Edge",
+                "name": "Código fuente versionado (Git)",
                 "template": null,
                 "required": true,
-                "reviewedBy": ["Ingeniero de Firmware"]
-              }
-            ],
-            "gate": {
-              "name": "Design Review",
-              "criteria": [
-                "Arquitectura satisface requisitos de power y conectividad",
-                "FSM completa con todos los estados y transiciones (incluye recovery)",
-                "Protocolo de comunicación eficiente (tamaño de mensaje optimizado)",
-                "Buffering maneja desconexiones de hasta X horas",
-                "OTA updates seguro y con rollback",
-                "Seguridad apropiada (TLS, autenticación)"
-              ],
-              "decision": "GO / ITERAR DISEÑO"
-            },
-            "keyStakeholders": ["Arquitecto de IoT", "Ingeniero de Firmware", "Backend Developer"]
-          },
-          {
-            "id": "phase-prototype",
-            "name": "Prototipo Hardware + Firmware Básico",
-            "order": 3,
-            "description": "Construir prototipo funcional con hardware real y firmware básico para validar arquitectura en lab",
-            "duration": "20-25% del proyecto (3-4 semanas)",
-            "activities": [
-              "Armar prototipo de hardware (breadboard, dev board + sensores)",
-              "Implementar firmware básico (leer sensor, enviar dato a Cloud)",
-              "Implementar backend básico (recibir dato, almacenar, dashboard simple)",
-              "Probar comunicación Edge → Cloud en lab",
-              "Validar power management (medir consumo real)",
-              "Probar desconexión y reconexión (buffering funciona?)",
-              "Validar que sensores dan lecturas correctas",
-              "Probar OTA update básico (actualizar firmware remotamente)",
-              "Testing de integración Edge ↔ Cloud"
-            ],
-            "inputs": [
-              "Diseño de arquitectura aprobado",
-              "Hardware adquirido (dev boards, sensores)",
-              "Cloud backend configurado (AWS IoT, Azure IoT)"
-            ],
-            "outputs": [
-              "Prototipo funcional de hardware",
-              "Firmware básico (lee sensor, envía dato, buffering simple)",
-              "Backend básico (recibe, almacena, dashboard mínimo)",
-              "Validación de arquitectura (funciona en lab)",
-              "Mediciones de power consumption reales"
-            ],
-            "deliverables": [
-              {
-                "name": "Prototipo Funcional",
-                "template": null,
-                "required": true,
-                "reviewedBy": ["Arquitecto de IoT", "Stakeholder"]
+                "reviewedBy": [
+                  "Technical Lead"
+                ]
               },
               {
-                "name": "Reporte de Validación de Prototipo",
-                "template": null,
-                "required": true,
-                "reviewedBy": ["Arquitecto de IoT"]
-              }
-            ],
-            "gate": {
-              "name": "Prototype Validation",
-              "criteria": [
-                "Prototipo funciona en condiciones de lab",
-                "Comunicación Edge → Cloud estable",
-                "Sensores dan lecturas correctas",
-                "Power consumption dentro de lo esperado",
-                "Buffering funciona ante desconexión simulada",
-                "OTA update básico funciona"
-              ],
-              "decision": "GO TO FULL DEVELOPMENT / ITERAR PROTOTIPO"
-            },
-            "keyStakeholders": ["Arquitecto de IoT", "Ingeniero de Firmware", "Stakeholder"]
-          },
-          {
-            "id": "phase-full-implementation",
-            "name": "Implementación Completa Edge + Cloud",
-            "order": 4,
-            "description": "Desarrollo completo de firmware robusto y backend Cloud con todas las features",
-            "duration": "35-40% del proyecto (5-7 semanas)",
-            "activities": [
-              "Implementar firmware completo con FSM completa",
-              "Implementar watchdog timers y auto-recovery",
-              "Implementar power management avanzado (deep sleep, wake on interrupt)",
-              "Implementar buffering robusto (ring buffer, persistencia en flash)",
-              "Implementar OTA updates completo (firma digital, rollback, phased rollout)",
-              "Implementar backend Cloud completo (APIs, analytics, alertas)",
-              "Implementar dashboard de visualización (Grafana, custom webapp)",
-              "Implementar sistema de alertas (email, SMS, push notifications)",
-              "Testing de integración completo",
-              "Testing de estrés (miles de dispositivos simulados)",
-              "Documentación técnica (firmware + backend)"
-            ],
-            "inputs": [
-              "Prototipo validado",
-              "Diseño de arquitectura",
-              "FSM completa"
-            ],
-            "outputs": [
-              "Firmware completo y probado",
-              "Backend Cloud completo",
-              "Dashboard operacional",
-              "Sistema de alertas funcionando",
-              "Documentación técnica completa"
-            ],
-            "deliverables": [
-              {
-                "name": "Firmware Completo",
-                "template": null,
-                "required": true,
-                "reviewedBy": ["Arquitecto de IoT"]
-              },
-              {
-                "name": "Backend Cloud + Dashboard",
-                "template": null,
-                "required": true,
-                "reviewedBy": ["Stakeholder"]
-              }
-            ],
-            "gate": {
-              "name": "Code Complete",
-              "criteria": [
-                "Firmware completo con FSM completa",
-                "Watchdog y auto-recovery funcionando",
-                "Power management optimizado",
-                "OTA updates completo y seguro",
-                "Backend y dashboard completos",
-                "Testing de integración pasando"
-              ],
-              "decision": "GO TO FIELD TESTING / FIX DEFECTS"
-            },
-            "keyStakeholders": ["Arquitecto de IoT", "Equipo Completo"]
-          },
-          {
-            "id": "phase-field-testing",
-            "name": "Field Testing en Condiciones Reales",
-            "order": 5,
-            "description": "Deployment de pilotos en condiciones reales para validar confiabilidad, power management y conectividad",
-            "duration": "20-25% del proyecto (3-5 semanas)",
-            "activities": [
-              "Deployment de pilotos en campo (10-50 dispositivos)",
-              "Monitoreo 24/7 de telemetría y errores",
-              "Validar power management (batería dura X días/meses como esperado?)",
-              "Validar conectividad en condiciones reales (edificios, campo abierto)",
-              "Probar desconexiones prolongadas (buffering + reconexión)",
-              "Probar condiciones ambientales extremas (calor, frío, humedad)",
-              "Probar OTA updates en campo (actualizar dispositivos remotamente)",
-              "Ajustes basados en telemetría (optimizar power, reducir datos transmitidos)",
-              "Validar uptime y confiabilidad (99.X% uptime?)",
-              "Documentar lecciones aprendidas"
-            ],
-            "inputs": [
-              "Sistema completo (firmware + backend)",
-              "Pilotos deployados en campo",
-              "Monitoreo configurado"
-            ],
-            "outputs": [
-              "Telemetría de campo (uptime, battery life, connectivity)",
-              "Lecciones aprendidas y ajustes implementados",
-              "Validación de SLAs (uptime, latencia)",
-              "Documentación de deployment",
-              "Runbook operacional"
-            ],
-            "deliverables": [
-              {
-                "name": "Reporte de Field Testing",
-                "template": "tpl-011",
-                "required": true,
-                "reviewedBy": ["Stakeholder", "Operaciones"]
-              },
-              {
-                "name": "Runbook Operacional",
+                "name": "Manual de instalación básico",
                 "template": "tpl-006",
                 "required": true,
-                "reviewedBy": ["Operaciones"]
+                "reviewedBy": [
+                  "Product Owner"
+                ]
+              }
+            ],
+            "gate": {
+              "name": "MVP Acceptance",
+              "criteria": [
+                "Dispositivo funciona 72h continuas sin fallas",
+                "Lectura de sensor dentro de margen de error aceptable (<5%)",
+                "Actuador responde correctamente a lógica local",
+                "Consumo energético dentro de especificación"
+              ],
+              "decision": "GO / NO-GO / ITERAR"
+            },
+            "keyStakeholders": [
+              "Embedded Engineer",
+              "Hardware Engineer",
+              "QA Tester"
+            ]
+          },
+          {
+            "id": "phase-iot-iter2",
+            "name": "Iteración 2: Conectividad Cloud Básica",
+            "order": 2,
+            "description": "Agregar telemetría a cloud y dashboard de monitoreo en tiempo real. Valida conectividad, visualización y almacenamiento histórico.",
+            "duration": "4-6 semanas",
+            "activities": [
+              "Implementar cliente MQTT para telemetría (pub/sub)",
+              "Conectar a AWS IoT Core / Azure IoT Hub",
+              "Crear dashboard web básico (datos en tiempo real con WebSockets)",
+              "Implementar almacenamiento histórico (TimescaleDB/InfluxDB)",
+              "Agregar manejo de conectividad intermitente (buffering local en flash)",
+              "Testing con conexión WiFi/4G variable (desconexiones simuladas)",
+              "Desplegar en 5-10 dispositivos en diferentes ubicaciones"
+            ],
+            "inputs": [
+              "Firmware de Iteración 1 (estable)",
+              "Infraestructura cloud aprovisionada (AWS/Azure account)",
+              "Especificación de dashboard (KPIs a visualizar)"
+            ],
+            "outputs": [
+              "Sistema de telemetría bidireccional (device → cloud, cloud → device)",
+              "Dashboard web con gráficos en tiempo real",
+              "Base de datos con histórico de 30 días"
+            ],
+            "deliverables": [
+              {
+                "name": "Sistema IoT con visualización remota de datos",
+                "template": null,
+                "required": true,
+                "reviewedBy": [
+                  "Product Owner",
+                  "DevOps Lead"
+                ]
+              },
+              {
+                "name": "Documentación de API de telemetría",
+                "template": "tpl-003",
+                "required": true,
+                "reviewedBy": [
+                  "Backend Engineer"
+                ]
+              },
+              {
+                "name": "Runbook de troubleshooting de conectividad",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": [
+                  "DevOps"
+                ]
+              }
+            ],
+            "gate": {
+              "name": "Cloud Integration Acceptance",
+              "criteria": [
+                "99% de mensajes MQTT entregados exitosamente en 24h",
+                "Dashboard muestra datos con <5s de latencia",
+                "Buffering local funciona correctamente ante desconexión de 1h",
+                "Zero data loss en escenarios de desconexión y reconexión"
+              ],
+              "decision": "GO / FIX & RE-TEST"
+            },
+            "keyStakeholders": [
+              "Backend Engineer",
+              "Frontend Engineer",
+              "DevOps",
+              "Embedded Engineer"
+            ]
+          },
+          {
+            "id": "phase-iot-iter3",
+            "name": "Iteración 3: Features Avanzadas",
+            "order": 3,
+            "description": "OTA updates, analytics avanzados, alertas y seguridad. Valida escalabilidad, seguridad y rollback automático.",
+            "duration": "5-7 semanas",
+            "activities": [
+              "Implementar OTA firmware updates (Balena/AWS IoT Jobs con rollback)",
+              "Agregar edge computing (predicciones ML on-device con TensorFlow Lite)",
+              "Crear sistema de alertas configurables (umbrales, webhooks, emails)",
+              "Implementar analytics avanzado (anomaly detection, predictive maintenance)",
+              "Agregar autenticación y encriptación (TLS 1.3, device certificates X.509)",
+              "Testing de rollback automático ante firmware corrupto o crasheante",
+              "Desplegar en 50+ dispositivos con phased rollout (10% → 50% → 100%)"
+            ],
+            "inputs": [
+              "Sistema de Iteración 2 (estable en producción)",
+              "Modelos ML entrenados (edge-compatible, <500KB)",
+              "Políticas de seguridad y compliance (encriptación, autenticación)"
+            ],
+            "outputs": [
+              "Sistema de OTA updates con rollback automático",
+              "Edge ML inference funcionando (<100ms latencia)",
+              "Sistema de alertas con >95% accuracy"
+            ],
+            "deliverables": [
+              {
+                "name": "Sistema IoT con actualizaciones remotas y machine learning",
+                "template": null,
+                "required": true,
+                "reviewedBy": [
+                  "Technical Lead",
+                  "Security Engineer"
+                ]
+              },
+              {
+                "name": "Documentación de security best practices",
+                "template": "tpl-003",
+                "required": true,
+                "reviewedBy": [
+                  "Security Engineer"
+                ]
+              },
+              {
+                "name": "Playbook de incident response (rollback, hotfixes)",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": [
+                  "DevOps",
+                  "SRE"
+                ]
+              }
+            ],
+            "gate": {
+              "name": "Advanced Features Acceptance",
+              "criteria": [
+                "OTA update exitoso en 100% de dispositivos de test (sin bricks)",
+                "Rollback automático funciona ante firmware crasheante en <2 min",
+                "Edge ML inference con >90% accuracy en dataset de validación",
+                "Zero vulnerabilidades críticas en security audit",
+                "Alertas generadas con <5% de falsos positivos"
+              ],
+              "decision": "GO / FIX SECURITY ISSUES"
+            },
+            "keyStakeholders": [
+              "ML Engineer",
+              "Security Engineer",
+              "Embedded Engineer",
+              "DevOps"
+            ]
+          },
+          {
+            "id": "phase-iot-iter4",
+            "name": "Iteración 4: Escala y Optimización",
+            "order": 4,
+            "description": "Optimización de recursos, fleet management multi-dispositivo, observability completa y deployment a producción masiva.",
+            "duration": "6-8 semanas",
+            "activities": [
+              "Optimizar consumo energético (sleep modes, duty cycles, wake-on-event)",
+              "Implementar sincronización multi-dispositivo (mesh networks opcional)",
+              "Agregar fleet management (grouping, bulk commands, shadowing)",
+              "Crear herramientas de diagnóstico remoto (logs, metrics, health checks)",
+              "Implementar logging y observability (Prometheus, Grafana, alertas SRE)",
+              "Field testing en condiciones extremas (temperatura -20°C a 60°C, humedad 90%, vibración)",
+              "Desplegar en producción masiva (1000+ dispositivos con monitoreo 24/7)"
+            ],
+            "inputs": [
+              "Sistema de Iteración 3 (validado en 50+ dispositivos)",
+              "SLOs definidos (uptime >99.5%, latency <100ms)",
+              "Plan de escalamiento (1000+ dispositivos)"
+            ],
+            "outputs": [
+              "Sistema optimizado con consumo <50% vs Iteración 3",
+              "Fleet management dashboard (health, versions, comandos bulk)",
+              "Observability completa (logs centralizados, métricas SRE)"
+            ],
+            "deliverables": [
+              {
+                "name": "Sistema IoT production-ready con miles de dispositivos",
+                "template": null,
+                "required": true,
+                "reviewedBy": [
+                  "Product Owner",
+                  "SRE Lead"
+                ]
+              },
+              {
+                "name": "SRE runbook completo (on-call, incident response)",
+                "template": "tpl-006",
+                "required": true,
+                "reviewedBy": [
+                  "SRE Lead",
+                  "DevOps"
+                ]
+              },
+              {
+                "name": "Documentación de escalamiento y disaster recovery",
+                "template": "tpl-003",
+                "required": true,
+                "reviewedBy": [
+                  "SRE Lead",
+                  "Technical Lead"
+                ]
               }
             ],
             "gate": {
               "name": "Production Ready",
               "criteria": [
-                "Uptime >99% en condiciones de campo",
-                "Power consumption dentro de lo esperado (batería dura X tiempo)",
-                "Conectividad estable en condiciones reales",
-                "OTA updates funciona confiablemente",
-                "Cero defectos críticos abiertos",
-                "Stakeholder aprueba deployment masivo"
+                "Sistema funciona 99.5% uptime en 1 mes con 100+ dispositivos",
+                "Consumo energético <50mA promedio (battery life >6 meses)",
+                "Fleet management controla 1000+ dispositivos sin degradación",
+                "Observability detecta incidentes en <5 min (MTTD <5min)",
+                "Field testing exitoso en condiciones extremas sin fallas"
               ],
-              "decision": "GO TO PRODUCTION / FIX & RE-TEST"
+              "decision": "GO TO PRODUCTION / OPTIMIZE & RE-TEST"
             },
-            "keyStakeholders": ["Stakeholder", "Operaciones", "Arquitecto de IoT"]
+            "keyStakeholders": [
+              "SRE Engineer",
+              "DevOps",
+              "Embedded Engineer",
+              "QA Tester",
+              "Support Team"
+            ]
           }
         ],
         "whenToUse": [
@@ -2963,7 +3061,10 @@
               "name": "Desarrollo y Testing en Lab",
               "action": "Desarrollar cambio de firmware y probar exhaustivamente en lab",
               "responsible": "Ingeniero de Firmware",
-              "artifacts": ["Firmware actualizado", "Tests pasando"],
+              "artifacts": [
+                "Firmware actualizado",
+                "Tests pasando"
+              ],
               "timeframe": "Según complejidad del cambio"
             },
             {
@@ -2971,7 +3072,10 @@
               "name": "Field Testing con Pilotos",
               "action": "Deployment a subset de dispositivos (1-5% del total) en campo",
               "responsible": "Ingeniero de Firmware + Operaciones",
-              "artifacts": ["Firmware deployado a pilotos", "Monitoreo activo"],
+              "artifacts": [
+                "Firmware deployado a pilotos",
+                "Monitoreo activo"
+              ],
               "timeframe": "1-2 semanas"
             },
             {
@@ -2979,7 +3083,9 @@
               "name": "Validación de Pilotos",
               "action": "Monitorear telemetría de pilotos (errores, crashes, power consumption)",
               "responsible": "Operaciones",
-              "artifacts": ["Reporte de telemetría de pilotos"],
+              "artifacts": [
+                "Reporte de telemetría de pilotos"
+              ],
               "timeframe": "3-7 días de monitoreo"
             },
             {
@@ -2987,7 +3093,9 @@
               "name": "Phased Rollout",
               "action": "Si pilotos OK, deployment incremental (10% → 50% → 100%)",
               "responsible": "Operaciones",
-              "artifacts": ["Firmware deployado gradualmente"],
+              "artifacts": [
+                "Firmware deployado gradualmente"
+              ],
               "timeframe": "1-2 semanas por fase"
             },
             {
@@ -2995,7 +3103,10 @@
               "name": "Monitoreo Post-Rollout",
               "action": "Monitoreo intensivo de todos los dispositivos actualizados",
               "responsible": "Operaciones",
-              "artifacts": ["Dashboard de monitoreo", "Alertas configuradas"],
+              "artifacts": [
+                "Dashboard de monitoreo",
+                "Alertas configuradas"
+              ],
               "timeframe": "1 semana post-100%"
             },
             {
@@ -3003,7 +3114,10 @@
               "name": "Rollback Automático (si falla)",
               "action": "Si >X% de dispositivos fallan, rollback automático a versión anterior",
               "responsible": "Sistema automático + Operaciones",
-              "artifacts": ["Rollback ejecutado", "Post-mortem"],
+              "artifacts": [
+                "Rollback ejecutado",
+                "Post-mortem"
+              ],
               "timeframe": "Automático (minutos a horas)"
             }
           ],
@@ -3021,10 +3135,7 @@
           "frequency": "On-demand, típicamente mensual o trimestral para updates no-críticos",
           "timeExpectation": "Cambios menores: 3-4 semanas desde dev hasta 100% rollout. Cambios críticos: más rápido con mayor riesgo"
         },
-        "iterationStrategy": {
-          "type": "incremental",
-          "description": "Desarrollo incremental: Prototipo → Implementación Completa → Field Testing. Cada fase valida la anterior antes de continuar"
-        },
+        "iterationStrategy": "Cada iteración dura 3-8 semanas y entrega un sistema desplegable en producción real. Feedback de usuarios piloto en iteraciones 1-2 (telemetría, usabilidad) guía priorización de features en iteraciones 3-4. Despliegue escalonado (2 → 10 → 50 → 1000+ dispositivos) minimiza riesgo de bugs críticos en producción masiva. Rollback a iteración anterior es posible ante fallas críticas.",
         "tooling": {
           "required": [
             "Firmware development (C/C++ para microcontrollers, Python para Raspberry Pi)",
@@ -3051,7 +3162,19 @@
             "concept-iot-architecture",
             "concept-embedded-systems"
           ]
-        }
+        },
+        "why": [
+          "Validación temprana con hardware real en iteración 1",
+          "Feedback de usuarios piloto guía desarrollo de features",
+          "Despliegue escalonado (2 → 10 → 50 → 1000+) minimiza riesgos",
+          "Cada iteración entrega sistema funcional desplegable"
+        ],
+        "how": [
+          "Iteración 1 (3-4 sem): MVP Edge-Only → 1-2 dispositivos",
+          "Iteración 2 (4-6 sem): Cloud + Dashboard → 5-10 dispositivos",
+          "Iteración 3 (5-7 sem): OTA + ML + Seguridad → 50+ dispositivos",
+          "Iteración 4 (6-8 sem): Fleet Management + Escala → 1000+ dispositivos"
+        ]
       },
       "methodology": {
         "name": "Tradicional con Énfasis en Confiabilidad",
