@@ -2,6 +2,7 @@ import { Document, Page, View, Text } from '@react-pdf/renderer';
 import { Cover } from './components/Cover';
 import { ProcessSection } from './components/ProcessSection';
 import { MethodologySection } from './components/MethodologySection';
+import { ModelingSection } from './components/ModelingSection';
 import { ArchitectureSection } from './components/ArchitectureSection';
 import { TimelineSection } from './components/TimelineSection';
 import { TemplatesSection } from './components/TemplatesSection';
@@ -29,46 +30,62 @@ export function PDFDocument({
   diagrams,
   customization,
 }: PDFDocumentProps) {
+  const docTitle = customization?.projectName || recommendation.title;
+  const headerText = docTitle.toUpperCase();
+
   return (
     <Document
-      title={`Sommerville - ${customization?.projectName || recommendation.title}`}
+      title={`Sommerville - ${docTitle}`}
       author={customization?.authorName || 'Sommerville Assistant'}
-      subject="Recomendación de Ingeniería de Software"
-      keywords="software engineering, ingeniería de software, sommerville"
+      subject="Recomendacion de Ingenieria de Software"
+      keywords="software engineering, ingenieria de software, sommerville"
     >
       {/* Portada */}
       <Cover recommendation={recommendation} customization={customization} />
 
-      {/* Página 2: Proceso + Metodología (COMBINADAS) */}
+      {/* Pagina 2: Proceso + Metodologia */}
       <Page size="A4" style={styles.page}>
-        {/* Header fijo */}
         <Text style={styles.header} fixed>
-          {recommendation.title}
+          {headerText}
         </Text>
 
-        {/* Secciones principales combinadas */}
         <ProcessSection process={recommendation.process} />
         <MethodologySection methodology={recommendation.methodology} />
 
-        {/* Footer con número de página */}
         <Text
           style={styles.footer}
           fixed
           render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
+            `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
           }
         />
       </Page>
 
-      {/* Página 3: Arquitectura + Errores (COMBINADAS) */}
+      {/* Pagina 3: Modelado */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.header} fixed>
-          Arquitectura y Consideraciones
+          {headerText} - Modelado
+        </Text>
+
+        <ModelingSection modeling={recommendation.modeling} />
+
+        <Text
+          style={styles.footer}
+          fixed
+          render={({ pageNumber, totalPages }) =>
+            `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
+          }
+        />
+      </Page>
+
+      {/* Pagina 4: Arquitectura + Errores */}
+      <Page size="A4" style={styles.page}>
+        <Text style={styles.header} fixed>
+          {headerText} - Arquitectura
         </Text>
 
         <ArchitectureSection architecture={recommendation.architecture} />
 
-        {/* Sección de errores a evitar */}
         {recommendation.avoid && recommendation.avoid.length > 0 && (
           <AvoidSection avoidItems={recommendation.avoid} />
         )}
@@ -77,15 +94,15 @@ export function PDFDocument({
           style={styles.footer}
           fixed
           render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
+            `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
           }
         />
       </Page>
 
-      {/* Página 4: Timeline */}
+      {/* Pagina 5: Timeline */}
       <Page size="A4" style={styles.page} break>
         <Text style={styles.header} fixed>
-          Timeline del Proyecto
+          {headerText} - Timeline
         </Text>
 
         <TimelineSection timeline={recommendation.timeline} />
@@ -94,19 +111,19 @@ export function PDFDocument({
           style={styles.footer}
           fixed
           render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
+            `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
           }
         />
       </Page>
 
-      {/* Páginas 5-8: Diagramas (si se generaron) */}
+      {/* Paginas 6-9: Diagramas */}
       {diagrams && <DiagramsSection diagrams={diagrams} />}
 
-      {/* Plantillas (si hay) */}
+      {/* Plantillas */}
       {templates.length > 0 && (
         <Page size="A4" style={styles.page} break>
           <Text style={styles.header} fixed>
-            Plantillas Recomendadas
+            {headerText} - Plantillas
           </Text>
 
           <TemplatesSection templates={templates} />
@@ -115,69 +132,65 @@ export function PDFDocument({
             style={styles.footer}
             fixed
             render={({ pageNumber, totalPages }) =>
-              `Página ${pageNumber} de ${totalPages}`
+              `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
             }
           />
         </Page>
       )}
 
-      {/* Página final con información adicional */}
+      {/* Pagina final */}
       <Page size="A4" style={styles.page} break>
         <Text style={styles.header} fixed>
           Acerca de este Documento
         </Text>
 
         <View style={styles.section}>
-          <Text style={styles.h2}>ℹ️ Acerca de este Documento</Text>
+          <Text style={styles.h2}>Acerca de este Documento</Text>
 
           <Text style={styles.paragraph}>
-            Este documento fue generado automáticamente por Sommerville Assistant, una
-            herramienta educativa basada en el libro &quot;Ingeniería de Software&quot; (9na
-            edición) de Ian Sommerville.
+            Este documento fue generado automaticamente por Sommerville Assistant, una
+            herramienta educativa basada en el libro &quot;Ingenieria de Software&quot; (9na
+            edicion) de Ian Sommerville. Contiene recomendaciones para proceso de desarrollo,
+            metodologia, modelado, arquitectura, timeline y diagramas especificos para su proyecto.
           </Text>
 
-          <Text style={styles.h4}>Propósito</Text>
+          <Text style={styles.h4}>Proposito</Text>
           <Text style={styles.paragraph}>
-            Las recomendaciones de este documento están diseñadas para ayudar a equipos
-            de desarrollo a tomar decisiones informadas sobre procesos, metodologías y
-            arquitecturas de software, basándose en las mejores prácticas documentadas
-            en la literatura académica.
+            Las recomendaciones estan disenadas para ayudar a equipos de desarrollo
+            a tomar decisiones informadas basandose en las mejores practicas documentadas
+            en la literatura academica de ingenieria de software.
           </Text>
 
           <Text style={styles.h4}>Uso Recomendado</Text>
           <View style={styles.list}>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>• </Text>
-              <Text style={styles.listContent}>
-                Usa este documento como guía inicial, no como regla absoluta
-              </Text>
-            </View>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>• </Text>
-              <Text style={styles.listContent}>
-                Adapta las recomendaciones al contexto específico de tu proyecto
-              </Text>
-            </View>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>• </Text>
-              <Text style={styles.listContent}>
-                Consulta con expertos antes de tomar decisiones arquitectónicas críticas
-              </Text>
-            </View>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>• </Text>
-              <Text style={styles.listContent}>
-                Revisa regularmente y ajusta según los resultados del proyecto
-              </Text>
-            </View>
+            {[
+              'Usa este documento como guia inicial, no como regla absoluta',
+              'Adapta las recomendaciones al contexto especifico de tu proyecto',
+              'Consulta con expertos antes de tomar decisiones arquitectonicas criticas',
+              'Revisa regularmente y ajusta segun los resultados del proyecto',
+            ].map((item, i) => (
+              <View key={i} style={styles.listItem}>
+                <Text style={styles.listBullet}>{'\u2022'} </Text>
+                <Text style={styles.listContent}>{item}</Text>
+              </View>
+            ))}
           </View>
 
-          <View style={[styles.infoBox, { marginTop: 24 }]}>
-            <Text style={{ fontSize: 10, color: '#1e40af', fontWeight: 'bold' }}>
-              📚 Referencia Bibliográfica
+          <View style={[styles.infoBox, { marginTop: 16 }]}>
+            <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 4 }}>
+              Referencia Bibliografica
             </Text>
-            <Text style={{ fontSize: 10, color: '#1e40af', marginTop: 4 }}>
+            <Text style={{ fontSize: 9, color: '#1e40af' }}>
               Sommerville, I. (2011). Software Engineering (9th ed.). Pearson Education.
+            </Text>
+          </View>
+
+          <View style={[styles.sectionCard, { marginTop: 16 }]}>
+            <Text style={{ fontSize: 9, color: '#64748b', textAlign: 'center' }}>
+              Documento generado el {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </Text>
+            <Text style={{ fontSize: 8, color: '#94a3b8', textAlign: 'center', marginTop: 4 }}>
+              Sommerville Assistant - Plataforma de Ingenieria de Software
             </Text>
           </View>
         </View>
@@ -186,7 +199,7 @@ export function PDFDocument({
           style={styles.footer}
           fixed
           render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
+            `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
           }
         />
       </Page>

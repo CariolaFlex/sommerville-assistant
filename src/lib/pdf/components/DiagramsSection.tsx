@@ -6,12 +6,7 @@ interface DiagramsSectionProps {
   diagrams: DiagramsData | null;
 }
 
-/**
- * Componente que renderiza las páginas de diagramas en el PDF
- * Cada diagrama ocupa una página completa para máxima visibilidad
- */
 export function DiagramsSection({ diagrams }: DiagramsSectionProps) {
-  // Si no se pudieron generar los diagramas, mostrar mensaje
   if (!diagrams) {
     return (
       <Page size="A4" style={styles.page} break>
@@ -20,28 +15,22 @@ export function DiagramsSection({ diagrams }: DiagramsSectionProps) {
         </Text>
 
         <View style={styles.section}>
-          <Text style={styles.h2}>📊 Diagramas</Text>
+          <Text style={styles.h2}>Diagramas</Text>
           <Text style={styles.paragraph}>
-            Los diagramas no pudieron generarse automáticamente. Por favor, revísalos en la
-            versión web de la aplicación.
+            Los diagramas no pudieron generarse automaticamente. Por favor, revisalos en la
+            version web de la aplicacion.
           </Text>
 
           <View style={styles.infoBox}>
-            <Text style={{ fontSize: 10, color: '#1e40af' }}>
-              Los diagramas incluyen:
+            <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 4 }}>
+              Diagramas disponibles en la plataforma web:
             </Text>
-            <Text style={{ fontSize: 10, color: '#1e40af', marginTop: 4 }}>
-              • Camino de decisión tomado en el asistente
-            </Text>
-            <Text style={{ fontSize: 10, color: '#1e40af' }}>
-              • Proceso de desarrollo recomendado
-            </Text>
-            <Text style={{ fontSize: 10, color: '#1e40af' }}>
-              • Arquitectura del sistema
-            </Text>
-            <Text style={{ fontSize: 10, color: '#1e40af' }}>
-              • Timeline Gantt del proyecto
-            </Text>
+            {['Camino de decision del asistente', 'Proceso de desarrollo recomendado',
+              'Arquitectura del sistema', 'Timeline Gantt del proyecto'].map((item, i) => (
+              <Text key={i} style={{ fontSize: 9, color: '#1e40af', marginLeft: 8 }}>
+                {'\u2022'} {item}
+              </Text>
+            ))}
           </View>
         </View>
 
@@ -49,128 +38,70 @@ export function DiagramsSection({ diagrams }: DiagramsSectionProps) {
           style={styles.footer}
           fixed
           render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
+            `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
           }
         />
       </Page>
     );
   }
 
+  const diagramPages = [
+    {
+      title: 'Camino de Decision',
+      header: 'Diagramas - Camino de Decision',
+      description: 'Visualizacion del camino tomado durante el proceso de recomendacion del asistente.',
+      src: diagrams.decisionTree,
+    },
+    {
+      title: 'Proceso de Desarrollo',
+      header: 'Diagramas - Proceso de Desarrollo',
+      description: 'Diagrama del flujo del proceso de desarrollo recomendado para el proyecto.',
+      src: diagrams.process,
+    },
+    {
+      title: 'Arquitectura del Sistema',
+      header: 'Diagramas - Arquitectura',
+      description: 'Diagrama de la arquitectura de software recomendada para el sistema.',
+      src: diagrams.architecture,
+    },
+    {
+      title: 'Timeline Gantt',
+      header: 'Diagramas - Timeline',
+      description: 'Cronograma visual del proyecto en formato Gantt con fases y actividades.',
+      src: diagrams.timeline,
+    },
+  ];
+
   return (
     <>
-      {/* Página 5: Camino de Decisión */}
-      <Page size="A4" style={styles.page} break>
-        <Text style={styles.header} fixed>
-          Diagramas - Camino de Decisión
-        </Text>
-
-        <View style={styles.section}>
-          <Text style={styles.h2}>📊 Camino de Decisión</Text>
-          <Text style={styles.paragraph}>
-            Visualización del camino tomado durante el proceso de recomendación del asistente
+      {diagramPages.map((diagram, index) => (
+        <Page key={index} size="A4" style={styles.page} break>
+          <Text style={styles.header} fixed>
+            {diagram.header}
           </Text>
-        </View>
 
-        <View style={{ marginTop: 12, alignItems: 'center' }}>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image
-            src={diagrams.decisionTree}
-            style={{ maxWidth: '100%', maxHeight: 500 }}
+          <View style={styles.section}>
+            <Text style={styles.h2}>{diagram.title}</Text>
+            <Text style={styles.paragraph}>{diagram.description}</Text>
+          </View>
+
+          <View style={{ marginTop: 8, alignItems: 'center', flex: 1 }}>
+            {/* eslint-disable-next-line jsx-a11y/alt-text */}
+            <Image
+              src={diagram.src}
+              style={{ maxWidth: '100%', maxHeight: 480 }}
+            />
+          </View>
+
+          <Text
+            style={styles.footer}
+            fixed
+            render={({ pageNumber, totalPages }) =>
+              `Pagina ${pageNumber} de ${totalPages}  |  Sommerville Assistant`
+            }
           />
-        </View>
-
-        <Text
-          style={styles.footer}
-          fixed
-          render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
-          }
-        />
-      </Page>
-
-      {/* Página 6: Proceso de Desarrollo */}
-      <Page size="A4" style={styles.page} break>
-        <Text style={styles.header} fixed>
-          Diagramas - Proceso de Desarrollo
-        </Text>
-
-        <View style={styles.section}>
-          <Text style={styles.h2}>⚙️ Proceso de Desarrollo</Text>
-          <Text style={styles.paragraph}>
-            Diagrama del flujo del proceso de desarrollo recomendado
-          </Text>
-        </View>
-
-        <View style={{ marginTop: 12, alignItems: 'center' }}>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image src={diagrams.process} style={{ maxWidth: '100%', maxHeight: 500 }} />
-        </View>
-
-        <Text
-          style={styles.footer}
-          fixed
-          render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
-          }
-        />
-      </Page>
-
-      {/* Página 7: Arquitectura */}
-      <Page size="A4" style={styles.page} break>
-        <Text style={styles.header} fixed>
-          Diagramas - Arquitectura
-        </Text>
-
-        <View style={styles.section}>
-          <Text style={styles.h2}>🏗️ Arquitectura del Sistema</Text>
-          <Text style={styles.paragraph}>
-            Diagrama de la arquitectura de software recomendada
-          </Text>
-        </View>
-
-        <View style={{ marginTop: 12, alignItems: 'center' }}>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image
-            src={diagrams.architecture}
-            style={{ maxWidth: '100%', maxHeight: 500 }}
-          />
-        </View>
-
-        <Text
-          style={styles.footer}
-          fixed
-          render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
-          }
-        />
-      </Page>
-
-      {/* Página 8: Timeline Gantt */}
-      <Page size="A4" style={styles.page} break>
-        <Text style={styles.header} fixed>
-          Diagramas - Timeline
-        </Text>
-
-        <View style={styles.section}>
-          <Text style={styles.h2}>📅 Timeline Gantt</Text>
-          <Text style={styles.paragraph}>
-            Cronograma visual del proyecto en formato Gantt
-          </Text>
-        </View>
-
-        <View style={{ marginTop: 12, alignItems: 'center' }}>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image src={diagrams.timeline} style={{ maxWidth: '100%', maxHeight: 500 }} />
-        </View>
-
-        <Text
-          style={styles.footer}
-          fixed
-          render={({ pageNumber, totalPages }) =>
-            `Página ${pageNumber} de ${totalPages}`
-          }
-        />
-      </Page>
+        </Page>
+      ))}
     </>
   );
 }

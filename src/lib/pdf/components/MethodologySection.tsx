@@ -9,28 +9,25 @@ interface MethodologySectionProps {
 export function MethodologySection({ methodology }: MethodologySectionProps) {
   return (
     <View style={styles.section}>
-      {/* Título de sección */}
-      <Text style={styles.h2}>⚡ Metodología Recomendada</Text>
+      <Text style={styles.h2}>Metodologia Recomendada</Text>
 
-      {/* Nombre de metodología */}
-      <Text style={styles.h3}>{methodology.name}</Text>
-
-      {/* Badge de capítulo */}
-      <View style={[styles.row, { marginBottom: 16 }]}>
-        <Text style={styles.badge}>{methodology.references.chapter}</Text>
+      {/* Name and chapter */}
+      <View style={styles.sectionCardHighlight}>
+        <Text style={styles.h3}>{methodology.name}</Text>
+        <View style={[styles.row, { marginTop: 4 }]}>
+          <Text style={styles.badge}>{methodology.references.chapter}</Text>
+        </View>
       </View>
 
-      {/* Descripción */}
+      {/* Description */}
       {methodology.description && (
-        <View style={{ marginBottom: 16 }}>
-          <Text style={styles.text}>{methodology.description}</Text>
-        </View>
+        <Text style={[styles.paragraph, { marginTop: 4 }]}>{methodology.description}</Text>
       )}
 
-      {/* Origen */}
+      {/* Origin */}
       {methodology.origin && (
-        <View style={{ marginBottom: 16 }}>
-          <Text style={styles.h4}>📜 Origen</Text>
+        <View style={[styles.sectionCard, { marginTop: 8 }]}>
+          <Text style={styles.h4}>Origen</Text>
           <Text style={styles.text}>
             <Text style={{ fontWeight: 'bold' }}>Creador: </Text>
             {methodology.origin.creator} ({methodology.origin.year})
@@ -39,14 +36,14 @@ export function MethodologySection({ methodology }: MethodologySectionProps) {
         </View>
       )}
 
-      {/* Principios Fundamentales */}
+      {/* Fundamental Principles */}
       {methodology.principles && methodology.principles.length > 0 && (
         <>
           <Text style={styles.h4}>Principios Fundamentales</Text>
           <View style={styles.list}>
             {methodology.principles.map((principle, i) => (
               <View key={i} style={styles.listItem}>
-                <Text style={styles.listBullet}>✓ </Text>
+                <Text style={[styles.listBullet, { color: '#059669' }]}>{'\u2713'} </Text>
                 <Text style={styles.listContent}>{principle}</Text>
               </View>
             ))}
@@ -54,19 +51,19 @@ export function MethodologySection({ methodology }: MethodologySectionProps) {
         </>
       )}
 
-      {/* Diferenciadores */}
+      {/* Differentiators */}
       {methodology.differentiators && methodology.differentiators.length > 0 && (
-        <View style={{ marginTop: 12 }}>
-          <Text style={styles.h4}>🎯 Diferenciadores Clave</Text>
+        <>
+          <Text style={styles.h4}>Diferenciadores Clave</Text>
           <View style={styles.list}>
             {methodology.differentiators.map((diff, i) => (
               <View key={i} style={styles.listItem}>
-                <Text style={styles.listBullet}>• </Text>
+                <Text style={styles.listBullet}>{'\u2022'} </Text>
                 <Text style={styles.listContent}>{diff}</Text>
               </View>
             ))}
           </View>
-        </View>
+        </>
       )}
     </View>
   );

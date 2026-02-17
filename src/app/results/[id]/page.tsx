@@ -14,6 +14,7 @@ import {
   Calendar,
   BarChart3,
   AlertCircle,
+  FileDown,
 } from 'lucide-react';
 import { useRecommendation } from '@/hooks/useRecommendation';
 import { ProcessTab } from '@/components/results/ProcessTab';
@@ -41,7 +42,7 @@ export default function ResultsPage() {
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Cargando recomendación...</p>
+          <p className="text-muted-foreground">Cargando recomendacion...</p>
         </div>
       </div>
     );
@@ -54,9 +55,9 @@ export default function ResultsPage() {
         <Card className="max-w-md w-full border-red-200 dark:border-red-800">
           <CardContent className="pt-6 text-center">
             <AlertCircle className="h-12 w-12 text-red-600 mx-auto mb-4" />
-            <h2 className="text-xl font-bold mb-2">Recomendación no encontrada</h2>
+            <h2 className="text-xl font-bold mb-2">Recomendacion no encontrada</h2>
             <p className="text-muted-foreground mb-6">
-              {error || 'No se pudo cargar la recomendación solicitada.'}
+              {error || 'No se pudo cargar la recomendacion solicitada.'}
             </p>
             <Button onClick={() => router.push('/wizard')} className="gap-2">
               <ArrowLeft className="h-4 w-4" />
@@ -102,7 +103,7 @@ export default function ResultsPage() {
               ID: {recommendation.id}
             </Badge>
             <Badge variant="secondary">
-              Capítulo {recommendation.process.chapter}
+              Capitulo {recommendation.process.chapter}
             </Badge>
           </div>
           <h1 className="text-4xl font-bold mb-4">{recommendation.title}</h1>
@@ -120,7 +121,7 @@ export default function ResultsPage() {
             </TabsTrigger>
             <TabsTrigger value="methodology" className="gap-2">
               <Zap className="h-4 w-4" />
-              <span className="hidden sm:inline">Metodología</span>
+              <span className="hidden sm:inline">Metodologia</span>
             </TabsTrigger>
             <TabsTrigger value="modeling" className="gap-2">
               <Box className="h-4 w-4" />
@@ -186,6 +187,27 @@ export default function ResultsPage() {
           </div>
         )}
 
+        {/* Export Complete Project CTA */}
+        <div className="mt-16 py-12 border-t">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/30 mb-6">
+              <FileDown className="h-8 w-8 text-blue-600" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Exportar Proyecto Completo</h3>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Genera un documento PDF profesional con los 6 paneles de analisis completos:
+              proceso, metodologia, modelado, arquitectura, timeline y diagramas.
+            </p>
+
+            <ExportButton
+              recommendation={recommendation}
+              templates={applicableTemplates}
+              checklists={applicableChecklists}
+              variant="full-project"
+            />
+          </div>
+        </div>
+
         {/* Footer Navigation */}
         <div className="mt-12 pt-8 border-t">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -213,12 +235,10 @@ export default function ResultsPage() {
       <footer className="border-t mt-16 py-8 bg-muted/50">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>
-            Basado en <strong>Ingeniería de Software</strong> de Ian Sommerville (Capítulos
-            1-6)
+            Basado en <strong>Ingenieria de Software</strong> de Ian Sommerville (Capitulos 1-6)
           </p>
           <p className="mt-2">
-            Esta herramienta es solo una guía. Adapta las recomendaciones a tu contexto
-            específico.
+            Esta herramienta es solo una guia. Adapta las recomendaciones a tu contexto especifico.
           </p>
         </div>
       </footer>

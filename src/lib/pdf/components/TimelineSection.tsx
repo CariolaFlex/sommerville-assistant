@@ -9,10 +9,14 @@ interface TimelineSectionProps {
 export function TimelineSection({ timeline }: TimelineSectionProps) {
   return (
     <View style={styles.section}>
-      {/* Título de sección */}
-      <Text style={styles.h2}>📅 Timeline del Proyecto (12 Semanas)</Text>
+      <Text style={styles.h2}>Timeline del Proyecto (12 Semanas)</Text>
 
-      {/* Tabla */}
+      <Text style={[styles.paragraph, { marginBottom: 10 }]}>
+        Cronograma sugerido para la implementacion del proyecto, organizado en fases
+        y tareas semanales. Ajusta segun las necesidades especificas de tu equipo.
+      </Text>
+
+      {/* Table */}
       <View style={styles.table}>
         {/* Header */}
         <View style={[styles.tableRow, styles.tableHeader]}>
@@ -23,18 +27,17 @@ export function TimelineSection({ timeline }: TimelineSectionProps) {
 
         {/* Rows */}
         {timeline.map((week, i) => (
-          <View key={i} style={styles.tableRow} wrap={false}>
-            {/* Semana */}
-            <Text style={[styles.tableCell, { flex: 0.8 }]}>{week.week}</Text>
-
-            {/* Fase */}
-            <Text style={[styles.tableCell, { flex: 1.5 }]}>{week.phase}</Text>
-
-            {/* Tareas */}
+          <View key={i} style={[styles.tableRow, i % 2 === 1 ? styles.tableRowAlternate : {}]} wrap={false}>
+            <Text style={[styles.tableCell, { flex: 0.8, fontWeight: 'bold', color: '#1e3a5f' }]}>
+              {week.week}
+            </Text>
+            <Text style={[styles.tableCell, { flex: 1.5, color: '#2563eb' }]}>
+              {week.phase}
+            </Text>
             <View style={[styles.tableCell, { flex: 3 }]}>
               {week.tasks.map((task, j) => (
-                <Text key={j} style={{ fontSize: 9, marginBottom: 2 }}>
-                  • {task}
+                <Text key={j} style={{ fontSize: 9, marginBottom: 2, lineHeight: 1.4 }}>
+                  {'\u2022'} {task}
                 </Text>
               ))}
             </View>
@@ -42,11 +45,14 @@ export function TimelineSection({ timeline }: TimelineSectionProps) {
         ))}
       </View>
 
-      {/* Nota informativa */}
+      {/* Info note */}
       <View style={styles.infoBox}>
-        <Text style={{ fontSize: 10, color: '#1e40af' }}>
-          💡 Este timeline es una guía inicial. Ajusta las fechas según las necesidades
-          específicas de tu proyecto y la disponibilidad del equipo.
+        <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 2 }}>
+          Nota Importante
+        </Text>
+        <Text style={{ fontSize: 9, color: '#1e40af' }}>
+          Este timeline es una guia inicial basada en proyectos similares. Ajusta las fechas
+          segun las necesidades especificas de tu proyecto y la disponibilidad del equipo.
         </Text>
       </View>
     </View>

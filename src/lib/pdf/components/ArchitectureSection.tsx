@@ -8,29 +8,47 @@ interface ArchitectureSectionProps {
 
 export function ArchitectureSection({ architecture }: ArchitectureSectionProps) {
   return (
-    <View style={styles.section} break>
-      {/* Título de sección */}
-      <Text style={styles.h2}>🏗️ Arquitectura del Sistema</Text>
+    <View style={styles.section}>
+      <Text style={styles.h2}>Arquitectura del Sistema</Text>
 
-      {/* Estilo arquitectónico */}
-      <Text style={styles.h3}>Estilo: {architecture.style}</Text>
+      {/* Architecture style */}
+      <View style={styles.sectionCardHighlight}>
+        <Text style={styles.h3}>Estilo: {architecture.style}</Text>
+      </View>
 
-      {/* Patrones */}
+      {/* Patterns */}
       {architecture.patterns && architecture.patterns.length > 0 && (
         <>
-          <Text style={styles.h4}>Patrones Arquitectónicos</Text>
+          <Text style={styles.h4}>Patrones Arquitectonicos</Text>
           {architecture.patterns.map((pattern, i) => (
-            <View key={i} style={{ marginBottom: 12 }}>
-              <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>{pattern.name}: </Text>{pattern.description}</Text>
+            <View key={i} style={[styles.sectionCard, { marginBottom: 8 }]} wrap={false}>
+              <Text style={{ fontSize: 11, fontWeight: 'bold', color: '#1e3a5f', marginBottom: 4 }}>
+                {pattern.name}
+              </Text>
+              <Text style={[styles.text, { marginBottom: 6 }]}>{pattern.description}</Text>
 
               {pattern.advantages && pattern.advantages.length > 0 && (
                 <View style={{ marginTop: 4 }}>
-                  <Text style={[styles.text, { fontSize: 9, fontWeight: 'bold' }]}>Ventajas:</Text>
+                  <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#059669', marginBottom: 3 }}>Ventajas:</Text>
                   <View style={styles.list}>
-                    {pattern.advantages.slice(0, 3).map((adv, j) => (
+                    {pattern.advantages.slice(0, 4).map((adv, j) => (
                       <View key={j} style={styles.listItem}>
-                        <Text style={styles.listBullet}>+ </Text>
+                        <Text style={[styles.listBullet, { color: '#059669' }]}>+ </Text>
                         <Text style={styles.listContent}>{adv}</Text>
+                      </View>
+                    ))}
+                  </View>
+                </View>
+              )}
+
+              {pattern.disadvantages && pattern.disadvantages.length > 0 && (
+                <View style={{ marginTop: 4 }}>
+                  <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#dc2626', marginBottom: 3 }}>Desventajas:</Text>
+                  <View style={styles.list}>
+                    {pattern.disadvantages.slice(0, 3).map((dis, j) => (
+                      <View key={j} style={styles.listItem}>
+                        <Text style={[styles.listBullet, { color: '#dc2626' }]}>- </Text>
+                        <Text style={styles.listContent}>{dis}</Text>
                       </View>
                     ))}
                   </View>
@@ -41,27 +59,26 @@ export function ArchitectureSection({ architecture }: ArchitectureSectionProps) 
         </>
       )}
 
-      {/* Atributos de Calidad */}
+      {/* Quality Attributes */}
       {architecture.qualityAttributes && (
         <>
           <Text style={styles.h4}>Atributos de Calidad</Text>
-          <View style={styles.list}>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>📈 </Text>
-              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Escalabilidad: </Text>{architecture.qualityAttributes.scalability}</Text>
+          <View style={styles.table}>
+            <View style={[styles.tableRow, styles.tableHeader]}>
+              <Text style={[styles.tableCellHeader, { flex: 1 }]}>Atributo</Text>
+              <Text style={[styles.tableCellHeader, { flex: 3 }]}>Descripcion</Text>
             </View>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>🔧 </Text>
-              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Mantenibilidad: </Text>{architecture.qualityAttributes.maintainability}</Text>
-            </View>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>⚡ </Text>
-              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Performance: </Text>{architecture.qualityAttributes.performance}</Text>
-            </View>
-            <View style={styles.listItem}>
-              <Text style={styles.listBullet}>🔒 </Text>
-              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Seguridad: </Text>{architecture.qualityAttributes.security}</Text>
-            </View>
+            {[
+              { name: 'Escalabilidad', value: architecture.qualityAttributes.scalability },
+              { name: 'Mantenibilidad', value: architecture.qualityAttributes.maintainability },
+              { name: 'Performance', value: architecture.qualityAttributes.performance },
+              { name: 'Seguridad', value: architecture.qualityAttributes.security },
+            ].map((attr, i) => (
+              <View key={i} style={[styles.tableRow, i % 2 === 1 ? styles.tableRowAlternate : {}]} wrap={false}>
+                <Text style={[styles.tableCell, { flex: 1, fontWeight: 'bold' }]}>{attr.name}</Text>
+                <Text style={[styles.tableCell, { flex: 3 }]}>{attr.value}</Text>
+              </View>
+            ))}
           </View>
         </>
       )}

@@ -1,16 +1,39 @@
 import { StyleSheet } from '@react-pdf/renderer';
 
+// Professional color palette
+const colors = {
+  primary: '#1e3a5f',
+  primaryLight: '#2563eb',
+  primaryMuted: '#64748b',
+  dark: '#0f172a',
+  text: '#1e293b',
+  textMuted: '#64748b',
+  textLight: '#94a3b8',
+  border: '#e2e8f0',
+  borderDark: '#cbd5e1',
+  bg: '#f8fafc',
+  bgCard: '#f1f5f9',
+  white: '#ffffff',
+  success: '#059669',
+  warning: '#d97706',
+  danger: '#dc2626',
+  info: '#2563eb',
+  accent: '#7c3aed',
+};
+
 export const styles = StyleSheet.create({
-  // Layout base
+  // ===== PAGE LAYOUT =====
   page: {
-    padding: 30,
+    paddingTop: 60,
+    paddingBottom: 60,
+    paddingHorizontal: 50,
     fontSize: 10,
     fontFamily: 'Helvetica',
-    lineHeight: 1.4,
-    color: '#1f2937',
+    lineHeight: 1.5,
+    color: colors.text,
   },
 
-  // Portada
+  // ===== COVER PAGE =====
   cover: {
     display: 'flex',
     flexDirection: 'column',
@@ -19,19 +42,29 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
 
+  coverAccentBar: {
+    width: 80,
+    height: 4,
+    backgroundColor: colors.primaryLight,
+    marginBottom: 24,
+    borderRadius: 2,
+  },
+
   coverTitle: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
-    marginBottom: 16,
     textAlign: 'center',
-    color: '#1e40af',
+    color: colors.primary,
+    letterSpacing: -0.5,
+    marginBottom: 8,
   },
 
   coverSubtitle: {
-    fontSize: 20,
-    color: '#3b82f6',
-    marginBottom: 32,
+    fontSize: 18,
+    color: colors.primaryLight,
+    marginBottom: 40,
     textAlign: 'center',
+    lineHeight: 1.4,
   },
 
   coverEmoji: {
@@ -40,214 +73,294 @@ export const styles = StyleSheet.create({
   },
 
   coverMeta: {
-    fontSize: 12,
-    color: '#6b7280',
-    marginBottom: 8,
+    fontSize: 11,
+    color: colors.textMuted,
+    marginBottom: 6,
+    textAlign: 'center',
+  },
+
+  coverMetaLabel: {
+    fontSize: 11,
+    color: colors.textMuted,
+    fontWeight: 'bold',
   },
 
   coverFooter: {
-    fontSize: 10,
-    color: '#9ca3af',
+    fontSize: 9,
+    color: colors.textLight,
     textAlign: 'center',
-    marginTop: 32,
   },
 
-  // Títulos
+  coverDivider: {
+    width: 200,
+    height: 1,
+    backgroundColor: colors.border,
+    marginVertical: 20,
+  },
+
+  // ===== TYPOGRAPHY =====
   h1: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
+    color: colors.primary,
     marginBottom: 12,
-    color: '#1e40af',
+    paddingBottom: 8,
     borderBottomWidth: 2,
-    borderBottomColor: '#3b82f6',
-    paddingBottom: 4,
+    borderBottomColor: colors.primaryLight,
   },
 
   h2: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
+    color: colors.primary,
     marginTop: 16,
     marginBottom: 8,
-    color: '#2563eb',
+    paddingBottom: 4,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
   },
 
   h3: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: 'bold',
-    marginTop: 16,
-    marginBottom: 8,
-    color: '#3b82f6',
+    color: colors.primaryLight,
+    marginTop: 12,
+    marginBottom: 6,
   },
 
   h4: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    marginTop: 12,
-    marginBottom: 6,
-    color: '#60a5fa',
-  },
-
-  // Texto
-  paragraph: {
-    marginBottom: 6,
-    textAlign: 'justify',
-    lineHeight: 1.4,
-  },
-
-  text: {
     fontSize: 11,
+    fontWeight: 'bold',
+    color: colors.primaryMuted,
+    marginTop: 10,
+    marginBottom: 4,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
 
-  textMuted: {
-    color: '#6b7280',
+  paragraph: {
+    marginBottom: 8,
+    textAlign: 'justify',
+    lineHeight: 1.6,
     fontSize: 10,
   },
 
-  // Listas
+  text: {
+    fontSize: 10,
+    lineHeight: 1.5,
+  },
+
+  textMuted: {
+    color: colors.textMuted,
+    fontSize: 9,
+  },
+
+  textSmall: {
+    fontSize: 9,
+    color: colors.textMuted,
+    lineHeight: 1.4,
+  },
+
+  // ===== LISTS =====
   list: {
-    marginLeft: 16,
-    marginBottom: 12,
+    marginLeft: 12,
+    marginBottom: 10,
   },
 
   listItem: {
     flexDirection: 'row',
-    marginBottom: 3,
+    marginBottom: 4,
     fontSize: 10,
   },
 
   listBullet: {
-    width: 20,
-    fontSize: 11,
+    width: 16,
+    fontSize: 10,
+    color: colors.primaryLight,
   },
 
   listContent: {
     flex: 1,
-    fontSize: 11,
+    fontSize: 10,
+    lineHeight: 1.5,
   },
 
-  // Tablas
+  // ===== TABLES =====
   table: {
     width: '100%',
-    marginTop: 12,
-    marginBottom: 16,
+    marginTop: 10,
+    marginBottom: 14,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 4,
   },
 
   tableRow: {
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderBottomColor: '#e5e7eb',
-    paddingVertical: 8,
-    minHeight: 30,
+    borderBottomColor: colors.border,
+    paddingVertical: 7,
+    paddingHorizontal: 4,
+    minHeight: 28,
+  },
+
+  tableRowAlternate: {
+    backgroundColor: colors.bg,
   },
 
   tableHeader: {
-    backgroundColor: '#f3f4f6',
-    fontWeight: 'bold',
-    borderBottomWidth: 2,
-    borderBottomColor: '#9ca3af',
+    backgroundColor: colors.primary,
+    borderBottomWidth: 0,
   },
 
   tableCell: {
     paddingHorizontal: 8,
-    fontSize: 10,
+    fontSize: 9,
+    lineHeight: 1.4,
   },
 
   tableCellHeader: {
     fontWeight: 'bold',
-    fontSize: 10,
+    fontSize: 9,
+    color: colors.white,
   },
 
-  // Badges y etiquetas
+  // ===== BADGES =====
   badge: {
-    backgroundColor: '#dbeafe',
-    color: '#1e40af',
+    backgroundColor: colors.bg,
+    color: colors.primary,
     paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 4,
-    fontSize: 9,
+    paddingVertical: 3,
+    borderRadius: 3,
+    fontSize: 8,
     marginRight: 6,
-    marginBottom: 6,
+    marginBottom: 4,
+    borderWidth: 1,
+    borderColor: colors.border,
   },
 
   badgeGreen: {
-    backgroundColor: '#d1fae5',
-    color: '#065f46',
+    backgroundColor: '#ecfdf5',
+    color: colors.success,
+    borderColor: '#a7f3d0',
   },
 
   badgeOrange: {
-    backgroundColor: '#fed7aa',
-    color: '#9a3412',
+    backgroundColor: '#fffbeb',
+    color: colors.warning,
+    borderColor: '#fde68a',
   },
 
   badgePurple: {
-    backgroundColor: '#e9d5ff',
-    color: '#6b21a8',
+    backgroundColor: '#f5f3ff',
+    color: colors.accent,
+    borderColor: '#ddd6fe',
   },
 
-  // Cajas de advertencia
+  badgeBlue: {
+    backgroundColor: '#eff6ff',
+    color: colors.info,
+    borderColor: '#bfdbfe',
+  },
+
+  // ===== BOXES / CALLOUTS =====
   warningBox: {
-    backgroundColor: '#fef3c7',
-    borderLeftWidth: 4,
-    borderLeftColor: '#f59e0b',
-    padding: 12,
-    marginVertical: 12,
-    borderRadius: 4,
+    backgroundColor: '#fffbeb',
+    borderLeftWidth: 3,
+    borderLeftColor: colors.warning,
+    padding: 10,
+    marginVertical: 8,
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: '#fde68a',
   },
 
   infoBox: {
-    backgroundColor: '#dbeafe',
-    borderLeftWidth: 4,
-    borderLeftColor: '#3b82f6',
-    padding: 12,
-    marginVertical: 12,
-    borderRadius: 4,
+    backgroundColor: '#eff6ff',
+    borderLeftWidth: 3,
+    borderLeftColor: colors.info,
+    padding: 10,
+    marginVertical: 8,
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: '#bfdbfe',
   },
 
-  // Header y Footer
+  successBox: {
+    backgroundColor: '#ecfdf5',
+    borderLeftWidth: 3,
+    borderLeftColor: colors.success,
+    padding: 10,
+    marginVertical: 8,
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: '#a7f3d0',
+  },
+
+  // ===== HEADER & FOOTER =====
   header: {
-    fontSize: 9,
-    color: '#6b7280',
-    textAlign: 'center',
-    marginBottom: 20,
-    paddingBottom: 10,
+    fontSize: 8,
+    color: colors.textLight,
+    textAlign: 'right',
+    marginBottom: 16,
+    paddingBottom: 8,
     borderBottomWidth: 1,
-    borderBottomColor: '#e5e7eb',
+    borderBottomColor: colors.border,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
 
   footer: {
     position: 'absolute',
     bottom: 30,
-    left: 40,
-    right: 40,
-    fontSize: 9,
-    color: '#9ca3af',
+    left: 50,
+    right: 50,
+    fontSize: 8,
+    color: colors.textLight,
     textAlign: 'center',
     borderTopWidth: 1,
-    borderTopColor: '#e5e7eb',
-    paddingTop: 10,
+    borderTopColor: colors.border,
+    paddingTop: 8,
   },
 
-  // Secciones
+  // ===== SECTIONS =====
   section: {
-    marginBottom: 16,
+    marginBottom: 14,
   },
 
   sectionCard: {
-    backgroundColor: '#f9fafb',
+    backgroundColor: colors.bg,
     padding: 12,
-    borderRadius: 6,
-    marginBottom: 12,
+    borderRadius: 4,
+    marginBottom: 10,
     borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderColor: colors.border,
   },
 
-  // Utilidades
+  sectionCardHighlight: {
+    backgroundColor: '#eff6ff',
+    padding: 12,
+    borderRadius: 4,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#bfdbfe',
+  },
+
+  // ===== UTILITIES =====
   row: {
     flexDirection: 'row',
   },
 
   spaceBetween: {
     justifyContent: 'space-between',
+  },
+
+  flexWrap: {
+    flexWrap: 'wrap',
+  },
+
+  mt4: {
+    marginTop: 4,
   },
 
   mt8: {
@@ -258,11 +371,22 @@ export const styles = StyleSheet.create({
     marginTop: 16,
   },
 
+  mb4: {
+    marginBottom: 4,
+  },
+
   mb8: {
     marginBottom: 8,
   },
 
   mb16: {
     marginBottom: 16,
+  },
+
+  divider: {
+    width: '100%',
+    height: 1,
+    backgroundColor: colors.border,
+    marginVertical: 12,
   },
 });
