@@ -46,18 +46,40 @@ export interface MethodologyInfo {
 }
 
 export interface ModelingInfo {
-  level: string;
-  chapter: number;
-  required: string[];
-  purpose: string;
+  notations: {
+    name: string;
+    description: string;
+    diagrams: string[];
+    whenToUse: string;
+    tools: string[];
+  }[];
+  primaryFocus: string;
+  references: {
+    chapter: string | number;
+    sections: string[];
+  };
 }
 
 export interface ArchitectureInfo {
-  pattern: string;
-  chapter: number;
-  why: string;
-  layers: string[];
-  considerations: string[];
+  patterns: {
+    name: string;
+    description: string;
+    advantages: string[];
+    disadvantages: string[];
+    whenToUse: string;
+    tradeoffs: string;
+  }[];
+  style: string;
+  qualityAttributes: {
+    scalability: string;
+    maintainability: string;
+    performance: string;
+    security: string;
+  };
+  references: {
+    chapter: string | number;
+    sections: string[];
+  };
 }
 
 export interface TimelineWeek {

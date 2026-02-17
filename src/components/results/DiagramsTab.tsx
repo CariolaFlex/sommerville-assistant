@@ -98,7 +98,7 @@ export function DiagramsTab({ recommendation }: DiagramsTabProps) {
               <div>
                 <CardTitle>Arquitectura del Sistema</CardTitle>
                 <CardDescription className="mt-1">
-                  Patrón: {recommendation.architecture.pattern}
+                  Estilo: {recommendation.architecture.style}
                 </CardDescription>
               </div>
             </div>

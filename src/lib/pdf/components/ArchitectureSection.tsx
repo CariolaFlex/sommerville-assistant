@@ -12,43 +12,56 @@ export function ArchitectureSection({ architecture }: ArchitectureSectionProps) 
       {/* Título de sección */}
       <Text style={styles.h2}>🏗️ Arquitectura del Sistema</Text>
 
-      {/* Patrón arquitectónico */}
-      <Text style={styles.h3}>Patrón: {architecture.pattern}</Text>
+      {/* Estilo arquitectónico */}
+      <Text style={styles.h3}>Estilo: {architecture.style}</Text>
 
-      {/* Justificación (why) */}
-      {architecture.why && (
+      {/* Patrones */}
+      {architecture.patterns && architecture.patterns.length > 0 && (
         <>
-          <Text style={styles.h4}>Justificación</Text>
-          <Text style={styles.paragraph}>{architecture.why}</Text>
+          <Text style={styles.h4}>Patrones Arquitectónicos</Text>
+          {architecture.patterns.map((pattern, i) => (
+            <View key={i} style={{ marginBottom: 12 }}>
+              <Text style={styles.text}><Text style={{ fontWeight: 'bold' }}>{pattern.name}: </Text>{pattern.description}</Text>
+
+              {pattern.advantages && pattern.advantages.length > 0 && (
+                <View style={{ marginTop: 4 }}>
+                  <Text style={[styles.text, { fontSize: 9, fontWeight: 'bold' }]}>Ventajas:</Text>
+                  <View style={styles.list}>
+                    {pattern.advantages.slice(0, 3).map((adv, j) => (
+                      <View key={j} style={styles.listItem}>
+                        <Text style={styles.listBullet}>+ </Text>
+                        <Text style={styles.listContent}>{adv}</Text>
+                      </View>
+                    ))}
+                  </View>
+                </View>
+              )}
+            </View>
+          ))}
         </>
       )}
 
-      {/* Capas */}
-      {architecture.layers && architecture.layers.length > 0 && (
+      {/* Atributos de Calidad */}
+      {architecture.qualityAttributes && (
         <>
-          <Text style={styles.h4}>Capas del Sistema</Text>
+          <Text style={styles.h4}>Atributos de Calidad</Text>
           <View style={styles.list}>
-            {architecture.layers.map((layer, i) => (
-              <View key={i} style={styles.listItem}>
-                <Text style={styles.listBullet}>{i + 1}. </Text>
-                <Text style={styles.listContent}>{layer}</Text>
-              </View>
-            ))}
-          </View>
-        </>
-      )}
-
-      {/* Consideraciones */}
-      {architecture.considerations && architecture.considerations.length > 0 && (
-        <>
-          <Text style={styles.h4}>Consideraciones Especiales</Text>
-          <View style={styles.list}>
-            {architecture.considerations.map((consideration, i) => (
-              <View key={i} style={styles.listItem}>
-                <Text style={styles.listBullet}>! </Text>
-                <Text style={styles.listContent}>{consideration}</Text>
-              </View>
-            ))}
+            <View style={styles.listItem}>
+              <Text style={styles.listBullet}>📈 </Text>
+              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Escalabilidad: </Text>{architecture.qualityAttributes.scalability}</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text style={styles.listBullet}>🔧 </Text>
+              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Mantenibilidad: </Text>{architecture.qualityAttributes.maintainability}</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text style={styles.listBullet}>⚡ </Text>
+              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Performance: </Text>{architecture.qualityAttributes.performance}</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text style={styles.listBullet}>🔒 </Text>
+              <Text style={styles.listContent}><Text style={{ fontWeight: 'bold' }}>Seguridad: </Text>{architecture.qualityAttributes.security}</Text>
+            </View>
           </View>
         </>
       )}

@@ -450,34 +450,118 @@
         }
       },
       "modeling": {
-        "level": "COMPLETO Y FORMAL",
-        "chapter": 5,
-        "required": [
-          "Casos de Uso (todos los requisitos funcionales)",
-          "Diagramas de Secuencia (TODAS las interacciones críticas)",
-          "Diagramas de Clases (arquitectura completa OO)",
-          "Diagramas de Estado (componentes reactivos)",
-          "Diagramas de Actividad (flujos de control complejos)"
+        "notations": [
+          {
+            "name": "UML",
+            "description": "Unified Modeling Language para modelado estructural y comportamental completo con énfasis en trazabilidad.",
+            "diagrams": [
+              "Use Case Diagram",
+              "Class Diagram",
+              "Sequence Diagram",
+              "State Machine Diagram",
+              "Deployment Diagram"
+            ],
+            "whenToUse": "Sistemas críticos requieren documentación formal exhaustiva de requisitos (use cases), diseño (class/sequence) y deployment para certificación regulatoria",
+            "tools": [
+              "Enterprise Architect",
+              "IBM Rational",
+              "Visual Paradigm",
+              "PlantUML"
+            ]
+          },
+          {
+            "name": "Traceability Matrix",
+            "description": "Matriz que liga requisitos → diseño → código → tests para compliance regulatorio.",
+            "diagrams": [
+              "Traceability Matrix (tabla/diagrama)",
+              "Requirements Coverage Matrix"
+            ],
+            "whenToUse": "Sistemas críticos regulados (FDA, FAA, DO-178C) que requieren demostrar trazabilidad completa",
+            "tools": [
+              "IBM DOORS",
+              "Jama Connect",
+              "Polarion",
+              "Excel con macros"
+            ]
+          },
+          {
+            "name": "FMEA (Failure Mode and Effects Analysis)",
+            "description": "Análisis de modos de falla: qué puede fallar, probabilidad, severidad, detección, mitigación.",
+            "diagrams": [
+              "FMEA Table",
+              "FTA (Fault Tree Analysis)",
+              "HAZOP"
+            ],
+            "whenToUse": "Análisis obligatorio en sistemas críticos para identificar y mitigar riesgos de seguridad (safety)",
+            "tools": [
+              "Relyence",
+              "XFMEA",
+              "RAM Commander",
+              "Excel"
+            ]
+          }
         ],
-        "purpose": "Para generación de código y documentación formal"
+        "primaryFocus": "Documentación formal exhaustiva con trazabilidad completa (requisitos → diseño → código → tests) y análisis de riesgos (FMEA/FTA)",
+        "references": {
+          "chapter": "chapter-24",
+          "sections": [
+            "24.2 Dependability engineering",
+            "24.3 Safety and dependability requirements"
+          ]
+        }
       },
       "architecture": {
-        "pattern": "Capas",
-        "chapter": 6,
-        "why": "Seguridad multinivel, separación de responsabilidades clara, testing por capas, portabilidad",
-        "layers": [
-          "Capa 5: Interfaz Usuario/HMI (mínima en embebidos)",
-          "Capa 4: Lógica de Control (algoritmos críticos)",
-          "Capa 3: Servicios de Sistema (gestión de recursos)",
-          "Capa 2: Abstracción de Hardware (HAL)",
-          "Capa 1: Hardware/Firmware (drivers, RTOS)"
+        "patterns": [
+          {
+            "name": "Layered (N-Tier)",
+            "description": "Arquitectura en capas (Presentation, Business Logic, Data Access) con separación clara de responsabilidades.",
+            "advantages": [
+              "Separación de concerns (UI, lógica de negocio, datos)",
+              "Facilita testing de cada capa independientemente",
+              "Reusabilidad de lógica de negocio entre diferentes interfaces",
+              "Facilita mantenimiento (cambios en UI no afectan datos)",
+              "Facilita auditorías regulatorias (cada capa auditable independientemente)"
+            ],
+            "disadvantages": [
+              "Performance overhead (múltiples capas añaden latencia)",
+              "Over-engineering para sistemas simples",
+              "Acoplamiento entre capas puede generar rigidez"
+            ],
+            "whenToUse": "Sistemas críticos con lógica de negocio compleja y necesidad de auditoría por capa",
+            "tradeoffs": "Mantenibilidad y separación de concerns vs Performance (latencia de múltiples capas)"
+          },
+          {
+            "name": "Redundancy Patterns (High Availability)",
+            "description": "Redundancia de componentes críticos (active-active, active-passive, N+1) para alta disponibilidad.",
+            "advantages": [
+              "Alta disponibilidad (99.9%+ uptime)",
+              "Tolerancia a fallos (failover automático)",
+              "Mantenimiento sin downtime (rolling updates)",
+              "Cumple requisitos de sistemas críticos (no single point of failure)"
+            ],
+            "disadvantages": [
+              "Costo de infraestructura (servidores/componentes redundantes)",
+              "Complejidad de configuración y failover",
+              "Sincronización de estado entre réplicas (consistency challenges)"
+            ],
+            "whenToUse": "Sistemas críticos donde downtime no es aceptable (healthcare, control industrial, finanzas)",
+            "tradeoffs": "Alta disponibilidad y tolerancia a fallos vs Costo de infraestructura"
+          }
         ],
-        "considerations": [
-          "Componentes redundantes para disponibilidad",
-          "Watchdog timers en capa de hardware",
-          "Monitoreo de salud del sistema",
-          "Mecanismos de fail-safe"
-        ]
+        "style": "Monolito modular con redundancia y auditoría completa",
+        "qualityAttributes": {
+          "scalability": "Medium - Prioridad es compliance y disponibilidad, no escalamiento masivo. Vertical scaling suficiente con redundancia N+1.",
+          "maintainability": "Very High - Documentación formal exhaustiva (SRS, SDD, traceability matrix) facilita mantenimiento. Código auditado regularmente.",
+          "performance": "Medium - Overhead de logging/auditoría. Optimización secundaria a safety y compliance. Latencia aceptable en sistemas críticos.",
+          "security": "Very High - Controles estrictos (autenticación multi-factor, autorización granular, encriptación AES-256, auditoría completa). Cumple DO-178C, IEC 61508."
+        },
+        "references": {
+          "chapter": "chapter-24",
+          "sections": [
+            "24.4 Safety assurance",
+            "24.5 Security and dependability"
+          ]
+        }
       },
       "timeline": [
         {
@@ -1108,35 +1192,102 @@
         }
       },
       "modeling": {
-        "level": "ESENCIAL",
-        "chapter": 5,
-        "required": [
-          "Casos de Uso: Para requisitos principales",
-          "Diagramas de Secuencia: Solo interacciones complejas",
-          "Diagrama de Clases: Core del dominio",
-          "Diagramas de Estado: Componentes reactivos"
+        "notations": [
+          {
+            "name": "UML",
+            "description": "Unified Modeling Language para modelado estructural y comportamental completo.",
+            "diagrams": [
+              "Use Case Diagram",
+              "Class Diagram",
+              "Sequence Diagram",
+              "State Machine Diagram",
+              "Deployment Diagram"
+            ],
+            "whenToUse": "Sistemas transaccionales requieren documentación formal de requisitos (use cases), diseño de BD (class diagrams) y flujos transaccionales (sequence diagrams)",
+            "tools": [
+              "Enterprise Architect",
+              "Visual Paradigm",
+              "Lucidchart",
+              "PlantUML"
+            ]
+          },
+          {
+            "name": "ERD (Entity-Relationship Diagram)",
+            "description": "Modelado de base de datos relacional (entidades, relaciones, cardinalidad, normalización).",
+            "diagrams": [
+              "ERD",
+              "Relational Schema",
+              "Data Dictionary"
+            ],
+            "whenToUse": "Sistemas transaccionales con bases de datos complejas (normalización 3NF, integridad referencial, índices)",
+            "tools": [
+              "MySQL Workbench",
+              "dbdiagram.io",
+              "Lucidchart",
+              "ER/Studio"
+            ]
+          }
         ],
-        "purpose": "Comunicación y comprensión, no documentación exhaustiva",
-        "tools": [
-          "PlantUML",
-          "Mermaid en Markdown",
-          "Pizarra + foto"
-        ]
+        "primaryFocus": "Documentación formal completa de requisitos, diseño de base de datos y flujos transaccionales",
+        "references": {
+          "chapter": "chapter-5",
+          "sections": [
+            "5.2 UML diagrams",
+            "5.3 Use case modeling"
+          ]
+        }
       },
       "architecture": {
-        "pattern": "Capas (simplificada)",
-        "chapter": 6,
-        "why": "Separación clara, testing por capas, pero estructura más ligera",
-        "layers": [
-          "Capa 3: Control (Lógica crítica)",
-          "Capa 2: HAL (Hardware Abstraction Layer)",
-          "Capa 1: Hardware/Drivers"
+        "patterns": [
+          {
+            "name": "Layered (N-Tier)",
+            "description": "Arquitectura en capas (Presentation, Business Logic, Data Access) con separación clara de responsabilidades.",
+            "advantages": [
+              "Separación de concerns (UI, lógica de negocio, datos)",
+              "Facilita testing de cada capa independientemente",
+              "Reusabilidad de lógica de negocio entre diferentes interfaces",
+              "Facilita mantenimiento (cambios en UI no afectan datos)"
+            ],
+            "disadvantages": [
+              "Performance overhead (múltiples capas añaden latencia)",
+              "Over-engineering para sistemas simples",
+              "Acoplamiento entre capas puede generar rigidez"
+            ],
+            "whenToUse": "Sistemas transaccionales con lógica de negocio compleja y múltiples interfaces (web, móvil, API)",
+            "tradeoffs": "Mantenibilidad y separación de concerns vs Performance (latencia de múltiples capas)"
+          },
+          {
+            "name": "MVC (Model-View-Controller)",
+            "description": "Patrón que separa datos (Model), presentación (View) y lógica de control (Controller).",
+            "advantages": [
+              "Separación clara entre datos y presentación",
+              "Facilita testing de lógica de negocio (Model)",
+              "Múltiples vistas pueden usar mismo modelo",
+              "Evolución independiente de UI y lógica de negocio"
+            ],
+            "disadvantages": [
+              "Controllers pueden volverse muy grandes (fat controllers)",
+              "Curva de aprendizaje para desarrolladores nuevos",
+              "Overhead de coordinación entre componentes"
+            ],
+            "whenToUse": "Aplicaciones web transaccionales con múltiples vistas sobre los mismos datos",
+            "tradeoffs": "Separación de concerns vs Complejidad de coordinación entre componentes"
+          }
         ],
-        "considerations": [
-          "Arquitectura documentada en README",
-          "Código auto-documentado",
-          "Mecanismos de seguridad esenciales"
-        ]
+        "style": "Monolito modularizado (módulos separados por dominio de negocio)",
+        "qualityAttributes": {
+          "scalability": "Medium - Escalamiento vertical (más RAM/CPU al servidor). Escalamiento horizontal difícil con monolito. Load balancer con sticky sessions.",
+          "maintainability": "High - Arquitectura en capas facilita localizar y modificar código. Separación de concerns clara. Refactoring seguro con tests.",
+          "performance": "Medium-High - Latencia de múltiples capas, pero optimizable con caching (Redis) y database indexing. Queries SQL optimizadas críticas.",
+          "security": "High - Autenticación/autorización en capa de negocio. SQL injection prevention con ORMs/prepared statements. HTTPS obligatorio. Session management."
+        },
+        "references": {
+          "chapter": "chapter-6",
+          "sections": [
+            "6.3 Application architectures",
+            "6.4 Architectural patterns"
+          ]
+        }
       },
       "timeline": [
         {
@@ -1710,30 +1861,97 @@
         }
       },
       "modeling": {
-        "level": "ITERATIVO Y EVOLUTIVO",
-        "chapter": 5,
-        "required": [
-          "Casos de Uso: Refinados en cada espiral",
-          "Diagramas de Riesgos: Identificar y mitigar",
-          "Diagramas de Estado: Para componentes críticos",
-          "Prototipos Desechables: Validar requisitos"
+        "notations": [
+          {
+            "name": "UML",
+            "description": "UML para documentar requisitos evolutivos y prototipos técnicos en cada ciclo.",
+            "diagrams": [
+              "Use Case Diagram (requisitos)",
+              "Sequence Diagram (prototipos)",
+              "Component Diagram (arquitectura evolutiva)"
+            ],
+            "whenToUse": "Documentar requisitos que evolucionan en cada ciclo de la espiral y prototipos técnicos validados",
+            "tools": [
+              "Lucidchart",
+              "PlantUML",
+              "Visual Paradigm"
+            ]
+          },
+          {
+            "name": "Prototyping Tools",
+            "description": "Herramientas de prototipado rápido para validar viabilidad técnica (mockups, wireframes, PoCs).",
+            "diagrams": [
+              "Wireframes",
+              "Interactive Prototypes",
+              "Technical PoC (code prototypes)"
+            ],
+            "whenToUse": "Cada ciclo de la espiral requiere prototipo para validar supuestos técnicos antes de comprometer recursos",
+            "tools": [
+              "Figma",
+              "Balsamiq",
+              "InVision",
+              "CodePen (PoCs técnicos)",
+              "Jupyter Notebooks (algoritmos)"
+            ]
+          }
         ],
-        "purpose": "Reducir incertidumbre progresivamente manteniendo criticidad"
+        "primaryFocus": "Modelado de riesgos, prototipos técnicos y validación de viabilidad en cada ciclo de la espiral",
+        "references": {
+          "chapter": "chapter-2, chapter-5",
+          "sections": [
+            "2.3 Incremental development and delivery",
+            "5.1 System modeling"
+          ]
+        }
       },
       "architecture": {
-        "pattern": "Capas con Aislamiento",
-        "chapter": 6,
-        "why": "Aislar componentes críticos de cambios, permitir evolución controlada",
-        "layers": [
-          "Capa Crítica Estable (núcleo que NO cambia)",
-          "Capa de Adaptación (absorbe volatilidad)",
-          "Capa de Interfaz (evoluciona con requisitos)"
+        "patterns": [
+          {
+            "name": "Prototype-Driven Architecture",
+            "description": "Arquitectura evoluciona a partir de prototipos técnicos validados en cada ciclo de la espiral.",
+            "advantages": [
+              "Validación temprana de viabilidad técnica (fail-fast approach)",
+              "Reduce riesgo de arquitectura incorrecta (prototipos validan supuestos)",
+              "Stakeholders ven progreso tangible (prototipos funcionales, no solo documentos)",
+              "Permite experimentar con múltiples alternativas arquitectónicas"
+            ],
+            "disadvantages": [
+              "Prototipos throwaway pueden convertirse en código productivo (technical debt)",
+              "Overhead de construir múltiples prototipos (tiempo/recursos)",
+              "Riesgo de scope creep (stakeholders piden más features en prototipos)"
+            ],
+            "whenToUse": "Sistemas de alto riesgo técnico (tecnología nueva, integraciones complejas, requisitos inciertos, algoritmos no probados)",
+            "tradeoffs": "Validación temprana de riesgos vs Overhead de prototipos y riesgo de technical debt"
+          },
+          {
+            "name": "Layered with Abstraction Layers",
+            "description": "Capas de abstracción para aislar riesgos técnicos (ej: capa de integración con API externa inestable).",
+            "advantages": [
+              "Aisla código de alto riesgo (fácil reemplazar si prototipo falla)",
+              "Facilita testing de componentes de riesgo (mocks de capas de riesgo)",
+              "Permite evolución independiente de capas (refactoring localizado)"
+            ],
+            "disadvantages": [
+              "Complejidad de múltiples capas de abstracción",
+              "Overhead de performance (indirección adicional)"
+            ],
+            "whenToUse": "Riesgos técnicos específicos que necesitan aislamiento (integración con API legacy inestable, algoritmo experimental)",
+            "tradeoffs": "Aislamiento de riesgos vs Complejidad de abstracción"
+          }
         ],
-        "considerations": [
-          "Core crítico debe estabilizarse pronto",
-          "Cambios solo en capas no críticas",
-          "Interfaces bien definidas entre capas"
-        ]
+        "style": "Evolutivo (arquitectura emerge de prototipos validados, no diseño upfront exhaustivo)",
+        "qualityAttributes": {
+          "scalability": "Medium - Prioridad es validar viabilidad, no escalar. Escalabilidad se refina después de validación en ciclos posteriores.",
+          "maintainability": "Medium - Prototipos pueden generar technical debt si no se refactorizan. Importante separar prototipos throwaway vs evolutionary.",
+          "performance": "Low-Medium - Prototipos priorizan validación rápida sobre performance óptima. Optimización en ciclos posteriores.",
+          "security": "Medium-High - Riesgos de seguridad deben identificarse temprano (análisis de amenazas en cada ciclo). Security by design progresivo."
+        },
+        "references": {
+          "chapter": "chapter-6",
+          "sections": [
+            "6.2 Architectural design decisions"
+          ]
+        }
       },
       "timeline": [
         {
@@ -2415,34 +2633,26 @@
         }
       },
       "modeling": {
-        "level": "COMPLETO PARA DATOS",
-        "chapter": 5,
-        "required": [
-          "Casos de Uso: Flujos transaccionales",
-          "Diagrama de Clases: Modelo de datos completo",
-          "Diagramas de Secuencia: Transacciones complejas",
-          "Diagrama de Despliegue: Infraestructura"
-        ],
-        "purpose": "Base de datos bien diseñada desde el inicio"
+        "notations": [],
+        "primaryFocus": "mathematical_rigor",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "Capas + Cliente-Servidor",
-        "chapter": 6,
-        "why": "Separación frontend/backend, escalabilidad, múltiples clientes",
-        "layers": [
-          "Capa Presentación: Múltiples clientes (Web, Móvil, Desktop)",
-          "Capa API: REST/GraphQL",
-          "Capa Lógica de Negocio: Reglas transaccionales",
-          "Capa Acceso a Datos: ORM + Procedures",
-          "Capa Persistencia: Base de datos ACID"
-        ],
-        "considerations": [
-          "Connection pooling",
-          "Transaction isolation levels",
-          "Caché de sesiones (Redis)",
-          "Load balancing",
-          "Replicación de BD"
-        ]
+        "patterns": [],
+        "style": "Formal Component-Based",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {
@@ -3026,33 +3236,26 @@
         }
       },
       "modeling": {
-        "level": "ÁGIL ENFOCADO EN DATOS",
-        "chapter": 5,
-        "required": [
-          "Casos de Uso: Enfocados en transacciones",
-          "Diagrama de Clases: Modelo de datos",
-          "Diagramas de Secuencia: Flujos transaccionales complejos",
-          "Historias de Usuario: Con criterios de aceptación técnicos"
-        ],
-        "purpose": "Balance entre agilidad y diseño de datos robusto"
+        "notations": [],
+        "primaryFocus": "rapid_prototyping",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "Capas + MVC",
-        "chapter": 6,
-        "why": "Separación clara, testing por capas, escalabilidad",
-        "layers": [
-          "Frontend: React/Angular/Vue (MVC: Vista)",
-          "API Layer: REST (MVC: Controlador)",
-          "Business Logic: Lógica transaccional (MVC: Modelo lógica)",
-          "Data Access: ORM (MVC: Modelo datos)",
-          "Database: PostgreSQL/MySQL"
-        ],
-        "considerations": [
-          "Redis para caché y sesiones",
-          "Message Queue (RabbitMQ) para procesos async",
-          "Elasticsearch para búsquedas rápidas",
-          "Monitoreo de performance (New Relic, DataDog)"
-        ]
+        "patterns": [],
+        "style": "Component-Based with Framework Integration",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {
@@ -3603,33 +3806,26 @@
         }
       },
       "modeling": {
-        "level": "MÍNIMO VIABLE",
-        "chapter": 5,
-        "required": [
-          "User Stories con criterios de aceptación",
-          "Wireframes de UI",
-          "Diagrama de Clases básico (core del dominio)",
-          "Casos de Uso principales (3-5)"
-        ],
-        "purpose": "Comunicación y planificación, no documentación exhaustiva"
+        "notations": [],
+        "primaryFocus": "incremental_delivery",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "MVC con Stack Moderno",
-        "chapter": 6,
-        "why": "Desarrollo rápido, ecosistema rico, escalable",
-        "layers": [
-          "Frontend: React/Next.js o Vue/Nuxt",
-          "Backend: Node.js/Express, Python/FastAPI, o Ruby/Rails",
-          "Database: PostgreSQL + Redis",
-          "Storage: S3 para archivos",
-          "Hosting: Vercel/Netlify (frontend) + Railway/Fly.io (backend)"
-        ],
-        "considerations": [
-          "Serverless cuando sea posible",
-          "Servicios managed (Firebase, Supabase)",
-          "Monitoring: Sentry para errores",
-          "Analytics: Mixpanel o Amplitude"
-        ]
+        "patterns": [],
+        "style": "Incremental Evolution",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {
@@ -4248,35 +4444,26 @@
         }
       },
       "modeling": {
-        "level": "EVOLUTIVO Y PRAGMÁTICO",
-        "chapter": 5,
-        "required": [
-          "User Stories con métricas de éxito",
-          "Diagramas de Arquitectura actualizados",
-          "API Documentation (OpenAPI/Swagger)",
-          "Service Dependency Maps"
-        ],
-        "purpose": "Documentación viva que evoluciona con el producto"
+        "notations": [],
+        "primaryFocus": "component_integration",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "MVC → Microservicios (Transición)",
-        "chapter": 6,
-        "why": "Escalar equipos y sistema independientemente",
-        "layers": [
-          "Frontend: Micro-frontends o monolito modular",
-          "API Gateway: Enrutamiento y autenticación",
-          "Servicios: Dominio-driven (Users, Orders, Payments, etc.)",
-          "Data Layer: Base de datos por servicio",
-          "Infrastructure: Kubernetes, servicios cloud"
-        ],
-        "considerations": [
-          "No migrar todo de golpe (strangler pattern)",
-          "Service mesh (Istio) para comunicación",
-          "Event-driven architecture (Kafka/RabbitMQ)",
-          "Observabilidad (Prometheus, Grafana, Jaeger)",
-          "CDN para assets estáticos",
-          "Caché distribuido (Redis Cluster)"
-        ]
+        "patterns": [],
+        "style": "Integration-Centric with COTS Components",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {
@@ -4890,31 +5077,26 @@
         }
       },
       "modeling": {
-        "level": "MÍNIMO ABSOLUTO",
-        "chapter": 5,
-        "required": [
-          "Casos de Uso: 3-5 principales",
-          "Wireframes: UI principal (Figma o papel)",
-          "Diagrama de Clases: Core del modelo (3-5 entidades)"
-        ],
-        "purpose": "Clarificar ideas, no documentación formal"
+        "notations": [],
+        "primaryFocus": "maximizing_reuse",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "MVC/MVVM Nativo de Plataforma",
-        "chapter": 6,
-        "why": "Aprovechar frameworks nativos, performance, acceso a APIs",
-        "layers": [
-          "iOS (SwiftUI): Views → ViewModels → Models → CoreData/Realm",
-          "Android (Compose): Composables → ViewModels → Repository → Room DB",
-          "Cross-platform: React Native/Flutter con arquitectura limpia"
-        ],
-        "considerations": [
-          "Backend ligero: Firebase, Supabase, o API simple",
-          "Analytics: Firebase Analytics (gratis)",
-          "Crash reporting: Crashlytics",
-          "Push notifications",
-          "Permisos de usuario bien manejados"
-        ]
+        "patterns": [],
+        "style": "Reuse-Centric with Component Libraries",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {
@@ -5473,32 +5655,26 @@
         }
       },
       "modeling": {
-        "level": "DISEÑO DE JUEGO",
-        "chapter": 5,
-        "required": [
-          "Game Design Document (GDD): Concepto, mecánicas, progresión",
-          "Diagramas de Estado: Estados de juego, personaje (FSM)",
-          "Diagramas de Secuencia: Flujos de gameplay complejos",
-          "Wireframes de UI/UX"
-        ],
-        "purpose": "Comunicar visión y mecánicas, no requisitos tradicionales"
+        "notations": [],
+        "primaryFocus": "requirement_clarification",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "Según Game Engine",
-        "chapter": 6,
-        "why": "Aprovechar arquitectura del engine elegido",
-        "layers": [
-          "Unity (C#): MonoBehaviours → Game Systems → Data → Event System",
-          "Unreal (C++): Actors → Components → Blueprints",
-          "Godot (GDScript): Nodes → Scenes → Scripts",
-          "Custom: Game Loop → Systems (Render, Physics, Input) → Entities"
-        ],
-        "considerations": [
-          "Patrones: State, Observer, Object Pool, Command",
-          "FPS target definido (30 o 60)",
-          "Profile early and often",
-          "Separar lógica de juego de rendering"
-        ]
+        "patterns": [],
+        "style": "Prototype-Driven Exploration",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {
@@ -6135,33 +6311,95 @@
         }
       },
       "modeling": {
-        "level": "ENFOCADO EN FLUJO",
-        "chapter": 5,
-        "required": [
-          "Diagramas de Actividad: Flujo completo del proceso (ESENCIAL)",
-          "Diagrama de Clases: Modelo de datos entrada/salida",
-          "Casos de Uso: Escenarios de procesamiento"
+        "notations": [
+          {
+            "name": "UML",
+            "description": "UML para documentar flujos de procesamiento batch y estructura de jobs.",
+            "diagrams": [
+              "Activity Diagram (flujos ETL)",
+              "Class Diagram (estructura jobs)",
+              "Deployment Diagram (infraestructura batch)"
+            ],
+            "whenToUse": "Documentar flujos complejos de ETL, dependencias entre jobs y estructura de datos procesados",
+            "tools": [
+              "Lucidchart",
+              "PlantUML",
+              "Visual Paradigm"
+            ]
+          },
+          {
+            "name": "BPMN (Business Process Model and Notation)",
+            "description": "Notación estándar para modelado de procesos de negocio (swimlanes, eventos, gateways).",
+            "diagrams": [
+              "BPMN Process Diagram",
+              "BPMN Collaboration Diagram"
+            ],
+            "whenToUse": "Sistemas batch que automatizan procesos de negocio complejos (procesamiento nómina, conciliación bancaria, reporting)",
+            "tools": [
+              "Camunda Modeler",
+              "Bizagi",
+              "Lucidchart",
+              "Draw.io"
+            ]
+          }
         ],
-        "purpose": "Modelar flujo de procesamiento y transformaciones"
+        "primaryFocus": "Modelado de flujos de procesamiento batch, dependencias entre jobs y manejo de errores/reintento",
+        "references": {
+          "chapter": "chapter-5",
+          "sections": [
+            "5.4 Behavioral models"
+          ]
+        }
       },
       "architecture": {
-        "pattern": "Repositorio (BD Central)",
-        "chapter": 6,
-        "why": "Datos centralizados, múltiples procesos accediendo",
-        "layers": [
-          "Input DB/Files: Fuentes de datos",
-          "Processing Engine: ETL (Extract, Transform, Load)",
-          "Output DB/Files: Resultados",
-          "Audit Log DB: Trazabilidad"
+        "patterns": [
+          {
+            "name": "Pipeline (Pipe-and-Filter)",
+            "description": "Procesamiento en etapas secuenciales donde salida de una etapa es entrada de la siguiente (ETL pattern).",
+            "advantages": [
+              "Fácil agregar/remover etapas (modularidad)",
+              "Cada etapa puede testearse independientemente",
+              "Procesamiento paralelizable por etapa (múltiples workers por etapa)",
+              "Reusabilidad de filtros (misma etapa en múltiples pipelines)"
+            ],
+            "disadvantages": [
+              "Performance limitada por etapa más lenta (cuello de botella)",
+              "Overhead de pasar datos entre etapas (serialización/deserialización)",
+              "Debugging complejo (error en etapa N afecta etapa N+1)"
+            ],
+            "whenToUse": "ETL (Extract-Transform-Load), procesamiento de datos en múltiples pasos (parsear CSV → validar → transformar → cargar DB)",
+            "tradeoffs": "Modularidad y testabilidad vs Performance (overhead de pasar datos entre etapas)"
+          },
+          {
+            "name": "Batch Layer (Lambda Architecture)",
+            "description": "Procesamiento batch separado de real-time (batch genera vistas pre-computadas, real-time para queries ad-hoc).",
+            "advantages": [
+              "Tolerancia a fallos (batch puede re-procesar histórico si hay errores)",
+              "Escalabilidad (batch procesa grandes volúmenes offline sin afectar sistema productivo)",
+              "Consistencia eventual (batch corrige errores de procesamiento real-time)"
+            ],
+            "disadvantages": [
+              "Complejidad de mantener 2 pipelines (batch + real-time)",
+              "Latencia alta (vistas batch se actualizan cada X horas, no real-time)",
+              "Duplicación de lógica de negocio (batch y real-time pueden tener código similar)"
+            ],
+            "whenToUse": "Sistemas de reporting/analytics con grandes volúmenes (analytics de e-commerce, dashboards ejecutivos, data warehousing)",
+            "tradeoffs": "Escalabilidad y tolerancia a fallos vs Latencia (vistas batch no son real-time)"
+          }
         ],
-        "considerations": [
-          "Python + Pandas para procesamiento",
-          "Apache Airflow para orchestration",
-          "PostgreSQL/SQL Server para datos",
-          "Redis para estado de jobs",
-          "Índices de BD correctos",
-          "Particionamiento de datos"
-        ]
+        "style": "Batch/Offline processing (no hay usuarios interactivos esperando respuesta)",
+        "qualityAttributes": {
+          "scalability": "Very High - Escalamiento horizontal con workers paralelos. Procesamiento de millones de registros. Apache Spark, Hadoop para big data.",
+          "maintainability": "Medium - Lógica de ETL puede volverse compleja. Importante documentar dependencias entre jobs (DAG graphs). Airflow/Luigi facilitan orquestación.",
+          "performance": "Very High - Procesamiento optimizado para throughput (no latencia). Paralelización crítica. Batch windows nocturnos típicos.",
+          "security": "Medium-High - Acceso a datos sensibles durante ETL. Encriptación en tránsito (TLS) y en reposo (disk encryption). Logs de auditoría."
+        },
+        "references": {
+          "chapter": "chapter-6",
+          "sections": [
+            "6.4 Architectural patterns"
+          ]
+        }
       },
       "timeline": [
         {
@@ -6727,32 +6965,99 @@
         }
       },
       "modeling": {
-        "level": "ESTADOS Y PROTOCOLOS",
-        "chapter": 5,
-        "required": [
-          "Diagramas de Estado: Estados del dispositivo (CRÍTICOS)",
-          "Diagramas de Secuencia: Protocolo de comunicación con servidor",
-          "Casos de Uso: Leer Sensor, Transmitir, Recuperar de Error"
+        "notations": [
+          {
+            "name": "UML",
+            "description": "UML para arquitectura distribuida de dispositivos IoT y cloud backend.",
+            "diagrams": [
+              "Component Diagram (microservicios/dispositivos)",
+              "Sequence Diagram (IoT device → cloud)",
+              "Deployment Diagram (edge + cloud)"
+            ],
+            "whenToUse": "Sistemas IoT distribuidos con edge computing y cloud backend",
+            "tools": [
+              "Lucidchart",
+              "PlantUML",
+              "Visual Paradigm"
+            ]
+          },
+          {
+            "name": "C4 Model",
+            "description": "Modelo de 4 niveles (Context, Container, Component, Code) para documentar arquitectura moderna.",
+            "diagrams": [
+              "C4 Context Diagram (sistema + actores)",
+              "C4 Container Diagram (apps, DBs, message brokers)"
+            ],
+            "whenToUse": "Sistemas IoT complejos con múltiples containers (edge devices, cloud services, databases, message queues)",
+            "tools": [
+              "Structurizr",
+              "Draw.io",
+              "Mermaid",
+              "C4-PlantUML"
+            ]
+          }
         ],
-        "purpose": "Máquina de estados completa con recuperación de errores"
+        "primaryFocus": "Arquitectura distribuida de dispositivos IoT, edge computing y cloud backend con message queues",
+        "references": {
+          "chapter": "chapter-6",
+          "sections": [
+            "6.2 Architectural design decisions",
+            "6.5 Distributed systems architectures"
+          ]
+        }
       },
       "architecture": {
-        "pattern": "Cliente-Servidor (Edge + Cloud)",
-        "chapter": 6,
-        "why": "Edge procesa localmente, Cloud almacena y analiza",
-        "layers": [
-          "Sensores/Actuadores: Hardware físico",
-          "Edge Device (Cliente): Data collection, local processing, buffering",
-          "Gateway: Agregación (opcional)",
-          "Cloud Server: Data storage, analytics, dashboard, alerts"
+        "patterns": [
+          {
+            "name": "Event-Driven (Pub-Sub)",
+            "description": "Comunicación asíncrona mediante eventos. Dispositivos IoT publican eventos (telemetry), servicios cloud subscriben y procesan.",
+            "advantages": [
+              "Desacoplamiento (devices no conocen consumers, facilita agregar consumers)",
+              "Escalabilidad (múltiples consumers pueden procesar eventos en paralelo)",
+              "Tolerancia a fallos (message broker persiste eventos si consumer está caído)",
+              "Real-time processing (eventos procesados al llegar, no batch)"
+            ],
+            "disadvantages": [
+              "Complejidad de debugging (flujo asíncrono difícil de trazar, necesita distributed tracing)",
+              "Eventual consistency (no hay garantía de orden estricto entre consumers)",
+              "Overhead de message broker (latencia adicional, costo de Kafka/RabbitMQ/AWS SQS)"
+            ],
+            "whenToUse": "IoT con miles de dispositivos enviando telemetry en paralelo (sensores industriales, smart city, wearables)",
+            "tradeoffs": "Escalabilidad y desacoplamiento vs Complejidad de debugging y eventual consistency"
+          },
+          {
+            "name": "Microservices",
+            "description": "Arquitectura de servicios pequeños independientes, cada uno con su propia base de datos y deployment.",
+            "advantages": [
+              "Escalamiento independiente por servicio (horizontal scaling granular)",
+              "Tecnologías heterogéneas (Python para ML, Go para telemetry, Java para transacciones)",
+              "Deployment independiente (actualizar un servicio sin afectar otros)",
+              "Resiliencia (fallo de un servicio no tumba todo el sistema)"
+            ],
+            "disadvantages": [
+              "Complejidad operacional (múltiples deployments, monitoring distribuido)",
+              "Network latency (servicios se comunican por red, no memoria compartida)",
+              "Distributed transactions difíciles (eventual consistency, sagas)",
+              "Debugging complejo (tracing distribuido necesario)"
+            ],
+            "whenToUse": "Sistemas grandes con múltiples equipos, funcionalidades independientes y necesidad de escalamiento diferenciado",
+            "tradeoffs": "Escalabilidad independiente y deployment ágil vs Complejidad operacional"
+          }
         ],
-        "considerations": [
-          "Protocolos: MQTT (ligero), HTTP/REST, WebSocket",
-          "Edge: C/C++ para microcontrollers, Python/Node.js para RPi",
-          "Cloud: AWS IoT Core, TimeSeries DB (InfluxDB), Grafana",
-          "Power management crítico",
-          "Firmware updates remotos"
-        ]
+        "style": "Distribuido (edge + cloud), event-driven con microservices",
+        "qualityAttributes": {
+          "scalability": "Very High - Escalamiento horizontal de microservices y message brokers (Kafka partitions). Millones de dispositivos IoT. Auto-scaling en cloud.",
+          "maintainability": "Medium - Microservices facilitan cambios aislados, pero debugging distribuido es complejo. Observabilidad crítica (Prometheus, Grafana, Jaeger).",
+          "performance": "Very High - Event-driven permite procesamiento real-time. Edge computing reduce latencia (procesamiento local). Message brokers optimizados para throughput.",
+          "security": "Very High - TLS para comunicación devices-cloud. Autenticación por certificados (X.509). Encriptación end-to-end. Device identity management. OTA updates firmados."
+        },
+        "references": {
+          "chapter": "chapter-6",
+          "sections": [
+            "6.4 Architectural patterns",
+            "6.5 Distributed systems architectures"
+          ]
+        }
       },
       "timeline": [
         {
@@ -7440,32 +7745,26 @@
         }
       },
       "modeling": {
-        "level": "UML COMPLETO",
-        "chapter": 5,
-        "required": [
-          "Diagrama de Componentes: Todos los subsistemas e interfaces (ESENCIAL)",
-          "Diagramas de Secuencia: Interacciones entre subsistemas",
-          "Diagrama de Despliegue: Distribución física",
-          "Casos de Uso del Sistema: Escenarios end-to-end"
-        ],
-        "purpose": "Documentar interfaces formales y dependencias"
+        "notations": [],
+        "primaryFocus": "working_software",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "Capas + Interfaces Bien Definidas",
-        "chapter": 6,
-        "why": "Equipos independientes necesitan contratos claros",
-        "layers": [
-          "Integration Layer: ESB/API Gateway",
-          "Subsistemas: A, B, C... (equipos independientes)",
-          "Shared Services: Autenticación, Logging, Monitoring"
-        ],
-        "considerations": [
-          "Enterprise Service Bus (ESB) para integración",
-          "API Gateway para acceso externo",
-          "Event-Driven Architecture",
-          "OpenAPI/Swagger specs obligatorias",
-          "Backward compatibility crítica"
-        ]
+        "patterns": [],
+        "style": "Emergent and Evolutionary",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {
@@ -8070,33 +8369,26 @@
         }
       },
       "modeling": {
-        "level": "HIPÓTESIS Y EXPERIMENTOS",
-        "chapter": 5,
-        "required": [
-          "Lean Canvas: Problema, solución, propuesta de valor",
-          "User Personas (basadas en investigación)",
-          "User Stories con hipótesis a validar",
-          "Métricas clave (KPIs, North Star Metric)"
-        ],
-        "purpose": "Documentar asunciones y cómo validarlas"
+        "notations": [],
+        "primaryFocus": "test_first_design",
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "architecture": {
-        "pattern": "MVC con Analytics",
-        "chapter": 6,
-        "why": "Desarrollo rápido + medición exhaustiva",
-        "layers": [
-          "Frontend: React/Next.js con tracking",
-          "Backend: Node.js/Python con eventos",
-          "Database: PostgreSQL",
-          "Analytics: Mixpanel/Amplitude integrado"
-        ],
-        "considerations": [
-          "Feature flags para A/B testing",
-          "Analytics en CADA interacción",
-          "Onboarding tracking detallado",
-          "Funnel analysis",
-          "Heatmaps (Hotjar)"
-        ]
+        "patterns": [],
+        "style": "Test-First Architecture",
+        "qualityAttributes": {
+          "scalability": "",
+          "maintainability": "",
+          "performance": "",
+          "security": ""
+        },
+        "references": {
+          "chapter": 0,
+          "sections": []
+        }
       },
       "timeline": [
         {

@@ -7,35 +7,32 @@ import { sanitizeMermaidText, resetNodeCounter } from './helpers';
 export function generateArchitectureDiagram(architecture: ArchitectureInfo): string {
   resetNodeCounter();
 
-  const pattern = architecture.pattern.toLowerCase();
+  const style = architecture.style.toLowerCase();
 
-  if (pattern.includes('capas') || pattern.includes('layers') || pattern.includes('layered')) {
+  if (style.includes('capas') || style.includes('layers') || style.includes('layered')) {
     return generateLayeredArchitecture(architecture);
-  } else if (pattern.includes('cliente') || pattern.includes('servidor') || pattern.includes('client-server')) {
+  } else if (style.includes('cliente') || style.includes('servidor') || style.includes('client-server')) {
     return generateClientServerArchitecture();
-  } else if (pattern.includes('microservicio') || pattern.includes('microservice')) {
+  } else if (style.includes('microservicio') || style.includes('microservice')) {
     return generateMicroservicesArchitecture();
-  } else if (pattern.includes('monolítico') || pattern.includes('monolithic')) {
+  } else if (style.includes('monolítico') || style.includes('monolithic') || style.includes('monolito')) {
     return generateMonolithicArchitecture();
-  } else if (pattern.includes('mvc') || pattern.includes('model-view-controller')) {
+  } else if (style.includes('mvc') || style.includes('model-view-controller')) {
     return generateMVCArchitecture();
-  } else if (pattern.includes('repository') || pattern.includes('repositorio')) {
+  } else if (style.includes('repository') || style.includes('repositorio')) {
     return generateRepositoryArchitecture();
-  } else if (pattern.includes('pipe') || pattern.includes('filter') || pattern.includes('tubería')) {
+  } else if (style.includes('pipe') || style.includes('filter') || style.includes('tubería') || style.includes('batch')) {
     return generatePipeFilterArchitecture();
-  } else if (pattern.includes('event') || pattern.includes('evento')) {
+  } else if (style.includes('event') || style.includes('evento') || style.includes('distribuido')) {
     return generateEventDrivenArchitecture();
   } else {
     return generateGenericArchitecture(architecture);
   }
 }
 
-function generateLayeredArchitecture(architecture: ArchitectureInfo): string {
-  const layers = architecture.layers || [
-    'Presentación',
-    'Lógica de Negocio',
-    'Datos',
-  ];
+function generateLayeredArchitecture(_architecture: ArchitectureInfo): string {
+  // Extract layer names from patterns if available
+  const layers = ['Presentación', 'Lógica de Negocio', 'Datos'];
 
   let diagram = 'flowchart TB\n';
 
@@ -224,7 +221,7 @@ function generateEventDrivenArchitecture(): string {
 }
 
 function generateGenericArchitecture(architecture: ArchitectureInfo): string {
-  const pattern = sanitizeMermaidText(architecture.pattern);
+  const pattern = sanitizeMermaidText(architecture.style);
 
   return `flowchart TB
     Client["💻 Cliente"]

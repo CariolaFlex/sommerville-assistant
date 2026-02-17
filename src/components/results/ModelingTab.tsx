@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { FileText, Boxes, Target } from 'lucide-react';
+import { FileText, Boxes, Target, Wrench } from 'lucide-react';
 import type { ModelingInfo } from '@/types/recommendation';
 
 interface ModelingTabProps {
@@ -19,75 +19,100 @@ export function ModelingTab({ modeling }: ModelingTabProps) {
         </div>
         <div className="flex-1">
           <h3 className="text-2xl font-bold text-foreground">
-            Modelado {modeling.level}
+            Notaciones de Modelado
           </h3>
           <Badge variant="outline" className="mt-1">
-            Capítulo {modeling.chapter}
+            {modeling.references.chapter}
           </Badge>
         </div>
       </div>
 
-      {/* Propósito */}
+      {/* Foco Principal */}
       <Card className="border-purple-200 dark:border-purple-800">
         <CardHeader>
           <div className="flex items-center gap-2">
             <Target className="h-5 w-5 text-purple-600" />
-            <CardTitle className="text-lg">Propósito del Modelado</CardTitle>
+            <CardTitle className="text-lg">Foco Principal</CardTitle>
           </div>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground leading-relaxed">
-            {modeling.purpose}
+            {modeling.primaryFocus}
           </p>
         </CardContent>
       </Card>
 
-      {/* Diagramas/Modelos Requeridos */}
-      <Card className="border-purple-200 dark:border-purple-800">
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <FileText className="h-5 w-5 text-purple-600" />
-            <CardTitle className="text-lg">Diagramas/Modelos Requeridos</CardTitle>
-          </div>
-          <CardDescription>
-            Conjunto mínimo de modelos necesarios para este proyecto
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {modeling.required.map((model, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 bg-purple-50 dark:bg-purple-900/10 rounded-lg border border-purple-100 dark:border-purple-800/50"
-              >
-                <Boxes className="h-5 w-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-foreground">
-                    {model}
-                  </p>
+      {/* Notaciones Recomendadas */}
+      <div>
+        <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+          <FileText className="h-5 w-5 text-purple-600" />
+          Notaciones Recomendadas
+        </h4>
+        <div className="space-y-4">
+          {modeling.notations.map((notation, index) => (
+            <Card key={index} className="border-purple-200 dark:border-purple-800">
+              <CardHeader>
+                <CardTitle className="text-base">{notation.name}</CardTitle>
+                <CardDescription>{notation.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* Diagramas */}
+                <div>
+                  <h5 className="text-sm font-semibold mb-2 text-purple-600 dark:text-purple-400">
+                    Diagramas específicos:
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {notation.diagrams.map((diagram, i) => (
+                      <Badge key={i} variant="outline" className="bg-purple-50 dark:bg-purple-900/10">
+                        {diagram}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
 
-      {/* Nota sobre nivel de detalle */}
+                {/* When to Use */}
+                <div className="bg-blue-50 dark:bg-blue-900/10 p-3 rounded-md border border-blue-200 dark:border-blue-800">
+                  <h5 className="text-sm font-semibold mb-1 text-blue-800 dark:text-blue-200">
+                    Cuándo usar:
+                  </h5>
+                  <p className="text-sm text-blue-700 dark:text-blue-300">{notation.whenToUse}</p>
+                </div>
+
+                {/* Tools */}
+                <div>
+                  <h5 className="text-sm font-semibold mb-2 flex items-center gap-2 text-purple-600 dark:text-purple-400">
+                    <Wrench className="h-4 w-4" />
+                    Herramientas recomendadas:
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {notation.tools.map((tool, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-2 py-1 bg-purple-100 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 rounded"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Nota adicional */}
       <Card className="bg-purple-50 dark:bg-purple-900/10 border-purple-200 dark:border-purple-800">
         <CardHeader>
           <CardTitle className="text-base text-purple-800 dark:text-purple-200">
-            📐 Nivel de Detalle
+            💡 Consejo
           </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-sm text-purple-700 dark:text-purple-300 leading-relaxed">
-            {modeling.level === 'COMPLETO Y FORMAL'
-              ? 'Todos los diagramas deben ser formales, completos y con notación estándar UML. Servirán como documentación contractual y base para generación de código.'
-              : modeling.level === 'DETALLADO'
-              ? 'Los diagramas deben cubrir los aspectos principales del sistema con suficiente detalle para guiar la implementación.'
-              : modeling.level === 'LIGERO'
-              ? 'Diagramas de alto nivel enfocados en comunicación del equipo. Prioriza claridad sobre formalismo.'
-              : 'Modelado mínimo, solo lo necesario para comunicar ideas complejas. Usa pizarra o herramientas simples.'}
+            El modelado es una herramienta de comunicación. Usa la notación que mejor comunique
+            tus ideas al equipo, priorizando claridad sobre formalismo cuando sea apropiado.
+            Los diagramas deben evolucionar con el proyecto.
           </p>
         </CardContent>
       </Card>
