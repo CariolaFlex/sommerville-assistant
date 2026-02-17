@@ -9,6 +9,7 @@ import { GlossaryStats } from '@/components/glossary/GlossaryStats';
 import { GlossaryFilters } from '@/components/glossary/GlossaryFilters';
 import { TermsGrid } from '@/components/glossary/TermsGrid';
 import { TermModal } from '@/components/glossary/TermModal';
+import { ExportGlossaryButton } from '@/components/glossary/ExportGlossaryButton';
 import type { GlossaryTerm } from '@/types/glossary';
 
 export default function GlossaryPage() {
@@ -63,6 +64,12 @@ export default function GlossaryPage() {
               <ArrowLeft className="h-4 w-4" />
               Volver al inicio
             </Button>
+            <ExportGlossaryButton
+              terms={filteredTerms}
+              filename={`glosario-sommerville-${filteredTerms.length}-terminos.pdf`}
+              variant="outline"
+              size="sm"
+            />
           </div>
         </div>
       </header>
