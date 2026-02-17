@@ -8,7 +8,11 @@
       "Bash(git commit:*)",
       "Bash(vercel --version:*)",
       "Bash(vercel:*)",
-      "Bash(python3 -c:*)"
+      "Bash(python3 -c:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(git rm:*)"
     ]
   }
 }

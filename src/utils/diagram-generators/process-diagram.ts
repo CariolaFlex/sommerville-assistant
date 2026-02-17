@@ -7,6 +7,12 @@ import { sanitizeMermaidText, resetNodeCounter } from './helpers';
 export function generateProcessDiagram(process: ProcessInfo): string {
   resetNodeCounter();
 
+  // Validación defensiva: verificar que process y process.name existan
+  if (!process?.name) {
+    console.warn('⚠️ Invalid process data provided, using fallback diagram');
+    return generateGenericProcessDiagram({ name: 'Proceso Desconocido' } as ProcessInfo);
+  }
+
   const processName = process.name.toLowerCase();
 
   // Determinar tipo de diagrama según el proceso

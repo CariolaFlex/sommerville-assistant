@@ -7,6 +7,12 @@ import { sanitizeMermaidText, resetNodeCounter } from './helpers';
 export function generateArchitectureDiagram(architecture: ArchitectureInfo): string {
   resetNodeCounter();
 
+  // Validación defensiva: verificar que architecture y architecture.style existan
+  if (!architecture?.style) {
+    console.warn('⚠️ Invalid architecture data provided, using fallback diagram');
+    return generateGenericArchitecture({ style: 'Arquitectura Genérica' } as ArchitectureInfo);
+  }
+
   const style = architecture.style.toLowerCase();
 
   if (style.includes('capas') || style.includes('layers') || style.includes('layered')) {

@@ -45,10 +45,10 @@ export function generateColor(index: number): string {
  */
 export function sanitizeMermaidText(text: string): string {
   return text
-    .replace(/"/g, "'")
-    .replace(/\n/g, ' ')
-    .replace(/[[\]]/g, '')
-    .replace(/[{}]/g, '')
+    .replace(/"/g, "'")              // Comillas dobles → simples
+    .replace(/\n/g, ' ')              // Newlines → espacios
+    .replace(/[\[\]]/g, '')           // Brackets [] removidos (FIXED regex)
+    .replace(/[{}]/g, '')              // Llaves {} removidas
     .trim();
 }
 

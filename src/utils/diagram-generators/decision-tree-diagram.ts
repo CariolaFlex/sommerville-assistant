@@ -10,9 +10,12 @@ export function generateDecisionTreeDiagram(
 ): string {
   resetNodeCounter();
 
+  // Validación defensiva: verificar que recommendation y recommendation.title existan
+  const title = recommendation?.title || 'Recomendación';
+
   if (!path || path.length === 0) {
     return `flowchart LR
-    Start[🎯 Inicio] --> Result[✅ ${sanitizeMermaidText(recommendation.title)}]
+    Start[🎯 Inicio] --> Result[✅ ${sanitizeMermaidText(title)}]
     style Result fill:#60a5fa,color:#fff`;
   }
 
@@ -40,7 +43,7 @@ export function generateDecisionTreeDiagram(
   });
 
   // Nodo final (resultado)
-  const resultLabel = sanitizeMermaidText(recommendation.title);
+  const resultLabel = sanitizeMermaidText(title);
   nodes.push(`Result[✅ ${resultLabel}]`);
   connections.push(`Step${path.length - 1} --> Result`);
 

@@ -17,6 +17,12 @@ export function generateTimelineDiagram(weeks: TimelineWeek[]): string {
   const phaseGroups = new Map<string, TimelineWeek[]>();
 
   weeks.forEach((week) => {
+    // Validación defensiva: verificar que week tenga los campos necesarios
+    if (!week?.phase || !Array.isArray(week?.tasks)) {
+      console.warn('⚠️ Skipping invalid week entry:', week);
+      return;
+    }
+
     const phase = week.phase;
     if (!phaseGroups.has(phase)) {
       phaseGroups.set(phase, []);
