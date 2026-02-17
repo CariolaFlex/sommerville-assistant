@@ -1,262 +1,1231 @@
 {
-  "version": "1.0",
-  "lastUpdated": "2026-02-15",
-  "totalTemplates": 7,
-  "templates": {
-    "tpl-001": {
-      "id": "tpl-001",
-      "name": "Documento de Especificación de Requisitos",
-      "category": "Documentación",
-      "description": "Plantilla simplificada de especificación de requisitos basada en IEEE 830",
-      "chapter": 4,
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-17",
+  "templates": [
+    {
+      "id": "template-001",
+      "name": "Documento de Requerimientos de Software (SRS)",
+      "category": "requirements",
+      "description": "Template completo basado en IEEE 830 para especificar requerimientos funcionales y no funcionales de un sistema de software",
+      "methodology": ["all"],
       "format": "markdown",
-      "applicableFor": [
-        "tradicional",
-        "hibrido"
-      ],
-      "difficulty": "media",
-      "estimatedTime": "4-8 horas",
-      "content": "# Especificación de Requisitos - [Nombre del Proyecto]\n\n## 1. INTRODUCCIÓN\n\n### 1.1 Propósito\n[Para qué sirve este software]\n\n### 1.2 Alcance\n[Qué hace y qué NO hace]\n\n### 1.3 Definiciones y Acrónimos\n| Término | Definición |\n|---------|------------|\n| ...     | ...        |\n\n## 2. DESCRIPCIÓN GENERAL\n\n### 2.1 Perspectiva del Producto\n[¿Es independiente o parte de un sistema mayor?]\n\n### 2.2 Funciones del Producto\n- Función principal 1\n- Función principal 2\n- Función principal 3\n\n### 2.3 Usuarios del Sistema\n| Tipo de Usuario | Descripción | Frecuencia de Uso |\n|-----------------|-------------|-------------------|\n| Usuario final   | ...         | Diaria           |\n| Administrador   | ...         | Semanal          |\n\n## 3. REQUISITOS FUNCIONALES\n\n### RF-001: [Nombre del Requisito]\n- **Descripción**: [Qué debe hacer el sistema]\n- **Entrada**: [Qué datos recibe]\n- **Proceso**: [Qué hace con los datos]\n- **Salida**: [Qué produce]\n- **Prioridad**: Alta / Media / Baja\n- **Criterios de Aceptación**:\n  1. [Criterio medible]\n  2. [Criterio medible]\n\n### RF-002: [Siguiente Requisito]\n...\n\n## 4. REQUISITOS NO FUNCIONALES\n\n### 4.1 Rendimiento\n- **RNF-001**: El sistema debe responder a consultas en < 2 segundos en el 95% de los casos\n- **RNF-002**: Debe soportar 1000 usuarios concurrentes\n\n### 4.2 Seguridad\n- **RNF-003**: Autenticación de dos factores obligatoria\n- **RNF-004**: Encriptación AES-256 para datos sensibles\n\n### 4.3 Usabilidad\n- **RNF-005**: Usuario nuevo completa tarea principal en < 5 minutos sin ayuda\n\n### 4.4 Confiabilidad\n- **RNF-006**: Disponibilidad del 99.9% (< 8.76 horas downtime/año)\n\n### 4.5 Mantenibilidad\n- **RNF-007**: Cobertura de tests > 80%\n\n## 5. RESTRICCIONES\n\n### 5.1 Tecnológicas\n- Debe funcionar en navegadores Chrome, Firefox, Safari (últimas 2 versiones)\n- Backend en [tecnología]\n\n### 5.2 Regulatorias\n- Cumplimiento GDPR para datos de usuarios europeos\n\n### 5.3 Presupuestarias\n- Costo de infraestructura < $X/mes\n\n## 6. CASOS DE USO PRINCIPALES\n\n### CU-001: Inicio de Sesión\n- **Actor**: Usuario\n- **Precondición**: Usuario tiene cuenta\n- **Flujo Principal**:\n  1. Usuario ingresa email y contraseña\n  2. Sistema valida credenciales\n  3. Sistema genera sesión\n  4. Sistema redirige a dashboard\n- **Flujo Alternativo**:\n  - 2a. Credenciales inválidas → Mostrar error\n- **Postcondición**: Usuario autenticado\n\n## 7. CRITERIOS DE ACEPTACIÓN GLOBAL\n\n- [ ] Todos los RF implementados y probados\n- [ ] Todos los RNF validados con métricas\n- [ ] Documentación de usuario completa\n- [ ] Capacitación a usuarios completada",
+      "difficulty": "intermediate",
+      "estimatedTime": "3-4 horas para completar",
       "sections": [
-        "Introducción",
-        "Descripción General",
-        "Requisitos Funcionales",
-        "Requisitos No Funcionales",
-        "Restricciones",
-        "Casos de Uso",
-        "Criterios de Aceptación"
+        {
+          "title": "1. Introducción",
+          "subsections": ["1.1 Propósito", "1.2 Alcance", "1.3 Definiciones, acrónimos y abreviaturas", "1.4 Referencias", "1.5 Visión general del documento"],
+          "content": "# 1. Introducción\n\n## 1.1 Propósito\n\nEste documento especifica los requerimientos completos para el sistema **[NOMBRE DEL SISTEMA]**. Describe los requerimientos funcionales y no funcionales, interfaces externas y restricciones de diseño.\n\n**Audiencia objetivo:**\n- Equipo de desarrollo\n- Stakeholders del proyecto\n- Equipo de testing y QA\n- Gerencia de proyecto\n- Usuarios finales (secciones específicas)\n\n## 1.2 Alcance\n\n**Nombre del sistema:** [NOMBRE DEL SISTEMA]\n\n**Funcionalidad principal:**\n- [Función principal 1: ej. Gestión de usuarios y autenticación]\n- [Función principal 2: ej. Procesamiento de transacciones]\n- [Función principal 3: ej. Generación de reportes]\n\n**Beneficios esperados:**\n- [Beneficio 1: ej. Reducción del 40% en tiempo de procesamiento]\n- [Beneficio 2: ej. Mejora en la trazabilidad de operaciones]\n- [Beneficio 3: ej. Automatización de procesos manuales]\n\n**Objetivos del sistema:**\n[Describir 2-3 objetivos específicos y medibles del sistema]\n\n## 1.3 Definiciones, Acrónimos y Abreviaturas\n\n| Término | Definición |\n|---------|------------|\n| SRS | Software Requirements Specification (Especificación de Requerimientos de Software) |\n| RF | Requerimiento Funcional |\n| RNF | Requerimiento No Funcional |\n| [TÉRMINO] | [Definición específica del dominio] |\n\n## 1.4 Referencias\n\n- IEEE Std 830-1998: Recommended Practice for Software Requirements Specifications\n- Sommerville, I. (2016). Ingeniería de Software, 9na Ed. Capítulo 4: Ingeniería de Requerimientos\n- [Documento de Visión del Proyecto]\n- [Estándares de la organización]\n\n## 1.5 Visión General del Documento\n\nEste documento está organizado en las siguientes secciones:\n- **Sección 2:** Descripción general del sistema y su contexto\n- **Sección 3:** Requerimientos específicos (funcionales y no funcionales)\n- **Sección 4:** Modelos del sistema (casos de uso, diagramas)\n- **Apéndices:** Información complementaria",
+          "instructions": "Complete los campos entre [corchetes] con información específica de su proyecto. La sección de definiciones es crucial para evitar ambigüedades en requerimientos."
+        },
+        {
+          "title": "2. Descripción General",
+          "subsections": ["2.1 Perspectiva del producto", "2.2 Funciones del producto", "2.3 Características de usuarios", "2.4 Restricciones", "2.5 Suposiciones y dependencias"],
+          "content": "# 2. Descripción General\n\n## 2.1 Perspectiva del Producto\n\nEl sistema [NOMBRE] es:\n- [ ] Un sistema completamente nuevo\n- [ ] Una actualización de un sistema existente: [NOMBRE SISTEMA ANTERIOR]\n- [ ] Un componente de un sistema mayor: [NOMBRE SISTEMA PRINCIPAL]\n\n**Contexto del sistema:**\n\n```\n[Diagrama de contexto - mostrar sistemas externos con los que interactúa]\n\n  ┌─────────────┐\n  │  Sistema A  │\n  └──────┬──────┘\n         │\n    ┌────▼────────┐\n    │   [NOMBRE]  │\n    └────┬────────┘\n         │\n  ┌──────▼──────┐\n  │  Sistema B  │\n  └─────────────┘\n```\n\n**Interfaces principales:**\n- **Interfaz de usuario:** [Web/Móvil/Desktop/Multi-plataforma]\n- **Base de datos:** [PostgreSQL/MySQL/MongoDB/etc.]\n- **APIs externas:** [Listar servicios de terceros]\n- **Sistemas legados:** [Si aplica]\n\n## 2.2 Funciones del Producto\n\nResumen de las funciones principales del sistema:\n\n### 1. [Función 1: ej. Gestión de Usuarios]\n\n**Descripción:** El sistema permitirá crear, modificar, eliminar y consultar información de usuarios.\n\n**Subfunciones:**\n- Registro de nuevos usuarios\n- Autenticación segura (2FA opcional)\n- Gestión de perfiles y permisos\n- Recuperación de contraseñas\n\n### 2. [Función 2: ej. Procesamiento de Datos]\n\n**Descripción:** [Descripción de la segunda función principal]\n\n**Subfunciones:**\n- [Subfunción 2.1]\n- [Subfunción 2.2]\n- [Subfunción 2.3]\n\n### 3. [Función 3: ej. Reportes y Analytics]\n\n**Descripción:** [Descripción de la tercera función principal]\n\n## 2.3 Características de Usuarios\n\n| Tipo de Usuario | Descripción | Nivel Técnico | Funciones Principales | Frecuencia de Uso |\n|-----------------|-------------|---------------|----------------------|-------------------|\n| Administrador | Gestiona configuración del sistema | Alto | Configuración, usuarios, seguridad | Diario |\n| Usuario Final | Opera el sistema en tareas diarias | Bajo-Medio | [Funciones específicas] | Diario |\n| Supervisor | Revisa y aprueba operaciones | Medio | Aprobaciones, reportes | Semanal |\n| [Rol Custom] | [Descripción] | [Nivel] | [Funciones] | [Frecuencia] |\n\n## 2.4 Restricciones\n\n### Restricciones Regulatorias\n- **Privacidad de datos:** Cumplimiento con [GDPR/CCPA/Ley local]\n- **Seguridad:** [Estándares específicos: ISO 27001, SOC 2]\n- **Auditoría:** Registro de todas las operaciones críticas\n\n### Restricciones de Hardware\n- Servidores: [Especificaciones mínimas]\n- Clientes: [Navegadores soportados, versiones de SO]\n- Almacenamiento: [Requisitos de espacio, backups]\n\n### Restricciones de Interfaces\n- Integración con sistemas existentes: [Listar sistemas]\n- Formatos de datos: [XML, JSON, CSV, etc.]\n- Protocolos de comunicación: [REST, SOAP, GraphQL]\n\n### Restricciones Operacionales\n- Ventanas de mantenimiento: [Horarios permitidos]\n- Disponibilidad requerida: [99.9%, 24/7, horario laboral]\n- Capacidad: [Número de usuarios concurrentes, transacciones/segundo]\n\n## 2.5 Suposiciones y Dependencias\n\n**Suposiciones:**\n- Los usuarios tienen acceso a internet con [velocidad mínima]\n- La base de datos [NOMBRE] estará disponible 99.9% del tiempo\n- [Suposición 3]\n\n**Dependencias externas:**\n- Servicio de autenticación de terceros: [Auth0/Okta/Custom]\n- Servicio de email: [SendGrid/AWS SES]\n- [Otro servicio crítico]\n\n**Dependencias de tecnología:**\n- Framework: [React/Angular/Vue] versión [X.X]\n- Runtime: [Node.js/Python/Java] versión [X.X]\n- Base de datos: [Nombre] versión [X.X]",
+          "instructions": "En la sección 2.2, enfóquese en el QUÉ hace el sistema, NO en el CÓMO lo implementa. Use diagramas de contexto simples en ASCII art si es necesario."
+        },
+        {
+          "title": "3. Requerimientos Específicos",
+          "subsections": ["3.1 Requerimientos funcionales", "3.2 Requerimientos no funcionales", "3.3 Requerimientos de interfaz"],
+          "content": "# 3. Requerimientos Específicos\n\n## 3.1 Requerimientos Funcionales\n\n### RF-001: Registro de Usuarios\n\n**Descripción:** El sistema debe permitir a nuevos usuarios crear una cuenta proporcionando información básica.\n\n**Entrada:**\n- Nombre completo (texto, 2-100 caracteres)\n- Email (formato válido)\n- Contraseña (mínimo 8 caracteres, mayúsculas, minúsculas, números)\n- [Campos adicionales según el dominio]\n\n**Proceso:**\n1. Usuario accede al formulario de registro\n2. Sistema valida formato de datos en tiempo real\n3. Usuario envía formulario\n4. Sistema verifica que el email no exista en la base de datos\n5. Sistema encripta la contraseña (bcrypt, SHA-256, etc.)\n6. Sistema almacena el usuario con estado \"pendiente de verificación\"\n7. Sistema envía email de confirmación\n8. Usuario confirma email y cuenta se activa\n\n**Salida:**\n- Cuenta de usuario creada en estado activo\n- Email de bienvenida enviado\n- Redirección a pantalla de login\n\n**Prioridad:** Alta\n\n**Precondiciones:**\n- Sistema de email configurado y operativo\n- Base de datos accesible\n\n**Postcondiciones:**\n- Usuario existe en base de datos\n- Log de auditoría registra la creación\n\n---\n\n### RF-002: Autenticación de Usuarios\n\n**Descripción:** El sistema debe validar credenciales de usuarios registrados y crear sesiones seguras.\n\n**Entrada:**\n- Email o nombre de usuario\n- Contraseña\n- (Opcional) Código 2FA si está habilitado\n\n**Proceso:**\n1. Usuario ingresa credenciales\n2. Sistema verifica que el usuario exista\n3. Sistema valida contraseña contra hash almacenado\n4. Si 2FA está habilitado, solicita código de verificación\n5. Sistema crea token de sesión (JWT, session ID)\n6. Sistema registra login en log de auditoría\n\n**Salida:**\n- Token de sesión válido\n- Redirección a dashboard del usuario\n- Actualización de \"último login\"\n\n**Prioridad:** Crítica\n\n**Casos de error:**\n- Email no existe: \"Usuario no encontrado\"\n- Contraseña incorrecta: \"Credenciales inválidas\" (después de 3 intentos, bloquear temporalmente)\n- Cuenta deshabilitada: \"Cuenta inactiva, contacte al administrador\"\n\n---\n\n### RF-003: [Nombre del Requerimiento]\n\n**Descripción:** [Descripción específica]\n\n**Entrada:** [Datos de entrada]\n\n**Proceso:**\n1. [Paso 1]\n2. [Paso 2]\n\n**Salida:** [Resultado esperado]\n\n**Prioridad:** [Alta/Media/Baja]\n\n---\n\n## 3.2 Requerimientos No Funcionales\n\n### RNF-001: Rendimiento\n\n**Tiempo de respuesta:**\n- Páginas web: < 2 segundos (carga inicial)\n- Consultas a base de datos: < 500ms\n- APIs REST: < 1 segundo (percentil 95)\n\n**Capacidad:**\n- Usuarios concurrentes: mínimo [X] usuarios\n- Transacciones por segundo: [X] TPS\n- Volumen de datos: soporte para [X] registros\n\n**Escalabilidad:**\n- El sistema debe escalar horizontalmente agregando servidores\n- Crecimiento esperado: [X]% anual\n\n---\n\n### RNF-002: Seguridad\n\n**Autenticación:**\n- Implementar autenticación basada en tokens JWT\n- Soporte para autenticación de dos factores (2FA) opcional\n- Sesiones con timeout después de [X] minutos de inactividad\n\n**Autorización:**\n- Control de acceso basado en roles (RBAC)\n- Principio de mínimo privilegio\n- Validación de permisos en cada operación crítica\n\n**Encriptación:**\n- Datos en tránsito: TLS 1.3 mínimo\n- Datos en reposo: Encriptación AES-256 para datos sensibles\n- Contraseñas: Hashing con bcrypt (cost factor ≥ 12)\n\n**Cumplimiento:**\n- [GDPR, HIPAA, PCI-DSS según aplique]\n- Auditoría completa de accesos a datos sensibles\n\n---\n\n### RNF-003: Usabilidad\n\n**Interfaz de usuario:**\n- Diseño responsive (móvil, tablet, desktop)\n- Accesibilidad: WCAG 2.1 nivel AA mínimo\n- Soporte para internacionalización (i18n): [idiomas soportados]\n\n**Curva de aprendizaje:**\n- Usuario promedio puede completar tarea básica en < [X] minutos\n- Capacitación requerida: < [X] horas para usuario final\n- Tooltips y ayuda contextual en todas las pantallas complejas\n\n---\n\n### RNF-004: Fiabilidad\n\n**Disponibilidad:**\n- SLA: [99.9%] uptime (8.76 horas de downtime al año)\n- Ventanas de mantenimiento: [horarios específicos]\n\n**Recuperación ante fallos:**\n- MTBF (Mean Time Between Failures): [X] horas\n- MTTR (Mean Time To Recover): < [X] minutos\n- Backups automáticos: diarios con retención de [X] días\n- Plan de recuperación ante desastres (DRP) documentado\n\n**Tolerancia a fallos:**\n- Redundancia en servidores críticos\n- Balanceo de carga automático\n- Circuit breakers para servicios externos\n\n---\n\n### RNF-005: Mantenibilidad\n\n**Código:**\n- Cobertura de pruebas: mínimo 80%\n- Documentación de API: OpenAPI/Swagger\n- Estándares de código: [ESLint, Prettier, etc.]\n- Code reviews obligatorios antes de merge\n\n**Arquitectura:**\n- Arquitectura modular y desacoplada\n- Logging estructurado (JSON) en todos los componentes\n- Métricas y monitoring: [Prometheus, Grafana, etc.]\n\n**Deployment:**\n- CI/CD automatizado\n- Zero-downtime deployments\n- Rollback automático en caso de fallo\n\n---\n\n## 3.3 Requerimientos de Interfaz\n\n### 3.3.1 Interfaces de Usuario\n\n**Pantallas principales:**\n\n1. **Login/Registro**\n   - Campos: email, contraseña, recuperación de contraseña\n   - Validación en tiempo real\n   - Opciones de login social (Google, GitHub, etc.)\n\n2. **Dashboard Principal**\n   - Vista general de métricas clave\n   - Acceso rápido a funciones principales\n   - Notificaciones y alertas\n\n3. **[Pantalla específica del dominio]**\n   - [Descripción de elementos]\n\n### 3.3.2 Interfaces de Software\n\n| Sistema Externo | Tipo | Protocolo | Datos Intercambiados | Frecuencia | Timeout |\n|-----------------|------|-----------|----------------------|------------|----------|\n| Servicio de Email | API | HTTPS/REST | Templates, destinatarios | Bajo demanda | 10s |\n| Sistema de Pagos | API | HTTPS/REST | Transacciones, tokens | Tiempo real | 30s |\n| Base de Datos | Directa | TCP/IP | Queries SQL | Continuo | 5s |\n| [Sistema X] | [Tipo] | [Protocolo] | [Datos] | [Frecuencia] | [Timeout] |\n\n### 3.3.3 Interfaces de Comunicación\n\n**API REST:**\n- Base URL: `https://[dominio]/api/v1`\n- Autenticación: Bearer token en header `Authorization`\n- Formato de respuesta: JSON\n- Códigos de estado HTTP estándar\n- Rate limiting: [X] requests por minuto por IP\n\n**Ejemplo de endpoint:**\n\n```http\nPOST /api/v1/users\nAuthorization: Bearer {token}\nContent-Type: application/json\n\n{\n  \"email\": \"usuario@example.com\",\n  \"name\": \"Juan Pérez\",\n  \"role\": \"user\"\n}\n```\n\n**Respuesta exitosa (201):**\n\n```json\n{\n  \"id\": \"usr_123456\",\n  \"email\": \"usuario@example.com\",\n  \"name\": \"Juan Pérez\",\n  \"role\": \"user\",\n  \"created_at\": \"2026-02-17T10:30:00Z\"\n}\n```",
+          "instructions": "Use el formato RF-XXX para requerimientos funcionales y RNF-XXX para no funcionales. Cada requerimiento debe ser SMART (Específico, Medible, Alcanzable, Relevante, Temporal). Para requerimientos no funcionales, siempre incluya métricas cuantificables."
+        }
       ],
-      "relatedRecommendations": [
-        "rec-001",
-        "rec-002",
-        "rec-004"
-      ],
-      "tags": [
-        "requisitos",
-        "especificacion",
-        "ieee830",
-        "tradicional",
-        "documentacion"
-      ]
+      "tags": ["requirements", "srs", "ieee-830", "documentation", "standards"],
+      "references": {
+        "sommerville": ["chapter-4"],
+        "standards": ["IEEE 830-1998"]
+      },
+      "relatedTemplates": ["template-002", "template-003"]
     },
-    "tpl-002": {
-      "id": "tpl-002",
-      "name": "Historia de Usuario",
-      "category": "Ágil",
-      "description": "Plantilla de Historia de Usuario con criterios de aceptación estilo Scrum",
-      "chapter": 3,
+    {
+      "id": "template-002",
+      "name": "User Stories - Formato Ágil",
+      "category": "requirements",
+      "description": "Template para escribir User Stories efectivas siguiendo formato Scrum/XP con criterios de aceptación y estimación",
+      "methodology": ["scrum", "xp", "agile"],
       "format": "markdown",
-      "applicableFor": [
-        "agil",
-        "scrum",
-        "xp"
-      ],
-      "difficulty": "baja",
-      "estimatedTime": "15-30 minutos",
-      "content": "┌─────────────────────────────────────────────────┐\n│ ID: US-XXX                                      │\n├─────────────────────────────────────────────────┤\n│ TÍTULO: [Nombre descriptivo]                    │\n├─────────────────────────────────────────────────┤\n│ Como: [Tipo de usuario]                         │\n│ Quiero: [Acción/Funcionalidad]                  │\n│ Para: [Beneficio/Valor]                         │\n├─────────────────────────────────────────────────┤\n│ CRITERIOS DE ACEPTACIÓN:                        │\n│ ✓ [Criterio específico y medible 1]            │\n│ ✓ [Criterio específico y medible 2]            │\n│ ✓ [Criterio específico y medible 3]            │\n├─────────────────────────────────────────────────┤\n│ PRIORIDAD: [ ] Alta  [ ] Media  [ ] Baja        │\n│ ESTIMACIÓN: [ ] Story Points                    │\n│ SPRINT: [ ]                                     │\n├─────────────────────────────────────────────────┤\n│ NOTAS TÉCNICAS:                                 │\n│ [Detalles de implementación si son necesarios]  │\n├─────────────────────────────────────────────────┤\n│ DEPENDENCIAS:                                   │\n│ - Depende de: [US-XXX]                         │\n│ - Bloquea a: [US-XXX]                          │\n└─────────────────────────────────────────────────┘\n\n**Ejemplo Completado:**\n┌─────────────────────────────────────────────────┐\n│ ID: US-042                                      │\n├─────────────────────────────────────────────────┤\n│ TÍTULO: Resetear contraseña                     │\n├─────────────────────────────────────────────────┤\n│ Como: Usuario que olvidó su contraseña          │\n│ Quiero: Poder resetearla desde login            │\n│ Para: Recuperar acceso a mi cuenta              │\n├─────────────────────────────────────────────────┤\n│ CRITERIOS DE ACEPTACIÓN:                        │\n│ ✓ Link \"Olvidé contraseña\" visible en login    │\n│ ✓ Email con token llega en < 5 minutos         │\n│ ✓ Token expira en 1 hora                       │\n│ ✓ Contraseña nueva cumple policy de seguridad  │\n├─────────────────────────────────────────────────┤\n│ PRIORIDAD: [X] Alta  [ ] Media  [ ] Baja        │\n│ ESTIMACIÓN: [5] Story Points                    │\n│ SPRINT: [3]                                     │\n├─────────────────────────────────────────────────┤\n│ NOTAS TÉCNICAS:                                 │\n│ - Usar JWT con expiración de 1 hora            │\n│ - Email service: SendGrid                       │\n├─────────────────────────────────────────────────┤\n│ DEPENDENCIAS:                                   │\n│ - Depende de: US-001 (Sistema de autenticación)│\n└─────────────────────────────────────────────────┘",
+      "difficulty": "basic",
+      "estimatedTime": "30-60 minutos para un set de 10-15 stories",
       "sections": [
-        "Identificación",
-        "Descripción (Como/Quiero/Para)",
-        "Criterios de Aceptación",
-        "Prioridad y Estimación",
-        "Notas Técnicas",
-        "Dependencias"
+        {
+          "title": "1. Guía de User Stories",
+          "content": "# Guía para Escribir User Stories\n\n## Formato INVEST\n\nUna buena User Story debe ser:\n\n- **I**ndependent (Independiente): Puede desarrollarse sin depender de otras\n- **N**egotiable (Negociable): Los detalles se discuten con el equipo\n- **V**aluable (Valiosa): Aporta valor al usuario/negocio\n- **E**stimable (Estimable): El equipo puede estimar esfuerzo\n- **S**mall (Pequeña): Completable en un sprint\n- **T**estable (Testeable): Tiene criterios claros de aceptación\n\n## Formato Estándar\n\n**Como** [tipo de usuario]\n**Quiero** [realizar alguna acción]\n**Para** [obtener algún beneficio]\n\n## Ejemplo Completo\n\n**Como** usuario registrado\n**Quiero** recuperar mi contraseña mediante email\n**Para** poder acceder nuevamente si la olvido\n\n**Criterios de Aceptación:**\n- [ ] Existe un link \"¿Olvidaste tu contraseña?\" en la pantalla de login\n- [ ] Al hacer click, solicita el email registrado\n- [ ] Sistema envía email con link de recuperación en < 2 minutos\n- [ ] Link expira después de 24 horas\n- [ ] Usuario puede establecer nueva contraseña\n- [ ] Nueva contraseña cumple políticas de seguridad\n\n**Estimación:** 5 Story Points\n\n**Prioridad:** Alta\n\n**Notas técnicas:**\n- Usar servicio de email existente (SendGrid)\n- Token JWT con expiración de 24h\n- Validar contraseña: min 8 caracteres, mayúsculas, números",
+          "instructions": "Use este formato para cada User Story. Los criterios de aceptación deben ser específicos y testeables."
+        },
+        {
+          "title": "2. Product Backlog",
+          "content": "# Product Backlog - [Nombre del Proyecto]\n\n**Fecha:** [DD/MM/YYYY]\n**Product Owner:** [Nombre]\n**Equipo:** [Nombre del equipo]\n**Sprint actual:** [Número]\n\n---\n\n## Epic 1: [Nombre del Epic - ej. Gestión de Usuarios]\n\n### US-001: Registro de usuarios\n\n**Como** visitante del sitio\n**Quiero** crear una cuenta con email y contraseña\n**Para** acceder a las funcionalidades del sistema\n\n**Criterios de Aceptación:**\n- [ ] Formulario con campos: nombre, email, contraseña, confirmar contraseña\n- [ ] Validación en tiempo real de formato de email\n- [ ] Contraseña debe tener mínimo 8 caracteres con mayúsculas y números\n- [ ] Mensaje de error claro si email ya existe\n- [ ] Email de confirmación enviado automáticamente\n- [ ] Cuenta activada después de confirmar email\n\n**Estimación:** 8 SP\n**Prioridad:** Alta (Must have)\n**Sprint:** Sprint 1\n**Estado:** To Do\n\n**Notas:**\n- Usar bcrypt para hash de contraseñas\n- Template de email en /templates/welcome-email.html\n\n**Definición de Hecho (DoD):**\n- [ ] Código revisado por al menos 1 desarrollador\n- [ ] Pruebas unitarias con cobertura > 80%\n- [ ] Pruebas de integración pasando\n- [ ] Documentación de API actualizada\n- [ ] Desplegado en ambiente de staging\n- [ ] Aprobado por Product Owner\n\n---\n\n### US-002: Login de usuarios\n\n**Como** usuario registrado\n**Quiero** ingresar con mi email y contraseña\n**Para** acceder a mi cuenta y funcionalidades privadas\n\n**Criterios de Aceptación:**\n- [ ] Formulario de login con email y contraseña\n- [ ] Validación de credenciales contra base de datos\n- [ ] Sesión válida por 24 horas\n- [ ] Opción \"Recordarme\" para sesión de 30 días\n- [ ] Mensaje de error genérico si credenciales inválidas (seguridad)\n- [ ] Bloqueo temporal después de 5 intentos fallidos\n- [ ] Redirección a dashboard después de login exitoso\n\n**Estimación:** 5 SP\n**Prioridad:** Alta (Must have)\n**Sprint:** Sprint 1\n**Estado:** To Do\n\n**Dependencias:** US-001 debe estar completada\n\n---\n\n### US-003: Recuperación de contraseña\n\n**Como** usuario que olvidó su contraseña\n**Quiero** recibir un link de recuperación por email\n**Para** establecer una nueva contraseña sin contactar soporte\n\n**Criterios de Aceptación:**\n- [ ] Link \"¿Olvidaste tu contraseña?\" visible en login\n- [ ] Formulario solicita solo email\n- [ ] Email enviado en menos de 2 minutos\n- [ ] Link de recuperación válido por 24 horas\n- [ ] Formulario para establecer nueva contraseña\n- [ ] Validación de política de contraseñas\n- [ ] Confirmación de cambio exitoso\n- [ ] Sesión anterior invalidada por seguridad\n\n**Estimación:** 5 SP\n**Prioridad:** Media (Should have)\n**Sprint:** Sprint 2\n**Estado:** Backlog\n\n---\n\n## Epic 2: [Nombre del Epic - ej. Funcionalidad Principal]\n\n### US-004: [Título de User Story]\n\n**Como** [rol]\n**Quiero** [acción]\n**Para** [beneficio]\n\n**Criterios de Aceptación:**\n- [ ] [Criterio 1]\n- [ ] [Criterio 2]\n- [ ] [Criterio 3]\n\n**Estimación:** [X SP]\n**Prioridad:** [Alta/Media/Baja]\n**Sprint:** [Número o Backlog]\n**Estado:** [To Do / In Progress / Done]\n\n---\n\n### US-005: [Título de User Story]\n\n**Como** [rol]\n**Quiero** [acción]\n**Para** [beneficio]\n\n**Criterios de Aceptación:**\n- [ ] [Criterio 1]\n- [ ] [Criterio 2]\n\n**Estimación:** [X SP]\n**Prioridad:** [Alta/Media/Baja]\n**Sprint:** [Número o Backlog]\n**Estado:** [To Do / In Progress / Done]",
+          "instructions": "Organice las User Stories en Epics (funcionalidades grandes). Use la escala de Fibonacci para estimación (1, 2, 3, 5, 8, 13). Priorice con MoSCoW: Must have, Should have, Could have, Won't have."
+        },
+        {
+          "title": "3. Estimación y Planning Poker",
+          "content": "# Guía de Estimación - Planning Poker\n\n## Escala de Story Points (Fibonacci)\n\n| Story Points | Complejidad | Tiempo Estimado | Ejemplo |\n|--------------|-------------|-----------------|----------|\n| 1 | Trivial | < 4 horas | Cambiar texto de un botón |\n| 2 | Muy simple | 4-8 horas | Agregar campo a formulario existente |\n| 3 | Simple | 1-2 días | CRUD básico de entidad simple |\n| 5 | Moderado | 2-3 días | Formulario complejo con validaciones |\n| 8 | Complejo | 3-5 días | Integración con API externa |\n| 13 | Muy complejo | 1 semana | Módulo completo con múltiples pantallas |\n| 20+ | **Dividir en stories más pequeñas** | - | Epic, no User Story |\n\n## Proceso de Planning Poker\n\n1. **Product Owner presenta User Story**\n   - Lee la historia completa\n   - Explica el valor de negocio\n   - Responde preguntas de clarificación\n\n2. **Equipo discute brevemente**\n   - Aclarar dudas técnicas\n   - Identificar dependencias\n   - Discutir enfoque general\n\n3. **Estimación individual**\n   - Cada miembro elige carta en privado\n   - Todos revelan simultáneamente\n\n4. **Consenso o discusión**\n   - Si hay consenso (±1 punto): usar ese valor\n   - Si hay divergencia: quienes estimaron más alto/bajo explican\n   - Segunda ronda de votación\n   - Repetir hasta consenso\n\n## Factores a Considerar\n\n- **Complejidad técnica:** ¿Qué tan difícil es implementar?\n- **Incertidumbre:** ¿Qué tanto conocemos la tecnología?\n- **Esfuerzo:** ¿Cuánto trabajo requiere?\n- **Riesgos:** ¿Qué puede salir mal?\n- **Dependencias:** ¿Necesitamos a otros equipos?\n\n## Velocity del Equipo\n\n**Sprint 1:** [X] SP completados\n**Sprint 2:** [X] SP completados\n**Sprint 3:** [X] SP completados\n\n**Velocity promedio:** [X] SP por sprint\n\n**Capacidad del próximo sprint:** [X] SP (considerando vacaciones, días festivos)",
+          "instructions": "La estimación es relativa, no absoluta. Compare nuevas stories con stories ya completadas. Actualice el velocity cada sprint para mejorar la precisión."
+        }
       ],
-      "relatedRecommendations": [
-        "rec-005",
-        "rec-006",
-        "rec-007"
-      ],
-      "tags": [
-        "agil",
-        "user-story",
-        "scrum",
-        "criterios-aceptacion",
-        "sprint"
-      ]
+      "tags": ["user-stories", "agile", "scrum", "backlog", "planning-poker"],
+      "references": {
+        "sommerville": ["chapter-3", "chapter-4"]
+      },
+      "relatedTemplates": ["template-001", "template-008"]
     },
-    "tpl-003": {
-      "id": "tpl-003",
-      "name": "Caso de Uso Detallado",
-      "category": "Documentación",
-      "description": "Plantilla de Caso de Uso con flujos principal, alternativos y excepciones",
-      "chapter": 4,
+    {
+      "id": "template-003",
+      "name": "Casos de Uso - Formato Completo",
+      "category": "requirements",
+      "description": "Template detallado para documentar Casos de Uso con flujos alternativos, excepciones y precondiciones",
+      "methodology": ["all"],
       "format": "markdown",
-      "applicableFor": [
-        "tradicional",
-        "hibrido"
-      ],
-      "difficulty": "media",
-      "estimatedTime": "1-2 horas",
-      "content": "# CASO DE USO: [ID] - [Nombre]\n\n## INFORMACIÓN GENERAL\n- **ID**: CU-XXX\n- **Nombre**: [Nombre descriptivo del caso de uso]\n- **Actores**: [Usuario, Sistema Externo, etc.]\n- **Tipo**: Primario / Secundario\n- **Complejidad**: Alta / Media / Baja\n- **Prioridad**: Alta / Media / Baja\n\n## DESCRIPCIÓN\n[Descripción breve de qué hace este caso de uso]\n\n## PRECONDICIONES\n1. [Condición que debe ser verdadera ANTES de ejecutar]\n2. [Otra precondición]\n\n## POSTCONDICIONES\n1. [Condición que será verdadera DESPUÉS de ejecutar exitosamente]\n2. [Otra postcondición]\n\n## FLUJO PRINCIPAL\n1. [Actor] hace [acción]\n2. Sistema [responde/procesa/valida]\n3. [Actor] [siguiente acción]\n4. Sistema [resultado]\n\n## FLUJOS ALTERNATIVOS\n\n### A1: [Nombre de flujo alternativo]\n**Condición**: [Cuándo ocurre este flujo]\n**Pasos**:\n1. [Paso alternativo]\n2. [Paso alternativo]\n**Retorna a**: Paso X del flujo principal\n\n### A2: [Otro flujo alternativo]\n...\n\n## FLUJOS DE EXCEPCIÓN\n\n### E1: [Error de validación]\n**Condición**: [Cuándo ocurre]\n**Pasos**:\n1. Sistema muestra mensaje de error: \"[mensaje]\"\n2. Sistema retorna a paso X\n**Fin del caso de uso**: No\n\n### E2: [Error crítico]\n**Condición**: [Cuándo ocurre]\n**Pasos**:\n1. Sistema registra error en log\n2. Sistema muestra mensaje genérico al usuario\n3. Sistema notifica a administradores\n**Fin del caso de uso**: Sí (abortado)\n\n## REQUISITOS ESPECIALES\n- [Requisito no funcional relacionado: performance, seguridad, etc.]\n\n## INFORMACIÓN ADICIONAL\n- **Frecuencia de uso**: [Diaria/Semanal/Mensual]\n- **Reglas de negocio**: [BRX]\n- **Notas**: [Información adicional relevante]",
+      "difficulty": "intermediate",
+      "estimatedTime": "1-2 horas por caso de uso",
       "sections": [
-        "Información General",
-        "Descripción",
-        "Precondiciones y Postcondiciones",
-        "Flujo Principal",
-        "Flujos Alternativos",
-        "Flujos de Excepción",
-        "Requisitos Especiales"
+        {
+          "title": "1. Modelo de Casos de Uso",
+          "content": "# Modelo de Casos de Uso - [Nombre del Sistema]\n\n## Diagrama General de Casos de Uso\n\n```\n┌─────────────────────────────────────────────────────┐\n│                 [NOMBRE DEL SISTEMA]                │\n│                                                     │\n│    ┌──────────────────┐                            │\n│    │  Caso de Uso 1   │                            │\n│    └──────────────────┘                            │\n│                                                     │\n│    ┌──────────────────┐      ┌──────────────────┐ │\n│    │  Caso de Uso 2   │◄─────│  Caso de Uso 3   │ │\n│    └──────────────────┘      └──────────────────┘ │\n│            ▲                                        │\n└────────────┼────────────────────────────────────────┘\n             │\n         ┌───┴───┐\n         │ Actor │\n         └───────┘\n```\n\n## Actores del Sistema\n\n| Actor | Descripción | Tipo | Responsabilidades |\n|-------|-------------|------|-------------------|\n| Usuario Final | Persona que usa el sistema diariamente | Primario | Operaciones CRUD básicas |\n| Administrador | Gestiona configuración y usuarios | Primario | Administración del sistema |\n| Sistema Externo | API de servicio de terceros | Secundario | Provee datos externos |\n| [Actor Custom] | [Descripción] | [Primario/Secundario] | [Responsabilidades] |\n\n## Lista de Casos de Uso\n\n| ID | Nombre | Actor Principal | Prioridad | Complejidad |\n|----|--------|-----------------|-----------|-------------|\n| CU-001 | Registrar Usuario | Usuario Final | Alta | Media |\n| CU-002 | Autenticar Usuario | Usuario Final | Crítica | Baja |\n| CU-003 | Recuperar Contraseña | Usuario Final | Media | Media |\n| CU-004 | Gestionar Permisos | Administrador | Alta | Alta |\n| CU-005 | [Nombre] | [Actor] | [Prioridad] | [Complejidad] |",
+          "instructions": "Liste todos los actores y casos de uso del sistema. Use diagramas UML reales en herramientas como Lucidchart, Draw.io o PlantUML para la versión final."
+        },
+        {
+          "title": "2. Especificación Detallada de Casos de Uso",
+          "content": "# Especificación de Casos de Uso\n\n---\n\n## CU-001: Registrar Usuario\n\n### Información General\n\n| Campo | Valor |\n|-------|-------|\n| **ID** | CU-001 |\n| **Nombre** | Registrar Usuario |\n| **Actor Principal** | Usuario Final (visitante) |\n| **Actores Secundarios** | Sistema de Email |\n| **Descripción** | Permite a un visitante crear una cuenta nueva en el sistema proporcionando información básica |\n| **Trigger** | Usuario hace click en \"Crear cuenta\" |\n| **Tipo** | Primario, Esencial |\n| **Prioridad** | Alta |\n| **Complejidad** | Media |\n\n### Precondiciones\n\n- El usuario no tiene una cuenta existente con el email proporcionado\n- El sistema de email está operativo\n- La base de datos está accesible\n\n### Postcondiciones\n\n**Éxito:**\n- Nuevo usuario creado en estado \"pendiente de verificación\"\n- Email de confirmación enviado\n- Log de auditoría registra la operación\n\n**Fallo:**\n- No se crea usuario\n- Mensaje de error mostrado al usuario\n- Intento registrado en logs\n\n### Flujo Principal (Escenario Exitoso)\n\n| Paso | Actor | Acción del Sistema |\n|------|-------|-----------------|\n| 1 | Usuario accede a la pantalla de registro | Sistema muestra formulario con campos: nombre, email, contraseña |\n| 2 | Usuario completa campos del formulario | Sistema valida formato en tiempo real (email válido, contraseña segura) |\n| 3 | Usuario marca checkbox \"Acepto términos y condiciones\" | Sistema habilita botón \"Crear cuenta\" |\n| 4 | Usuario hace click en \"Crear cuenta\" | Sistema valida que todos los campos sean correctos |\n| 5 | - | Sistema verifica que email no exista en base de datos |\n| 6 | - | Sistema encripta la contraseña usando bcrypt |\n| 7 | - | Sistema crea registro de usuario en estado \"pendiente\" |\n| 8 | - | Sistema genera token de verificación (válido 24h) |\n| 9 | - | Sistema envía email de confirmación con link de activación |\n| 10 | - | Sistema muestra mensaje: \"Cuenta creada. Revisa tu email para activarla\" |\n| 11 | Usuario abre email y hace click en link de confirmación | Sistema valida token de verificación |\n| 12 | - | Sistema actualiza estado del usuario a \"activo\" |\n| 13 | - | Sistema redirige a pantalla de login con mensaje de éxito |\n\n### Flujos Alternativos\n\n**FA-001: Email ya existe (Paso 5)**\n\n5a. Sistema detecta que email ya está registrado\n5b. Sistema muestra mensaje: \"Este email ya está registrado. ¿Olvidaste tu contraseña?\"\n5c. Sistema ofrece link a recuperación de contraseña\n5d. Caso de uso termina sin crear usuario\n\n**FA-002: Contraseña no cumple políticas (Paso 4)**\n\n4a. Sistema detecta que contraseña es débil (< 8 caracteres o sin mayúsculas/números)\n4b. Sistema muestra mensaje específico: \"La contraseña debe tener mínimo 8 caracteres, incluyendo mayúsculas y números\"\n4c. Sistema resalta campo de contraseña en rojo\n4d. Retorna al paso 2\n\n**FA-003: Usuario no confirma email en 24 horas (Después del paso 10)**\n\n10a. Pasan 24 horas sin que usuario confirme email\n10b. Sistema marca cuenta como \"expirada\"\n10c. Si usuario intenta activar con token expirado, sistema muestra: \"Link expirado. Solicita un nuevo email de confirmación\"\n10d. Sistema ofrece opción de reenviar email de confirmación\n\n### Flujos de Excepción\n\n**FE-001: Error al enviar email (Paso 9)**\n\n9a. Sistema intenta enviar email pero falla (servicio caído, email inválido)\n9b. Sistema registra error en logs\n9c. Sistema guarda usuario con estado \"pendiente_email\"\n9d. Sistema muestra mensaje: \"Cuenta creada pero hubo un error al enviar email. Contacta a soporte.\"\n9e. Sistema notifica a administradores del error\n\n**FE-002: Base de datos no disponible (Paso 7)**\n\n7a. Sistema no puede conectar a base de datos\n7b. Sistema muestra mensaje genérico: \"Error del sistema. Intenta nuevamente en unos minutos.\"\n7c. Sistema registra error en logs\n7d. Caso de uso termina sin crear usuario\n\n### Requerimientos Especiales\n\n- **Seguridad:** Contraseñas deben hashearse con bcrypt (cost factor ≥ 12)\n- **Rendimiento:** El formulario debe responder en < 200ms para validaciones\n- **Usabilidad:** Validación en tiempo real para mejor UX\n- **Accesibilidad:** Formulario accesible con WCAG 2.1 AA\n\n### Datos del Caso de Uso\n\n**Entrada:**\n- Nombre completo (string, 2-100 caracteres)\n- Email (string, formato email válido)\n- Contraseña (string, min 8 caracteres, mayúsculas, números, caracteres especiales)\n- Aceptación de términos (boolean)\n\n**Salida:**\n- Usuario ID generado\n- Token de verificación enviado por email\n- Mensaje de confirmación\n\n### Frecuencia de Uso\n\nEstimado: 50-100 nuevos registros por día\n\n### Notas de Implementación\n\n- Usar validación con Zod o Yup en frontend\n- Implementar rate limiting: máximo 5 intentos por IP por hora\n- Considerar CAPTCHA si se detecta actividad sospechosa\n- Template de email en `/templates/verification-email.html`\n\n---\n\n## CU-002: Autenticar Usuario\n\n### Información General\n\n| Campo | Valor |\n|-------|-------|\n| **ID** | CU-002 |\n| **Nombre** | Autenticar Usuario |\n| **Actor Principal** | Usuario Registrado |\n| **Actores Secundarios** | Sistema de Sesiones |\n| **Descripción** | Permite a un usuario registrado acceder al sistema mediante email y contraseña |\n| **Trigger** | Usuario accede a la pantalla de login |\n| **Tipo** | Primario, Esencial |\n| **Prioridad** | Crítica |\n| **Complejidad** | Baja |\n\n### Precondiciones\n\n- Usuario tiene cuenta activa en el sistema\n- Usuario ha confirmado su email (CU-001 completado)\n\n### Postcondiciones\n\n**Éxito:**\n- Sesión activa creada para el usuario\n- Token JWT generado y almacenado\n- Usuario redirigido a dashboard\n- Último login actualizado\n\n**Fallo:**\n- No se crea sesión\n- Usuario permanece en pantalla de login\n- Intento fallido registrado\n\n### Flujo Principal\n\n| Paso | Actor | Acción del Sistema |\n|------|-------|-----------------|\n| 1 | Usuario accede a /login | Sistema muestra formulario de login (email, contraseña) |\n| 2 | Usuario ingresa email y contraseña | Sistema valida formato básico |\n| 3 | Usuario hace click en \"Iniciar sesión\" | Sistema busca usuario por email |\n| 4 | - | Sistema verifica que usuario existe y está activo |\n| 5 | - | Sistema compara contraseña contra hash almacenado |\n| 6 | - | Sistema genera token JWT con expiración de 24h |\n| 7 | - | Sistema actualiza campo last_login |\n| 8 | - | Sistema registra login exitoso en auditoría |\n| 9 | - | Sistema redirige a dashboard con token en cookie/localStorage |\n\n### Flujos Alternativos\n\n**FA-001: Credenciales incorrectas (Paso 5)**\n\n5a. Contraseña no coincide con hash almacenado\n5b. Sistema incrementa contador de intentos fallidos\n5c. Sistema muestra mensaje genérico: \"Email o contraseña incorrectos\"\n5d. Sistema registra intento fallido con IP y timestamp\n5e. Retorna al paso 2\n\n**FA-002: Cuenta bloqueada por intentos fallidos (Paso 4)**\n\n4a. Sistema detecta 5 intentos fallidos en últimos 15 minutos\n4b. Sistema bloquea temporalmente la cuenta (15 minutos)\n4c. Sistema muestra: \"Cuenta temporalmente bloqueada por seguridad. Intenta en 15 minutos.\"\n4d. Sistema envía email de alerta al usuario\n4e. Caso de uso termina\n\n**FA-003: Cuenta no activada (Paso 4)**\n\n4a. Sistema detecta que email no ha sido confirmado\n4b. Sistema muestra: \"Debes confirmar tu email antes de iniciar sesión\"\n4c. Sistema ofrece opción \"Reenviar email de confirmación\"\n4d. Caso de uso termina\n\n### Requerimientos Especiales\n\n- **Seguridad:** No revelar si el error es email o contraseña (mensajes genéricos)\n- **Rendimiento:** Autenticación debe completarse en < 1 segundo\n- **Auditoría:** Registrar todos los intentos (exitosos y fallidos)\n\n### Frecuencia de Uso\n\nEstimado: 500-1000 logins por día\n\n---\n\n## CU-003: [Nombre del Caso de Uso]\n\n### Información General\n\n| Campo | Valor |\n|-------|-------|\n| **ID** | CU-XXX |\n| **Nombre** | [Nombre descriptivo] |\n| **Actor Principal** | [Actor] |\n| **Actores Secundarios** | [Otros actores] |\n| **Descripción** | [Descripción breve] |\n| **Trigger** | [Evento que inicia el caso de uso] |\n| **Tipo** | [Primario/Secundario, Esencial/Opcional] |\n| **Prioridad** | [Crítica/Alta/Media/Baja] |\n| **Complejidad** | [Alta/Media/Baja] |\n\n### Precondiciones\n\n- [Precondición 1]\n- [Precondición 2]\n\n### Postcondiciones\n\n**Éxito:**\n- [Postcondición 1]\n- [Postcondición 2]\n\n**Fallo:**\n- [Estado del sistema si falla]\n\n### Flujo Principal\n\n| Paso | Actor | Acción del Sistema |\n|------|-------|-----------------|\n| 1 | [Actor] hace [acción] | Sistema [responde] |\n| 2 | [Actor] hace [acción] | Sistema [responde] |\n\n### Flujos Alternativos\n\n**FA-001: [Nombre del flujo alternativo]**\n\n[Descripción paso a paso]\n\n### Requerimientos Especiales\n\n- **Seguridad:** [Requisitos de seguridad]\n- **Rendimiento:** [Requisitos de rendimiento]\n- **Usabilidad:** [Requisitos de usabilidad]",
+          "instructions": "Complete un caso de uso por cada funcionalidad importante del sistema. Sea específico en los flujos alternativos y de excepción, ya que ahí están los verdaderos detalles de implementación."
+        }
       ],
-      "relatedRecommendations": [
-        "rec-001",
-        "rec-002",
-        "rec-004"
-      ],
-      "tags": [
-        "casos-de-uso",
-        "uml",
-        "analisis",
-        "tradicional"
-      ]
+      "tags": ["use-cases", "casos-de-uso", "uml", "requirements", "modeling"],
+      "references": {
+        "sommerville": ["chapter-4", "chapter-5"]
+      },
+      "relatedTemplates": ["template-001", "template-002"]
     },
-    "tpl-004": {
-      "id": "tpl-004",
-      "name": "Plan de Sprint",
-      "category": "Ágil",
-      "description": "Plantilla de planificación de Sprint para Scrum con backlog y métricas",
-      "chapter": 3,
+    {
+      "id": "template-004",
+      "name": "Documento de Arquitectura de Software (SAD)",
+      "category": "architecture",
+      "description": "Template completo para documentar la arquitectura de software, incluyendo vistas arquitectónicas, patrones y decisiones de diseño",
+      "methodology": ["all"],
       "format": "markdown",
-      "applicableFor": [
-        "agil",
-        "scrum"
-      ],
-      "difficulty": "media",
-      "estimatedTime": "2-3 horas",
-      "content": "# SPRINT [#XX] - [Nombre del Sprint]\n**Duración**: [Fecha inicio] - [Fecha fin] (X semanas)\n**Goal**: [Objetivo principal del sprint - qué valor entregamos]\n\n## EQUIPO\n- **Product Owner**: [Nombre]\n- **Scrum Master**: [Nombre]\n- **Development Team**:\n  - [Desarrollador 1]\n  - [Desarrollador 2]\n  - [QA]\n\n## CAPACIDAD DEL SPRINT\n- **Story Points totales**: [X] points\n- **Horas estimadas**: [Y] horas\n- **Días disponibles**: [Z] días (considerando vacaciones, feriados)\n\n## BACKLOG DEL SPRINT\n\n### Comprometido (MUST)\n| ID     | Historia de Usuario        | SP | Asignado a | Estado     |\n|--------|----------------------------|----|-----------  |-----------|\n| US-042 | Resetear contraseña        | 5  | Juan       | To Do      |\n| US-043 | Dashboard de usuario       | 8  | María      | To Do      |\n| ...    | ...                        | .. | ...        | ...        |\n| **TOTAL** |                         | **XX** |        |            |\n\n### Stretch Goals (SHOULD - si hay tiempo)\n| ID     | Historia de Usuario        | SP |\n|--------|----------------------------|-----|\n| US-050 | Filtros avanzados          | 3  |\n\n## DEFINICIÓN DE DONE\nUna historia está \"Done\" cuando:\n- [ ] Código completado y revisado (PR aprobado)\n- [ ] Tests escritos y pasando (coverage > 70%)\n- [ ] Funcionalidad probada manualmente\n- [ ] Documentación actualizada\n- [ ] Deployado a staging\n- [ ] Product Owner acepta\n\n## RIESGOS IDENTIFICADOS\n| Riesgo | Probabilidad | Impacto | Mitigación |\n|--------|--------------|---------|------------|\n| Dependencia de API externa no lista | Media | Alto | Mockear API, feature flag |\n| ... | ... | ... | ... |\n\n## MÉTRICAS\n- **Velocity anterior**: [X] points\n- **Velocity objetivo**: [Y] points\n- **Burndown chart**: [Link a herramienta]\n\n## NOTAS\n[Cualquier información adicional del sprint planning]",
+      "difficulty": "advanced",
+      "estimatedTime": "4-6 horas para completar",
       "sections": [
-        "Información General",
-        "Equipo",
-        "Capacidad",
-        "Backlog del Sprint",
-        "Definition of Done",
-        "Riesgos",
-        "Métricas"
+        {
+          "title": "1. Introducción",
+          "content": "# Documento de Arquitectura de Software\n## [Nombre del Sistema]\n\n**Versión:** 1.0\n**Fecha:** [DD/MM/YYYY]\n**Autor(es):** [Arquitecto de Software]\n**Estado:** [Borrador / En Revisión / Aprobado]\n\n---\n\n## 1.1 Propósito\n\nEste documento describe la arquitectura de software del sistema **[NOMBRE]**. Define las decisiones arquitectónicas clave, patrones utilizados, y proporciona vistas que ilustran diferentes aspectos del sistema.\n\n**Audiencia:**\n- Arquitectos de software\n- Desarrolladores senior y mid-level\n- Líderes técnicos\n- Equipos de operaciones (DevOps)\n\n## 1.2 Alcance\n\nEste documento cubre:\n- Vistas arquitectónicas (lógica, física, de desarrollo, de proceso)\n- Patrones y estilos arquitectónicos utilizados\n- Decisiones de arquitectura (ADRs) clave\n- Restricciones y consideraciones de diseño\n- Escenarios de calidad y tácticas\n\n## 1.3 Definiciones y Acrónimos\n\n| Término | Definición |\n|---------|------------|\n| SAD | Software Architecture Document |\n| ADR | Architecture Decision Record |\n| API | Application Programming Interface |\n| REST | Representational State Transfer |\n| MVC | Model-View-Controller |\n| CQRS | Command Query Responsibility Segregation |\n| [TÉRMINO] | [Definición] |\n\n## 1.4 Referencias\n\n- Sommerville, I. (2016). Ingeniería de Software, 9na Ed. Capítulo 6: Arquitectura de Software\n- Bass, L. et al. (2012). Software Architecture in Practice, 3rd Edition\n- [Documento de Requerimientos (SRS)]\n- [Estándares de arquitectura de la organización]",
+          "instructions": "Complete la información básica del documento. Mantenga las definiciones actualizadas a medida que introduce nuevos conceptos."
+        },
+        {
+          "title": "2. Representación Arquitectónica",
+          "content": "# 2. Representación Arquitectónica\n\n## 2.1 Estilo Arquitectónico Principal\n\n**Estilo seleccionado:** [Ej: Arquitectura en Capas / Microservicios / Event-Driven / Hexagonal]\n\n**Justificación:**\n\n[Explicar por qué se eligió este estilo arquitectónico considerando:\n- Requerimientos funcionales y no funcionales\n- Escalabilidad requerida\n- Complejidad del dominio\n- Experiencia del equipo\n- Restricciones de tiempo/presupuesto]\n\n**Alternativas consideradas:**\n\n1. **[Alternativa 1]:** Descartada porque [razón]\n2. **[Alternativa 2]:** Descartada porque [razón]\n\n## 2.2 Vistas Arquitectónicas (Modelo 4+1)\n\n### Vista Lógica\n\nDescompone el sistema en componentes lógicos y sus responsabilidades.\n\n```\n┌─────────────────────────────────────────────────┐\n│           Capa de Presentación                  │\n│  [UI Components, Controllers, View Models]      │\n└────────────────┬────────────────────────────────┘\n                 │\n┌────────────────▼────────────────────────────────┐\n│           Capa de Lógica de Negocio             │\n│  [Services, Business Logic, Validators]         │\n└────────────────┬────────────────────────────────┘\n                 │\n┌────────────────▼────────────────────────────────┐\n│           Capa de Acceso a Datos                │\n│  [Repositories, DAOs, ORM]                      │\n└────────────────┬────────────────────────────────┘\n                 │\n┌────────────────▼────────────────────────────────┐\n│           Base de Datos                         │\n└─────────────────────────────────────────────────┘\n```\n\n**Responsabilidades por capa:**\n\n- **Presentación:** Manejo de UI, validación de entrada, formato de salida\n- **Lógica de Negocio:** Reglas de negocio, orquestación de casos de uso\n- **Acceso a Datos:** Persistencia, queries, transacciones\n- **Base de Datos:** Almacenamiento persistente\n\n### Vista de Desarrollo\n\nOrganización del código fuente y dependencias entre módulos.\n\n```\nsrc/\n├── api/               # API REST endpoints\n│   ├── controllers/\n│   ├── middlewares/\n│   └── routes/\n├── domain/            # Lógica de negocio\n│   ├── entities/\n│   ├── services/\n│   └── interfaces/\n├── infrastructure/    # Implementaciones técnicas\n│   ├── database/\n│   ├── cache/\n│   └── external-apis/\n└── shared/            # Código compartido\n    ├── utils/\n    └── constants/\n```\n\n**Reglas de dependencia:**\n- `domain/` NO debe depender de `infrastructure/` ni `api/`\n- `api/` puede depender de `domain/` pero no de `infrastructure/` directamente\n- `infrastructure/` implementa interfaces definidas en `domain/`\n\n### Vista de Proceso\n\nProcesos en ejecución y comunicación entre ellos.\n\n**Procesos principales:**\n\n1. **Web Server (Node.js/Express)**\n   - Maneja requests HTTP\n   - Ejecuta middlewares de autenticación/autorización\n   - Delega a servicios de negocio\n\n2. **Background Workers**\n   - Procesa tareas asíncronas (emails, reportes)\n   - Consume mensajes de cola (RabbitMQ/Redis)\n\n3. **Scheduled Jobs (Cron)**\n   - Limpieza de datos antiguos\n   - Sincronización con sistemas externos\n\n**Comunicación entre procesos:**\n- Web Server ↔ Database: Conexiones TCP/IP\n- Web Server ↔ Redis: Protocolo Redis (pub/sub, caching)\n- Web Server ↔ Workers: Mensajes a través de cola\n\n### Vista Física (Deployment)\n\nServidores, contenedores y infraestructura física.\n\n```\n┌─────────────────────────────────────────────────┐\n│              Load Balancer                      │\n└────────────┬────────────────────────────────────┘\n             │\n    ┌────────┴────────┐\n    │                 │\n┌───▼────┐       ┌───▼────┐\n│ Web    │       │ Web    │\n│ Server │       │ Server │\n│ (x2)   │       │ (x2)   │\n└───┬────┘       └───┬────┘\n    │                │\n    └────────┬────────┘\n             │\n    ┌────────▼────────┐\n    │   PostgreSQL    │\n    │   (Primary)     │\n    └────────┬────────┘\n             │\n    ┌────────▼────────┐\n    │   PostgreSQL    │\n    │   (Replica)     │\n    └─────────────────┘\n```\n\n**Infraestructura:**\n- **Hosting:** [AWS/Azure/GCP/On-premise]\n- **Contenedores:** Docker + Kubernetes\n- **CDN:** [CloudFlare/Akamai] para assets estáticos\n\n### Escenarios (Vista +1)\n\nCasos de uso arquitectónicamente significativos:\n\n1. **Alta carga (1000+ usuarios concurrentes)**\n   - Load balancer distribuye tráfico\n   - Auto-scaling de pods en Kubernetes\n   - Caching agresivo en Redis\n\n2. **Fallo de base de datos primaria**\n   - Failover automático a réplica\n   - Downtime < 30 segundos\n   - Alertas a equipo DevOps",
+          "instructions": "Adapte las vistas a su arquitectura específica. Use diagramas reales (PlantUML, Mermaid, C4 Model) en la versión final."
+        },
+        {
+          "title": "3. Patrones y Decisiones",
+          "content": "# 3. Patrones Arquitectónicos y Decisiones\n\n## 3.1 Patrones Utilizados\n\n### Patrón 1: Repository Pattern\n\n**Descripción:** Abstrae el acceso a datos, permitiendo cambiar la fuente de datos sin afectar la lógica de negocio.\n\n**Implementación:**\n\n```typescript\n// Interface en domain/\ninterface UserRepository {\n  findById(id: string): Promise<User | null>;\n  save(user: User): Promise<void>;\n  delete(id: string): Promise<void>;\n}\n\n// Implementación en infrastructure/\nclass PostgresUserRepository implements UserRepository {\n  async findById(id: string): Promise<User | null> {\n    // Implementación con PostgreSQL\n  }\n}\n```\n\n**Beneficios:**\n- Testabilidad (mocks fáciles)\n- Flexibilidad para cambiar DB\n- Separación de concerns\n\n**Trade-offs:**\n- Capa adicional de abstracción\n- Overhead en proyectos pequeños\n\n---\n\n### Patrón 2: Dependency Injection\n\n**Descripción:** Las dependencias se inyectan en lugar de ser creadas internamente.\n\n**Implementación:**\n\n```typescript\nclass UserService {\n  constructor(\n    private userRepo: UserRepository,\n    private emailService: EmailService\n  ) {}\n\n  async registerUser(data: RegisterDTO) {\n    const user = await this.userRepo.save(data);\n    await this.emailService.sendWelcome(user.email);\n  }\n}\n```\n\n**Beneficios:**\n- Testabilidad mejorada\n- Bajo acoplamiento\n- Configuración centralizada\n\n---\n\n### Patrón 3: [Otro patrón relevante]\n\n**Descripción:** [Explicar el patrón]\n\n**Cuándo usarlo:**\n- [Escenario 1]\n- [Escenario 2]\n\n**Cuándo NO usarlo:**\n- [Anti-escenario 1]\n\n## 3.2 Decisiones Arquitectónicas (ADRs)\n\n### ADR-001: Uso de PostgreSQL como Base de Datos Principal\n\n**Fecha:** [DD/MM/YYYY]\n**Estado:** Aceptado\n**Decisores:** [Nombres]\n\n**Contexto:**\n\nNecesitamos seleccionar una base de datos que soporte:\n- Transacciones ACID\n- Relaciones complejas entre entidades\n- Volumen de datos estimado: 10M+ registros\n- Consultas complejas con JOINs\n\n**Decisión:**\n\nUsaremos PostgreSQL como base de datos principal.\n\n**Alternativas consideradas:**\n\n1. **MySQL:** Descartado por menor soporte de tipos de datos avanzados (JSON, arrays)\n2. **MongoDB:** Descartado por necesidad de transacciones multi-documento y esquema fijo\n3. **Oracle:** Descartado por costo de licencias\n\n**Consecuencias:**\n\n**Positivas:**\n- Excelente soporte ACID\n- Tipos de datos ricos (JSONB, arrays, hstore)\n- Rendimiento probado en producción\n- Comunidad activa y soporte gratuito\n- Extensiones útiles (PostGIS, pg_cron)\n\n**Negativas:**\n- Escalamiento vertical limitado (vs MongoDB que escala horizontal nativamente)\n- Curva de aprendizaje para optimización de queries complejas\n- Backups más complejos que MySQL\n\n**Mitigación de negativos:**\n- Implementar read replicas para escalamiento de lectura\n- Capacitación del equipo en optimización PostgreSQL\n- Automatizar backups con herramientas como pg_dump + S3\n\n---\n\n### ADR-002: API REST en lugar de GraphQL\n\n**Fecha:** [DD/MM/YYYY]\n**Estado:** Aceptado\n\n**Contexto:**\n\nNecesitamos definir el protocolo de comunicación entre frontend y backend.\n\n**Decisión:**\n\nImplementaremos una API RESTful en lugar de GraphQL.\n\n**Justificación:**\n- Equipo tiene más experiencia con REST\n- Casos de uso no requieren queries flexibles complejas\n- Caching más simple (HTTP caching estándar)\n- Herramientas de desarrollo más maduras\n\n**Consecuencias:**\n\n**Positivas:**\n- Menor curva de aprendizaje\n- Debugging más simple\n- Caching HTTP estándar\n\n**Negativas:**\n- Posible over-fetching de datos\n- Múltiples requests para datos relacionados\n\n**Mitigación:**\n- Implementar endpoints optimizados para pantallas específicas\n- Usar query parameters para filtrado básico\n\n---\n\n### ADR-003: [Título de decisión]\n\n**Fecha:** [DD/MM/YYYY]\n**Estado:** [Propuesto / Aceptado / Rechazado / Deprecado]\n\n**Contexto:**\n\n[Descripción del problema o necesidad]\n\n**Decisión:**\n\n[Qué se decidió hacer]\n\n**Alternativas consideradas:**\n\n1. **[Alternativa 1]:** [Por qué se descartó]\n2. **[Alternativa 2]:** [Por qué se descartó]\n\n**Consecuencias:**\n\n**Positivas:**\n- [Beneficio 1]\n- [Beneficio 2]\n\n**Negativas:**\n- [Trade-off 1]\n- [Trade-off 2]\n\n## 3.3 Tácticas de Calidad\n\n### Disponibilidad\n\n- **Redundancia:** Múltiples instancias de web servers\n- **Health checks:** Kubernetes liveness/readiness probes\n- **Failover automático:** Base de datos con réplicas\n\n### Rendimiento\n\n- **Caching:** Redis para datos frecuentes (sesiones, configuraciones)\n- **CDN:** Assets estáticos servidos desde CDN\n- **Connection pooling:** Reutilización de conexiones DB\n- **Indexación:** Índices optimizados en queries frecuentes\n\n### Seguridad\n\n- **Autenticación:** JWT con refresh tokens\n- **Autorización:** RBAC (Role-Based Access Control)\n- **Encriptación:** TLS 1.3 para datos en tránsito\n- **Input validation:** Sanitización en todos los endpoints\n- **Rate limiting:** Protección contra DDoS\n\n### Mantenibilidad\n\n- **Logging:** Logs estructurados (JSON) en todos los componentes\n- **Monitoring:** Prometheus + Grafana para métricas\n- **Documentación:** OpenAPI/Swagger para APIs\n- **Tests:** Cobertura mínima 80%",
+          "instructions": "Documente todas las decisiones arquitectónicas importantes usando el formato ADR. Esto es crucial para entender el contexto histórico de las decisiones."
+        }
       ],
-      "relatedRecommendations": [
-        "rec-005",
-        "rec-006",
-        "rec-007"
-      ],
-      "tags": [
-        "scrum",
-        "sprint",
-        "planning",
-        "agil",
-        "backlog"
-      ]
+      "tags": ["architecture", "sad", "patterns", "adr", "design"],
+      "references": {
+        "sommerville": ["chapter-6"],
+        "standards": ["ISO/IEC 42010"]
+      },
+      "relatedTemplates": ["template-005", "template-001"]
     },
-    "tpl-005": {
-      "id": "tpl-005",
+    {
+      "id": "template-005",
+      "name": "Architecture Decision Record (ADR)",
+      "category": "architecture",
+      "description": "Template breve para documentar decisiones arquitectónicas individuales siguiendo el formato ADR estándar",
+      "methodology": ["all"],
+      "format": "markdown",
+      "difficulty": "basic",
+      "estimatedTime": "20-30 minutos por ADR",
+      "sections": [
+        {
+          "title": "ADR Template",
+          "content": "# ADR-[NNN]: [Título Breve de la Decisión]\n\n**Fecha:** [YYYY-MM-DD]\n**Estado:** [Propuesto | Aceptado | Rechazado | Deprecado | Reemplazado por ADR-XXX]\n**Decisores:** [Lista de personas involucradas]\n**Consulted:** [Personas consultadas]\n**Informed:** [Personas informadas]\n\n---\n\n## Contexto y Problema\n\n[Describe el contexto y el problema que requiere una decisión. Incluya:\n- ¿Qué problema estamos tratando de resolver?\n- ¿Por qué es importante resolverlo ahora?\n- ¿Qué restricciones o requisitos existen?\n- ¿Qué factores influyen en la decisión?]\n\n**Ejemplo:**\n\nNuestro sistema actualmente almacena archivos de usuarios directamente en el servidor de aplicación. Con el crecimiento esperado a 10,000+ usuarios, necesitamos una solución de almacenamiento más escalable y fiable. El presupuesto es limitado ($500/mes máximo para almacenamiento).\n\n---\n\n## Drivers de Decisión\n\n[Factores clave que influyen en la decisión, priorizados]\n\n- [Driver 1: ej. Escalabilidad - debe soportar 10TB+]\n- [Driver 2: ej. Costo - máximo $500/mes]\n- [Driver 3: ej. Rendimiento - latencia < 200ms]\n- [Driver 4: ej. Experiencia del equipo]\n\n---\n\n## Opciones Consideradas\n\n1. [Opción 1]\n2. [Opción 2]\n3. [Opción 3]\n\n---\n\n## Análisis de Opciones\n\n### Opción 1: [Nombre de la opción]\n\n**Descripción:**\n[Descripción breve de la opción]\n\n**Pros:**\n- ✅ [Ventaja 1]\n- ✅ [Ventaja 2]\n- ✅ [Ventaja 3]\n\n**Contras:**\n- ❌ [Desventaja 1]\n- ❌ [Desventaja 2]\n\n**Costo estimado:** [Costo mensual/anual]\n\n**Esfuerzo de implementación:** [Alto/Medio/Bajo - X días]\n\n---\n\n### Opción 2: [Nombre de la opción]\n\n**Descripción:**\n[Descripción breve]\n\n**Pros:**\n- ✅ [Ventaja 1]\n- ✅ [Ventaja 2]\n\n**Contras:**\n- ❌ [Desventaja 1]\n- ❌ [Desventaja 2]\n\n**Costo estimado:** [Costo]\n\n**Esfuerzo de implementación:** [Estimación]\n\n---\n\n### Opción 3: [Nombre de la opción]\n\n**Descripción:**\n[Descripción breve]\n\n**Pros:**\n- ✅ [Ventaja 1]\n\n**Contras:**\n- ❌ [Desventaja 1]\n\n**Costo estimado:** [Costo]\n\n**Esfuerzo de implementación:** [Estimación]\n\n---\n\n## Decisión\n\n**Opción elegida:** [Opción X - Nombre]\n\n**Justificación:**\n\n[Explicar por qué se eligió esta opción sobre las demás. Referenciar los drivers de decisión y cómo esta opción los satisface mejor.]\n\n**Ejemplo:**\n\nElegimos AWS S3 (Opción 2) porque:\n1. Cumple con el requisito de escalabilidad ilimitada\n2. El costo estimado ($200/mes) está dentro del presupuesto\n3. La integración es sencilla con SDK oficial\n4. Ofrece durabilidad del 99.999999999% (eleven nines)\n5. Aunque tiene mayor latencia que el almacenamiento local, es aceptable para nuestro caso de uso\n\n---\n\n## Consecuencias\n\n### Positivas\n\n- [Beneficio 1 esperado]\n- [Beneficio 2 esperado]\n- [Beneficio 3 esperado]\n\n### Negativas\n\n- [Trade-off 1 que debemos aceptar]\n- [Trade-off 2 que debemos aceptar]\n\n### Neutras\n\n- [Cambio 1 que no es ni bueno ni malo]\n- [Cambio 2 neutral]\n\n---\n\n## Plan de Implementación\n\n1. [Paso 1: ej. Crear cuenta AWS y configurar bucket S3]\n2. [Paso 2: ej. Implementar servicio de upload en backend]\n3. [Paso 3: ej. Migrar archivos existentes]\n4. [Paso 4: ej. Monitorear costos y rendimiento]\n\n**Timeline estimado:** [X semanas]\n\n**Responsable:** [Nombre del líder técnico]\n\n---\n\n## Validación y Métricas\n\n**Criterios de éxito:**\n\n- [ ] Latencia de upload < 500ms (percentil 95)\n- [ ] Costo mensual < $500\n- [ ] Zero downtime durante migración\n- [ ] 100% de archivos migrados correctamente\n\n**Métricas a monitorear:**\n\n- Costo mensual de almacenamiento\n- Latencia de upload/download\n- Tasa de errores\n- Uso de ancho de banda\n\n---\n\n## Revisión\n\n**Fecha de revisión:** [YYYY-MM-DD - 3-6 meses después]\n\n**Preguntas para la revisión:**\n\n- ¿Se cumplieron las expectativas de rendimiento?\n- ¿El costo está dentro del presupuesto?\n- ¿Surgieron problemas inesperados?\n- ¿Cambiaríamos la decisión con lo que sabemos ahora?\n\n---\n\n## Notas Adicionales\n\n[Cualquier información adicional relevante:\n- Links a documentación técnica\n- Experimentos o POCs realizados\n- Feedback de stakeholders\n- Referencias a ADRs relacionados]\n\n---\n\n## Historial de Cambios\n\n| Fecha | Autor | Cambio |\n|-------|-------|--------|\n| YYYY-MM-DD | [Nombre] | Creación inicial |\n| YYYY-MM-DD | [Nombre] | Actualización de costos |\n| YYYY-MM-DD | [Nombre] | Estado cambiado a Aceptado |",
+          "instructions": "Cree un ADR por cada decisión arquitectónica significativa. Numere secuencialmente (ADR-001, ADR-002, etc.). Mantenga ADRs inmutables - si cambia una decisión, cree un nuevo ADR que reemplace al anterior."
+        }
+      ],
+      "tags": ["adr", "architecture", "decision-record", "documentation"],
+      "references": {
+        "sommerville": ["chapter-6"]
+      },
+      "relatedTemplates": ["template-004"]
+    },
+    {
+      "id": "template-006",
+      "name": "Plan de Testing",
+      "category": "testing",
+      "description": "Template completo para planificar estrategia de testing, incluyendo tipos de pruebas, cobertura y criterios de aceptación",
+      "methodology": ["all"],
+      "format": "markdown",
+      "difficulty": "intermediate",
+      "estimatedTime": "2-3 horas para completar",
+      "sections": [
+        {
+          "title": "1. Introducción y Objetivos",
+          "content": "# Plan de Testing\n## [Nombre del Proyecto]\n\n**Versión:** 1.0\n**Fecha:** [DD/MM/YYYY]\n**Responsable QA:** [Nombre]\n**Estado:** [Borrador / Aprobado]\n\n---\n\n## 1.1 Introducción\n\nEste documento describe la estrategia de testing para el proyecto **[NOMBRE]**. Define los tipos de pruebas a realizar, criterios de aceptación, recursos necesarios y cronograma.\n\n## 1.2 Objetivos de Testing\n\n**Objetivos primarios:**\n\n1. **Verificar funcionalidad:** Asegurar que todos los requerimientos funcionales se cumplen\n2. **Validar calidad:** Confirmar que el software cumple estándares de calidad definidos\n3. **Detectar defectos:** Identificar y documentar bugs antes de producción\n4. **Asegurar regresión:** Evitar que nuevos cambios rompan funcionalidad existente\n\n**Criterios de éxito:**\n\n- Cobertura de código: ≥ 80%\n- Tasa de aprobación de tests: ≥ 95%\n- Defectos críticos encontrados: 0 antes de release\n- Defectos mayores: < 5 antes de release\n\n## 1.3 Alcance\n\n**En alcance:**\n\n- Testing funcional de todos los módulos\n- Testing de integración entre componentes\n- Testing de regresión automatizado\n- Testing de rendimiento básico\n- Testing de seguridad (OWASP Top 10)\n\n**Fuera de alcance:**\n\n- Testing de penetración avanzado (se contratará especialista externo)\n- Testing de usabilidad con usuarios reales (fase posterior)\n- Testing de carga extrema (se usará herramienta especializada)",
+          "instructions": "Defina claramente el alcance del testing. Sea realista con los objetivos y recursos disponibles."
+        },
+        {
+          "title": "2. Estrategia de Testing",
+          "content": "# 2. Estrategia de Testing\n\n## 2.1 Pirámide de Testing\n\n```\n        ┌─────────────────┐\n        │   E2E Tests     │  10% - Pocos, lentos, costosos\n        │   (Selenium)    │\n        └─────────────────┘\n      ┌───────────────────────┐\n      │  Integration Tests    │  30% - Moderados\n      │  (API, Database)      │\n      └───────────────────────┘\n    ┌─────────────────────────────┐\n    │     Unit Tests              │  60% - Muchos, rápidos, baratos\n    │  (Jest, Vitest)             │\n    └─────────────────────────────┘\n```\n\n**Distribución de esfuerzo:**\n- 60% Unit tests: Base sólida, feedback rápido\n- 30% Integration tests: Verificar interacciones\n- 10% E2E tests: Flujos críticos de usuario\n\n## 2.2 Tipos de Testing\n\n### 2.2.1 Unit Testing\n\n**Objetivo:** Verificar que cada unidad de código funciona correctamente de forma aislada\n\n**Herramientas:**\n- Frontend: Jest + React Testing Library\n- Backend: Jest + Supertest\n\n**Cobertura objetivo:** 80% de statements, 75% de branches\n\n**Responsable:** Desarrolladores (TDD cuando sea posible)\n\n**Frecuencia:** En cada commit (pre-commit hook)\n\n**Ejemplo de caso:**\n\n```javascript\ndescribe('UserService.register', () => {\n  it('should create user with hashed password', async () => {\n    const userData = { email: 'test@example.com', password: 'Pass123!' };\n    const user = await userService.register(userData);\n    \n    expect(user.email).toBe('test@example.com');\n    expect(user.password).not.toBe('Pass123!'); // debe estar hasheada\n    expect(user.password).toMatch(/^\\$2[aby]\\$/); // bcrypt format\n  });\n  \n  it('should throw error if email already exists', async () => {\n    await expect(\n      userService.register({ email: 'existing@example.com', password: 'Pass123!' })\n    ).rejects.toThrow('Email already registered');\n  });\n});\n```\n\n---\n\n### 2.2.2 Integration Testing\n\n**Objetivo:** Verificar que múltiples componentes funcionan correctamente juntos\n\n**Herramientas:**\n- API tests: Postman + Newman (CI)\n- Database: Testcontainers\n\n**Cobertura:** Todas las APIs públicas, integraciones con servicios externos\n\n**Responsable:** Equipo QA + Desarrolladores\n\n**Frecuencia:** En cada merge a develop\n\n**Escenarios clave:**\n\n1. **Registro completo de usuario:**\n   - POST /api/users → 201 Created\n   - Verificar usuario en database\n   - Verificar email de confirmación enviado\n\n2. **Flujo de autenticación:**\n   - POST /api/auth/login → 200 OK + JWT token\n   - GET /api/users/me (con token) → 200 OK + user data\n   - GET /api/users/me (sin token) → 401 Unauthorized\n\n---\n\n### 2.2.3 End-to-End Testing\n\n**Objetivo:** Simular comportamiento real de usuarios en flujos completos\n\n**Herramientas:**\n- Playwright o Cypress\n\n**Cobertura:** Flujos críticos de negocio (5-10 escenarios principales)\n\n**Responsable:** Equipo QA\n\n**Frecuencia:** Nightly builds + antes de cada release\n\n**Flujos críticos:**\n\n1. **Happy path - Usuario nuevo:**\n   - Visitar homepage\n   - Hacer click en \"Registrarse\"\n   - Completar formulario\n   - Confirmar email (mock)\n   - Login\n   - Ver dashboard\n\n2. **Transacción completa:**\n   - Login como usuario existente\n   - Agregar item al carrito\n   - Proceder al checkout\n   - Completar pago (mock)\n   - Verificar confirmación\n\n---\n\n### 2.2.4 Performance Testing\n\n**Objetivo:** Asegurar que el sistema cumple requerimientos no funcionales de rendimiento\n\n**Herramientas:**\n- K6 o JMeter\n- Lighthouse (frontend)\n\n**Escenarios:**\n\n| Escenario | Usuarios Concurrentes | Duración | Tasa de éxito esperada | Latencia p95 |\n|-----------|----------------------|----------|----------------------|-------------|\n| Carga normal | 100 | 10 min | >99% | <1s |\n| Carga pico | 500 | 5 min | >95% | <2s |\n| Stress test | 1000 | 2 min | >85% | <5s |\n\n**Métricas a monitorear:**\n- Response time (p50, p95, p99)\n- Throughput (requests/second)\n- Error rate\n- CPU/Memory usage\n\n---\n\n### 2.2.5 Security Testing\n\n**Objetivo:** Identificar vulnerabilidades de seguridad\n\n**Herramientas:**\n- OWASP ZAP (automated scan)\n- npm audit / Snyk (dependencias)\n- SonarQube (análisis de código)\n\n**Checklist OWASP Top 10:**\n\n- [ ] A01: Broken Access Control\n- [ ] A02: Cryptographic Failures\n- [ ] A03: Injection (SQL, NoSQL, XSS)\n- [ ] A04: Insecure Design\n- [ ] A05: Security Misconfiguration\n- [ ] A06: Vulnerable Components\n- [ ] A07: Authentication Failures\n- [ ] A08: Software and Data Integrity\n- [ ] A09: Logging Failures\n- [ ] A10: SSRF (Server-Side Request Forgery)\n\n**Responsable:** Security champion + external audit (antes de release)\n\n**Frecuencia:** Semanal (automated) + pre-release (manual)\n\n---\n\n### 2.2.6 Regression Testing\n\n**Objetivo:** Asegurar que nuevos cambios no rompan funcionalidad existente\n\n**Estrategia:**\n- Suite automatizada de tests (Unit + Integration + E2E)\n- Ejecución en CI/CD pipeline\n- Smoke tests después de cada deploy\n\n**Cobertura:** 100% de features existentes\n\n**Frecuencia:** En cada commit a main/develop\n\n## 2.3 Ambientes de Testing\n\n| Ambiente | Propósito | Datos | Actualización |\n|----------|-----------|-------|---------------|\n| Local | Desarrollo y unit tests | Mock/Fixtures | Bajo demanda |\n| Dev | Integration testing | Sintéticos | Cada commit |\n| Staging | E2E + UAT | Copia de producción (anonimizada) | Semanal |\n| Production | Smoke tests post-deploy | Reales | Cada release |",
+          "instructions": "Adapte los tipos de testing y herramientas a su stack tecnológico. Priorice testing automatizado sobre manual para mayor eficiencia."
+        },
+        {
+          "title": "3. Recursos y Cronograma",
+          "content": "# 3. Recursos y Cronograma\n\n## 3.1 Equipo de Testing\n\n| Rol | Nombre | Responsabilidades | Dedicación |\n|-----|--------|------------------|------------|\n| QA Lead | [Nombre] | Estrategia, reportes, coordinación | 100% |\n| QA Engineer 1 | [Nombre] | Automation, E2E tests | 100% |\n| QA Engineer 2 | [Nombre] | Manual testing, documentación | 100% |\n| Desarrolladores | Equipo | Unit tests, code reviews | 20% |\n\n## 3.2 Herramientas y Licencias\n\n| Herramienta | Propósito | Costo | Estado |\n|-------------|-----------|-------|--------|\n| Jest | Unit testing | Gratis | ✅ Configurado |\n| Playwright | E2E testing | Gratis | ⏳ Por configurar |\n| K6 | Performance | Gratis (cloud paid) | ⏳ Por evaluar |\n| JIRA | Bug tracking | $XXX/mes | ✅ Activo |\n| Postman | API testing | Gratis | ✅ Configurado |\n\n## 3.3 Cronograma de Testing\n\n### Sprint N - Setup\n\n**Semana 1:**\n- [ ] Configurar frameworks de testing\n- [ ] Definir estructura de tests\n- [ ] Crear primeros unit tests (ejemplo)\n- [ ] Documentar guías para desarrolladores\n\n**Semana 2:**\n- [ ] Escribir tests para módulo de autenticación\n- [ ] Configurar CI/CD pipeline con tests\n- [ ] Crear primeros E2E tests (login flow)\n\n### Sprint N+1 - Expansión\n\n**Semana 3-4:**\n- [ ] Alcanzar 60% cobertura de unit tests\n- [ ] Completar integration tests de APIs\n- [ ] Configurar herramienta de performance testing\n\n### Sprint N+2 - Consolidación\n\n**Semana 5-6:**\n- [ ] Alcanzar 80% cobertura objetivo\n- [ ] Completar suite de E2E tests\n- [ ] Primer performance test baseline\n- [ ] Security scan inicial\n\n## 3.4 Métricas y Reportes\n\n**Métricas a trackear:**\n\n- **Cobertura de código:** % de código cubierto por tests\n- **Test pass rate:** % de tests que pasan\n- **Defect density:** Bugs encontrados / KLOC\n- **Mean Time To Detect (MTTD):** Tiempo promedio para encontrar bugs\n- **Escaped defects:** Bugs encontrados en producción\n\n**Dashboard semanal:**\n\n```\n┌─────────────────────────────────────────────┐\n│  Testing Dashboard - Week XX                │\n├─────────────────────────────────────────────┤\n│  Code Coverage:         [████████░░] 82%    │\n│  Unit Tests:            [██████████] 100%   │\n│  Integration Tests:     [█████████░] 95%    │\n│  E2E Tests:             [███████░░░] 75%    │\n│                                             │\n│  Bugs Found:            23                  │\n│  ├─ Critical:           0                   │\n│  ├─ Major:              3                   │\n│  ├─ Minor:              12                  │\n│  └─ Trivial:            8                   │\n│                                             │\n│  Bugs Fixed:            18                  │\n│  Open Bugs:             5                   │\n└─────────────────────────────────────────────┘\n```\n\n**Reporte de release:**\n\nAntes de cada release, generar reporte que incluya:\n\n1. Estado de tests (% passing)\n2. Cobertura alcanzada\n3. Bugs críticos/mayores pendientes (debe ser 0)\n4. Resultados de performance testing\n5. Resultados de security scan\n6. Recomendación: Go / No-Go para release",
+          "instructions": "Ajuste el cronograma a la duración de sus sprints. Mantenga métricas visibles para todo el equipo (dashboard en tiempo real)."
+        }
+      ],
+      "tags": ["testing", "qa", "test-plan", "automation", "quality"],
+      "references": {
+        "sommerville": ["chapter-8"]
+      },
+      "relatedTemplates": ["template-007"]
+    },
+    {
+      "id": "template-007",
+      "name": "Test Cases Template",
+      "category": "testing",
+      "description": "Template para documentar casos de prueba detallados con pasos, datos de entrada y resultados esperados",
+      "methodology": ["all"],
+      "format": "markdown",
+      "difficulty": "basic",
+      "estimatedTime": "15-20 minutos por test case",
+      "sections": [
+        {
+          "title": "Test Cases",
+          "content": "# Test Cases - [Módulo/Feature]\n\n**Fecha:** [DD/MM/YYYY]\n**Tester:** [Nombre]\n**Versión del sistema:** [X.X.X]\n\n---\n\n## TC-001: Registro exitoso de usuario con datos válidos\n\n### Información General\n\n| Campo | Valor |\n|-------|-------|\n| **ID** | TC-001 |\n| **Título** | Registro exitoso de usuario con datos válidos |\n| **Módulo** | Autenticación |\n| **Prioridad** | Alta |\n| **Tipo** | Funcional, Positivo |\n| **Requerimiento** | RF-001 |\n| **Estado** | ✅ Passed / ❌ Failed / ⏸️ Blocked |\n| **Ejecutado por** | [Nombre] |\n| **Fecha ejecución** | [DD/MM/YYYY] |\n\n### Precondiciones\n\n- Navegador soportado abierto (Chrome, Firefox, Safari)\n- Aplicación accesible en [URL]\n- Email de prueba disponible: `testuser_[TIMESTAMP]@example.com`\n- Base de datos en estado limpio (email no existe)\n\n### Datos de Prueba\n\n| Campo | Valor |\n|-------|-------|\n| Nombre | Juan Pérez |\n| Email | testuser_1234@example.com |\n| Contraseña | SecurePass123! |\n| Confirmar Contraseña | SecurePass123! |\n\n### Pasos de Ejecución\n\n| # | Acción | Resultado Esperado |\n|---|--------|-------------------|\n| 1 | Navegar a la URL de registro `/register` | Página de registro se carga correctamente |\n| 2 | Ingresar \"Juan Pérez\" en campo \"Nombre completo\" | Campo acepta el texto sin errores |\n| 3 | Ingresar \"testuser_1234@example.com\" en campo \"Email\" | Campo acepta el formato, muestra ✓ verde si es válido |\n| 4 | Ingresar \"SecurePass123!\" en campo \"Contraseña\" | Campo oculta texto con bullets (•••), muestra indicador de fortaleza \"Fuerte\" |\n| 5 | Ingresar \"SecurePass123!\" en campo \"Confirmar Contraseña\" | Campo acepta, muestra ✓ verde indicando coincidencia |\n| 6 | Marcar checkbox \"Acepto términos y condiciones\" | Checkbox se marca, botón \"Crear cuenta\" se habilita |\n| 7 | Hacer click en botón \"Crear cuenta\" | Sistema procesa, muestra loading spinner |\n| 8 | Esperar respuesta del servidor (< 3 segundos) | Mensaje de éxito aparece: \"Cuenta creada. Revisa tu email para activarla\" |\n| 9 | Verificar en base de datos | Usuario existe con estado \"pending_verification\" |\n| 10 | Verificar bandeja de email | Email de confirmación recibido en < 2 minutos |\n\n### Resultado Esperado\n\n- Usuario creado exitosamente en base de datos\n- Estado del usuario: `pending_verification`\n- Email de confirmación enviado y recibido\n- Contraseña almacenada como hash (bcrypt)\n- Pantalla muestra mensaje de éxito\n- Usuario redirigido a `/login` o permanece en página con mensaje\n\n### Resultado Actual\n\n[Describir qué sucedió realmente durante la ejecución]\n\n**Ejemplo si pasa:**\n✅ Test ejecutado exitosamente. Usuario creado con ID `usr_123456`, email enviado en 45 segundos, contraseña hasheada correctamente.\n\n**Ejemplo si falla:**\n❌ Test falló en paso 8. El mensaje de éxito no apareció. La consola muestra error 500. Usuario NO fue creado en base de datos.\n\n### Evidencias\n\n- Screenshot 1: Formulario completado antes de submit\n- Screenshot 2: Mensaje de éxito\n- Screenshot 3: Email de confirmación recibido\n- [Video de ejecución si aplica]\n\n### Bugs Relacionados\n\n- [BUG-123]: Link al bug si se encontró alguno\n\n---\n\n## TC-002: Registro fallido - Email ya existe\n\n### Información General\n\n| Campo | Valor |\n|-------|-------|\n| **ID** | TC-002 |\n| **Título** | Registro fallido cuando email ya está registrado |\n| **Módulo** | Autenticación |\n| **Prioridad** | Alta |\n| **Tipo** | Funcional, Negativo |\n| **Requerimiento** | RF-001 |\n| **Estado** | ⏳ Pending |\n\n### Precondiciones\n\n- Usuario con email `existing@example.com` YA existe en base de datos\n- Navegador abierto en página de registro\n\n### Datos de Prueba\n\n| Campo | Valor |\n|-------|-------|\n| Nombre | María García |\n| Email | existing@example.com (YA EXISTE) |\n| Contraseña | AnotherPass456! |\n\n### Pasos de Ejecución\n\n| # | Acción | Resultado Esperado |\n|---|--------|-------------------|\n| 1 | Navegar a `/register` | Página de registro se carga |\n| 2 | Completar formulario con email existente | Campos aceptan datos |\n| 3 | Hacer click en \"Crear cuenta\" | Sistema valida |\n| 4 | Observar respuesta | Mensaje de error aparece: \"Este email ya está registrado\" |\n| 5 | Verificar base de datos | NO se creó nuevo usuario |\n| 6 | Verificar email | NO se envió email |\n\n### Resultado Esperado\n\n- Sistema rechaza el registro\n- Mensaje de error claro y específico\n- Opción de \"¿Olvidaste tu contraseña?\" visible\n- NO se crea usuario duplicado\n- NO se envía email\n- Usuario permanece en página de registro\n\n### Resultado Actual\n\n[Completar después de ejecutar]\n\n---\n\n## TC-003: Validación de contraseña débil\n\n### Información General\n\n| Campo | Valor |\n|-------|-------|\n| **ID** | TC-003 |\n| **Título** | Rechazo de contraseñas que no cumplen políticas de seguridad |\n| **Módulo** | Autenticación |\n| **Prioridad** | Media |\n| **Tipo** | Funcional, Negativo |\n| **Requerimiento** | RF-001, RNF-002 (Seguridad) |\n| **Estado** | ⏳ Pending |\n\n### Precondiciones\n\n- Navegador en página de registro\n- Política de contraseñas: mínimo 8 caracteres, mayúsculas, minúsculas, números\n\n### Datos de Prueba (Contraseñas Inválidas)\n\n| Contraseña | Razón de Invalidez | Mensaje Esperado |\n|------------|-------------------|------------------|\n| `abc123` | Muy corta (< 8 caracteres) | \"La contraseña debe tener al menos 8 caracteres\" |\n| `abcdefgh` | Sin números ni mayúsculas | \"Debe incluir al menos una mayúscula y un número\" |\n| `ABCDEFGH` | Sin números ni minúsculas | \"Debe incluir al menos una minúscula y un número\" |\n| `12345678` | Sin letras | \"Debe incluir al menos una letra\" |\n| `Password` | Sin números | \"Debe incluir al menos un número\" |\n\n### Pasos de Ejecución (Repetir para cada contraseña)\n\n| # | Acción | Resultado Esperado |\n|---|--------|-------------------|\n| 1 | Ingresar contraseña inválida en campo \"Contraseña\" | Indicador de fortaleza muestra \"Débil\" en rojo |\n| 2 | Observar mensaje de validación | Mensaje específico aparece bajo el campo |\n| 3 | Intentar enviar formulario | Botón \"Crear cuenta\" deshabilitado o muestra error al submit |\n\n### Resultado Esperado\n\n- Validación en tiempo real (no requiere submit)\n- Mensajes de error específicos y útiles\n- Indicador visual de fortaleza de contraseña\n- Imposibilidad de crear cuenta con contraseña inválida\n\n---\n\n## TC-004: [Título del Test Case]\n\n### Información General\n\n| Campo | Valor |\n|-------|-------|\n| **ID** | TC-XXX |\n| **Título** | [Descripción clara del caso de prueba] |\n| **Módulo** | [Nombre del módulo] |\n| **Prioridad** | [Alta/Media/Baja] |\n| **Tipo** | [Funcional/No funcional, Positivo/Negativo] |\n| **Requerimiento** | [RF-XXX o RNF-XXX] |\n| **Estado** | [Pending/Passed/Failed/Blocked] |\n\n### Precondiciones\n\n- [Condición 1 que debe cumplirse antes de ejecutar]\n- [Condición 2]\n\n### Datos de Prueba\n\n| Campo | Valor |\n|-------|-------|\n| [Campo 1] | [Valor de prueba] |\n| [Campo 2] | [Valor de prueba] |\n\n### Pasos de Ejecución\n\n| # | Acción | Resultado Esperado |\n|---|--------|-------------------|\n| 1 | [Acción a realizar] | [Qué debería pasar] |\n| 2 | [Acción a realizar] | [Qué debería pasar] |\n\n### Resultado Esperado\n\n- [Descripción detallada del comportamiento esperado]\n\n### Resultado Actual\n\n[Completar después de ejecutar]\n\n---\n\n## Resumen de Ejecución\n\n**Fecha:** [DD/MM/YYYY]\n**Versión:** [X.X.X]\n\n| Test Case ID | Título | Estado | Bugs |\n|--------------|--------|--------|------|\n| TC-001 | Registro exitoso | ✅ Passed | - |\n| TC-002 | Email ya existe | ✅ Passed | - |\n| TC-003 | Contraseña débil | ❌ Failed | BUG-456 |\n| TC-004 | [Título] | ⏸️ Blocked | - |\n\n**Tasa de aprobación:** 2/3 = 66.7%\n\n**Bloqueadores:** TC-004 bloqueado por falta de ambiente de staging\n\n**Bugs encontrados:** 1 (BUG-456: Validación de contraseña no funciona en tiempo real)",
+          "instructions": "Cree test cases detallados para cada funcionalidad crítica. Sea específico en los pasos y resultados esperados. Incluya evidencias (screenshots, videos) al ejecutar."
+        }
+      ],
+      "tags": ["test-cases", "qa", "testing", "manual-testing"],
+      "references": {
+        "sommerville": ["chapter-8"]
+      },
+      "relatedTemplates": ["template-006"]
+    },
+    {
+      "id": "template-008",
+      "name": "Charter de Proyecto",
+      "category": "management",
+      "description": "Documento de inicio de proyecto que autoriza formalmente el proyecto y define objetivos, alcance y stakeholders",
+      "methodology": ["all"],
+      "format": "markdown",
+      "difficulty": "intermediate",
+      "estimatedTime": "2-3 horas para completar",
+      "sections": [
+        {
+          "title": "1. Información del Proyecto",
+          "content": "# Charter de Proyecto\n## [Nombre del Proyecto]\n\n**Código del Proyecto:** [PROJ-XXX]\n**Fecha de Creación:** [DD/MM/YYYY]\n**Versión:** 1.0\n**Sponsor del Proyecto:** [Nombre y cargo]\n**Gerente de Proyecto:** [Nombre]\n\n---\n\n## 1. Información General\n\n### 1.1 Descripción del Proyecto\n\n[Descripción ejecutiva del proyecto en 2-3 párrafos que responda:\n- ¿Qué se va a construir?\n- ¿Por qué es necesario?\n- ¿Cuál es el problema que resuelve?]\n\n**Ejemplo:**\n\nEl proyecto \"Sistema de Gestión de Inventarios\" tiene como objetivo desarrollar una aplicación web que permita a la empresa XYZ gestionar eficientemente su inventario de productos en múltiples almacenes. Actualmente, el proceso es manual mediante hojas de cálculo, lo que genera errores frecuentes, falta de visibilidad en tiempo real y dificultad para la toma de decisiones.\n\nEl sistema automatizará los procesos de entrada/salida de productos, generará alertas de stock bajo, proporcionará reportes en tiempo real y se integrará con el sistema ERP existente. Se espera reducir errores en un 80% y mejorar la eficiencia operativa en un 40%.\n\n### 1.2 Justificación del Negocio\n\n**Problema actual:**\n- [Problema 1: ej. Pérdidas por errores de inventario: $50K anuales]\n- [Problema 2: ej. Tiempo excesivo en conteos manuales: 20 horas/semana]\n- [Problema 3: ej. Falta de visibilidad en tiempo real]\n\n**Beneficios esperados:**\n\n| Beneficio | Métrica | Valor Actual | Valor Objetivo | Plazo |\n|-----------|---------|--------------|----------------|-------|\n| Reducción de errores | % de discrepancias | 15% | < 3% | 6 meses |\n| Ahorro de tiempo | Horas/semana en gestión | 20h | 5h | 3 meses |\n| Visibilidad | Tiempo para generar reporte | 2 días | Tiempo real | 3 meses |\n| ROI | Retorno de inversión | - | 150% | 12 meses |\n\n**Costo de NO hacer el proyecto:**\n- Pérdidas anuales estimadas: $100K\n- Riesgo de clientes insatisfechos por falta de stock\n- Desventaja competitiva vs. competidores modernizados\n\n### 1.3 Alineación Estratégica\n\n**Objetivos estratégicos de la organización:**\n\n1. [Objetivo estratégico 1: ej. Transformación digital]\n2. [Objetivo estratégico 2: ej. Mejora de eficiencia operativa]\n3. [Objetivo estratégico 3: ej. Reducción de costos]\n\n**Cómo este proyecto contribuye:**\n\n- ✅ Contribuye directamente a transformación digital\n- ✅ Mejora eficiencia operativa en área de logística\n- ✅ Reduce costos operativos estimados en $80K anuales",
+          "instructions": "El charter debe ser conciso pero completo. Enfóquese en el valor de negocio y justificación clara del proyecto."
+        },
+        {
+          "title": "2. Objetivos y Alcance",
+          "content": "# 2. Objetivos y Alcance\n\n## 2.1 Objetivos del Proyecto\n\n### Objetivos SMART:\n\n**Objetivo 1:**\n- **Específico:** Desarrollar sistema web de gestión de inventarios con módulos de entrada/salida, reportes y alertas\n- **Medible:** 100% de funcionalidades definidas en SRS implementadas\n- **Alcanzable:** Con equipo de 4 desarrolladores en 4 meses\n- **Relevante:** Alineado con estrategia de transformación digital\n- **Temporal:** Lanzamiento en producción: [DD/MM/YYYY]\n\n**Objetivo 2:**\n- **Específico:** Reducir errores de inventario mediante automatización\n- **Medible:** De 15% de discrepancias a < 3%\n- **Alcanzable:** Con implementación de escaneo de códigos de barras y validaciones automáticas\n- **Relevante:** Impacta directamente en rentabilidad\n- **Temporal:** Medición a 6 meses post-lanzamiento\n\n**Objetivo 3:**\n- **Específico:** Capacitar a 100% del personal de almacenes en el nuevo sistema\n- **Medible:** 25 usuarios capacitados con evaluación aprobada (> 80%)\n- **Alcanzable:** Programa de capacitación de 2 semanas\n- **Relevante:** Crítico para adopción exitosa\n- **Temporal:** Completar antes del lanzamiento\n\n## 2.2 Alcance del Proyecto\n\n### En Alcance:\n\n**Módulos a desarrollar:**\n\n1. **Gestión de Productos**\n   - Alta, baja, modificación de productos\n   - Categorización y etiquetado\n   - Códigos de barras\n\n2. **Control de Inventario**\n   - Entrada de mercancía\n   - Salida de mercancía\n   - Transferencias entre almacenes\n   - Ajustes de inventario\n\n3. **Reportes y Analytics**\n   - Stock actual por almacén\n   - Movimientos históricos\n   - Productos con stock bajo\n   - Valorización de inventario\n\n4. **Alertas y Notificaciones**\n   - Stock bajo (configurable)\n   - Productos próximos a vencer\n   - Movimientos inusuales\n\n5. **Integraciones**\n   - API REST con sistema ERP existente\n   - Exportación a Excel/PDF\n\n**Entregables:**\n\n- [ ] Documento de Requerimientos (SRS)\n- [ ] Documento de Arquitectura\n- [ ] Código fuente (repositorio Git)\n- [ ] Tests automatizados (cobertura > 80%)\n- [ ] Manual de usuario\n- [ ] Manual técnico\n- [ ] Plan de capacitación\n- [ ] Sistema en producción\n\n### Fuera de Alcance:\n\n❌ Módulo de compras/órdenes a proveedores (fase 2)\n❌ Aplicación móvil nativa (se usará responsive web)\n❌ Integración con sistema de contabilidad (solo ERP)\n❌ Sistema de punto de venta (POS)\n❌ Gestión de múltiples monedas (solo moneda local)\n\n**Supuestos:**\n\n- El sistema ERP proveerá API REST documentada\n- Los almacenes tienen conexión a internet estable\n- Se cuenta con escáneres de códigos de barras\n- Los datos de productos actuales están disponibles en formato Excel\n\n**Restricciones:**\n\n- Presupuesto máximo: $120,000 USD\n- Fecha límite: [DD/MM/YYYY] (no negociable)\n- Debe integrarse con ERP SAP existente\n- Solo personal interno (no se puede outsourcing)\n- Cumplimiento con normas de seguridad ISO 27001\n\n## 2.3 Criterios de Éxito\n\n**Criterios de aceptación del proyecto:**\n\n1. ✅ Todas las funcionalidades del alcance implementadas y probadas\n2. ✅ Tasa de errores < 3% en inventario después de 3 meses\n3. ✅ 95% de usuarios capacitados y satisfechos (survey > 4/5)\n4. ✅ Tiempo de respuesta de sistema < 2 segundos\n5. ✅ Disponibilidad del sistema > 99%\n6. ✅ Cero bugs críticos en producción\n7. ✅ Integración con ERP funcionando correctamente\n8. ✅ Proyecto completado dentro de presupuesto y plazo",
+          "instructions": "Sea muy específico en qué está IN y OUT of scope. Los supuestos y restricciones deben estar claramente documentados para evitar malentendidos."
+        },
+        {
+          "title": "3. Stakeholders y Organización",
+          "content": "# 3. Stakeholders y Organización del Proyecto\n\n## 3.1 Stakeholders Clave\n\n| Stakeholder | Rol | Interés | Influencia | Estrategia de Engagement |\n|-------------|-----|---------|------------|-------------------------|\n| Carlos Pérez | Sponsor / CFO | Alto - Aprobador de presupuesto | Alta | Reportes quincenales, decisiones críticas |\n| María Gómez | Usuario Clave / Jefe de Almacén | Alto - Usará el sistema diariamente | Media | Participación en diseño UX, UAT |\n| Juan López | Gerente de TI | Alto - Responsable de infraestructura | Alta | Coordinación semanal, decisiones técnicas |\n| Equipo de Almacén | Usuarios Finales (25 personas) | Alto - Adoptarán el sistema | Baja | Capacitaciones, canales de feedback |\n| Proveedor ERP | Proveedor Externo | Medio - Deben proveer API | Media | Acuerdos técnicos, SLA de soporte |\n| Auditoría Interna | Compliance | Medio - Verifican controles | Media | Revisiones de seguridad mensuales |\n\n## 3.2 Estructura del Equipo\n\n```\n                    ┌──────────────────┐\n                    │ Sponsor (CFO)    │\n                    └────────┬─────────┘\n                             │\n                    ┌────────▼─────────┐\n                    │ Project Manager  │\n                    └────────┬─────────┘\n                             │\n        ┌────────────────────┼────────────────────┐\n        │                    │                    │\n   ┌────▼─────┐       ┌─────▼──────┐      ┌─────▼─────┐\n   │  Tech    │       │   Dev      │      │    QA     │\n   │  Lead    │       │   Team     │      │   Team    │\n   └──────────┘       └────────────┘      └───────────┘\n                           (4)                  (2)\n```\n\n### Roles y Responsabilidades:\n\n**Project Manager (PM):**\n- Planificación y seguimiento del proyecto\n- Gestión de riesgos y issues\n- Comunicación con stakeholders\n- Control de presupuesto y cronograma\n- **Dedicación:** 100%\n- **Contacto:** pm@empresa.com\n\n**Technical Lead:**\n- Arquitectura del sistema\n- Decisiones técnicas clave\n- Code reviews\n- Mentoría al equipo de desarrollo\n- **Dedicación:** 100%\n- **Contacto:** techlead@empresa.com\n\n**Desarrolladores (4):**\n- Desarrollo de features\n- Unit testing\n- Documentación técnica\n- **Dedicación:** 100% cada uno\n- **Skills:** Frontend (React), Backend (Node.js), Database (PostgreSQL)\n\n**QA Engineers (2):**\n- Plan de testing\n- Testing manual y automatizado\n- Reporte de bugs\n- User Acceptance Testing (UAT)\n- **Dedicación:** 100% cada uno\n\n**UX/UI Designer:**\n- Diseño de interfaces\n- Prototipos\n- User research\n- **Dedicación:** 50% (compartido con otro proyecto)\n\n**DevOps Engineer:**\n- Infraestructura cloud\n- CI/CD pipelines\n- Monitoring\n- **Dedicación:** 25% (soporte según necesidad)\n\n## 3.3 Comité de Dirección (Steering Committee)\n\n**Miembros:**\n- CFO (Sponsor)\n- Gerente de TI\n- Gerente de Operaciones\n- Project Manager\n\n**Responsabilidades:**\n- Aprobar cambios de alcance mayores\n- Resolver conflictos escalados\n- Revisar progreso mensualmente\n- Aprobar releases\n\n**Frecuencia de reuniones:** Mensual (última semana del mes)\n\n## 3.4 Comunicación\n\n| Tipo de Comunicación | Audiencia | Frecuencia | Medio | Responsable |\n|---------------------|-----------|------------|-------|--------------|\n| Status Report | Sponsor, Steering Committee | Quincenal | Email + Dashboard | PM |\n| Daily Standup | Equipo de desarrollo | Diaria | Presencial/Zoom | Tech Lead |\n| Sprint Review | Stakeholders clave | Cada 2 semanas | Demo en vivo | PM + Tech Lead |\n| Retrospectiva | Equipo completo | Cada 2 semanas | Presencial | PM |\n| Risk Review | Sponsor, Comité | Mensual | Reunión | PM |\n| Reporte Ejecutivo | C-Level | Mensual | Presentación | Sponsor |",
+          "instructions": "Identifique todos los stakeholders desde el inicio. La falta de engagement de stakeholders clave es una causa común de fallo de proyectos."
+        }
+      ],
+      "tags": ["project-charter", "management", "planning", "stakeholders"],
+      "references": {
+        "sommerville": ["chapter-1", "chapter-2"]
+      },
+      "relatedTemplates": ["template-009"]
+    },
+    {
+      "id": "template-009",
       "name": "Retrospectiva de Sprint",
-      "category": "Ágil",
-      "description": "Plantilla de retrospectiva para identificar mejoras y acciones concretas",
-      "chapter": 3,
+      "category": "management",
+      "description": "Template para facilitar retrospectivas de sprint productivas usando formato Start-Stop-Continue",
+      "methodology": ["scrum", "agile"],
       "format": "markdown",
-      "applicableFor": [
-        "agil",
-        "scrum"
-      ],
-      "difficulty": "baja",
-      "estimatedTime": "1 hora",
-      "content": "# RETROSPECTIVA SPRINT [#XX]\n**Fecha**: [DD/MM/YYYY]\n**Participantes**: [Nombres]\n**Facilitador**: [Scrum Master]\n\n## DATOS DEL SPRINT\n- **Comprometido**: [X] story points\n- **Completado**: [Y] story points\n- **Velocity**: [Y] points\n- **Bugs encontrados**: [Z]\n\n## ¿QUÉ SALIÓ BIEN? 😊\n1. [Práctica o situación positiva]\n2. [Otra cosa positiva]\n3. ...\n\n## ¿QUÉ PODEMOS MEJORAR? 🤔\n1. [Problema o fricción identificada]\n2. [Otra área de mejora]\n3. ...\n\n## ACCIONES DE MEJORA\n| Acción | Responsable | Fecha Límite | Estado |\n|--------|-------------|--------------|--------|\n| [Acción concreta y medible] | [Nombre] | [Fecha] | [ ] |\n| [Otra acción] | [Nombre] | [Fecha] | [ ] |\n\n## EXPERIMENTOS A PROBAR\n1. [Algo nuevo que queremos intentar este sprint]\n2. ...\n\n## MÉTRICAS DE RETROSPECTIVA\n- **Nivel de felicidad del equipo**: [1-10]\n- **Nivel de colaboración**: [1-10]\n- **¿Recomendarían trabajar en este equipo?**: [Sí/No]\n\n## SEGUIMIENTO DE ACCIONES PASADAS\n| Acción (de sprint anterior) | Estado | Observaciones |\n|------------------------------|--------|---------------|\n| [Acción del sprint pasado]   | ✅ Done | Funcionó bien |\n| [Otra acción]                | ⚠️ Parcial | Seguir trabajando |",
+      "difficulty": "basic",
+      "estimatedTime": "Durante la reunión (1-1.5 horas)",
       "sections": [
-        "Datos del Sprint",
-        "Qué Salió Bien",
-        "Qué Podemos Mejorar",
-        "Acciones de Mejora",
-        "Experimentos",
-        "Métricas de Retrospectiva",
-        "Seguimiento"
+        {
+          "title": "Retrospectiva Template",
+          "content": "# Sprint Retrospective - Sprint [N]\n\n**Fecha:** [DD/MM/YYYY]\n**Duración:** 1.5 horas\n**Facilitador:** [Nombre]\n**Participantes:** [Lista de nombres]\n**Sprint Goal:** [Objetivo del sprint que terminó]\n\n---\n\n## 📊 Datos del Sprint\n\n**Sprint:** [Número]\n**Fechas:** [DD/MM] - [DD/MM]\n**Duración:** 2 semanas\n\n**Métricas:**\n\n| Métrica | Planeado | Completado | % |\n|---------|----------|------------|---|\n| Story Points | 40 | 35 | 87.5% |\n| User Stories | 12 | 10 | 83% |\n| Bugs Creados | - | 8 | - |\n| Bugs Resueltos | - | 12 | - |\n\n**Velocity:** 35 SP (promedio últimos 3 sprints: 38 SP)\n\n---\n\n## 🎯 Check-in: Estado de Ánimo del Equipo\n\n[Cada miembro coloca un emoji que representa su estado de ánimo]\n\n| Miembro | Emoji | Comentario (opcional) |\n|---------|-------|----------------------|\n| Alice | 😊 | Sprint productivo |\n| Bob | 😐 | Algunas frustraciones con deploys |\n| Carol | 😃 | Me gustó trabajar en el nuevo feature |\n| Dave | 😟 | Muchas interrupciones este sprint |\n| Eve | 😊 | Buen trabajo en equipo |\n\n**Promedio del equipo:** 😊 (Mayormente positivo)\n\n---\n\n## 🔍 Revisión de Acciones Anteriores\n\n[Revisar action items de la retro anterior]\n\n| Acción | Responsable | Estado | Notas |\n|--------|-------------|--------|-------|\n| Configurar CI/CD pipeline | Dave | ✅ Completado | Pipeline funciona correctamente |\n| Mejorar documentación de API | Bob | ⏳ En progreso | 60% completado, continuar |\n| Reducir reuniones a 30min máx | Alice (SM) | ✅ Completado | Todas las reuniones ahora son más eficientes |\n\n---\n\n## 🎨 Formato: Start - Stop - Continue\n\n### 🟢 START (Empezar a hacer)\n\n**¿Qué deberíamos empezar a hacer que no estamos haciendo actualmente?**\n\n1. **Pair programming para features complejos**\n   - *Aportado por:* Bob, Carol\n   - *Razón:* Reducir bugs y compartir conocimiento\n   - *Cómo:* Asignar 2 devs a US con complejidad > 8 SP\n   - *Responsable:* Tech Lead\n   - *Plazo:* Próximo sprint\n\n2. **Code freeze 1 día antes del release**\n   - *Aportado por:* QA team\n   - *Razón:* Dar tiempo para testing final sin cambios de último momento\n   - *Cómo:* No merge a main después del jueves\n   - *Responsable:* PM\n   - *Plazo:* Próximo sprint\n\n3. **Spike para investigar performance issues**\n   - *Aportado por:* Dave\n   - *Razón:* Queries lentas reportadas por usuarios\n   - *Cómo:* Asignar 5 SP para spike en próximo sprint\n   - *Responsable:* Dave + Alice\n   - *Plazo:* Sprint N+1\n\n---\n\n### 🔴 STOP (Dejar de hacer)\n\n**¿Qué estamos haciendo que no aporta valor o genera fricción?**\n\n1. **Reuniones sin agenda predefinida**\n   - *Aportado por:* Todo el equipo\n   - *Problema:* Reuniones se extienden y pierden foco\n   - *Solución:* Cancelar/reprogramar si no hay agenda 24h antes\n   - *Responsable:* Quien convoca la reunión\n   - *Acción:* Aplicar desde ya\n\n2. **Hotfixes directos a producción sin PR**\n   - *Aportado por:* Tech Lead\n   - *Problema:* Introducción de bugs, falta de trazabilidad\n   - *Solución:* SIEMPRE crear PR, aunque sea urgente (PR express con 1 reviewer)\n   - *Responsable:* Todos los devs\n   - *Acción:* Política obligatoria desde ya\n\n3. **Trabajar en weekend para \"recuperar\" tiempo**\n   - *Aportado por:* PM\n   - *Problema:* Burnout, estimaciones incorrectas\n   - *Solución:* Mejorar estimaciones, no comprometer más de la velocity\n   - *Responsable:* PM + Tech Lead\n   - *Acción:* Discutir en Sprint Planning\n\n---\n\n### 🟡 CONTINUE (Seguir haciendo)\n\n**¿Qué estamos haciendo bien que debemos mantener?**\n\n1. **Daily standups concisos y puntuales** ⭐\n   - *Aportado por:* Alice\n   - *Por qué funciona:* 15 minutos exactos, todos participan\n   - *Mantener:* Mismo formato, mismo horario (9:15 AM)\n\n2. **Demos en Sprint Review con stakeholders** ⭐\n   - *Aportado por:* PM\n   - *Por qué funciona:* Feedback temprano, alineación constante\n   - *Mantener:* Invitar a usuarios clave\n\n3. **Documentación inline en PRs** ⭐\n   - *Aportado por:* Bob\n   - *Por qué funciona:* Contexto claro, onboarding más fácil\n   - *Mantener:* Template de PR está funcionando bien\n\n4. **Slack channel para questions rápidas** ⭐\n   - *Aportado por:* Carol\n   - *Por qué funciona:* Respuestas rápidas sin interrumpir con calls\n   - *Mantener:* Usar #dev-questions\n\n5. **Celebrar wins del equipo (pizza Fridays)** ⭐\n   - *Aportado por:* Todo el equipo\n   - *Por qué funciona:* Moral alta, team bonding\n   - *Mantener:* Cada vez que completamos un milestone\n\n---\n\n## 💡 Insights y Aprendizajes\n\n### ¿Qué aprendimos este sprint?\n\n- **Técnico:** Jest snapshots ayudan mucho con testing de UI components\n- **Proceso:** Estimar con T-shirt sizes primero (S/M/L) y luego convertir a SP es más rápido\n- **Colaboración:** Async communication en documentos reduce reuniones\n\n### ¿Qué nos sorprendió?\n\n- La integración con API externa fue más simple de lo esperado\n- El bug crítico del viernes fue causado por config incorrecta, no código\n\n### ¿Qué obstáculos encontramos?\n\n- Staging environment estuvo caído 2 días → bloqueó testing\n- Falta de claridad en US-045 → requirió re-trabajo\n\n---\n\n## 🎯 Action Items para Próximo Sprint\n\n| Acción | Responsable | Fecha Límite | Prioridad |\n|--------|-------------|--------------|----------|\n| Implementar pair programming para US > 8 SP | Tech Lead | Sprint Planning | Alta |\n| Crear política de code freeze (jueves) | PM | Documentar esta semana | Alta |\n| Asignar spike de performance (5 SP) | Dave + Alice | Incluir en Sprint N+1 | Media |\n| Enforcer agenda 24h antes de reuniones | Todos | Inmediato | Alta |\n| Política obligatoria de PR (cero excepciones) | Tech Lead | Inmediato | Alta |\n| Revisar estimaciones en Planning | PM | Próximo Planning | Media |\n\n---\n\n## 📈 Tendencias (Últimos 3 Sprints)\n\n**Velocity:**\n- Sprint N-2: 42 SP\n- Sprint N-1: 38 SP\n- Sprint N: 35 SP\n- **Tendencia:** ⬇️ Bajando (discutir en Planning)\n\n**Bugs:**\n- Sprint N-2: 5 creados, 8 resueltos\n- Sprint N-1: 6 creados, 7 resueltos\n- Sprint N: 8 creados, 12 resueltos\n- **Tendencia:** ⬆️ Más bugs creados (investigar causas)\n\n**Team Morale:**\n- Sprint N-2: 😊\n- Sprint N-1: 😃\n- Sprint N: 😊\n- **Tendencia:** ➡️ Estable y positivo\n\n---\n\n## 🎤 Shout-outs y Reconocimientos\n\n**⭐ MVP del Sprint:** Carol\n- Razón: Resolvió el bug crítico de performance en < 4 horas\n\n**⭐ Mejor Colaborador:** Bob\n- Razón: Ayudó a onboarding del nuevo dev y mejoró documentación\n\n**⭐ Innovación:** Dave\n- Razón: Implementó caching que mejoró response time 10x\n\n---\n\n## 📝 Notas Adicionales\n\n- Próximo sprint es el último antes de release v1.0 → aumentar foco en testing\n- Nuevo dev (Frank) se une next sprint → asignar buddy (Bob)\n- PO estará de vacaciones semana 2 → delegado: Alice\n\n---\n\n## 🔒 Cierre\n\n**Retrospectiva de la Retrospectiva:**\n\n¿Fue útil esta retro? [Voting: 👍 5 | 👎 0]\n\n¿Qué mejorar para la próxima retro?\n- Tal vez probar formato diferente (Mad-Sad-Glad)\n- Timeboxing más estricto (nos pasamos 15 min)\n\n**Próxima retrospectiva:** [DD/MM/YYYY] - Sprint N+1\n\n---\n\n**Facilitador de próxima retro:** Dave (rotamos cada sprint)\n\n**Documento cerrado por:** [PM Name]\n**Fecha:** [DD/MM/YYYY]\n**Compartido con:** Equipo completo + Stakeholders clave",
+          "instructions": "Facilite la retro de forma que todos participen. Asegúrese de que los action items sean específicos, asignados y con fecha límite. Rotar el facilitador cada sprint mantiene el engagement."
+        }
       ],
-      "relatedRecommendations": [
-        "rec-005",
-        "rec-006",
-        "rec-007"
-      ],
-      "tags": [
-        "scrum",
-        "retrospectiva",
-        "mejora-continua",
-        "agil"
-      ]
+      "tags": ["retrospective", "scrum", "agile", "continuous-improvement"],
+      "references": {
+        "sommerville": ["chapter-3"]
+      },
+      "relatedTemplates": ["template-002", "template-008"]
     },
-    "tpl-006": {
-      "id": "tpl-006",
-      "name": "Documento de Arquitectura",
-      "category": "Arquitectura",
-      "description": "Documento simplificado de arquitectura con vistas, decisiones y stack tecnológico",
-      "chapter": 6,
+    {
+      "id": "template-010",
+      "name": "Definition of Done (DoD)",
+      "category": "methodology",
+      "description": "Checklist de criterios que debe cumplir una User Story para considerarse completada",
+      "methodology": ["scrum", "agile"],
       "format": "markdown",
-      "applicableFor": [
-        "todos"
-      ],
-      "difficulty": "alta",
-      "estimatedTime": "8-16 horas",
-      "content": "# DOCUMENTO DE ARQUITECTURA DE SOFTWARE\n**Proyecto**: [Nombre]\n**Versión**: 1.0\n**Fecha**: [DD/MM/YYYY]\n**Autor**: [Nombre del Arquitecto]\n\n## 1. INTRODUCCIÓN\n\n### 1.1 Propósito\n[Por qué existe este documento]\n\n### 1.2 Alcance\n[Qué sistema cubre este documento]\n\n### 1.3 Audiencia\n- Desarrolladores\n- DevOps\n- Product Managers\n\n## 2. REPRESENTACIÓN ARQUITECTÓNICA\n\n### 2.1 Patrón Arquitectónico Principal\n[MVC, Capas, Cliente-Servidor, Microservicios, etc.]\n\n**Por qué se eligió**:\n- [Razón 1]\n- [Razón 2]\n\n### 2.2 Diagrama de Alto Nivel\n```\n[Aquí va un diagrama ASCII o link a diagrama]\nFrontend (React) ← API REST → Backend (Node.js) → PostgreSQL\n                                      ↓\n                                    Redis\n```\n\n## 3. VISTAS ARQUITECTÓNICAS\n\n### 3.1 Vista Lógica\n[Componentes principales del sistema]\n\n**Componentes**:\n- **Frontend**: Aplicación React con Redux\n- **API Gateway**: Express.js\n- **Servicios de Negocio**:\n  - UserService\n  - OrderService\n  - PaymentService\n- **Data Layer**: PostgreSQL + Redis\n\n### 3.2 Vista de Proceso\n[Flujos principales]\n\n**Flujo: Realizar Compra**\n```\n1. Usuario → Frontend → API → OrderService\n2. OrderService → PaymentService\n3. PaymentService → Stripe API\n4. Si exitoso → OrderService actualiza BD\n5. OrderService → NotificationService (async)\n```\n\n### 3.3 Vista de Desarrollo\n[Organización del código]\n\n```\n/frontend\n  /src\n    /components\n    /pages\n    /services\n    /store (Redux)\n\n/backend\n  /src\n    /controllers\n    /services\n    /models\n    /middleware\n```\n\n### 3.4 Vista Física (Deployment)\n[Infraestructura]\n\n```\n┌──────────────┐\n│ Cloudflare   │ CDN\n└──────┬───────┘\n       │\n┌──────▼───────┐\n│ Vercel       │ Frontend (estático)\n└──────────────┘\n\n┌──────────────┐\n│ Render.com   │ Backend API\n└──────┬───────┘\n       │\n┌──────▼───────┐\n│ PostgreSQL   │ Database (Render)\n└──────────────┘\n\n┌──────────────┐\n│ Redis Cloud  │ Cache/Sessions\n└──────────────┘\n```\n\n## 4. DECISIONES ARQUITECTÓNICAS CLAVE\n\n### DA-001: Base de Datos Relacional vs NoSQL\n**Decisión**: PostgreSQL (relacional)\n**Razón**:\n- Datos altamente estructurados\n- Necesidad de transacciones ACID\n- Relaciones complejas entre entidades\n\n**Alternativas consideradas**:\n- MongoDB (descartado: no soporta ACID bien)\n\n### DA-002: Monolito vs Microservicios\n**Decisión**: Monolito modular\n**Razón**:\n- Equipo pequeño (<10 personas)\n- Complejidad de microservicios innecesaria\n- Más rápido de desarrollar y deployar\n\n**Plan de evolución**: Extraer microservicios cuando:\n- Equipo crezca a >20 personas\n- Necesidad de escalar componentes independientemente\n\n## 5. REQUISITOS NO FUNCIONALES\n\n### 5.1 Rendimiento\n- **Tiempo de respuesta**: < 2 segundos (95% de requests)\n- **Throughput**: 1000 requests/segundo\n\n**Estrategias**:\n- Caché en Redis para consultas frecuentes\n- Índices de BD optimizados\n- CDN para assets estáticos\n\n### 5.2 Escalabilidad\n- **Horizontal**: Backend puede escalar a múltiples instancias (stateless)\n- **Vertical**: BD puede escalar con read replicas\n\n### 5.3 Seguridad\n- **Autenticación**: JWT con refresh tokens\n- **Autorización**: RBAC (Role-Based Access Control)\n- **Encriptación**: HTTPS, passwords con bcrypt\n- **Rate limiting**: 100 requests/minuto por IP\n\n### 5.4 Disponibilidad\n- **Target**: 99.9% uptime (< 8.76 horas downtime/año)\n- **Estrategias**:\n  - Health checks\n  - Auto-scaling\n  - Database backups diarios\n\n## 6. STACK TECNOLÓGICO\n\n### Frontend\n- React 18\n- Redux Toolkit\n- TailwindCSS\n- Vite\n\n### Backend\n- Node.js 20\n- Express.js\n- Prisma ORM\n- Jest (testing)\n\n### Database\n- PostgreSQL 15\n- Redis 7\n\n### DevOps\n- Git + GitHub\n- GitHub Actions (CI/CD)\n- Vercel (frontend)\n- Render.com (backend)\n\n## 7. GESTIÓN DE DATOS\n\n### 7.1 Modelo de Datos\n[Link a diagrama de clases o ER]\n\n### 7.2 Migrations\n- **Herramienta**: Prisma Migrate\n- **Estrategia**: Versionadas, nunca editar migrations existentes\n\n### 7.3 Backups\n- **Frecuencia**: Diario (full) + continuo (point-in-time recovery)\n- **Retención**: 30 días\n\n## 8. SEGURIDAD\n\n### 8.1 Autenticación\n[JWT con access tokens (15 min) + refresh tokens (7 días)]\n\n### 8.2 Autorización\nRoles:\n- USER (lectura)\n- ADMIN (lectura + escritura)\n- SUPERADMIN (todo)\n\n### 8.3 Validación\n- Input validation en frontend y backend\n- Sanitización de datos\n\n## 9. MONITOREO Y LOGGING\n\n### 9.1 Logging\n- **Herramienta**: Winston (backend)\n- **Niveles**: error, warn, info, debug\n- **Centralización**: LogTail o similar\n\n### 9.2 Monitoreo\n- **APM**: Sentry para errors\n- **Uptime**: Uptime Robot\n- **Performance**: Web Vitals en frontend\n\n### 9.3 Alertas\n- Error rate > 5% → Alert a Slack\n- Downtime > 5 min → Alert a Email + SMS\n\n## 10. RIESGOS ARQUITECTÓNICOS\n\n| Riesgo | Probabilidad | Impacto | Mitigación |\n|--------|--------------|---------|------------|\n| Single point of failure (BD) | Media | Alto | Read replicas + backups |\n| Rate limiting de API externa | Baja | Medio | Implementar retry con backoff |\n| ... | ... | ... | ... |\n\n## 11. EVOLUCIÓN FUTURA\n\n### Roadmap Arquitectónico\n- **Q1 2026**: Implementar caché distribuido\n- **Q2 2026**: Migrar a microservicios (si equipo crece)\n- **Q3 2026**: Implementar event-driven architecture\n\n---\n**Aprobado por**: [Nombre Tech Lead]\n**Fecha**: [DD/MM/YYYY]",
+      "difficulty": "basic",
+      "estimatedTime": "30 minutos para definir, 5 minutos para verificar por US",
       "sections": [
-        "Introducción",
-        "Representación Arquitectónica",
-        "Vistas Arquitectónicas",
-        "Decisiones Arquitectónicas",
-        "Requisitos No Funcionales",
-        "Stack Tecnológico",
-        "Gestión de Datos",
-        "Seguridad",
-        "Monitoreo y Logging",
-        "Riesgos",
-        "Evolución Futura"
+        {
+          "title": "Definition of Done",
+          "content": "# Definition of Done (DoD)\n## [Nombre del Proyecto]\n\n**Versión:** 1.0\n**Fecha:** [DD/MM/YYYY]\n**Aprobado por:** Product Owner + Tech Lead\n\n---\n\n## ¿Qué es la Definition of Done?\n\nLa Definition of Done es un checklist de criterios que TODA User Story debe cumplir antes de ser marcada como \"Done\" en el Sprint. Es el acuerdo del equipo sobre qué significa \"terminado\".\n\n**Propósito:**\n- Asegurar calidad consistente\n- Evitar deuda técnica\n- Crear transparencia sobre el estado real del trabajo\n- Prevenir \"casi terminado\" perpetuo\n\n**Regla de oro:** Si NO cumple el DoD, NO está Done → vuelve al Sprint Backlog\n\n---\n\n## ✅ Checklist de Definition of Done\n\n### 1. 💻 Código\n\n- [ ] **Código escrito y funcionando**\n  - Feature implementada según criterios de aceptación\n  - Código sigue estándares del equipo (ESLint, Prettier)\n  - Sin comentarios //TODO o //FIXME pendientes\n  - Sin console.log() o debuggers olvidados\n\n- [ ] **Code review completado**\n  - Al menos 1 developer aprobó el PR\n  - Todos los comentarios del review resueltos\n  - No hay cambios pendientes solicitados\n\n- [ ] **Código mergeado a rama develop**\n  - Sin conflictos\n  - Build exitoso en CI/CD\n  - Sin romper otras funcionalidades\n\n---\n\n### 2. 🧪 Testing\n\n- [ ] **Unit tests escritos y pasando**\n  - Cobertura de código ≥ 80% para archivos modificados\n  - Tests cubren casos happy path y edge cases\n  - Tests son legibles y mantienibles\n\n- [ ] **Integration tests actualizados (si aplica)**\n  - APIs testeadas con casos positivos y negativos\n  - Integraciones con servicios externos verificadas\n\n- [ ] **Acceptance tests pasando**\n  - Criterios de aceptación verificados\n  - Casos de prueba manuales ejecutados (si no hay E2E)\n  - Screenshots/evidencias documentadas\n\n- [ ] **No regresiones**\n  - Suite completa de regression tests pasa\n  - Funcionalidades existentes siguen funcionando\n\n---\n\n### 3. 📚 Documentación\n\n- [ ] **Código autodocumentado**\n  - Nombres de variables/funciones son descriptivos\n  - Funciones complejas tienen JSDoc/comentarios\n  - Arquitectura/decisiones documentadas (ADRs si aplica)\n\n- [ ] **API documentada (si aplica)**\n  - Swagger/OpenAPI actualizado\n  - Ejemplos de request/response incluidos\n  - Códigos de error documentados\n\n- [ ] **README actualizado (si aplica)**\n  - Nuevas dependencias listadas\n  - Instrucciones de setup actualizadas\n  - Variables de entorno documentadas\n\n- [ ] **Manual de usuario actualizado (si aplica)**\n  - Nuevas features explicadas con screenshots\n  - FAQs actualizadas\n\n---\n\n### 4. 🚀 Deployment\n\n- [ ] **Desplegado en ambiente de staging**\n  - Feature funcionando en ambiente similar a producción\n  - Configuraciones de staging correctas\n  - Logs verificados (sin errores)\n\n- [ ] **Migrations ejecutadas (si aplica)**\n  - Scripts de migración de BD testeados\n  - Rollback plan documentado\n  - Datos de prueba migrados correctamente\n\n- [ ] **Feature flags configurados (si aplica)**\n  - Flag creado en configuración\n  - Comportamiento con flag ON/OFF verificado\n\n---\n\n### 5. ✨ UX/UI\n\n- [ ] **Diseño cumple con especificaciones**\n  - Mockups/diseños implementados fielmente\n  - Responsive (móvil, tablet, desktop)\n  - Cross-browser tested (Chrome, Firefox, Safari)\n\n- [ ] **Accesibilidad básica**\n  - Navegación por teclado funciona\n  - Labels en inputs\n  - Contraste de colores adecuado (WCAG AA)\n  - Alt text en imágenes\n\n- [ ] **UX validado**\n  - Flujo de usuario intuitivo\n  - Mensajes de error claros y útiles\n  - Loading states para operaciones largas\n\n---\n\n### 6. 🔒 Seguridad\n\n- [ ] **Input validation**\n  - Todos los inputs validados en backend\n  - Protección contra XSS, SQL injection\n  - Rate limiting si aplica\n\n- [ ] **Autenticación/Autorización**\n  - Endpoints protegidos correctamente\n  - Permisos verificados\n  - Tokens/sesiones manejados correctamente\n\n- [ ] **Datos sensibles protegidos**\n  - No hay secrets en código (usar env variables)\n  - Datos sensibles encriptados\n  - Logs no exponen información privada\n\n---\n\n### 7. 📊 Monitoring & Observability\n\n- [ ] **Logging implementado**\n  - Eventos importantes loggeados\n  - Errores incluyen contexto suficiente\n  - Nivel de log apropiado (debug, info, error)\n\n- [ ] **Métricas configuradas (si aplica)**\n  - Eventos de negocio trackeados (analytics)\n  - Métricas de performance monitoreadas\n\n- [ ] **Alertas configuradas (para features críticos)**\n  - Alertas de errores configuradas\n  - Thresholds definidos\n\n---\n\n### 8. ✅ Aceptación\n\n- [ ] **Product Owner aprobó**\n  - Demo realizada al PO\n  - Criterios de aceptación cumplidos\n  - Feedback incorporado\n\n- [ ] **Stakeholders clave notificados (si aplica)**\n  - Release notes enviadas\n  - Training/documentación compartida\n\n---\n\n## 🎯 DoD por Tipo de Work Item\n\n### User Story\n✅ TODO el checklist anterior aplica\n\n### Bug Fix\n- ✅ Secciones: 1, 2, 3, 4, 6, 7\n- ✅ Adicional: Root cause identificado y documentado\n- ✅ Adicional: Test agregado para prevenir regresión\n\n### Technical Debt / Refactor\n- ✅ Secciones: 1, 2, 3, 4, 7\n- ✅ Adicional: Performance mejorado (métricas antes/después)\n- ✅ Adicional: No hay cambios funcionales (comportamiento idéntico)\n\n### Spike (Investigación)\n- ✅ Documento con hallazgos\n- ✅ Recomendación clara (seguir path X)\n- ✅ Estimación actualizada si se convierte en US\n\n---\n\n## 📋 Cómo Usar el DoD\n\n### Durante el Sprint\n\n**En Development:**\n- Developer usa DoD como checklist personal antes de abrir PR\n\n**En Code Review:**\n- Reviewer verifica que se cumple el DoD\n\n**En Testing:**\n- QA verifica puntos de testing y UX\n\n**En Sprint Review:**\n- Solo se demuestran items que cumplen DoD\n\n### Actualización del DoD\n\n**Frecuencia:** Revisar cada 2-3 sprints en retrospectiva\n\n**Criterios para agregar items:**\n- ¿Este item previene bugs recurrentes?\n- ¿Es aplicable a TODAS las US?\n- ¿Es verificable objetivamente?\n\n**Criterios para remover items:**\n- ¿Ya es parte del proceso automático (CI/CD)?\n- ¿Es demasiado específico para pocas US?\n\n---\n\n## ⚠️ Excepciones al DoD\n\n**Regla general:** NO hay excepciones.\n\n**Casos especiales (requieren aprobación de PO + Tech Lead):**\n\n1. **Hotfix de emergencia en producción:**\n   - Mínimo: Código + Code Review + Deploy\n   - Crear ticket para completar DoD restante en próximo sprint\n\n2. **Spike/Investigación:**\n   - Usar DoD simplificado (ver arriba)\n\n3. **Dependencia bloqueada por terceros:**\n   - Marcar como \"Done con excepciones\"\n   - Crear ticket de seguimiento\n\n---\n\n## 📝 Template para PR Description\n\nCopiar este checklist en cada Pull Request:\n\n```markdown\n## Definition of Done\n\n### Code\n- [ ] Code review completado\n- [ ] Estándares de código cumplidos\n- [ ] Sin TODOs pendientes\n\n### Testing\n- [ ] Unit tests ≥ 80% coverage\n- [ ] Integration tests (si aplica)\n- [ ] Acceptance criteria verified\n- [ ] No regressions\n\n### Documentation\n- [ ] Code comments/JSDoc\n- [ ] API docs updated\n- [ ] README updated (si aplica)\n\n### Deployment\n- [ ] Tested in staging\n- [ ] Migrations tested (si aplica)\n\n### Security\n- [ ] Input validation\n- [ ] Auth/authz verified\n- [ ] No secrets in code\n\n### Acceptance\n- [ ] PO approved\n- [ ] Demo completed\n```\n\n---\n\n**Última actualización:** [DD/MM/YYYY]\n**Próxima revisión:** [DD/MM/YYYY]\n**Owner:** [Tech Lead Name]",
+          "instructions": "El DoD debe ser un contrato social del equipo. Todos deben estar de acuerdo. Empiece con un DoD simple y evolucione basado en problemas reales que encuentren."
+        }
       ],
-      "relatedRecommendations": [
-        "rec-008",
-        "rec-009",
-        "rec-010"
-      ],
-      "tags": [
-        "arquitectura",
-        "diseño",
-        "decisiones",
-        "vistas",
-        "stack"
-      ]
-    },
-    "tpl-007": {
-      "id": "tpl-007",
-      "name": "Definition of Done",
-      "category": "QA",
-      "description": "Checklist de criterios para considerar una historia de usuario completa",
-      "chapter": 3,
-      "format": "markdown",
-      "applicableFor": [
-        "agil",
-        "scrum",
-        "xp"
-      ],
-      "difficulty": "baja",
-      "estimatedTime": "30 minutos",
-      "content": "# DEFINITION OF DONE\n\nUna historia de usuario está DONE cuando cumple TODOS estos criterios:\n\n## ✅ CÓDIGO\n- [ ] Código escrito y completado\n- [ ] Sin TODOs o FIXMEs en código de producción\n- [ ] Sin console.log() o código de debugging\n- [ ] Sin código comentado (dead code)\n- [ ] Sigue estándares de código del proyecto (linter pasa)\n\n## ✅ TESTING\n- [ ] Unit tests escritos y pasando\n- [ ] Integration tests (si aplica) pasando\n- [ ] Coverage > [X]% (definir según proyecto)\n- [ ] Probado manualmente en ambiente de desarrollo\n- [ ] Probado en múltiples navegadores/dispositivos (si aplica)\n\n## ✅ REVISIÓN\n- [ ] Pull Request creado\n- [ ] Descripción clara en PR (qué, por qué, cómo probar)\n- [ ] Code review completado\n- [ ] PR aprobado por al menos [X] desarrolladores\n- [ ] Comentarios de review resueltos\n\n## ✅ CALIDAD\n- [ ] No rompe funcionalidades existentes (no regresiones)\n- [ ] Sin warnings en build\n- [ ] Performance aceptable (medido, no asumido)\n- [ ] Accesibilidad considerada (si es UI)\n\n## ✅ DOCUMENTACIÓN\n- [ ] README actualizado (si hay cambios en setup)\n- [ ] Comentarios en código complejo (solo lo NO obvio)\n- [ ] API documentada (si hay nuevos endpoints)\n- [ ] CHANGELOG actualizado\n\n## ✅ DEPLOYMENT\n- [ ] Deployado a ambiente de staging\n- [ ] Probado en staging por QA\n- [ ] Probado en staging por Product Owner\n- [ ] Product Owner acepta la funcionalidad\n- [ ] Ready para merge a main/producción\n\n## ✅ SEGURIDAD (si aplica)\n- [ ] Input validation implementada\n- [ ] Sin secretos en código\n- [ ] Autorización implementada (si modifica datos)\n- [ ] Sin vulnerabilidades conocidas (npm audit / safety)\n\n---\n\n**Nota**: Si una historia no cumple TODOS los criterios, NO está Done.",
-      "sections": [
-        "Código",
-        "Testing",
-        "Revisión",
-        "Calidad",
-        "Documentación",
-        "Deployment",
-        "Seguridad"
-      ],
-      "relatedRecommendations": [
-        "rec-005",
-        "rec-006",
-        "rec-007"
-      ],
-      "tags": [
-        "dod",
-        "qa",
-        "calidad",
-        "agil",
-        "scrum",
-        "acceptance"
-      ]
+      "tags": ["definition-of-done", "scrum", "agile", "quality", "checklist"],
+      "references": {
+        "sommerville": ["chapter-3"]
+      },
+      "relatedTemplates": ["template-002", "template-009"]
     }
+  ],
+  "checklists": [
+    {
+      "id": "checklist-001",
+      "name": "Daily Scrum Checklist",
+      "category": "methodology",
+      "methodology": "scrum",
+      "description": "Checklist para preparar y conducir Daily Scrum efectivo de 15 minutos",
+      "difficulty": "basic",
+      "items": [
+        {
+          "id": "ds-001",
+          "text": "Reunión agendada para mismo horario diario (ej: 9:15 AM)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "La consistencia en el horario mejora la asistencia y crea un ritmo predecible",
+          "examples": ["9:15 AM diario", "Después del almuerzo (2:00 PM)", "Primera actividad del día"]
+        },
+        {
+          "id": "ds-002",
+          "text": "Ubicación definida (presencial o link de video call)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Todos deben saber dónde conectarse sin perder tiempo buscando el link"
+        },
+        {
+          "id": "ds-003",
+          "text": "Duración máxima 15 minutos (timeboxing estricto)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Usar timer visible. Si hay temas que requieren más tiempo, agendar reunión separada después",
+          "examples": ["Timer en 15 minutos", "Scrum Master controla tiempo", "Campana/alarma al minuto 14"]
+        },
+        {
+          "id": "ds-004",
+          "text": "Cada miembro responde las 3 preguntas clave",
+          "category": "execution",
+          "required": true,
+          "helpText": "¿Qué hice ayer? ¿Qué haré hoy? ¿Qué impedimentos tengo?",
+          "examples": [
+            "Ayer: Completé el login. Hoy: Implementaré validación de formularios. Impedimento: Necesito acceso a staging",
+            "Ayer: Revisé PRs. Hoy: Feature de reportes. Impedimento: Ninguno",
+            "Ayer: Testing de API. Hoy: Continuar testing. Impedimento: Bug bloqueante #456"
+          ]
+        },
+        {
+          "id": "ds-005",
+          "text": "Todos los miembros del Dev Team presentes (o justificada ausencia)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Es para el equipo de desarrollo. PO y Stakeholders pueden asistir pero solo observan"
+        },
+        {
+          "id": "ds-006",
+          "text": "De pie o formato que promueva brevedad (si es presencial)",
+          "category": "execution",
+          "required": false,
+          "helpText": "El formato 'stand-up' mantiene energía y evita que se extienda"
+        },
+        {
+          "id": "ds-007",
+          "text": "Scrum Master facilita y remueve impedimentos",
+          "category": "execution",
+          "required": true,
+          "helpText": "SM no interroga, solo facilita. Toma nota de impedimentos para resolverlos después del Daily"
+        },
+        {
+          "id": "ds-008",
+          "text": "Impedimentos identificados se agregan al Impediment Backlog",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "No resolver impedimentos durante el Daily, solo identificarlos y priorizarlos"
+        },
+        {
+          "id": "ds-009",
+          "text": "Conversaciones detalladas se posponen para después (parking lot)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Si surge un tema que requiere discusión larga, anotar y agendar con solo las personas relevantes"
+        },
+        {
+          "id": "ds-010",
+          "text": "Sprint Burndown actualizado y visible",
+          "category": "preparation",
+          "required": false,
+          "helpText": "Tener el burndown visible ayuda al equipo a ver progreso y ajustar si es necesario"
+        }
+      ],
+      "tags": ["scrum", "daily", "standup", "agile", "ceremonies"],
+      "references": {
+        "sommerville": ["chapter-3"]
+      }
+    },
+    {
+      "id": "checklist-002",
+      "name": "Sprint Planning Checklist",
+      "category": "methodology",
+      "methodology": "scrum",
+      "description": "Checklist completo para planificar un Sprint exitoso con objetivos claros y compromisos realistas",
+      "difficulty": "intermediate",
+      "items": [
+        {
+          "id": "sp-001",
+          "text": "Product Backlog refinado y priorizado por PO",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Top items del backlog deben estar claros, estimados y priorizados ANTES del Planning",
+          "examples": ["Top 20 US refinadas en sesión anterior", "Criterios de aceptación definidos", "Dependencias identificadas"]
+        },
+        {
+          "id": "sp-002",
+          "text": "Velocity del equipo conocido (promedio últimos 3 sprints)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Usar velocity histórico para determinar capacidad realista del sprint",
+          "examples": ["Sprint 1: 32 SP, Sprint 2: 38 SP, Sprint 3: 35 SP → Promedio: 35 SP"]
+        },
+        {
+          "id": "sp-003",
+          "text": "Disponibilidad del equipo calculada (vacaciones, días festivos)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Ajustar capacity si hay ausencias. Ej: 2 devs de 5 en vacaciones = 60% capacity",
+          "examples": ["5 devs × 10 días × 6h/día = 300h disponibles", "Menos 2 devs de vacaciones = 180h disponibles"]
+        },
+        {
+          "id": "sp-004",
+          "text": "Sprint Goal definido y acordado",
+          "category": "execution",
+          "required": true,
+          "helpText": "El Sprint Goal es el objetivo de negocio que queremos lograr, no solo una lista de tareas",
+          "examples": [
+            "Completar módulo de autenticación funcional",
+            "Permitir a usuarios crear y editar perfiles",
+            "Alcanzar 80% de cobertura de tests en módulo X"
+          ]
+        },
+        {
+          "id": "sp-005",
+          "text": "User Stories seleccionadas cumplen Definition of Ready",
+          "category": "execution",
+          "required": true,
+          "helpText": "Cada US debe estar clara, estimada, testeable y sin dependencias bloqueantes",
+          "examples": [
+            "✓ Criterios de aceptación definidos",
+            "✓ Estimada con Planning Poker",
+            "✓ Sin dependencias externas",
+            "✓ Diseños/mockups disponibles si aplica"
+          ]
+        },
+        {
+          "id": "sp-006",
+          "text": "Tareas técnicas identificadas y asignadas (task breakdown)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Descomponer cada US en tareas técnicas concretas de 2-8 horas",
+          "examples": [
+            "US-045 → Crear componente UI (4h), Implementar API endpoint (6h), Tests (4h)",
+            "US-046 → Diseñar schema DB (2h), Migración (3h), CRUD operations (8h)"
+          ]
+        },
+        {
+          "id": "sp-007",
+          "text": "Dependencias entre US identificadas y gestionadas",
+          "category": "execution",
+          "required": true,
+          "helpText": "Si US-002 depende de US-001, asegurar que US-001 se complete primero"
+        },
+        {
+          "id": "sp-008",
+          "text": "Definition of Done revisada y entendida por todos",
+          "category": "execution",
+          "required": true,
+          "helpText": "Todos saben qué significa 'Done' para este sprint (tests, docs, deploy, etc.)"
+        },
+        {
+          "id": "sp-009",
+          "text": "Riesgos identificados y mitigaciones planificadas",
+          "category": "execution",
+          "required": false,
+          "helpText": "¿Qué puede salir mal? ¿Cómo lo mitigamos?",
+          "examples": [
+            "Riesgo: API externa puede estar inestable → Mitigación: Implementar circuit breaker",
+            "Riesgo: Dev junior no conoce tecnología → Mitigación: Pair programming con senior"
+          ]
+        },
+        {
+          "id": "sp-010",
+          "text": "Compromiso del equipo (no imposición del PO/Manager)",
+          "category": "execution",
+          "required": true,
+          "helpText": "El equipo de desarrollo decide cuánto trabajo puede completar, nadie más"
+        },
+        {
+          "id": "sp-011",
+          "text": "Sprint Backlog creado en herramienta (Jira, Azure DevOps, etc.)",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Todas las US y tareas deben estar visibles y trackeables en la herramienta del equipo"
+        },
+        {
+          "id": "sp-012",
+          "text": "Duración del Planning respetada (máximo 8h para sprint de 1 mes)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Para sprint de 2 semanas: máximo 4 horas. Dividir en 2 sesiones si es necesario"
+        }
+      ],
+      "tags": ["scrum", "sprint-planning", "agile", "ceremonies"],
+      "references": {
+        "sommerville": ["chapter-3"]
+      }
+    },
+    {
+      "id": "checklist-003",
+      "name": "Sprint Review Checklist",
+      "category": "methodology",
+      "methodology": "scrum",
+      "description": "Checklist para realizar Sprint Review efectivo mostrando incremento funcional a stakeholders",
+      "difficulty": "basic",
+      "items": [
+        {
+          "id": "sr-001",
+          "text": "Stakeholders clave invitados (PO, usuarios, management)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Invitar al menos 3 días antes. Incluir PO, usuarios finales, y sponsors del proyecto",
+          "examples": ["Product Owner (obligatorio)", "2-3 usuarios clave", "Sponsor ejecutivo", "Equipo de marketing/ventas si aplica"]
+        },
+        {
+          "id": "sr-002",
+          "text": "Ambiente de demo preparado y testeado",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Probar la demo 30 minutos antes. Tener plan B si falla (video grabado, slides)",
+          "examples": ["Staging environment actualizado", "Datos de demo cargados", "Credenciales de test preparadas"]
+        },
+        {
+          "id": "sr-003",
+          "text": "Solo demostrar trabajo que cumple Definition of Done",
+          "category": "execution",
+          "required": true,
+          "helpText": "NO demostrar trabajo parcial o 'casi terminado'. Solo incremento potencialmente liberable"
+        },
+        {
+          "id": "sr-004",
+          "text": "Presentación abre con Sprint Goal y contexto",
+          "category": "execution",
+          "required": true,
+          "helpText": "Recordar qué queríamos lograr este sprint antes de mostrar el trabajo",
+          "examples": ["Sprint Goal era: Completar módulo de reportes", "Logramos 8 de 10 User Stories planeadas"]
+        },
+        {
+          "id": "sr-005",
+          "text": "Demo enfocada en valor de negocio, no en detalles técnicos",
+          "category": "execution",
+          "required": true,
+          "helpText": "Mostrar QUÉ hace el sistema y POR QUÉ es valioso, no CÓMO está implementado",
+          "examples": [
+            "✓ 'Ahora los usuarios pueden exportar reportes a Excel en 1 click'",
+            "✗ 'Implementamos un endpoint REST con Pandas para generar XLSX'"
+          ]
+        },
+        {
+          "id": "sr-006",
+          "text": "Cada miembro del equipo participa en la demo",
+          "category": "execution",
+          "required": false,
+          "helpText": "Rotar quién hace la demo. Todos deben sentirse ownership del producto"
+        },
+        {
+          "id": "sr-007",
+          "text": "Feedback de stakeholders capturado (notas, grabación)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Asignar a alguien (no quien demuestra) para tomar notas del feedback"
+        },
+        {
+          "id": "sr-008",
+          "text": "Discusión del Product Backlog y próximos pasos",
+          "category": "execution",
+          "required": true,
+          "helpText": "PO presenta prioridades para próximo sprint basado en progreso actual"
+        },
+        {
+          "id": "sr-009",
+          "text": "Métricas del sprint presentadas (velocity, burndown)",
+          "category": "execution",
+          "required": false,
+          "helpText": "Mostrar progreso objetivo: SP completados, bugs resueltos, etc."
+        },
+        {
+          "id": "sr-010",
+          "text": "Duración respetada (máximo 4h para sprint de 1 mes)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Para sprint de 2 semanas: máximo 2 horas. Timeboxing estricto"
+        },
+        {
+          "id": "sr-011",
+          "text": "Action items del feedback agregados al Product Backlog",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Todo feedback válido debe convertirse en US o bugs en el backlog"
+        }
+      ],
+      "tags": ["scrum", "sprint-review", "demo", "agile", "ceremonies"],
+      "references": {
+        "sommerville": ["chapter-3"]
+      }
+    },
+    {
+      "id": "checklist-004",
+      "name": "Sprint Retrospective Checklist",
+      "category": "methodology",
+      "methodology": "scrum",
+      "description": "Checklist para facilitar retrospectiva productiva enfocada en mejora continua",
+      "difficulty": "basic",
+      "items": [
+        {
+          "id": "sret-001",
+          "text": "Espacio seguro y privado (solo el Scrum Team)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "NO invitar a managers externos. El equipo debe sentirse libre de hablar honestamente",
+          "examples": ["Solo Dev Team + Scrum Master + Product Owner", "Sala privada o call sin grabación"]
+        },
+        {
+          "id": "sret-002",
+          "text": "Datos del sprint disponibles (métricas, velocity, bugs)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Tener números objetivos para basar la discusión en hechos, no solo percepciones",
+          "examples": ["Velocity: 35 SP", "Bugs creados: 12", "Sprint goal: parcialmente cumplido"]
+        },
+        {
+          "id": "sret-003",
+          "text": "Formato de retro seleccionado (Start-Stop-Continue, Mad-Sad-Glad, etc.)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Variar el formato cada 2-3 sprints mantiene el engagement",
+          "examples": ["Start-Stop-Continue", "4Ls (Liked, Learned, Lacked, Longed for)", "Sailboat"]
+        },
+        {
+          "id": "sret-004",
+          "text": "Facilitador asignado (rotar, no siempre el SM)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Rotar el facilitador empodera al equipo y trae perspectivas frescas"
+        },
+        {
+          "id": "sret-005",
+          "text": "Check-in inicial (estado de ánimo del equipo)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Usar emojis, 1-5 rating, o fist-to-five para medir moral del equipo",
+          "examples": ["Cada persona muestra con dedos 1-5 su estado de ánimo", "Emoji en Miro/Mural board"]
+        },
+        {
+          "id": "sret-006",
+          "text": "Revisión de action items de retro anterior",
+          "category": "execution",
+          "required": true,
+          "helpText": "Si no revisamos action items anteriores, el equipo dejará de tomarlos en serio"
+        },
+        {
+          "id": "sret-007",
+          "text": "Todos participan (no solo los más vocales)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Usar técnicas como silent brainstorming, round-robin, o voting para incluir a todos",
+          "examples": ["Escribir ideas en post-its primero (5 min silencio)", "Cada persona habla en turno"]
+        },
+        {
+          "id": "sret-008",
+          "text": "Enfoque en acciones concretas, no solo quejas",
+          "category": "execution",
+          "required": true,
+          "helpText": "Cada problema identificado debe tener al menos una acción propuesta",
+          "examples": [
+            "Problema: Meetings muy largas → Acción: Implementar agenda obligatoria 24h antes",
+            "Problema: CI/CD lento → Acción: Spike de 3 SP para optimizar pipeline"
+          ]
+        },
+        {
+          "id": "sret-009",
+          "text": "Action items específicos con responsable y fecha",
+          "category": "execution",
+          "required": true,
+          "helpText": "Sin responsable y fecha, los action items nunca se completan",
+          "examples": [
+            "Acción: Configurar linter → Responsable: Alice → Fecha: Antes de próximo sprint",
+            "Acción: Documentar proceso de deploy → Responsable: Bob → Fecha: Esta semana"
+          ]
+        },
+        {
+          "id": "sret-010",
+          "text": "Máximo 3-5 action items (enfoque)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Mejor 3 acciones que se completan que 20 que se olvidan"
+        },
+        {
+          "id": "sret-011",
+          "text": "Celebrar wins y reconocer esfuerzos",
+          "category": "execution",
+          "required": true,
+          "helpText": "No solo enfocarse en problemas. Reconocer logros y buen trabajo",
+          "examples": ["MVP del sprint", "Mejor ayuda entre colegas", "Innovación técnica"]
+        },
+        {
+          "id": "sret-012",
+          "text": "Duración respetada (máximo 3h para sprint de 1 mes)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Para sprint de 2 semanas: máximo 1.5 horas"
+        },
+        {
+          "id": "sret-013",
+          "text": "Notas de retro documentadas y compartidas",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Compartir resumen con equipo. Agregar action items al Sprint Backlog"
+        }
+      ],
+      "tags": ["scrum", "retrospective", "continuous-improvement", "agile", "ceremonies"],
+      "references": {
+        "sommerville": ["chapter-3"]
+      }
+    },
+    {
+      "id": "checklist-005",
+      "name": "Pair Programming Session Checklist",
+      "category": "methodology",
+      "methodology": "xp",
+      "description": "Checklist para sesiones efectivas de programación en pareja siguiendo prácticas de Extreme Programming",
+      "difficulty": "basic",
+      "items": [
+        {
+          "id": "pp-001",
+          "text": "Objetivo de la sesión claramente definido",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Definir QUÉ van a construir juntos antes de empezar",
+          "examples": [
+            "Implementar validación de formulario de registro",
+            "Refactorizar módulo de autenticación",
+            "Resolver bug crítico #456"
+          ]
+        },
+        {
+          "id": "pp-002",
+          "text": "Ambiente de trabajo preparado (IDE, dependencias, tests corriendo)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "No perder tiempo al inicio configurando. Tener todo listo antes de empezar"
+        },
+        {
+          "id": "pp-003",
+          "text": "Roles definidos: Driver (escribe) y Navigator (revisa)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Driver controla teclado y escribe código. Navigator piensa estratégicamente y revisa",
+          "examples": [
+            "Driver: enfocado en sintaxis y detalles",
+            "Navigator: pensando en arquitectura, casos edge, tests"
+          ]
+        },
+        {
+          "id": "pp-004",
+          "text": "Cambio de roles cada 15-25 minutos (usar timer)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Rotar para mantener ambos cerebros activos y evitar fatiga de uno solo",
+          "examples": ["Pomodoro de 25 min → cambiar roles", "Cada test que pasa → cambiar"]
+        },
+        {
+          "id": "pp-005",
+          "text": "Comunicación constante (pensar en voz alta)",
+          "category": "execution",
+          "required": true,
+          "helpText": "El Navigator debe verbalizar su pensamiento. El Driver explica qué está haciendo",
+          "examples": [
+            "Driver: 'Voy a agregar validación de email aquí'",
+            "Navigator: 'Considera también validar que el dominio exista'"
+          ]
+        },
+        {
+          "id": "pp-006",
+          "text": "Navigator busca errores, piensa en casos edge y mejoras",
+          "category": "execution",
+          "required": true,
+          "helpText": "El Navigator NO es pasivo. Debe revisar activamente y sugerir mejoras",
+          "examples": [
+            "¿Qué pasa si el input es null?",
+            "¿Este código maneja Unicode correctamente?",
+            "¿Deberíamos extraer esta lógica a una función?"
+          ]
+        },
+        {
+          "id": "pp-007",
+          "text": "Enfoque en una tarea a la vez (no multitasking)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Cerrar Slack, email, notificaciones. 100% foco en la tarea"
+        },
+        {
+          "id": "pp-008",
+          "text": "Tests escritos primero (TDD si es apropiado)",
+          "category": "execution",
+          "required": false,
+          "helpText": "Pair programming + TDD es combinación poderosa. Navigator puede escribir test mientras Driver implementa"
+        },
+        {
+          "id": "pp-009",
+          "text": "Descansos cada hora (levantarse, estirarse)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Pair programming es intenso. Tomar descansos previene fatiga mental"
+        },
+        {
+          "id": "pp-010",
+          "text": "Código commiteado y pusheado al final de la sesión",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "No dejar trabajo sin commitear. Si no está Done, al menos está en branch compartido"
+        },
+        {
+          "id": "pp-011",
+          "text": "Mini retrospectiva al final (¿qué funcionó? ¿qué mejorar?)",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "2-3 minutos al final para mejorar próximas sesiones de pairing",
+          "examples": [
+            "Funcionó bien: Rotar cada 20 min nos mantuvo frescos",
+            "Mejorar: Próxima vez definir arquitectura antes de codear"
+          ]
+        }
+      ],
+      "tags": ["xp", "extreme-programming", "pair-programming", "agile"],
+      "references": {
+        "sommerville": ["chapter-3"]
+      }
+    },
+    {
+      "id": "checklist-006",
+      "name": "TDD Cycle Checklist",
+      "category": "methodology",
+      "methodology": "xp",
+      "description": "Checklist para seguir ciclo Red-Green-Refactor de Test-Driven Development",
+      "difficulty": "intermediate",
+      "items": [
+        {
+          "id": "tdd-001",
+          "text": "🔴 RED: Escribir test que falla",
+          "category": "red-phase",
+          "required": true,
+          "helpText": "Escribir el test MÁS SIMPLE que pueda fallar para el próximo comportamiento deseado",
+          "examples": [
+            "expect(sum(2, 3)).toBe(5) // función sum() aún no existe",
+            "expect(user.isValid()).toBe(true) // método isValid() no implementado"
+          ]
+        },
+        {
+          "id": "tdd-002",
+          "text": "🔴 Verificar que el test REALMENTE falla (no pasa por error)",
+          "category": "red-phase",
+          "required": true,
+          "helpText": "Ejecutar test y confirmar que falla por la razón correcta (no por typo o config)"
+        },
+        {
+          "id": "tdd-003",
+          "text": "🔴 Test describe un solo comportamiento específico",
+          "category": "red-phase",
+          "required": true,
+          "helpText": "Un test = un comportamiento. No mezclar múltiples asserts de comportamientos diferentes",
+          "examples": [
+            "✓ 'should return true for valid email'",
+            "✗ 'should validate email, password and phone' // muy amplio"
+          ]
+        },
+        {
+          "id": "tdd-004",
+          "text": "🟢 GREEN: Escribir código MÍNIMO para que test pase",
+          "category": "green-phase",
+          "required": true,
+          "helpText": "No escribir código 'bonito' aún. Solo hacer que el test pase de la forma más simple",
+          "examples": [
+            "// Válido en fase GREEN:\nfunction sum(a, b) { return 5; } // hard-coded!",
+            "// Luego refactorizar a:\nfunction sum(a, b) { return a + b; }"
+          ]
+        },
+        {
+          "id": "tdd-005",
+          "text": "🟢 Ejecutar TODOS los tests (no solo el nuevo)",
+          "category": "green-phase",
+          "required": true,
+          "helpText": "Asegurar que el código nuevo no rompió nada existente (regresión)"
+        },
+        {
+          "id": "tdd-006",
+          "text": "🟢 Todos los tests pasan (100% passing)",
+          "category": "green-phase",
+          "required": true,
+          "helpText": "Solo proceder a refactor cuando TODOS los tests están verdes"
+        },
+        {
+          "id": "tdd-007",
+          "text": "🔵 REFACTOR: Mejorar código manteniendo tests verdes",
+          "category": "refactor-phase",
+          "required": true,
+          "helpText": "Eliminar duplicación, mejorar nombres, extraer funciones. Tests deben seguir pasando",
+          "examples": [
+            "Renombrar variables a nombres más descriptivos",
+            "Extraer código duplicado a funciones",
+            "Aplicar patrones de diseño"
+          ]
+        },
+        {
+          "id": "tdd-008",
+          "text": "🔵 Ejecutar tests después de cada cambio de refactor",
+          "category": "refactor-phase",
+          "required": true,
+          "helpText": "Si algún test falla durante refactor, revertir inmediatamente. El refactor NO debe cambiar comportamiento"
+        },
+        {
+          "id": "tdd-009",
+          "text": "🔵 Eliminar código muerto (comentarios, código sin usar)",
+          "category": "refactor-phase",
+          "required": false,
+          "helpText": "Si no hay test que lo ejercite, probablemente no se necesita"
+        },
+        {
+          "id": "tdd-010",
+          "text": "🔄 Commit cuando tests están verdes",
+          "category": "best-practices",
+          "required": true,
+          "helpText": "Hacer commits pequeños y frecuentes. NUNCA commitear con tests en rojo",
+          "examples": ["git commit -m 'feat: add email validation (TDD)'"]
+        },
+        {
+          "id": "tdd-011",
+          "text": "Ciclo completo toma 2-10 minutos (mantener pasos pequeños)",
+          "category": "best-practices",
+          "required": true,
+          "helpText": "Si un ciclo toma > 10 min, el paso es muy grande. Dividir en pasos más pequeños"
+        },
+        {
+          "id": "tdd-012",
+          "text": "Test nombrado claramente (describe comportamiento, no implementación)",
+          "category": "best-practices",
+          "required": true,
+          "helpText": "Nombre del test debe explicar QUÉ hace, no CÓMO lo hace",
+          "examples": [
+            "✓ 'should reject invalid email format'",
+            "✗ 'should return false when regex test fails'"
+          ]
+        }
+      ],
+      "tags": ["tdd", "test-driven-development", "xp", "testing", "agile"],
+      "references": {
+        "sommerville": ["chapter-3", "chapter-8"]
+      }
+    },
+    {
+      "id": "checklist-007",
+      "name": "Phase Gate Review Checklist - Waterfall",
+      "category": "methodology",
+      "methodology": "waterfall",
+      "description": "Checklist para revisiones formales al final de cada fase en modelo Cascada",
+      "difficulty": "intermediate",
+      "items": [
+        {
+          "id": "pg-001",
+          "text": "Todos los entregables de la fase completados al 100%",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Verificar checklist de entregables específicos de la fase contra plan de proyecto",
+          "examples": [
+            "Fase Requerimientos: SRS, Casos de Uso, Prototipos",
+            "Fase Diseño: SAD, Diagramas UML, Diseño de BD",
+            "Fase Implementación: Código, Tests, Documentación"
+          ]
+        },
+        {
+          "id": "pg-002",
+          "text": "Documentos revisados por pares y aprobados",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Cada documento clave debe tener al menos 2 revisores técnicos + 1 stakeholder"
+        },
+        {
+          "id": "pg-003",
+          "text": "Criterios de salida de la fase cumplidos",
+          "category": "execution",
+          "required": true,
+          "helpText": "Cada fase tiene criterios específicos que deben cumplirse para avanzar a la siguiente",
+          "examples": [
+            "Requirements: 100% reqs. aprobados por cliente",
+            "Design: Arquitectura revisada y validada",
+            "Implementation: Código pasa todos los tests"
+          ]
+        },
+        {
+          "id": "pg-004",
+          "text": "Stakeholders clave presentes en la revisión",
+          "category": "execution",
+          "required": true,
+          "helpText": "Sponsor, Project Manager, Technical Lead, QA Lead, representante de cliente (según fase)",
+          "examples": ["CFO (sponsor)", "Cliente/Usuario clave", "Arquitecto de software", "QA Manager"]
+        },
+        {
+          "id": "pg-005",
+          "text": "Riesgos identificados en la fase documentados",
+          "category": "execution",
+          "required": true,
+          "helpText": "Actualizar registro de riesgos con nuevos riesgos encontrados durante la fase"
+        },
+        {
+          "id": "pg-006",
+          "text": "Issues y defectos encontrados resueltos o con plan de mitigación",
+          "category": "execution",
+          "required": true,
+          "helpText": "Cero defectos críticos sin resolver. Defectos menores con plan documentado"
+        },
+        {
+          "id": "pg-007",
+          "text": "Baseline establecido (versión controlada de entregables)",
+          "category": "execution",
+          "required": true,
+          "helpText": "Congelar versión de documentos/código de la fase en control de versiones",
+          "examples": [
+            "Tag en Git: 'v1.0-design-phase'",
+            "Documentos en SharePoint marcados como 'Approved v1.0'"
+          ]
+        },
+        {
+          "id": "pg-008",
+          "text": "Lecciones aprendidas de la fase documentadas",
+          "category": "execution",
+          "required": true,
+          "helpText": "¿Qué funcionó bien? ¿Qué mejorar para próxima fase?",
+          "examples": [
+            "Funcionó: Sesiones de refinamiento semanales mejoraron claridad",
+            "Mejorar: Involucrar a QA más temprano en próxima fase"
+          ]
+        },
+        {
+          "id": "pg-009",
+          "text": "Cambios de alcance formalmente aprobados",
+          "category": "execution",
+          "required": true,
+          "helpText": "Cualquier cambio vs. plan original debe estar documentado con Change Request aprobado"
+        },
+        {
+          "id": "pg-010",
+          "text": "Budget y timeline actualizados",
+          "category": "execution",
+          "required": true,
+          "helpText": "Comparar gasto real vs. planeado. Actualizar forecast para fases restantes"
+        },
+        {
+          "id": "pg-011",
+          "text": "Métricas de calidad de la fase cumplidas",
+          "category": "execution",
+          "required": true,
+          "helpText": "Verificar KPIs específicos de la fase (cobertura tests, defect density, etc.)",
+          "examples": [
+            "Design phase: Arquitectura revisada sin major concerns",
+            "Implementation: Code coverage ≥ 80%",
+            "Testing: Defect density < 0.5 defects/KLOC"
+          ]
+        },
+        {
+          "id": "pg-012",
+          "text": "Aprobación formal documentada (firmas)",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Documento de Phase Gate Review firmado por Sponsor y Project Manager mínimo"
+        },
+        {
+          "id": "pg-013",
+          "text": "Go/No-Go decision tomada y comunicada",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Decisión explícita: ¿Avanzamos a siguiente fase o no? Si NO-GO, plan de remediación"
+        },
+        {
+          "id": "pg-014",
+          "text": "Kick-off de siguiente fase agendado (si GO)",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Agendar reunión de inicio de próxima fase dentro de 1 semana del Gate Review"
+        }
+      ],
+      "tags": ["waterfall", "cascada", "phase-gate", "project-management", "traditional"],
+      "references": {
+        "sommerville": ["chapter-2"]
+      }
+    },
+    {
+      "id": "checklist-008",
+      "name": "RUP Iteration Planning Checklist",
+      "category": "methodology",
+      "methodology": "rup",
+      "description": "Checklist para planificar iteraciones en Rational Unified Process (RUP)",
+      "difficulty": "advanced",
+      "items": [
+        {
+          "id": "rup-001",
+          "text": "Fase actual de RUP identificada (Inception/Elaboration/Construction/Transition)",
+          "category": "preparation",
+          "required": true,
+          "helpText": "El objetivo de la iteración depende de la fase en que estamos",
+          "examples": [
+            "Inception: Definir alcance y viabilidad",
+            "Elaboration: Arquitectura y riesgos",
+            "Construction: Desarrollo de features",
+            "Transition: Deployment y ajustes"
+          ]
+        },
+        {
+          "id": "rup-002",
+          "text": "Objetivos de la iteración alineados con objetivos de la fase",
+          "category": "preparation",
+          "required": true,
+          "helpText": "Cada fase tiene objetivos específicos que guían qué hacer en la iteración",
+          "examples": [
+            "Elaboration iter 1: Validar arquitectura con prototype",
+            "Construction iter 3: Completar módulo de reportes"
+          ]
+        },
+        {
+          "id": "rup-003",
+          "text": "Use Cases priorizados por riesgo arquitectónico y valor de negocio",
+          "category": "preparation",
+          "required": true,
+          "helpText": "En RUP priorizamos use cases de alto riesgo/valor primero (risk-driven + client-driven)",
+          "examples": [
+            "Alto riesgo: Integración con sistema legado → hacer temprano",
+            "Alto valor: Login y autenticación → crítico para negocio"
+          ]
+        },
+        {
+          "id": "rup-004",
+          "text": "Arquitectura baseline establecida (al final de Elaboration)",
+          "category": "execution",
+          "required": true,
+          "helpText": "La arquitectura debe estar validada antes de entrar a Construction phase"
+        },
+        {
+          "id": "rup-005",
+          "text": "Riesgos técnicos identificados y priorizados",
+          "category": "execution",
+          "required": true,
+          "helpText": "RUP es risk-driven: atacar riesgos técnicos en iteraciones tempranas",
+          "examples": [
+            "¿La tecnología X puede manejar 1000 usuarios concurrentes?",
+            "¿Podemos integrar con API del proveedor Y?"
+          ]
+        },
+        {
+          "id": "rup-006",
+          "text": "Iteration plan documentado con objetivos, scope y criterios de evaluación",
+          "category": "execution",
+          "required": true,
+          "helpText": "Documento formal con qué se va a lograr, cómo se va a medir éxito"
+        },
+        {
+          "id": "rup-007",
+          "text": "Work products (artefactos) a generar identificados",
+          "category": "execution",
+          "required": true,
+          "helpText": "RUP es pesado en documentación. Definir qué documentos/modelos se van a crear/actualizar",
+          "examples": [
+            "Use Case Model",
+            "Design Model (diagramas UML)",
+            "Implementation (código + tests)",
+            "Deployment Model"
+          ]
+        },
+        {
+          "id": "rup-008",
+          "text": "Roles y responsabilidades asignados según RUP roles",
+          "category": "execution",
+          "required": true,
+          "helpText": "RUP define roles específicos: Architect, Designer, Developer, Tester, etc.",
+          "examples": [
+            "Software Architect: Definir capas y patrones",
+            "Use Case Specifier: Detallar casos de uso",
+            "Component Engineer: Implementar componentes"
+          ]
+        },
+        {
+          "id": "rup-009",
+          "text": "Iteration assessment criteria definidos",
+          "category": "execution",
+          "required": true,
+          "helpText": "¿Cómo sabremos si la iteración fue exitosa? Definir métricas y criterios objetivos",
+          "examples": [
+            "100% de use cases planeados implementados",
+            "Arquitectura validada con prototype funcional",
+            "Zero defectos críticos en build"
+          ]
+        },
+        {
+          "id": "rup-010",
+          "text": "Integration build funcional al final de cada iteración",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "RUP requiere integration continua. Cada iteración debe terminar con build funcional"
+        },
+        {
+          "id": "rup-011",
+          "text": "Iteration assessment meeting realizado",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Revisión formal: ¿Se cumplieron objetivos? ¿Lecciones aprendidas? ¿Ajustes necesarios?"
+        },
+        {
+          "id": "rup-012",
+          "text": "Milestone de fase alcanzado (si es última iteración de la fase)",
+          "category": "follow-up",
+          "required": true,
+          "helpText": "Cada fase termina con milestone formal: LCO, LCA, IOC, PR",
+          "examples": [
+            "Inception → LCO (Lifecycle Objectives)",
+            "Elaboration → LCA (Lifecycle Architecture)",
+            "Construction → IOC (Initial Operational Capability)",
+            "Transition → PR (Product Release)"
+          ]
+        }
+      ],
+      "tags": ["rup", "rational-unified-process", "iteration", "planning", "traditional"],
+      "references": {
+        "sommerville": ["chapter-2"]
+      }
+    }
+  ],
+  "categories": {
+    "requirements": "Documentación de Requerimientos",
+    "architecture": "Diseño y Arquitectura",
+    "testing": "Testing y QA",
+    "methodology": "Procesos y Metodologías",
+    "management": "Gestión de Proyectos"
   }
 }

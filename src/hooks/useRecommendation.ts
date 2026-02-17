@@ -8,9 +8,9 @@ import type { Recommendations, Recommendation } from '@/types/recommendation';
 import type { TemplatesData, Template } from '@/types/templates';
 import type { ChecklistsData, Checklist } from '@/types/checklists';
 
-const recommendations = recommendationsData as Recommendations;
-const templates = templatesData as TemplatesData;
-const checklists = checklistsData as ChecklistsData;
+const recommendations = recommendationsData as unknown as Recommendations;
+const templates = templatesData as unknown as TemplatesData;
+const checklists = checklistsData as unknown as ChecklistsData;
 
 interface UseRecommendationResult {
   recommendation: Recommendation | null;
