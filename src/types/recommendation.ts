@@ -30,8 +30,19 @@ export interface ProcessInfo {
 
 export interface MethodologyInfo {
   name: string;
-  chapter: number;
-  practices: string[];
+  description: string;
+  origin: {
+    creator: string;
+    year: number;
+    context: string;
+  };
+  principles: string[];
+  differentiators: string[];
+  references: {
+    chapter: string;
+    sections: string[];
+    externalResources: string[];
+  };
 }
 
 export interface ModelingInfo {

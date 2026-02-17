@@ -17,22 +17,56 @@ export function MethodologySection({ methodology }: MethodologySectionProps) {
 
       {/* Badge de capítulo */}
       <View style={[styles.row, { marginBottom: 16 }]}>
-        <Text style={styles.badge}>Capítulo {methodology.chapter}</Text>
+        <Text style={styles.badge}>{methodology.references.chapter}</Text>
       </View>
 
-      {/* Prácticas recomendadas */}
-      {methodology.practices && methodology.practices.length > 0 && (
+      {/* Descripción */}
+      {methodology.description && (
+        <View style={{ marginBottom: 16 }}>
+          <Text style={styles.text}>{methodology.description}</Text>
+        </View>
+      )}
+
+      {/* Origen */}
+      {methodology.origin && (
+        <View style={{ marginBottom: 16 }}>
+          <Text style={styles.h4}>📜 Origen</Text>
+          <Text style={styles.text}>
+            <Text style={{ fontWeight: 'bold' }}>Creador: </Text>
+            {methodology.origin.creator} ({methodology.origin.year})
+          </Text>
+          <Text style={[styles.text, { marginTop: 4 }]}>{methodology.origin.context}</Text>
+        </View>
+      )}
+
+      {/* Principios Fundamentales */}
+      {methodology.principles && methodology.principles.length > 0 && (
         <>
-          <Text style={styles.h4}>Prácticas Recomendadas</Text>
+          <Text style={styles.h4}>Principios Fundamentales</Text>
           <View style={styles.list}>
-            {methodology.practices.map((practice, i) => (
+            {methodology.principles.map((principle, i) => (
               <View key={i} style={styles.listItem}>
                 <Text style={styles.listBullet}>✓ </Text>
-                <Text style={styles.listContent}>{practice}</Text>
+                <Text style={styles.listContent}>{principle}</Text>
               </View>
             ))}
           </View>
         </>
+      )}
+
+      {/* Diferenciadores */}
+      {methodology.differentiators && methodology.differentiators.length > 0 && (
+        <View style={{ marginTop: 12 }}>
+          <Text style={styles.h4}>🎯 Diferenciadores Clave</Text>
+          <View style={styles.list}>
+            {methodology.differentiators.map((diff, i) => (
+              <View key={i} style={styles.listItem}>
+                <Text style={styles.listBullet}>• </Text>
+                <Text style={styles.listContent}>{diff}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
       )}
     </View>
   );
