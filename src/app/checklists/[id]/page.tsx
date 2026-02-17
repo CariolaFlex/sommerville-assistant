@@ -16,18 +16,105 @@ import {
   ChevronUp,
   RotateCcw,
 } from 'lucide-react';
-import checklistsData from '@/data/checklists.json';
-import type { ChecklistsData } from '@/types/checklists';
 
-const data = checklistsData as ChecklistsData;
+// Importar de AMBAS fuentes de datos
+import checklistsData from '@/data/checklists.json';
+import templatesData from '@/data/templates.json';
+import type { ChecklistsData, Checklist as ChkChecklist } from '@/types/checklists';
+
+const chkData = checklistsData as ChecklistsData;
+
+// Tipo normalizado para la pagina
+interface NormalizedChecklist {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  chapter?: number;
+  estimatedTime?: string;
+  tags: string[];
+  sections: {
+    title: string;
+    items: {
+      id: string;
+      text: string;
+      critical: boolean;
+      help?: string;
+      examples?: string[];
+    }[];
+  }[];
+}
+
+function normalizeFromChkData(chk: ChkChecklist): NormalizedChecklist {
+  return {
+    id: chk.id,
+    name: chk.name,
+    category: chk.category,
+    description: chk.description,
+    chapter: chk.chapter,
+    estimatedTime: chk.estimatedTime,
+    tags: chk.tags,
+    sections: chk.sections.map((s) => ({
+      title: s.title,
+      items: s.items.map((i) => ({
+        id: i.id,
+        text: i.text,
+        critical: i.critical,
+        help: i.help,
+        examples: i.examples,
+      })),
+    })),
+  };
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function normalizeFromTemplatesData(chk: any): NormalizedChecklist {
+  return {
+    id: chk.id,
+    name: chk.name,
+    category: chk.category || chk.methodology || '',
+    description: chk.description,
+    tags: chk.tags || [],
+    sections: [
+      {
+        title: chk.name,
+        items: (chk.items || []).map(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (item: any, idx: number) => ({
+            id: item.id || `item-${idx}`,
+            text: item.text,
+            critical: item.required ?? false,
+            help: item.helpText || undefined,
+            examples: item.examples || [],
+          })
+        ),
+      },
+    ],
+  };
+}
 
 export default function ChecklistDetailPage() {
   const params = useParams();
   const router = useRouter();
   const id = params.id as string;
 
-  const checklist = useMemo(() => {
-    return data.checklists[id] || null;
+  const checklist = useMemo((): NormalizedChecklist | null => {
+    // Buscar en checklists.json primero (chk-XXX)
+    if (chkData.checklists[id]) {
+      return normalizeFromChkData(chkData.checklists[id]);
+    }
+
+    // Buscar en templates.json (checklist-XXX)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const tplChecklist = (templatesData as any).checklists?.find(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (c: any) => c.id === id
+    );
+    if (tplChecklist) {
+      return normalizeFromTemplatesData(tplChecklist);
+    }
+
+    return null;
   }, [id]);
 
   const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -72,9 +159,7 @@ export default function ChecklistDetailPage() {
     }));
   };
 
-  const resetAll = () => {
-    setChecked({});
-  };
+  const resetAll = () => setChecked({});
 
   const checkAll = () => {
     const all: Record<string, boolean> = {};
@@ -90,12 +175,7 @@ export default function ChecklistDetailPage() {
       <header className="border-b bg-card sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => router.back()}
-              className="gap-2"
-            >
+            <Button variant="ghost" size="sm" onClick={() => router.back()} className="gap-2">
               <ArrowLeft className="h-4 w-4" />
               Volver
             </Button>
@@ -114,18 +194,22 @@ export default function ChecklistDetailPage() {
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Título */}
+        {/* Titulo */}
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-3">
-            <Badge variant="secondary">{checklist.category}</Badge>
-            <Badge variant="outline">
-              <BookOpen className="h-3 w-3 mr-1" />
-              Capítulo {checklist.chapter}
-            </Badge>
-            <Badge variant="outline">
-              <Clock className="h-3 w-3 mr-1" />
-              {checklist.estimatedTime}
-            </Badge>
+          <div className="flex items-center gap-3 mb-3 flex-wrap">
+            {checklist.category && <Badge variant="secondary">{checklist.category}</Badge>}
+            {checklist.chapter && (
+              <Badge variant="outline">
+                <BookOpen className="h-3 w-3 mr-1" />
+                Capitulo {checklist.chapter}
+              </Badge>
+            )}
+            {checklist.estimatedTime && (
+              <Badge variant="outline">
+                <Clock className="h-3 w-3 mr-1" />
+                {checklist.estimatedTime}
+              </Badge>
+            )}
           </div>
           <h1 className="text-3xl font-bold mb-3">{checklist.name}</h1>
           <p className="text-muted-foreground leading-relaxed">{checklist.description}</p>
@@ -158,10 +242,10 @@ export default function ChecklistDetailPage() {
             </div>
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span>
-                Items críticos: {checkedCritical} / {criticalItems.length} completados
+                Items criticos: {checkedCritical} / {criticalItems.length} completados
               </span>
               {progressPercent === 100 && (
-                <span className="text-green-600 font-semibold">¡Checklist completo!</span>
+                <span className="text-green-600 font-semibold">Checklist completo!</span>
               )}
             </div>
           </CardContent>
@@ -172,15 +256,14 @@ export default function ChecklistDetailPage() {
           {checklist.sections.map((section, sectionIndex) => {
             const sectionItems = section.items;
             const sectionChecked = sectionItems.filter((item) => checked[item.id]).length;
-            const isExpanded = expandedSections[section.title] !== false; // expandido por defecto
-            const allSectionDone = sectionChecked === sectionItems.length;
+            const isExpanded = expandedSections[section.title] !== false;
+            const allSectionDone = sectionChecked === sectionItems.length && sectionItems.length > 0;
 
             return (
               <Card
                 key={`${section.title}-${sectionIndex}`}
                 className={`overflow-hidden transition-all ${allSectionDone ? 'border-green-300 bg-green-50/50 dark:bg-green-900/10' : ''}`}
               >
-                {/* Header de sección */}
                 <CardHeader
                   className="cursor-pointer hover:bg-muted/40 transition-colors py-4"
                   onClick={() => toggleSection(section.title)}
@@ -189,9 +272,7 @@ export default function ChecklistDetailPage() {
                     <div className="flex items-center gap-3">
                       <div
                         className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                          allSectionDone
-                            ? 'bg-green-500 text-white'
-                            : 'bg-blue-100 text-blue-700'
+                          allSectionDone ? 'bg-green-500 text-white' : 'bg-blue-100 text-blue-700'
                         }`}
                       >
                         {allSectionDone ? '✓' : sectionIndex + 1}
@@ -211,7 +292,6 @@ export default function ChecklistDetailPage() {
                   </div>
                 </CardHeader>
 
-                {/* Items de la sección */}
                 {isExpanded && (
                   <CardContent className="pt-0 pb-4">
                     <div className="space-y-3">
@@ -239,9 +319,7 @@ export default function ChecklistDetailPage() {
                               <div className="flex items-start gap-2">
                                 <p
                                   className={`text-sm leading-relaxed ${
-                                    isChecked
-                                      ? 'line-through text-muted-foreground'
-                                      : 'text-foreground'
+                                    isChecked ? 'line-through text-muted-foreground' : 'text-foreground'
                                   }`}
                                 >
                                   {item.text}
@@ -251,25 +329,21 @@ export default function ChecklistDetailPage() {
                                     variant="outline"
                                     className="text-xs border-red-400 text-red-600 flex-shrink-0"
                                   >
-                                    crítico
+                                    critico
                                   </Badge>
                                 )}
                               </div>
                               {item.help && (
                                 <p className="text-xs text-muted-foreground mt-1 italic">
-                                  💡 {item.help}
+                                  {item.help}
                                 </p>
                               )}
                               {item.examples && item.examples.length > 0 && (
                                 <div className="mt-2">
-                                  <p className="text-xs font-medium text-muted-foreground mb-1">
-                                    Ejemplos:
-                                  </p>
+                                  <p className="text-xs font-medium text-muted-foreground mb-1">Ejemplos:</p>
                                   <ul className="list-disc list-inside space-y-0.5">
                                     {item.examples.map((ex, i) => (
-                                      <li key={i} className="text-xs text-muted-foreground">
-                                        {ex}
-                                      </li>
+                                      <li key={i} className="text-xs text-muted-foreground">{ex}</li>
                                     ))}
                                   </ul>
                                 </div>
@@ -291,7 +365,7 @@ export default function ChecklistDetailPage() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <Button variant="outline" onClick={() => router.back()} className="gap-2 w-full sm:w-auto">
               <ArrowLeft className="h-4 w-4" />
-              Volver a resultados
+              Volver
             </Button>
             <div className="text-sm text-muted-foreground text-center sm:text-right">
               <span className="font-medium">{checkedCount}</span> de{' '}
