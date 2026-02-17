@@ -4,7 +4,11 @@
       "Bash(powershell:*)",
       "Bash(npm run build:*)",
       "Bash(node -e:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(vercel --version:*)",
+      "Bash(vercel:*)",
+      "Bash(python3 -c:*)"
     ]
   }
 }

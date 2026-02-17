@@ -113,8 +113,8 @@ export default function TemplatesPage() {
                         key={template.id}
                         template={template}
                         onClick={() => {
-                          // TODO: Open preview modal
-                          console.log('Open template:', template.id);
+                          // Future: Implement modal preview with full template content
+                          console.log('Template selected:', template.id);
                         }}
                       />
                     ))}
@@ -140,8 +140,8 @@ export default function TemplatesPage() {
                         key={checklist.id}
                         checklist={checklist}
                         onClick={() => {
-                          // TODO: Open checklist viewer
-                          console.log('Open checklist:', checklist.id);
+                          // Future: Implement checklist viewer modal with progress tracking
+                          console.log('Checklist selected:', checklist.id);
                         }}
                       />
                     ))}

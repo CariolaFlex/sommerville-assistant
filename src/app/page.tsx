@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, BookOpen, Zap, FileText, Search, CheckCircle2, Lightbulb, TrendingUp, Sparkles } from 'lucide-react';
+import { ArrowRight, Zap, FileText, Search, CheckCircle2, Lightbulb, TrendingUp, Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -82,53 +82,73 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-blue-500">
-              <CardHeader>
-                <Zap className="h-10 w-10 text-blue-600 mb-3" />
-                <CardTitle>Wizard Interactivo</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="leading-relaxed">
-                  Responde 4-5 preguntas sobre tu proyecto y obtén una recomendación personalizada con proceso, metodología y arquitectura específica
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link href="/wizard" className="group">
+              <Card className="h-full hover:shadow-lg transition-all border-t-4 border-t-blue-500 hover:scale-105 cursor-pointer">
+                <CardHeader>
+                  <Zap className="h-10 w-10 text-blue-600 mb-3 group-hover:rotate-12 transition-transform" />
+                  <CardTitle>Wizard Clásico</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="leading-relaxed">
+                    Árbol de decisión interactivo: responde 4-5 preguntas sobre tu proyecto y obtén recomendación personalizada
+                  </CardDescription>
+                  <Button variant="link" className="mt-3 p-0 h-auto text-blue-600 group-hover:translate-x-1 transition-transform">
+                    Comenzar →
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-green-500">
-              <CardHeader>
-                <BookOpen className="h-10 w-10 text-green-600 mb-3" />
-                <CardTitle>13 Recomendaciones</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="leading-relaxed">
-                  Desde sistemas críticos hasta startups ágiles, cada recomendación incluye timeline semanal, plantillas y mejores prácticas
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link href="/wizard-v2" className="group">
+              <Card className="h-full hover:shadow-lg transition-all border-t-4 border-t-green-500 hover:scale-105 cursor-pointer">
+                <CardHeader>
+                  <Sparkles className="h-10 w-10 text-green-600 mb-3 group-hover:rotate-12 transition-transform" />
+                  <CardTitle>Wizard Avanzado</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="leading-relaxed">
+                    Cuestionario paso a paso con 10 preguntas: análisis profundo con scoring inteligente y persistencia de respuestas
+                  </CardDescription>
+                  <Button variant="link" className="mt-3 p-0 h-auto text-green-600 group-hover:translate-x-1 transition-transform">
+                    Explorar →
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-purple-500">
-              <CardHeader>
-                <FileText className="h-10 w-10 text-purple-600 mb-3" />
-                <CardTitle>Plantillas & Checklists</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="leading-relaxed">
-                  7 plantillas documentales y 4 checklists descargables con 88 items para aplicar inmediatamente en tu equipo
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link href="/templates" className="group">
+              <Card className="h-full hover:shadow-lg transition-all border-t-4 border-t-purple-500 hover:scale-105 cursor-pointer">
+                <CardHeader>
+                  <FileText className="h-10 w-10 text-purple-600 mb-3 group-hover:scale-110 transition-transform" />
+                  <CardTitle>Plantillas & Checklists</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="leading-relaxed">
+                    10 templates profesionales + 8 checklists con 88+ items para aplicar inmediatamente en tu proyecto
+                  </CardDescription>
+                  <Button variant="link" className="mt-3 p-0 h-auto text-purple-600 group-hover:translate-x-1 transition-transform">
+                    Ver Templates →
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-orange-500">
-              <CardHeader>
-                <Search className="h-10 w-10 text-orange-600 mb-3" />
-                <CardTitle>Glosario Completo</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="leading-relaxed">
-                  2,100 términos técnicos de los capítulos 1-6 con búsqueda avanzada, filtros por categoría y referencias cruzadas
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link href="/glossary" className="group">
+              <Card className="h-full hover:shadow-lg transition-all border-t-4 border-t-orange-500 hover:scale-105 cursor-pointer">
+                <CardHeader>
+                  <Search className="h-10 w-10 text-orange-600 mb-3 group-hover:scale-110 transition-transform" />
+                  <CardTitle>Glosario Completo</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="leading-relaxed">
+                    2,100+ términos técnicos con búsqueda avanzada, filtros por capítulo y referencias cruzadas
+                  </CardDescription>
+                  <Button variant="link" className="mt-3 p-0 h-auto text-orange-600 group-hover:translate-x-1 transition-transform">
+                    Explorar →
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>

@@ -37,7 +37,7 @@ export function ResultsPreview({
   const router = useRouter();
 
   const handleViewDetails = () => {
-    router.push(`/results?rec=${recommendationId}`);
+    router.push(`/results/${recommendationId}`);
   };
 
   // Contar respuestas

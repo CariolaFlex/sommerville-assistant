@@ -13,7 +13,6 @@ import {
   Building2,
   Calendar,
   BarChart3,
-  Share2,
   AlertCircle,
 } from 'lucide-react';
 import { useRecommendation } from '@/hooks/useRecommendation';
@@ -85,17 +84,11 @@ export default function ResultsPage() {
               Volver al asistente
             </Button>
 
-            <div className="flex gap-2">
-              <ExportButton
-                recommendation={recommendation}
-                templates={applicableTemplates}
-                checklists={applicableChecklists}
-              />
-              <Button variant="outline" size="sm" className="gap-2">
-                <Share2 className="h-4 w-4" />
-                Compartir
-              </Button>
-            </div>
+            <ExportButton
+              recommendation={recommendation}
+              templates={applicableTemplates}
+              checklists={applicableChecklists}
+            />
           </div>
         </div>
       </header>
@@ -211,10 +204,6 @@ export default function ResultsPage() {
                 templates={applicableTemplates}
                 checklists={applicableChecklists}
               />
-              <Button className="gap-2 flex-1 sm:flex-none">
-                <Share2 className="h-4 w-4" />
-                Compartir resultados
-              </Button>
             </div>
           </div>
         </div>
