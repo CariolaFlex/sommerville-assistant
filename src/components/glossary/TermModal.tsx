@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
-import { ExternalLink, Tag, Link2 } from 'lucide-react';
+import { ExternalLink, Tag, Link2, BookOpen, Lightbulb } from 'lucide-react';
 import type { GlossaryTerm } from '@/types/glossary';
 
 interface TermModalProps {
@@ -78,6 +78,70 @@ export function TermModal({
               </h4>
               <p className="text-sm leading-relaxed">{term.descripcionBreve}</p>
             </div>
+
+            {/* Extended Description */}
+            {term.descripcionExtendida && (
+              <>
+                <Separator />
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <BookOpen className="h-4 w-4 text-muted-foreground" />
+                    <h4 className="font-semibold text-sm text-muted-foreground">
+                      Descripción Extendida
+                    </h4>
+                  </div>
+                  <p className="text-sm leading-relaxed text-foreground/90">
+                    {term.descripcionExtendida}
+                  </p>
+                </div>
+              </>
+            )}
+
+            {/* Examples */}
+            {term.ejemplos && term.ejemplos.length > 0 && (
+              <>
+                <Separator />
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Lightbulb className="h-4 w-4 text-muted-foreground" />
+                    <h4 className="font-semibold text-sm text-muted-foreground">
+                      Ejemplos
+                    </h4>
+                  </div>
+                  <ul className="space-y-2 list-none">
+                    {term.ejemplos.map((ejemplo, idx) => (
+                      <li
+                        key={idx}
+                        className="text-sm leading-relaxed pl-4 border-l-2 border-primary/30"
+                      >
+                        {ejemplo}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
+
+            {/* References */}
+            {term.referencias && (
+              <>
+                <Separator />
+                <div>
+                  <h4 className="font-semibold text-sm text-muted-foreground mb-2">
+                    Referencias del Libro
+                  </h4>
+                  <div className="text-sm">
+                    <span className="font-medium">Capítulo {term.referencias.capitulo}</span>
+                    {term.referencias.secciones && term.referencias.secciones.length > 0 && (
+                      <span className="text-muted-foreground">
+                        {' '}
+                        - Secciones: {term.referencias.secciones.join(', ')}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
 
             <Separator />
 

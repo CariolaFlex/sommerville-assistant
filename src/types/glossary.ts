@@ -22,4 +22,11 @@ export interface GlossaryTerm {
   capitulo: number;
   keywords: string[];
   relatedTerms: string[];
+  // Campos enriquecidos (opcionales)
+  descripcionExtendida?: string;
+  ejemplos?: string[];
+  referencias?: {
+    capitulo: number;
+    secciones: string[];
+  };
 }

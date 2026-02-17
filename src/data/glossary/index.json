@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "lastUpdated": "2026-02-16",
+  "version": "1.4",
+  "lastUpdated": "2026-02-17",
   "totalTerms": 2100,
   "chapters": [
     {
@@ -26702,9 +26702,31 @@
       "capitulo": 1,
       "keywords": [
         "ingeniería",
-        "software"
+        "software",
+        "disciplina",
+        "desarrollo",
+        "mantenimiento",
+        "calidad",
+        "producción"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap1-002",
+        "cap1-003",
+        "cap2-001"
+      ],
+      "descripcionExtendida": "Disciplina ingenieril que aplica principios científicos y de ingeniería para el desarrollo sistemático, operación y mantenimiento de software de calidad. Abarca desde la especificación inicial hasta el mantenimiento post-despliegue, incluyendo aspectos técnicos, gerenciales y de calidad.",
+      "ejemplos": [
+        "Desarrollo de sistema de gestión hospitalaria con metodología RUP",
+        "Mantenimiento evolutivo de aplicación bancaria legacy",
+        "Especificación de requisitos para sistema de control industrial"
+      ],
+      "referencias": {
+        "capitulo": 1,
+        "secciones": [
+          "1.1",
+          "1.2"
+        ]
+      }
     },
     {
       "id": "cap1-002",
@@ -26714,9 +26736,31 @@
       "capitulo": 1,
       "keywords": [
         "procesos",
-        "software"
+        "software",
+        "actividades",
+        "metodología",
+        "desarrollo",
+        "ciclo de vida",
+        "SDLC"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap2-001",
+        "cap2-011",
+        "cap2-015",
+        "cap3-001"
+      ],
+      "descripcionExtendida": "Conjunto estructurado de actividades, métodos, prácticas y transformaciones que las personas utilizan para desarrollar y mantener software y productos asociados (planes, documentos, modelos). Define quién hace qué, cuándo y cómo alcanzar un objetivo específico.",
+      "ejemplos": [
+        "Proceso en cascada para sistema de nómina gubernamental",
+        "Proceso Scrum para desarrollo de app móvil",
+        "Proceso iterativo RUP para sistema de e-commerce"
+      ],
+      "referencias": {
+        "capitulo": 1,
+        "secciones": [
+          "1.3"
+        ]
+      }
     },
     {
       "id": "cap1-003",
@@ -26726,9 +26770,33 @@
       "capitulo": 1,
       "keywords": [
         "métodos",
-        "ágiles"
+        "ágiles",
+        "iterativo",
+        "incremental",
+        "scrum",
+        "xp",
+        "kanban",
+        "agile",
+        "sprint"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-001",
+        "cap3-003",
+        "cap3-008",
+        "cap3-009"
+      ],
+      "descripcionExtendida": "Enfoques de desarrollo que enfatizan desarrollo iterativo incremental, entregas frecuentes de software funcional, colaboración directa con el cliente, y capacidad de respuesta a cambios. Contrastan con métodos dirigidos por plan en su énfasis en la adaptabilidad sobre la predictibilidad.",
+      "ejemplos": [
+        "Equipo de 5 desarrolladores usando Scrum para SaaS",
+        "Desarrollo de MVP con sprints de 2 semanas",
+        "XP para proyecto de startup con pair programming"
+      ],
+      "referencias": {
+        "capitulo": 1,
+        "secciones": [
+          "1.3.3"
+        ]
+      }
     },
     {
       "id": "cap1-004",
@@ -26788,9 +26856,36 @@
       "descripcionBreve": "Método ágil de gestión de proyectos de desarrollo de software",
       "capitulo": 1,
       "keywords": [
-        "scrum"
+        "scrum",
+        "sprint",
+        "product owner",
+        "scrum master",
+        "backlog",
+        "daily",
+        "retrospectiva",
+        "agile"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-001",
+        "cap3-004",
+        "cap3-005",
+        "cap3-006",
+        "cap1-003",
+        "cap4-036",
+        "cap2-021"
+      ],
+      "descripcionExtendida": "Marco de trabajo ágil que estructura el desarrollo en sprints de duración fija (1-4 semanas). Define roles (Product Owner, Scrum Master, Development Team), artefactos (Product Backlog, Sprint Backlog, Increment) y ceremonias (Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective). Enfatiza autoorganización del equipo.",
+      "ejemplos": [
+        "Equipo de 7 personas con sprints de 2 semanas para app web",
+        "Scrum distribuido con daily standup remoto",
+        "Scaled Scrum (SAFe) para organización de 50 desarrolladores"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.2"
+        ]
+      }
     },
     {
       "id": "cap1-009",
@@ -26811,9 +26906,38 @@
       "descripcionBreve": "Lenguaje de modelado unificado usado para representar sistemas de software",
       "capitulo": 1,
       "keywords": [
-        "uml"
+        "uml",
+        "modelado",
+        "diagramas",
+        "clases",
+        "casos de uso",
+        "secuencia",
+        "visual",
+        "omg"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap5-002",
+        "cap5-003",
+        "cap5-004",
+        "cap5-022",
+        "cap5-021",
+        "cap4-101",
+        "cap2-062"
+      ],
+      "descripcionExtendida": "Unified Modeling Language - Lenguaje estándar de modelado visual para especificar, visualizar, construir y documentar sistemas de software. Incluye diagramas estructurales (clases, componentes, despliegue) y de comportamiento (casos de uso, secuencia, estados, actividades). Independiente de metodología.",
+      "ejemplos": [
+        "Diagrama de clases para sistema de biblioteca",
+        "Diagrama de secuencia para flujo de login",
+        "Diagrama de despliegue para arquitectura cloud"
+      ],
+      "referencias": {
+        "capitulo": 5,
+        "secciones": [
+          "5.2",
+          "5.3",
+          "5.4"
+        ]
+      }
     },
     {
       "id": "cap1-011",
@@ -31556,9 +31680,31 @@
       "capitulo": 2,
       "keywords": [
         "proceso",
-        "software"
+        "software",
+        "modelo",
+        "sdlc",
+        "metodología",
+        "framework"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap2-020",
+        "cap2-021",
+        "cap4-077",
+        "cap1-008",
+        "cap3-005"
+      ],
+      "descripcionExtendida": "Representación abstracta de un proceso de software que presenta una vista de ese proceso. Los modelos de proceso pueden incluir actividades, artefactos, roles y restricciones. Ejemplos: modelo en cascada, desarrollo incremental, modelo en espiral, RUP, Scrum.",
+      "ejemplos": [
+        "Modelo en cascada para proyecto con requisitos estables",
+        "Modelo iterativo para sistema con cambios frecuentes",
+        "Modelo ágil Scrum para desarrollo de producto"
+      ],
+      "referencias": {
+        "capitulo": 2,
+        "secciones": [
+          "2.1"
+        ]
+      }
     },
     {
       "id": "cap2-002",
@@ -31677,9 +31823,31 @@
       "descripcionBreve": "Declaraciones válidas después de que se realice una actividad del proceso o se cree un producto",
       "capitulo": 2,
       "keywords": [
-        "postcondiciones"
+        "postcondiciones",
+        "plan-driven",
+        "dirigidos por plan",
+        "planificación",
+        "predictivo",
+        "waterfall",
+        "tradicional"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap2-020",
+        "cap3-001",
+        "cap2-001"
+      ],
+      "descripcionExtendida": "Procesos de software donde todas las actividades del proceso se planean por anticipado y el progreso se mide contra este plan. Requieren especificación completa de requisitos antes del desarrollo. Apropiados para sistemas con requisitos bien comprendidos y estables.",
+      "ejemplos": [
+        "Proyecto de infraestructura crítica con contrato de precio fijo",
+        "Sistema regulado médico con aprobaciones en cada fase",
+        "Software de defensa con requisitos contractuales rígidos"
+      ],
+      "referencias": {
+        "capitulo": 2,
+        "secciones": [
+          "2.1"
+        ]
+      }
     },
     {
       "id": "cap2-012",
@@ -31691,9 +31859,32 @@
         "procesos",
         "dirigidos",
         "por",
-        "plan"
+        "plan",
+        "plan-driven",
+        "dirigidos por plan",
+        "planificación",
+        "predictivo",
+        "waterfall",
+        "tradicional",
+        "cascada"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap2-020",
+        "cap3-001",
+        "cap2-001"
+      ],
+      "descripcionExtendida": "Procesos de software donde todas las actividades del proceso se planean por anticipado y el progreso se mide contra este plan. Requieren especificación completa de requisitos antes del desarrollo. Apropiados para sistemas con requisitos bien comprendidos y estables.",
+      "ejemplos": [
+        "Proyecto de infraestructura crítica con contrato de precio fijo",
+        "Sistema regulado médico con aprobaciones en cada fase",
+        "Software de defensa con requisitos contractuales rígidos"
+      ],
+      "referencias": {
+        "capitulo": 2,
+        "secciones": [
+          "2.1"
+        ]
+      }
     },
     {
       "id": "cap2-013",
@@ -31795,9 +31986,30 @@
       "keywords": [
         "modelo",
         "cascada",
-        "waterfall"
+        "waterfall",
+        "secuencial",
+        "plan-driven",
+        "fases",
+        "lineal",
+        "predictivo"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap2-011",
+        "cap2-001",
+        "cap2-021"
+      ],
+      "descripcionExtendida": "Modelo secuencial de proceso de software donde las fases fluyen hacia abajo como cascada: especificación → diseño → implementación → prueba → mantenimiento. Cada fase debe completarse antes de iniciar la siguiente. Apropiado para sistemas con requisitos bien comprendidos y estables.",
+      "ejemplos": [
+        "Desarrollo de sistema de control de tráfico aéreo",
+        "Sistema de facturación para gobierno con requisitos fijos",
+        "Software embebido para dispositivo médico regulado"
+      ],
+      "referencias": {
+        "capitulo": 2,
+        "secciones": [
+          "2.1.1"
+        ]
+      }
     },
     {
       "id": "cap2-021",
@@ -31807,9 +32019,31 @@
       "capitulo": 2,
       "keywords": [
         "desarrollo",
-        "incremental"
+        "incremental",
+        "iterativo",
+        "incrementos",
+        "entregas",
+        "ciclos",
+        "feedback"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-001",
+        "cap2-001",
+        "cap3-003",
+        "cap2-020"
+      ],
+      "descripcionExtendida": "Enfoque donde el sistema se desarrolla en incrementos, cada uno entregando funcionalidad adicional. Permite entregas parciales tempranas y facilita la obtención de feedback del cliente. Los incrementos pueden desarrollarse en paralelo por equipos distintos.",
+      "ejemplos": [
+        "Sistema de e-commerce entregando módulos: catálogo → carrito → pago → reportes",
+        "App móvil con releases incrementales: login → perfil → notificaciones",
+        "Plataforma SaaS con features mensuales"
+      ],
+      "referencias": {
+        "capitulo": 2,
+        "secciones": [
+          "2.1.2"
+        ]
+      }
     },
     {
       "id": "cap2-022",
@@ -32752,9 +32986,32 @@
       "capitulo": 2,
       "keywords": [
         "requerimientos",
-        "funcionales"
+        "funcionales",
+        "requisitos",
+        "funcionalidad",
+        "servicios",
+        "casos de uso",
+        "features"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap4-002",
+        "cap4-003",
+        "cap2-098",
+        "cap4-101",
+        "cap4-036"
+      ],
+      "descripcionExtendida": "Declaraciones de servicios que el sistema debe proveer, cómo debe reaccionar a entradas específicas y cómo debe comportarse en situaciones particulares. Describen la funcionalidad o servicios del sistema independientemente de su implementación.",
+      "ejemplos": [
+        "El sistema debe permitir búsqueda de productos por categoría",
+        "El usuario debe poder exportar reportes a PDF",
+        "El sistema debe validar tarjetas de crédito antes de procesar pago"
+      ],
+      "referencias": {
+        "capitulo": 4,
+        "secciones": [
+          "4.1.1"
+        ]
+      }
     },
     {
       "id": "cap2-098",
@@ -32764,9 +33021,34 @@
       "capitulo": 2,
       "keywords": [
         "requerimientos",
-        "funcionales"
+        "funcionales",
+        "no funcionales",
+        "nfr",
+        "calidad",
+        "rendimiento",
+        "seguridad",
+        "usabilidad",
+        "performance",
+        "constraints"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap4-001",
+        "cap6-010",
+        "cap2-097",
+        "cap6-001"
+      ],
+      "descripcionExtendida": "Restricciones sobre servicios o funciones del sistema, incluyendo restricciones temporales, sobre el proceso de desarrollo y estándares. Definen propiedades y atributos del sistema: rendimiento, seguridad, disponibilidad, mantenibilidad, usabilidad. A menudo más críticos que funcionales.",
+      "ejemplos": [
+        "El sistema debe responder en menos de 2 segundos (rendimiento)",
+        "La aplicación debe soportar 10,000 usuarios concurrentes (escalabilidad)",
+        "Los datos deben cifrarse con AES-256 (seguridad)"
+      ],
+      "referencias": {
+        "capitulo": 4,
+        "secciones": [
+          "4.1.2"
+        ]
+      }
     },
     {
       "id": "cap2-099",
@@ -40059,9 +40341,35 @@
       "keywords": [
         "desarrollo",
         "ágil",
-        "software"
+        "software",
+        "agile",
+        "iterativo",
+        "incremental",
+        "scrum",
+        "xp",
+        "kanban",
+        "adaptativo"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap1-008",
+        "cap3-005",
+        "cap2-021",
+        "cap2-011",
+        "cap4-036"
+      ],
+      "descripcionExtendida": "Enfoque de desarrollo de software basado en desarrollo iterativo e incremental donde los requisitos y soluciones evolucionan mediante colaboración entre equipos auto-organizados y multifuncionales. Prioriza individuos e interacciones, software funcionando, colaboración con cliente, y respuesta al cambio.",
+      "ejemplos": [
+        "Equipo Scrum entregando incremento cada 2 semanas",
+        "Startup usando Kanban para flujo continuo",
+        "Equipo de producto usando XP con TDD y pair programming"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.1",
+          "3.2"
+        ]
+      }
     },
     {
       "id": "cap3-002",
@@ -40098,9 +40406,31 @@
         "desarrollo",
         "dirigido",
         "por",
-        "plan"
+        "plan",
+        "sprint",
+        "iteración",
+        "scrum",
+        "timebox",
+        "incremento",
+        "entrega"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap1-008",
+        "cap3-001",
+        "cap4-036"
+      ],
+      "descripcionExtendida": "Período de tiempo fijo (típicamente 1-4 semanas) en Scrum durante el cual se crea un incremento de producto \"Terminado\" usable y potencialmente liberable. Incluye planificación, trabajo de desarrollo, revisión y retrospectiva. No se permiten cambios que pongan en peligro el objetivo del sprint.",
+      "ejemplos": [
+        "Sprint de 2 semanas con planning, daily standups, review y retro",
+        "Sprint de 1 semana para equipo de producto con releases frecuentes",
+        "Sprint de 4 semanas para desarrollo de feature compleja"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.2.2"
+        ]
+      }
     },
     {
       "id": "cap3-005",
@@ -40110,9 +40440,32 @@
       "capitulo": 3,
       "keywords": [
         "programación",
-        "extrema"
+        "extrema",
+        "xp",
+        "extreme programming",
+        "pair programming",
+        "tdd",
+        "refactoring",
+        "continuous integration",
+        "test-driven"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-001",
+        "cap3-003",
+        "cap1-003"
+      ],
+      "descripcionExtendida": "Metodología ágil que lleva las prácticas de ingeniería al extremo: pair programming, TDD, integración continua diaria, releases frecuentes, diseño simple, refactorización constante. Enfatiza excelencia técnica y adaptación continua a requisitos cambiantes. Requiere cliente on-site.",
+      "ejemplos": [
+        "Startup tech con deploys diarios y TDD",
+        "Equipo de 4 devs con pair programming rotativo",
+        "Proyecto con cliente embebido en el equipo"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.3"
+        ]
+      }
     },
     {
       "id": "cap3-006",
@@ -40121,9 +40474,30 @@
       "descripcionBreve": "Método ágil enfocado en la administración iterativa del desarrollo mediante ciclos de trabajo llamados sprints",
       "capitulo": 3,
       "keywords": [
-        "scrum"
+        "scrum",
+        "refactoring",
+        "refactorización",
+        "código limpio",
+        "clean code",
+        "mejora continua",
+        "deuda técnica"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-005",
+        "cap3-001"
+      ],
+      "descripcionExtendida": "Proceso de reestructurar código existente sin cambiar su comportamiento externo. Mejora la estructura interna, legibilidad y mantenibilidad del código. Práctica fundamental en XP y desarrollo ágil. Requiere suite de pruebas automatizadas para verificar que el comportamiento no cambia.",
+      "ejemplos": [
+        "Extraer método para eliminar código duplicado",
+        "Renombrar variables para mejorar claridad",
+        "Dividir clase grande en clases más cohesivas"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.3.2"
+        ]
+      }
     },
     {
       "id": "cap3-007",
@@ -40134,9 +40508,32 @@
       "keywords": [
         "administración",
         "proyecto",
-        "ágil"
+        "ágil",
+        "continuous integration",
+        "ci",
+        "integración continua",
+        "build",
+        "automatización",
+        "jenkins",
+        "pipeline"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-005",
+        "cap3-001",
+        "cap3-006"
+      ],
+      "descripcionExtendida": "Práctica de desarrollo donde los miembros del equipo integran su trabajo frecuentemente (varias veces al día). Cada integración se verifica mediante build automatizado (incluyendo pruebas) para detectar errores de integración lo antes posible. Reduce problemas de integración y permite desarrollo rápido.",
+      "ejemplos": [
+        "Pipeline de CI que ejecuta tests en cada commit a main",
+        "Jenkins construyendo y desplegando automáticamente a staging",
+        "GitHub Actions ejecutando linter, tests y build en cada PR"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.3.3"
+        ]
+      }
     },
     {
       "id": "cap3-008",
@@ -40147,9 +40544,31 @@
       "keywords": [
         "escalamiento",
         "métodos",
-        "ágiles"
+        "ágiles",
+        "tdd",
+        "test-driven",
+        "desarrollo dirigido por pruebas",
+        "testing",
+        "unit tests",
+        "red-green-refactor"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-005",
+        "cap3-001",
+        "cap3-007"
+      ],
+      "descripcionExtendida": "Práctica de desarrollo donde se escriben las pruebas antes del código de producción. Ciclo: escribir test (falla) → escribir código mínimo para pasar test → refactorizar. Asegura cobertura de pruebas, diseño testeable y especificación ejecutable de requisitos.",
+      "ejemplos": [
+        "Escribir test unitario para función de validación antes de implementarla",
+        "Desarrollar API REST con tests de integración primero",
+        "Construir lógica de negocio con ciclo TDD estricto"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.3.4"
+        ]
+      }
     },
     {
       "id": "cap3-009",
@@ -40520,9 +40939,30 @@
       "descripcionBreve": "Mejora continua de la estructura del código sin cambiar su funcionalidad externa",
       "capitulo": 3,
       "keywords": [
-        "refactorización"
+        "refactorización",
+        "refactoring",
+        "código limpio",
+        "clean code",
+        "mejora continua",
+        "deuda técnica"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-005",
+        "cap3-001",
+        "cap3-008"
+      ],
+      "descripcionExtendida": "Proceso de reestructurar código existente sin cambiar su comportamiento externo. Mejora la estructura interna, legibilidad y mantenibilidad del código. Práctica fundamental en XP y desarrollo ágil. Requiere suite de pruebas automatizadas para verificar que el comportamiento no cambia.",
+      "ejemplos": [
+        "Extraer método para eliminar código duplicado",
+        "Renombrar variables para mejorar claridad",
+        "Dividir clase grande en clases más cohesivas"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.3.2"
+        ]
+      }
     },
     {
       "id": "cap3-039",
@@ -40866,9 +41306,32 @@
       "capitulo": 3,
       "keywords": [
         "integración",
-        "continua"
+        "continua",
+        "continuous integration",
+        "ci",
+        "integración continua",
+        "build",
+        "automatización",
+        "jenkins",
+        "pipeline"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-005",
+        "cap3-001",
+        "cap3-038"
+      ],
+      "descripcionExtendida": "Práctica de desarrollo donde los miembros del equipo integran su trabajo frecuentemente (varias veces al día). Cada integración se verifica mediante build automatizado (incluyendo pruebas) para detectar errores de integración lo antes posible. Reduce problemas de integración y permite desarrollo rápido.",
+      "ejemplos": [
+        "Pipeline de CI que ejecuta tests en cada commit a main",
+        "Jenkins construyendo y desplegando automáticamente a staging",
+        "GitHub Actions ejecutando linter, tests y build en cada PR"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.3.3"
+        ]
+      }
     },
     {
       "id": "cap3-067",
@@ -41208,9 +41671,36 @@
       "capitulo": 3,
       "keywords": [
         "arquitectura",
-        "software"
+        "software",
+        "diseño",
+        "componentes",
+        "estructura",
+        "patrones",
+        "sistema",
+        "high-level"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap6-002",
+        "cap6-003",
+        "cap6-004",
+        "cap6-045",
+        "cap6-069",
+        "cap6-064",
+        "cap2-098"
+      ],
+      "descripcionExtendida": "Organización fundamental de un sistema, embodied en sus componentes, sus relaciones entre ellos y el ambiente, y los principios que gobiernan su diseño y evolución. Define estructura de alto nivel, patrones, decisiones técnicas clave y trade-offs de calidad (performance vs mantenibilidad).",
+      "ejemplos": [
+        "Arquitectura de microservicios para plataforma de streaming",
+        "Arquitectura en capas para aplicación empresarial",
+        "Arquitectura orientada a eventos para sistema de trading"
+      ],
+      "referencias": {
+        "capitulo": 6,
+        "secciones": [
+          "6.1",
+          "6.2"
+        ]
+      }
     },
     {
       "id": "cap3-095",
@@ -41231,9 +41721,31 @@
       "descripcionBreve": "Periodo de tiempo fijo en Scrum para desarrollar funcionalidad específica",
       "capitulo": 3,
       "keywords": [
-        "sprint"
+        "sprint",
+        "iteración",
+        "scrum",
+        "timebox",
+        "incremento",
+        "entrega",
+        "ciclo"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap1-008",
+        "cap3-001",
+        "cap4-036"
+      ],
+      "descripcionExtendida": "Período de tiempo fijo (típicamente 1-4 semanas) en Scrum durante el cual se crea un incremento de producto \"Terminado\" usable y potencialmente liberable. Incluye planificación, trabajo de desarrollo, revisión y retrospectiva. No se permiten cambios que pongan en peligro el objetivo del sprint.",
+      "ejemplos": [
+        "Sprint de 2 semanas con planning, daily standups, review y retro",
+        "Sprint de 1 semana para equipo de producto con releases frecuentes",
+        "Sprint de 4 semanas para desarrollo de feature compleja"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.2.2"
+        ]
+      }
     },
     {
       "id": "cap3-097",
@@ -43557,9 +44069,32 @@
       "capitulo": 4,
       "keywords": [
         "historias",
-        "usuario"
+        "usuario",
+        "user stories",
+        "agile",
+        "requisitos",
+        "features",
+        "épicas",
+        "backlog"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-003",
+        "cap4-001",
+        "cap2-097",
+        "cap3-001"
+      ],
+      "descripcionExtendida": "Descripciones breves y simples de una funcionalidad desde la perspectiva del usuario final. Formato típico: \"Como [rol], quiero [funcionalidad] para [beneficio]\". Usadas en métodos ágiles para capturar requisitos de manera liviana y conversacional. Se refinan mediante conversaciones.",
+      "ejemplos": [
+        "Como cliente, quiero agregar productos al carrito para comprar múltiples items",
+        "Como admin, quiero ver dashboard de ventas para tomar decisiones de negocio",
+        "Como usuario registrado, quiero resetear mi contraseña para recuperar acceso"
+      ],
+      "referencias": {
+        "capitulo": 4,
+        "secciones": [
+          "4.3.2"
+        ]
+      }
     },
     {
       "id": "cap4-037",
@@ -44053,9 +44588,32 @@
       "capitulo": 4,
       "keywords": [
         "modelo",
-        "espiral"
+        "espiral",
+        "spiral",
+        "riesgos",
+        "iterativo",
+        "Boehm",
+        "prototipos",
+        "análisis"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap2-001",
+        "cap2-016",
+        "cap2-021",
+        "cap2-020"
+      ],
+      "descripcionExtendida": "Modelo de proceso iterativo que combina desarrollo incremental con análisis de riesgos. Cada vuelta de la espiral representa una fase que incluye: determinación de objetivos, evaluación y reducción de riesgos, desarrollo y prueba, planificación de la siguiente iteración. Especialmente útil para sistemas grandes y complejos.",
+      "ejemplos": [
+        "Sistema de gestión de central nuclear con análisis de riesgos de seguridad",
+        "Plataforma financiera evaluando riesgos de regulación en cada iteración",
+        "Sistema de defensa con prototipos de subsistemas críticos"
+      ],
+      "referencias": {
+        "capitulo": 2,
+        "secciones": [
+          "2.1.3"
+        ]
+      }
     },
     {
       "id": "cap4-078",
@@ -44343,9 +44901,33 @@
       "capitulo": 4,
       "keywords": [
         "casos",
-        "uso"
+        "uso",
+        "casos de uso",
+        "use cases",
+        "actores",
+        "requisitos",
+        "funcionalidad",
+        "escenarios",
+        "interacciones",
+        "uml"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap4-001",
+        "cap5-001",
+        "cap2-062"
+      ],
+      "descripcionExtendida": "Descripción de interacciones entre usuarios (actores) y el sistema para lograr un objetivo específico. Documentan requisitos funcionales desde la perspectiva del usuario. Incluyen: nombre, actores, precondiciones, flujo normal, flujos alternativos, postcondiciones. Base para diagramas de casos de uso UML.",
+      "ejemplos": [
+        "Caso de uso \"Realizar compra\": Cliente selecciona productos, ingresa datos de pago, sistema procesa transacción",
+        "Caso de uso \"Retirar efectivo\": Cliente ingresa tarjeta, PIN, monto; cajero entrega efectivo",
+        "Caso de uso \"Registrar paciente\": Recepcionista ingresa datos personales, sistema genera ID único"
+      ],
+      "referencias": {
+        "capitulo": 4,
+        "secciones": [
+          "4.2.3"
+        ]
+      }
     },
     {
       "id": "cap4-102",
@@ -45882,9 +46464,33 @@
       "capitulo": 5,
       "keywords": [
         "diagrama",
-        "secuencia"
+        "secuencia",
+        "sequence diagram",
+        "uml",
+        "mensajes",
+        "interacciones",
+        "temporal",
+        "lifeline",
+        "comportamiento"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap5-001",
+        "cap5-006",
+        "cap5-022",
+        "cap4-101"
+      ],
+      "descripcionExtendida": "Diagrama UML de comportamiento que muestra interacciones entre objetos en una secuencia temporal. Ilustra el flujo de mensajes entre objetos para realizar una funcionalidad específica. Útil para diseñar y documentar escenarios de uso complejos.",
+      "ejemplos": [
+        "Flujo de autenticación: Usuario → UI → Controller → AuthService → Database",
+        "Proceso de compra: Cliente → Carrito → Sistema de Pago → Banco",
+        "Comunicación entre microservicios: API Gateway → User Service → Order Service → Notification Service"
+      ],
+      "referencias": {
+        "capitulo": 5,
+        "secciones": [
+          "5.4.3"
+        ]
+      }
     },
     {
       "id": "cap5-022",
@@ -45894,9 +46500,33 @@
       "capitulo": 5,
       "keywords": [
         "diagrama",
-        "clase"
+        "clase",
+        "clases",
+        "class diagram",
+        "uml",
+        "objetos",
+        "herencia",
+        "asociación",
+        "atributos",
+        "métodos",
+        "oop"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap5-001",
+        "cap5-021"
+      ],
+      "descripcionExtendida": "Diagrama UML estructural que muestra clases del sistema, sus atributos, métodos y relaciones (asociación, agregación, composición, herencia). Representa la estructura estática del sistema orientado a objetos. Base para implementación en lenguajes OOP.",
+      "ejemplos": [
+        "Modelo de dominio: Clase Pedido con relación a Cliente y LineaPedido",
+        "Jerarquía de clases: Vehículo (padre) con Auto, Moto, Camión (hijos)",
+        "Patrón Repository: Interfaces y clases concretas para acceso a datos"
+      ],
+      "referencias": {
+        "capitulo": 5,
+        "secciones": [
+          "5.3"
+        ]
+      }
     },
     {
       "id": "cap5-023",
@@ -48916,9 +49546,33 @@
         "desarrollo",
         "dirigido",
         "por",
-        "pruebas"
+        "pruebas",
+        "tdd",
+        "test-driven",
+        "desarrollo dirigido por pruebas",
+        "testing",
+        "unit tests",
+        "red-green-refactor",
+        "test-first"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap3-005",
+        "cap3-001",
+        "cap3-066",
+        "cap3-038"
+      ],
+      "descripcionExtendida": "Práctica de desarrollo donde se escriben las pruebas antes del código de producción. Ciclo: escribir test (falla) → escribir código mínimo para pasar test → refactorizar. Asegura cobertura de pruebas, diseño testeable y especificación ejecutable de requisitos.",
+      "ejemplos": [
+        "Escribir test unitario para función de validación antes de implementarla",
+        "Desarrollar API REST con tests de integración primero",
+        "Construir lógica de negocio con ciclo TDD estricto"
+      ],
+      "referencias": {
+        "capitulo": 3,
+        "secciones": [
+          "3.3.4"
+        ]
+      }
     },
     {
       "id": "cap5-267",
@@ -49656,9 +50310,33 @@
       "capitulo": 6,
       "keywords": [
         "patrón",
-        "arquitectónico"
+        "arquitectónico",
+        "architectural pattern",
+        "estilo",
+        "diseño",
+        "template",
+        "blueprint"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap6-001",
+        "cap6-003",
+        "cap6-004",
+        "cap6-007",
+        "cap6-069",
+        "cap6-064"
+      ],
+      "descripcionExtendida": "Solución reutilizable a problemas comunes de arquitectura de software. Describe organización estructural fundamental para sistemas de software, con subsistemas predefinidos, responsabilidades y reglas para organizar relaciones entre ellos. Ejemplos: capas, MVC, microservicios, cliente-servidor.",
+      "ejemplos": [
+        "Patrón MVC para aplicación web Spring Boot",
+        "Patrón de capas para sistema empresarial Java EE",
+        "Patrón de microservicios con Docker y Kubernetes"
+      ],
+      "referencias": {
+        "capitulo": 6,
+        "secciones": [
+          "6.3"
+        ]
+      }
     },
     {
       "id": "cap6-046",
@@ -49888,9 +50566,33 @@
       "capitulo": 6,
       "keywords": [
         "patrón",
-        "mvc"
+        "mvc",
+        "modelo",
+        "vista",
+        "controlador",
+        "model",
+        "view",
+        "controller",
+        "separación",
+        "ui"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap6-001",
+        "cap6-002",
+        "cap6-069"
+      ],
+      "descripcionExtendida": "Patrón arquitectónico que separa aplicación en tres componentes interconectados: Modelo (datos y lógica de negocio), Vista (presentación al usuario), Controlador (maneja input del usuario y actualiza modelo/vista). Facilita desarrollo paralelo, mantenibilidad y testing.",
+      "ejemplos": [
+        "Aplicación web Spring MVC: JSP (Vista), Controllers, Services (Modelo)",
+        "App móvil iOS: UIViewController (Controlador), Models, Views",
+        "Framework Ruby on Rails con arquitectura MVC estándar"
+      ],
+      "referencias": {
+        "capitulo": 6,
+        "secciones": [
+          "6.3.2"
+        ]
+      }
     },
     {
       "id": "cap6-065",
@@ -49900,9 +50602,17 @@
       "capitulo": 6,
       "keywords": [
         "modelo",
-        "mvc"
+        "mvc",
+        "model",
+        "datos",
+        "lógica de negocio",
+        "domain"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap6-064",
+        "cap6-066",
+        "cap6-067"
+      ]
     },
     {
       "id": "cap6-066",
@@ -49912,9 +50622,17 @@
       "capitulo": 6,
       "keywords": [
         "vista",
-        "mvc"
+        "mvc",
+        "view",
+        "ui",
+        "presentación",
+        "interfaz"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap6-064",
+        "cap6-065",
+        "cap6-067"
+      ]
     },
     {
       "id": "cap6-067",
@@ -49924,9 +50642,17 @@
       "capitulo": 6,
       "keywords": [
         "controlador",
-        "mvc"
+        "mvc",
+        "controller",
+        "input",
+        "navegación",
+        "routing"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap6-064",
+        "cap6-065",
+        "cap6-066"
+      ]
     },
     {
       "id": "cap6-068",
@@ -49949,9 +50675,33 @@
       "capitulo": 6,
       "keywords": [
         "arquitectura",
-        "capas"
+        "capas",
+        "layered",
+        "layers",
+        "n-tier",
+        "presentation",
+        "business logic",
+        "data access",
+        "separación"
       ],
-      "relatedTerms": []
+      "relatedTerms": [
+        "cap6-001",
+        "cap6-002",
+        "cap6-045",
+        "cap6-064"
+      ],
+      "descripcionExtendida": "Patrón que organiza el sistema en capas jerárquicas, donde cada capa proporciona servicios a la capa superior y usa servicios de la capa inferior. Típicamente: Presentación, Lógica de negocio, Acceso a datos, Base de datos. Promueve separación de concerns y modularidad.",
+      "ejemplos": [
+        "App web clásica: UI → Service Layer → DAO → Database",
+        "Sistema empresarial: Presentation → Business → Persistence → Database",
+        "API REST: Controller → Service → Repository → DB"
+      ],
+      "referencias": {
+        "capitulo": 6,
+        "secciones": [
+          "6.3.1"
+        ]
+      }
     },
     {
       "id": "cap6-070",
