@@ -3,6 +3,8 @@ import { sanitizeMermaidText } from './helpers';
 
 /**
  * Genera sintaxis Mermaid para diagrama de timeline/Gantt
+ * NOTA: Sin emojis - Mermaid 11.x tiene timeout con caracteres Unicode complejos
+ * NOTA: Limitado a máx 5 secciones y 3 tareas por sección para evitar timeout
  */
 export function generateTimelineDiagram(weeks: TimelineWeek[]): string {
   if (!weeks || weeks.length === 0) {
@@ -17,7 +19,6 @@ export function generateTimelineDiagram(weeks: TimelineWeek[]): string {
   const phaseGroups = new Map<string, TimelineWeek[]>();
 
   weeks.forEach((week) => {
-    // Validación defensiva: verificar que week tenga los campos necesarios
     if (!week?.phase || !Array.isArray(week?.tasks)) {
       console.warn('⚠️ Skipping invalid week entry:', week);
       return;
@@ -30,57 +31,65 @@ export function generateTimelineDiagram(weeks: TimelineWeek[]): string {
     phaseGroups.get(phase)!.push(week);
   });
 
-  // Fecha inicial (arbitraria para el diagrama)
   const startDate = new Date('2024-01-01');
 
   let ganttCode = 'gantt\n';
-  ganttCode += '    title Timeline de Desarrollo (12 semanas)\n';
+  ganttCode += '    title Timeline de Desarrollo\n';
   ganttCode += '    dateFormat YYYY-MM-DD\n';
   ganttCode += '    axisFormat %d/%m\n\n';
 
   let weekOffset = 0;
+  let sectionCount = 0;
 
-  // Generar secciones por fase
+  // Limitar a máx 5 fases para evitar timeout
   phaseGroups.forEach((weeksInPhase, phase) => {
-    ganttCode += `    section ${sanitizeMermaidText(phase)}\n`;
+    if (sectionCount >= 5) return;
+    sectionCount++;
 
-    // Agrupar actividades similares dentro de la fase
+    const safePhaseName = sanitizeMermaidText(phase).substring(0, 30);
+    ganttCode += `    section ${safePhaseName}\n`;
+
+    // Agrupar actividades únicas dentro de la fase
     const activities = new Map<string, number>();
 
     weeksInPhase.forEach((week) => {
       week.tasks.forEach((task) => {
-        const taskName = sanitizeMermaidText(task);
-        activities.set(taskName, (activities.get(taskName) || 0) + 1);
+        const taskName = sanitizeMermaidText(task).substring(0, 30);
+        if (taskName) {
+          activities.set(taskName, (activities.get(taskName) || 0) + 1);
+        }
       });
     });
 
-    // Calcular fechas para esta fase
     const phaseStartDate = new Date(startDate);
     phaseStartDate.setDate(phaseStartDate.getDate() + weekOffset * 7);
 
     const phaseDuration = weeksInPhase.length;
 
-    // Generar tareas
-    if (activities.size > 0) {
-      activities.forEach((weeks, activity) => {
-        const taskStartDate = phaseStartDate.toISOString().split('T')[0];
-        const taskDuration = `${weeks}w`;
+    // Limitar a máx 3 actividades por sección
+    let activityCount = 0;
 
-        // Determinar estado de la tarea
+    if (activities.size > 0) {
+      activities.forEach((durationWeeks, activity) => {
+        if (activityCount >= 3) return;
+        activityCount++;
+
+        const taskStartDate = phaseStartDate.toISOString().split('T')[0];
+        const taskDuration = `${Math.max(1, durationWeeks)}w`;
+
         let status = '';
         if (weekOffset < 2) {
-          status = 'done, '; // Primeras semanas marcadas como completadas
+          status = 'done, ';
         } else if (weekOffset < 4) {
-          status = 'active, '; // Semanas actuales
+          status = 'active, ';
         }
 
         ganttCode += `    ${activity} :${status}${taskStartDate}, ${taskDuration}\n`;
       });
     } else {
-      // Si no hay actividades, crear tarea genérica de la fase
       const taskStartDate = phaseStartDate.toISOString().split('T')[0];
       const status = weekOffset < 2 ? 'done, ' : weekOffset < 4 ? 'active, ' : '';
-      ganttCode += `    ${sanitizeMermaidText(phase)} :${status}${taskStartDate}, ${phaseDuration}w\n`;
+      ganttCode += `    ${safePhaseName} :${status}${taskStartDate}, ${phaseDuration}w\n`;
     }
 
     ganttCode += '\n';

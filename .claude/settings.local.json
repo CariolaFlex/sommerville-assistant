@@ -13,7 +13,10 @@
       "Bash(find:*)",
       "Bash(ls:*)",
       "Bash(git rm:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(git push:*)",
+      "Bash(npm ls:*)",
+      "Bash(npx shadcn@latest add checkbox:*)"
     ]
   }
 }

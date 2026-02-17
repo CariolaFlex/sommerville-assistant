@@ -3,11 +3,11 @@ import { sanitizeMermaidText, resetNodeCounter } from './helpers';
 
 /**
  * Genera un diagrama de flujo del proceso de desarrollo
+ * NOTA: Sin emojis - Mermaid 11.x tiene timeout con caracteres Unicode complejos
  */
 export function generateProcessDiagram(process: ProcessInfo): string {
   resetNodeCounter();
 
-  // Validación defensiva: verificar que process y process.name existan
   if (!process?.name) {
     console.warn('⚠️ Invalid process data provided, using fallback diagram');
     return generateGenericProcessDiagram({ name: 'Proceso Desconocido' } as ProcessInfo);
@@ -15,7 +15,6 @@ export function generateProcessDiagram(process: ProcessInfo): string {
 
   const processName = process.name.toLowerCase();
 
-  // Determinar tipo de diagrama según el proceso
   if (processName.includes('cascada') || processName.includes('waterfall')) {
     return generateWaterfallDiagram();
   } else if (processName.includes('iterativo') || processName.includes('incremental')) {
@@ -24,24 +23,23 @@ export function generateProcessDiagram(process: ProcessInfo): string {
     return generateScrumDiagram();
   } else if (processName.includes('xp') || processName.includes('extreme')) {
     return generateXPDiagram();
-  } else if (processName.includes('spiral')) {
+  } else if (processName.includes('spiral') || processName.includes('espiral')) {
     return generateSpiralDiagram();
-  } else if (processName.includes('prototipo')) {
+  } else if (processName.includes('prototipo') || processName.includes('prototype')) {
     return generatePrototypeDiagram();
   } else {
-    // Genérico
     return generateGenericProcessDiagram(process);
   }
 }
 
 function generateWaterfallDiagram(): string {
   return `flowchart TB
-    Req["📋 Análisis de Requisitos"]
-    Design["🎨 Diseño del Sistema"]
-    Impl["💻 Implementación"]
-    Test["🧪 Pruebas y Testing"]
-    Deploy["🚀 Despliegue"]
-    Maint["🔧 Mantenimiento"]
+    Req["Analisis de Requisitos"]
+    Design["Diseno del Sistema"]
+    Impl["Implementacion"]
+    Test["Pruebas y Testing"]
+    Deploy["Despliegue"]
+    Maint["Mantenimiento"]
 
     Req --> Design
     Design --> Impl
@@ -59,20 +57,21 @@ function generateWaterfallDiagram(): string {
 
 function generateIterativeDiagram(): string {
   return `flowchart TB
-    Plan["📋 Planificación"]
-    Analysis["🔍 Análisis"]
-    Design["🎨 Diseño"]
-    Impl["💻 Implementación"]
-    Test["🧪 Testing"]
-    Eval["📊 Evaluación"]
+    Plan["Planificacion"]
+    Analysis["Analisis"]
+    Design["Diseno"]
+    Impl["Implementacion"]
+    Test["Testing"]
+    Eval["Evaluacion"]
+    Deploy["Despliegue Final"]
 
     Plan --> Analysis
     Analysis --> Design
     Design --> Impl
     Impl --> Test
     Test --> Eval
-    Eval -.->|"Nueva iteración"| Analysis
-    Eval --> Deploy["🚀 Despliegue Final"]
+    Eval -.->|Nueva iteracion| Analysis
+    Eval --> Deploy
 
     style Plan fill:#bfdbfe,stroke:#3b82f6,stroke-width:2px
     style Analysis fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px
@@ -85,22 +84,22 @@ function generateIterativeDiagram(): string {
 
 function generateScrumDiagram(): string {
   return `flowchart TB
-    Backlog["📋 Product Backlog"]
-    Planning["🎯 Sprint Planning"]
-    Sprint["⚡ Sprint (2-4 semanas)"]
-    Daily["☀️ Daily Scrum"]
-    Review["👥 Sprint Review"]
-    Retro["🔄 Retrospectiva"]
-    Increment["✅ Incremento"]
+    Backlog["Product Backlog"]
+    Planning["Sprint Planning"]
+    Sprint["Sprint - 2 a 4 semanas"]
+    Daily["Daily Scrum"]
+    Review["Sprint Review"]
+    Retro["Retrospectiva"]
+    Increment["Incremento"]
 
     Backlog --> Planning
     Planning --> Sprint
     Sprint --> Daily
-    Daily -.->|"Diario"| Sprint
+    Daily -.->|Diario| Sprint
     Sprint --> Review
     Review --> Retro
     Retro --> Increment
-    Increment -.->|"Nuevo Sprint"| Planning
+    Increment -.->|Nuevo Sprint| Planning
 
     style Backlog fill:#bfdbfe,stroke:#3b82f6,stroke-width:2px
     style Planning fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px
@@ -113,14 +112,14 @@ function generateScrumDiagram(): string {
 
 function generateXPDiagram(): string {
   return `flowchart TB
-    Stories["📝 User Stories"]
-    Planning["🎯 Planning Game"]
-    Design["🎨 Simple Design"]
-    Pair["👥 Pair Programming"]
-    TDD["🧪 Test-Driven Development"]
-    Refactor["🔄 Refactoring"]
-    Integration["🔗 Continuous Integration"]
-    Release["🚀 Small Releases"]
+    Stories["User Stories"]
+    Planning["Planning Game"]
+    Design["Simple Design"]
+    TDD["Test-Driven Development"]
+    Pair["Pair Programming"]
+    Refactor["Refactoring"]
+    Integration["Continuous Integration"]
+    Release["Small Releases"]
 
     Stories --> Planning
     Planning --> Design
@@ -129,7 +128,7 @@ function generateXPDiagram(): string {
     Pair --> Refactor
     Refactor --> Integration
     Integration --> Release
-    Release -.->|"Feedback"| Stories
+    Release -.->|Feedback| Stories
 
     style Stories fill:#bfdbfe,stroke:#3b82f6,stroke-width:2px
     style Planning fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px
@@ -143,15 +142,15 @@ function generateXPDiagram(): string {
 
 function generateSpiralDiagram(): string {
   return `flowchart TB
-    Objectives["🎯 Determinar Objetivos"]
-    Risk["⚠️ Análisis de Riesgos"]
-    Develop["💻 Desarrollo y Pruebas"]
-    Plan["📋 Planificar Siguiente Iteración"]
+    Objectives["Determinar Objetivos"]
+    Risk["Analisis de Riesgos"]
+    Develop["Desarrollo y Pruebas"]
+    Plan["Planificar Siguiente Iteracion"]
 
     Objectives --> Risk
     Risk --> Develop
     Develop --> Plan
-    Plan -.->|"Nueva vuelta"| Objectives
+    Plan -.->|Nueva vuelta| Objectives
 
     style Objectives fill:#bfdbfe,stroke:#3b82f6,stroke-width:2px
     style Risk fill:#fca5a5,stroke:#ef4444,stroke-width:2px
@@ -161,17 +160,17 @@ function generateSpiralDiagram(): string {
 
 function generatePrototypeDiagram(): string {
   return `flowchart TB
-    Req["📋 Requisitos Iniciales"]
-    Proto["🎨 Diseño de Prototipo"]
-    Build["🔨 Construcción Rápida"]
-    Eval["👥 Evaluación con Usuario"]
-    Refine["🔄 Refinamiento"]
-    Final["✅ Sistema Final"]
+    Req["Requisitos Iniciales"]
+    Proto["Diseno de Prototipo"]
+    Build["Construccion Rapida"]
+    Eval["Evaluacion con Usuario"]
+    Refine["Refinamiento"]
+    Final["Sistema Final"]
 
     Req --> Proto
     Proto --> Build
     Build --> Eval
-    Eval -.->|"Ajustar"| Proto
+    Eval -.->|Ajustar| Proto
     Eval --> Refine
     Refine --> Final
 
@@ -187,12 +186,12 @@ function generateGenericProcessDiagram(process: ProcessInfo): string {
   const processName = sanitizeMermaidText(process.name);
 
   return `flowchart TB
-    Start["🎯 Inicio: ${processName}"]
-    Analysis["🔍 Análisis"]
-    Design["🎨 Diseño"]
-    Impl["💻 Implementación"]
-    Test["🧪 Testing"]
-    Deploy["🚀 Despliegue"]
+    Start["Inicio: ${processName}"]
+    Analysis["Analisis"]
+    Design["Diseno"]
+    Impl["Implementacion"]
+    Test["Testing"]
+    Deploy["Despliegue"]
 
     Start --> Analysis
     Analysis --> Design

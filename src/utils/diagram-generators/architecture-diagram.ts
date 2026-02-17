@@ -3,20 +3,20 @@ import { sanitizeMermaidText, resetNodeCounter } from './helpers';
 
 /**
  * Genera un diagrama de arquitectura según el patrón
+ * NOTA: Sin emojis - Mermaid 11.x tiene timeout con caracteres Unicode complejos
  */
 export function generateArchitectureDiagram(architecture: ArchitectureInfo): string {
   resetNodeCounter();
 
-  // Validación defensiva: verificar que architecture y architecture.style existan
   if (!architecture?.style) {
     console.warn('⚠️ Invalid architecture data provided, using fallback diagram');
-    return generateGenericArchitecture({ style: 'Arquitectura Genérica' } as ArchitectureInfo);
+    return generateGenericArchitecture({ style: 'Arquitectura Generica' } as ArchitectureInfo);
   }
 
   const style = architecture.style.toLowerCase();
 
   if (style.includes('capas') || style.includes('layers') || style.includes('layered')) {
-    return generateLayeredArchitecture(architecture);
+    return generateLayeredArchitecture();
   } else if (style.includes('cliente') || style.includes('servidor') || style.includes('client-server')) {
     return generateClientServerArchitecture();
   } else if (style.includes('microservicio') || style.includes('microservice')) {
@@ -27,7 +27,7 @@ export function generateArchitectureDiagram(architecture: ArchitectureInfo): str
     return generateMVCArchitecture();
   } else if (style.includes('repository') || style.includes('repositorio')) {
     return generateRepositoryArchitecture();
-  } else if (style.includes('pipe') || style.includes('filter') || style.includes('tubería') || style.includes('batch')) {
+  } else if (style.includes('pipe') || style.includes('filter') || style.includes('tuberia') || style.includes('batch')) {
     return generatePipeFilterArchitecture();
   } else if (style.includes('event') || style.includes('evento') || style.includes('distribuido')) {
     return generateEventDrivenArchitecture();
@@ -36,43 +36,29 @@ export function generateArchitectureDiagram(architecture: ArchitectureInfo): str
   }
 }
 
-function generateLayeredArchitecture(_architecture: ArchitectureInfo): string {
-  // Extract layer names from patterns if available
-  const layers = ['Presentación', 'Lógica de Negocio', 'Datos'];
+function generateLayeredArchitecture(): string {
+  return `flowchart TB
+    Layer0["Capa de Presentacion"]
+    Layer1["Logica de Negocio"]
+    Layer2["Acceso a Datos"]
+    DB[("Base de Datos")]
 
-  let diagram = 'flowchart TB\n';
+    Layer0 --> Layer1
+    Layer1 --> Layer2
+    Layer2 --> DB
 
-  // Generar nodos para cada capa
-  layers.forEach((layer, index) => {
-    const emoji = index === 0 ? '🖥️' : index === 1 ? '⚙️' : index === 2 ? '💾' : '📦';
-    const nodeId = `Layer${index}`;
-    diagram += `    ${nodeId}["${emoji} ${sanitizeMermaidText(layer)}"]\n`;
-  });
-
-  // Base de datos al final
-  diagram += '    DB[("🗄️ Base de Datos")]\n\n';
-
-  // Conectar capas
-  for (let i = 0; i < layers.length - 1; i++) {
-    diagram += `    Layer${i} --> Layer${i + 1}\n`;
-  }
-  diagram += `    Layer${layers.length - 1} --> DB\n\n`;
-
-  // Estilos
-  diagram += '    style Layer0 fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px\n';
-  diagram += '    style Layer1 fill:#bfdbfe,stroke:#3b82f6,stroke-width:2px\n';
-  diagram += '    style Layer2 fill:#fed7aa,stroke:#f97316,stroke-width:2px\n';
-  diagram += '    style DB fill:#86efac,stroke:#22c55e,stroke-width:2px\n';
-
-  return diagram;
+    style Layer0 fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px
+    style Layer1 fill:#bfdbfe,stroke:#3b82f6,stroke-width:2px
+    style Layer2 fill:#fed7aa,stroke:#f97316,stroke-width:2px
+    style DB fill:#86efac,stroke:#22c55e,stroke-width:2px`;
 }
 
 function generateClientServerArchitecture(): string {
   return `flowchart LR
-    Client1["💻 Cliente Web"]
-    Client2["📱 Cliente Móvil"]
-    Server["⚙️ Servidor de Aplicación"]
-    DB[("🗄️ Base de Datos")]
+    Client1["Cliente Web"]
+    Client2["Cliente Movil"]
+    Server["Servidor de Aplicacion"]
+    DB[("Base de Datos")]
 
     Client1 <-->|HTTP/REST| Server
     Client2 <-->|HTTP/REST| Server
@@ -86,11 +72,11 @@ function generateClientServerArchitecture(): string {
 
 function generateMicroservicesArchitecture(): string {
   return `flowchart TB
-    Gateway["🚪 API Gateway"]
-    Auth["🔐 Servicio de Autenticación"]
-    User["👤 Servicio de Usuarios"]
-    Product["📦 Servicio de Productos"]
-    Order["🛒 Servicio de Pedidos"]
+    Gateway["API Gateway"]
+    Auth["Servicio Auth"]
+    User["Servicio Usuarios"]
+    Product["Servicio Productos"]
+    Order["Servicio Pedidos"]
     DB1[("DB Auth")]
     DB2[("DB Users")]
     DB3[("DB Products")]
@@ -119,13 +105,13 @@ function generateMicroservicesArchitecture(): string {
 
 function generateMonolithicArchitecture(): string {
   return `flowchart TB
-    UI["🖥️ Interfaz de Usuario"]
-    subgraph Monolith["🏢 Aplicación Monolítica"]
-      Auth["🔐 Módulo de Autenticación"]
-      Business["⚙️ Lógica de Negocio"]
-      Data["💾 Acceso a Datos"]
+    UI["Interfaz de Usuario"]
+    subgraph Monolith["Aplicacion Monolitica"]
+      Auth["Modulo de Autenticacion"]
+      Business["Logica de Negocio"]
+      Data["Acceso a Datos"]
     end
-    DB[("🗄️ Base de Datos Única")]
+    DB[("Base de Datos Unica")]
 
     UI --> Auth
     UI --> Business
@@ -143,17 +129,17 @@ function generateMonolithicArchitecture(): string {
 
 function generateMVCArchitecture(): string {
   return `flowchart TB
-    User["👤 Usuario"]
-    View["🖥️ Vista (View)"]
-    Controller["🎮 Controlador (Controller)"]
-    Model["📊 Modelo (Model)"]
-    DB[("🗄️ Base de Datos")]
+    User["Usuario"]
+    View["Vista - View"]
+    Controller["Controlador - Controller"]
+    Model["Modelo - Model"]
+    DB[("Base de Datos")]
 
-    User -->|"Interacción"| View
-    View -->|"Evento"| Controller
-    Controller -->|"Actualiza"| Model
-    Model -->|"Notifica"| View
-    Controller -->|"Manipula"| View
+    User -->|Interaccion| View
+    View -->|Evento| Controller
+    Controller -->|Actualiza| Model
+    Model -->|Notifica| View
+    Controller -->|Manipula| View
     Model <--> DB
 
     style User fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
@@ -165,11 +151,11 @@ function generateMVCArchitecture(): string {
 
 function generateRepositoryArchitecture(): string {
   return `flowchart TB
-    Client1["💻 Cliente 1"]
-    Client2["📱 Cliente 2"]
-    Client3["🖥️ Cliente 3"]
-    Repo["📚 Repositorio Central"]
-    DB[("🗄️ Base de Datos Compartida")]
+    Client1["Cliente 1"]
+    Client2["Cliente 2"]
+    Client3["Cliente 3"]
+    Repo["Repositorio Central"]
+    DB[("Base de Datos Compartida")]
 
     Client1 <--> Repo
     Client2 <--> Repo
@@ -185,11 +171,11 @@ function generateRepositoryArchitecture(): string {
 
 function generatePipeFilterArchitecture(): string {
   return `flowchart LR
-    Input["📥 Entrada"]
-    Filter1["🔧 Filtro 1: Validación"]
-    Filter2["⚙️ Filtro 2: Procesamiento"]
-    Filter3["🎨 Filtro 3: Transformación"]
-    Output["📤 Salida"]
+    Input["Entrada"]
+    Filter1["Filtro 1: Validacion"]
+    Filter2["Filtro 2: Procesamiento"]
+    Filter3["Filtro 3: Transformacion"]
+    Output["Salida"]
 
     Input -->|Pipe| Filter1
     Filter1 -->|Pipe| Filter2
@@ -205,12 +191,12 @@ function generatePipeFilterArchitecture(): string {
 
 function generateEventDrivenArchitecture(): string {
   return `flowchart TB
-    Producer1["📤 Productor 1"]
-    Producer2["📤 Productor 2"]
-    EventBus["🚌 Bus de Eventos"]
-    Consumer1["📥 Consumidor 1"]
-    Consumer2["📥 Consumidor 2"]
-    Consumer3["📥 Consumidor 3"]
+    Producer1["Productor 1"]
+    Producer2["Productor 2"]
+    EventBus["Bus de Eventos"]
+    Consumer1["Consumidor 1"]
+    Consumer2["Consumidor 2"]
+    Consumer3["Consumidor 3"]
 
     Producer1 -->|Publica| EventBus
     Producer2 -->|Publica| EventBus
@@ -230,9 +216,9 @@ function generateGenericArchitecture(architecture: ArchitectureInfo): string {
   const pattern = sanitizeMermaidText(architecture.style);
 
   return `flowchart TB
-    Client["💻 Cliente"]
-    App["⚙️ Aplicación: ${pattern}"]
-    DB[("🗄️ Base de Datos")]
+    Client["Cliente"]
+    App["Aplicacion: ${pattern}"]
+    DB[("Base de Datos")]
 
     Client <--> App
     App <--> DB
