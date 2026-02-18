@@ -9,11 +9,11 @@ interface TimelineSectionProps {
 export function TimelineSection({ timeline }: TimelineSectionProps) {
   return (
     <View style={styles.section}>
-      <Text style={styles.h2}>Timeline del Proyecto (12 Semanas)</Text>
+      <Text style={styles.h2}>5. Timeline del Proyecto (12 Semanas)</Text>
 
-      <Text style={[styles.paragraph, { marginBottom: 10 }]}>
+      <Text style={styles.paragraph}>
         Cronograma sugerido para la implementacion del proyecto, organizado en fases
-        y tareas semanales. Ajusta segun las necesidades especificas de tu equipo.
+        y tareas semanales. Ajuste segun las necesidades especificas de su equipo.
       </Text>
 
       {/* Table */}
@@ -34,10 +34,10 @@ export function TimelineSection({ timeline }: TimelineSectionProps) {
             <Text style={[styles.tableCell, { flex: 1.5, color: '#2563eb' }]}>
               {week.phase}
             </Text>
-            <View style={[styles.tableCell, { flex: 3 }]}>
+            <View style={{ flex: 3, paddingHorizontal: 8 }}>
               {week.tasks.map((task, j) => (
-                <Text key={j} style={{ fontSize: 9, marginBottom: 2, lineHeight: 1.4 }}>
-                  {'\u2022'} {task}
+                <Text key={j} style={{ fontSize: 9, marginBottom: 3, lineHeight: 1.5 }}>
+                  - {task}
                 </Text>
               ))}
             </View>
@@ -47,12 +47,12 @@ export function TimelineSection({ timeline }: TimelineSectionProps) {
 
       {/* Info note */}
       <View style={styles.infoBox}>
-        <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 2 }}>
+        <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 3 }}>
           Nota Importante
         </Text>
-        <Text style={{ fontSize: 9, color: '#1e40af' }}>
-          Este timeline es una guia inicial basada en proyectos similares. Ajusta las fechas
-          segun las necesidades especificas de tu proyecto y la disponibilidad del equipo.
+        <Text style={{ fontSize: 9, color: '#1e40af', lineHeight: 1.5 }}>
+          Este timeline es una guia inicial basada en proyectos similares. Ajuste las fechas
+          segun las necesidades especificas de su proyecto y la disponibilidad del equipo.
         </Text>
       </View>
     </View>

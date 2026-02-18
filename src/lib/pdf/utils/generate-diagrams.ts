@@ -1,8 +1,3 @@
-import mermaid from 'mermaid';
-import { generateDecisionTreeDiagram } from '@/utils/diagram-generators/decision-tree-diagram';
-import { generateProcessDiagram } from '@/utils/diagram-generators/process-diagram';
-import { generateArchitectureDiagram } from '@/utils/diagram-generators/architecture-diagram';
-import { generateTimelineDiagram } from '@/utils/diagram-generators/timeline';
 import type { Recommendation } from '@/types/recommendation';
 
 export interface DiagramsData {
@@ -13,28 +8,50 @@ export interface DiagramsData {
 }
 
 /**
- * Genera todos los diagramas Mermaid como imágenes SVG en base64 para incluir en PDF
+ * Genera todos los diagramas Mermaid como imagenes SVG en base64 para incluir en PDF.
+ * Cada diagrama se genera individualmente para que un fallo en uno no afecte a los demas.
  */
 export async function generateDiagramsForPDF(
   recommendation: Recommendation
 ): Promise<DiagramsData | null> {
-  // Inicializar Mermaid solo en el cliente
   if (typeof window === 'undefined') {
     console.warn('generateDiagramsForPDF: Solo funciona en el cliente (navegador)');
     return null;
   }
 
   try {
-    // Configurar Mermaid para renderizado
+    // Dynamic import to avoid SSR issues
+    const mermaidModule = await import('mermaid');
+    const mermaid = mermaidModule.default;
+
+    // Import diagram generators
+    const { generateDecisionTreeDiagram } = await import('@/utils/diagram-generators/decision-tree-diagram');
+    const { generateProcessDiagram } = await import('@/utils/diagram-generators/process-diagram');
+    const { generateArchitectureDiagram } = await import('@/utils/diagram-generators/architecture-diagram');
+    const { generateTimelineDiagram } = await import('@/utils/diagram-generators/timeline');
+
+    // Configure Mermaid for PDF rendering - simpler theme, no fancy fonts
     mermaid.initialize({
       startOnLoad: false,
       theme: 'neutral',
       securityLevel: 'loose',
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: 'Arial, Helvetica, sans-serif',
       logLevel: 'error',
+      flowchart: {
+        curve: 'basis',
+        padding: 15,
+        htmlLabels: false,
+      },
+      gantt: {
+        titleTopMargin: 25,
+        barHeight: 20,
+        barGap: 4,
+        topPadding: 50,
+        leftPadding: 75,
+      },
     });
 
-    // Generar códigos Mermaid
+    // Generate Mermaid code for each diagram
     const decisionTreeCode = generateDecisionTreeDiagram(
       recommendation.path || [],
       recommendation
@@ -45,33 +62,59 @@ export async function generateDiagramsForPDF(
 
     console.log('Renderizando diagramas para PDF...');
 
-    // Renderizar a SVG con IDs únicos
     const timestamp = Date.now();
-    const { svg: decisionSvg } = await mermaid.render(
-      `pdf-decision-${timestamp}`,
-      decisionTreeCode
-    );
-    const { svg: processSvg } = await mermaid.render(
-      `pdf-process-${timestamp}`,
-      processCode
-    );
-    const { svg: archSvg } = await mermaid.render(
-      `pdf-architecture-${timestamp}`,
-      architectureCode
-    );
-    const { svg: timelineSvg } = await mermaid.render(
-      `pdf-timeline-${timestamp}`,
-      timelineCode
-    );
+    const rand = Math.random().toString(36).substring(2, 6);
+
+    // Render each diagram individually - if one fails, others still work
+    const renderOne = async (id: string, code: string): Promise<string> => {
+      try {
+        // Create a temporary container for rendering
+        const tempDiv = document.createElement('div');
+        tempDiv.style.position = 'absolute';
+        tempDiv.style.left = '-9999px';
+        tempDiv.style.top = '-9999px';
+        tempDiv.style.width = '800px';
+        document.body.appendChild(tempDiv);
+
+        const uniqueId = `pdf-${id}-${timestamp}-${rand}`;
+
+        // Clean up any previous elements with same ID
+        const oldEl = document.getElementById(uniqueId);
+        if (oldEl) oldEl.remove();
+
+        const { svg } = await mermaid.render(uniqueId, code);
+
+        // Clean up temp container
+        document.body.removeChild(tempDiv);
+
+        return svgToDataUri(svg);
+      } catch (err) {
+        console.warn(`Error rendering diagram ${id}:`, err);
+        return '';
+      }
+    };
+
+    const [decisionTree, process, architecture, timeline] = await Promise.all([
+      renderOne('decision', decisionTreeCode),
+      renderOne('process', processCode),
+      renderOne('arch', architectureCode),
+      renderOne('timeline', timelineCode),
+    ]);
+
+    // Check if at least one diagram was generated
+    const anySuccess = decisionTree || process || architecture || timeline;
+    if (!anySuccess) {
+      console.error('No se pudo generar ningun diagrama para el PDF');
+      return null;
+    }
 
     console.log('Diagramas renderizados exitosamente');
 
-    // Convertir SVG a base64
     return {
-      decisionTree: svgToBase64(decisionSvg),
-      process: svgToBase64(processSvg),
-      architecture: svgToBase64(archSvg),
-      timeline: svgToBase64(timelineSvg),
+      decisionTree,
+      process,
+      architecture,
+      timeline,
     };
   } catch (error) {
     console.error('Error generating diagrams for PDF:', error);
@@ -80,16 +123,33 @@ export async function generateDiagramsForPDF(
 }
 
 /**
- * Convierte SVG string a data URI en base64
+ * Converts SVG string to a data URI for embedding in @react-pdf/renderer Image.
+ * Uses proper encoding to handle all characters safely.
  */
-function svgToBase64(svg: string): string {
-  // Limpiar el SVG de caracteres problemáticos
-  const cleanSvg = svg
+function svgToDataUri(svgString: string): string {
+  if (!svgString) return '';
+
+  // Clean SVG: remove potential issues
+  let cleanSvg = svgString
     .replace(/\n/g, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/\t/g, ' ')
+    .replace(/\s{2,}/g, ' ')
     .trim();
 
-  // Codificar a base64
-  const base64 = btoa(unescape(encodeURIComponent(cleanSvg)));
-  return `data:image/svg+xml;base64,${base64}`;
+  // Ensure SVG has proper XML namespace
+  if (!cleanSvg.includes('xmlns="http://www.w3.org/2000/svg"')) {
+    cleanSvg = cleanSvg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+  }
+
+  // Remove any script tags for security
+  cleanSvg = cleanSvg.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+  // Encode to base64 properly handling unicode
+  try {
+    const encoded = btoa(unescape(encodeURIComponent(cleanSvg)));
+    return `data:image/svg+xml;base64,${encoded}`;
+  } catch {
+    // Fallback: use encodeURIComponent for problematic SVGs
+    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(cleanSvg)}`;
+  }
 }

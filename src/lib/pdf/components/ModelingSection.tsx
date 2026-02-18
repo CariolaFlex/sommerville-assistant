@@ -9,10 +9,10 @@ interface ModelingSectionProps {
 export function ModelingSection({ modeling }: ModelingSectionProps) {
   return (
     <View style={styles.section}>
-      <Text style={styles.h2}>Modelado y Notaciones</Text>
+      <Text style={styles.h2}>3. Modelado y Notaciones</Text>
 
       {/* Chapter reference */}
-      <View style={[styles.row, { marginBottom: 8 }]}>
+      <View style={[styles.row, { marginBottom: 10 }]}>
         <Text style={styles.badge}>{modeling.references.chapter}</Text>
       </View>
 
@@ -23,20 +23,18 @@ export function ModelingSection({ modeling }: ModelingSectionProps) {
       </View>
 
       {/* Notations */}
-      <Text style={styles.h4}>Notaciones Recomendadas</Text>
+      <Text style={[styles.h4, { marginTop: 16 }]}>Notaciones Recomendadas</Text>
 
       {modeling.notations.map((notation, i) => (
         <View key={i} style={styles.sectionCard} wrap={false}>
-          {/* Notation name and description */}
-          <Text style={{ fontSize: 11, fontWeight: 'bold', color: '#1e3a5f', marginBottom: 4 }}>
+          <Text style={{ fontSize: 11, fontWeight: 'bold', color: '#1e3a5f', marginBottom: 6 }}>
             {notation.name}
           </Text>
-          <Text style={[styles.text, { marginBottom: 6 }]}>{notation.description}</Text>
+          <Text style={[styles.text, { marginBottom: 8 }]}>{notation.description}</Text>
 
-          {/* Diagrams */}
           {notation.diagrams && notation.diagrams.length > 0 && (
-            <View style={{ marginBottom: 6 }}>
-              <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#7c3aed', marginBottom: 3 }}>
+            <View style={{ marginBottom: 8 }}>
+              <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#7c3aed', marginBottom: 4 }}>
                 Diagramas especificos:
               </Text>
               <View style={[styles.row, { flexWrap: 'wrap' }]}>
@@ -47,18 +45,16 @@ export function ModelingSection({ modeling }: ModelingSectionProps) {
             </View>
           )}
 
-          {/* When to use */}
           <View style={styles.infoBox}>
-            <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 2 }}>
+            <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 3 }}>
               Cuando usar:
             </Text>
-            <Text style={{ fontSize: 9, color: '#1e40af' }}>{notation.whenToUse}</Text>
+            <Text style={{ fontSize: 9, color: '#1e40af', lineHeight: 1.5 }}>{notation.whenToUse}</Text>
           </View>
 
-          {/* Tools */}
           {notation.tools && notation.tools.length > 0 && (
-            <View style={{ marginTop: 4 }}>
-              <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#64748b', marginBottom: 3 }}>
+            <View style={{ marginTop: 6 }}>
+              <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#64748b', marginBottom: 4 }}>
                 Herramientas recomendadas:
               </Text>
               <View style={[styles.row, { flexWrap: 'wrap' }]}>

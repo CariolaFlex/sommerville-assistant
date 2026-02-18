@@ -13,13 +13,16 @@ export function Cover({ recommendation, customization }: CoverProps) {
   const projectName = customization?.projectName || 'Recomendacion de Ingenieria de Software';
 
   return (
-    <Page size="A4" style={{ ...styles.page, paddingHorizontal: 60 }}>
+    <Page size="A4" style={styles.coverPage}>
       <View style={styles.cover}>
-        {/* Top accent bar */}
+        {/* Top spacer to push content down from very top */}
+        <View style={{ height: 40 }} />
+
+        {/* Accent bar */}
         <View style={styles.coverAccentBar} />
 
         {/* Application name */}
-        <Text style={{ fontSize: 11, color: '#94a3b8', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 20 }}>
+        <Text style={styles.coverAppName}>
           Sommerville Assistant
         </Text>
 
@@ -28,70 +31,72 @@ export function Cover({ recommendation, customization }: CoverProps) {
           {projectName}
         </Text>
 
-        {/* Recommendation title */}
-        <Text style={styles.coverSubtitle}>{recommendation.title}</Text>
+        {/* Recommendation subtitle */}
+        <Text style={styles.coverSubtitle}>
+          {recommendation.title}
+        </Text>
 
-        {/* Divider */}
+        {/* Divider line */}
         <View style={styles.coverDivider} />
 
-        {/* Metadata */}
-        <View style={{ marginTop: 8, alignItems: 'center' }}>
+        {/* Metadata block */}
+        <View style={styles.coverMetaBlock}>
           {customization?.companyName && (
-            <View style={{ flexDirection: 'row', marginBottom: 6 }}>
-              <Text style={styles.coverMetaLabel}>Organizacion: </Text>
-              <Text style={styles.coverMeta}>{customization.companyName}</Text>
+            <View style={styles.coverMetaRow}>
+              <Text style={styles.coverMetaLabel}>Organizacion:</Text>
+              <Text style={styles.coverMetaValue}>{customization.companyName}</Text>
             </View>
           )}
           {customization?.authorName && (
-            <View style={{ flexDirection: 'row', marginBottom: 6 }}>
-              <Text style={styles.coverMetaLabel}>Autor(es): </Text>
-              <Text style={styles.coverMeta}>{customization.authorName}</Text>
+            <View style={styles.coverMetaRow}>
+              <Text style={styles.coverMetaLabel}>Autor(es):</Text>
+              <Text style={styles.coverMetaValue}>{customization.authorName}</Text>
             </View>
           )}
           {(customization?.includeTimestamp ?? true) && (
-            <View style={{ flexDirection: 'row', marginBottom: 6 }}>
-              <Text style={styles.coverMetaLabel}>Fecha: </Text>
-              <Text style={styles.coverMeta}>{formatPDFDate()}</Text>
+            <View style={styles.coverMetaRow}>
+              <Text style={styles.coverMetaLabel}>Fecha:</Text>
+              <Text style={styles.coverMetaValue}>{formatPDFDate()}</Text>
             </View>
           )}
-          <View style={{ flexDirection: 'row', marginBottom: 6 }}>
-            <Text style={styles.coverMetaLabel}>ID: </Text>
-            <Text style={styles.coverMeta}>{recommendation.id}</Text>
+          <View style={styles.coverMetaRow}>
+            <Text style={styles.coverMetaLabel}>Referencia:</Text>
+            <Text style={styles.coverMetaValue}>{recommendation.id}</Text>
           </View>
-          <View style={{ flexDirection: 'row', marginBottom: 6 }}>
-            <Text style={styles.coverMetaLabel}>Capitulos: </Text>
-            <Text style={styles.coverMeta}>{recommendation.chapters.join(', ')}</Text>
+          <View style={styles.coverMetaRow}>
+            <Text style={styles.coverMetaLabel}>Capitulos:</Text>
+            <Text style={styles.coverMetaValue}>{recommendation.chapters.join(', ')}</Text>
           </View>
         </View>
 
-        {/* Sections included */}
-        <View style={{ marginTop: 24, alignItems: 'center' }}>
-          <Text style={{ fontSize: 9, color: '#94a3b8', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>
-            Contenido del Documento
+        {/* Content badges */}
+        <View style={{ marginTop: 28, alignItems: 'center' }}>
+          <Text style={{ fontSize: 8, color: '#94a3b8', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1.5 }}>
+            Contenido del documento
           </Text>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', maxWidth: 350 }}>
+          <View style={styles.coverBadgesRow}>
             {['Proceso', 'Metodologia', 'Modelado', 'Arquitectura', 'Timeline', 'Diagramas'].map((section) => (
               <Text key={section} style={styles.badge}>{section}</Text>
             ))}
           </View>
         </View>
 
-        {/* Footer */}
-        <View style={{ marginTop: 'auto', paddingBottom: 20, alignItems: 'center' }}>
+        {/* Footer block - pushed to bottom */}
+        <View style={styles.coverFooterBlock}>
           <View style={styles.coverDivider} />
           {customization?.customFooter ? (
             <Text style={styles.coverFooter}>{customization.customFooter}</Text>
           ) : (
-            <>
+            <View>
               <Text style={styles.coverFooter}>
                 Basado en &quot;Ingenieria de Software&quot; de Ian Sommerville
               </Text>
-              <Text style={[styles.coverFooter, { marginTop: 2 }]}>
-                9na Edicion - Capitulos 1-6
+              <Text style={[styles.coverFooter, { marginTop: 3 }]}>
+                9na Edicion  -  Capitulos 1 al 6
               </Text>
-            </>
+            </View>
           )}
-          <Text style={[styles.coverFooter, { marginTop: 12, fontSize: 8, color: '#cbd5e1' }]}>
+          <Text style={[styles.coverFooter, { marginTop: 14, fontSize: 7, color: '#cbd5e1' }]}>
             Generado automaticamente por Sommerville Assistant
           </Text>
         </View>

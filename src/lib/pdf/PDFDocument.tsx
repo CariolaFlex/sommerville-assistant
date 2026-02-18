@@ -40,10 +40,10 @@ export function PDFDocument({
       subject="Recomendacion de Ingenieria de Software"
       keywords="software engineering, ingenieria de software, sommerville"
     >
-      {/* Portada */}
+      {/* Page 1: Cover */}
       <Cover recommendation={recommendation} customization={customization} />
 
-      {/* Pagina 2: Proceso + Metodologia */}
+      {/* Page 2: Proceso + Metodologia */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.header} fixed>
           {headerText}
@@ -61,10 +61,10 @@ export function PDFDocument({
         />
       </Page>
 
-      {/* Pagina 3: Modelado */}
+      {/* Page 3: Modelado */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.header} fixed>
-          {headerText} - Modelado
+          {headerText} - MODELADO
         </Text>
 
         <ModelingSection modeling={recommendation.modeling} />
@@ -78,10 +78,10 @@ export function PDFDocument({
         />
       </Page>
 
-      {/* Pagina 4: Arquitectura + Errores */}
+      {/* Page 4: Arquitectura + Errores */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.header} fixed>
-          {headerText} - Arquitectura
+          {headerText} - ARQUITECTURA
         </Text>
 
         <ArchitectureSection architecture={recommendation.architecture} />
@@ -99,10 +99,10 @@ export function PDFDocument({
         />
       </Page>
 
-      {/* Pagina 5: Timeline */}
-      <Page size="A4" style={styles.page} break>
+      {/* Page 5: Timeline */}
+      <Page size="A4" style={styles.page}>
         <Text style={styles.header} fixed>
-          {headerText} - Timeline
+          {headerText} - TIMELINE
         </Text>
 
         <TimelineSection timeline={recommendation.timeline} />
@@ -116,14 +116,14 @@ export function PDFDocument({
         />
       </Page>
 
-      {/* Paginas 6-9: Diagramas */}
-      {diagrams && <DiagramsSection diagrams={diagrams} />}
+      {/* Pages 6-9: Diagrams (always shown - placeholder if generation failed) */}
+      <DiagramsSection diagrams={diagrams ?? null} />
 
-      {/* Plantillas */}
+      {/* Templates */}
       {templates.length > 0 && (
         <Page size="A4" style={styles.page} break>
           <Text style={styles.header} fixed>
-            {headerText} - Plantillas
+            {headerText} - PLANTILLAS
           </Text>
 
           <TemplatesSection templates={templates} />
@@ -138,10 +138,10 @@ export function PDFDocument({
         </Page>
       )}
 
-      {/* Pagina final */}
+      {/* Final page: About */}
       <Page size="A4" style={styles.page} break>
         <Text style={styles.header} fixed>
-          Acerca de este Documento
+          ACERCA DE ESTE DOCUMENTO
         </Text>
 
         <View style={styles.section}>
@@ -164,33 +164,33 @@ export function PDFDocument({
           <Text style={styles.h4}>Uso Recomendado</Text>
           <View style={styles.list}>
             {[
-              'Usa este documento como guia inicial, no como regla absoluta',
-              'Adapta las recomendaciones al contexto especifico de tu proyecto',
-              'Consulta con expertos antes de tomar decisiones arquitectonicas criticas',
-              'Revisa regularmente y ajusta segun los resultados del proyecto',
+              'Use este documento como guia inicial, no como regla absoluta.',
+              'Adapte las recomendaciones al contexto especifico de su proyecto.',
+              'Consulte con expertos antes de tomar decisiones arquitectonicas criticas.',
+              'Revise regularmente y ajuste segun los resultados del proyecto.',
             ].map((item, i) => (
               <View key={i} style={styles.listItem}>
-                <Text style={styles.listBullet}>{'\u2022'} </Text>
+                <Text style={styles.listBullet}>{i + 1}.</Text>
                 <Text style={styles.listContent}>{item}</Text>
               </View>
             ))}
           </View>
 
-          <View style={[styles.infoBox, { marginTop: 16 }]}>
+          <View style={[styles.infoBox, { marginTop: 18 }]}>
             <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1e40af', marginBottom: 4 }}>
               Referencia Bibliografica
             </Text>
-            <Text style={{ fontSize: 9, color: '#1e40af' }}>
+            <Text style={{ fontSize: 9, color: '#1e40af', lineHeight: 1.5 }}>
               Sommerville, I. (2011). Software Engineering (9th ed.). Pearson Education.
             </Text>
           </View>
 
-          <View style={[styles.sectionCard, { marginTop: 16 }]}>
+          <View style={[styles.sectionCard, { marginTop: 18 }]}>
             <Text style={{ fontSize: 9, color: '#64748b', textAlign: 'center' }}>
               Documento generado el {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
             </Text>
-            <Text style={{ fontSize: 8, color: '#94a3b8', textAlign: 'center', marginTop: 4 }}>
-              Sommerville Assistant - Plataforma de Ingenieria de Software
+            <Text style={{ fontSize: 8, color: '#94a3b8', textAlign: 'center', marginTop: 6 }}>
+              Sommerville Assistant  -  Plataforma de Ingenieria de Software
             </Text>
           </View>
         </View>

@@ -9,7 +9,7 @@ export function AvoidSection({ avoidItems }: AvoidSectionProps) {
   if (!avoidItems || avoidItems.length === 0) return null;
 
   return (
-    <View style={styles.section}>
+    <View style={[styles.section, { marginTop: 10 }]}>
       <Text style={styles.h2}>Errores Comunes a Evitar</Text>
 
       <Text style={styles.paragraph}>
@@ -17,11 +17,11 @@ export function AvoidSection({ avoidItems }: AvoidSectionProps) {
         aumentara significativamente las probabilidades de exito del proyecto.
       </Text>
 
-      <View style={styles.list}>
+      <View style={{ marginTop: 4 }}>
         {avoidItems.map((item, i) => (
           <View key={i} style={styles.warningBox} wrap={false}>
             <View style={styles.listItem}>
-              <Text style={[styles.listBullet, { color: '#dc2626', fontWeight: 'bold' }]}>{'\u2717'} </Text>
+              <Text style={[styles.listBullet, { color: '#dc2626', fontWeight: 'bold' }]}>[X]</Text>
               <Text style={[styles.listContent, { color: '#92400e' }]}>{item}</Text>
             </View>
           </View>

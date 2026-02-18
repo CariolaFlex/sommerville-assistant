@@ -1,6 +1,6 @@
 import { StyleSheet } from '@react-pdf/renderer';
 
-// Professional color palette
+// Professional color palette - using only PDF-safe colors
 const colors = {
   primary: '#1e3a5f',
   primaryLight: '#2563eb',
@@ -24,16 +24,26 @@ const colors = {
 export const styles = StyleSheet.create({
   // ===== PAGE LAYOUT =====
   page: {
-    paddingTop: 60,
-    paddingBottom: 60,
-    paddingHorizontal: 50,
+    paddingTop: 65,
+    paddingBottom: 65,
+    paddingHorizontal: 55,
     fontSize: 10,
     fontFamily: 'Helvetica',
-    lineHeight: 1.5,
+    lineHeight: 1.6,
     color: colors.text,
   },
 
   // ===== COVER PAGE =====
+  coverPage: {
+    paddingTop: 80,
+    paddingBottom: 60,
+    paddingHorizontal: 70,
+    fontSize: 10,
+    fontFamily: 'Helvetica',
+    lineHeight: 1.6,
+    color: colors.text,
+  },
+
   cover: {
     display: 'flex',
     flexDirection: 'column',
@@ -43,111 +53,142 @@ export const styles = StyleSheet.create({
   },
 
   coverAccentBar: {
-    width: 80,
-    height: 4,
+    width: 60,
+    height: 3,
     backgroundColor: colors.primaryLight,
-    marginBottom: 24,
-    borderRadius: 2,
+    marginBottom: 30,
+  },
+
+  coverAppName: {
+    fontSize: 11,
+    color: colors.textLight,
+    letterSpacing: 3,
+    textTransform: 'uppercase',
+    marginBottom: 28,
+    fontFamily: 'Helvetica',
   },
 
   coverTitle: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
     color: colors.primary,
-    letterSpacing: -0.5,
-    marginBottom: 8,
+    marginBottom: 14,
+    maxWidth: 400,
+    lineHeight: 1.3,
   },
 
   coverSubtitle: {
-    fontSize: 18,
+    fontSize: 16,
     color: colors.primaryLight,
     marginBottom: 40,
     textAlign: 'center',
     lineHeight: 1.4,
+    maxWidth: 380,
   },
 
-  coverEmoji: {
-    fontSize: 48,
-    marginBottom: 24,
+  coverDivider: {
+    width: 180,
+    height: 1,
+    backgroundColor: colors.border,
+    marginVertical: 24,
   },
 
-  coverMeta: {
-    fontSize: 11,
-    color: colors.textMuted,
-    marginBottom: 6,
-    textAlign: 'center',
+  coverMetaBlock: {
+    marginTop: 12,
+    alignItems: 'center',
+  },
+
+  coverMetaRow: {
+    flexDirection: 'row',
+    marginBottom: 8,
+    alignItems: 'center',
   },
 
   coverMetaLabel: {
-    fontSize: 11,
+    fontSize: 10,
     color: colors.textMuted,
     fontWeight: 'bold',
+    width: 90,
+    textAlign: 'right',
+    marginRight: 8,
+  },
+
+  coverMetaValue: {
+    fontSize: 10,
+    color: colors.textMuted,
+  },
+
+  coverFooterBlock: {
+    marginTop: 'auto',
+    paddingBottom: 10,
+    alignItems: 'center',
   },
 
   coverFooter: {
     fontSize: 9,
     color: colors.textLight,
     textAlign: 'center',
+    lineHeight: 1.5,
   },
 
-  coverDivider: {
-    width: 200,
-    height: 1,
-    backgroundColor: colors.border,
-    marginVertical: 20,
+  coverBadgesRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    maxWidth: 320,
   },
 
   // ===== TYPOGRAPHY =====
   h1: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: colors.primary,
-    marginBottom: 12,
-    paddingBottom: 8,
+    marginBottom: 14,
+    paddingBottom: 6,
     borderBottomWidth: 2,
     borderBottomColor: colors.primaryLight,
   },
 
   h2: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: 'bold',
     color: colors.primary,
-    marginTop: 16,
-    marginBottom: 8,
-    paddingBottom: 4,
+    marginTop: 20,
+    marginBottom: 10,
+    paddingBottom: 5,
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
   },
 
   h3: {
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: 'bold',
     color: colors.primaryLight,
-    marginTop: 12,
-    marginBottom: 6,
+    marginTop: 14,
+    marginBottom: 8,
   },
 
   h4: {
-    fontSize: 11,
+    fontSize: 10,
     fontWeight: 'bold',
     color: colors.primaryMuted,
-    marginTop: 10,
-    marginBottom: 4,
+    marginTop: 14,
+    marginBottom: 6,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
   },
 
   paragraph: {
-    marginBottom: 8,
+    marginBottom: 10,
     textAlign: 'justify',
-    lineHeight: 1.6,
+    lineHeight: 1.7,
     fontSize: 10,
   },
 
   text: {
     fontSize: 10,
-    lineHeight: 1.5,
+    lineHeight: 1.6,
   },
 
   textMuted: {
@@ -158,50 +199,53 @@ export const styles = StyleSheet.create({
   textSmall: {
     fontSize: 9,
     color: colors.textMuted,
-    lineHeight: 1.4,
+    lineHeight: 1.5,
+    marginBottom: 4,
   },
 
   // ===== LISTS =====
   list: {
-    marginLeft: 12,
-    marginBottom: 10,
+    marginLeft: 8,
+    marginBottom: 12,
+    marginTop: 4,
   },
 
   listItem: {
     flexDirection: 'row',
-    marginBottom: 4,
+    marginBottom: 5,
     fontSize: 10,
+    paddingRight: 8,
   },
 
   listBullet: {
-    width: 16,
+    width: 18,
     fontSize: 10,
     color: colors.primaryLight,
+    textAlign: 'center',
   },
 
   listContent: {
     flex: 1,
     fontSize: 10,
-    lineHeight: 1.5,
+    lineHeight: 1.6,
   },
 
   // ===== TABLES =====
   table: {
     width: '100%',
-    marginTop: 10,
-    marginBottom: 14,
+    marginTop: 12,
+    marginBottom: 16,
     borderWidth: 1,
     borderColor: colors.border,
-    borderRadius: 4,
   },
 
   tableRow: {
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
-    paddingVertical: 7,
-    paddingHorizontal: 4,
-    minHeight: 28,
+    paddingVertical: 8,
+    paddingHorizontal: 6,
+    minHeight: 30,
   },
 
   tableRowAlternate: {
@@ -216,13 +260,14 @@ export const styles = StyleSheet.create({
   tableCell: {
     paddingHorizontal: 8,
     fontSize: 9,
-    lineHeight: 1.4,
+    lineHeight: 1.5,
   },
 
   tableCellHeader: {
     fontWeight: 'bold',
     fontSize: 9,
     color: colors.white,
+    paddingHorizontal: 8,
   },
 
   // ===== BADGES =====
@@ -269,10 +314,8 @@ export const styles = StyleSheet.create({
     borderLeftWidth: 3,
     borderLeftColor: colors.warning,
     padding: 10,
-    marginVertical: 8,
-    borderRadius: 3,
-    borderWidth: 1,
-    borderColor: '#fde68a',
+    marginVertical: 6,
+    borderRadius: 2,
   },
 
   infoBox: {
@@ -281,9 +324,7 @@ export const styles = StyleSheet.create({
     borderLeftColor: colors.info,
     padding: 10,
     marginVertical: 8,
-    borderRadius: 3,
-    borderWidth: 1,
-    borderColor: '#bfdbfe',
+    borderRadius: 2,
   },
 
   successBox: {
@@ -292,9 +333,7 @@ export const styles = StyleSheet.create({
     borderLeftColor: colors.success,
     padding: 10,
     marginVertical: 8,
-    borderRadius: 3,
-    borderWidth: 1,
-    borderColor: '#a7f3d0',
+    borderRadius: 2,
   },
 
   // ===== HEADER & FOOTER =====
@@ -302,37 +341,39 @@ export const styles = StyleSheet.create({
     fontSize: 8,
     color: colors.textLight,
     textAlign: 'right',
-    marginBottom: 16,
+    marginBottom: 18,
     paddingBottom: 8,
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
+    fontFamily: 'Helvetica',
   },
 
   footer: {
     position: 'absolute',
     bottom: 30,
-    left: 50,
-    right: 50,
+    left: 55,
+    right: 55,
     fontSize: 8,
     color: colors.textLight,
     textAlign: 'center',
     borderTopWidth: 1,
     borderTopColor: colors.border,
     paddingTop: 8,
+    fontFamily: 'Helvetica',
   },
 
   // ===== SECTIONS =====
   section: {
-    marginBottom: 14,
+    marginBottom: 18,
   },
 
   sectionCard: {
     backgroundColor: colors.bg,
     padding: 12,
     borderRadius: 4,
-    marginBottom: 10,
+    marginBottom: 12,
     borderWidth: 1,
     borderColor: colors.border,
   },
@@ -341,9 +382,34 @@ export const styles = StyleSheet.create({
     backgroundColor: '#eff6ff',
     padding: 12,
     borderRadius: 4,
-    marginBottom: 10,
+    marginBottom: 12,
     borderWidth: 1,
     borderColor: '#bfdbfe',
+  },
+
+  // ===== DIAGRAM PAGE =====
+  diagramContainer: {
+    marginTop: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+
+  diagramImage: {
+    maxWidth: '100%',
+    maxHeight: 460,
+    objectFit: 'contain',
+  },
+
+  diagramPlaceholder: {
+    padding: 24,
+    backgroundColor: colors.bg,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 120,
   },
 
   // ===== UTILITIES =====
@@ -387,6 +453,6 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 1,
     backgroundColor: colors.border,
-    marginVertical: 12,
+    marginVertical: 14,
   },
 });

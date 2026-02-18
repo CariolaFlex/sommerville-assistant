@@ -9,25 +9,25 @@ interface ProcessSectionProps {
 export function ProcessSection({ process }: ProcessSectionProps) {
   return (
     <View style={styles.section}>
-      <Text style={styles.h2}>Proceso de Desarrollo</Text>
+      <Text style={styles.h2}>1. Proceso de Desarrollo</Text>
 
       {/* Process name card */}
       <View style={styles.sectionCardHighlight}>
         <Text style={styles.h3}>{process.name}</Text>
-        <View style={[styles.row, { marginTop: 4 }]}>
+        <View style={[styles.row, { marginTop: 6 }]}>
           <Text style={styles.badge}>Capitulo {process.chapter}</Text>
         </View>
       </View>
 
       {/* Why this process */}
       <Text style={styles.h4}>Justificacion</Text>
-      <Text style={[styles.textSmall, { marginBottom: 4 }]}>
+      <Text style={styles.textSmall}>
         Razones fundamentales por las que este proceso es el mas adecuado:
       </Text>
       <View style={styles.list}>
         {process.why.map((reason, i) => (
           <View key={i} style={styles.listItem}>
-            <Text style={styles.listBullet}>{'\u2022'} </Text>
+            <Text style={styles.listBullet}>-</Text>
             <Text style={styles.listContent}>{reason}</Text>
           </View>
         ))}
@@ -35,13 +35,13 @@ export function ProcessSection({ process }: ProcessSectionProps) {
 
       {/* How to implement */}
       <Text style={styles.h4}>Implementacion</Text>
-      <Text style={[styles.textSmall, { marginBottom: 4 }]}>
+      <Text style={styles.textSmall}>
         Pasos recomendados para la implementacion del proceso:
       </Text>
       <View style={styles.list}>
         {process.how.map((step, i) => (
           <View key={i} style={styles.listItem}>
-            <Text style={[styles.listBullet, { fontWeight: 'bold', color: '#1e3a5f' }]}>{i + 1}. </Text>
+            <Text style={[styles.listBullet, { fontWeight: 'bold', color: '#1e3a5f' }]}>{i + 1}.</Text>
             <Text style={styles.listContent}>{step}</Text>
           </View>
         ))}

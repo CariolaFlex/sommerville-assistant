@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Copy, Download, ZoomIn, ZoomOut, AlertCircle, Loader2, RotateCcw } from 'lucide-react';
+import { Copy, Download, ZoomIn, ZoomOut, AlertCircle, Loader2, RotateCcw, ImageIcon, CheckCircle2 } from 'lucide-react';
 
 interface DiagramViewerProps {
   mermaidCode: string;
@@ -23,6 +23,8 @@ export function DiagramViewer({
   const [errorMsg, setErrorMsg] = useState('');
   const [zoom, setZoom] = useState(100);
   const [retryCount, setRetryCount] = useState(0);
+  const [downloadingFormat, setDownloadingFormat] = useState<string | null>(null);
+  const [copiedCode, setCopiedCode] = useState(false);
 
   const renderDiagram = useCallback(async () => {
     if (typeof window === 'undefined' || !containerRef.current) return;
@@ -67,10 +69,8 @@ export function DiagramViewer({
         },
       });
 
-      // ID unico por render para evitar conflictos
       const uniqueId = `d${Math.random().toString(36).substring(2, 8)}`;
 
-      // Limpiar nodos residuales de renders anteriores
       const oldSvg = document.getElementById(uniqueId);
       if (oldSvg) oldSvg.remove();
 
@@ -110,9 +110,18 @@ export function DiagramViewer({
   const handleCopyCode = async () => {
     try {
       await navigator.clipboard.writeText(mermaidCode);
+      setCopiedCode(true);
+      setTimeout(() => setCopiedCode(false), 2000);
     } catch (err) {
       console.error('Failed to copy:', err);
     }
+  };
+
+  const getFileBaseName = () => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '') || 'diagrama';
   };
 
   const handleDownloadSVG = () => {
@@ -125,26 +134,100 @@ export function DiagramViewer({
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${title.replace(/\s+/g, '-').toLowerCase()}.svg`;
+    link.download = `diagrama-${getFileBaseName()}.svg`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
 
+  const handleDownloadRaster = async (format: 'png' | 'jpg') => {
+    if (!containerRef.current) return;
+    const svgElement = containerRef.current.querySelector('svg');
+    if (!svgElement) return;
+
+    setDownloadingFormat(format);
+
+    try {
+      // Get SVG dimensions
+      const svgRect = svgElement.getBoundingClientRect();
+      const scale = 2; // 2x resolution for quality
+      const width = Math.max(svgRect.width, 400) * scale;
+      const height = Math.max(svgRect.height, 300) * scale;
+
+      // Serialize SVG to string
+      const svgData = new XMLSerializer().serializeToString(svgElement);
+      const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+      const svgUrl = URL.createObjectURL(svgBlob);
+
+      // Create image from SVG
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+
+      await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = () => reject(new Error('Failed to load SVG as image'));
+        img.src = svgUrl;
+      });
+
+      // Draw on canvas
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) throw new Error('Cannot get canvas context');
+
+      // White background for JPG
+      if (format === 'jpg') {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, width, height);
+      }
+
+      ctx.drawImage(img, 0, 0, width, height);
+
+      // Convert to blob and download
+      const mimeType = format === 'png' ? 'image/png' : 'image/jpeg';
+      const quality = format === 'jpg' ? 0.95 : undefined;
+
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          console.error('Failed to create blob');
+          setDownloadingFormat(null);
+          return;
+        }
+
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `diagrama-${getFileBaseName()}.${format}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(svgUrl);
+        setDownloadingFormat(null);
+      }, mimeType, quality);
+    } catch (err) {
+      console.error(`Error downloading as ${format}:`, err);
+      setDownloadingFormat(null);
+    }
+  };
+
   return (
     <div className={className}>
       {/* Toolbar */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
         <div className="text-sm text-muted-foreground">
           {description && <span>{description}</span>}
         </div>
         <div className="flex gap-1 flex-wrap justify-end">
+          {/* Zoom controls */}
           <Button
             variant="outline"
             size="sm"
             onClick={() => setZoom((prev) => Math.max(prev - 10, 50))}
             disabled={zoom <= 50 || status !== 'success'}
+            title="Reducir zoom"
           >
             <ZoomOut className="h-3 w-3" />
           </Button>
@@ -156,28 +239,74 @@ export function DiagramViewer({
             size="sm"
             onClick={() => setZoom((prev) => Math.min(prev + 10, 200))}
             disabled={zoom >= 200 || status !== 'success'}
+            title="Aumentar zoom"
           >
             <ZoomIn className="h-3 w-3" />
           </Button>
+
+          {/* Separator */}
+          <div className="w-px h-6 bg-border mx-1 self-center" />
+
+          {/* Copy code */}
           <Button
             variant="outline"
             size="sm"
             onClick={handleCopyCode}
             disabled={status === 'loading'}
             className="gap-1"
+            title="Copiar codigo Mermaid"
           >
-            <Copy className="h-3 w-3" />
-            <span className="hidden sm:inline">Copiar</span>
+            {copiedCode ? (
+              <CheckCircle2 className="h-3 w-3 text-green-600" />
+            ) : (
+              <Copy className="h-3 w-3" />
+            )}
+            <span className="hidden sm:inline">{copiedCode ? 'Copiado' : 'Codigo'}</span>
           </Button>
+
+          {/* Download buttons */}
           <Button
             variant="outline"
             size="sm"
             onClick={handleDownloadSVG}
             disabled={status !== 'success'}
             className="gap-1"
+            title="Descargar como SVG"
           >
             <Download className="h-3 w-3" />
             <span className="hidden sm:inline">SVG</span>
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleDownloadRaster('png')}
+            disabled={status !== 'success' || downloadingFormat === 'png'}
+            className="gap-1"
+            title="Descargar como PNG (alta calidad)"
+          >
+            {downloadingFormat === 'png' ? (
+              <Loader2 className="h-3 w-3 animate-spin" />
+            ) : (
+              <ImageIcon className="h-3 w-3" />
+            )}
+            <span className="hidden sm:inline">PNG</span>
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleDownloadRaster('jpg')}
+            disabled={status !== 'success' || downloadingFormat === 'jpg'}
+            className="gap-1"
+            title="Descargar como JPG"
+          >
+            {downloadingFormat === 'jpg' ? (
+              <Loader2 className="h-3 w-3 animate-spin" />
+            ) : (
+              <ImageIcon className="h-3 w-3" />
+            )}
+            <span className="hidden sm:inline">JPG</span>
           </Button>
         </div>
       </div>
