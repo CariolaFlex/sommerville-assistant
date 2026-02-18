@@ -8,7 +8,11 @@ export interface DiagramsData {
 }
 
 /**
- * Genera todos los diagramas Mermaid como imagenes SVG en base64 para incluir en PDF.
+ * Genera todos los diagramas Mermaid como imagenes PNG en base64 para incluir en PDF.
+ *
+ * IMPORTANTE: @react-pdf/renderer NO puede renderizar SVGs complejos (con CSS, markers,
+ * foreignObject, etc.) generados por Mermaid. Por eso convertimos SVG -> Canvas -> PNG.
+ *
  * Cada diagrama se genera individualmente para que un fallo en uno no afecte a los demas.
  */
 export async function generateDiagramsForPDF(
@@ -65,29 +69,40 @@ export async function generateDiagramsForPDF(
     const timestamp = Date.now();
     const rand = Math.random().toString(36).substring(2, 6);
 
-    // Render each diagram individually - if one fails, others still work
+    /**
+     * Renders a single Mermaid diagram and converts it to a PNG data URI.
+     *
+     * Pipeline: Mermaid code -> SVG string -> DOM SVG element -> Canvas -> PNG base64
+     *
+     * This is necessary because @react-pdf/renderer's Image component cannot handle
+     * complex SVG content (CSS styles, markers, foreignObject, etc.). By rasterizing
+     * to PNG via the browser's native Canvas API, we get a pixel-perfect image that
+     * react-pdf can embed without issues.
+     */
     const renderOne = async (id: string, code: string): Promise<string> => {
       try {
-        // Create a temporary container for rendering
-        const tempDiv = document.createElement('div');
-        tempDiv.style.position = 'absolute';
-        tempDiv.style.left = '-9999px';
-        tempDiv.style.top = '-9999px';
-        tempDiv.style.width = '800px';
-        document.body.appendChild(tempDiv);
-
         const uniqueId = `pdf-${id}-${timestamp}-${rand}`;
 
         // Clean up any previous elements with same ID
         const oldEl = document.getElementById(uniqueId);
         if (oldEl) oldEl.remove();
 
-        const { svg } = await mermaid.render(uniqueId, code);
+        // Step 1: Render Mermaid code to SVG string
+        const { svg: svgString } = await mermaid.render(uniqueId, code);
 
-        // Clean up temp container
-        document.body.removeChild(tempDiv);
+        if (!svgString) {
+          console.warn(`Empty SVG for diagram ${id}`);
+          return '';
+        }
 
-        return svgToDataUri(svg);
+        // Step 2: Convert SVG string to PNG via Canvas
+        const pngDataUri = await svgToPngDataUri(svgString);
+
+        // Clean up the mermaid-created element
+        const mermaidEl = document.getElementById(uniqueId);
+        if (mermaidEl) mermaidEl.remove();
+
+        return pngDataUri;
       } catch (err) {
         console.warn(`Error rendering diagram ${id}:`, err);
         return '';
@@ -108,7 +123,7 @@ export async function generateDiagramsForPDF(
       return null;
     }
 
-    console.log('Diagramas renderizados exitosamente');
+    console.log('Diagramas renderizados exitosamente como PNG');
 
     return {
       decisionTree,
@@ -123,33 +138,118 @@ export async function generateDiagramsForPDF(
 }
 
 /**
- * Converts SVG string to a data URI for embedding in @react-pdf/renderer Image.
- * Uses proper encoding to handle all characters safely.
+ * Converts an SVG string to a PNG data URI using the browser's Canvas API.
+ *
+ * This is the key function that solves the @react-pdf/renderer SVG incompatibility.
+ * The browser's native SVG renderer handles all complex SVG features (CSS, markers,
+ * gradients, foreignObject, etc.) that react-pdf cannot.
+ *
+ * Pipeline:
+ * 1. Parse SVG string into a temporary DOM element to get dimensions
+ * 2. Create a Blob URL from the SVG
+ * 3. Load it as an Image
+ * 4. Draw the Image onto a Canvas (2x scale for crisp PDF rendering)
+ * 5. Export the Canvas as PNG data URI
  */
-function svgToDataUri(svgString: string): string {
+async function svgToPngDataUri(svgString: string): Promise<string> {
   if (!svgString) return '';
 
-  // Clean SVG: remove potential issues
-  let cleanSvg = svgString
-    .replace(/\n/g, ' ')
-    .replace(/\t/g, ' ')
-    .replace(/\s{2,}/g, ' ')
-    .trim();
+  return new Promise((resolve) => {
+    try {
+      // Clean SVG and ensure proper namespace
+      let cleanSvg = svgString.trim();
+      if (!cleanSvg.includes('xmlns="http://www.w3.org/2000/svg"')) {
+        cleanSvg = cleanSvg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+      }
 
-  // Ensure SVG has proper XML namespace
-  if (!cleanSvg.includes('xmlns="http://www.w3.org/2000/svg"')) {
-    cleanSvg = cleanSvg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
-  }
+      // Parse SVG to get dimensions
+      const parser = new DOMParser();
+      const svgDoc = parser.parseFromString(cleanSvg, 'image/svg+xml');
+      const svgEl = svgDoc.documentElement;
 
-  // Remove any script tags for security
-  cleanSvg = cleanSvg.replace(/<script[\s\S]*?<\/script>/gi, '');
+      // Get dimensions from SVG attributes or viewBox
+      let width = parseFloat(svgEl.getAttribute('width') || '0');
+      let height = parseFloat(svgEl.getAttribute('height') || '0');
 
-  // Encode to base64 properly handling unicode
-  try {
-    const encoded = btoa(unescape(encodeURIComponent(cleanSvg)));
-    return `data:image/svg+xml;base64,${encoded}`;
-  } catch {
-    // Fallback: use encodeURIComponent for problematic SVGs
-    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(cleanSvg)}`;
-  }
+      const viewBox = svgEl.getAttribute('viewBox');
+      if ((!width || !height) && viewBox) {
+        const parts = viewBox.split(/[\s,]+/).map(Number);
+        if (parts.length === 4) {
+          width = width || parts[2];
+          height = height || parts[3];
+        }
+      }
+
+      // Fallback dimensions
+      if (!width || width <= 0) width = 800;
+      if (!height || height <= 0) height = 600;
+
+      // Ensure SVG has explicit width/height for consistent rendering
+      if (!svgEl.getAttribute('width')) {
+        cleanSvg = cleanSvg.replace('<svg', `<svg width="${width}"`);
+      }
+      if (!svgEl.getAttribute('height')) {
+        cleanSvg = cleanSvg.replace('<svg', `<svg height="${height}"`);
+      }
+
+      // Scale factor for crisp PDF rendering (2x)
+      const scale = 2;
+      const canvasWidth = Math.ceil(width * scale);
+      const canvasHeight = Math.ceil(height * scale);
+
+      // Cap max dimensions to avoid memory issues
+      const maxDim = 4096;
+      const finalWidth = Math.min(canvasWidth, maxDim);
+      const finalHeight = Math.min(canvasHeight, maxDim);
+
+      // Create SVG blob and load as image
+      const svgBlob = new Blob([cleanSvg], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = finalWidth;
+          canvas.height = finalHeight;
+
+          const ctx = canvas.getContext('2d');
+          if (!ctx) {
+            console.warn('Cannot get canvas 2d context');
+            URL.revokeObjectURL(url);
+            resolve('');
+            return;
+          }
+
+          // White background (important for PDF - no transparency)
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, finalWidth, finalHeight);
+
+          // Draw the SVG image scaled to fit
+          ctx.drawImage(img, 0, 0, finalWidth, finalHeight);
+
+          // Export as PNG data URI
+          const pngDataUri = canvas.toDataURL('image/png', 1.0);
+
+          URL.revokeObjectURL(url);
+          resolve(pngDataUri);
+        } catch (canvasErr) {
+          console.warn('Canvas rendering error:', canvasErr);
+          URL.revokeObjectURL(url);
+          resolve('');
+        }
+      };
+
+      img.onerror = (err) => {
+        console.warn('Image loading error for SVG:', err);
+        URL.revokeObjectURL(url);
+        resolve('');
+      };
+
+      img.src = url;
+    } catch (err) {
+      console.warn('svgToPngDataUri error:', err);
+      resolve('');
+    }
+  });
 }
