@@ -57,28 +57,32 @@ export function DiagramsSection({ diagrams }: DiagramsSectionProps) {
   // Build array of diagram pages, filtering out any that failed
   const diagramEntries = [
     {
-      title: 'Camino de Decision',
+      title: '6.1 Camino de Decision',
       header: 'DIAGRAMAS - CAMINO DE DECISION',
-      description: 'Visualizacion del camino tomado durante el proceso de recomendacion del asistente.',
+      description: 'Visualizacion del recorrido tomado a traves del arbol de decisiones del asistente, mostrando cada seleccion realizada hasta llegar a la recomendacion final.',
       src: diagrams.decisionTree,
+      label: 'Diagrama generado automaticamente por Sommerville Assistant',
     },
     {
-      title: 'Proceso de Desarrollo',
+      title: '6.2 Proceso de Desarrollo',
       header: 'DIAGRAMAS - PROCESO DE DESARROLLO',
-      description: 'Diagrama del flujo del proceso de desarrollo recomendado para el proyecto.',
+      description: 'Diagrama de flujo del proceso de desarrollo de software recomendado, incluyendo las fases principales, actividades clave y puntos de iteracion.',
       src: diagrams.process,
+      label: 'Flujo del proceso de desarrollo recomendado',
     },
     {
-      title: 'Arquitectura del Sistema',
+      title: '6.3 Arquitectura del Sistema',
       header: 'DIAGRAMAS - ARQUITECTURA',
-      description: 'Diagrama de la arquitectura de software recomendada para el sistema.',
+      description: 'Representacion visual del patron arquitectonico recomendado, mostrando componentes principales, capas del sistema y sus interacciones.',
       src: diagrams.architecture,
+      label: 'Patron arquitectonico recomendado para el proyecto',
     },
     {
-      title: 'Timeline Gantt',
-      header: 'DIAGRAMAS - TIMELINE',
-      description: 'Cronograma visual del proyecto en formato Gantt con fases y actividades.',
+      title: '6.4 Cronograma Gantt',
+      header: 'DIAGRAMAS - CRONOGRAMA',
+      description: 'Cronograma visual del proyecto en formato Gantt con las fases de desarrollo, actividades planificadas, hitos y dependencias temporales.',
       src: diagrams.timeline,
+      label: 'Cronograma de desarrollo con fases e hitos del proyecto',
     },
   ];
 
@@ -90,9 +94,9 @@ export function DiagramsSection({ diagrams }: DiagramsSectionProps) {
             {diagram.header}
           </Text>
 
-          <View style={{ marginBottom: 12 }}>
+          <View style={{ marginBottom: 6 }}>
             <Text style={styles.h2}>
-              {index === 0 ? '6.' : '  '} {diagram.title}
+              {diagram.title}
             </Text>
             <Text style={styles.paragraph}>{diagram.description}</Text>
           </View>
@@ -104,11 +108,17 @@ export function DiagramsSection({ diagrams }: DiagramsSectionProps) {
                 src={diagram.src}
                 style={styles.diagramImage}
               />
+              <Text style={{ fontSize: 8, color: '#94a3b8', textAlign: 'center', marginTop: 6, fontStyle: 'italic' }}>
+                {diagram.label}
+              </Text>
             </View>
           ) : (
             <View style={styles.diagramPlaceholder}>
               <Text style={{ fontSize: 10, color: '#64748b', textAlign: 'center' }}>
-                Diagrama no disponible en esta exportacion
+                Este diagrama no pudo generarse para la exportacion PDF
+              </Text>
+              <Text style={{ fontSize: 9, color: '#94a3b8', textAlign: 'center', marginTop: 4 }}>
+                Disponible en la version web de la aplicacion
               </Text>
             </View>
           )}

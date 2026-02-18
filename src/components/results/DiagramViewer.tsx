@@ -43,14 +43,16 @@ export function DiagramViewer({
 
       mermaid.initialize({
         startOnLoad: false,
-        theme: 'neutral',
+        theme: 'base',
         themeVariables: {
-          primaryColor: '#3b82f6',
-          primaryTextColor: '#1f2937',
-          primaryBorderColor: '#60a5fa',
-          lineColor: '#94a3b8',
-          secondaryColor: '#86efac',
-          tertiaryColor: '#fbbf24',
+          primaryColor: '#e0e7ff',
+          primaryTextColor: '#1e293b',
+          primaryBorderColor: '#6366f1',
+          lineColor: '#64748b',
+          secondaryColor: '#dbeafe',
+          tertiaryColor: '#f0fdf4',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          fontSize: '14px',
         },
         securityLevel: 'loose',
         fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -58,14 +60,21 @@ export function DiagramViewer({
         flowchart: {
           curve: 'basis',
           padding: 20,
-          htmlLabels: false,
+          htmlLabels: true,
+          nodeSpacing: 40,
+          rankSpacing: 50,
         },
         gantt: {
           titleTopMargin: 25,
-          barHeight: 20,
-          barGap: 4,
-          topPadding: 50,
-          leftPadding: 75,
+          barHeight: 28,
+          barGap: 6,
+          topPadding: 60,
+          leftPadding: 100,
+          rightPadding: 40,
+          gridLineStartPadding: 20,
+          fontSize: 13,
+          numberSectionStyles: 4,
+          axisFormat: '%d/%m',
         },
       });
 
@@ -149,16 +158,58 @@ export function DiagramViewer({
     setDownloadingFormat(format);
 
     try {
-      // Get SVG dimensions
-      const svgRect = svgElement.getBoundingClientRect();
-      const scale = 2; // 2x resolution for quality
-      const width = Math.max(svgRect.width, 400) * scale;
-      const height = Math.max(svgRect.height, 300) * scale;
+      // Get actual SVG dimensions from viewBox or attributes (not CSS-constrained getBoundingClientRect)
+      let svgWidth = 0;
+      let svgHeight = 0;
 
-      // Serialize SVG to string
-      const svgData = new XMLSerializer().serializeToString(svgElement);
-      const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
-      const svgUrl = URL.createObjectURL(svgBlob);
+      const viewBox = svgElement.getAttribute('viewBox');
+      if (viewBox) {
+        const parts = viewBox.split(/[\s,]+/).map(Number);
+        if (parts.length === 4) {
+          svgWidth = parts[2];
+          svgHeight = parts[3];
+        }
+      }
+
+      if (!svgWidth) svgWidth = parseFloat(svgElement.getAttribute('width') || '0');
+      if (!svgHeight) svgHeight = parseFloat(svgElement.getAttribute('height') || '0');
+
+      // Fallback to bounding rect only if attributes are missing
+      if (!svgWidth || !svgHeight) {
+        const rect = svgElement.getBoundingClientRect();
+        svgWidth = rect.width;
+        svgHeight = rect.height;
+      }
+
+      // Target a reasonable export size (max 1920px wide, min 800px)
+      const targetWidth = Math.min(Math.max(svgWidth, 800), 1920);
+      const aspectRatio = svgHeight / svgWidth;
+      const targetHeight = Math.round(targetWidth * aspectRatio);
+
+      const scale = 2; // 2x for retina quality
+      const canvasWidth = targetWidth * scale;
+      const canvasHeight = targetHeight * scale;
+
+      // Cap to prevent memory issues
+      const maxDim = 4096;
+      const finalWidth = Math.min(canvasWidth, maxDim);
+      const finalHeight = Math.min(canvasHeight, maxDim);
+
+      // Serialize SVG with explicit dimensions
+      const svgClone = svgElement.cloneNode(true) as SVGSVGElement;
+      svgClone.setAttribute('width', String(targetWidth));
+      svgClone.setAttribute('height', String(targetHeight));
+
+      // Ensure xmlns is present
+      if (!svgClone.getAttribute('xmlns')) {
+        svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      }
+
+      const svgData = new XMLSerializer().serializeToString(svgClone);
+
+      // Use base64 data URL instead of Blob URL for better compatibility
+      const svgBase64 = btoa(unescape(encodeURIComponent(svgData)));
+      const dataUrl = `data:image/svg+xml;base64,${svgBase64}`;
 
       // Create image from SVG
       const img = new Image();
@@ -167,23 +218,21 @@ export function DiagramViewer({
       await new Promise<void>((resolve, reject) => {
         img.onload = () => resolve();
         img.onerror = () => reject(new Error('Failed to load SVG as image'));
-        img.src = svgUrl;
+        img.src = dataUrl;
       });
 
       // Draw on canvas
       const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
+      canvas.width = finalWidth;
+      canvas.height = finalHeight;
       const ctx = canvas.getContext('2d');
       if (!ctx) throw new Error('Cannot get canvas context');
 
-      // White background for JPG
-      if (format === 'jpg') {
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, width, height);
-      }
+      // Always draw white background (PNG transparency looks bad in most viewers)
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, finalWidth, finalHeight);
 
-      ctx.drawImage(img, 0, 0, width, height);
+      ctx.drawImage(img, 0, 0, finalWidth, finalHeight);
 
       // Convert to blob and download
       const mimeType = format === 'png' ? 'image/png' : 'image/jpeg';
@@ -204,7 +253,6 @@ export function DiagramViewer({
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
-        URL.revokeObjectURL(svgUrl);
         setDownloadingFormat(null);
       }, mimeType, quality);
     } catch (err) {

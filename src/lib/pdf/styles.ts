@@ -389,15 +389,20 @@ export const styles = StyleSheet.create({
 
   // ===== DIAGRAM PAGE =====
   diagramContainer: {
-    marginTop: 12,
+    marginTop: 8,
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+    padding: 8,
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 4,
   },
 
   diagramImage: {
     maxWidth: '100%',
-    maxHeight: 460,
+    maxHeight: 520,
     objectFit: 'contain',
   },
 
@@ -410,6 +415,28 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 120,
+  },
+
+  diagramTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.primary,
+    marginBottom: 4,
+  },
+
+  diagramDescription: {
+    fontSize: 9,
+    color: colors.textMuted,
+    marginBottom: 10,
+    lineHeight: 1.4,
+  },
+
+  diagramLabel: {
+    fontSize: 8,
+    color: colors.textLight,
+    textAlign: 'center',
+    marginTop: 6,
+    fontStyle: 'italic',
   },
 
   // ===== UTILITIES =====
