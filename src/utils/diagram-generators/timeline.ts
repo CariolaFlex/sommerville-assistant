@@ -2,45 +2,31 @@ import type { TimelineWeek } from '@/types/recommendation';
 import { sanitizeMermaidText } from './helpers';
 
 /**
- * Genera un diagrama Gantt profesional y visualmente impactante
- * Optimizado para PDF (A4) y visualizacion web
+ * Genera un diagrama Gantt profesional para PDF y web
  *
- * Mejoras:
- * - Hasta 6 secciones con 4 tareas cada una para mayor detalle
- * - Colores por seccion usando numberSectionStyles de Mermaid
- * - Formato de fechas legible (dd/mm)
- * - Tareas con estados claros: done, active, pending
- * - Milestone markers para hitos importantes
+ * IMPORTANTE: La sintaxis Mermaid Gantt es estricta:
+ *   taskName :status, taskId, startDate, duration
+ *   taskName :taskId, startDate, duration          (sin status)
+ *
+ * NO puede haber doble colon (::) ni campos vacios entre comas.
  */
 export function generateTimelineDiagram(weeks: TimelineWeek[]): string {
   if (!weeks || weeks.length === 0) {
-    return `gantt
-    title Cronograma del Proyecto
-    dateFormat YYYY-MM-DD
-    axisFormat %d/%m
-    tickInterval 1week
+    return buildFallbackGantt();
+  }
 
-    section Planificacion
-    Definicion de alcance       :done, plan1, 2024-01-01, 2w
-    Analisis de requisitos      :done, plan2, after plan1, 1w
+  // Validar que hay datos utiles
+  const validWeeks = weeks.filter(
+    (w) => w && w.phase && Array.isArray(w.tasks) && w.tasks.length > 0
+  );
 
-    section Desarrollo
-    Sprint 1 - Core             :active, dev1, after plan2, 3w
-    Sprint 2 - Features         :dev2, after dev1, 3w
-
-    section Testing
-    Pruebas de integracion      :test1, after dev2, 2w
-
-    section Entrega
-    Despliegue                  :milestone, deploy, after test1, 0d`;
+  if (validWeeks.length === 0) {
+    return buildFallbackGantt();
   }
 
   // Agrupar semanas por fase
   const phaseGroups = new Map<string, TimelineWeek[]>();
-
-  weeks.forEach((week) => {
-    if (!week?.phase || !Array.isArray(week?.tasks)) return;
-
+  validWeeks.forEach((week) => {
     const phase = week.phase;
     if (!phaseGroups.has(phase)) {
       phaseGroups.set(phase, []);
@@ -49,104 +35,134 @@ export function generateTimelineDiagram(weeks: TimelineWeek[]): string {
   });
 
   const startDate = new Date('2024-01-01');
+  const lines: string[] = [];
 
-  let ganttCode = 'gantt\n';
-  ganttCode += '    title Cronograma de Desarrollo del Proyecto\n';
-  ganttCode += '    dateFormat YYYY-MM-DD\n';
-  ganttCode += '    axisFormat %d/%m\n';
-  ganttCode += '    tickInterval 1week\n\n';
+  lines.push('gantt');
+  lines.push('    title Cronograma de Desarrollo del Proyecto');
+  lines.push('    dateFormat YYYY-MM-DD');
+  lines.push('    axisFormat %d/%m');
+  lines.push('');
 
   let weekOffset = 0;
   let sectionCount = 0;
-  let totalTaskId = 0;
-  const totalWeeks = weeks.length;
+  let taskCounter = 0;
+  const totalPhases = phaseGroups.size;
 
   phaseGroups.forEach((weeksInPhase, phase) => {
     if (sectionCount >= 6) return;
-    sectionCount++;
 
     const safePhaseName = sanitizeMermaidText(phase).substring(0, 35);
-    ganttCode += `    section ${safePhaseName}\n`;
+    if (!safePhaseName) return;
 
-    // Collect unique activities with their durations
-    const activities = new Map<string, { count: number; firstWeekIdx: number }>();
+    lines.push(`    section ${safePhaseName}`);
+    sectionCount++;
 
-    weeksInPhase.forEach((week, idx) => {
+    // Recolectar actividades unicas de esta fase
+    const activities = new Map<string, number>();
+    weeksInPhase.forEach((week) => {
       week.tasks.forEach((task) => {
         const taskName = sanitizeMermaidText(task).substring(0, 40);
-        if (taskName && !activities.has(taskName)) {
-          activities.set(taskName, { count: 1, firstWeekIdx: idx });
-        } else if (taskName) {
-          const existing = activities.get(taskName)!;
-          existing.count++;
+        if (taskName) {
+          activities.set(taskName, (activities.get(taskName) || 0) + 1);
         }
       });
     });
 
-    const phaseDuration = weeksInPhase.length;
+    const phaseDuration = Math.max(1, weeksInPhase.length);
     const phaseStartWeek = weekOffset;
 
     if (activities.size > 0) {
-      let activityCount = 0;
+      let activityIdx = 0;
       let localOffset = 0;
 
-      activities.forEach((info, activity) => {
-        if (activityCount >= 4) return;
-        activityCount++;
-        totalTaskId++;
+      activities.forEach((count, activity) => {
+        if (activityIdx >= 4) return;
+        activityIdx++;
+        taskCounter++;
 
-        const taskStartDate = new Date(startDate);
-        taskStartDate.setDate(taskStartDate.getDate() + (phaseStartWeek + localOffset) * 7);
-        const startStr = taskStartDate.toISOString().split('T')[0];
+        const taskStart = new Date(startDate);
+        taskStart.setDate(taskStart.getDate() + (phaseStartWeek + localOffset) * 7);
+        const startStr = formatDate(taskStart);
 
-        // Calculate proportional duration
-        const taskDuration = Math.max(1, Math.min(info.count, phaseDuration - localOffset));
-        const durationStr = `${taskDuration}w`;
+        const taskDuration = Math.max(1, Math.min(count, phaseDuration - localOffset));
 
-        // Determine status based on position in overall timeline
-        const progressPoint = (phaseStartWeek + localOffset) / Math.max(totalWeeks, 1);
-        let status = '';
-        if (progressPoint < 0.25) {
-          status = 'done, ';
-        } else if (progressPoint < 0.5) {
-          status = 'active, ';
+        // Determinar estado basado en posicion relativa
+        const taskId = `task${taskCounter}`;
+        const statusTag = getStatusTag(sectionCount, totalPhases);
+
+        // Generar linea con sintaxis Mermaid correcta
+        if (statusTag) {
+          lines.push(`    ${activity}  :${statusTag}, ${taskId}, ${startStr}, ${taskDuration}w`);
+        } else {
+          lines.push(`    ${activity}  :${taskId}, ${startStr}, ${taskDuration}w`);
         }
-
-        const taskId = `t${totalTaskId}`;
-        ganttCode += `    ${activity}       :${status}${taskId}, ${startStr}, ${durationStr}\n`;
 
         localOffset += taskDuration;
       });
-
-      // Add a milestone at end of phase if it's significant
-      if (sectionCount <= 3 && activityCount >= 2) {
-        totalTaskId++;
-        const milestoneDate = new Date(startDate);
-        milestoneDate.setDate(milestoneDate.getDate() + (phaseStartWeek + phaseDuration) * 7);
-        const mStr = milestoneDate.toISOString().split('T')[0];
-        const milestoneStatus = phaseStartWeek + phaseDuration < totalWeeks * 0.3 ? 'done, ' : '';
-        ganttCode += `    Hito: ${safePhaseName}  :milestone, ${milestoneStatus}m${sectionCount}, ${mStr}, 0d\n`;
-      }
     } else {
-      totalTaskId++;
-      const taskStartDate = new Date(startDate);
-      taskStartDate.setDate(taskStartDate.getDate() + weekOffset * 7);
-      const startStr = taskStartDate.toISOString().split('T')[0];
-      const status = weekOffset < 2 ? 'done, ' : weekOffset < 4 ? 'active, ' : '';
-      ganttCode += `    ${safePhaseName}       :${status}t${totalTaskId}, ${startStr}, ${phaseDuration}w\n`;
+      // Fase sin actividades detalladas
+      taskCounter++;
+      const taskStart = new Date(startDate);
+      taskStart.setDate(taskStart.getDate() + weekOffset * 7);
+      const startStr = formatDate(taskStart);
+      const taskId = `task${taskCounter}`;
+      const statusTag = getStatusTag(sectionCount, totalPhases);
+
+      if (statusTag) {
+        lines.push(`    ${safePhaseName}  :${statusTag}, ${taskId}, ${startStr}, ${phaseDuration}w`);
+      } else {
+        lines.push(`    ${safePhaseName}  :${taskId}, ${startStr}, ${phaseDuration}w`);
+      }
     }
 
-    ganttCode += '\n';
+    lines.push('');
     weekOffset += phaseDuration;
   });
 
-  // Add final delivery milestone
-  totalTaskId++;
+  // Milestone final de entrega
   const endDate = new Date(startDate);
   endDate.setDate(endDate.getDate() + weekOffset * 7);
-  const endStr = endDate.toISOString().split('T')[0];
-  ganttCode += `    section Entrega Final\n`;
-  ganttCode += `    Entrega del proyecto       :milestone, crit, final, ${endStr}, 0d\n`;
+  lines.push('    section Entrega');
+  lines.push(`    Entrega del proyecto  :milestone, entrega, ${formatDate(endDate)}, 0d`);
 
-  return ganttCode;
+  return lines.join('\n');
+}
+
+/**
+ * Determina el tag de estado para una tarea Mermaid Gantt.
+ * Retorna 'done' | 'active' | '' segun la posicion de la seccion.
+ */
+function getStatusTag(currentSection: number, totalSections: number): string {
+  if (totalSections <= 1) return 'active';
+  const progress = currentSection / totalSections;
+  if (progress <= 0.33) return 'done';
+  if (progress <= 0.66) return 'active';
+  return '';
+}
+
+/** Formatea una fecha como YYYY-MM-DD */
+function formatDate(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+
+/** Diagrama Gantt fallback cuando no hay datos */
+function buildFallbackGantt(): string {
+  return `gantt
+    title Cronograma del Proyecto
+    dateFormat YYYY-MM-DD
+    axisFormat %d/%m
+
+    section Planificacion
+    Definicion de alcance  :done, p1, 2024-01-01, 2w
+    Analisis de requisitos  :done, p2, 2024-01-15, 1w
+
+    section Desarrollo
+    Sprint 1  :active, d1, 2024-01-22, 3w
+    Sprint 2  :d2, 2024-02-12, 3w
+
+    section Pruebas
+    Testing e integracion  :t1, 2024-03-04, 2w
+
+    section Entrega
+    Despliegue  :milestone, deploy, 2024-03-18, 0d`;
 }

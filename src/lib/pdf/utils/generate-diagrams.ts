@@ -34,7 +34,9 @@ export async function generateDiagramsForPDF(
     const { generateArchitectureDiagram } = await import('@/utils/diagram-generators/architecture-diagram');
     const { generateTimelineDiagram } = await import('@/utils/diagram-generators/timeline');
 
-    // Configure Mermaid for PDF rendering - professional theme
+    // Configure Mermaid for PDF rendering
+    // CRITICAL: htmlLabels must be FALSE for PDF pipeline because foreignObject
+    // elements cause cross-origin tainting when drawn to canvas
     mermaid.initialize({
       startOnLoad: false,
       theme: 'base',
@@ -54,7 +56,7 @@ export async function generateDiagramsForPDF(
       flowchart: {
         curve: 'basis',
         padding: 20,
-        htmlLabels: true,
+        htmlLabels: false, // MUST be false for canvas rendering (no foreignObject)
         nodeSpacing: 40,
         rankSpacing: 50,
       },
@@ -73,20 +75,20 @@ export async function generateDiagramsForPDF(
     });
 
     // Generate Mermaid code for each diagram
-    const decisionTreeCode = generateDecisionTreeDiagram(
-      recommendation.path || [],
-      recommendation
+    // Strip HTML tags for PDF (htmlLabels: false mode)
+    // <br/> becomes " - " separator since \n doesn't work in Mermaid node text
+    const stripHtml = (code: string): string =>
+      code.replace(/<b>/g, '').replace(/<\/b>/g, '').replace(/<br\s*\/?>/g, ' - ');
+
+    const decisionTreeCode = stripHtml(
+      generateDecisionTreeDiagram(recommendation.path || [], recommendation)
     );
-    const processCode = generateProcessDiagram(recommendation.process);
-    const architectureCode = generateArchitectureDiagram(recommendation.architecture);
-    const timelineCode = generateTimelineDiagram(recommendation.timeline);
+    const processCode = stripHtml(generateProcessDiagram(recommendation.process));
+    const architectureCode = stripHtml(generateArchitectureDiagram(recommendation.architecture));
+    const timelineCode = generateTimelineDiagram(recommendation.timeline); // Gantt doesn't use HTML
 
     console.log('Renderizando diagramas para PDF...');
-
-    // Create a hidden container for mermaid rendering
-    const hiddenContainer = document.createElement('div');
-    hiddenContainer.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:1200px;height:900px;visibility:hidden;';
-    document.body.appendChild(hiddenContainer);
+    console.log('Timeline code:', timelineCode);
 
     const timestamp = Date.now();
     const rand = Math.random().toString(36).substring(2, 6);
@@ -103,13 +105,17 @@ export async function generateDiagramsForPDF(
         const oldEl = document.getElementById(uniqueId);
         if (oldEl) oldEl.remove();
 
+        console.log(`[PDF] Rendering diagram: ${id}`);
+
         // Step 1: Render Mermaid code to SVG string
         const { svg: svgString } = await mermaid.render(uniqueId, code);
 
         if (!svgString) {
-          console.warn(`Empty SVG for diagram ${id}`);
+          console.warn(`[PDF] Empty SVG for diagram ${id}`);
           return '';
         }
+
+        console.log(`[PDF] SVG generated for ${id}: ${svgString.length} chars`);
 
         // Step 2: Convert SVG string to PNG via Canvas
         const pngDataUri = await svgToPngDataUri(svgString, id);
@@ -118,9 +124,15 @@ export async function generateDiagramsForPDF(
         const mermaidEl = document.getElementById(uniqueId);
         if (mermaidEl) mermaidEl.remove();
 
+        if (pngDataUri) {
+          console.log(`[PDF] PNG generated for ${id}: ${(pngDataUri.length / 1024).toFixed(0)}KB`);
+        } else {
+          console.warn(`[PDF] FAILED to generate PNG for ${id}`);
+        }
+
         return pngDataUri;
       } catch (err) {
-        console.warn(`Error rendering diagram ${id}:`, err);
+        console.error(`[PDF] Error rendering diagram ${id}:`, err);
         return '';
       }
     };
@@ -131,31 +143,23 @@ export async function generateDiagramsForPDF(
     const architecture = await renderOne('arch', architectureCode);
     const timeline = await renderOne('timeline', timelineCode);
 
-    // Clean up hidden container
-    document.body.removeChild(hiddenContainer);
-
     // Check if at least one diagram was generated
     const anySuccess = decisionTree || process || architecture || timeline;
     if (!anySuccess) {
-      console.error('No se pudo generar ningun diagrama para el PDF');
+      console.error('[PDF] No se pudo generar ningun diagrama para el PDF');
       return null;
     }
 
-    console.log('Diagramas renderizados exitosamente como PNG', {
-      decisionTree: decisionTree ? `${(decisionTree.length / 1024).toFixed(0)}KB` : 'FAIL',
-      process: process ? `${(process.length / 1024).toFixed(0)}KB` : 'FAIL',
-      architecture: architecture ? `${(architecture.length / 1024).toFixed(0)}KB` : 'FAIL',
-      timeline: timeline ? `${(timeline.length / 1024).toFixed(0)}KB` : 'FAIL',
+    console.log('[PDF] Resumen de diagramas:', {
+      decisionTree: decisionTree ? 'OK' : 'FAIL',
+      process: process ? 'OK' : 'FAIL',
+      architecture: architecture ? 'OK' : 'FAIL',
+      timeline: timeline ? 'OK' : 'FAIL',
     });
 
-    return {
-      decisionTree,
-      process,
-      architecture,
-      timeline,
-    };
+    return { decisionTree, process, architecture, timeline };
   } catch (error) {
-    console.error('Error generating diagrams for PDF:', error);
+    console.error('[PDF] Error generating diagrams:', error);
     return null;
   }
 }
@@ -163,124 +167,166 @@ export async function generateDiagramsForPDF(
 /**
  * Converts an SVG string to a PNG data URI using the browser's Canvas API.
  *
- * Key improvements:
- * - Forces explicit SVG dimensions with xmlns
- * - Uses proper scaling for A4 PDF page width (~480pt usable)
- * - Adds white background for PDF compatibility
- * - Handles viewBox-only SVGs correctly
+ * Pipeline:
+ * 1. Parse SVG to extract viewBox/width/height dimensions
+ * 2. Create a self-contained SVG with explicit dimensions and xmlns
+ * 3. Encode as base64 data URL (NOT Blob URL - more reliable)
+ * 4. Load as Image, draw to Canvas with white background
+ * 5. Export Canvas as PNG data URI
  */
 async function svgToPngDataUri(svgString: string, diagramType: string): Promise<string> {
   if (!svgString) return '';
 
   return new Promise((resolve) => {
     try {
-      // Clean SVG and ensure proper namespace
-      let cleanSvg = svgString.trim();
-      if (!cleanSvg.includes('xmlns="http://www.w3.org/2000/svg"')) {
-        cleanSvg = cleanSvg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
-      }
-
-      // Parse SVG to get dimensions
+      // Step 1: Parse SVG to get dimensions
       const parser = new DOMParser();
-      const svgDoc = parser.parseFromString(cleanSvg, 'image/svg+xml');
-      const svgEl = svgDoc.documentElement;
+      const doc = parser.parseFromString(svgString, 'image/svg+xml');
 
       // Check for parse errors
-      const parseError = svgDoc.querySelector('parsererror');
+      const parseError = doc.querySelector('parsererror');
       if (parseError) {
-        console.warn(`SVG parse error for ${diagramType}`);
+        console.warn(`[SVG2PNG] Parse error for ${diagramType}:`, parseError.textContent);
         resolve('');
         return;
       }
 
-      // Get dimensions from SVG attributes or viewBox
-      let width = parseFloat(svgEl.getAttribute('width') || '0');
-      let height = parseFloat(svgEl.getAttribute('height') || '0');
+      const svgEl = doc.documentElement;
 
+      // Extract dimensions
+      let width = 0;
+      let height = 0;
+
+      // Try viewBox first (most reliable)
       const viewBox = svgEl.getAttribute('viewBox');
       if (viewBox) {
         const parts = viewBox.split(/[\s,]+/).map(Number);
-        if (parts.length === 4) {
-          if (!width || width <= 0) width = parts[2];
-          if (!height || height <= 0) height = parts[3];
+        if (parts.length === 4 && !isNaN(parts[2]) && !isNaN(parts[3])) {
+          width = parts[2];
+          height = parts[3];
         }
       }
 
-      // Fallback dimensions
+      // Try explicit width/height attributes
+      if (!width) {
+        const w = svgEl.getAttribute('width');
+        if (w) width = parseFloat(w) || 0;
+      }
+      if (!height) {
+        const h = svgEl.getAttribute('height');
+        if (h) height = parseFloat(h) || 0;
+      }
+
+      // Fallback
       if (!width || width <= 0) width = 800;
       if (!height || height <= 0) height = 600;
 
-      // Target width for A4 PDF (usable area ~480pt = ~640px at 96dpi)
-      // Scale to fit within PDF page while maintaining aspect ratio
-      const targetWidth = 960; // Render at higher res for quality
-      const aspectRatio = height / width;
-      const scaledWidth = Math.min(width, targetWidth);
-      const scaledHeight = scaledWidth * aspectRatio;
+      console.log(`[SVG2PNG] ${diagramType} dimensions: ${width}x${height}`);
 
-      // Ensure SVG has explicit width/height for consistent rendering
-      // Replace or add width/height attributes
-      cleanSvg = cleanSvg.replace(
-        /(<svg[^>]*?)(\s+width="[^"]*")?(\s+height="[^"]*")?/,
-        `$1 width="${scaledWidth}" height="${scaledHeight}"`
-      );
+      // Step 2: Set explicit dimensions on SVG element
+      svgEl.setAttribute('width', String(width));
+      svgEl.setAttribute('height', String(height));
+      if (!svgEl.getAttribute('xmlns')) {
+        svgEl.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      }
 
-      // Scale factor for crisp PDF rendering (2x)
+      // Remove any foreignObject elements (they break canvas cross-origin)
+      const foreignObjects = svgEl.querySelectorAll('foreignObject');
+      foreignObjects.forEach((fo) => {
+        // Replace foreignObject with a simple text element
+        const text = fo.textContent || '';
+        if (text.trim()) {
+          const textEl = doc.createElementNS('http://www.w3.org/2000/svg', 'text');
+          textEl.textContent = text.trim().substring(0, 60);
+          textEl.setAttribute('font-size', '12');
+          textEl.setAttribute('fill', '#1e293b');
+          const parent = fo.parentNode;
+          if (parent) {
+            parent.replaceChild(textEl, fo);
+          }
+        } else {
+          fo.remove();
+        }
+      });
+
+      // Serialize the cleaned SVG
+      const cleanSvg = new XMLSerializer().serializeToString(svgEl);
+
+      // Step 3: Scale for quality
+      // Target: fit within A4 page usable width (~480pt) at good resolution
       const scale = 2;
-      const canvasWidth = Math.ceil(scaledWidth * scale);
-      const canvasHeight = Math.ceil(scaledHeight * scale);
+      const canvasWidth = Math.min(Math.ceil(width * scale), 4096);
+      const canvasHeight = Math.min(Math.ceil(height * scale), 4096);
 
-      // Cap max dimensions to avoid memory issues
-      const maxDim = 4096;
-      const finalWidth = Math.min(canvasWidth, maxDim);
-      const finalHeight = Math.min(canvasHeight, maxDim);
+      // Step 4: Convert to base64 data URL
+      const encoded = encodeURIComponent(cleanSvg);
+      const unescaped = unescape(encoded);
 
-      // Create SVG blob and load as image
-      // Use base64 encoding instead of Blob URL for better cross-browser reliability
-      const svgBase64 = btoa(unescape(encodeURIComponent(cleanSvg)));
-      const dataUrl = `data:image/svg+xml;base64,${svgBase64}`;
+      let base64: string;
+      try {
+        base64 = btoa(unescaped);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (_err) {
+        // If btoa fails (non-latin1 chars), use manual UTF-8 encoding
+        console.warn(`[SVG2PNG] btoa failed for ${diagramType}, using TextEncoder fallback`);
+        const encoder = new TextEncoder();
+        const bytes = encoder.encode(cleanSvg);
+        let binary = '';
+        for (let i = 0; i < bytes.length; i++) {
+          binary += String.fromCharCode(bytes[i]);
+        }
+        base64 = btoa(binary);
+      }
 
+      const dataUrl = `data:image/svg+xml;base64,${base64}`;
+
+      // Step 5: Load image and draw to canvas
       const img = new Image();
+
       img.onload = () => {
         try {
           const canvas = document.createElement('canvas');
-          canvas.width = finalWidth;
-          canvas.height = finalHeight;
+          canvas.width = canvasWidth;
+          canvas.height = canvasHeight;
 
           const ctx = canvas.getContext('2d');
           if (!ctx) {
-            console.warn('Cannot get canvas 2d context');
+            console.warn(`[SVG2PNG] Cannot get canvas 2d context for ${diagramType}`);
             resolve('');
             return;
           }
 
-          // White background (important for PDF - no transparency)
+          // White background
           ctx.fillStyle = '#ffffff';
-          ctx.fillRect(0, 0, finalWidth, finalHeight);
+          ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-          // Draw the SVG image scaled to fit
-          ctx.drawImage(img, 0, 0, finalWidth, finalHeight);
+          // Draw SVG image
+          ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
 
-          // Export as PNG data URI
+          // Export as PNG
           const pngDataUri = canvas.toDataURL('image/png', 1.0);
 
-          console.log(`✅ Diagram ${diagramType}: ${finalWidth}x${finalHeight}px PNG generated`);
+          // Verify we got a real PNG (not just a blank canvas header)
+          if (pngDataUri.length < 500) {
+            console.warn(`[SVG2PNG] Suspiciously small PNG for ${diagramType}: ${pngDataUri.length} chars`);
+          }
+
           resolve(pngDataUri);
         } catch (canvasErr) {
-          console.warn('Canvas rendering error:', canvasErr);
+          console.error(`[SVG2PNG] Canvas error for ${diagramType}:`, canvasErr);
           resolve('');
         }
       };
 
       img.onerror = (err) => {
-        console.warn(`Image loading error for SVG (${diagramType}):`, err);
+        console.error(`[SVG2PNG] Image load error for ${diagramType}:`, err);
         resolve('');
       };
 
-      // Set crossOrigin before src
       img.crossOrigin = 'anonymous';
       img.src = dataUrl;
     } catch (err) {
-      console.warn('svgToPngDataUri error:', err);
+      console.error(`[SVG2PNG] Error for ${diagramType}:`, err);
       resolve('');
     }
   });
