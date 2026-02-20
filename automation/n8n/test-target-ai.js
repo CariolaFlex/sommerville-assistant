@@ -1,3 +1,4 @@
+// TEST Andres
 // TEST E2E - Evaluación de Bot n8n Code Review
 // ⚠️  Este archivo contiene bugs INTENCIONALES para validar la IA de revisión de código.
 // NO usar en producción. Archivo de prueba E2E — eliminar después del test.
